@@ -13,23 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
-package com.android.car.settings.applications;
+
+package com.android.car.settings.common;
 
 import android.os.Bundle;
 import android.support.car.ui.PagedListView;
-import android.support.v7.widget.RecyclerView;
+
 import com.android.car.settings.CarSettingActivity;
 import com.android.car.settings.R;
-import com.android.car.settings.common.NoDividerItemDecoration;
+
+import java.util.ArrayList;
 
 /**
- * Lists all installed applications and their summary.
+ * Shows a list of settings
  */
-public class ApplicationSettingsActivity extends CarSettingActivity {
-    private static final String TAG = "ApplicationSettingsActivity";
+public abstract class ListSettingsActivity extends CarSettingActivity {
 
     private PagedListView mListView;
-    private ApplicationListAdapter mAdapter;
+    protected TypedPagedListAdapter mPagedListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +41,12 @@ public class ApplicationSettingsActivity extends CarSettingActivity {
         mListView = (PagedListView) findViewById(android.R.id.list);
         mListView.setDefaultItemDecoration(new NoDividerItemDecoration(this));
         mListView.setDarkMode();
-        mAdapter = new ApplicationListAdapter(this /* context */, getPackageManager());
-        mListView.setAdapter(mAdapter);
+        mPagedListAdapter = new TypedPagedListAdapter(this /* context */, getLineItems());
+        mListView.setAdapter(mPagedListAdapter);
     }
 
+    /**
+     * Gets a List of LineItems to show up in this activity.
+     */
+    public abstract ArrayList<TypedPagedListAdapter.LineItem> getLineItems();
 }

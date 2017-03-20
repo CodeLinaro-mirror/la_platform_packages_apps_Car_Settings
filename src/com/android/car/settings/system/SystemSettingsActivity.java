@@ -11,9 +11,10 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License.
+ * limitations under the License
  */
-package com.android.car.settings.display;
+
+package com.android.car.settings.system;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.ListSettingsActivity;
@@ -22,15 +23,16 @@ import com.android.car.settings.common.TypedPagedListAdapter;
 import java.util.ArrayList;
 
 /**
- * Activity to host Display related preferences.
+ * Shows basic info about the system and provide some actions like update, reset etc.
  */
-public class DisplaySettingsActivity extends ListSettingsActivity {
+public class SystemSettingsActivity extends ListSettingsActivity {
 
     @Override
     public ArrayList<TypedPagedListAdapter.LineItem> getLineItems() {
         ArrayList<TypedPagedListAdapter.LineItem> lineItems = new ArrayList<>();
-        lineItems.add(new AutoBrightnessLineItem(this /* context */));
-        lineItems.add(new BrightnessLineItem(this /* context */));
+        lineItems.add(new SystemUpdatesLineItem(this));
+        lineItems.add(new AboutSystemLineItem(this));
+        lineItems.add(new LegalInfoLineItem(this));
         return lineItems;
     }
 }
