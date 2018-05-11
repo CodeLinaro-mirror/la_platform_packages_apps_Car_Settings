@@ -15,6 +15,7 @@
  */
 package com.android.car.settings.common;
 
+import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,8 +24,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.inputmethod.InputMethodManager;
 
 import com.android.car.settings.R;
-import com.android.car.settings.home.HomepageFragment;
-import com.android.car.settings.wifi.WifiSettingsFragment;
+import com.android.car.settings.quicksettings.QuickSettingFragment;
 
 /**
  * Base activity class for car settings, provides a action bar with a back button that goes to
@@ -34,8 +34,8 @@ public class CarSettingActivity extends AppCompatActivity implements
         BaseFragment.FragmentController {
     private static final String TAG = "CarSetting";
 
-    /** Actions to launch setting page to configure a new wifi network. */
-    public static final String ACTION_ADD_WIFI = "android.car.settings.action_add_wifi";
+    private CarUxRestrictionsHelper mUxRestrictionsHelper;
+    private CarUxRestrictions mCarUxRestrictions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +48,28 @@ public class CarSettingActivity extends AppCompatActivity implements
     @Override
     public void onStart() {
         super.onStart();
-        Intent intent = getIntent();
-        if (intent != null && ACTION_ADD_WIFI.equals(intent.getAction())) {
-            launchFragment(WifiSettingsFragment.getInstance());
-        } else {
-            HomepageFragment homepageFragment = HomepageFragment.getInstance();
-            homepageFragment.setFragmentController(this);
-            launchFragment(homepageFragment);
+        if (mUxRestrictionsHelper == null) {
+            mUxRestrictionsHelper =
+                    new CarUxRestrictionsHelper(this, carUxRestrictions -> {
+                        mCarUxRestrictions = carUxRestrictions;
+                        BaseFragment currentFragment = getCurrentFragment();
+                        if (currentFragment != null) {
+                            currentFragment.setCarUxRestrictions(carUxRestrictions);
+                        }
+                    });
         }
+
+        mUxRestrictionsHelper.start();
+
+        if (getCurrentFragment() == null) {
+            launchFragment(QuickSettingFragment.newInstance());
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mUxRestrictionsHelper.stop();
     }
 
     @Override
@@ -65,6 +79,14 @@ public class CarSettingActivity extends AppCompatActivity implements
 
     @Override
     public void launchFragment(BaseFragment fragment) {
+        if (mCarUxRestrictions != null && !fragment.canBeShown(mCarUxRestrictions)) {
+            DoBlockingDialogFragment alertDialog = new DoBlockingDialogFragment();
+            alertDialog.show(getSupportFragmentManager(), DoBlockingDialogFragment.DIALOG_TAG);
+            return;
+        }
+        if (mCarUxRestrictions != null) {
+            fragment.setCarUxRestrictions(mCarUxRestrictions);
+        }
         fragment.setFragmentController(this);
         getSupportFragmentManager()
                 .beginTransaction()
@@ -79,20 +101,22 @@ public class CarSettingActivity extends AppCompatActivity implements
     }
 
     @Override
-    public boolean goBack() {
-        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-            getSupportFragmentManager().popBackStack();
-            hideKeyboard();
-            return true;
-        }
-        return false;
+    public void goBack() {
+        onBackPressed();
     }
 
     @Override
     public void onBackPressed() {
-        if (!goBack()) {
-            super.onBackPressed();
+        super.onBackPressed();
+        hideKeyboard();
+        // if the backstack is empty, finish the activity.
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            finish();
         }
+    }
+
+    private BaseFragment getCurrentFragment() {
+        return (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
     }
 
     private void hideKeyboard() {
