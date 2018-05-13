@@ -35,9 +35,11 @@
     <dimen name="pin_pad_key_margin">12dp</dimen>
     <dimen name="pin_pad_padding_top">20dp</dimen>
     <dimen name="pin_pad_end_padding_top">48dp</dimen>
+    <dimen name="confirm_pattern_dimension">350dp</dimen>
 
     <dimen name="lockscreen_title_drawable_padding">5dp</dimen>
 
     <dimen name="toggle_padding">10dp</dimen>
     <dimen name="toggle_ripple">90dp</dimen>
+    <dimen name="brightness_knob_size">44dp</dimen>
 </resources>
