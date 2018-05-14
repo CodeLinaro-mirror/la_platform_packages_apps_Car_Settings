@@ -18,12 +18,14 @@ package com.android.car.settings.users;
 import android.annotation.IdRes;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.TextInputEditText;
 import android.view.View;
 import android.widget.Button;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settingslib.util.SettingsConstants;
 import com.android.settingslib.users.UserManagerHelper;
 
 /**
@@ -91,6 +93,8 @@ public class EditUsernameFragment extends BaseFragment implements
         mOkButton.setOnClickListener(view -> {
             // Save new user's name.
             mUserManagerHelper.setUserName(mUserInfo, mUserNameEditText.getText().toString());
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    SettingsConstants.USER_NAME_SET, 1);
             getActivity().onBackPressed();
         });
 
@@ -100,8 +104,8 @@ public class EditUsernameFragment extends BaseFragment implements
         });
 
         // Each user can edit their own name. Owner can edit everyone's name.
-        if (mUserManagerHelper.userIsCurrentUser(mUserInfo)
-                || mUserManagerHelper.isSystemUser()) {
+        if (mUserManagerHelper.userIsRunningCurrentProcess(mUserInfo)
+                || mUserManagerHelper.currentProcessRunningAsSystemUser()) {
             allowUserNameEditing();
         } else {
             mUserNameEditText.setEnabled(false);
@@ -126,7 +130,7 @@ public class EditUsernameFragment extends BaseFragment implements
     }
 
     private void showActionButtons() {
-        if (mUserManagerHelper.userIsCurrentUser(mUserInfo)) {
+        if (mUserManagerHelper.userIsRunningCurrentProcess(mUserInfo)) {
             // Already in current user, shouldn't show SWITCH button.
             showRemoveUserButton(R.id.action_button1);
             return;
@@ -138,10 +142,11 @@ public class EditUsernameFragment extends BaseFragment implements
 
     private void showRemoveUserButton(@IdRes int buttonId) {
         Button removeUserBtn = (Button) getActivity().findViewById(buttonId);
-        // If the current user is not allowed to remove users or the user trying to be removed
-        // cannot be removed, do not show delete button.
-        if (!mUserManagerHelper.canRemoveUsers() || !mUserManagerHelper.userCanBeRemoved(
-                mUserInfo)) {
+        // If the current user is not allowed to remove users, the user trying to be removed
+        // cannot be removed, or the current user is a demo user, do not show delete button.
+        if (!mUserManagerHelper.currentProcessCanRemoveUsers()
+                || !mUserManagerHelper.userCanBeRemoved(mUserInfo)
+                || mUserManagerHelper.currentProcessRunningAsDemoUser()) {
             removeUserBtn.setVisibility(View.GONE);
             return;
         }
@@ -159,9 +164,9 @@ public class EditUsernameFragment extends BaseFragment implements
 
     private void showSwitchButton(@IdRes int buttonId) {
         Button switchUserBtn = (Button) getActivity().findViewById(buttonId);
-        // If the current user is not allowed to switch to another user, doe not show the switch
+        // If the current process is not allowed to switch to another user, doe not show the switch
         // button.
-        if (!mUserManagerHelper.canSwitchUsers()) {
+        if (!mUserManagerHelper.currentProcessCanSwitchUsers()) {
             switchUserBtn.setVisibility(View.GONE);
             return;
         }

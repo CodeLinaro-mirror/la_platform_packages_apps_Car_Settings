@@ -20,19 +20,23 @@ import android.annotation.StringRes;
 import android.car.Car;
 import android.car.CarNotConnectedException;
 import android.car.media.CarAudioManager;
+import android.car.media.ICarVolumeCallback;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
-import android.database.ContentObserver;
 import android.media.AudioAttributes;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.IBinder;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
 import android.util.Xml;
+
+import androidx.car.widget.ListItem;
+import androidx.car.widget.ListItemAdapter;
+import androidx.car.widget.ListItemProvider.ListProvider;
+import androidx.car.widget.PagedListView;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
@@ -42,11 +46,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.car.widget.ListItem;
-import androidx.car.widget.ListItemAdapter;
-import androidx.car.widget.ListItemProvider.ListProvider;
-import androidx.car.widget.PagedListView;
 
 /**
  * Activity hosts sound related settings.
@@ -67,6 +66,7 @@ public class SoundSettingsFragment extends BaseFragment {
             try {
                 mCarAudioManager = (CarAudioManager) mCar.getCarManager(Car.AUDIO_SERVICE);
                 int volumeGroupCount = mCarAudioManager.getVolumeGroupCount();
+                mVolumeLineItems.clear();
                 // Populates volume slider items from volume groups to UI.
                 for (int groupId = 0; groupId < volumeGroupCount; groupId++) {
                     final VolumeItem volumeItem = getVolumeItemForUsages(
@@ -77,6 +77,7 @@ public class SoundSettingsFragment extends BaseFragment {
                             groupId,
                             volumeItem.usage,
                             volumeItem.icon,
+                            volumeItem.title,
                             new VolumeLineItem.SeekbarListener(getContext(),
                                 mCarAudioManager,
                                 groupId,
@@ -86,7 +87,7 @@ public class SoundSettingsFragment extends BaseFragment {
                 if (mPagedListAdapter != null) {
                     mPagedListAdapter.notifyDataSetChanged();
                 }
-                mCarAudioManager.registerVolumeChangeObserver(mVolumeChangeObserver);
+                mCarAudioManager.registerVolumeCallback(mVolumeChangeCallback.asBinder());
             } catch (CarNotConnectedException e) {
                 Log.e(TAG, "Car is not connected!", e);
             }
@@ -94,16 +95,25 @@ public class SoundSettingsFragment extends BaseFragment {
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            mCarAudioManager.unregisterVolumeChangeObserver(mVolumeChangeObserver);
+            try {
+                mCarAudioManager.unregisterVolumeCallback(mVolumeChangeCallback.asBinder());
+            } catch (CarNotConnectedException e) {
+                Log.e(TAG, "Car is not connected!", e);
+            }
             mVolumeLineItems.clear();
             mCarAudioManager = null;
         }
     };
 
-    private final ContentObserver mVolumeChangeObserver = new ContentObserver(new Handler()) {
+    private final ICarVolumeCallback mVolumeChangeCallback = new ICarVolumeCallback.Stub() {
         @Override
-        public void onChange(boolean selfChange) {
+        public void onGroupVolumeChanged(int groupId) {
             mPagedListAdapter.notifyDataSetChanged();
+        }
+
+        @Override
+        public void onMasterMuteChanged() {
+            // ignored
         }
     };
 

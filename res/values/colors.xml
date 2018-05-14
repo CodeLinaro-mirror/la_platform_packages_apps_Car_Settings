@@ -16,4 +16,7 @@
 -->
 <resources>
     <color name="lock_pattern_background">#353839</color>
+
+    <color name="toggle_bg_disabled">@color/car_grey_400</color>
+    <color name="toggle_icon_disabled">@color/car_grey_800</color>
 </resources>
