@@ -22,16 +22,22 @@ include $(CLEAR_VARS)
 # (for example, projected). See b/30064991
 ifeq (,$(TARGET_BUILD_APPS))
   LOCAL_PACKAGE_NAME := CarSettings
-LOCAL_PRIVATE_PLATFORM_APIS := true
+  LOCAL_PRIVATE_PLATFORM_APIS := true
 
   LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
   LOCAL_USE_AAPT2 := true
 
+  LOCAL_JAVA_LIBRARIES += android.car
+
   LOCAL_STATIC_ANDROID_LIBRARIES := \
       android-support-car \
       android-support-v7-preference \
-      android-support-v14-preference
+      android-support-v14-preference \
+      car-list \
+      car-settings-lib \
+      setup-wizard-lib-gingerbread-compat \
+      SettingsLib
 
   LOCAL_RESOURCE_DIR := \
       $(LOCAL_PATH)/res
@@ -49,13 +55,6 @@ LOCAL_PRIVATE_PLATFORM_APIS := true
   LOCAL_STATIC_JAVA_LIBRARIES += jsr305
 
   LOCAL_DX_FLAGS := --multi-dex
-
-  include packages/apps/Car/libs/car-list/car-list.mk
-  include packages/apps/Car/libs/car-apps-common/car-apps-common.mk
-  include packages/apps/Car/libs/car-settings-lib/car-settings-lib.mk
-  include packages/services/Car/car-support-lib/car-support.mk
-  include frameworks/opt/setupwizard/library/common-gingerbread.mk
-  include frameworks/base/packages/SettingsLib/common.mk
 
   include $(BUILD_PACKAGE)
 endif

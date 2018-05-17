@@ -15,23 +15,11 @@
   ~ limitations under the License
   -->
 
-<LinearLayout
+<androidx.car.widget.PagedListView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/list"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/container">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/car_app_bar_height"
-        app:contentInsetStart="0dp"
-        style="@style/ActionBarStyle.Car" />
-    <androidx.car.widget.PagedListView
-        android:id="@+id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:showPagedListViewDivider="false"
-        style="@style/PagedList" />
-</LinearLayout>
+    android:layout_height="wrap_content"
+    app:showPagedListViewDivider="false"
+    style="@style/PagedList" />
