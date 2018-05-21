@@ -29,13 +29,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.car.widget.PagedListView;
+
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
 import com.android.settingslib.wifi.AccessPoint;
 
 import java.util.List;
-
-import androidx.car.widget.PagedListView;
 
 /**
  * Renders {@link AccessPoint} to a view to be displayed as a row in a list.
@@ -58,6 +58,7 @@ public class AccessPointListAdapter
     private final BaseFragment.FragmentController mFragmentController;
     private final CarWifiManager mCarWifiManager;
     private final WifiManager.ActionListener mConnectionListener;
+    private boolean mShowAddNetworkRow;
 
     private List<AccessPoint> mAccessPoints;
 
@@ -84,6 +85,14 @@ public class AccessPointListAdapter
                         Toast.LENGTH_SHORT).show();
             }
         };
+    }
+
+    /**
+     * Toggles the row that links to add a new network.
+     */
+    public AccessPointListAdapter showAddNetworkRow(boolean show) {
+        mShowAddNetworkRow = show;
+        return this;
     }
 
     public void updateAccessPoints(@NonNull List<AccessPoint> accesssPoints) {
@@ -184,7 +193,7 @@ public class AccessPointListAdapter
     @Override
     public int getItemCount() {
         // number of rows include one per device and a row for add network.
-        return mAccessPoints.size() + 1;
+        return mShowAddNetworkRow ? mAccessPoints.size() + 1 : mAccessPoints.size();
     }
 
     @Override
