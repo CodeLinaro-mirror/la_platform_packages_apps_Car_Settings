@@ -42,6 +42,7 @@ public class QuickSettingFragment extends BaseFragment {
     private static final float UNRESTRICTED_ALPHA = 1f;
 
     private UserManagerHelper  mUserManagerHelper;
+    private UserIconProvider mUserIconProvider;
     private QuickSettingGridAdapter mGridAdapter;
     private PagedListView mListView;
     private View mFullSettingBtn;
@@ -67,27 +68,29 @@ public class QuickSettingFragment extends BaseFragment {
                 v -> getActivity().finish());
 
         mUserManagerHelper = new UserManagerHelper(getContext());
+        mUserIconProvider = new UserIconProvider(mUserManagerHelper);
         mListView = (PagedListView) getActivity().findViewById(R.id.list);
         mGridAdapter = new QuickSettingGridAdapter(getContext());
         mListView.getRecyclerView().setLayoutManager(mGridAdapter.getGridLayoutManager());
 
         mFullSettingBtn = getActivity().findViewById(R.id.full_setting_btn);
         mFullSettingBtn.setOnClickListener(v -> {
-            mFragmentController.launchFragment(HomepageFragment.getInstance());
+            getFragmentController().launchFragment(HomepageFragment.getInstance());
         });
         mUserSwitcherBtn = getActivity().findViewById(R.id.user_switcher_btn);
         mUserSwitcherBtn.setOnClickListener(v -> {
-            mFragmentController.launchFragment(UsersListFragment.newInstance());
+            getFragmentController().launchFragment(UsersListFragment.newInstance());
         });
 
         setupAccountButton();
         View exitBtn = getActivity().findViewById(R.id.exit_button);
-        exitBtn.setOnClickListener(v -> mFragmentController.goBack());
+        exitBtn.setOnClickListener(v -> getFragmentController().goBack());
 
         mGridAdapter
-                .addTile(new WifiTile(getContext(), mGridAdapter, mFragmentController))
+                .addTile(new WifiTile(getContext(), mGridAdapter, getFragmentController()))
                 .addTile(new BluetoothTile(getContext(), mGridAdapter))
                 .addTile(new DayNightTile(getContext(), mGridAdapter))
+                .addTile(new CelluarTile(getContext(), mGridAdapter))
                 .addSeekbarTile(new BrightnessTile(getContext()));
         mListView.setAdapter(mGridAdapter);
     }
@@ -101,9 +104,8 @@ public class QuickSettingFragment extends BaseFragment {
     private void setupAccountButton() {
         ImageView userIcon = (ImageView) getActivity().findViewById(R.id.user_icon);
         UserInfo currentUserInfo = mUserManagerHelper.getForegroundUserInfo();
-        userIcon.setImageDrawable(
-                UserIconProvider.getUserIcon(
-                        currentUserInfo, mUserManagerHelper, getContext()));
+        userIcon.setImageDrawable(mUserIconProvider.getUserIcon(currentUserInfo, getContext()));
+        userIcon.clearColorFilter();
 
         TextView userSwitcherText = (TextView) getActivity().findViewById(R.id.user_switcher_text);
         userSwitcherText.setText(currentUserInfo.name);
