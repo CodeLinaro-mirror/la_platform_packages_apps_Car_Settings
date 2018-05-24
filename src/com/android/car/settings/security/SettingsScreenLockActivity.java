@@ -28,8 +28,7 @@ import com.android.internal.widget.LockPatternUtils;
 /**
  * Activity for setting screen locks
  */
-public class SettingsScreenLockActivity extends CarSettingActivity implements
-        ConfirmLockPatternFragment.CheckLockListener {
+public class SettingsScreenLockActivity extends CarSettingActivity implements CheckLockListener {
 
     public static final String EXTRA_CURRENT_SCREEN_LOCK = "extra_current_screen_lock";
 
@@ -44,22 +43,35 @@ public class SettingsScreenLockActivity extends CarSettingActivity implements
         mPasswordQuality = mLockPatternUtils.getKeyguardStoredPasswordQuality(
                 UserHandle.myUserId());
 
-        BaseFragment fragment;
-        switch(mPasswordQuality) {
-            case DevicePolicyManager.PASSWORD_QUALITY_SOMETHING:
-                fragment = ConfirmLockPatternFragment.newInstance();
-                break;
-            default:
-                // TODO implement the remaining quality values then show ConfirmPassword and log
-                // error
-                fragment = ChooseLockTypeFragment.newInstance();
-        }
+        if (savedInstanceState == null) {
+            BaseFragment fragment;
+            switch (mPasswordQuality) {
+                case DevicePolicyManager.PASSWORD_QUALITY_SOMETHING:
+                    fragment = ConfirmLockPatternFragment.newInstance();
+                    break;
+                case DevicePolicyManager.PASSWORD_QUALITY_NUMERIC:
+                case DevicePolicyManager.PASSWORD_QUALITY_NUMERIC_COMPLEX:
+                    fragment = ConfirmLockPinFragment.newInstance();
+                    break;
+                default:
+                    // TODO implement the remaining quality values then show ConfirmPassword and log
+                    // error
+                    fragment = ChooseLockTypeFragment.newInstance();
+            }
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.fragment_container, fragment)
-                .addToBackStack(null)
-                .commit();
+            Bundle bundle = fragment.getArguments();
+            if (bundle == null) {
+                bundle = new Bundle();
+            }
+            bundle.putInt(ChooseLockTypeFragment.EXTRA_CURRENT_PASSWORD_QUALITY, mPasswordQuality);
+            fragment.setArguments(bundle);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fragment_container, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 
     @Override
@@ -70,6 +82,7 @@ public class SettingsScreenLockActivity extends CarSettingActivity implements
             bundle = new Bundle();
         }
         bundle.putString(EXTRA_CURRENT_SCREEN_LOCK, lock);
+        bundle.putInt(ChooseLockTypeFragment.EXTRA_CURRENT_PASSWORD_QUALITY, mPasswordQuality);
         fragment.setArguments(bundle);
 
         getSupportFragmentManager()

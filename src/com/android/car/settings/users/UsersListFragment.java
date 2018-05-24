@@ -16,6 +16,7 @@
 
 package com.android.car.settings.users;
 
+import android.car.drivingstate.CarUxRestrictions;
 import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.os.AsyncTask;
@@ -79,7 +80,7 @@ public class UsersListFragment extends ListItemSettingsFragment
         if (mUserManagerHelper.currentProcessRunningAsDemoUser()) {
             // If the user is a demo user, show a dialog asking if they want to exit retail/demo
             // mode
-            mAddUserButton.setText(R.string.exit_retail_title);
+            mAddUserButton.setText(R.string.exit_retail_button_text);
             mAddUserButton.setOnClickListener(v -> {
                 ConfirmExitRetailModeDialog dialog = new ConfirmExitRetailModeDialog();
                 dialog.setConfirmExitRetailModeListener(this);
@@ -144,6 +145,19 @@ public class UsersListFragment extends ListItemSettingsFragment
             // If it's another user, launch fragment that displays their information
             getFragmentController().launchFragment(EditUsernameFragment.getInstance(userInfo));
         }
+    }
+
+    /**
+     * User list fragment is distraction optimized, so is allowed at all times.
+     */
+    @Override
+    public boolean canBeShown(CarUxRestrictions carUxRestrictions) {
+        return true;
+    }
+
+    @Override
+    public void onGuestClicked() {
+        getFragmentController().launchFragment(GuestFragment.newInstance());
     }
 
     @Override
