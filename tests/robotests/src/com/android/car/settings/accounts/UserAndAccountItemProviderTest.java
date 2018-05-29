@@ -18,19 +18,18 @@ package com.android.car.settings.accounts;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.car.user.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.os.UserHandle;
 import android.os.UserManager;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
-import com.android.car.settings.users.UserIconProvider;
-import com.android.settingslib.users.UserManagerHelper;
+import com.android.car.settings.testutils.ShadowUserIconProvider;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -38,12 +37,14 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @RunWith(CarSettingsRobolectricTestRunner.class)
+@Config(shadows = { ShadowUserIconProvider.class })
 public class UserAndAccountItemProviderTest {
     @Mock
     private AccountManagerHelper mAccountManagerHelper;
@@ -54,10 +55,9 @@ public class UserAndAccountItemProviderTest {
     @Mock
     private Context mContext;
     @Mock
-    private UserIconProvider mUserIconProvider;
+    private CarUserManagerHelper mCarUserManagerHelper;
 
     private UserAndAccountItemProvider mProvider;
-    private UserManagerHelper mUserManagerHelper;
 
     @Before
     public void setUp() {
@@ -65,17 +65,16 @@ public class UserAndAccountItemProviderTest {
 
         when(mContext.getSystemService(Context.USER_SERVICE)).thenReturn(mUserManager);
         when(mContext.getSystemService(Context.ACCOUNT_SERVICE)).thenReturn(mAccountManager);
+        when(mContext.getApplicationContext()).thenReturn(mContext);
         when(mUserManager.getUserInfo(UserHandle.myUserId())).thenReturn(new UserInfo());
-        when(mUserIconProvider.getUserIcon(any(), any())).thenReturn(null);
         when(mAccountManagerHelper.getAccountsForCurrentUser()).thenReturn(new ArrayList<>());
 
-        mUserManagerHelper = new UserManagerHelper(mContext);
+        mCarUserManagerHelper = new CarUserManagerHelper(mContext);
         mProvider = new UserAndAccountItemProvider(
                 RuntimeEnvironment.application,
                 null,
-                mUserManagerHelper,
-                mAccountManagerHelper,
-                mUserIconProvider);
+                mCarUserManagerHelper,
+                mAccountManagerHelper);
     }
 
     @Test
