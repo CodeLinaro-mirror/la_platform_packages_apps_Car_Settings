@@ -43,6 +43,7 @@
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
     <uses-permission android:name="android.permission.MANAGE_USERS"/>
     <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.NETWORK_SETTINGS" />
     <uses-permission android:name="android.permission.OVERRIDE_WIFI_CONFIG"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.REBOOT"/>
@@ -64,15 +65,8 @@
         <activity
             android:name=".common.CarSettingActivity"
             android:label="@string/settings_label"
-            android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan">
-        </activity>
-
-        <activity
-            android:name=".quicksettings.QuickSettingActivity"
-            android:theme="@style/CarQuickSettingTheme"
-            android:label="@string/settings_label"
             android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <!-- Set priority high enough to trump the phone setting app -->
             <!-- TODO: once phone setting is removed from car system image, set priority to 1 -->
@@ -82,16 +76,13 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data android:name="distractionOptimized" android:value="true"/>
         </activity>
 
         <activity android:name=".bluetooth.BluetoothPairingDialog"
                   android:excludeFromRecents="true"
                   android:windowSoftInputMode="stateVisible|adjustResize"
                   android:theme="@*android:style/Theme.DeviceDefault.Settings.Dialog.NoActionBar">
-            <intent-filter>
-                <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".accounts.AddAccountActivity"
@@ -103,26 +94,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".security.ChooseLockPatternActivity"
+        <activity android:name=".security.SettingsScreenLockActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize">
-            <intent-filter>
-                <action android:name="android.car.settings.CHOOSE_LOCK_PATTERN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
-        <activity android:name=".security.ChooseLockPasswordActivity"
+        <activity android:name=".security.SetupWizardScreenLockActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
-                <action android:name="android.car.settings.CHOOSE_LOCK_PASSWORD" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name=".security.ChooseLockPinActivity"
-                  android:configChanges="orientation|keyboardHidden|screenSize">
-            <intent-filter>
-                <action android:name="android.car.settings.CHOOSE_LOCK_PIN" />
+                <action android:name="android.car.settings.SETUP_WIZARD_SCREEN_LOCK_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

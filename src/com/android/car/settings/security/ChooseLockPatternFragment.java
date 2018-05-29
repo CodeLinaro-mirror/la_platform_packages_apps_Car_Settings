@@ -11,21 +11,22 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License
+ * limitations under the License.
  */
 
 package com.android.car.settings.security;
 
-import android.content.Intent;
+import android.annotation.StringRes;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.support.v4.app.FragmentActivity;
-import android.util.Log;
+import android.support.annotation.VisibleForTesting;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.Logger;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.internal.widget.LockPatternView;
 import com.android.internal.widget.LockPatternView.Cell;
@@ -38,109 +39,41 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Activity for choosing security lock pattern.
+ * Fragment for choosing security lock pattern.
  */
-public class ChooseLockPatternActivity extends FragmentActivity implements
-        View.OnClickListener, SaveChosenLockWorkerBase.Listener {
+public class ChooseLockPatternFragment extends BaseFragment {
 
-    private static final String TAG = "ChooseLockPattern";
+    private static final Logger LOG = new Logger(ChooseLockPatternFragment.class);
+    private static final String LOCK_OPTIONS_DIALOG_TAG = "lock_options_dialog_tag";
+    private static final String FRAGMENT_TAG_SAVE_PATTERN_WORKER = "save_pattern_worker";
     private static final int ID_EMPTY_MESSAGE = -1;
+
     // How long we wait to clear a wrong pattern
     private int mWrongPatternClearTimeOut;
+    private int mUserId;
+    private boolean mIsInSetupWizard;
+
     private Stage mUiStage = Stage.Introduction;
     private LockPatternView mLockPatternView;
     private TextView mMessageText;
     private Button mSecondaryButton;
     private Button mPrimaryButton;
-
     private List<LockPatternView.Cell> mChosenPattern;
     private String mCurrentPattern;
-    private SaveLockPatternWorker mSaveLockPatternWorker;
-    private int mUserId;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.choose_lock_pattern);
-
-        mMessageText = (TextView) findViewById(R.id.description_text);
-        mMessageText.setText(getString(R.string.choose_lock_pattern_message));
-
-        mPrimaryButton = (Button) findViewById(R.id.footerPrimaryButton);
-        mPrimaryButton.setOnClickListener(this);
-        mSecondaryButton = (Button) findViewById(R.id.footerSecondaryButton);
-        mSecondaryButton.setOnClickListener(this);
-
-        mLockPatternView = (LockPatternView) findViewById(R.id.lockPattern);
-        mLockPatternView.setVisibility(View.VISIBLE);
-        mLockPatternView.setEnabled(true);
-        mLockPatternView.setFadePattern(false);
-        mLockPatternView.clearPattern();
-        mLockPatternView.setOnPatternListener(mChooseNewLockPatternListener);
-
-        mUserId = UserHandle.myUserId();
-        mCurrentPattern = getIntent()
-                .getStringExtra(SaveChosenLockWorkerBase.EXTRA_KEY_PATTERN);
-
-        mWrongPatternClearTimeOut = getResources().getInteger(R.integer.clear_content_timeout_ms);
-    }
-
-    @Override
-    public void onClick(View view) {
-        if (view == mPrimaryButton) {
-            handlePrimaryButtonClick();
-        } else if (view == mSecondaryButton) {
-            handleSecondaryButtonClick();
-        }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        updateStage(mUiStage);
-
-        if (mSaveLockPatternWorker != null) {
-            setPrimaryButtonEnabled(true);
-            mSaveLockPatternWorker.setListener(this);
-        }
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mSaveLockPatternWorker != null) {
-            mSaveLockPatternWorker.setListener(null);
-        }
-    }
-
-    @Override
-    public void onChosenLockSaveFinished(Intent data) {
-        boolean isSaveSuccessful =
-                data.getBooleanExtra(SaveChosenLockWorkerBase.EXTRA_KEY_SUCCESS, false);
-
-        if (isSaveSuccessful) {
-            setResult(RESULT_OK, data);
-            finish();
-        } else {
-            mSaveLockPatternWorker = null;  // Allow new worker to be created
-            updateStage(Stage.SaveFailure);
-        }
-    }
+    private SavePatternWorker mSavePatternWorker;
 
     /**
      * Keep track internally of where the user is in choosing a pattern.
      */
-    protected enum Stage {
-
+    enum Stage {
         /**
          * Initial stage when first launching choose a lock pattern.
-         * Pattern enabled, secondary button allow for Cancel, primary button disabled.
+         * Pattern mEnabled, secondary button allow for Cancel, primary button disabled.
          */
         Introduction(
                 R.string.lockpattern_recording_intro_header,
                 SecondaryButtonState.Cancel, PrimaryButtonState.ContinueDisabled,
-                true /* patternEnabled */ ),
+                /* patternEnabled= */ true),
         /**
          * Help screen to show how a valid pattern looks like.
          * Pattern disabled, primary button shows Ok. No secondary button.
@@ -148,7 +81,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         HelpScreen(
                 R.string.lockpattern_settings_help_how_to_record,
                 SecondaryButtonState.Gone, PrimaryButtonState.Ok,
-                false /* patternEnabled */ ),
+                /* patternEnabled= */ false),
         /**
          * Invalid pattern is entered, hint message show required number of dots.
          * Secondary button allows for Retry, primary button disabled.
@@ -156,7 +89,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         ChoiceTooShort(
                 R.string.lockpattern_recording_incorrect_too_short,
                 SecondaryButtonState.Retry, PrimaryButtonState.ContinueDisabled,
-                true /* patternEnabled */ ),
+                /* patternEnabled= */ true),
         /**
          * First drawing on the pattern is valid, primary button shows Continue,
          * can proceed to next screen.
@@ -164,7 +97,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         FirstChoiceValid(
                 R.string.lockpattern_recording_intro_header,
                 SecondaryButtonState.Retry, PrimaryButtonState.Continue,
-                false /* patternEnabled */ ),
+                /* patternEnabled= */ false),
         /**
          * Need to draw pattern again to confirm.
          * Secondary button allows for Cancel, primary button disabled.
@@ -172,7 +105,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         NeedToConfirm(
                 R.string.lockpattern_need_to_confirm,
                 SecondaryButtonState.Cancel, PrimaryButtonState.ConfirmDisabled,
-                true /* patternEnabled */ ),
+                /* patternEnabled= */ true),
         /**
          * Confirmation of previous drawn pattern failed, didn't enter the same pattern.
          * Need to re-draw the pattern to match the fist pattern.
@@ -180,7 +113,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         ConfirmWrong(
                 R.string.lockpattern_pattern_wrong,
                 SecondaryButtonState.Cancel, PrimaryButtonState.ConfirmDisabled,
-                true /* patternEnabled */ ),
+                /* patternEnabled= */ true),
         /**
          * Pattern is confirmed after drawing the same pattern twice.
          * Pattern disabled.
@@ -188,7 +121,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         ChoiceConfirmed(
                 R.string.lockpattern_pattern_confirmed,
                 SecondaryButtonState.Cancel, PrimaryButtonState.Confirm,
-                false /* patternEnabled */ ),
+                /* patternEnabled= */ false),
 
         /**
          * Error saving pattern.
@@ -197,27 +130,164 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         SaveFailure(
                 R.string.error_saving_lockpattern,
                 SecondaryButtonState.Cancel, PrimaryButtonState.Retry,
-                false /* patternEnabled */ );
+                /* patternEnabled= */ false);
 
-        final int messageId;
-        final SecondaryButtonState secondaryButtonState;
-        final PrimaryButtonState primaryButtonState;
-        final boolean patternEnabled;
+        final int mMessageId;
+        final SecondaryButtonState mSecondaryButtonState;
+        final PrimaryButtonState mPrimaryButtonState;
+        final boolean mPatternEnabled;
 
         /**
          * @param message The message displayed as instruction.
          * @param secondaryButtonState The state of the secondary button.
          * @param primaryButtonState The state of the primary button.
-         * @param patternEnabled Whether the pattern widget is enabled.
+         * @param patternEnabled Whether the pattern widget is mEnabled.
          */
         Stage(int messageId,
                 SecondaryButtonState secondaryButtonState,
                 PrimaryButtonState primaryButtonState,
                 boolean patternEnabled) {
-            this.messageId = messageId;
-            this.secondaryButtonState = secondaryButtonState;
-            this.primaryButtonState = primaryButtonState;
-            this.patternEnabled = patternEnabled;
+            this.mMessageId = messageId;
+            this.mSecondaryButtonState = secondaryButtonState;
+            this.mPrimaryButtonState = primaryButtonState;
+            this.mPatternEnabled = patternEnabled;
+        }
+    }
+
+    /**
+     * The states of the primary footer button.
+     */
+    enum PrimaryButtonState {
+        Continue(R.string.continue_button_text, true),
+        ContinueDisabled(R.string.continue_button_text, false),
+        Confirm(R.string.lockpattern_confirm_button_text, true),
+        ConfirmDisabled(R.string.lockpattern_confirm_button_text, false),
+        Retry(R.string.lockscreen_retry_button_text, true),
+        Ok(R.string.okay, true);
+
+        /**
+         * @param text The displayed mText for this mode.
+         * @param enabled Whether the button should be mEnabled.
+         */
+        PrimaryButtonState(int text, boolean enabled) {
+            this.mText = text;
+            this.mEnabled = enabled;
+        }
+
+        final int mText;
+        final boolean mEnabled;
+    }
+
+    /**
+     * The states of the secondary footer button.
+     */
+    enum SecondaryButtonState {
+        Cancel(R.string.lockpattern_cancel_button_text, true),
+        CancelDisabled(R.string.lockpattern_cancel_button_text, false),
+        Retry(R.string.lockpattern_retry_button_text, true),
+        RetryDisabled(R.string.lockpattern_retry_button_text, false),
+        Gone(ID_EMPTY_MESSAGE, false);
+
+        /**
+         * @param text The displayed mText for this mode.
+         * @param enabled Whether the button should be mEnabled.
+         */
+        SecondaryButtonState(int textId, boolean enabled) {
+            this.mTextResId = textId;
+            this.mEnabled = enabled;
+        }
+
+        final int mTextResId;
+        final boolean mEnabled;
+    }
+
+    /**
+     * Factory method for creating ChooseLockPatternFragment
+     */
+    public static ChooseLockPatternFragment newInstance() {
+        ChooseLockPatternFragment patternFragment = new ChooseLockPatternFragment();
+        Bundle bundle = BaseFragment.getBundle();
+        bundle.putInt(EXTRA_TITLE_ID, R.string.security_lock_pattern);
+        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
+        bundle.putInt(EXTRA_LAYOUT, R.layout.choose_lock_pattern);
+        patternFragment.setArguments(bundle);
+        return patternFragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mWrongPatternClearTimeOut = getResources().getInteger(R.integer.clear_content_timeout_ms);
+        mUserId = UserHandle.myUserId();
+
+        Bundle args = getArguments();
+        if (args != null) {
+            mIsInSetupWizard = args.getBoolean(BaseFragment.EXTRA_RUNNING_IN_SETUP_WIZARD);
+            mCurrentPattern = args.getString(SettingsScreenLockActivity.EXTRA_CURRENT_SCREEN_LOCK);
+        }
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mMessageText = view.findViewById(R.id.description_text);
+        mMessageText.setText(getString(R.string.choose_lock_pattern_message));
+
+        mLockPatternView = view.findViewById(R.id.lockPattern);
+        mLockPatternView.setVisibility(View.VISIBLE);
+        mLockPatternView.setEnabled(true);
+        mLockPatternView.setFadePattern(false);
+        mLockPatternView.clearPattern();
+        mLockPatternView.setOnPatternListener(mChooseNewLockPatternListener);
+
+        if (mIsInSetupWizard) {
+            View screenLockOptions = view.findViewById(R.id.screen_lock_options);
+            screenLockOptions.setVisibility(View.VISIBLE);
+            screenLockOptions.setOnClickListener(v -> {
+                new LockTypeDialogFragment().show(getFragmentManager(), LOCK_OPTIONS_DIALOG_TAG);
+            });
+        }
+
+        // Re-attach to the exiting worker if there is one.
+        if (savedInstanceState != null) {
+            mSavePatternWorker = (SavePatternWorker) getFragmentManager().findFragmentByTag(
+                    FRAGMENT_TAG_SAVE_PATTERN_WORKER);
+        }
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        // Don't show toolbar title in Setup Wizard
+        if (mIsInSetupWizard) {
+            ((TextView) getActivity().findViewById(R.id.title)).setText("");
+        }
+
+        mPrimaryButton = getActivity().findViewById(R.id.action_button1);
+        mPrimaryButton.setOnClickListener(view -> handlePrimaryButtonClick());
+        mSecondaryButton = getActivity().findViewById(R.id.action_button2);
+        mSecondaryButton.setVisibility(View.VISIBLE);
+        mSecondaryButton.setOnClickListener(view -> handleSecondaryButtonClick());
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        updateStage(mUiStage);
+
+        if (mSavePatternWorker != null) {
+            setPrimaryButtonEnabled(true);
+            mSavePatternWorker.setListener(this::onChosenLockSaveFinished);
+        }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mSavePatternWorker != null) {
+            mSavePatternWorker.setListener(null);
         }
     }
 
@@ -230,23 +300,29 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
     protected void updateStage(Stage stage) {
         mUiStage = stage;
 
-        // Message text, visibility and
-        // enabled state all known from the stage
-        mMessageText.setText(stage.messageId);
+        // Message mText, visibility and
+        // mEnabled state all known from the stage
+        mMessageText.setText(stage.mMessageId);
 
-        if (stage.secondaryButtonState == SecondaryButtonState.Gone) {
+        if (stage.mSecondaryButtonState == SecondaryButtonState.Gone) {
             setSecondaryButtonVisible(false);
         } else {
             setSecondaryButtonVisible(true);
-            setSecondaryButtonTextId(stage.secondaryButtonState.textResId);
-            setSecondaryButtonEnabled(stage.secondaryButtonState.enabled);
+            // In Setup Wizard, the Cancel button text is replaced with Skip
+            if (mIsInSetupWizard && stage.mSecondaryButtonState.mTextResId
+                    == R.string.lockpattern_cancel_button_text) {
+                setSecondaryButtonText(R.string.lockscreen_skip_button_text);
+            } else {
+                setSecondaryButtonText(stage.mSecondaryButtonState.mTextResId);
+            }
+            setSecondaryButtonEnabled(stage.mSecondaryButtonState.mEnabled);
         }
 
-        setPrimaryButtonTextId(stage.primaryButtonState.text);
-        setPrimaryButtonEnabled(stage.primaryButtonState.enabled);
+        setPrimaryButtonText(stage.mPrimaryButtonState.mText);
+        setPrimaryButtonEnabled(stage.mPrimaryButtonState.mEnabled);
 
-        // same for whether the pattern is enabled
-        if (stage.patternEnabled) {
+        // same for whether the pattern is mEnabled
+        if (stage.mPatternEnabled) {
             mLockPatternView.enableInput();
         } else {
             mLockPatternView.disableInput();
@@ -281,53 +357,6 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
             default:
                 // Do nothing.
         }
-    }
-
-    /**
-     * The states of the secondary footer button.
-     */
-    enum SecondaryButtonState {
-        Cancel(R.string.lockpattern_cancel_button_text, true),
-        CancelDisabled(R.string.lockpattern_cancel_button_text, false),
-        Retry(R.string.lockpattern_retry_button_text, true),
-        RetryDisabled(R.string.lockpattern_retry_button_text, false),
-        Gone(ID_EMPTY_MESSAGE, false);
-
-        /**
-         * @param text The displayed text for this mode.
-         * @param enabled Whether the button should be enabled.
-         */
-        SecondaryButtonState(int textId, boolean enabled) {
-            this.textResId = textId;
-            this.enabled = enabled;
-        }
-
-        final int textResId;
-        final boolean enabled;
-    }
-
-    /**
-     * The states of the primary footer button.
-     */
-    enum PrimaryButtonState {
-        Continue(R.string.continue_button_text, true),
-        ContinueDisabled(R.string.continue_button_text, false),
-        Confirm(R.string.lockpattern_confirm_button_text, true),
-        ConfirmDisabled(R.string.lockpattern_confirm_button_text, false),
-        Retry(R.string.lockscreen_retry_button_text, true),
-        Ok(R.string.okay, true);
-
-        /**
-         * @param text The displayed text for this mode.
-         * @param enabled Whether the button should be enabled.
-         */
-        PrimaryButtonState(int text, boolean enabled) {
-            this.text = text;
-            this.enabled = enabled;
-        }
-
-        final int text;
-        final boolean enabled;
     }
 
     // The pattern listener that responds according to a user choosing a new
@@ -404,7 +433,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         mPrimaryButton.setEnabled(enabled);
     }
 
-    private void setPrimaryButtonTextId(int textId) {
+    private void setPrimaryButtonText(@StringRes int textId) {
         mPrimaryButton.setText(textId);
     }
 
@@ -416,7 +445,7 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         mSecondaryButton.setEnabled(enabled);
     }
 
-    private void setSecondaryButtonTextId(int textId) {
+    private void setSecondaryButtonText(@StringRes int textId) {
         mSecondaryButton.setText(textId);
     }
 
@@ -433,28 +462,10 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
 
     private Runnable mClearPatternRunnable = () -> mLockPatternView.clearPattern();
 
-    // Update display message and proceed to next step according to the different text on
-    // the secondary button.
-    private void handleSecondaryButtonClick() {
-        switch(mUiStage.secondaryButtonState) {
-            case Retry:
-                mChosenPattern = null;
-                mLockPatternView.clearPattern();
-                updateStage(Stage.Introduction);
-                break;
-            case Cancel:
-                finish();
-                break;
-            default:
-                throw new IllegalStateException("secondary footer button pressed, but stage of " +
-                        mUiStage + " doesn't make sense");
-        }
-    }
-
-    // Update display message and decide on next step according to the different text
+    // Update display message and decide on next step according to the different mText
     // on the primary button
     private void handlePrimaryButtonClick() {
-        switch(mUiStage.primaryButtonState) {
+        switch(mUiStage.mPrimaryButtonState) {
             case Continue:
                 if (mUiStage != Stage.FirstChoiceValid) {
                     throw new IllegalStateException("expected ui stage "
@@ -491,20 +502,65 @@ public class ChooseLockPatternActivity extends FragmentActivity implements
         }
     }
 
+    // Update display message and proceed to next step according to the different mText on
+    // the secondary button.
+    private void handleSecondaryButtonClick() {
+        switch(mUiStage.mSecondaryButtonState) {
+            case Retry:
+                mChosenPattern = null;
+                mLockPatternView.clearPattern();
+                updateStage(Stage.Introduction);
+                break;
+            case Cancel:
+                if (mIsInSetupWizard) {
+                    ((SetupWizardScreenLockActivity) getActivity()).onCancel();
+                } else {
+                    getFragmentController().goBack();
+                }
+                break;
+            default:
+                throw new IllegalStateException("secondary footer button pressed, but stage of "
+                        + mUiStage + " doesn't make sense");
+        }
+    }
+
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    void onChosenLockSaveFinished(boolean isSaveSuccessful) {
+        if (isSaveSuccessful) {
+            onComplete();
+        } else {
+            updateStage(Stage.SaveFailure);
+        }
+    }
+
     // Save recorded pattern as an async task and proceed to next
     private void startSaveAndFinish() {
-        if (mSaveLockPatternWorker != null) {
-            Log.v(TAG, "startSaveAndFinish with an existing SaveLockPatternWorker.");
+        if (mSavePatternWorker != null && !mSavePatternWorker.isFinished()) {
+            LOG.v("startSaveAndFinish with a running SavePatternWorker.");
             return;
         }
 
         setPrimaryButtonEnabled(false);
 
-        mSaveLockPatternWorker = new SaveLockPatternWorker();
-        mSaveLockPatternWorker.setListener(this);
-        mSaveLockPatternWorker.start(new LockPatternUtils(this),
-                mChosenPattern, mCurrentPattern, mUserId);
+        if (mSavePatternWorker == null) {
+            mSavePatternWorker = new SavePatternWorker();
+            mSavePatternWorker.setListener(this::onChosenLockSaveFinished);
+
+            getFragmentManager()
+                    .beginTransaction()
+                    .add(mSavePatternWorker, FRAGMENT_TAG_SAVE_PATTERN_WORKER)
+                    .commitNow();
+        }
+
+        mSavePatternWorker.start(mUserId, mChosenPattern, mCurrentPattern);
     }
 
-
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    void onComplete() {
+        if (mIsInSetupWizard) {
+            ((SetupWizardScreenLockActivity) getActivity()).onComplete();
+        } else {
+            getActivity().finish();
+        }
+    }
 }

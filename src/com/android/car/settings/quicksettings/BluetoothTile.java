@@ -24,10 +24,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.View;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.Logger;
 import com.android.settingslib.bluetooth.LocalBluetoothAdapter;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
 
@@ -35,10 +35,11 @@ import com.android.settingslib.bluetooth.LocalBluetoothManager;
  * Controls Bluetooth tile on quick setting page.
  */
 public class BluetoothTile implements QuickSettingGridAdapter.Tile {
-    private static final String TAG = "bluetoothTile";
+    private static final Logger LOG = new Logger(BluetoothTile.class);
     private final Context mContext;
     private final StateChangedListener mStateChangedListener;
     private LocalBluetoothAdapter mLocalAdapter;
+    private LocalBluetoothManager mLocalManager;
 
     @DrawableRes
     private int mIconRes = R.drawable.ic_settings_bluetooth;
@@ -60,7 +61,6 @@ public class BluetoothTile implements QuickSettingGridAdapter.Tile {
                         // TODO show a different status icon?
                     case BluetoothAdapter.STATE_OFF:
                         mIconRes = R.drawable.ic_settings_bluetooth_disabled;
-                        mText = mContext.getString(R.string.bluetooth_disabled);
                         mState = State.OFF;
                         break;
                     default:
@@ -91,25 +91,31 @@ public class BluetoothTile implements QuickSettingGridAdapter.Tile {
         mBtStateChangeFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
         mBtStateChangeFilter.addAction(BluetoothAdapter.ACTION_CONNECTION_STATE_CHANGED);
         mContext.registerReceiver(mBtStateReceiver, mBtStateChangeFilter);
-        LocalBluetoothManager mLocalManager = LocalBluetoothManager.getInstance(
-                mContext, null /* listener */);
+        mLocalManager = LocalBluetoothManager.getInstance(
+                mContext, /* onInitCallback= */ null);
         if (mLocalManager == null) {
-            Log.e(TAG, "Bluetooth is not supported on this device");
-            mIconRes = R.drawable.ic_settings_bluetooth_disabled;
-            mText = mContext.getString(R.string.bluetooth_disabled);
-            mState = State.OFF;
+            LOG.e("Bluetooth is not supported on this device");
             return;
         }
+        mText = mContext.getString(R.string.bluetooth_settings);
         mLocalAdapter = mLocalManager.getBluetoothAdapter();
         if (mLocalAdapter.isEnabled()) {
             mIconRes = R.drawable.ic_settings_bluetooth;
-            mText = mContext.getString(R.string.bluetooth_settings);
             mState = State.ON;
         } else {
             mIconRes = R.drawable.ic_settings_bluetooth_disabled;
-            mText = mContext.getString(R.string.bluetooth_disabled);
             mState = State.OFF;
         }
+    }
+
+    @Nullable
+    public View.OnClickListener getDeepDiveListener() {
+        return null;
+    }
+
+    @Override
+    public boolean isAvailable() {
+        return mLocalManager != null;
     }
 
     @Override
@@ -120,6 +126,7 @@ public class BluetoothTile implements QuickSettingGridAdapter.Tile {
     @Override
     @Nullable
     public String getText() {
+        // TODO: return connected ssid
         return mText;
     }
 

@@ -16,6 +16,9 @@
 
 package com.android.car.settings.common;
 
+import android.annotation.NonNull;
+import android.car.drivingstate.CarUxRestrictions;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
@@ -29,6 +32,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.car.settings.R;
+import com.android.car.settings.quicksettings.QuickSettingFragment;
 
 import java.util.Set;
 
@@ -39,6 +43,10 @@ public abstract class BaseFragment extends Fragment {
     public static final String EXTRA_TITLE_ID = "extra_title_id";
     public static final String EXTRA_LAYOUT = "extra_layout";
     public static final String EXTRA_ACTION_BAR_LAYOUT = "extra_action_bar_layout";
+    /**
+     * For indicating a fragment is running in Setup Wizard
+     */
+    public static final String EXTRA_RUNNING_IN_SETUP_WIZARD = "extra_running_in_setup_wizard";
 
     /**
      * Controls the transition of fragment.
@@ -65,16 +73,63 @@ public abstract class BaseFragment extends Fragment {
     @StringRes
     private int mTitleId;
 
-    protected FragmentController mFragmentController;
+    @NonNull
+    private CarUxRestrictions mCurrentRestrictions;
 
-    public void setFragmentController(FragmentController fragmentController) {
-        mFragmentController = fragmentController;
+    /**
+     * Assume The activity holds this fragment also implements the FragmentController.
+     */
+    public final FragmentController getFragmentController() {
+        return (FragmentController) getActivity();
+    }
+
+    /**
+     * Sets the CarUxRestrictions and update this fragment by calling onUxRestrictionChanged().
+     */
+    void setCarUxRestrictions(@NonNull CarUxRestrictions restrictions) {
+        mCurrentRestrictions = restrictions;
+        onUxRestrictionChanged(restrictions);
     }
 
     protected static Bundle getBundle() {
         Bundle bundle = new Bundle();
         bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar);
         return bundle;
+    }
+
+    /**
+     * Checks if this fragment can be shown or not given the CarUxRestrictions. Default to
+     * {@code false} if UX_RESTRICTIONS_NO_SETUP is set.
+     */
+    protected boolean canBeShown(@NonNull CarUxRestrictions carUxRestrictions) {
+        return !CarUxRestrictionsHelper.isNoSetup(carUxRestrictions);
+    }
+
+    /**
+     * Notifies the fragment with the latest CarUxRestrictions change. Default to quick setting
+     * page when canBeShown() return false, no-op otherwise.
+     */
+    protected void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
+        mCurrentRestrictions = carUxRestrictions;
+        if (!canBeShown(carUxRestrictions)) {
+            getFragmentController().launchFragment(QuickSettingFragment.newInstance());
+        }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (!(getActivity() instanceof FragmentController)) {
+            throw new IllegalArgumentException("Must attach to an FragmentController");
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (mCurrentRestrictions != null) {
+            onUxRestrictionChanged(mCurrentRestrictions);
+        }
     }
 
     @Override
@@ -127,7 +182,7 @@ public abstract class BaseFragment extends Fragment {
         Toolbar toolbar = (Toolbar) actionBar.getCustomView().getParent();
         toolbar.setPadding(0, 0, 0, 0);
         getActivity().findViewById(R.id.action_bar_icon_container).setOnClickListener(
-                v -> mFragmentController.goBack());
+                v -> getFragmentController().goBack());
         TextView titleView = getActivity().findViewById(R.id.title);
         titleView.setText(mTitleId);
     }
