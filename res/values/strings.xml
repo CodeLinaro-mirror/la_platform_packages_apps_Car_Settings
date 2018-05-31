@@ -356,16 +356,16 @@
     <string name="user_switch">Switch</string>
     <!-- Description for user name that is currently in use -->
     <string name="current_user_name">You (%1$s)</string>
-    <!-- User settings details screen title [CHAR LIMIT=25] -->
-    <string name="user_settings_details_title">Profile info</string>
     <!-- User settings label for user name [CHAR LIMIT=25] -->
     <string name="user_name_label">Name</string>
     <!-- User summary to indicate that user is currently not set up [CHAR LIMIT=100] -->
     <string name="user_summary_not_set_up">Not set up</string>
+    <!-- Title for edit user name page [CHAR LIMIT=30] -->
+    <string name="edit_user_name_title">Edit user name</string>
 
     <!-- Title for settings that lead into User and Account information [CHAR LIMIT=35] -->
     <string name="user_and_account_settings_title">Users &amp; accounts</string>
-    <!-- Title for a screen that shows the user and accounts that belong to that user [CHAR LIMIT=25] -->
+    <!-- Title for detailed user information page [CHAR LIMIT=25] -->
     <string name="user_settings_title">User</string>
     <!-- Account settings header for list of added accounts [CHAR LIMIT=40] -->
     <string name="account_list_title">Accounts for <xliff:g id="current_user_name">%1$s</xliff:g></string>
@@ -464,6 +464,8 @@
 
     <!--  Title for screen asking user to enter their existing lock PIN [CHAR LIMIT=30] -->
     <string name="lock_settings_enter_pin">Enter your PIN</string>
+    <!--  Title for screen asking user to enter their existing password [CHAR LIMIT=30] -->
+    <string name="lock_settings_enter_password">Enter your password</string>
     <!-- Description for Choose Lock Pin Screen [CHAR_LIMIT=40] -->
     <string name="choose_lock_pin_message">For security, set a PIN</string>
     <!-- Header on password confirm screen [CHAR LIMIT=40] -->
@@ -478,6 +480,8 @@
     <string name="error_saving_lockpin">Error saving PIN</string>
     <!-- Confirm existing PIN screen error message when the user-entered PIN doesn't match record [CHAR LIMIT=30] -->
     <string name="lockscreen_wrong_pin">Wrong PIN</string>
+    <!-- Confirm existing password screen error message when the user-entered password doesn't match record [CHAR LIMIT=30] -->
+    <string name="lockscreen_wrong_password">Wrong password</string>
     <!-- Description for Choose Lock Password Screen [CHAR_LIMIT=40] -->
     <string name="choose_lock_password_message">For security, set a password</string>
     <!-- Header on password confirm screen [CHAR LIMIT=40] -->
