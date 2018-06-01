@@ -17,6 +17,7 @@
 package com.android.car.settings.accounts;
 
 import android.accounts.Account;
+import android.car.user.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.support.annotation.VisibleForTesting;
@@ -28,7 +29,6 @@ import androidx.car.widget.TextListItem;
 
 import com.android.car.settings.R;
 import com.android.car.settings.users.UserIconProvider;
-import com.android.settingslib.users.UserManagerHelper;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,25 +36,24 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Implementation of {@link ListItemProvider} for {@link UserDetailsFragment}.
+ * Implementation of {@link ListItemProvider} for {@link CurrentUserDetailsFragment}.
  * Creates items that represent the current user and current user's accounts.
  */
 class UserAndAccountItemProvider extends ListItemProvider {
     private final List<ListItem> mItems = new ArrayList<>();
     private final Context mContext;
     private final UserAndAccountClickListener mItemClickListener;
-    private final UserManagerHelper mUserManagerHelper;
+    private final CarUserManagerHelper mCarUserManagerHelper;
     private final AccountManagerHelper mAccountManagerHelper;
     private final UserIconProvider mUserIconProvider;
 
     UserAndAccountItemProvider(Context context, UserAndAccountClickListener itemClickListener,
-            UserManagerHelper userManagerHelper, AccountManagerHelper accountManagerHelper,
-            UserIconProvider userIconProvider) {
+            CarUserManagerHelper carUserManagerHelper, AccountManagerHelper accountManagerHelper) {
         mContext = context;
         mItemClickListener = itemClickListener;
-        mUserManagerHelper = userManagerHelper;
+        mCarUserManagerHelper = carUserManagerHelper;
         mAccountManagerHelper = accountManagerHelper;
-        mUserIconProvider = userIconProvider;
+        mUserIconProvider = new UserIconProvider(mCarUserManagerHelper);
         refreshItems();
     }
 
@@ -74,7 +73,7 @@ class UserAndAccountItemProvider extends ListItemProvider {
     public void refreshItems() {
         mItems.clear();
 
-        UserInfo currUserInfo = mUserManagerHelper.getCurrentProcessUserInfo();
+        UserInfo currUserInfo = mCarUserManagerHelper.getCurrentProcessUserInfo();
 
         // Show current user
         mItems.add(createUserItem(
@@ -86,7 +85,7 @@ class UserAndAccountItemProvider extends ListItemProvider {
         }
 
         // Only add account-related items if the User can Modify Accounts
-        if (mUserManagerHelper.currentProcessCanModifyAccounts()) {
+        if (mCarUserManagerHelper.canCurrentProcessModifyAccounts()) {
             // Add "Account for $User" title for a list of accounts.
             mItems.add(createSubtitleItem(
                     mContext.getString(R.string.account_list_title, currUserInfo.name)));
@@ -115,7 +114,7 @@ class UserAndAccountItemProvider extends ListItemProvider {
         TextListItem item = new TextListItem(mContext);
         item.setPrimaryActionIcon(
                 mUserIconProvider.getUserIcon(userInfo, mContext),
-                false /* useLargeIcon */);
+                /* useLargeIcon= */ false);
         item.setTitle(title);
         item.setOnClickListener(view -> mItemClickListener.onUserClicked(userInfo));
         return item;
@@ -138,7 +137,7 @@ class UserAndAccountItemProvider extends ListItemProvider {
             UserInfo userInfo) {
         TextListItem item = new TextListItem(mContext);
         item.setPrimaryActionIcon(mAccountManagerHelper.getDrawableForType(accountType),
-                false /* useLargeIcon */);
+                /* useLargeIcon= */ false);
         item.setTitle(account.name);
 
         // Set item body = account label.
