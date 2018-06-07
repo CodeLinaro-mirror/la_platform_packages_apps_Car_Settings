@@ -43,7 +43,6 @@ import java.util.List;
 public class AccessPointListAdapter
         extends RecyclerView.Adapter<AccessPointListAdapter.ViewHolder>
         implements PagedListView.ItemCap {
-    private static final String TAG = "AccessPointListAdapter";
     private static final int NETWORK_ROW_TYPE = 1;
     private static final int ADD_NETWORK_ROW_TYPE = 2;
 
@@ -58,7 +57,7 @@ public class AccessPointListAdapter
     private final BaseFragment.FragmentController mFragmentController;
     private final CarWifiManager mCarWifiManager;
     private final WifiManager.ActionListener mConnectionListener;
-    private final boolean mShowAddNetworkRow;
+    private boolean mShowAddNetworkRow;
 
     private List<AccessPoint> mAccessPoints;
 
@@ -66,10 +65,8 @@ public class AccessPointListAdapter
             @NonNull Context context,
             CarWifiManager carWifiManager,
             @NonNull List<AccessPoint> accesssPoints,
-            boolean showAddNetworkRow,
             BaseFragment.FragmentController fragmentController) {
         mContext = context;
-        mShowAddNetworkRow = showAddNetworkRow;
         mFragmentController = fragmentController;
         mCarWifiManager = carWifiManager;
         mAccessPoints = accesssPoints;
@@ -87,6 +84,14 @@ public class AccessPointListAdapter
                         Toast.LENGTH_SHORT).show();
             }
         };
+    }
+
+    /**
+     * Toggles the row that links to add a new network.
+     */
+    public AccessPointListAdapter showAddNetworkRow(boolean show) {
+        mShowAddNetworkRow = show;
+        return this;
     }
 
     public void updateAccessPoints(@NonNull List<AccessPoint> accesssPoints) {

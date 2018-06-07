@@ -29,27 +29,28 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
 import android.os.UserManager;
-import android.util.Log;
 
+import androidx.car.widget.ListItem;
+import androidx.car.widget.ListItemProvider;
+import androidx.car.widget.TextListItem;
+
+import com.android.car.settings.common.Logger;
 import com.android.internal.util.CharSequences;
 import com.android.settingslib.accounts.AuthenticatorHelper;
 
 import libcore.util.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import androidx.car.widget.ListItem;
-import androidx.car.widget.ListItemProvider;
-import androidx.car.widget.TextListItem;
 
 /**
  * Implementation of ListItemProvider for the ChooseAccountFragment.
  */
 class ChooseAccountItemProvider extends ListItemProvider {
-    private static final String TAG = "ChooseAccountItemProvider";
+    private static final Logger LOG = new Logger(ChooseAccountItemProvider.class);
     private static final String AUTHORITIES_FILTER_KEY = "authorities";
 
     private final List<ListItem> mItems = new ArrayList<>();
@@ -106,7 +107,7 @@ class ChooseAccountItemProvider extends ListItemProvider {
             Drawable icon = mAuthenticatorHelper.getDrawableForType(mContext, accountType);
 
             TextListItem item = new TextListItem(mContext);
-            item.setPrimaryActionIcon(icon, false /* useLargeIcon */);
+            item.setPrimaryActionIcon(icon, /* useLargeIcon= */ false);
             item.setTitle(mProviderList.get(i).name.toString());
             item.setOnClickListener(v -> onItemSelected(accountType));
             mItems.add(item);
@@ -156,6 +157,7 @@ class ChooseAccountItemProvider extends ListItemProvider {
                         new ProviderEntry(providerName, accountType));
             }
         }
+        Collections.sort(mProviderList);
     }
 
     private ArrayList<String> getAuthoritiesForAccountType(String type) {
@@ -171,10 +173,8 @@ class ChooseAccountItemProvider extends ListItemProvider {
                     authorities = new ArrayList<String>();
                     mAccountTypeToAuthorities.put(adapterType.accountType, authorities);
                 }
-                if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                    Log.v(TAG, "added authority " + adapterType.authority + " to accountType "
-                            + adapterType.accountType);
-                }
+                LOG.v("added authority " + adapterType.authority + " to accountType "
+                        + adapterType.accountType);
                 authorities.add(adapterType.authority);
             }
         }
@@ -196,9 +196,9 @@ class ChooseAccountItemProvider extends ListItemProvider {
                         desc.packageName, 0 /* flags */, mUserHandle);
                 label = authContext.getResources().getText(desc.labelId);
             } catch (PackageManager.NameNotFoundException e) {
-                Log.w(TAG, "No label name for account type " + accountType);
+                LOG.w("No label name for account type " + accountType);
             } catch (Resources.NotFoundException e) {
-                Log.w(TAG, "No label resource for account type " + accountType);
+                LOG.w("No label resource for account type " + accountType);
             }
         }
         return label;

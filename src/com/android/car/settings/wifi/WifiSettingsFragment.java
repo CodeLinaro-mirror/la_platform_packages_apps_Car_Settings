@@ -36,8 +36,6 @@ import com.android.car.settings.common.CarUxRestrictionsHelper;
  * Main page to host Wifi related preferences.
  */
 public class WifiSettingsFragment extends BaseFragment implements CarWifiManager.Listener {
-    private static final String TAG = "WifiSettingsFragment";
-
     private CarWifiManager mCarWifiManager;
     private AccessPointListAdapter mAdapter;
     private Switch mWifiSwitch;
@@ -47,7 +45,10 @@ public class WifiSettingsFragment extends BaseFragment implements CarWifiManager
     private ViewSwitcher mViewSwitcher;
     private boolean mShowSavedApOnly;
 
-    public static WifiSettingsFragment getInstance() {
+    /**
+     * Gets a new instance of this object.
+     */
+    public static WifiSettingsFragment newInstance() {
         WifiSettingsFragment wifiSettingsFragment = new WifiSettingsFragment();
         Bundle bundle = BaseFragment.getBundle();
         bundle.putInt(EXTRA_TITLE_ID, R.string.wifi_settings);
@@ -68,7 +69,7 @@ public class WifiSettingsFragment extends BaseFragment implements CarWifiManager
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mCarWifiManager = new CarWifiManager(getContext(), this /* listener */);
+        mCarWifiManager = new CarWifiManager(getContext(), /* listener= */ this);
 
         mProgressBar = (ProgressBar) getView().findViewById(R.id.wifi_search_progress);
         mListView = (PagedListView) getView().findViewById(R.id.list);
@@ -87,8 +88,8 @@ public class WifiSettingsFragment extends BaseFragment implements CarWifiManager
                 mShowSavedApOnly
                         ? mCarWifiManager.getSavedAccessPoints()
                         : mCarWifiManager.getAllAccessPoints(),
-                !mShowSavedApOnly,
-                mFragmentController);
+                getFragmentController());
+        mAdapter.showAddNetworkRow(!mShowSavedApOnly);
         mListView.setAdapter(mAdapter);
     }
 
@@ -154,6 +155,7 @@ public class WifiSettingsFragment extends BaseFragment implements CarWifiManager
 
     private void refreshData() {
         if (mAdapter != null) {
+            mAdapter.showAddNetworkRow(!mShowSavedApOnly);
             mAdapter.updateAccessPoints(mShowSavedApOnly
                     ? mCarWifiManager.getSavedAccessPoints()
                     : mCarWifiManager.getAllAccessPoints());

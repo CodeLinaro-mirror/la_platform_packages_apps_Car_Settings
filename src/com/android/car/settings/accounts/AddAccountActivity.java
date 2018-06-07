@@ -24,17 +24,17 @@ import android.accounts.AuthenticatorException;
 import android.accounts.OperationCanceledException;
 import android.app.Activity;
 import android.app.PendingIntent;
+import android.car.user.CarUserManagerHelper;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.android.car.settings.R;
-import com.android.settingslib.users.UserManagerHelper;
+import com.android.car.settings.common.Logger;
 
 import java.io.IOException;
 /**
@@ -63,7 +63,7 @@ public class AddAccountActivity extends Activity {
     private static final String KEY_CALLER_IDENTITY = "pendingIntent";
     private static final String SHOULD_NOT_RESOLVE = "SHOULDN'T RESOLVE!";
 
-    private static final String TAG = "AddAccountSettings";
+    private static final Logger LOG = new Logger(AddAccountActivity.class);
     private static final String ALLOW_SKIP = "allowSkip";
 
     /* package */ static final String EXTRA_SELECTED_ACCOUNT = "selected_account";
@@ -74,7 +74,7 @@ public class AddAccountActivity extends Activity {
     // Need a specific request code for add account activity.
     public static final int ADD_ACCOUNT_REQUEST = 2001;
 
-    private UserManagerHelper mUserManagerHelper;
+    private CarUserManagerHelper mCarUserManagerHelper;
     private UserHandle mUserHandle;
     private PendingIntent mPendingIntent;
     private boolean mAddAccountCalled;
@@ -88,9 +88,7 @@ public class AddAccountActivity extends Activity {
         @Override
         public void run(AccountManagerFuture<Bundle> future) {
             if (!future.isDone()) {
-                if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                    Log.v(TAG, "Account manager future is not done.");
-                }
+                LOG.v("Account manager future is not done.");
                 finish();
             }
             try {
@@ -105,14 +103,9 @@ public class AddAccountActivity extends Activity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivityForResultAsUser(
                         intent, ADD_ACCOUNT_REQUEST, mUserHandle);
-
-                if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                    Log.v(TAG, "account added: " + result);
-                }
+                LOG.v("account added: " + result);
             } catch (OperationCanceledException | IOException | AuthenticatorException e) {
-                if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                    Log.v(TAG, "addAccount error: " + e);
-                }
+                LOG.v("addAccount error: " + e);
             } finally {
                 finish();
             }
@@ -123,9 +116,7 @@ public class AddAccountActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean(KEY_ADD_CALLED, mAddAccountCalled);
-        if (Log.isLoggable(TAG, Log.VERBOSE)) {
-            Log.v(TAG, "saved");
-        }
+        LOG.v("saved");
     }
 
     @Override
@@ -133,12 +124,10 @@ public class AddAccountActivity extends Activity {
         super.onCreate(savedInstanceState);
         if (savedInstanceState != null) {
             mAddAccountCalled = savedInstanceState.getBoolean(KEY_ADD_CALLED);
-            if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                Log.v(TAG, "Restored from previous add account call: " + mAddAccountCalled);
-            }
+            LOG.v("Restored from previous add account call: " + mAddAccountCalled);
         }
 
-        mUserManagerHelper = new UserManagerHelper(getApplicationContext());
+        mCarUserManagerHelper = new CarUserManagerHelper(this);
 
         if (mAddAccountCalled) {
             // We already called add account - maybe the callback was lost.
@@ -146,8 +135,8 @@ public class AddAccountActivity extends Activity {
             return;
         }
 
-        mUserHandle = mUserManagerHelper.getCurrentProcessUserInfo().getUserHandle();
-        if (mUserManagerHelper.currentProcessHasUserRestriction(
+        mUserHandle = mCarUserManagerHelper.getCurrentProcessUserInfo().getUserHandle();
+        if (mCarUserManagerHelper.isCurrentProcessUserHasRestriction(
                 UserManager.DISALLOW_MODIFY_ACCOUNTS)) {
             // We aren't allowed to add an account.
             Toast.makeText(
@@ -189,12 +178,12 @@ public class AddAccountActivity extends Activity {
 
         AccountManager.get(this).addAccountAsUser(
                 accountType,
-                null, /* authTokenType */
-                null, /* requiredFeatures */
+                /* authTokenType= */ null,
+                /* requiredFeatures= */ null,
                 addAccountOptions,
                 null,
                 mCallback,
-                null /* handler */,
+                /* handler= */ null,
                 mUserHandle);
         mAddAccountCalled = true;
     }
