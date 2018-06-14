@@ -18,39 +18,29 @@ package com.android.car.settings.users;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
-
-import com.android.car.settings.R;
 
 import androidx.car.app.CarAlertDialog;
+
+import com.android.car.settings.R;
 
 /**
  * Dialog to confirm user removal.
  */
-public class ConfirmRemoveUserDialog extends DialogFragment implements
-        DialogInterface.OnClickListener {
-    private static final String DIALOG_TAG = "ConfirmRemoveUserDialog";
+public class ConfirmRemoveUserDialog extends DialogFragment {
+    private final DialogInterface.OnClickListener mDeleteUserListener = new OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            if (mListener != null && which == DialogInterface.BUTTON_POSITIVE) {
+                mListener.onRemoveUserConfirmed();
+            }
+            dialog.dismiss();
+        }
+    };
+
     private ConfirmRemoveUserListener mListener;
-
-    /**
-     * Interface for listeners that want to receive a callback when user confirms user removal in a
-     * dialog.
-     */
-    public interface ConfirmRemoveUserListener {
-        void onRemoveUserConfirmed();
-    }
-
-    /**
-     * Shows the dialog.
-     *
-     * @param parent Fragment associated with the dialog.
-     */
-    public void show(Fragment parent) {
-        setTargetFragment(parent, 0);
-        show(parent.getFragmentManager(), DIALOG_TAG);
-    }
 
     /**
      * Sets a listener for OnRemoveUserConfirmed that will get called if user confirms
@@ -67,15 +57,20 @@ public class ConfirmRemoveUserDialog extends DialogFragment implements
         return new CarAlertDialog.Builder(getContext())
             .setTitle(R.string.really_remove_user_title)
             .setBody(R.string.really_remove_user_message)
-            .setPositiveButton(R.string.delete_button, this)
+            .setPositiveButton(R.string.delete_button, mDeleteUserListener)
             .setNegativeButton(android.R.string.cancel, null)
             .create();
     }
 
-    @Override
-    public void onClick(DialogInterface dialog, int which) {
-        if (mListener != null) {
-            mListener.onRemoveUserConfirmed();
-        }
+    /**
+     * Interface for listeners that want to receive a callback when user confirms user removal in a
+     * dialog.
+     */
+    public interface ConfirmRemoveUserListener {
+
+        /**
+         * Method called only when user presses delete button.
+         */
+        void onRemoveUserConfirmed();
     }
 }

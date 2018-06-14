@@ -28,25 +28,28 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.android.car.list.SingleTextLineItem;
-import com.android.car.list.TypedPagedListAdapter;
+import androidx.car.widget.ListItem;
+import androidx.car.widget.ListItemProvider;
+import androidx.car.widget.TextListItem;
+
 import com.android.car.settings.R;
-import com.android.car.settings.common.ListSettingsFragment;
+import com.android.car.settings.common.ListItemSettingsFragment;
+import com.android.car.settings.common.Logger;
 import com.android.settingslib.Utils;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Shows details about an application and action associated with that application,
  * like uninstall, forceStop.
  */
-public class ApplicationDetailFragment extends ListSettingsFragment {
-    private static final String TAG = "AppDetailActivity";
+public class ApplicationDetailFragment extends ListItemSettingsFragment {
+    private static final Logger LOG = new Logger(ApplicationDetailFragment.class);
     public static final String EXTRA_RESOLVE_INFO = "extra_resolve_info";
 
     private ResolveInfo mResolveInfo;
@@ -58,7 +61,7 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
 
     public static ApplicationDetailFragment getInstance(ResolveInfo resolveInfo) {
         ApplicationDetailFragment applicationDetailFragment = new ApplicationDetailFragment();
-        Bundle bundle = ListSettingsFragment.getBundle();
+        Bundle bundle = ListItemSettingsFragment.getBundle();
         bundle.putParcelable(EXTRA_RESOLVE_INFO, resolveInfo);
         bundle.putInt(EXTRA_TITLE_ID, R.string.applications_settings);
         bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
@@ -77,7 +80,7 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
         mPackageInfo = getPackageInfo();
         super.onActivityCreated(savedInstanceState);
         if (mResolveInfo == null) {
-            Log.w(TAG, "No application info set.");
+            LOG.w("No application info set.");
             return;
         }
 
@@ -100,17 +103,23 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
     }
 
     @Override
-    public ArrayList<TypedPagedListAdapter.LineItem> getLineItems() {
-        ArrayList<TypedPagedListAdapter.LineItem> items = new ArrayList<>();
+    public ListItemProvider getItemProvider() {
+        return new ListItemProvider.ListProvider(getListItems());
+    }
+
+    private List<ListItem> getListItems() {
+        ArrayList<ListItem> items = new ArrayList<>();
         items.add(new ApplicationLineItem(
                 getContext(),
                 getContext().getPackageManager(),
                 mResolveInfo,
-                null /* fragmentController */,
+                /* fragmentController= */ null,
                 false));
-        items.add(new ApplicationPermissionLineItem(getContext(), mResolveInfo));
-        items.add(new SingleTextLineItem(getContext().getString(
-                R.string.application_version_label, mPackageInfo.versionName)));
+        items.add(new ApplicationPermissionLineItem(getContext(), mResolveInfo, this));
+        TextListItem versionItem = new TextListItem(getContext());
+        versionItem.setTitle(getContext().getString(
+                R.string.application_version_label, mPackageInfo.versionName));
+        items.add(versionItem);
         return items;
     }
 
@@ -120,7 +129,7 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
             return getContext().getPackageManager().getApplicationInfo(
                     mResolveInfo.activityInfo.packageName, 0 /* flag */);
         } catch (PackageManager.NameNotFoundException e) {
-            Log.e(TAG, "incorrect packagename: " + mResolveInfo.activityInfo.packageName, e);
+            LOG.e("incorrect packagename: " + mResolveInfo.activityInfo.packageName, e);
             throw new IllegalArgumentException(e);
         }
     }
@@ -130,7 +139,7 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
             return getContext().getPackageManager().getPackageInfo(
                     mResolveInfo.activityInfo.packageName, 0 /* flag */);
         } catch (PackageManager.NameNotFoundException e) {
-            Log.e(TAG, "incorrect packagename: " + mResolveInfo.activityInfo.packageName, e);
+            LOG.e("incorrect packagename: " + mResolveInfo.activityInfo.packageName, e);
             throw new IllegalArgumentException(e);
         }
     }
@@ -175,7 +184,7 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
     private void forceStopPackage(String pkgName) {
         ActivityManager am = (ActivityManager) getContext().getSystemService(
                 Context.ACTIVITY_SERVICE);
-        Log.d(TAG, "Stopping package " + pkgName);
+        LOG.d("Stopping package " + pkgName);
         am.forceStopPackage(pkgName);
         updateForceStopButton();
     }
@@ -188,16 +197,12 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
     private void updateForceStopButton() {
         if (mDpm.packageHasActiveAdmins(mResolveInfo.activityInfo.packageName)) {
             // User can't force stop device admin.
-            if (Log.isLoggable(TAG, Log.DEBUG)) {
-                Log.d(TAG, "Disabling button, user can't force stop device admin");
-            }
+            LOG.d("Disabling button, user can't force stop device admin");
             mForceStopButton.setEnabled(false);
         } else if ((getAppInfo().flags & ApplicationInfo.FLAG_STOPPED) == 0) {
             // If the app isn't explicitly stopped, then always show the
             // force stop button.
-            if (Log.isLoggable(TAG, Log.WARN)) {
-                Log.w(TAG, "App is not explicitly stopped");
-            }
+            LOG.w("App is not explicitly stopped");
             mForceStopButton.setEnabled(true);
         } else {
             Intent intent = new Intent(Intent.ACTION_QUERY_PACKAGE_RESTART,
@@ -205,11 +210,8 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
             intent.putExtra(Intent.EXTRA_PACKAGES, new String[]{
                     mResolveInfo.activityInfo.packageName
             });
-
-            if (Log.isLoggable(TAG, Log.DEBUG)) {
-                Log.d(TAG, "Sending broadcast to query restart for "
-                        + mResolveInfo.activityInfo.packageName);
-            }
+            LOG.d("Sending broadcast to query restart for "
+                    + mResolveInfo.activityInfo.packageName);
             getActivity().sendOrderedBroadcastAsUser(intent, UserHandle.CURRENT, null,
                     mCheckKillProcessesReceiver, null, Activity.RESULT_CANCELED, null, null);
         }
@@ -219,11 +221,8 @@ public class ApplicationDetailFragment extends ListSettingsFragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             final boolean enabled = getResultCode() != Activity.RESULT_CANCELED;
-            if (Log.isLoggable(TAG, Log.DEBUG)) {
-                Log.d(TAG,
-                        MessageFormat.format("Got broadcast response: Restart status for {0} {1}",
-                                mResolveInfo.activityInfo.packageName, enabled));
-            }
+            LOG.d(MessageFormat.format("Got broadcast response: Restart status for {0} {1}",
+                    mResolveInfo.activityInfo.packageName, enabled));
             mForceStopButton.setEnabled(enabled);
         }
     };

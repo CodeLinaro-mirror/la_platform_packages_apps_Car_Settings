@@ -29,8 +29,7 @@
     <string name="keywords_display_brightness_level" msgid="3956411572536209195">"dekkja skjá, snertiskjár, rafhlaða"</string>
     <string name="keywords_display_auto_brightness" msgid="2700310050333468752">"dekkja skjá, snertiskjár, rafhlaða"</string>
     <string name="keywords_display_night_display" msgid="2922294576679769957">"myrkva skjá, nótt, litblær"</string>
-    <!-- no translation found for night_mode_tile_label (6603597795502131664) -->
-    <skip />
+    <string name="night_mode_tile_label" msgid="6603597795502131664">"Næturstilling"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi-Fi"</string>
     <string name="wifi_settings_summary" msgid="6095898149997291025">"Setja upp og stjórna þráðlausum aðgangsstöðum"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Kveikir á Wi‑Fi…"</string>
@@ -174,9 +173,9 @@
     <string name="user_guest" msgid="3465399481257448601">"Gestur"</string>
     <string name="user_switch" msgid="6544839750534690781">"Skipta"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Þú (%1$s)"</string>
-    <string name="user_settings_details_title" msgid="3016069827765597036">"Upplýsingar um snið"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Nafn"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Ekki uppsett"</string>
+    <string name="edit_user_name_title" msgid="6890782937520262478">"Breyta notandanafni"</string>
     <string name="user_and_account_settings_title" msgid="1542965868877207832">"Notendur og reikningar"</string>
     <string name="user_settings_title" msgid="5511846421187697406">"Notandi"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Reikningar fyrir <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
@@ -195,18 +194,21 @@
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Allir notendur geta uppfært forrit fyrir alla aðra notendur."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Öryggi"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Skjálás"</string>
+    <string name="security_lock_none" msgid="1054645093754839638">"Enginn"</string>
     <string name="security_lock_pattern" msgid="1174352995619563104">"Mynstur"</string>
-    <string name="security_lock_pin" msgid="7970343656751993936">"Festa"</string>
+    <string name="security_lock_pin" msgid="4891899974369503200">"PIN-númer"</string>
     <string name="security_lock_password" msgid="4420203740048322494">"Aðgangsorð"</string>
     <string name="lock_settings_picker_title" msgid="6590330165050361632">"Velja lásgerð"</string>
     <string name="screen_lock_options" msgid="7023338635352915768">"Valkostir skjálæsingar"</string>
+    <string name="lock_settings_enter_pattern" msgid="4826034565853171624">"Færðu inn mynstrið þitt"</string>
     <string name="lockpattern_confirm_button_text" msgid="7784925958324484965">"Staðfesta"</string>
     <string name="lockpattern_restart_button_text" msgid="9355771277617537">"Teikna aftur"</string>
     <string name="continue_button_text" msgid="5129979170426836641">"Áfram"</string>
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Reyna aftur"</string>
-    <!-- no translation found for lockscreen_skip_button_text (3755748786396198091) -->
-    <skip />
+    <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Sleppa"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Setja upp skjálás"</string>
+    <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Veldu þér mynstur"</string>
+    <string name="current_screen_lock" msgid="637651611145979587">"Núverandi skjálás"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Settu upp mynstur til að gæta fyllsta öryggis"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Hreinsa"</string>
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"Hætta við"</string>
@@ -220,12 +222,18 @@
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Hvernig opnunarmynstur er teiknað"</string>
     <string name="error_saving_lockpattern" msgid="2933512812768570130">"Villa við að vista mynstur"</string>
     <string name="okay" msgid="4589873324439764349">"Í lagi"</string>
+    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Viltu fjarlægja skjálás?"</string>
+    <string name="remove_screen_lock_message" msgid="6675850371585564965">"Þetta gefur hverjum sem er aðgang að reikningnum þínum"</string>
+    <string name="lock_settings_enter_pin" msgid="1669172111244633904">"Sláðu inn PIN-númer"</string>
+    <string name="lock_settings_enter_password" msgid="2636669926649496367">"Sláðu inn aðgangsorðið þitt"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Settu upp PIN-númer til að gæta fyllsta öryggis"</string>
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"Sláðu PIN-númerið inn aftur"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PIN-númer þarf að vera a.m.k. fjórir tölustafir"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"PIN-númerið er ógilt. Það þarf að vera minnst fjórir tölustafir."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"PIN-númerin stemma ekki"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"Villa við að vista PIN-númer"</string>
+    <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"Rangt PIN-númer"</string>
+    <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Rangt aðgangsorð"</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"Settu upp aðgangsorð til að gæta fyllsta öryggis"</string>
     <string name="confirm_your_password_header" msgid="7052891840366724938">"Sláðu aðgangsorðið inn aftur"</string>
     <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"Aðgangsorðin stemma ekki."</string>
@@ -277,8 +285,10 @@
     <string name="cancel" msgid="750286395700355455">"Hætta við"</string>
     <string name="backspace_key" msgid="1545590866688979099">"Bakklykill"</string>
     <string name="enter_key" msgid="2121394305541579468">"Færslulykill"</string>
-    <string name="exit_retail_title" msgid="4514319631081146178">"Loka kynningarútgáfu?"</string>
-    <string name="exit_retail_message" msgid="1426206128187780964">"Til að eyða reikningi kynningarútgáfu og fara úr kynningarstillingu þarf að núllstilla tækið"</string>
+    <string name="exit_retail_button_text" msgid="6093240315583384473">"Hætta í kynningarútgáfu"</string>
+    <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Hætta í kynningarútgáfu"</string>
+    <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Þetta eyðir kynningarreikningnum og núllstillir kerfið. Öll notandagögn glatast."</string>
+    <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Hætta í kynningarútgáfu"</string>
     <string name="suggestion_primary_button" msgid="6421115494714083020">"ljúka við uppsetningu"</string>
     <string name="suggestion_secondary_button" msgid="7075088546904464681">"ekki núna"</string>
     <string name="restricted_while_driving" msgid="478954379611786852">"Aðgerðin er ekki í boði meðan á akstri stendur."</string>

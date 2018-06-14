@@ -14,13 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingTop="@dimen/pin_pad_padding_top"
-    android:layout_gravity="center_horizontal"
-    android:columnCount="3">
-
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Row 1 -->
     <Button
         android:id="@+id/key1"
@@ -87,7 +81,5 @@ limitations under the License.
     <ImageButton
         android:id="@+id/key_enter"
         style="@style/PinPadKey"
-        android:src="@drawable/ic_done"
-        android:tint="@color/car_body3"
         android:contentDescription="@string/enter_key"/>
-</GridLayout>
+</merge>

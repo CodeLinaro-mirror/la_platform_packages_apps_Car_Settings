@@ -29,8 +29,7 @@
     <string name="keywords_display_brightness_level" msgid="3956411572536209195">"zatemnitev zaslona, zaslon na dotik, akumulator"</string>
     <string name="keywords_display_auto_brightness" msgid="2700310050333468752">"zatemnitev zaslona, zaslon na dotik, akumulator"</string>
     <string name="keywords_display_night_display" msgid="2922294576679769957">"zatemnitev zaslona, noč, obarvanje"</string>
-    <!-- no translation found for night_mode_tile_label (6603597795502131664) -->
-    <skip />
+    <string name="night_mode_tile_label" msgid="6603597795502131664">"Nočni način"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi‑Fi"</string>
     <string name="wifi_settings_summary" msgid="6095898149997291025">"Nastavitev in upravljanje brezžičnih dostopnih točk"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Vklapljanje povezave Wi‑Fi …"</string>
@@ -176,9 +175,9 @@
     <string name="user_guest" msgid="3465399481257448601">"Gost"</string>
     <string name="user_switch" msgid="6544839750534690781">"Preklop"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Vi (%1$s)"</string>
-    <string name="user_settings_details_title" msgid="3016069827765597036">"Podatki o profilu"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Ime"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Uporabnik ni nastavljen"</string>
+    <string name="edit_user_name_title" msgid="6890782937520262478">"Urejanje imena uporabnika"</string>
     <string name="user_and_account_settings_title" msgid="1542965868877207832">"Uporabniki in računi"</string>
     <string name="user_settings_title" msgid="5511846421187697406">"Uporabnik"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Računi uporabnika <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
@@ -197,18 +196,21 @@
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Vsak uporabnik lahko posodobi aplikacije za vse druge uporabnike."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Varnost"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Zaklepanje zaslona"</string>
+    <string name="security_lock_none" msgid="1054645093754839638">"Brez"</string>
     <string name="security_lock_pattern" msgid="1174352995619563104">"Vzorec"</string>
-    <string name="security_lock_pin" msgid="7970343656751993936">"Koda PIN"</string>
+    <string name="security_lock_pin" msgid="4891899974369503200">"Koda PIN"</string>
     <string name="security_lock_password" msgid="4420203740048322494">"Geslo"</string>
     <string name="lock_settings_picker_title" msgid="6590330165050361632">"Izbira vrste zaklep."</string>
     <string name="screen_lock_options" msgid="7023338635352915768">"Možnosti zaklepanja zaslona"</string>
+    <string name="lock_settings_enter_pattern" msgid="4826034565853171624">"Vnesite vzorec"</string>
     <string name="lockpattern_confirm_button_text" msgid="7784925958324484965">"Potrdi"</string>
     <string name="lockpattern_restart_button_text" msgid="9355771277617537">"Znova nariši"</string>
     <string name="continue_button_text" msgid="5129979170426836641">"Naprej"</string>
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Znova"</string>
-    <!-- no translation found for lockscreen_skip_button_text (3755748786396198091) -->
-    <skip />
+    <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Preskoči"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Nastavite zaklepanje zaslona"</string>
+    <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Izberite vzorec"</string>
+    <string name="current_screen_lock" msgid="637651611145979587">"Trenutno zaklepanje zaslona"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Nastavite vzorec za večjo varnost"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Počisti"</string>
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"Prekliči"</string>
@@ -222,12 +224,18 @@
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Kako narisati vzorec za odklepanje"</string>
     <string name="error_saving_lockpattern" msgid="2933512812768570130">"Napaka pri shranjevanju vzorca"</string>
     <string name="okay" msgid="4589873324439764349">"V redu"</string>
+    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Želite odstr. zaklep. zaslona?"</string>
+    <string name="remove_screen_lock_message" msgid="6675850371585564965">"S tem bo lahko vsak dostopal do računa"</string>
+    <string name="lock_settings_enter_pin" msgid="1669172111244633904">"Vnesite kodo PIN"</string>
+    <string name="lock_settings_enter_password" msgid="2636669926649496367">"Vnesite geslo"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Zaradi varnosti nastavite kodo PIN"</string>
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"Znova vnesite kodo PIN"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"Koda PIN mora biti najmanj 4-mestna"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"Koda PIN je neveljavna. Vsebovati mora najmanj 4 števke."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"Kodi PIN se ne ujemata"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"Napaka pri shranjevanju kode PIN"</string>
+    <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"Napačna koda PIN"</string>
+    <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Napačno geslo"</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"Zaradi varnosti nastavite geslo"</string>
     <string name="confirm_your_password_header" msgid="7052891840366724938">"Znova vnesite geslo"</string>
     <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"Gesli se ne ujemata"</string>
@@ -291,8 +299,10 @@
     <string name="cancel" msgid="750286395700355455">"Prekliči"</string>
     <string name="backspace_key" msgid="1545590866688979099">"Vračalka"</string>
     <string name="enter_key" msgid="2121394305541579468">"Tipka Enter"</string>
-    <string name="exit_retail_title" msgid="4514319631081146178">"Želite zapreti predstav.?"</string>
-    <string name="exit_retail_message" msgid="1426206128187780964">"Izbris predstav. računa in zapiranje predstav. načina terjata ponastavitev na tovarniške nastavitve"</string>
+    <string name="exit_retail_button_text" msgid="6093240315583384473">"Zapri predstavitev"</string>
+    <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Zapri predstavitveni način"</string>
+    <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"S tem izbrišete predstavitveni račun in ponastavite sistem na tovarniške nastavitve. Vsi uporabniški podatki bodo izgubljeni."</string>
+    <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Zapri predstavitev"</string>
     <string name="suggestion_primary_button" msgid="6421115494714083020">"dokončaj nastavitev"</string>
     <string name="suggestion_secondary_button" msgid="7075088546904464681">"ne zdaj"</string>
     <string name="restricted_while_driving" msgid="478954379611786852">"Dejanje med vožnjo ni na voljo."</string>

@@ -18,31 +18,28 @@ package com.android.car.settings.security;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.CarSettingActivity;
 import com.android.car.settingslib.util.ResultCodes;
 
 /**
  * Entry point Activity for Setup Wizard to set screen lock.
  */
-public class SetupWizardScreenLockActivity extends AppCompatActivity implements
+public class SetupWizardScreenLockActivity extends CarSettingActivity implements
         LockTypeDialogFragment.OnLockSelectListener {
 
-    private BaseFragment.FragmentController mFragmentController =
-            new BaseFragment.FragmentController() {
-                @Override
-                public void launchFragment(BaseFragment fragment) {
-                }
+    @Override
+    public void launchFragment(BaseFragment fragment) {
+    }
 
-                @Override
-                public void goBack() {
-                    setResult(RESULT_CANCELED);
-                    finish();
-                }
-            };
+    @Override
+    public void goBack() {
+        setResult(RESULT_CANCELED);
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +50,6 @@ public class SetupWizardScreenLockActivity extends AppCompatActivity implements
 
         BaseFragment pinFragment = ChooseLockPinPasswordFragment.newPinInstance();
         setFragmentArgs(pinFragment);
-        pinFragment.setFragmentController(mFragmentController);
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -82,6 +78,10 @@ public class SetupWizardScreenLockActivity extends AppCompatActivity implements
         Fragment fragment = null;
 
         switch(position) {
+            case LockTypeDialogFragment.POSITION_NONE:
+                setResult(ResultCodes.RESULT_NONE);
+                finish();
+                break;
             case LockTypeDialogFragment.POSITION_PIN:
                 fragment = ChooseLockPinPasswordFragment.newPinInstance();
                 break;

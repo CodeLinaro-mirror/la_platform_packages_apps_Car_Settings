@@ -28,13 +28,16 @@ ifeq (,$(TARGET_BUILD_APPS))
 
   LOCAL_USE_AAPT2 := true
 
+  LOCAL_JAVA_LIBRARIES += android.car
+
   LOCAL_STATIC_ANDROID_LIBRARIES := \
       android-support-car \
       android-support-v7-preference \
       android-support-v14-preference \
-      car-apps-common \
       car-list \
-      car-settings-lib
+      car-settings-lib \
+      setup-wizard-lib-gingerbread-compat \
+      SettingsLib
 
   LOCAL_RESOURCE_DIR := \
       $(LOCAL_PATH)/res
@@ -53,10 +56,12 @@ ifeq (,$(TARGET_BUILD_APPS))
 
   LOCAL_DX_FLAGS := --multi-dex
 
-  include packages/services/Car/car-support-lib/car-support.mk
-  include frameworks/opt/setupwizard/library/common-gingerbread.mk
-  include frameworks/base/packages/SettingsLib/common.mk
-
+  ifdef DISABLE_AOSP_PHONE_SETTING
+    ifeq ($(DISABLE_AOSP_PHONE_SETTING),true)
+      # This will hide AOSP phone setting.
+      LOCAL_OVERRIDES_PACKAGES := Settings
+    endif
+  endif
   include $(BUILD_PACKAGE)
 endif
 

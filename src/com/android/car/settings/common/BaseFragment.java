@@ -18,6 +18,7 @@ package com.android.car.settings.common;
 
 import android.annotation.NonNull;
 import android.car.drivingstate.CarUxRestrictions;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.StringRes;
@@ -31,7 +32,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.car.settings.R;
-import com.android.car.settings.quicksettings.QuickSettingFragment;
 
 import java.util.Set;
 
@@ -61,6 +61,23 @@ public abstract class BaseFragment extends Fragment {
          * @return {@code false} if there's no stack to pop, {@code true} otherwise
          */
         void goBack();
+
+        /**
+         * Called when a Fragment expects itself to be blocked.
+         */
+        void notifyCurrentFragmentRestricted();
+    }
+
+    /**
+     * Provides current CarUxRestrictions.
+     */
+    public interface UXRestrictionsProvider {
+
+        /**
+         * Fetches current CarUxRestrictions
+         */
+        @NonNull
+        CarUxRestrictions getCarUxRestrictions();
     }
 
     @LayoutRes
@@ -72,21 +89,20 @@ public abstract class BaseFragment extends Fragment {
     @StringRes
     private int mTitleId;
 
-    protected FragmentController mFragmentController;
-
-    @NonNull
-    private CarUxRestrictions mCurrentRestrictions;
-
-    public final void setFragmentController(FragmentController fragmentController) {
-        mFragmentController = fragmentController;
+    /**
+     * Assume The activity holds this fragment also implements the FragmentController.
+     * This function should be called after onAttach()
+     */
+    public final FragmentController getFragmentController() {
+        return (FragmentController) getActivity();
     }
 
     /**
-     * Sets the CarUxRestrictions and update this fragment by calling onUxRestrictionChanged().
+     * Assume The activity holds this fragment also implements the UXRestrictionsProvider.
+     * This function should be called after onAttach()
      */
-    void setCarUxRestrictions(@NonNull CarUxRestrictions restrictions) {
-        mCurrentRestrictions = restrictions;
-        onUxRestrictionChanged(restrictions);
+    protected final CarUxRestrictions getCurrentRestrictions() {
+        return ((UXRestrictionsProvider) getActivity()).getCarUxRestrictions();
     }
 
     protected static Bundle getBundle() {
@@ -108,17 +124,19 @@ public abstract class BaseFragment extends Fragment {
      * page when canBeShown() return false, no-op otherwise.
      */
     protected void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
-        mCurrentRestrictions = carUxRestrictions;
-        if (!canBeShown(carUxRestrictions)) {
-            mFragmentController.launchFragment(QuickSettingFragment.newInstance());
+        if (!canBeShown(getCurrentRestrictions())) {
+            getFragmentController().notifyCurrentFragmentRestricted();
         }
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
-        if (mCurrentRestrictions != null) {
-            onUxRestrictionChanged(mCurrentRestrictions);
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (!(getActivity() instanceof FragmentController)) {
+            throw new IllegalArgumentException("Must attach to an FragmentController");
+        }
+        if (!(getActivity() instanceof UXRestrictionsProvider)) {
+            throw new IllegalArgumentException("Must attach to an UXRestrictionsProvider");
         }
     }
 
@@ -140,6 +158,17 @@ public abstract class BaseFragment extends Fragment {
             mTitleId = getArguments().getInt(EXTRA_TITLE_ID);
         } else {
             throw new IllegalArgumentException("must specify a title");
+        }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        CarUxRestrictions carUxRestrictions = getCurrentRestrictions();
+        if (!canBeShown(carUxRestrictions)) {
+            getFragmentController().notifyCurrentFragmentRestricted();
+        } else {
+            onUxRestrictionChanged(carUxRestrictions);
         }
     }
 
@@ -172,7 +201,7 @@ public abstract class BaseFragment extends Fragment {
         Toolbar toolbar = (Toolbar) actionBar.getCustomView().getParent();
         toolbar.setPadding(0, 0, 0, 0);
         getActivity().findViewById(R.id.action_bar_icon_container).setOnClickListener(
-                v -> mFragmentController.goBack());
+                v -> getFragmentController().goBack());
         TextView titleView = getActivity().findViewById(R.id.title);
         titleView.setText(mTitleId);
     }

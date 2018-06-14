@@ -29,8 +29,7 @@
     <string name="keywords_display_brightness_level" msgid="3956411572536209195">"aptumšot ekrānu, skārienekrāns, akumulators"</string>
     <string name="keywords_display_auto_brightness" msgid="2700310050333468752">"aptumšot ekrānu, skārienekrāns, akumulators"</string>
     <string name="keywords_display_night_display" msgid="2922294576679769957">"aptumšot ekrānu, nakts, tonējums"</string>
-    <!-- no translation found for night_mode_tile_label (6603597795502131664) -->
-    <skip />
+    <string name="night_mode_tile_label" msgid="6603597795502131664">"Nakts režīms"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi-Fi"</string>
     <string name="wifi_settings_summary" msgid="6095898149997291025">"Iestatīt un pārvaldīt bezvadu piekļuves punktu"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Notiek Wi-Fi ieslēgšana…"</string>
@@ -175,9 +174,9 @@
     <string name="user_guest" msgid="3465399481257448601">"Viesis"</string>
     <string name="user_switch" msgid="6544839750534690781">"Pārslēgt"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Jūs (%1$s)"</string>
-    <string name="user_settings_details_title" msgid="3016069827765597036">"Profila informācija"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Vārds"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Nav iestatīts"</string>
+    <string name="edit_user_name_title" msgid="6890782937520262478">"Lietotāja vārda rediģēšana"</string>
     <string name="user_and_account_settings_title" msgid="1542965868877207832">"Lietotāji un konti"</string>
     <string name="user_settings_title" msgid="5511846421187697406">"Lietotājs"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Lietotāja <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g> konti"</string>
@@ -196,18 +195,21 @@
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Ikviens lietotājs var atjaunināt lietotnes citu lietotāju vietā."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Drošība"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Ekrāna bloķēšana"</string>
+    <string name="security_lock_none" msgid="1054645093754839638">"Nav"</string>
     <string name="security_lock_pattern" msgid="1174352995619563104">"Kombinācija"</string>
-    <string name="security_lock_pin" msgid="7970343656751993936">"PIN"</string>
+    <string name="security_lock_pin" msgid="4891899974369503200">"PIN"</string>
     <string name="security_lock_password" msgid="4420203740048322494">"Parole"</string>
     <string name="lock_settings_picker_title" msgid="6590330165050361632">"Bloķēšanas veids"</string>
     <string name="screen_lock_options" msgid="7023338635352915768">"Ekrāna bloķēšanas opcijas"</string>
+    <string name="lock_settings_enter_pattern" msgid="4826034565853171624">"Ievadiet savu kombināciju"</string>
     <string name="lockpattern_confirm_button_text" msgid="7784925958324484965">"Apstiprināt"</string>
     <string name="lockpattern_restart_button_text" msgid="9355771277617537">"Atkārtoti zīmēt"</string>
     <string name="continue_button_text" msgid="5129979170426836641">"Turpināt"</string>
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Mēģināt vēlreiz"</string>
-    <!-- no translation found for lockscreen_skip_button_text (3755748786396198091) -->
-    <skip />
+    <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Izlaist"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Ekrāna bloķēšanas iestatīšana"</string>
+    <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Kombinācijas izvēle"</string>
+    <string name="current_screen_lock" msgid="637651611145979587">"Pašreizējais ekrāna bloķēšanas veids"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Drošības nolūkos iestatiet kombināciju."</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Notīrīt"</string>
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"Atcelt"</string>
@@ -221,12 +223,18 @@
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Kā zīmēt atbloķēšanas kombināciju"</string>
     <string name="error_saving_lockpattern" msgid="2933512812768570130">"Saglabājot kombināciju, radās kļūda."</string>
     <string name="okay" msgid="4589873324439764349">"Labi"</string>
+    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Vai noņemt ekrāna bloķēšanu?"</string>
+    <string name="remove_screen_lock_message" msgid="6675850371585564965">"Tādējādi ikviens varēs piekļūt jūsu kontam."</string>
+    <string name="lock_settings_enter_pin" msgid="1669172111244633904">"PIN ievade"</string>
+    <string name="lock_settings_enter_password" msgid="2636669926649496367">"Ievadiet savu paroli"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Drošības nolūkos iestatiet PIN."</string>
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"Atkārtota PIN koda ievade"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PIN kodā ir jābūt vismaz 4 cipariem."</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"PIN nav derīgs. Tajā ir jābūt vismaz 4 cipariem."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"PIN kodi nav vienādi"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"Saglabājot PIN, radās kļūda."</string>
+    <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"Nepareizs PIN"</string>
+    <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Nepareiza parole"</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"Drošības nolūkos iestatiet paroli."</string>
     <string name="confirm_your_password_header" msgid="7052891840366724938">"Atkārtota paroles ievade"</string>
     <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"Paroles nav vienādas"</string>
@@ -284,8 +292,10 @@
     <string name="cancel" msgid="750286395700355455">"Atcelt"</string>
     <string name="backspace_key" msgid="1545590866688979099">"Atkāpšanās taustiņš"</string>
     <string name="enter_key" msgid="2121394305541579468">"Ievadīšanas taustiņš"</string>
-    <string name="exit_retail_title" msgid="4514319631081146178">"Vai iziet no dem. režīma?"</string>
-    <string name="exit_retail_message" msgid="1426206128187780964">"Lai dzēstu demonstrācijas kontu un izietu no demonstrācijas režīma, jāatiestata rūpnīcas dati."</string>
+    <string name="exit_retail_button_text" msgid="6093240315583384473">"Iziet no demonstr. režīma"</string>
+    <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Iziešana no demonstr. režīma"</string>
+    <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Tādējādi tiks dzēsts demonstrācijas konts un sistēmā tiks atiestatīti rūpnīcas dati. Visi lietotāja dati tiks zaudēti."</string>
+    <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Iziet no demonstr. režīma"</string>
     <string name="suggestion_primary_button" msgid="6421115494714083020">"pabeigt iestatīšanu"</string>
     <string name="suggestion_secondary_button" msgid="7075088546904464681">"vēlāk"</string>
     <string name="restricted_while_driving" msgid="478954379611786852">"Darbība nav pieejama braukšanas laikā."</string>

@@ -21,20 +21,24 @@ import static com.android.car.settings.home.ExtraSettingsLoader.PERSONAL_CATEGOR
 import static com.android.car.settings.home.ExtraSettingsLoader.WIRELESS_CATEGORY;
 
 import android.bluetooth.BluetoothAdapter;
+import android.car.user.CarUserManagerHelper;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 
+import com.android.car.list.LaunchAppLineItem;
 import com.android.car.list.TypedPagedListAdapter;
 import com.android.car.settings.R;
+import com.android.car.settings.accounts.AccountsListFragment;
 import com.android.car.settings.applications.ApplicationSettingsFragment;
 import com.android.car.settings.common.ListSettingsFragment;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.datetime.DatetimeSettingsFragment;
 import com.android.car.settings.display.DisplaySettingsFragment;
-import com.android.car.settings.security.ChooseLockTypeFragment;
+import com.android.car.settings.security.SettingsScreenLockActivity;
 import com.android.car.settings.sound.SoundSettingsFragment;
 import com.android.car.settings.suggestions.SettingsSuggestionsController;
 import com.android.car.settings.system.SystemSettingsFragment;
@@ -57,6 +61,7 @@ public class HomepageFragment extends ListSettingsFragment implements
     private CarWifiManager mCarWifiManager;
     private WifiLineItem mWifiLineItem;
     private BluetoothLineItem mBluetoothLineItem;
+    private CarUserManagerHelper mCarUserManagerHelper;
     // This tracks the number of suggestions currently shown in the fragment. This is based off of
     // the assumption that suggestions are 0 through (num suggestions - 1) in the adapter. Do not
     // change this assumption without updating the code in onSuggestionLoaded.
@@ -101,10 +106,14 @@ public class HomepageFragment extends ListSettingsFragment implements
                 new SettingsSuggestionsController(
                         getContext(),
                         getLoaderManager(),
-                        this /* listener */);
-        mCarWifiManager = new CarWifiManager(getContext(), this /* listener */);
-        mWifiLineItem = new WifiLineItem(getContext(), mCarWifiManager, mFragmentController);
-        mBluetoothLineItem = new BluetoothLineItem(getContext(), mFragmentController);
+                        /* listener= */ this);
+        mCarWifiManager = new CarWifiManager(getContext(), /* listener= */ this);
+        mWifiLineItem = new WifiLineItem(getContext(), mCarWifiManager, getFragmentController());
+        mBluetoothLineItem = new BluetoothLineItem(getContext(), getFragmentController());
+        mCarUserManagerHelper = new CarUserManagerHelper(getContext());
+
+        // reset the suggestion count.
+        mNumSettingsSuggestions = 0;
 
         // Call super after the wifiLineItem and BluetoothLineItem are setup, because
         // those are needed in super.onCreate().
@@ -154,15 +163,15 @@ public class HomepageFragment extends ListSettingsFragment implements
                 R.drawable.ic_settings_display,
                 getContext(),
                 null,
-                DisplaySettingsFragment.getInstance(),
-                mFragmentController));
+                DisplaySettingsFragment.newInstance(),
+                getFragmentController()));
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.sound_settings,
                 R.drawable.ic_settings_sound,
                 getContext(),
                 null,
-                SoundSettingsFragment.getInstance(),
-                mFragmentController));
+                SoundSettingsFragment.newInstance(),
+                getFragmentController()));
         lineItems.add(mWifiLineItem);
         lineItems.addAll(extraSettings.get(WIRELESS_CATEGORY));
         lineItems.add(mBluetoothLineItem);
@@ -171,36 +180,47 @@ public class HomepageFragment extends ListSettingsFragment implements
                 R.drawable.ic_settings_applications,
                 getContext(),
                 null,
-                ApplicationSettingsFragment.getInstance(),
-                mFragmentController));
+                ApplicationSettingsFragment.newInstance(),
+                getFragmentController()));
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.date_and_time_settings_title,
                 R.drawable.ic_settings_date_time,
                 getContext(),
                 null,
                 DatetimeSettingsFragment.getInstance(),
-                mFragmentController));
+                getFragmentController()));
         lineItems.add(new SimpleIconTransitionLineItem(
-                R.string.user_and_account_settings_title,
+                R.string.users_list_title,
                 R.drawable.ic_user,
                 getContext(),
                 null,
                 UsersListFragment.newInstance(),
-                mFragmentController));
-        lineItems.add(new SimpleIconTransitionLineItem(
-                R.string.security_settings_title,
-                R.drawable.ic_lock,
-                getContext(),
-                null,
-                ChooseLockTypeFragment.newInstance(),
-                mFragmentController));
+                getFragmentController()));
+
+        // Guest users can't set screen locks or add/remove accounts.
+        if (!mCarUserManagerHelper.isCurrentProcessGuestUser()) {
+            lineItems.add(new SimpleIconTransitionLineItem(
+                    R.string.accounts_settings_title,
+                    R.drawable.ic_account,
+                    getContext(),
+                    null,
+                    AccountsListFragment.newInstance(),
+                    getFragmentController()));
+            lineItems.add(new LaunchAppLineItem(
+                    getString(R.string.security_settings_title),
+                    Icon.createWithResource(getContext(), R.drawable.ic_lock),
+                    getContext(),
+                    null,
+                    new Intent(getContext(), SettingsScreenLockActivity.class)));
+        }
+
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.system_setting_title,
                 R.drawable.ic_settings_about,
                 getContext(),
                 null,
                 SystemSettingsFragment.getInstance(),
-                mFragmentController));
+                getFragmentController()));
 
         lineItems.addAll(extraSettings.get(DEVICE_CATEGORY));
         lineItems.addAll(extraSettings.get(PERSONAL_CATEGORY));

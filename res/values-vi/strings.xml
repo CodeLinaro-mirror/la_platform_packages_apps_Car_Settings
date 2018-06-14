@@ -24,13 +24,12 @@
     <string name="brightness" msgid="2919605130898772866">"Độ sáng"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Độ sáng thích ứng"</string>
     <string name="auto_brightness_summary" msgid="4741887033140384352">"Tối ưu hóa độ sáng cho ánh sáng có sẵn"</string>
-    <string name="condition_night_display_title" msgid="3777509730126972675">"Đèn đọc sách được bật"</string>
+    <string name="condition_night_display_title" msgid="3777509730126972675">"Chế độ ánh sáng ban đêm đang bật"</string>
     <string name="keywords_display" msgid="3978416985146943922">"màn hình, màn hình cảm ứng"</string>
     <string name="keywords_display_brightness_level" msgid="3956411572536209195">"màn hình mờ, màn hình cảm ứng, pin"</string>
     <string name="keywords_display_auto_brightness" msgid="2700310050333468752">"màn hình mờ, màn hình cảm ứng, pin"</string>
     <string name="keywords_display_night_display" msgid="2922294576679769957">"làm mờ màn hình, ban đêm, phủ màu"</string>
-    <!-- no translation found for night_mode_tile_label (6603597795502131664) -->
-    <skip />
+    <string name="night_mode_tile_label" msgid="6603597795502131664">"Chế độ ban đêm"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi‑Fi"</string>
     <string name="wifi_settings_summary" msgid="6095898149997291025">"Thiết lập và quản lý điểm truy cập không dây"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Đang bật Wi‑Fi…"</string>
@@ -174,9 +173,9 @@
     <string name="user_guest" msgid="3465399481257448601">"Khách"</string>
     <string name="user_switch" msgid="6544839750534690781">"Nút chuyển"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Bạn (%1$s)"</string>
-    <string name="user_settings_details_title" msgid="3016069827765597036">"Thông tin hồ sơ"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Tên"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Chưa thiết lập"</string>
+    <string name="edit_user_name_title" msgid="6890782937520262478">"Chỉnh sửa tên người dùng"</string>
     <string name="user_and_account_settings_title" msgid="1542965868877207832">"Người dùng và tài khoản"</string>
     <string name="user_settings_title" msgid="5511846421187697406">"Người dùng"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Tài khoản cho <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
@@ -195,18 +194,21 @@
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Bất kỳ người dùng nào cũng có thể cập nhật ứng dụng cho tất cả những người dùng khác."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Bảo mật"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Khóa màn hình"</string>
+    <string name="security_lock_none" msgid="1054645093754839638">"Không"</string>
     <string name="security_lock_pattern" msgid="1174352995619563104">"Hình mở khóa"</string>
-    <string name="security_lock_pin" msgid="7970343656751993936">"Ghim"</string>
+    <string name="security_lock_pin" msgid="4891899974369503200">"Mã PIN"</string>
     <string name="security_lock_password" msgid="4420203740048322494">"Mật khẩu"</string>
     <string name="lock_settings_picker_title" msgid="6590330165050361632">"Chọn một cách khóa"</string>
     <string name="screen_lock_options" msgid="7023338635352915768">"Tùy chọn khóa màn hình"</string>
+    <string name="lock_settings_enter_pattern" msgid="4826034565853171624">"Nhập hình mở khóa của bạn"</string>
     <string name="lockpattern_confirm_button_text" msgid="7784925958324484965">"Xác nhận"</string>
     <string name="lockpattern_restart_button_text" msgid="9355771277617537">"Vẽ lại"</string>
     <string name="continue_button_text" msgid="5129979170426836641">"Tiếp tục"</string>
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Thử lại"</string>
-    <!-- no translation found for lockscreen_skip_button_text (3755748786396198091) -->
-    <skip />
+    <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Bỏ qua"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Đặt khóa màn hình"</string>
+    <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Chọn hình mở khóa của bạn"</string>
+    <string name="current_screen_lock" msgid="637651611145979587">"Khóa màn hình hiện tại"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Để bảo mật, hãy đặt hình mở khóa"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Xóa"</string>
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"Hủy"</string>
@@ -220,12 +222,18 @@
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Cách vẽ hình mở khóa"</string>
     <string name="error_saving_lockpattern" msgid="2933512812768570130">"Lỗi khi lưu mẫu"</string>
     <string name="okay" msgid="4589873324439764349">"OK"</string>
+    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Xóa khóa màn hình?"</string>
+    <string name="remove_screen_lock_message" msgid="6675850371585564965">"Thao tác này sẽ cho phép bất cứ ai truy cập vào tài khoản của bạn"</string>
+    <string name="lock_settings_enter_pin" msgid="1669172111244633904">"Nhập mã PIN của bạn"</string>
+    <string name="lock_settings_enter_password" msgid="2636669926649496367">"Nhập mật khẩu của bạn"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Để bảo mật, hãy đặt mã PIN"</string>
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"Nhập lại mã PIN của bạn"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PIN phải có ít nhất 4 chữ số"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"Mã PIN không hợp lệ. Mã này phải có ít nhất 4 chữ số."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"Các mã PIN không khớp"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"Lỗi khi lưu mã PIN"</string>
+    <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"Mã PIN sai"</string>
+    <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Mật khẩu sai"</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"Để bảo mật, hãy đặt mật khẩu"</string>
     <string name="confirm_your_password_header" msgid="7052891840366724938">"Nhập lại mật khẩu của bạn"</string>
     <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"Mật khẩu không khớp"</string>
@@ -277,8 +285,10 @@
     <string name="cancel" msgid="750286395700355455">"Hủy"</string>
     <string name="backspace_key" msgid="1545590866688979099">"Phím xóa lùi (Backspace)"</string>
     <string name="enter_key" msgid="2121394305541579468">"Phím Enter"</string>
-    <string name="exit_retail_title" msgid="4514319631081146178">"Thoát chế độ demo?"</string>
-    <string name="exit_retail_message" msgid="1426206128187780964">"Để xóa tài khoản demo và thoát khỏi chế độ demo, bạn cần khôi phục cài đặt gốc"</string>
+    <string name="exit_retail_button_text" msgid="6093240315583384473">"Thoát chế độ demo"</string>
+    <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Thoát chế độ demo"</string>
+    <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Thao tác này sẽ xóa tài khoản demo và thiết lập lại dữ liệu ban đầu cho hệ thống. Tất cả dữ liệu người dùng sẽ bị mất."</string>
+    <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Thoát chế độ demo"</string>
     <string name="suggestion_primary_button" msgid="6421115494714083020">"hoàn tất thiết lập"</string>
     <string name="suggestion_secondary_button" msgid="7075088546904464681">"để sau"</string>
     <string name="restricted_while_driving" msgid="478954379611786852">"Bạn không thể thực hiện hành động này trong khi lái xe."</string>
