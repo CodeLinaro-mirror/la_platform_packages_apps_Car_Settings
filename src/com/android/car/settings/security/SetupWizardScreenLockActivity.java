@@ -18,18 +18,18 @@ package com.android.car.settings.security;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.CarSettingActivity;
 import com.android.car.settingslib.util.ResultCodes;
 
 /**
  * Entry point Activity for Setup Wizard to set screen lock.
  */
-public class SetupWizardScreenLockActivity extends AppCompatActivity implements
-        LockTypeDialogFragment.OnLockSelectListener, BaseFragment.FragmentController {
+public class SetupWizardScreenLockActivity extends CarSettingActivity implements
+        LockTypeDialogFragment.OnLockSelectListener {
 
     @Override
     public void launchFragment(BaseFragment fragment) {
