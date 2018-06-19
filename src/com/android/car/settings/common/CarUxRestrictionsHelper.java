@@ -25,24 +25,23 @@ import android.content.Context;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 /**
- * Class that helps registering {@link CarUxRestrictionsManager.onUxRestrictionsChangedListener} and
+ * Class that helps registering {@link CarUxRestrictionsManager.OnUxRestrictionsChangedListener} and
  * managing car connection.
  */
 public class CarUxRestrictionsHelper {
-    private static final String TAG = "CarUxRestrictionsHelper";
+    private static final Logger LOG = new Logger(CarUxRestrictionsHelper.class);
 
     // mCar is created in the constructor, but can be null if connection to the car is not
     // successful.
     @Nullable private final Car mCar;
     @Nullable private CarUxRestrictionsManager mCarUxRestrictionsManager;
 
-    private final CarUxRestrictionsManager.onUxRestrictionsChangedListener mListener;
+    private final CarUxRestrictionsManager.OnUxRestrictionsChangedListener mListener;
 
     public CarUxRestrictionsHelper(Context context,
-            CarUxRestrictionsManager.onUxRestrictionsChangedListener listener) {
+            CarUxRestrictionsManager.OnUxRestrictionsChangedListener listener) {
         if (listener == null) {
             throw new IllegalArgumentException("Listener cannot be null.");
         }
@@ -65,7 +64,7 @@ public class CarUxRestrictionsHelper {
             }
         } catch (IllegalStateException e) {
             // Do nothing.
-            Log.w(TAG, "start(); cannot connect to Car");
+            LOG.w("start(); cannot connect to Car");
         }
     }
 
@@ -82,7 +81,7 @@ public class CarUxRestrictionsHelper {
             }
         } catch (IllegalStateException e) {
             // Do nothing.
-            Log.w(TAG, "stop(); cannot disconnect from Car");
+            LOG.w("stop(); cannot disconnect from Car");
         }
     }
 

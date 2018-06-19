@@ -11,12 +11,13 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License
+ * limitations under the License.
  */
 
 package com.android.car.settings.accounts;
 
 import android.accounts.Account;
+import android.car.user.CarUserManagerHelper;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -27,34 +28,31 @@ import androidx.car.widget.ListItemProvider;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.ListItemSettingsFragment;
-import com.android.car.settings.users.EditUsernameFragment;
-import com.android.car.settings.users.UserIconProvider;
 import com.android.settingslib.accounts.AuthenticatorHelper;
-import com.android.settingslib.users.UserManagerHelper;
 
 /**
  * Shows current user and the accounts that belong to the user.
  */
-public class UserDetailsFragment extends ListItemSettingsFragment
+public class AccountsListFragment extends ListItemSettingsFragment
         implements AuthenticatorHelper.OnAccountsUpdateListener,
-        UserManagerHelper.OnUsersUpdateListener,
-        UserAndAccountItemProvider.UserAndAccountClickListener {
-    private static final String TAG = "UserAndAccountSettings";
-
-    private UserAndAccountItemProvider mItemProvider;
+        CarUserManagerHelper.OnUsersUpdateListener,
+        AccountsItemProvider.AccountClickListener {
+    private AccountsItemProvider mItemProvider;
     private AccountManagerHelper mAccountManagerHelper;
-    private UserManagerHelper mUserManagerHelper;
-    private UserIconProvider mUserIconProvider;
+    private CarUserManagerHelper mCarUserManagerHelper;
 
     private Button mAddAccountButton;
 
-    public static UserDetailsFragment newInstance() {
-        UserDetailsFragment userDetailsFragment = new UserDetailsFragment();
+    /**
+     * Creates new instance of CurrentUserDetailsFragment.
+     */
+    public static AccountsListFragment newInstance() {
+        AccountsListFragment accountsFragment = new AccountsListFragment();
         Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.user_settings_title);
+        bundle.putInt(EXTRA_TITLE_ID, R.string.accounts_settings_title);
         bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        userDetailsFragment.setArguments(bundle);
-        return userDetailsFragment;
+        accountsFragment.setArguments(bundle);
+        return accountsFragment;
     }
 
     @Override
@@ -62,20 +60,19 @@ public class UserDetailsFragment extends ListItemSettingsFragment
         mAccountManagerHelper = new AccountManagerHelper(getContext(), this);
         mAccountManagerHelper.startListeningToAccountUpdates();
 
-        mUserManagerHelper = new UserManagerHelper(getContext());
-        mUserIconProvider = new UserIconProvider(mUserManagerHelper);
-        mItemProvider = new UserAndAccountItemProvider(getContext(), this,
-                mUserManagerHelper, mAccountManagerHelper, mUserIconProvider);
+        mCarUserManagerHelper = new CarUserManagerHelper(getContext());
+        mItemProvider = new AccountsItemProvider(getContext(), this,
+                mCarUserManagerHelper, mAccountManagerHelper);
 
         // Register to receive changes to the users.
-        mUserManagerHelper.registerOnUsersUpdateListener(this);
+        mCarUserManagerHelper.registerOnUsersUpdateListener(this);
 
         // Super class's onActivityCreated need to be called after mContext is initialized.
         // Because getLineItems is called in there.
         super.onActivityCreated(savedInstanceState);
 
         mAddAccountButton = (Button) getActivity().findViewById(R.id.action_button1);
-        if (mUserManagerHelper.currentProcessCanModifyAccounts()) {
+        if (mCarUserManagerHelper.canCurrentProcessModifyAccounts()) {
             mAddAccountButton.setText(R.string.user_add_account_menu);
             mAddAccountButton.setOnClickListener(v -> onAddAccountClicked());
         } else {
@@ -86,7 +83,7 @@ public class UserDetailsFragment extends ListItemSettingsFragment
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mUserManagerHelper.unregisterOnUsersUpdateListener();
+        mCarUserManagerHelper.unregisterOnUsersUpdateListener();
         mAccountManagerHelper.stopListeningToAccountUpdates();
 
         // The action button may be hidden at some point, so make it visible again
@@ -101,11 +98,6 @@ public class UserDetailsFragment extends ListItemSettingsFragment
     @Override
     public void onUsersUpdate() {
         refreshListItems();
-    }
-
-    @Override
-    public void onUserClicked(UserInfo userInfo) {
-        getFragmentController().launchFragment(EditUsernameFragment.getInstance(userInfo));
     }
 
     @Override

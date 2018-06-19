@@ -17,6 +17,7 @@
 package com.android.car.settings.users;
 
 import android.car.drivingstate.CarUxRestrictions;
+import android.car.user.CarUserManagerHelper;
 import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.os.AsyncTask;
@@ -28,24 +29,22 @@ import android.widget.ProgressBar;
 import androidx.car.widget.ListItemProvider;
 
 import com.android.car.settings.R;
-import com.android.car.settings.accounts.UserDetailsFragment;
 import com.android.car.settings.common.ListItemSettingsFragment;
-import com.android.settingslib.users.UserManagerHelper;
 
 /**
  * Lists all Users available on this device.
  */
 public class UsersListFragment extends ListItemSettingsFragment
-        implements UserManagerHelper.OnUsersUpdateListener,
+        implements CarUserManagerHelper.OnUsersUpdateListener,
         UsersItemProvider.UserClickListener,
         ConfirmCreateNewUserDialog.ConfirmCreateNewUserListener,
-        ConfirmExitRetailModeDialog.ConfirmExitRetailModeListener {
+        ConfirmExitRetailModeDialog.ConfirmExitRetailModeListener,
+        AddNewUserTask.AddNewUserListener {
     private static final String FACTORY_RESET_PACKAGE_NAME = "android";
     private static final String FACTORY_RESET_REASON = "ExitRetailModeConfirmed";
-    private static final String TAG = "UsersListFragment";
 
     private UsersItemProvider mItemProvider;
-    private UserManagerHelper mUserManagerHelper;
+    private CarUserManagerHelper mCarUserManagerHelper;
 
     private ProgressBar mProgressBar;
     private Button mAddUserButton;
@@ -55,7 +54,7 @@ public class UsersListFragment extends ListItemSettingsFragment
     public static UsersListFragment newInstance() {
         UsersListFragment usersListFragment = new UsersListFragment();
         Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.user_and_account_settings_title);
+        bundle.putInt(EXTRA_TITLE_ID, R.string.users_list_title);
         bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
         usersListFragment.setArguments(bundle);
         return usersListFragment;
@@ -63,12 +62,12 @@ public class UsersListFragment extends ListItemSettingsFragment
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        mUserManagerHelper = new UserManagerHelper(getContext());
+        mCarUserManagerHelper = new CarUserManagerHelper(getContext());
         mItemProvider =
-                new UsersItemProvider(getContext(), this, mUserManagerHelper);
+                new UsersItemProvider(getContext(), this, mCarUserManagerHelper);
 
         // Register to receive changes to the users.
-        mUserManagerHelper.registerOnUsersUpdateListener(this);
+        mCarUserManagerHelper.registerOnUsersUpdateListener(this);
 
         // Super class's onActivityCreated need to be called after itemProvider is initialized.
         // Because getItemProvider is called in there.
@@ -77,7 +76,7 @@ public class UsersListFragment extends ListItemSettingsFragment
         mProgressBar = getActivity().findViewById(R.id.progress_bar);
 
         mAddUserButton = (Button) getActivity().findViewById(R.id.action_button1);
-        if (mUserManagerHelper.currentProcessRunningAsDemoUser()) {
+        if (mCarUserManagerHelper.isCurrentProcessDemoUser()) {
             // If the user is a demo user, show a dialog asking if they want to exit retail/demo
             // mode
             mAddUserButton.setText(R.string.exit_retail_button_text);
@@ -86,7 +85,7 @@ public class UsersListFragment extends ListItemSettingsFragment
                 dialog.setConfirmExitRetailModeListener(this);
                 dialog.show(this);
             });
-        } else if (mUserManagerHelper.currentProcessCanAddUsers()) {
+        } else if (mCarUserManagerHelper.canCurrentProcessAddUsers()) {
             // Only add the add user button if the current user is allowed to add a user.
             mAddUserButton.setText(R.string.user_add_user_menu);
             mAddUserButton.setOnClickListener(v -> {
@@ -100,8 +99,11 @@ public class UsersListFragment extends ListItemSettingsFragment
 
     @Override
     public void onCreateNewUserConfirmed() {
+        mAddUserButton.setEnabled(false);
+        mProgressBar.setVisibility(View.VISIBLE);
         mAddNewUserTask =
-                new AddNewUserTask().execute(getContext().getString(R.string.user_new_user_name));
+                new AddNewUserTask(mCarUserManagerHelper, /* addNewUserListener= */ this)
+                        .execute(getContext().getString(R.string.user_new_user_name));
     }
 
     /**
@@ -125,10 +127,10 @@ public class UsersListFragment extends ListItemSettingsFragment
         super.onDestroy();
 
         if (mAddNewUserTask != null) {
-            mAddNewUserTask.cancel(false /* mayInterruptIfRunning */);
+            mAddNewUserTask.cancel(/* mayInterruptIfRunning= */ false);
         }
 
-        mUserManagerHelper.unregisterOnUsersUpdateListener();
+        mCarUserManagerHelper.unregisterOnUsersUpdateListener();
     }
 
     @Override
@@ -138,12 +140,12 @@ public class UsersListFragment extends ListItemSettingsFragment
 
     @Override
     public void onUserClicked(UserInfo userInfo) {
-        if (mUserManagerHelper.userIsRunningCurrentProcess(userInfo)) {
-            // If it's the user running the process, launch fragment that displays their accounts.
-            getFragmentController().launchFragment(UserDetailsFragment.newInstance());
+        if (mCarUserManagerHelper.isForegroundUser(userInfo)) {
+            // If it's the foreground user, launch fragment that allows them to edit their name.
+            getFragmentController().launchFragment(EditUsernameFragment.newInstance(userInfo));
         } else {
             // If it's another user, launch fragment that displays their information
-            getFragmentController().launchFragment(EditUsernameFragment.getInstance(userInfo));
+            getFragmentController().launchFragment(UserDetailsFragment.newInstance(userInfo));
         }
     }
 
@@ -170,25 +172,9 @@ public class UsersListFragment extends ListItemSettingsFragment
         refreshList();
     }
 
-    private class AddNewUserTask extends AsyncTask<String, Void, UserInfo> {
-        @Override
-        protected UserInfo doInBackground(String... userNames) {
-            return mUserManagerHelper.createNewUser(userNames[0]);
-        }
-
-        @Override
-        protected void onPreExecute() {
-            mAddUserButton.setEnabled(false);
-            mProgressBar.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        protected void onPostExecute(UserInfo user) {
-            mAddUserButton.setEnabled(true);
-            mProgressBar.setVisibility(View.GONE);
-            if (user != null) {
-                mUserManagerHelper.switchToUser(user);
-            }
-        }
+    @Override
+    public void onUserAdded() {
+        mAddUserButton.setEnabled(true);
+        mProgressBar.setVisibility(View.GONE);
     }
 }

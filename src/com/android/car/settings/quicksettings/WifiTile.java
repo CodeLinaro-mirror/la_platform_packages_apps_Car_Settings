@@ -19,7 +19,6 @@ package com.android.car.settings.quicksettings;
 import android.annotation.DrawableRes;
 import android.annotation.Nullable;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,7 +34,6 @@ import com.android.settingslib.wifi.AccessPoint;
  * Controls Wifi tile on quick setting page.
  */
 public class WifiTile implements QuickSettingGridAdapter.Tile, CarWifiManager.Listener {
-    private static final String TAG = "WifiTile";
     private final StateChangedListener mStateChangedListener;
     private final CarWifiManager mCarWifiManager;
     private final Context mContext;
@@ -58,7 +56,7 @@ public class WifiTile implements QuickSettingGridAdapter.Tile, CarWifiManager.Li
             mFragmentController.launchFragment(
                     WifiSettingsFragment.newInstance().showSavedApOnly(true));
         };
-        mCarWifiManager = new CarWifiManager(context, this /* listener */);
+        mCarWifiManager = new CarWifiManager(context, /* listener= */ this);
         mCarWifiManager.start();
         mStateChangedListener = stateChangedListener;
         // init icon and text etc.
@@ -74,7 +72,7 @@ public class WifiTile implements QuickSettingGridAdapter.Tile, CarWifiManager.Li
 
     @Override
     public boolean isAvailable() {
-        return mContext.getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI);
+        return WifiUtil.isWifiAvailable(mContext);
     }
 
     @Override

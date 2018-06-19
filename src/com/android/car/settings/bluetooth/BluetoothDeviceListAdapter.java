@@ -25,7 +25,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemProperties;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +39,7 @@ import androidx.car.widget.PagedListView;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.Logger;
 import com.android.settingslib.bluetooth.BluetoothCallback;
 import com.android.settingslib.bluetooth.BluetoothDeviceFilter;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
@@ -62,7 +62,7 @@ import java.util.Set;
 public class BluetoothDeviceListAdapter
         extends RecyclerView.Adapter<BluetoothDeviceListAdapter.ViewHolder>
         implements PagedListView.ItemCap, BluetoothCallback {
-    private static final String TAG = "BluetoothDeviceListAdapter";
+    private static final Logger LOG = new Logger(BluetoothDeviceListAdapter.class);
     // Copied from BluetoothDeviceNoNamePreferenceController.java
     private static final String BLUETOOTH_SHOW_DEVICES_WITHOUT_NAMES_PROPERTY =
             "persist.bluetooth.showdeviceswithoutnames";
@@ -154,7 +154,9 @@ public class BluetoothDeviceListAdapter
         mDeviceManager.clearNonBondedDevices();
         mLocalManager.getEventManager().unregisterCallback(this);
         mBondedDevices.clear();
+        mBondedDevicesSorted.clear();
         mAvailableDevices.clear();
+        mAvailableDevicesSorted.clear();
         mSortTask.cancel(true);
     }
 
@@ -206,7 +208,7 @@ public class BluetoothDeviceListAdapter
         holder.mTitle.setText(bluetoothDevice.getName());
         Pair<Integer, String> pair = getBtClassDrawableWithDescription(bluetoothDevice);
         holder.mIcon.setImageResource(pair.first);
-        String summaryText = bluetoothDevice.getConnectionSummary();
+        String summaryText = bluetoothDevice.getCarConnectionSummary();
         if (summaryText != null) {
             holder.mDesc.setText(summaryText);
             holder.mDesc.setVisibility(View.VISIBLE);
@@ -265,7 +267,12 @@ public class BluetoothDeviceListAdapter
 
     @Override
     public void onDeviceDeleted(CachedBluetoothDevice cachedDevice) {
-        onDeviceDeleted(cachedDevice, true /* reset */);
+        // the device might changed bonding state, so need to remove from both sets.
+        if (mBondedDevices.remove(cachedDevice)) {
+            mBondedDevicesSorted.remove(cachedDevice);
+        }
+        mAvailableDevices.remove(cachedDevice);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -305,7 +312,7 @@ public class BluetoothDeviceListAdapter
 
     @Override
     public void onDeviceBondStateChanged(CachedBluetoothDevice cachedDevice, int bondState) {
-        onDeviceDeleted(cachedDevice, false /* reset */);
+        onDeviceDeleted(cachedDevice);
         onDeviceAdded(cachedDevice);
     }
 
@@ -315,7 +322,7 @@ public class BluetoothDeviceListAdapter
      */
     @Override
     public void onConnectionStateChanged(CachedBluetoothDevice cachedDevice, int state) {
-        onDeviceDeleted(cachedDevice, false);
+        onDeviceDeleted(cachedDevice);
         onDeviceAdded(cachedDevice);
     }
 
@@ -327,17 +334,6 @@ public class BluetoothDeviceListAdapter
     @Override
     public void onAudioModeChanged() {
         // Not used (for now)
-    }
-
-    private void onDeviceDeleted(CachedBluetoothDevice cachedDevice, boolean refresh) {
-        // the device might changed bonding state, so need to remove from both sets.
-        if (mBondedDevices.remove(cachedDevice)) {
-            mBondedDevicesSorted.remove(cachedDevice);
-        }
-        mAvailableDevices.remove(cachedDevice);
-        if (refresh) {
-            notifyDataSetChanged();
-        }
     }
 
     private void addDevices(Collection<CachedBluetoothDevice> cachedDevices) {
@@ -417,7 +413,7 @@ public class BluetoothDeviceListAdapter
                     // unrecognized device class; continue
             }
         } else {
-            Log.w(TAG, "btClass is null");
+            LOG.w("btClass is null");
         }
 
         List<LocalBluetoothProfile> profiles = bluetoothDevice.getProfiles();

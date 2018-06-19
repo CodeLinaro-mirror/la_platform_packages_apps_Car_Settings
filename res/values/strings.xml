@@ -172,6 +172,9 @@
     <!-- Title for BT error dialogs. -->
     <string name="bluetooth_error_title"></string>
 
+    <!-- Language settings screen heading. [CHAR LIMIT=30] -->
+    <string name="language_settings">Languages</string>
+
     <!-- sound settings --><skip />
     <!-- Sound settings screen heading -->
     <string name="sound_settings">Sound</string>
@@ -338,10 +341,6 @@
          [CHAR LIMIT=20] -->
     <string name="time_picker_title">Time</string>
 
-    <!-- User settings header for list of users and profiles [CHAR LIMIT=40] -->
-    <string name="user_list_title">Users &amp; profiles</string>
-    <!-- User settings add user or restricted profile menu [CHAR LIMIT=35] -->
-    <string name="user_add_user_or_profile_menu">Add user or profile</string>
     <!-- User settings add user menu [CHAR LIMIT=35] -->
     <string name="user_add_user_menu">Add user</string>
     <!-- Button title for adding an account [CHAR LIMIT=35] -->
@@ -356,17 +355,21 @@
     <string name="user_switch">Switch</string>
     <!-- Description for user name that is currently in use -->
     <string name="current_user_name">You (%1$s)</string>
-    <!-- User settings details screen title [CHAR LIMIT=25] -->
-    <string name="user_settings_details_title">Profile info</string>
     <!-- User settings label for user name [CHAR LIMIT=25] -->
     <string name="user_name_label">Name</string>
     <!-- User summary to indicate that user is currently not set up [CHAR LIMIT=100] -->
     <string name="user_summary_not_set_up">Not set up</string>
+    <!-- Title for edit user name page [CHAR LIMIT=30] -->
+    <string name="edit_user_name_title">Edit user name</string>
 
-    <!-- Title for settings that lead into User and Account information [CHAR LIMIT=35] -->
-    <string name="user_and_account_settings_title">Users &amp; accounts</string>
-    <!-- Title for a screen that shows the user and accounts that belong to that user [CHAR LIMIT=25] -->
-    <string name="user_settings_title">User</string>
+    <!-- User settings header for list of users on the system. [CHAR LIMIT=35] -->
+    <string name="users_list_title">Users</string>
+    <!-- Title for settings that lead into information about User's accounts [CHAR LIMIT=35] -->
+    <string name="accounts_settings_title">Accounts</string>
+    <!-- Title for detailed user information page [CHAR LIMIT=25] -->
+    <string name="user_details_title">User</string>
+    <!-- Text to display in Accounts settings if the user has not added any accounts yet [CHAR LIMIT=40] -->
+    <string name="no_accounts_added">No accounts added</string>
     <!-- Account settings header for list of added accounts [CHAR LIMIT=40] -->
     <string name="account_list_title">Accounts for <xliff:g id="current_user_name">%1$s</xliff:g></string>
     <!-- Account details in Settings screen title [CHAR LIMIT=25] -->
@@ -389,6 +392,14 @@
     <string name="really_remove_user_title">Remove this user?</string>
     <!-- Message to inform user that all of user's data will be deleted if confirmed [CHAR LIMIT=NONE] -->
     <string name="really_remove_user_message">"All apps and data will be deleted."</string>
+    <!-- Title of the alert dialog to ask user to confirm user deletion [CHAR LIMIT=40] -->
+    <string name="remove_user_error_title">Failed to remove user.</string>
+    <!-- Message to ask to retry user deletion [CHAR LIMIT=30] -->
+    <string name="remove_user_error_message">Try again?</string>
+    <!-- Button label to dismiss user deletion error [CHAR LIMIT=25] -->
+    <string name="remove_user_error_dismiss">Dismiss</string>
+    <!-- Button label to retry user deletion [CHAR LIMIT=25] -->
+    <string name="remove_user_error_retry">Retry</string>
     <!-- Title of the alert dialog to ask user to confirm creation of new user. [CHAR LIMIT=30] -->
     <string name="user_add_user_title">"Add new user?"</string>
     <!-- Message to inform user that creation of new user requires that user to set up their space. [CHAR LIMIT=100] -->
@@ -464,6 +475,8 @@
 
     <!--  Title for screen asking user to enter their existing lock PIN [CHAR LIMIT=30] -->
     <string name="lock_settings_enter_pin">Enter your PIN</string>
+    <!--  Title for screen asking user to enter their existing password [CHAR LIMIT=30] -->
+    <string name="lock_settings_enter_password">Enter your password</string>
     <!-- Description for Choose Lock Pin Screen [CHAR_LIMIT=40] -->
     <string name="choose_lock_pin_message">For security, set a PIN</string>
     <!-- Header on password confirm screen [CHAR LIMIT=40] -->
@@ -478,6 +491,8 @@
     <string name="error_saving_lockpin">Error saving PIN</string>
     <!-- Confirm existing PIN screen error message when the user-entered PIN doesn't match record [CHAR LIMIT=30] -->
     <string name="lockscreen_wrong_pin">Wrong PIN</string>
+    <!-- Confirm existing password screen error message when the user-entered password doesn't match record [CHAR LIMIT=30] -->
+    <string name="lockscreen_wrong_password">Wrong password</string>
     <!-- Description for Choose Lock Password Screen [CHAR_LIMIT=40] -->
     <string name="choose_lock_password_message">For security, set a password</string>
     <!-- Header on password confirm screen [CHAR LIMIT=40] -->
@@ -618,5 +633,7 @@
 
     <!-- Warn user that the action they are trying to perform is blocked while the car is in
          motion [CHAR LIMIT=60] -->
-    <string name="restricted_while_driving">Action not available while driving.</string>
+    <string name="restricted_while_driving">Feature not available while driving.</string>
+    <!-- Warn user that adding a user is blocked while the car is in motion [CHAR LIMIT=60] -->
+    <string name="add_user_restricted_while_driving">Can\'t add user while driving.</string>
 </resources>

@@ -21,6 +21,7 @@ import static com.android.car.settings.home.ExtraSettingsLoader.PERSONAL_CATEGOR
 import static com.android.car.settings.home.ExtraSettingsLoader.WIRELESS_CATEGORY;
 
 import android.bluetooth.BluetoothAdapter;
+import android.car.user.CarUserManagerHelper;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -31,6 +32,7 @@ import android.os.Bundle;
 import com.android.car.list.LaunchAppLineItem;
 import com.android.car.list.TypedPagedListAdapter;
 import com.android.car.settings.R;
+import com.android.car.settings.accounts.AccountsListFragment;
 import com.android.car.settings.applications.ApplicationSettingsFragment;
 import com.android.car.settings.common.ListSettingsFragment;
 import com.android.car.settings.common.Logger;
@@ -42,7 +44,7 @@ import com.android.car.settings.suggestions.SettingsSuggestionsController;
 import com.android.car.settings.system.SystemSettingsFragment;
 import com.android.car.settings.users.UsersListFragment;
 import com.android.car.settings.wifi.CarWifiManager;
-import com.android.settingslib.users.UserManagerHelper;
+import com.android.car.settings.wifi.WifiUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -60,7 +62,7 @@ public class HomepageFragment extends ListSettingsFragment implements
     private CarWifiManager mCarWifiManager;
     private WifiLineItem mWifiLineItem;
     private BluetoothLineItem mBluetoothLineItem;
-    private UserManagerHelper mUserManagerHelper;
+    private CarUserManagerHelper mCarUserManagerHelper;
     // This tracks the number of suggestions currently shown in the fragment. This is based off of
     // the assumption that suggestions are 0 through (num suggestions - 1) in the adapter. Do not
     // change this assumption without updating the code in onSuggestionLoaded.
@@ -90,7 +92,10 @@ public class HomepageFragment extends ListSettingsFragment implements
     private final IntentFilter mBtStateChangeFilter =
             new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
 
-    public static HomepageFragment getInstance() {
+    /**
+     * Gets an instance of this class.
+     */
+    public static HomepageFragment newInstance() {
         HomepageFragment homepageFragment = new HomepageFragment();
         Bundle bundle = ListSettingsFragment.getBundle();
         bundle.putInt(EXTRA_TITLE_ID, R.string.settings_label);
@@ -105,11 +110,14 @@ public class HomepageFragment extends ListSettingsFragment implements
                 new SettingsSuggestionsController(
                         getContext(),
                         getLoaderManager(),
-                        this /* listener */);
-        mCarWifiManager = new CarWifiManager(getContext(), this /* listener */);
-        mWifiLineItem = new WifiLineItem(getContext(), mCarWifiManager, getFragmentController());
+                        /* listener= */ this);
+        mCarWifiManager = new CarWifiManager(getContext(), /* listener= */ this);
+        if (WifiUtil.isWifiAvailable(getContext())) {
+            mWifiLineItem = new WifiLineItem(
+                    getContext(), mCarWifiManager, getFragmentController());
+        }
         mBluetoothLineItem = new BluetoothLineItem(getContext(), getFragmentController());
-        mUserManagerHelper = new UserManagerHelper(getContext());
+        mCarUserManagerHelper = new CarUserManagerHelper(getContext());
 
         // reset the suggestion count.
         mNumSettingsSuggestions = 0;
@@ -162,7 +170,7 @@ public class HomepageFragment extends ListSettingsFragment implements
                 R.drawable.ic_settings_display,
                 getContext(),
                 null,
-                DisplaySettingsFragment.getInstance(),
+                DisplaySettingsFragment.newInstance(),
                 getFragmentController()));
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.sound_settings,
@@ -171,7 +179,9 @@ public class HomepageFragment extends ListSettingsFragment implements
                 null,
                 SoundSettingsFragment.newInstance(),
                 getFragmentController()));
-        lineItems.add(mWifiLineItem);
+        if (mWifiLineItem != null) {
+            lineItems.add(mWifiLineItem);
+        }
         lineItems.addAll(extraSettings.get(WIRELESS_CATEGORY));
         lineItems.add(mBluetoothLineItem);
         lineItems.add(new SimpleIconTransitionLineItem(
@@ -179,7 +189,7 @@ public class HomepageFragment extends ListSettingsFragment implements
                 R.drawable.ic_settings_applications,
                 getContext(),
                 null,
-                ApplicationSettingsFragment.getInstance(),
+                ApplicationSettingsFragment.newInstance(),
                 getFragmentController()));
         lineItems.add(new SimpleIconTransitionLineItem(
                 R.string.date_and_time_settings_title,
@@ -189,15 +199,22 @@ public class HomepageFragment extends ListSettingsFragment implements
                 DatetimeSettingsFragment.getInstance(),
                 getFragmentController()));
         lineItems.add(new SimpleIconTransitionLineItem(
-                R.string.user_and_account_settings_title,
+                R.string.users_list_title,
                 R.drawable.ic_user,
                 getContext(),
                 null,
                 UsersListFragment.newInstance(),
                 getFragmentController()));
 
-        // Guest users can't set screen locks
-        if (!mUserManagerHelper.currentProcessRunningAsGuestUser()) {
+        // Guest users can't set screen locks or add/remove accounts.
+        if (!mCarUserManagerHelper.isCurrentProcessGuestUser()) {
+            lineItems.add(new SimpleIconTransitionLineItem(
+                    R.string.accounts_settings_title,
+                    R.drawable.ic_account,
+                    getContext(),
+                    null,
+                    AccountsListFragment.newInstance(),
+                    getFragmentController()));
             lineItems.add(new LaunchAppLineItem(
                     getString(R.string.security_settings_title),
                     Icon.createWithResource(getContext(), R.drawable.ic_lock),

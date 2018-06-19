@@ -60,7 +60,8 @@
     <application
         android:icon="@drawable/ic_launcher_settings"
         android:theme="@style/CarSettingTheme"
-        android:label="@string/settings_label">
+        android:label="@string/settings_label"
+        android:supportsRtl="true">
 
         <activity
             android:name=".common.CarSettingActivity"
@@ -83,10 +84,6 @@
                   android:excludeFromRecents="true"
                   android:windowSoftInputMode="stateVisible|adjustResize"
                   android:theme="@*android:style/Theme.DeviceDefault.Settings.Dialog.NoActionBar">
-            <intent-filter>
-                <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".accounts.AddAccountActivity"
@@ -99,11 +96,14 @@
         </activity>
 
         <activity android:name=".security.SettingsScreenLockActivity"
-                  android:configChanges="orientation|keyboardHidden|screenSize">
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:windowSoftInputMode="adjustResize">
         </activity>
 
         <activity android:name=".security.SetupWizardScreenLockActivity"
-                  android:configChanges="orientation|keyboardHidden|screenSize">
+                  android:theme="@style/Theme.Car.Shared.SetupWizard.NoActionBar"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.car.settings.SETUP_WIZARD_SCREEN_LOCK_ACTIVITY" />
                 <category android:name="android.intent.category.DEFAULT" />
