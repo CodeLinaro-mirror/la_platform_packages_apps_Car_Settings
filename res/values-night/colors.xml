@@ -18,4 +18,7 @@
     <color name="toggle_bg_disabled">@color/car_grey_800</color>
     <color name="toggle_icon_disabled">@color/car_grey_400</color>
     <color name="google_blue_600">@color/google_blue_600_light</color>
+
+    <color name="car_user_switcher_add_user_background_color">@color/car_dark_blue_grey_600</color>
+    <color name="car_user_switcher_current_user_color">@color/car_teal_200</color>
 </resources>
