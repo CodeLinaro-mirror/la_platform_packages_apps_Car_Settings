@@ -32,7 +32,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.car.settings.R;
-import com.android.car.settings.quicksettings.QuickSettingFragment;
 
 import java.util.Set;
 
@@ -62,6 +61,23 @@ public abstract class BaseFragment extends Fragment {
          * @return {@code false} if there's no stack to pop, {@code true} otherwise
          */
         void goBack();
+
+        /**
+         * Shows a message that current feature is not available when driving.
+         */
+        void showDOBlockingMessage();
+    }
+
+    /**
+     * Provides current CarUxRestrictions.
+     */
+    public interface UXRestrictionsProvider {
+
+        /**
+         * Fetches current CarUxRestrictions
+         */
+        @NonNull
+        CarUxRestrictions getCarUxRestrictions();
     }
 
     @LayoutRes
@@ -73,22 +89,20 @@ public abstract class BaseFragment extends Fragment {
     @StringRes
     private int mTitleId;
 
-    @NonNull
-    private CarUxRestrictions mCurrentRestrictions;
-
     /**
      * Assume The activity holds this fragment also implements the FragmentController.
+     * This function should be called after onAttach()
      */
     public final FragmentController getFragmentController() {
         return (FragmentController) getActivity();
     }
 
     /**
-     * Sets the CarUxRestrictions and update this fragment by calling onUxRestrictionChanged().
+     * Assume The activity holds this fragment also implements the UXRestrictionsProvider.
+     * This function should be called after onAttach()
      */
-    void setCarUxRestrictions(@NonNull CarUxRestrictions restrictions) {
-        mCurrentRestrictions = restrictions;
-        onUxRestrictionChanged(restrictions);
+    protected final CarUxRestrictions getCurrentRestrictions() {
+        return ((UXRestrictionsProvider) getActivity()).getCarUxRestrictions();
     }
 
     protected static Bundle getBundle() {
@@ -106,14 +120,9 @@ public abstract class BaseFragment extends Fragment {
     }
 
     /**
-     * Notifies the fragment with the latest CarUxRestrictions change. Default to quick setting
-     * page when canBeShown() return false, no-op otherwise.
+     * Notifies the fragment with the latest CarUxRestrictions change.
      */
     protected void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
-        mCurrentRestrictions = carUxRestrictions;
-        if (!canBeShown(carUxRestrictions)) {
-            getFragmentController().launchFragment(QuickSettingFragment.newInstance());
-        }
     }
 
     @Override
@@ -122,13 +131,8 @@ public abstract class BaseFragment extends Fragment {
         if (!(getActivity() instanceof FragmentController)) {
             throw new IllegalArgumentException("Must attach to an FragmentController");
         }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        if (mCurrentRestrictions != null) {
-            onUxRestrictionChanged(mCurrentRestrictions);
+        if (!(getActivity() instanceof UXRestrictionsProvider)) {
+            throw new IllegalArgumentException("Must attach to an UXRestrictionsProvider");
         }
     }
 
@@ -153,6 +157,12 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        onUxRestrictionChanged(getCurrentRestrictions());
+    }
+
     /**
      * Should be used to override fragment's title.
      * Should be called after {@code super.onActivityCreated}, so that it's called AFTER the default title
@@ -163,6 +173,13 @@ public abstract class BaseFragment extends Fragment {
     protected final void setTitle(CharSequence title) {
         TextView titleView = getActivity().findViewById(R.id.title);
         titleView.setText(title);
+    }
+
+    /**
+     * Allow fragment to intercept back press and customize behavior.
+     */
+    protected void onBackPressed() {
+        getFragmentController().goBack();
     }
 
     @Override
@@ -182,7 +199,7 @@ public abstract class BaseFragment extends Fragment {
         Toolbar toolbar = (Toolbar) actionBar.getCustomView().getParent();
         toolbar.setPadding(0, 0, 0, 0);
         getActivity().findViewById(R.id.action_bar_icon_container).setOnClickListener(
-                v -> getFragmentController().goBack());
+                v -> onBackPressed());
         TextView titleView = getActivity().findViewById(R.id.title);
         titleView.setText(mTitleId);
     }
