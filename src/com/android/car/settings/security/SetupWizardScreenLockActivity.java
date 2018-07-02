@@ -16,20 +16,21 @@
 
 package com.android.car.settings.security;
 
+import android.app.KeyguardManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.CarSettingActivity;
 import com.android.car.settingslib.util.ResultCodes;
 
 /**
  * Entry point Activity for Setup Wizard to set screen lock.
  */
-public class SetupWizardScreenLockActivity extends AppCompatActivity implements
-        LockTypeDialogFragment.OnLockSelectListener, BaseFragment.FragmentController {
+public class SetupWizardScreenLockActivity extends CarSettingActivity implements
+        LockTypeDialogFragment.OnLockSelectListener {
 
     @Override
     public void launchFragment(BaseFragment fragment) {
@@ -44,7 +45,17 @@ public class SetupWizardScreenLockActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_compat_activity);
+
+        // This activity is meant for Setup Wizard therefore doesn't ask the user for credentials.
+        // It's pointless to launch this activity as the lock can't be changed without current
+        // credential.
+        if (getSystemService(KeyguardManager.class).isKeyguardSecure()) {
+            setResult(RESULT_CANCELED);
+            finish();
+            return;
+        }
+
+        setContentView(R.layout.suw_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

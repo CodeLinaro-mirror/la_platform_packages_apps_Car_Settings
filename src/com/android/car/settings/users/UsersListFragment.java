@@ -29,7 +29,6 @@ import android.widget.ProgressBar;
 import androidx.car.widget.ListItemProvider;
 
 import com.android.car.settings.R;
-import com.android.car.settings.accounts.CurrentUserDetailsFragment;
 import com.android.car.settings.common.ListItemSettingsFragment;
 
 /**
@@ -39,7 +38,8 @@ public class UsersListFragment extends ListItemSettingsFragment
         implements CarUserManagerHelper.OnUsersUpdateListener,
         UsersItemProvider.UserClickListener,
         ConfirmCreateNewUserDialog.ConfirmCreateNewUserListener,
-        ConfirmExitRetailModeDialog.ConfirmExitRetailModeListener {
+        ConfirmExitRetailModeDialog.ConfirmExitRetailModeListener,
+        AddNewUserTask.AddNewUserListener {
     private static final String FACTORY_RESET_PACKAGE_NAME = "android";
     private static final String FACTORY_RESET_REASON = "ExitRetailModeConfirmed";
 
@@ -54,7 +54,7 @@ public class UsersListFragment extends ListItemSettingsFragment
     public static UsersListFragment newInstance() {
         UsersListFragment usersListFragment = new UsersListFragment();
         Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.user_and_account_settings_title);
+        bundle.putInt(EXTRA_TITLE_ID, R.string.users_list_title);
         bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
         usersListFragment.setArguments(bundle);
         return usersListFragment;
@@ -99,8 +99,11 @@ public class UsersListFragment extends ListItemSettingsFragment
 
     @Override
     public void onCreateNewUserConfirmed() {
+        mAddUserButton.setEnabled(false);
+        mProgressBar.setVisibility(View.VISIBLE);
         mAddNewUserTask =
-                new AddNewUserTask().execute(getContext().getString(R.string.user_new_user_name));
+                new AddNewUserTask(mCarUserManagerHelper, /* addNewUserListener= */ this)
+                        .execute(getContext().getString(R.string.user_new_user_name));
     }
 
     /**
@@ -138,8 +141,8 @@ public class UsersListFragment extends ListItemSettingsFragment
     @Override
     public void onUserClicked(UserInfo userInfo) {
         if (mCarUserManagerHelper.isForegroundUser(userInfo)) {
-            // If it's the foreground user, launch fragment that displays their accounts.
-            getFragmentController().launchFragment(CurrentUserDetailsFragment.newInstance());
+            // If it's the foreground user, launch fragment that allows them to edit their name.
+            getFragmentController().launchFragment(EditUsernameFragment.newInstance(userInfo));
         } else {
             // If it's another user, launch fragment that displays their information
             getFragmentController().launchFragment(UserDetailsFragment.newInstance(userInfo));
@@ -169,26 +172,9 @@ public class UsersListFragment extends ListItemSettingsFragment
         refreshList();
     }
 
-    private class AddNewUserTask extends AsyncTask<String, Void, UserInfo> {
-        @Override
-        protected UserInfo doInBackground(String... userNames) {
-            // Add non-admin users be default for now.
-            return mCarUserManagerHelper.createNewNonAdminUser(userNames[0]);
-        }
-
-        @Override
-        protected void onPreExecute() {
-            mAddUserButton.setEnabled(false);
-            mProgressBar.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        protected void onPostExecute(UserInfo user) {
-            mAddUserButton.setEnabled(true);
-            mProgressBar.setVisibility(View.GONE);
-            if (user != null) {
-                mCarUserManagerHelper.switchToUser(user);
-            }
-        }
+    @Override
+    public void onUserAdded() {
+        mAddUserButton.setEnabled(true);
+        mProgressBar.setVisibility(View.GONE);
     }
 }

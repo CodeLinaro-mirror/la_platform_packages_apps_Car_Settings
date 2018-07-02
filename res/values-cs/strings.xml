@@ -166,8 +166,6 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"Seřadit podle časového pásma"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"Datum"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"Čas"</string>
-    <string name="user_list_title" msgid="973865977445453930">"Uživatelé a profily"</string>
-    <string name="user_add_user_or_profile_menu" msgid="7812971296037702898">"Přidat uživatele nebo profil"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"Přidat uživatele"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"Přidat účet"</string>
     <string name="user_delete_user_description" msgid="2300280525351142435">"Smazání uživatele"</string>
@@ -175,11 +173,13 @@
     <string name="user_guest" msgid="3465399481257448601">"Host"</string>
     <string name="user_switch" msgid="6544839750534690781">"Přepnout"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Vy (%1$s)"</string>
-    <string name="user_settings_details_title" msgid="3016069827765597036">"Informace o profilu"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Jméno"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Není nastaveno"</string>
-    <string name="user_and_account_settings_title" msgid="1542965868877207832">"Uživatelé a účty"</string>
-    <string name="user_settings_title" msgid="5511846421187697406">"Uživatel"</string>
+    <string name="edit_user_name_title" msgid="6890782937520262478">"Upravení uživatelského jména"</string>
+    <string name="users_list_title" msgid="770764290290240909">"Uživatelé"</string>
+    <string name="accounts_settings_title" msgid="436190037084293471">"Účty"</string>
+    <string name="user_details_title" msgid="1104762783367701498">"Uživatel"</string>
+    <string name="no_accounts_added" msgid="5148163140691096055">"Nebyly přidány žádné účty"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Účty uživatele <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_details_title" msgid="7529571432258448573">"Informace o účtu"</string>
     <string name="add_account_title" msgid="5988746086885210040">"Přidat účet"</string>
@@ -191,6 +191,10 @@
     <string name="remove_account_failed" msgid="7472511529086294087">"Administrátor tuto změnu zakázal"</string>
     <string name="really_remove_user_title" msgid="4990029019291756762">"Odstranit uživatele?"</string>
     <string name="really_remove_user_message" msgid="3828090902833944533">"Budou smazány všechny aplikace a data."</string>
+    <string name="remove_user_error_title" msgid="2038275458657689420">"Uživatele se nepodařilo odstranit."</string>
+    <string name="remove_user_error_message" msgid="6803947507134323358">"Zkusit znovu?"</string>
+    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Zavřít"</string>
+    <string name="remove_user_error_retry" msgid="8291692909396995093">"Zkusit znovu"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Přidat nového uživatele?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Každý nově přidaný uživatel si musí nastavit vlastní prostor."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Každý uživatel může aktualizovat aplikace všech ostatních uživatelů."</string>
@@ -209,6 +213,7 @@
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Zkusit znovu"</string>
     <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Přeskočit"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Nastavení zámku obrazovky"</string>
+    <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Vyberte gesto"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Aktuální zámek obrazovky"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Z bezpečnostních důvodů nastavte gesto"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Vymazat"</string>
@@ -225,12 +230,16 @@
     <string name="okay" msgid="4589873324439764349">"OK"</string>
     <string name="remove_screen_lock_title" msgid="1234382338764193387">"Odstranit zámek obrazovky?"</string>
     <string name="remove_screen_lock_message" msgid="6675850371585564965">"Kdokoli bude mít přístup k vašemu účtu"</string>
+    <string name="lock_settings_enter_pin" msgid="1669172111244633904">"Zadejte PIN"</string>
+    <string name="lock_settings_enter_password" msgid="2636669926649496367">"Zadejte heslo"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Z bezpečnostních důvodů nastavte PIN"</string>
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"Znovu zadejte PIN"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PIN musí mít alespoň čtyři číslice"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"Kód PIN je neplatný, musí obsahovat alespoň čtyři číslice."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"Kódy PIN se neshodují"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"Při ukládání kódu PIN došlo k chybě"</string>
+    <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"Nesprávný PIN"</string>
+    <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Nesprávné heslo"</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"Z bezpečnostních důvodů nastavte heslo"</string>
     <string name="confirm_your_password_header" msgid="7052891840366724938">"Znovu zadejte heslo"</string>
     <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"Hesla se neshodují"</string>
@@ -294,9 +303,13 @@
     <string name="cancel" msgid="750286395700355455">"Zrušit"</string>
     <string name="backspace_key" msgid="1545590866688979099">"Klávesa Backspace"</string>
     <string name="enter_key" msgid="2121394305541579468">"Klávesa Enter"</string>
-    <string name="exit_retail_title" msgid="4514319631081146178">"Ukončit ukázku?"</string>
-    <string name="exit_retail_message" msgid="1426206128187780964">"Smazání ukázkového účtu a ukončení ukázkového režimu vyžaduje obnovení do továrního nastavení"</string>
+    <string name="exit_retail_button_text" msgid="6093240315583384473">"Ukončit ukázku"</string>
+    <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Ukončení ukázkového režimu"</string>
+    <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Ukázkový účet bude smazán a systém se resetuje do továrního nastavení. Všechna uživatelská data budou ztracena."</string>
+    <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Ukončit ukázku"</string>
     <string name="suggestion_primary_button" msgid="6421115494714083020">"dokončit nastavení"</string>
     <string name="suggestion_secondary_button" msgid="7075088546904464681">"teď ne"</string>
-    <string name="restricted_while_driving" msgid="478954379611786852">"Akce při řízení není dostupná."</string>
+    <string name="restricted_while_driving" msgid="6217369093121968299">"Funkce při řízení není dostupná."</string>
+    <!-- no translation found for add_user_restricted_while_driving (6384004350628271556) -->
+    <skip />
 </resources>
