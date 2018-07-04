@@ -29,6 +29,7 @@ import java.util.Map;
 
 /**
  * Loads Activity with TileUtils.EXTRA_SETTINGS_ACTION.
+ * TODO: remove after all list new switched to androidx.car.widget
  */
 public class ExtraSettingsLoader {
     private static final Logger LOG = new Logger(ExtraSettingsLoader.class);
