@@ -44,6 +44,7 @@ import com.android.car.settings.suggestions.SettingsSuggestionsController;
 import com.android.car.settings.system.SystemSettingsFragment;
 import com.android.car.settings.users.UsersListFragment;
 import com.android.car.settings.wifi.CarWifiManager;
+import com.android.car.settings.wifi.WifiUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -91,7 +92,10 @@ public class HomepageFragment extends ListSettingsFragment implements
     private final IntentFilter mBtStateChangeFilter =
             new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
 
-    public static HomepageFragment getInstance() {
+    /**
+     * Gets an instance of this class.
+     */
+    public static HomepageFragment newInstance() {
         HomepageFragment homepageFragment = new HomepageFragment();
         Bundle bundle = ListSettingsFragment.getBundle();
         bundle.putInt(EXTRA_TITLE_ID, R.string.settings_label);
@@ -108,7 +112,10 @@ public class HomepageFragment extends ListSettingsFragment implements
                         getLoaderManager(),
                         /* listener= */ this);
         mCarWifiManager = new CarWifiManager(getContext(), /* listener= */ this);
-        mWifiLineItem = new WifiLineItem(getContext(), mCarWifiManager, getFragmentController());
+        if (WifiUtil.isWifiAvailable(getContext())) {
+            mWifiLineItem = new WifiLineItem(
+                    getContext(), mCarWifiManager, getFragmentController());
+        }
         mBluetoothLineItem = new BluetoothLineItem(getContext(), getFragmentController());
         mCarUserManagerHelper = new CarUserManagerHelper(getContext());
 
@@ -172,7 +179,9 @@ public class HomepageFragment extends ListSettingsFragment implements
                 null,
                 SoundSettingsFragment.newInstance(),
                 getFragmentController()));
-        lineItems.add(mWifiLineItem);
+        if (mWifiLineItem != null) {
+            lineItems.add(mWifiLineItem);
+        }
         lineItems.addAll(extraSettings.get(WIRELESS_CATEGORY));
         lineItems.add(mBluetoothLineItem);
         lineItems.add(new SimpleIconTransitionLineItem(

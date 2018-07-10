@@ -172,6 +172,9 @@
     <!-- Title for BT error dialogs. -->
     <string name="bluetooth_error_title"></string>
 
+    <!-- Language settings screen heading. [CHAR LIMIT=30] -->
+    <string name="language_settings">Languages</string>
+
     <!-- sound settings --><skip />
     <!-- Sound settings screen heading -->
     <string name="sound_settings">Sound</string>
@@ -631,4 +634,6 @@
     <!-- Warn user that the action they are trying to perform is blocked while the car is in
          motion [CHAR LIMIT=60] -->
     <string name="restricted_while_driving">Feature not available while driving.</string>
+    <!-- Warn user that adding a user is blocked while the car is in motion [CHAR LIMIT=60] -->
+    <string name="add_user_restricted_while_driving">Can\'t add user while driving.</string>
 </resources>
