@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.View;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SimpleItemAnimator;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.widget.ProgressBar;
 import android.widget.Switch;
@@ -128,6 +129,10 @@ public class BluetoothSettingsFragment extends BaseFragment implements Bluetooth
         mDeviceListView.setDarkMode();
         mDeviceAdapter = new BluetoothDeviceListAdapter(
                 getContext() , mLocalManager, mFragmentController);
+
+        // It is a solution to override animation for notifyItemChanged in RecyclerView.Adapter
+        SimpleItemAnimator animator = (SimpleItemAnimator)mDeviceListView.getRecyclerView().getItemAnimator();
+        animator.setSupportsChangeAnimations(false);
         mDeviceListView.setAdapter(mDeviceAdapter);
     }
 
