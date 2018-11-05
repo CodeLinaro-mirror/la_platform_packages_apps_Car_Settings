@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.android.car.list.EditTextLineItem;
 import com.android.car.list.PasswordLineItem;
+import com.android.car.list.SimpleTextLineItem;
 import com.android.car.list.SpinnerLineItem;
 import com.android.car.list.TypedPagedListAdapter;
 import com.android.car.settings.R;
@@ -138,8 +139,16 @@ public class AddWifiFragment extends ListSettingsFragment implements
             lineItems.add(mSpinnerLineItem);
         }
 
-        if (mAccessPoint != null
-                || mSelectedPosition != AccessPointSecurity.SECURITY_NONE_POSITION) {
+        // Display readonly security field
+        if (mAccessPoint != null) {
+            lineItems.add(new SimpleTextLineItem(getText(R.string.wifi_security),
+                    mAccessPoint.getSecurityString(/* concise= */ true)));
+        }
+
+        // Hide password field when OWE
+        if ((mAccessPoint != null && mAccessPoint.getSecurity() != AccessPoint.SECURITY_OWE)
+                || (mSelectedPosition != AccessPointSecurity.SECURITY_NONE_POSITION
+                    && mSelectedPosition != AccessPointSecurity.SECURITY_OWE_POSITION)) {
             mWifiPasswordInput = new PasswordLineItem(getContext().getText(R.string.wifi_password));
             lineItems.add(mWifiPasswordInput);
         }
@@ -162,18 +171,22 @@ public class AddWifiFragment extends ListSettingsFragment implements
     private void connectToAccessPoint() {
         WifiConfiguration wifiConfig = new WifiConfiguration();
         wifiConfig.SSID = String.format("\"%s\"", getSsId());
-        wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-        wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-        wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
-        wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
-        wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
-        wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP104);
         int security;
         if (mAccessPoint == null) {
             security = mSpinnerLineItem.getItem(mSelectedPosition).getSecurityType();
             wifiConfig.hiddenSSID = true;
         } else {
             security = mAccessPoint.getSecurity();
+        }
+        // not set pairwise and group ciphers for WPA3 network
+        if (security != AccessPoint.SECURITY_OWE
+                && security != AccessPoint.SECURITY_SAE) {
+            wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
+            wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
+            wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
+            wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
+            wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
+            wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP104);
         }
         switch (security) {
             case AccessPoint.SECURITY_NONE:
@@ -196,6 +209,16 @@ public class AddWifiFragment extends ListSettingsFragment implements
                 wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
                 wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
                 wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+                wifiConfig.preSharedKey = String.format(
+                        "\"%s\"", mWifiPasswordInput.getInput());
+                break;
+            case AccessPoint.SECURITY_OWE:
+                wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.OWE);
+                wifiConfig.requirePMF = true;
+                break;
+            case AccessPoint.SECURITY_SAE:
+                wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.SAE);
+                wifiConfig.requirePMF = true;
                 wifiConfig.preSharedKey = String.format(
                         "\"%s\"", mWifiPasswordInput.getInput());
                 break;
