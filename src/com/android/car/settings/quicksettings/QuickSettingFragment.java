@@ -18,15 +18,18 @@ package com.android.car.settings.quicksettings;
 
 import android.app.Activity;
 import android.car.drivingstate.CarUxRestrictions;
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.car.widget.PagedListView;
 
@@ -37,10 +40,15 @@ import com.android.car.settings.home.HomepageFragment;
 import com.android.car.settings.users.UserIconProvider;
 import com.android.car.settings.users.UserSwitcherFragment;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Shows a page to access frequently used settings.
  */
 public class QuickSettingFragment extends BaseFragment {
+    // Time to delay refreshing the build info, if the clock is not correct.
+    private static final long BUILD_INFO_REFRESH_TIME_MS = TimeUnit.SECONDS.toMillis(5);
+
     private CarUserManagerHelper mCarUserManagerHelper;
     private UserIconProvider mUserIconProvider;
     private QuickSettingGridAdapter mGridAdapter;
@@ -50,18 +58,18 @@ public class QuickSettingFragment extends BaseFragment {
     private HomeFragmentLauncher mHomeFragmentLauncher;
     private float mOpacityDisabled;
     private float mOpacityEnabled;
+    private TextView mBuildInfo;
 
-    /**
-     * Returns an instance of this class.
-     */
-    public static QuickSettingFragment newInstance() {
-        QuickSettingFragment quickSettingFragment = new QuickSettingFragment();
-        Bundle bundle = QuickSettingFragment.getBundle();
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_quick_settings);
-        bundle.putInt(EXTRA_LAYOUT, R.layout.quick_settings);
-        bundle.putInt(EXTRA_TITLE_ID, R.string.settings_label);
-        quickSettingFragment.setArguments(bundle);
-        return quickSettingFragment;
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_quick_settings;
+    }
+
+    @Override
+    @LayoutRes
+    protected int getLayoutId() {
+        return R.layout.quick_settings;
     }
 
     @Override
@@ -84,7 +92,7 @@ public class QuickSettingFragment extends BaseFragment {
         mFullSettingBtn.setOnClickListener(mHomeFragmentLauncher);
         mUserSwitcherBtn = activity.findViewById(R.id.user_switcher_btn);
         mUserSwitcherBtn.setOnClickListener(v -> {
-            getFragmentController().launchFragment(UserSwitcherFragment.newInstance());
+            getFragmentController().launchFragment(new UserSwitcherFragment());
         });
         setupUserButton(activity);
 
@@ -98,6 +106,47 @@ public class QuickSettingFragment extends BaseFragment {
                 .addTile(new CelluarTile(activity, mGridAdapter))
                 .addSeekbarTile(new BrightnessTile(activity));
         mListView.setAdapter(mGridAdapter);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        mBuildInfo = view.requireViewById(R.id.build_info);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // In non-user builds (that is, user-debug, eng, etc), display some version information.
+        if (!Build.IS_USER) {
+            refreshBuildInfo();
+        }
+    }
+
+    private void refreshBuildInfo() {
+        if (!isAdded()) {
+            // This can happen if the delayed post happens before we're stopped. Just give up
+            // trying to get the right clock.
+            return;
+        }
+
+        long buildTimeDiffDays =
+                TimeUnit.MILLISECONDS.toDays(System.currentTimeMillis() - Build.TIME);
+        if (buildTimeDiffDays < 0) {
+            // If it's in the past, that likely means the current time is wrong (or the build time
+            // could be wrong, but that's less likely). Reschedule this to run in a few seconds to
+            // see whether the clock's been fixed.
+            mBuildInfo.postDelayed(this::refreshBuildInfo, BUILD_INFO_REFRESH_TIME_MS);
+        }
+
+        String str = String.format(getResources().getString(R.string.build_info_fmt),
+                Build.FINGERPRINT, SystemProperties.get("ro.build.date", "<unknown>"),
+                buildTimeDiffDays < 0 ? "--" : Long.toString(buildTimeDiffDays));
+
+        mBuildInfo.setVisibility(View.VISIBLE);
+        mBuildInfo.setText(str);
     }
 
     @Override
@@ -125,29 +174,29 @@ public class QuickSettingFragment extends BaseFragment {
     }
 
     @Override
-    public void onUxRestrictionChanged(@NonNull CarUxRestrictions carUxRestrictions) {
+    public void onUxRestrictionsChanged(CarUxRestrictions restrictionInfo) {
         // TODO: update tiles
-        applyRestriction(CarUxRestrictionsHelper.isNoSetup(carUxRestrictions));
+        applyRestriction(CarUxRestrictionsHelper.isNoSetup(restrictionInfo));
     }
 
     private void applyRestriction(boolean restricted) {
-        mHomeFragmentLauncher.showDOBlockingMessage(restricted);
+        mHomeFragmentLauncher.showBlockingMessage(restricted);
         mFullSettingBtn.setAlpha(restricted ? mOpacityDisabled : mOpacityEnabled);
     }
 
     private class HomeFragmentLauncher implements OnClickListener {
-        private boolean mShowDOBlockingMessage;
+        private boolean mShowBlockingMessage;
 
-        private void showDOBlockingMessage(boolean show) {
-            mShowDOBlockingMessage = show;
+        private void showBlockingMessage(boolean show) {
+            mShowBlockingMessage = show;
         }
 
         @Override
         public void onClick(View v) {
-            if (mShowDOBlockingMessage) {
-                getFragmentController().showDOBlockingMessage();
+            if (mShowBlockingMessage) {
+                getFragmentController().showBlockingMessage();
             } else {
-                getFragmentController().launchFragment(HomepageFragment.newInstance());
+                getFragmentController().launchFragment(new HomepageFragment());
             }
         }
     }

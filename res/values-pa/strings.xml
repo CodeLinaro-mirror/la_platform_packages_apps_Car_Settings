@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"ਸਮਾਂ"</string>
     <string name="user_admin" msgid="1535484812908584809">"ਪ੍ਰਸ਼ਾਸਕ"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"ਪ੍ਰਸ਼ਾਸਕ ਵਜੋਂ ਸਾਈਨ ਇਨ ਕੀਤਾ ਗਿਆ"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"ਪ੍ਰਸ਼ਾਸਕ ਇਜਾਜ਼ਤਾਂ ਦਿਓ"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"ਪ੍ਰਸ਼ਾਸਕ ਬਣਾਓ"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"ਵਰਤੋਂਕਾਰ ਹੋਰ ਪ੍ਰਸ਼ਾਸਕਾਂ ਸਮੇਤ ਵਰਤੋਂਕਾਰਾਂ ਨੂੰ ਮਿਟਾ ਸਕੇਗਾ ਅਤੇ ਸਿਸਟਮ ਨੂੰ ਫੈਕਟਰੀ ਰੀਸੈੱਟ ਕਰ ਸਕੇਗਾ।"</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"ਇਹ ਕਾਰਵਾਈ ਪਲਟਾਉਣਯੋਗ ਨਹੀਂ ਹੈ।"</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"ਹਾਂ, ਪ੍ਰਸ਼ਾਸਕ ਬਣਾਓ"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"ਵਰਤੋਂਕਾਰ ਸ਼ਾਮਲ ਕਰੋ"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"ਨਵਾਂ ਵਰਤੋਂਕਾਰ"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਸ਼ਾਮਲ ਕਰੀਏ?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"ਜਦੋਂ ਤੁਸੀਂ ਇੱਕ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਸ਼ਾਮਲ ਕਰਦੇ ਹੋ, ਤਾਂ ਉਸ ਵਿਅਕਤੀ ਨੂੰ ਆਪਣੀ ਜਗ੍ਹਾ ਸੈੱਟਅੱਪ ਕਰਨ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।"</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"ਕੋਈ ਵੀ ਵਰਤੋਂਕਾਰ ਹੋਰ ਸਾਰੇ ਵਰਤੋਂਕਾਰਾਂ ਦੀਆਂ ਐਪਾਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰ ਸਕਦਾ ਹੈ।"</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"ਵਰਤੋਂਕਾਰ ਸ਼ਾਮਲ ਕਰਨ ਦੀ ਸੀਮਾ ਪੂਰੀ ਹੋਈ"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="one">ਤੁਸੀਂ <xliff:g id="COUNT">%d</xliff:g> ਤੱਕ ਵਰਤੋਂਕਾਰ ਸ਼ਾਮਲ ਕਰ ਸਕਦੇ ਹੋ।</item>
-      <item quantity="other">ਤੁਸੀਂ <xliff:g id="COUNT">%d</xliff:g> ਤੱਕ ਵਰਤੋਂਕਾਰਾਂ ਨੂੰ ਸ਼ਾਮਲ ਕਰ ਸਕਦੇ ਹੋ।</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="one">ਤੁਸੀਂ <xliff:g id="COUNT">%d</xliff:g> ਵਰਤੋਂਕਾਰ ਬਣਾ ਸਕਦੇ ਹੋ।</item>
+      <item quantity="other">ਤੁਸੀਂ <xliff:g id="COUNT">%d</xliff:g> ਵਰਤੋਂਕਾਰ ਬਣਾ ਸਕਦੇ ਹੋ।</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"ਇੱਕ ਨਵਾਂ ਵਰਤੋਂਕਾਰ ਬਣਾਉਣਾ ਅਸਫਲ ਰਿਹਾ"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"ਵਰਤੋਂਕਾਰ ਨੂੰ ਮਿਟਾਓ"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"ਕੀ ਇਹ ਵਰਤੋਂਕਾਰ ਹਟਾਉਣਾ ਹੈ?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"ਸਾਰੀਆਂ ਐਪਾਂ ਅਤੇ ਡਾਟਾ ਮਿਟਾ ਦਿੱਤੇ ਜਾਣਗੇ।"</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"ਵਰਤੋਂਕਾਰ ਹਟਾਉਣਾ ਅਸਫਲ ਰਿਹਾ।"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"ਖਾਰਜ ਕਰੋ"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"ਇਸ ਵਰਤੋਂਕਾਰ ਨੂੰ ਮਿਟਾਈਏ?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"ਸਾਰੀਆਂ ਐਪਾਂ ਅਤੇ ਡਾਟਾ ਮਿਟਾ ਦਿੱਤੇ ਜਾਣਗੇ।"</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"ਵਰਤੋਂਕਾਰ ਮਿਟਾਉਣਾ ਅਸਫਲ ਰਿਹਾ।"</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"ਖਾਰਜ ਕਰੋ"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"ਪਿਛਲਾ ਵਰਤੋਂਕਾਰ ਮਿਟਾਈਏ?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"ਇਸ ਕਾਰ ਦੇ ਇੱਕੋ ਬਚੇ ਹੋਏ ਵਰਤੋਂਕਾਰ ਨੂੰ ਮਿਟਾਉਣ ਤੋਂ ਬਾਅਦ, ਕੋਈ ਨਵਾਂ ਪ੍ਰਸ਼ਾਸਕ ਵਰਤੋਂਕਾਰ ਬਣਾਇਆ ਜਾਵੇਗਾ।"</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"ਇਸ ਵਰਤੋਂਕਾਰ ਨਾਲ ਸੰਬੰਧਿਤ ਸਾਰੇ ਡਾਟੇ, ਸੈਟਿੰਗਾਂ ਅਤੇ ਐਪਾਂ ਨੂੰ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਤੁਹਾਨੂੰ ਦੁਬਾਰਾ ਸਿਸਟਮ ਸੈੱਟਅੱਪ ਕਰਨ ਦੀ ਲੋੜ ਹੋਵੇਗੀ।"</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"ਨਵਾਂ ਪ੍ਰਸ਼ਾਸਕ ਚੁਣੋ"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"ਤੁਹਾਨੂੰ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਪ੍ਰਸ਼ਾਸਕ ਦੀ ਲੋੜ ਹੈ। ਇਸ ਪ੍ਰਸ਼ਾਸਕ ਨੂੰ ਮਿਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਇਸਦੇ ਬਦਲੇ ਕੋਈ ਹੋਰ ਚੁਣੋ।"</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"ਪ੍ਰਸ਼ਾਸਕ ਚੁਣੋ"</string>
     <string name="user_guest" msgid="3465399481257448601">"ਮਹਿਮਾਨ"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"ਮਹਿਮਾਨ"</string>
     <string name="user_switch" msgid="6544839750534690781">"ਅਦਲਾ-ਬਦਲੀ ਕਰੋ"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"ਖਾਤਾ ਹਟਾਓ"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"ਕੀ ਖਾਤਾ ਹਟਾਉਣਾ ਹੈ?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"ਇਸ ਖਾਤੇ ਨੂੰ ਹਟਾਉਣ ਨਾਲ ਡੀਵਾਈਸ ਤੋਂ ਇਸਦੇ ਸਾਰੇ ਸੁਨੇਹੇ, ਸੰਪਰਕ ਅਤੇ ਹੋਰ ਡਾਟਾ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ!"</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"ਤੁਹਾਡੇ ਪ੍ਰਸ਼ਾਸਕ ਵੱਲੋਂ ਇਸ ਬਦਲਾਅ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"ਖਾਤਾ ਹਟਾਉਣਾ ਅਸਫਲ ਰਿਹਾ।"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"ਸੁਰੱਖਿਆ"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"ਸਕ੍ਰੀਨ ਲਾਕ"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"ਕੋਈ ਨਹੀਂ"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"ਆਮ ਪਾਸਵਰਡ ਤੁਹਾਡੇ IT ਪ੍ਰਸ਼ਾਸਕ ਵੱਲੋਂ ਬਲਾਕ ਕੀਤੇ ਗਏ ਹਨ। ਕੋਈ ਵੱਖਰਾ ਪਾਸਵਰਡ ਵਰਤੋ।"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"ਅੰਕਾਂ ਦਾ ਵਧਦਾ ਕ੍ਰਮ, ਘਟਦਾ ਕ੍ਰਮ, ਜਾਂ ਦੁਹਰਾਈ ਗਈ ਲੜੀ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ।"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"ਸਕ੍ਰੀਨ ਲਾਕ ਦੇ ਵਿਕਲਪ"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> ਦਿਨ ਪਹਿਲਾਂ"</string>
     <string name="forget" msgid="3971143908183848527">"ਛੱਡੋ"</string>
     <string name="delete_button" msgid="5840500432614610850">"ਮਿਟਾਓ"</string>
     <string name="remove_button" msgid="6664656962868194178">"ਹਟਾਓ"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"ਡੈਮੋ ਮੋਡ ਤੋ ਬਾਹਰ ਜਾਓ"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"ਇਹ ਡੈਮੋ ਖਾਤੇ ਨੂੰ ਮਿਟਾ ਦੇਵੇਗਾ ਅਤੇ ਸਿਸਟਮ ਦਾ ਫੈਕਟਰੀ ਡਾਟਾ ਰੀਸੈੱਟ ਹੋ ਜਾਵੇਗਾ। ਸਾਰਾ ਵਰਤੋਂਕਾਰ ਡਾਟਾ ਗੁੰਮ ਹੋ ਜਾਵੇਗਾ।"</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"ਡੈਮੋ ਮੋਡ ਤੋ ਬਾਹਰ ਜਾਓ"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"ਸੈੱਟਅੱਪ ਪੂਰਾ ਕਰੋ"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"ਹੁਣੇ ਨਹੀਂ"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"ਖਾਰਜ ਕਰੋ"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"ਗੱਡੀ ਚਲਾਉਣ ਵੇਲੇ ਵਿਸ਼ੇਸ਼ਤਾ ਉਪਲਬਧ ਨਹੀਂ ਹੈ।"</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"ਗੱਡੀ ਚਲਾਉਣ ਦੌਰਾਨ ਵਰਤੋਂਕਾਰ ਸ਼ਾਮਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"</string>
 </resources>

@@ -118,7 +118,7 @@
     <string name="system_update_settings_list_item_title" msgid="5182439376921868735">"Systemopdateringer"</string>
     <string name="system_update_settings_list_item_summary" msgid="7395202602021608371"></string>
     <string name="firmware_version" msgid="8491753744549309333">"Android-version"</string>
-    <string name="security_patch" msgid="4794276590178386903">"Niveau for sikkerhedsrettelse på Android"</string>
+    <string name="security_patch" msgid="4794276590178386903">"Seneste sikkerhedsopdatering i Android"</string>
     <string name="model_info" msgid="4966408071657934452">"Model"</string>
     <string name="baseband_version" msgid="2370088062235041897">"Basebandversion"</string>
     <string name="kernel_version" msgid="7327212934187011508">"Kernesystem"</string>
@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Klokkeslæt"</string>
     <string name="user_admin" msgid="1535484812908584809">"Administrator"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Logget ind som administrator"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"Tildel administratorrettigheder"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"Tildel administratorrettigheder"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"Brugeren vil kunne slette brugere, heriblandt andre administratorer, og gendanne systemets fabriksindstillinger."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"Denne handling kan ikke fortrydes."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"Ja, tildel administratorrettigheder"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"Tilføj bruger"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Ny bruger"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Tilføj ny bruger?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Når du tilføjer en ny bruger, skal vedkommende konfigurere sit område."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Alle brugere kan opdatere apps for alle andre brugere."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Grænsen for brugere er nået"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="one">Du kan tilføje op til <xliff:g id="COUNT">%d</xliff:g> bruger.</item>
-      <item quantity="other">Du kan tilføje op til <xliff:g id="COUNT">%d</xliff:g> brugere.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="one">Der kan kun oprettes <xliff:g id="COUNT">%d</xliff:g> bruger.</item>
+      <item quantity="other">Der kan kun oprettes <xliff:g id="COUNT">%d</xliff:g> brugere.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"Der kunne ikke oprettes en ny bruger"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Slet bruger"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Vil du fjerne brugeren?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"Alle apps og data slettes."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Brugeren kunne ikke fjernes."</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Afvis"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Prøv igen"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"Vil du slette brugeren?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"Alle apps og data slettes."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"Brugeren kunne ikke slettes."</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"Luk"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"Prøv igen"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"Vil du slette den sidste bruger?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"Når den sidste tilbageværende bruger er slettet for denne bil, oprettes en ny administrator."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"Alle data, indstillinger og apps, der er knyttet til denne bruger, slettes. Du skal konfigurere systemet igen."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"Vælg en ny administrator"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"Der skal være mindst én administrator. Hvis du vil slette denne, skal du først vælge en anden."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"Vælg en administrator"</string>
     <string name="user_guest" msgid="3465399481257448601">"Gæst"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"Gæst"</string>
     <string name="user_switch" msgid="6544839750534690781">"Skift"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"Fjern konto"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Vil du fjerne kontoen?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"Hvis du fjerner denne konto, slettes alle tilknyttede beskeder, kontaktpersoner og andre data fra enheden."</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"Din administrator har ikke givet tilladelse til at foretage denne ændring"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"Kontoen kunne ikke fjernes."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Sikkerhed"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Skærmlås"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Ingen"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"Brug af almindelige adgangskoder er blokeret af din it-administrator. Prøv en anden adgangskode."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"Stigende eller faldende talsekvens og gentagne tal er ikke tilladt."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Valgmuligheder for skærmlås"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : For <xliff:g id="NUM_DAYS">%3$s</xliff:g> dage siden"</string>
     <string name="forget" msgid="3971143908183848527">"Glem"</string>
     <string name="delete_button" msgid="5840500432614610850">"Slet"</string>
     <string name="remove_button" msgid="6664656962868194178">"Fjern"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Luk demotilstand"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Denne handling sletter demokontoen og gendanner systemets fabriksdata. Du mister alle brugerdata."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Luk demotilstand"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"afslut konfiguration"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"ikke nu"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"AFVIS"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Funktionen er ikke tilgængelig under kørsel."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Du kan ikke tilføje brugere under kørsel."</string>
 </resources>

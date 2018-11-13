@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
+
 package com.android.car.settings.common;
 
 import android.annotation.Nullable;
 import android.car.drivingstate.CarUxRestrictions;
+import android.car.drivingstate.CarUxRestrictionsManager.OnUxRestrictionsChangedListener;
 import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiManager;
@@ -26,12 +28,13 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager.OnBackStackChangedListener;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BaseFragment.UXRestrictionsProvider;
 import com.android.car.settings.quicksettings.QuickSettingFragment;
 import com.android.car.settings.wifi.WifiSettingsFragment;
 
@@ -39,8 +42,10 @@ import com.android.car.settings.wifi.WifiSettingsFragment;
  * Base activity class for car settings, provides a action bar with a back button that goes to
  * previous activity.
  */
-public class CarSettingActivity extends AppCompatActivity implements
-        BaseFragment.FragmentController, UXRestrictionsProvider, OnBackStackChangedListener{
+public class CarSettingActivity extends FragmentActivity implements FragmentController,
+        OnUxRestrictionsChangedListener, UxRestrictionsProvider, OnBackStackChangedListener,
+        PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+
     private CarUxRestrictionsHelper mUxRestrictionsHelper;
     private View mRestrictedMessage;
     // Default to minimum restriction.
@@ -53,36 +58,14 @@ public class CarSettingActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_compat_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.car_setting_activity);
         if (mUxRestrictionsHelper == null) {
-            mUxRestrictionsHelper =
-                    new CarUxRestrictionsHelper(this, carUxRestrictions -> {
-                        mCarUxRestrictions = carUxRestrictions;
-                        BaseFragment currentFragment = getCurrentFragment();
-                        if (currentFragment != null) {
-                            currentFragment.onUxRestrictionChanged(carUxRestrictions);
-                            updateBlockingView(currentFragment);
-                        }
-                    });
+            mUxRestrictionsHelper = new CarUxRestrictionsHelper(/* context= */ this, /* listener= */
+                    this);
         }
         mUxRestrictionsHelper.start();
         getSupportFragmentManager().addOnBackStackChangedListener(this);
         mRestrictedMessage = findViewById(R.id.restricted_message);
-    }
-
-    @Override
-    public void onBackStackChanged() {
-        updateBlockingView(getCurrentFragment());
-    }
-
-    private void updateBlockingView(@Nullable BaseFragment currentFragment) {
-        if (currentFragment == null) {
-            return;
-        }
-        boolean canBeShown = currentFragment.canBeShown(mCarUxRestrictions);
-        mRestrictedMessage.setVisibility(canBeShown ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -93,19 +76,14 @@ public class CarSettingActivity extends AppCompatActivity implements
             String action = intent.getAction();
             if (Settings.ACTION_WIFI_SETTINGS.equals(action)
                     || WifiManager.ACTION_PICK_WIFI_NETWORK.equals(action)) {
-                launchFragment(WifiSettingsFragment.newInstance());
+                launchFragment(new WifiSettingsFragment());
                 return;
             }
         }
 
         if (getCurrentFragment() == null) {
-            launchFragment(QuickSettingFragment.newInstance());
+            launchFragment(new QuickSettingFragment());
         }
-    }
-
-    @Override
-    public CarUxRestrictions getCarUxRestrictions() {
-        return mCarUxRestrictions;
     }
 
     @Override
@@ -121,11 +99,21 @@ public class CarSettingActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void launchFragment(BaseFragment fragment) {
+    public void onBackPressed() {
+        super.onBackPressed();
+        hideKeyboard();
+        // if the backstack is empty, finish the activity.
+        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+            finish();
+        }
+    }
+
+    @Override
+    public void launchFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .setCustomAnimations(
-                        R.animator.trans_right_in ,
+                        R.animator.trans_right_in,
                         R.animator.trans_left_out,
                         R.animator.trans_left_in,
                         R.animator.trans_right_out)
@@ -140,28 +128,57 @@ public class CarSettingActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void showDOBlockingMessage() {
+    public void showBlockingMessage() {
         Toast.makeText(
                 this, R.string.restricted_while_driving, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        hideKeyboard();
-        // if the backstack is empty, finish the activity.
-        if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
-            finish();
+    public void onUxRestrictionsChanged(CarUxRestrictions restrictionInfo) {
+        mCarUxRestrictions = restrictionInfo;
+        Fragment currentFragment = getCurrentFragment();
+        if (currentFragment instanceof OnUxRestrictionsChangedListener) {
+            ((OnUxRestrictionsChangedListener) currentFragment)
+                    .onUxRestrictionsChanged(restrictionInfo);
         }
+        updateBlockingView(currentFragment);
     }
 
-    private BaseFragment getCurrentFragment() {
-        return (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+    @Override
+    public CarUxRestrictions getCarUxRestrictions() {
+        return mCarUxRestrictions;
+    }
+
+    @Override
+    public void onBackStackChanged() {
+        updateBlockingView(getCurrentFragment());
+    }
+
+    @Override
+    public boolean onPreferenceStartFragment(PreferenceFragmentCompat caller, Preference pref) {
+        if (pref.getFragment() != null) {
+            Fragment fragment = Fragment.instantiate(/* context= */ this, pref.getFragment(),
+                    pref.getExtras());
+            launchFragment(fragment);
+            return true;
+        }
+        return false;
+    }
+
+    private Fragment getCurrentFragment() {
+        return getSupportFragmentManager().findFragmentById(R.id.fragment_container);
     }
 
     private void hideKeyboard() {
-        InputMethodManager imm = (InputMethodManager)this.getSystemService(
+        InputMethodManager imm = (InputMethodManager) this.getSystemService(
                 Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+    }
+
+    private void updateBlockingView(@Nullable Fragment currentFragment) {
+        if (currentFragment instanceof BaseFragment) {
+            boolean canBeShown = ((BaseFragment) currentFragment).canBeShown(mCarUxRestrictions);
+            mRestrictedMessage.setVisibility(canBeShown ? View.GONE : View.VISIBLE);
+        }
     }
 }

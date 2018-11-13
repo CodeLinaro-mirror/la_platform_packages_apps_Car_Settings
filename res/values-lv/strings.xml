@@ -184,29 +184,38 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Laiks"</string>
     <string name="user_admin" msgid="1535484812908584809">"Administrators"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Pierakstījies kā administrators"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"Piešķirt administratora atļaujas"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"Iestatīt kā administratoru"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"Attiecīgais lietotājs varēs dzēst lietotājus, tostarp citus administratorus, kā arī veikt sistēmas rūpnīcas datu atiestatīšanu."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"Šī darbība ir neatgriezeniska."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"Jā, iestatīt kā administratoru"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"Lietotāja pievienošana"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Jauns lietotājs"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Jauns lietotājs"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Kad pievienosiet jaunu lietotāju, viņam būs jāizveido savs profils."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Ikviens lietotājs var atjaunināt lietotnes citu lietotāju vietā."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Sasniegts lietotāju ierobežojums"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="zero">Varat pievienot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotājus.</item>
-      <item quantity="one">Varat pievienot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotāju.</item>
-      <item quantity="other">Varat pievienot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotājus.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="zero">Var izveidot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotājus.</item>
+      <item quantity="one">Var izveidot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotāju.</item>
+      <item quantity="other">Var izveidot ne vairāk kā <xliff:g id="COUNT">%d</xliff:g> lietotājus.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"Neizdevās izveidot jaunu lietotāju"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Dzēst lietotāju"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Vai noņemt šo lietotāju?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"Tiks dzēstas visas lietotnes un dati."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Neizdevās noņemt lietotāju"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Aizvērt"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Mēģināt vēlreiz"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"Vai dzēst šo lietotāju?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"Tiks dzēstas visas lietotnes un dati."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"Neizdevās izdzēst lietotāju"</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"Noraidīt"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"Mēģināt vēlreiz"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"Dzēst pēdējo lietotāju?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"Kad šai automašīnai tiks izdzēsts pēdējais atlikušais lietotājs, tiks izveidots jauns administratīvais lietotājs."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"Tiks dzēsti visi ar šo lietotāju saistītie dati, iestatījumi un lietotnes. Jums būs vēlreiz jāiestata sistēma."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"Jauna administratora izvēle"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"Nepieciešams vismaz viens administrators. Lai dzēstu šo administratoru, vispirms izvēlieties aizvietotāju."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"Izvēlēties administratoru"</string>
     <string name="user_guest" msgid="3465399481257448601">"Viesis"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"Viesis"</string>
     <string name="user_switch" msgid="6544839750534690781">"Pārslēgt"</string>
@@ -227,7 +236,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"Noņemt kontu"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Vai noņemt kontu?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"Noņemot šo kontu, no ierīces tiks dzēsti arī visi šajā kontā esošie ziņojumi, kontaktpersonas un citi dati."</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"Jūsu administrators neļauj veikt šīs izmaiņas."</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"Neizdevās noņemt kontu"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Drošība"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Ekrāna bloķēšana"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Nav"</string>
@@ -323,6 +332,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"Jūsu IT administrators ir bloķējis pārāk vienkāršas paroles. Izmēģiniet sarežģītāku paroli."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"Nav atļauta augoša, dilstoša vai atkārtota ciparu secība."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Ekrāna bloķēšanas opcijas"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g>: pirms <xliff:g id="NUM_DAYS">%3$s</xliff:g> dienām"</string>
     <string name="forget" msgid="3971143908183848527">"Aizmirst"</string>
     <string name="delete_button" msgid="5840500432614610850">"Dzēst"</string>
     <string name="remove_button" msgid="6664656962868194178">"Noņemt"</string>
@@ -333,8 +343,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Iziešana no demonstr. režīma"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Tādējādi tiks dzēsts demonstrācijas konts un sistēmā tiks atiestatīti rūpnīcas dati. Visi lietotāja dati tiks zaudēti."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Iziet no demonstr. režīma"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"pabeigt iestatīšanu"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"vēlāk"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"NERĀDĪT"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Funkcija nav pieejama braukšanas laikā."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Nevar pievienot lietotāju braukšanas laikā."</string>
 </resources>

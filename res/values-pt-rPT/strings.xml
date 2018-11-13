@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Hora"</string>
     <string name="user_admin" msgid="1535484812908584809">"Administrador"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Sessão iniciada como administrador"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"Conceder autorizações de administrador"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"Tornar administrador"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"O utilizador poderá eliminar utilizadores, incluindo outros administradores, e repor os dados de fábrica do sistema."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"Esta ação não é reversível."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"Sim, tornar administrador"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"Adicionar utilizador"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Novo utilizador"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Adicion. novo utilizador?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Ao adicionar um novo utilizador, essa pessoa tem de configurar o respetivo espaço."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Qualquer utilizador pode atualizar aplicações para todos os outros utilizadores."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Limite de utilizadores alcançado"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="other">Pode adicionar até <xliff:g id="COUNT">%d</xliff:g> utilizadores.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="other">Pode criar até <xliff:g id="COUNT">%d</xliff:g> utilizadores.</item>
       <item quantity="one">Apenas é possível criar um utilizador.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"Falha ao criar um novo utilizador"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Eliminar utilizador"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Remover este utilizador?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"Todas as aplicações e os dados serão eliminados."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Falha ao remover o utilizador"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Ignorar"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Tentar novamente"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"Eliminar este utilizador?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"Todas as aplicações e os dados serão eliminados."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"Falha ao eliminar o utilizador"</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"Ignorar"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"Tentar novamente"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"Elim. último utilizador?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"Depois de eliminar o único utilizador restante deste automóvel, será criado um novo administrador."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"Todos os dados, as definições e as aplicações associados a este utilizador serão eliminados. Terá de configurar o sistema novamente."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"Escolher novo administrador"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"Necessita de, pelo menos, um administrador. Para eliminar este, primeiro escolha um substituto."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"Escolher administrador"</string>
     <string name="user_guest" msgid="3465399481257448601">"Convidado"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"Convidado"</string>
     <string name="user_switch" msgid="6544839750534690781">"Mudar"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"Remover conta"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Pretende remover a conta?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"A remoção desta conta elimina todas as mensagens, os contactos e outros dados do dispositivo."</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"O administrador não permite esta alteração."</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"Falha ao remover a conta"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Segurança"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Bloqueio de ecrã"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Nenhum"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"As palavras-passe comuns estão bloqueadas pelo seu gestor de TI. Experimente outra palavra-passe."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"Não é permitida uma sequência de dígitos ascendente, descendente ou repetida."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Opções de bloqueio de ecrã"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g>: há <xliff:g id="NUM_DAYS">%3$s</xliff:g> dias"</string>
     <string name="forget" msgid="3971143908183848527">"Esquecer"</string>
     <string name="delete_button" msgid="5840500432614610850">"Eliminar"</string>
     <string name="remove_button" msgid="6664656962868194178">"Remover"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Sair do modo de demonstração"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Esta ação elimina a conta de demonstração e efetua a reposição de dados de fábrica do sistema. Todos os dados do utilizador são perdidos."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Sair da demonstração"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"concluir configuração"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"agora não"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"IGNORAR"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Funcionalidade não disponível durante a condução."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Não é possível adicionar o utilizador durante a condução."</string>
 </resources>

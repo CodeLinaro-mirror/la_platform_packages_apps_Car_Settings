@@ -18,15 +18,19 @@ package com.android.car.settings.security;
 
 import android.app.admin.DevicePolicyManager;
 import android.car.drivingstate.CarUxRestrictions;
+import android.car.userlib.CarUserManagerHelper;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.UserHandle;
 import android.text.TextUtils;
 
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
+import com.android.car.settings.common.UxRestrictionsProvider;
 import com.android.car.settingslib.util.ResultCodes;
 import com.android.internal.widget.LockPatternUtils;
 
@@ -34,13 +38,16 @@ import com.android.internal.widget.LockPatternUtils;
  * Entry point Activity for Setup Wizard to set screen lock.
  */
 public class SetupWizardScreenLockActivity extends FragmentActivity implements
-        BaseFragment.FragmentController,
-        BaseFragment.UXRestrictionsProvider,
+        FragmentController,
+        UxRestrictionsProvider,
         CheckLockListener,
         LockTypeDialogFragment.OnLockSelectListener {
 
     private static final Logger LOG = new Logger(SetupWizardScreenLockActivity.class);
+    private static final String EXTRA_PASSWORD_QUALITY = "EXTRA_PASSWORD_QUALITY";
 
+    private int mUserId;
+    private LockPatternUtils mLockPatternUtils;
     private String mCurrLock;
     private int mPasswordQuality;
 
@@ -51,7 +58,7 @@ public class SetupWizardScreenLockActivity extends FragmentActivity implements
     ).build();
 
     @Override
-    public void launchFragment(BaseFragment fragment) {
+    public void launchFragment(Fragment fragment) {
         Bundle args = fragment.getArguments();
         if (args == null) {
             args = new Bundle();
@@ -75,7 +82,8 @@ public class SetupWizardScreenLockActivity extends FragmentActivity implements
     }
 
     @Override
-    public void showDOBlockingMessage() {}
+    public void showBlockingMessage() {
+    }
 
     @Override
     public CarUxRestrictions getCarUxRestrictions() {
@@ -87,8 +95,9 @@ public class SetupWizardScreenLockActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.suw_activity);
 
-        mPasswordQuality = new LockPatternUtils(this).getKeyguardStoredPasswordQuality(
-                UserHandle.myUserId());
+        mUserId = new CarUserManagerHelper(this).getCurrentForegroundUserId();
+        mLockPatternUtils = new LockPatternUtils(/* context= */ this);
+        mPasswordQuality = mLockPatternUtils.getKeyguardStoredPasswordQuality(mUserId);
 
         if (savedInstanceState == null) {
             BaseFragment fragment;
@@ -134,7 +143,10 @@ public class SetupWizardScreenLockActivity extends FragmentActivity implements
      * Handler that will be invoked when lock save is completed.
      */
     public void onComplete() {
-        setResult(RESULT_OK);
+        Intent data = new Intent();
+        int passwordQuality = mLockPatternUtils.getKeyguardStoredPasswordQuality(mUserId);
+        data.putExtra(EXTRA_PASSWORD_QUALITY, passwordQuality);
+        setResult(RESULT_OK, data);
         finish();
     }
 
@@ -151,10 +163,10 @@ public class SetupWizardScreenLockActivity extends FragmentActivity implements
     public void onLockTypeSelected(int position) {
         BaseFragment fragment = null;
 
-        switch(position) {
+        switch (position) {
             case LockTypeDialogFragment.POSITION_NONE:
                 if (mPasswordQuality != DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED) {
-                    new LockPatternUtils(this).clearLock(mCurrLock, UserHandle.myUserId());
+                    mLockPatternUtils.clearLock(mCurrLock, mUserId);
                 }
                 setResult(ResultCodes.RESULT_NONE);
                 finish();

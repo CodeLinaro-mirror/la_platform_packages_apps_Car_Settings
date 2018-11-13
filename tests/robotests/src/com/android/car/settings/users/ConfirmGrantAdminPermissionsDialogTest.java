@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.Mockito.verify;
 
+import android.content.pm.UserInfo;
 import android.widget.Button;
 
 import androidx.fragment.app.DialogFragment;
@@ -36,13 +37,12 @@ import org.mockito.MockitoAnnotations;
 import org.robolectric.Robolectric;
 
 /**
- * Tests for ConfirmAssignAdminPrivilegesDialog.
+ * Tests for ConfirmGrantAdminPermissionsDialog.
  */
 @RunWith(CarSettingsRobolectricTestRunner.class)
-public class ConfirmAssignAdminPrivilegesDialogTest {
-    private static final String CONFIRM_ASSIGN_ADMIN_DIALOG_TAG = "ConfirmAssignAdminDialog";;
+public class ConfirmGrantAdminPermissionsDialogTest {
+    private static final String CONFIRM_GRANT_ADMIN_DIALOG_TAG = "ConfirmGrantAdminDialog";;
     private BaseTestActivity mTestActivity;
-    private ConfirmAssignAdminPrivilegesDialog mDialog;
 
     @Before
     public void setUpTestActivity() {
@@ -51,54 +51,56 @@ public class ConfirmAssignAdminPrivilegesDialogTest {
         mTestActivity = Robolectric.buildActivity(BaseTestActivity.class)
                 .setup()
                 .get();
-
-        mDialog = new ConfirmAssignAdminPrivilegesDialog();
     }
 
     @Test
-    public void testConfirmAssignAdminInvokesOnAssignAdminConfirmed() {
-        ConfirmAssignAdminPrivilegesDialog.ConfirmAssignAdminListener listener =
-                Mockito.mock(ConfirmAssignAdminPrivilegesDialog.ConfirmAssignAdminListener.class);
-        mDialog.setConfirmAssignAdminListener(listener);
-        showDialog();
+    public void testConfirmGrantAdminInvokesOnGrantAdminConfirmed() {
+        UserInfo testUser = new UserInfo();
+        ConfirmGrantAdminPermissionsDialog dialog = new ConfirmGrantAdminPermissionsDialog();
 
-        // Invoke confirm assign admin.
-        clickPositiveButton(mDialog);
+        ConfirmGrantAdminPermissionsDialog.ConfirmGrantAdminListener listener =
+                Mockito.mock(ConfirmGrantAdminPermissionsDialog.ConfirmGrantAdminListener.class);
+        dialog.setConfirmGrantAdminListener(listener);
+        showDialog(dialog);
 
-        verify(listener).onAssignAdminConfirmed();
+        // Invoke confirm grant admin.
+        clickPositiveButton(dialog);
+
+        verify(listener).onGrantAdminPermissionsConfirmed();
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
     @Test
     public void testCancelDismissesDialog() {
-        showDialog();
+        ConfirmGrantAdminPermissionsDialog dialog = new ConfirmGrantAdminPermissionsDialog();
+        showDialog(dialog);
 
         assertThat(isDialogShown()).isTrue(); // Dialog is shown.
 
         // Invoke cancel.
-        clickNegativeButton(mDialog);
+        clickNegativeButton(dialog);
 
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
     @Test
     public void testNoClickListenerDismissesDialog() {
-        showDialog();
+        ConfirmGrantAdminPermissionsDialog dialog = new ConfirmGrantAdminPermissionsDialog();
+        showDialog(dialog);
 
-        // Invoke confirm assign admin.
-        clickPositiveButton(mDialog);
+        // Invoke confirm grant admin.
+        clickPositiveButton(dialog);
 
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    private void showDialog() {
-        mDialog.show(
-                mTestActivity.getSupportFragmentManager(), CONFIRM_ASSIGN_ADMIN_DIALOG_TAG);
+    private void showDialog(ConfirmGrantAdminPermissionsDialog dialog) {
+        dialog.show(mTestActivity.getSupportFragmentManager(), CONFIRM_GRANT_ADMIN_DIALOG_TAG);
     }
 
     private boolean isDialogShown() {
         return mTestActivity.getSupportFragmentManager()
-                .findFragmentByTag(CONFIRM_ASSIGN_ADMIN_DIALOG_TAG) != null;
+                .findFragmentByTag(CONFIRM_GRANT_ADMIN_DIALOG_TAG) != null;
     }
 
     private void clickPositiveButton(DialogFragment dialogFragment) {

@@ -22,7 +22,7 @@ import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 import static org.robolectric.RuntimeEnvironment.application;
 
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.pm.UserInfo;
 import android.view.View;
 
@@ -136,8 +136,11 @@ public class UsersItemProviderTest {
     }
 
     private UsersItemProvider createProvider() {
-        return new UsersItemProvider(RuntimeEnvironment.application.getApplicationContext(),
-                mUserClickListener, mCarUserManagerHelper);
+        return new UsersItemProvider.Builder(RuntimeEnvironment.application.getApplicationContext(),
+                mCarUserManagerHelper)
+                .setOnUserClickListener(mUserClickListener)
+                .setIncludeSupplementalIcon(true)
+                .create();
     }
 
     private ShadowTextListItem getItem(UsersItemProvider provider, int index) {

@@ -24,7 +24,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BaseFragment.FragmentController;
+import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.display.DisplaySettingsFragment;
 
 /**
@@ -57,7 +57,7 @@ public class DayNightTile implements QuickSettingGridAdapter.Tile {
         }
         mText = mContext.getString(R.string.night_mode_tile_label);
         mLaunchDisplaySettings = v -> {
-            fragmentController.launchFragment(DisplaySettingsFragment.newInstance());
+            fragmentController.launchFragment(new DisplaySettingsFragment());
             return true;
         };
     }

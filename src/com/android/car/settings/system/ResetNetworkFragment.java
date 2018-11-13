@@ -22,10 +22,13 @@ import static java.util.Objects.requireNonNull;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.widget.Button;
 
+import androidx.annotation.LayoutRes;
 import androidx.annotation.StringRes;
+import androidx.annotation.StyleRes;
 import androidx.car.widget.ListItem;
 import androidx.car.widget.ListItemProvider;
 import androidx.car.widget.TextListItem;
@@ -46,16 +49,30 @@ public class ResetNetworkFragment extends ListItemSettingsFragment {
 
     private static final int REQUEST_CODE = 123;
 
-    /**
-     * Creates new instance of {@link ResetNetworkFragment}.
-     */
-    public static ResetNetworkFragment newInstance() {
-        ResetNetworkFragment fragment = new ResetNetworkFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.reset_network_title);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        fragment.setArguments(bundle);
-        return fragment;
+    @StyleRes private int mTitleTextAppearance;
+
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleId() {
+        return R.string.reset_network_title;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        TypedArray a = context.getTheme().obtainStyledAttributes(R.styleable.ListItem);
+
+        mTitleTextAppearance = a.getResourceId(
+                R.styleable.ListItem_listItemTitleTextAppearance,
+                R.style.TextAppearance_Car_Body1_Light);
+
+        a.recycle();
     }
 
     @Override
@@ -72,7 +89,7 @@ public class ResetNetworkFragment extends ListItemSettingsFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            getFragmentController().launchFragment(ResetNetworkConfirmFragment.newInstance());
+            getFragmentController().launchFragment(new ResetNetworkConfirmFragment());
         }
     }
 
@@ -91,8 +108,9 @@ public class ResetNetworkFragment extends ListItemSettingsFragment {
     private TextListItem createTextOnlyItem(@StringRes int stringResId) {
         Context context = requireContext();
         TextListItem item = new TextListItem(context);
-        item.setBody(context.getString(stringResId), /* asPrimary= */ true);
-        item.setHideDivider(true);
+        item.setBody(context.getString(stringResId));
+        item.setShowDivider(false);
+        item.addViewBinder(vh -> vh.getBody().setTextAppearance(mTitleTextAppearance));
         return item;
     }
 }

@@ -16,8 +16,8 @@
 
 package com.android.car.settings.testutils;
 
-import android.car.user.CarUserManagerHelper;
-import android.car.user.CarUserManagerHelper.OnUsersUpdateListener;
+import android.car.userlib.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper.OnUsersUpdateListener;
 import android.content.pm.UserInfo;
 
 import org.robolectric.annotation.Implementation;
@@ -53,6 +53,11 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
+    public int getCurrentProcessUserId() {
+        return sMockInstance.getCurrentProcessUserId();
+    }
+
+    @Implementation
     public boolean isCurrentProcessUser(UserInfo userInfo) {
         return sMockInstance.isCurrentProcessUser(userInfo);
     }
@@ -78,13 +83,13 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
-    public boolean isCurrentProcessDemoUser() {
-        return sMockInstance.isCurrentProcessDemoUser();
+    public boolean isUserLimitReached() {
+        return sMockInstance.isUserLimitReached();
     }
 
     @Implementation
-    public boolean isUserLimitReached() {
-        return sMockInstance.isUserLimitReached();
+    public boolean canCurrentProcessModifyAccounts() {
+        return sMockInstance.canCurrentProcessModifyAccounts();
     }
 
     @Implementation
@@ -108,8 +113,13 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
-    public void assignAdminPrivileges(UserInfo user) {
-        sMockInstance.assignAdminPrivileges(user);
+    public void grantAdminPermissions(UserInfo user) {
+        sMockInstance.grantAdminPermissions(user);
+    }
+
+    @Implementation
+    public boolean isCurrentProcessDemoUser() {
+        return sMockInstance.isCurrentProcessDemoUser();
     }
 
     @Implementation
@@ -118,7 +128,22 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
+    public boolean isCurrentProcessGuestUser() {
+        return sMockInstance.isCurrentProcessGuestUser();
+    }
+
+    @Implementation
     public boolean removeUser(UserInfo userInfo, String guestUserName) {
         return sMockInstance.removeUser(userInfo, guestUserName);
+    }
+
+    @Implementation
+    public void setUserRestriction(UserInfo userInfo, String restriction, boolean enable) {
+        sMockInstance.setUserRestriction(userInfo, restriction, enable);
+    }
+
+    @Implementation
+    public boolean hasUserRestriction(String restriction, UserInfo userInfo) {
+        return sMockInstance.hasUserRestriction(restriction, userInfo);
     }
 }

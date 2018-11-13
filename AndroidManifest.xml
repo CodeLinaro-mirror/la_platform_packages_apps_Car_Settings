@@ -109,6 +109,10 @@
         <activity android:name=".security.SettingsScreenLockActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.car.settings.SCREEN_LOCK_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".security.SetupWizardScreenLockActivity"
@@ -130,6 +134,20 @@
         <activity android:name=".system.ThirdPartyLicensesActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <!-- This logic is copied from phone.-->
+        <!-- Ensures there's lightweight fallback activity when no other MAIN/HOME activity is present.-->
+        <activity android:name=".FallbackHome"
+                  android:excludeFromRecents="true"
+                  android:label=""
+                  android:screenOrientation="nosensor"
+                  android:theme="@style/FallbackHome">
+            <intent-filter android:priority="-1000">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <service android:name=".bluetooth.BluetoothPairingService" />

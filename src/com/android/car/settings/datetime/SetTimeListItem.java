@@ -17,14 +17,14 @@
 package com.android.car.settings.datetime;
 
 import android.content.Context;
+import android.graphics.drawable.Icon;
 import android.provider.Settings;
 import android.text.format.DateFormat;
 
 import androidx.car.widget.TextListItem;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BaseFragment;
-import com.android.car.settings.common.BaseFragment.FragmentController;
+import com.android.car.settings.common.FragmentController;
 
 import java.util.Calendar;
 
@@ -36,7 +36,7 @@ class SetTimeListItem extends TextListItem implements DatetimeSettingsFragment.L
     private final Context mContext;
     private final FragmentController mFragmentController;
 
-    SetTimeListItem(Context context, BaseFragment.FragmentController fragmentController) {
+    SetTimeListItem(Context context, FragmentController fragmentController) {
         super(context);
         mContext = context;
         mFragmentController = fragmentController;
@@ -54,9 +54,9 @@ class SetTimeListItem extends TextListItem implements DatetimeSettingsFragment.L
         if (isEnabled()) {
             setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
             setOnClickListener(v ->
-                    mFragmentController.launchFragment(TimePickerFragment.getInstance()));
+                    mFragmentController.launchFragment(new TimePickerFragment()));
         } else {
-            setSupplementalIcon(null, /* showDivider= */ false);
+            setSupplementalIcon((Icon) null, /* showDivider= */ false);
             setOnClickListener(null);
         }
     }

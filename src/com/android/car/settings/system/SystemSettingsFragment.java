@@ -16,138 +16,16 @@
 
 package com.android.car.settings.system;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.os.Bundle;
-
-import androidx.car.widget.ListItem;
-import androidx.car.widget.ListItemProvider;
-import androidx.car.widget.TextListItem;
-
 import com.android.car.settings.R;
-import com.android.car.settings.common.ExtraSettingsLoader;
-import com.android.car.settings.common.ListItemSettingsFragment;
-import com.android.car.settingslib.language.LanguagePickerUtils;
-import com.android.internal.app.LocaleHelper;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Locale;
-import java.util.Map;
+import com.android.car.settings.common.BasePreferenceFragment;
 
 /**
  * Shows basic info about the system and provide some actions like update, reset etc.
  */
-public class SystemSettingsFragment extends ListItemSettingsFragment {
-
-    // Copied from hidden version in android.provider.Settings
-    private static final String ACTION_SYSTEM_UPDATE_SETTINGS =
-            "android.settings.SYSTEM_UPDATE_SETTINGS";
-
-    private ListItemProvider mItemProvider;
-
-    public static SystemSettingsFragment getInstance() {
-        SystemSettingsFragment systemSettingsFragment = new SystemSettingsFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.system_setting_title);
-        systemSettingsFragment.setArguments(bundle);
-        return systemSettingsFragment;
-    }
+public class SystemSettingsFragment extends BasePreferenceFragment {
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        mItemProvider = new ListItemProvider.ListProvider(getListItems());
-        // super.onActivityCreated() will need itemProvider, so call it after the provider
-        // is initialized.
-        super.onActivityCreated(savedInstanceState);
-    }
-
-    @Override
-    public ListItemProvider getItemProvider() {
-        return mItemProvider;
-    }
-
-    private ArrayList<ListItem> getListItems() {
-        ArrayList<ListItem> listItems = new ArrayList<>();
-
-        listItems.add(createLanguageListItem());
-        listItems.addAll(createSystemUpdateListItems());
-        listItems.add(createAboutSystemListItem());
-        listItems.add(createLegalInfoListItem());
-        listItems.add(createResetOptionsListItem());
-
-        return listItems;
-    }
-
-    private TextListItem createLanguageListItem() {
-        Context context = getContext();
-        TextListItem languageItem = new TextListItem(context);
-        languageItem.setTitle(context.getString(R.string.language_settings));
-        Locale locale = LanguagePickerUtils.getConfiguredLocale();
-        languageItem.setBody(LocaleHelper.getDisplayName(locale, locale, /* sentenceCase= */ true));
-        languageItem.setPrimaryActionIcon(
-                R.drawable.ic_language, TextListItem.PRIMARY_ACTION_ICON_SIZE_SMALL);
-        languageItem.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
-        languageItem.setOnClickListener(
-                v -> getFragmentController().launchFragment(LanguagePickerFragment.newInstance()));
-        return languageItem;
-    }
-
-    private Collection<ListItem> createSystemUpdateListItems() {
-        Collection<ListItem> collection = new ArrayList<>();
-        Context context = getContext();
-
-        Intent settingsIntent = new Intent(ACTION_SYSTEM_UPDATE_SETTINGS);
-        PackageManager packageManager = context.getPackageManager();
-        if (settingsIntent.resolveActivity(packageManager) != null) {
-            collection.add(new SystemUpdatesListItem(context, settingsIntent));
-        }
-
-        ExtraSettingsLoader extraSettingLoader = new ExtraSettingsLoader(context);
-        Map<String, Collection<ListItem>> extraSettings = extraSettingLoader.load();
-        collection.addAll(extraSettings.get(ExtraSettingsLoader.SYSTEM_CATEGORY));
-        return collection;
-    }
-
-    private TextListItem createAboutSystemListItem() {
-        Context context = getContext();
-        TextListItem aboutSystemItem = new TextListItem(context);
-        aboutSystemItem.setTitle(context.getString(R.string.about_settings));
-        aboutSystemItem.setBody(
-                context.getString(R.string.about_summary, Build.VERSION.RELEASE));
-        aboutSystemItem.setPrimaryActionIcon(
-                R.drawable.ic_settings_about, /* useLargeIcon= */ false);
-        aboutSystemItem.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
-        aboutSystemItem.setOnClickListener(
-                v -> getFragmentController().launchFragment(AboutSettingsFragment.getInstance()));
-        return aboutSystemItem;
-    }
-
-    private TextListItem createLegalInfoListItem() {
-        Context context = getContext();
-        TextListItem legalInfoItem = new TextListItem(context);
-        legalInfoItem.setTitle(context.getString(R.string.legal_information));
-        legalInfoItem.setPrimaryActionIcon(
-                R.drawable.ic_settings_about, /* useLargeIcon= */ false);
-        legalInfoItem.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
-        legalInfoItem.setOnClickListener(v ->
-                getFragmentController().launchFragment(LegalInformationFragment.newInstance())
-        );
-        return legalInfoItem;
-    }
-
-    private TextListItem createResetOptionsListItem() {
-        Context context = getContext();
-        TextListItem restoreOptionsItem = new TextListItem(context);
-        restoreOptionsItem.setTitle(context.getString(R.string.reset_options_title));
-        restoreOptionsItem.setBody(context.getString(R.string.reset_options_summary));
-        restoreOptionsItem.setPrimaryActionIcon(R.drawable.ic_restore, /* useLargeIcon= */ false);
-        restoreOptionsItem.setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */
-                false);
-        restoreOptionsItem.setOnClickListener(
-                v -> getFragmentController().launchFragment(ResetOptionsFragment.newInstance()));
-        return restoreOptionsItem;
+    protected int getPreferenceScreenResId() {
+        return R.xml.system_settings_fragment;
     }
 }

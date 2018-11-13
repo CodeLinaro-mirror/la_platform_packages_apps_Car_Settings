@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Isikhathi"</string>
     <string name="user_admin" msgid="1535484812908584809">"Mqondisi"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Ungene ngemvume njengomlawuli"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"Nika izimvume zomlawuli"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"Yenza umlawuli"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"Umsebenzisi uzokwazi ukususa abasebenzisi, kufaka phakathi abanye abalawuli, nokusetha kabusha isistimu."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"Lesi senzo asiphindeli emuva."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"Yebo, yenza umlawuli"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"Engeza umsebenzisi"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Umsebenzisi omusha"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Engeza umsebenzisi omusha?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Uma ungeza umsebenzisi omusha, loyo muntu udinga ukusetha izikhala zakhe."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Noma yimuphi umsebenzisi angabuyekeza izinhlelo zokusebenza zabanye abasebenzisi."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Kufinyelelwe kumkhawulo womsebenzisi"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="one">Ungangeza kufikela kubasebenzisi abangu-<xliff:g id="COUNT">%d</xliff:g>.</item>
-      <item quantity="other">Ungangeza kufikela kubasebenzisi abangu-<xliff:g id="COUNT">%d</xliff:g>.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="one">Ungadala kufikela kubasebenzisi abangu-<xliff:g id="COUNT">%d</xliff:g>.</item>
+      <item quantity="other">Ungadala kufikela kubasebenzisi abangu-<xliff:g id="COUNT">%d</xliff:g>.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"Yehlulekile ukudala umsebenzisi omusha"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Susa umsebenzisi"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Khipha lomsebenzisi?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"Zonke izinhlelo zokusebenza nedatha kuzosuswa."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Yehlulekile ukususa umsebenzisi."</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Cashisa"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Zama futhi"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"Susa lo msebenzisi?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"Zonke izinhlelo zokusebenza nedatha kuzosuswa."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"Yehlulekile ukususa umsebenzisi."</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"Chitha"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"Zama futhi"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"Susa umsebenzisi wokugcina?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"Ngemuva kokususa umsebenzisi osele wale moto, umsebenzisi omusha womlawuli uzodalwa."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"Yonke idatha, izilungiselelo, kanye nezinhlelo zokusebenza eziphathelene nalo msebenzisi kuzosuswa. Uzodinga ukusetha isistimu futhi."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"Khetha umlawuli omusha"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"Udinga okungenani umlawuli oyedwa. Ukuze ususe lo, qala ngokukhetha ukumiselela."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"Khetha umlawuli"</string>
     <string name="user_guest" msgid="3465399481257448601">"Isivakashi"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"Isivakashi"</string>
     <string name="user_switch" msgid="6544839750534690781">"Shintsha"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"Susa i-akhawunti"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Susa i-akhawunti?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"Ingabe ngempela ufuna ukukhipha le-akhawunti? Ukukukhipha kuzosusa yonke imiyalezo yayo, othintana nabo, neminye imininingo esuka kudivayisi!"</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"Lolu shintsho aluvunyelwe umlawuli wakho"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"Yehlulekile ukususa i-akhawunti."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Ukuvikela"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Isikrini sivaliwe"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Lutho"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"Amaphasiwedi avamile avinjelwe umlawuli wakho we-IT. Zama iphasiwedi ehlukile."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"Ukwenyuka, ukwehla, noma ukulandelana okuphindiwe kwamadijithi akuvunyelwe."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Izinketho zokukhiya isikrini"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> izinsuku ezedlule"</string>
     <string name="forget" msgid="3971143908183848527">"Khohlwa"</string>
     <string name="delete_button" msgid="5840500432614610850">"Susa"</string>
     <string name="remove_button" msgid="6664656962868194178">"Susa"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Phuma kumodi yedemo"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Lokhu kuzosusa i-akhawunti ye-demo futhi isethe kabusha idatha yesistimu. Yonke idatha yomsebenzisi izolahleka."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Phuma kudemo"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"qedela ukusetha"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"hhayi manje"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"CASHISA"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Isici asitholakali ngenkathi ushayela."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Ayikwazi ukungeza umsebenzisi ngenkathi ushayela."</string>
 </resources>

@@ -17,7 +17,7 @@
 package com.android.car.settings.accounts;
 
 import android.accounts.Account;
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.text.TextUtils;
@@ -88,7 +88,7 @@ class AccountsItemProvider extends ListItemProvider {
         }
     }
 
-    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    @VisibleForTesting
     List<Account> getSortedUserAccounts() {
         List<Account> accounts = mAccountManagerHelper.getAccountsForCurrentUser();
 
@@ -107,8 +107,8 @@ class AccountsItemProvider extends ListItemProvider {
         item.setBody(body);
         item.addViewBinder(viewHolder ->
                 viewHolder.getTitle().setTextAppearance(R.style.SettingsListHeader));
-        // Hiding the divider after subtitle, since subtitle is a header for a group of items.
-        item.setHideDivider(true);
+        // Do not show the divider after subtitle, since subtitle is a header for a group of items.
+        item.setShowDivider(false);
         return item;
     }
 
@@ -128,9 +128,9 @@ class AccountsItemProvider extends ListItemProvider {
 
         item.setOnClickListener(view -> mItemClickListener.onAccountClicked(account, userInfo));
 
-        // setHideDivider = true will hide the divider to group the items together visually.
+        // Do not show the divider to group the items together visually.
         // All of those without a divider between them will be part of the same "group".
-        item.setHideDivider(true);
+        item.setShowDivider(false);
         return item;
     }
 

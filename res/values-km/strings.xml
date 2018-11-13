@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"ម៉ោង"</string>
     <string name="user_admin" msgid="1535484812908584809">"អ្នកគ្រប់គ្រង"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"បាន​ចូលជា​អ្នក​គ្រប់គ្រង"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"ផ្តល់​សិទ្ធិ​អនុញ្ញាត​របស់​អ្នកគ្រប់គ្រង"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"កំណត់​ជាអ្នក​គ្រប់គ្រង"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"អ្នក​ប្រើប្រាស់​នឹងអាច​លុបអ្នក​ប្រើប្រាស់ រួមទាំង​អ្នកគ្រប់គ្រង​ផ្សេង និង​កំណត់​ប្រព័ន្ធ​ដូចដើម​ឡើងវិញ​ផងដែរ។"</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"សកម្មភាព​នេះ​មិនអាច​ត្រឡប់វិញ​បានទេ។"</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"បាទ/ចាស កំណត់​ជាអ្នក​គ្រប់គ្រង"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"បញ្ចូល​អ្នក​ប្រើប្រាស់"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"អ្នក​ប្រើប្រាស់​ថ្មី"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"បញ្ចូល​អ្នក​ប្រើប្រាស់​ថ្មី?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"នៅពេលដែល​អ្នក​បញ្ចូល​អ្នក​ប្រើប្រាស់​ថ្មី បុគ្គល​នោះ​ត្រូវតែ​រៀបចំ​ទំហំ​ផ្ទុក​របស់គេ។"</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"អ្នកប្រើប្រាស់​ណាក៏​អាច​ដំឡើង​ជំនាន់កម្មវិធី​សម្រាប់​អ្នក​ប្រើប្រាស់​ទាំងអស់​ផ្សេង​ទៀត​បាន​ដែរ។"</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"​បាន​ឈាន​ដល់ចំនួន​កំណត់អ្នកប្រើប្រាស់"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="other">អ្នកអាចបញ្ចូល​អ្នក​ប្រើប្រាស់បាន​រហូតដល់ <xliff:g id="COUNT">%d</xliff:g> នាក់។</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="other">អ្នកអាច​បង្កើត​អ្នកប្រើប្រាស់​បាន​រហូតដល់ <xliff:g id="COUNT">%d</xliff:g> នាក់។</item>
       <item quantity="one">អាច​បង្កើត​អ្នក​ប្រើប្រាស់​បាន​​តែម្នាក់ប៉ុណ្ណោះ។</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"មិន​អាច​បង្កើត​អ្នកប្រើប្រាស់​ថ្មី​បាន​ទេ"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"លុប​អ្នក​ប្រើប្រាស់"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"លុប​អ្នកប្រើប្រាស់​នេះ?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"កម្មវិធី និង​ទិន្នន័យ​ទាំងអស់​នឹង​ត្រូវ​បាន​លុប។"</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"មិនអាច​លុប​អ្នកប្រើប្រាស់​បានទេ។"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"ច្រានចោល"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"ព្យាយាមម្ដងទៀត"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"លុបអ្នកប្រើប្រាស់​នេះមែនទេ?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"កម្មវិធី និង​ទិន្នន័យ​ទាំងអស់​នឹង​ត្រូវ​បាន​លុប។"</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"មិនអាច​លុបអ្នកប្រើប្រាស់​បានទេ។"</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"ច្រានចោល"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"ព្យាយាមម្ដងទៀត"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"លុបអ្នកប្រើប្រាស់​ចុងក្រោយ​មែនទេ?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"​បន្ទាប់ពី​លុបអ្នក​ប្រើប្រាស់​នៅសល់ចុងក្រោយ​សម្រាប់​រថយន្តនេះ អ្នកប្រើប្រាស់​ដែលជា​អ្នកគ្រប់គ្រងថ្មី​នឹងត្រូវបាន​បង្កើត។"</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"ទិន្នន័យ ការកំណត់ និងកម្មវិធី​ទាំងអស់​ដែលពាក់ព័ន្ធ​ជាមួយ​អ្នកប្រើប្រាស់​នេះនឹង​ត្រូវបាន​លុប។ អ្នកនឹង​​ត្រូវរៀបចំ​ប្រព័ន្ធ​ម្ដងទៀត។"</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"ជ្រើសរើស​អ្នកគ្រប់គ្រងថ្មី"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"អ្នកត្រូវការ​​អ្នកគ្រប់គ្រងយ៉ាងហោចណាស់​ម្នាក់។ ដើម្បីលុប​អ្នកគ្រប់គ្រង​នេះ សូមជ្រើសរើស​អ្នកជំនួស​ជាមុនសិន។"</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"ជ្រើសរើសអ្នកគ្រប់គ្រង"</string>
     <string name="user_guest" msgid="3465399481257448601">"ភ្ញៀវ"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"ភ្ញៀវ"</string>
     <string name="user_switch" msgid="6544839750534690781">"ប្ដូរ"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"លុប​គណនី​​"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"លុបគណនី​?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"ការលុប​គណនី​នេះ​នឹង​លុប​សារ ទំនាក់ទំនង និង​ទិន្នន័យ​ផ្សេងៗ​របស់​គណនី​នេះ​ទាំង​អស់​ចេញ​ពី​ឧបករណ៍!"</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"ការផ្លាស់ប្ដូរនេះ​មិនត្រូវ​បាន​អនុញ្ញាត​ដោយ​អ្នក​គ្រប់គ្រង​របស់អ្នក​ទេ"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"មិនអាច​លុបគណនី​បានទេ។"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"សុវត្ថិភាព"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"ការចាក់សោអេក្រង់"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"គ្មាន"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"ពាក្យសម្ងាត់​លក្ខណៈ​សាមញ្ញ​ត្រូវ​បាន​ទប់ស្កាត់​ដោយ​អ្នក​គ្រប់គ្រង​ព័ត៌មាន​វិទ្យា​របស់អ្នក។ សាកល្បង​ប្រើ​ពាក្យ​សម្ងាត់​ផ្សេង​ពី​នេះ។"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"មិន​អនុញ្ញាត​ឱ្យ​មាន​លេខ​លំដាប់​ឡើង ចុះ ឬ​ដដែលៗ​ទេ។"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"ជម្រើស​ការចាក់សោអេក្រង់"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\nថ្ងៃ <xliff:g id="DATE">%2$s</xliff:g>៖ <xliff:g id="NUM_DAYS">%3$s</xliff:g> ថ្ងៃមុន"</string>
     <string name="forget" msgid="3971143908183848527">"បំភ្លេច"</string>
     <string name="delete_button" msgid="5840500432614610850">"លុប"</string>
     <string name="remove_button" msgid="6664656962868194178">"លុប"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"ចាក​ចេញ​ពីមុខងារបង្ហាញ​សាកល្បង"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"ការចាកចេញ​នេះ​នឹង​លុប​គណនីបង្ហាញ​សាកល្បង និងកំណត់​ទិន្នន័យប្រព័ន្ធ​ដូច​ចេញ​ពី​រោងចក្រ។​ ទិន្នន័យ​អ្នក​ប្រើប្រាស់​ទាំងអស់​នឹង​បាត់បង់។"</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"ចាក​ចេញ​ពីការបង្ហាញ​សាកល្បង"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"បញ្ចប់​ការរៀបចំ"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"កុំ​ទាន់"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"ច្រានចោល"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"មិនអាច​ប្រើមុខងារ​នេះបានទេ ខណៈពេល​កំពុង​បើកបរ។"</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"មិនអាច​បញ្ចូល​អ្នកប្រើប្រាស់​ខណៈពេល​បើកបរ​បានទេ។"</string>
 </resources>

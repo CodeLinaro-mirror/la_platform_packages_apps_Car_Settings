@@ -14,25 +14,23 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.users;
+package com.android.car.settings.system;
 
-import android.app.Dialog;
-import android.os.Bundle;
-
-import androidx.car.app.CarAlertDialog;
-import androidx.fragment.app.DialogFragment;
+import android.content.Context;
+import android.os.Build;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.NoSetupPreferenceController;
 
-/**
- * Dialog to inform that user deletion failed.
- */
-public class RemoveUserErrorDialog extends DialogFragment {
+/** Updates the about settings entry summary with the build version. */
+public class AboutSettingsEntryPreferenceController extends NoSetupPreferenceController {
+
+    public AboutSettingsEntryPreferenceController(Context context, String preferenceKey) {
+        super(context, preferenceKey);
+    }
+
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new CarAlertDialog.Builder(getContext())
-                .setTitle(R.string.remove_user_error_title)
-                .setPositiveButton(android.R.string.ok, null)
-                .create();
+    public CharSequence getSummary() {
+        return mContext.getString(R.string.about_summary, Build.VERSION.RELEASE);
     }
 }

@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"সময়"</string>
     <string name="user_admin" msgid="1535484812908584809">"অ্যাডমিন"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"অ্যাডমিন হিসেবে সাইন-ইন করেছেন"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"অ্যাডমিন অনুমতি প্রদান করুন"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"অ্যাডমিন করা"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"ব্যবহারকারী অন্যান্য অ্যাডমিন সহ ব্যবহারকারীদের মুছে দিতে পারবে এবং ফ্যাক্টরিটি সিস্টেম রিসেট করবে।"</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"এই অ্যাকশনটি আগের অবস্থায় ফেরানো যাবে না।"</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"হ্যাঁ, অ্যাডমিন তৈরি করুন"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"ব্যবহারকারী যোগ করুন"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"নতুন ব্যবহারকারী"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"ব্যবহারকারী যোগ করবেন?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"আপনি একজন নতুন ব্যবহারকারী যোগ করলে তাকে তার স্পেস সেট-আপ করে নিতে হবে৷"</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"যেকোনও ব্যবহারকারী বাকি সব ব্যবহারকারীর জন্য অ্যাপ আপডেট করতে পারবেন।"</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"আর কোনও প্রোফাইল যোগ করা যাবে না"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="one">আপনি সর্বাধিক <xliff:g id="COUNT">%d</xliff:g> জন ব্যবহারকারীর প্রোফাইল যোগ করতে পারেন।</item>
-      <item quantity="other">আপনি সর্বাধিক <xliff:g id="COUNT">%d</xliff:g> জন ব্যবহারকারীর প্রোফাইল যোগ করতে পারেন।</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="one">আপনি <xliff:g id="COUNT">%d</xliff:g>টি প্রোফাইল তৈরি করতে পারবেন।</item>
+      <item quantity="other">আপনি <xliff:g id="COUNT">%d</xliff:g>টি প্রোফাইল তৈরি করতে পারবেন।</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"নতুন প্রোফাইল তৈরি করা যায়নি"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"ব্যবহারকারীকে মুছুন"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"এই ব্যবহারকারীকে সরাবেন?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"সব অ্যাপ ও ডেটা মুছে ফেলা হবে।"</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"ব্যবহারকারীকে সরানো যায়নি।"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"খারিজ করুন"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"আবার চেষ্টা করুন"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"এই ব্যবহারকারীর অ্যাকাউন্টটি মুছবেন?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"সব অ্যাপ ও ডেটা মুছে ফেলা হবে।"</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"ব্যবহারকারীকে মুছে ফেলা যায়নি।"</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"খারিজ"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"আবার চেষ্টা করুন"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"শেষ ব্যবহারকারীকে মুছে দিতে চান?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"এই গাড়ির আগের ব্যবহারকারীকে মুছে ফেলার পর, নতুন অ্যাডমিন ব্যবহারকারী তৈরি করা হবে।"</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"এই ব্যবহারকারীর সব ডেটা, সেটিংস, এবং অ্যাপ মুছে ফেলা হবে। আপনাকে সিস্টেম আবার সেট-আপ করতে হবে।"</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"নতুন অ্যাডমিন বেছে নিন"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"আপনার একজন অ্যাডমিন প্রয়োজন। এটি মুছে ফেলতে, অন্য একটি বিকল্প বেছে নিন।"</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"অ্যাডমিন বেছে নিন"</string>
     <string name="user_guest" msgid="3465399481257448601">"অতিথি"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"অতিথি"</string>
     <string name="user_switch" msgid="6544839750534690781">"পরিবর্তন করুন"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"অ্যাকাউন্ট সরিয়ে দিন"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"অ্যাকাউন্টটি সরাবেন?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"এই অ্যাকাউন্টটি মুছে দিলে এটির সমস্ত মেসেজ, পরিচিতি এবং অন্যান্য ডেটা ডিভাইস থেকে মুছে দেওয়া হবে!"</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"আপনার অ্যাডমিন এই পরিবর্তনটি করার অনুমতি দেয় না"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"অ্যাকাউন্ট সরানো যায়নি।"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"নিরাপত্তা"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"স্ক্রিন লক"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"কোনওটিই নয়"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"একইধরনের পাসওয়ার্ড আপনার আইটি অ্যাডমিনের মাধ্যমে ব্লক করা হয়। অন্য একটি পাসওয়ার্ড ব্যবহার করার চেষ্টা করুন।"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"ছোট থেকে বড়, বড় থেকে ছোট সংখ্যা অথবা নির্দিষ্ট কয়েকটি সংখ্যা বার বার লেখা যাবে না।"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"স্ক্রিন লকের বিকল্প"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> দিন আগে"</string>
     <string name="forget" msgid="3971143908183848527">"ভুলে যান"</string>
     <string name="delete_button" msgid="5840500432614610850">"মুছুন"</string>
     <string name="remove_button" msgid="6664656962868194178">"সরিয়ে দিন"</string>
@@ -325,8 +335,8 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"ডেমো মোড ছেড়ে বেরিয়ে আসুন"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"এর ফলে ডেমো অ্যাকাউন্টটি মুছে দেওয়া হবে এবং সিস্টেমের ডেটা ফ্যাক্টরি রিসেট করা হবে। ব্যবহারকারীর সমস্ত ডেটা মুছে যাবে।"</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"ডেমো মোড ছেড়ে যান"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"সেট-আপ শেষ করুন"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"এখনই নয়"</string>
+    <!-- no translation found for suggestion_dismiss_button (4539412646977050641) -->
+    <skip />
     <string name="restricted_while_driving" msgid="6217369093121968299">"ড্রাইভ করার সময় এই বৈশিষ্ট্য উপলভ্য নয়।"</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"ড্রাইভ করার সময় ব্যবহারকারীকে যোগ করতে পারবেন না।"</string>
 </resources>

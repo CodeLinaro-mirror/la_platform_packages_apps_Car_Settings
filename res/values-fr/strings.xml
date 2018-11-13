@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Heure"</string>
     <string name="user_admin" msgid="1535484812908584809">"Administrateur"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Connecté en tant qu\'administrateur"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"Accorder les droits d\'administrateur"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"Changer en administrateur"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"L\'utilisateur pourra supprimer des profils utilisateur, y compris ceux d\'autres administrateurs, et rétablir la configuration d\'usine du système."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"Cette action est irréversible."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"Oui, changer en administrateur"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"Ajouter un utilisateur"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Nouvel utilisateur"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Ajouter un utilisateur ?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Lorsque vous ajoutez un utilisateur, celui-ci doit configurer son espace."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"N\'importe quel utilisateur peut mettre à jour les applications pour tous les autres utilisateurs."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Limite nombre utilisateurs atteinte"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="one">Vous pouvez ajouter <xliff:g id="COUNT">%d</xliff:g> profil utilisateur.</item>
-      <item quantity="other">Vous pouvez ajouter jusqu\'à <xliff:g id="COUNT">%d</xliff:g> profils utilisateur.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="one">Vous pouvez créer jusqu\'à <xliff:g id="COUNT">%d</xliff:g> profil utilisateur.</item>
+      <item quantity="other">Vous pouvez créer jusqu\'à <xliff:g id="COUNT">%d</xliff:g> profils utilisateur.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"Échec de création profil utilisateur"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Supprimer un compte utilisateur"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Supprimer l\'utilisateur ?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"L\'ensemble des applications et des données seront supprimées."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Échec de la suppression de l\'utilisateur."</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Ignorer"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Réessayer"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"Supprimer l\'utilisateur ?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"Toutes les applications et les données seront supprimées."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"Échec de la suppression de l\'utilisateur."</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"Ignorer"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"Réessayer"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"Suppr. dernier utilis. ?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"Après la suppression du seul utilisateur restant pour cette voiture, un nouveau profil d\'administrateur sera créé."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"Tous les paramètres, données et applications associés à cet utilisateur seront supprimés. Vous devrez configurer à nouveau le système."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"Sélectionner un nouvel administrateur"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"Vous devez disposer d\'au moins un administrateur. Pour supprimer ce profil, choisissez d\'abord un autre administrateur."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"Sélect. administrateur"</string>
     <string name="user_guest" msgid="3465399481257448601">"Invité"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"Invité"</string>
     <string name="user_switch" msgid="6544839750534690781">"Changer"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"Supprimer le compte"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Supprimer le compte ?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"La suppression de ce compte entraînera la suppression de tous les messages, contacts et autres données de l\'appareil."</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"Votre administrateur n\'autorise pas cette modification"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"Échec de la suppression du compte."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Sécurité"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Verrouillage d\'écran"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Aucun"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"Les mots de passe courants sont bloqués par votre administrateur informatique. Choisissez un autre mot de passe."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"Les suites de chiffres croissantes, décroissantes ou répétitives ne sont pas autorisées."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Options de verrouillage de l\'écran"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : il y a <xliff:g id="NUM_DAYS">%3$s</xliff:g> jours"</string>
     <string name="forget" msgid="3971143908183848527">"Supprimer"</string>
     <string name="delete_button" msgid="5840500432614610850">"Supprimer"</string>
     <string name="remove_button" msgid="6664656962868194178">"Supprimer"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Quitter le mode de démo"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Le compte de démonstration sera supprimé et la configuration d\'usine du système sera rétablie. Toutes les données utilisateur seront perdues."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Quitter la démo"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"terminer la configuration"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"pas maintenant"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"IGNORER"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Fonctionnalité non disponible lorsque vous conduisez."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Impossible d\'ajouter un utilisateur pendant la conduite."</string>
 </resources>

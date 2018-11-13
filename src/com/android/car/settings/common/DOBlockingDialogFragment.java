@@ -24,7 +24,6 @@ import androidx.car.app.CarAlertDialog;
 import androidx.fragment.app.DialogFragment;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BaseFragment.FragmentController;
 import com.android.car.settings.quicksettings.QuickSettingFragment;
 
 /**
@@ -39,7 +38,6 @@ public class DOBlockingDialogFragment extends DialogFragment implements
     /**
      * Creates a DOBlockingDialogFragment with a specified message
      *
-     * @param message
      * @return an instance of DOBlockingDialogFragment
      */
     public static DOBlockingDialogFragment newInstance(String message) {
@@ -70,8 +68,9 @@ public class DOBlockingDialogFragment extends DialogFragment implements
 
     /**
      * Return to the quick settings main screen after the dialog is dismissed.
+     *
      * @param showQuickSettingsMainScreen whether to return to the quick settings main screen, the
-     * default value is true
+     *         default value is true
      */
     public void goBackToQuickSettingsMainScreen(boolean showQuickSettingsMainScreen) {
         mShowQuickSettingsMainScreen = showQuickSettingsMainScreen;
@@ -81,8 +80,7 @@ public class DOBlockingDialogFragment extends DialogFragment implements
     @Override
     public void onClick(DialogInterface dialog, int which) {
         if (mShowQuickSettingsMainScreen) {
-            ((FragmentController) getActivity()).launchFragment(
-                    QuickSettingFragment.newInstance());
+            ((FragmentController) getActivity()).launchFragment(new QuickSettingFragment());
         }
         dismiss();
     }

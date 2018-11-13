@@ -17,13 +17,13 @@
 package com.android.car.settings.datetime;
 
 import android.content.Context;
+import android.graphics.drawable.Icon;
 import android.provider.Settings;
 
 import androidx.car.widget.TextListItem;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BaseFragment;
-import com.android.car.settings.common.BaseFragment.FragmentController;
+import com.android.car.settings.common.FragmentController;
 import com.android.settingslib.datetime.ZoneGetter;
 
 import java.util.Calendar;
@@ -37,7 +37,7 @@ class SetTimeZoneListItem extends TextListItem
     private final Context mContext;
     private final FragmentController mFragmentController;
 
-    SetTimeZoneListItem(Context context, BaseFragment.FragmentController fragmentController) {
+    SetTimeZoneListItem(Context context, FragmentController fragmentController) {
         super(context);
         mContext = context;
         mFragmentController = fragmentController;
@@ -55,9 +55,9 @@ class SetTimeZoneListItem extends TextListItem
         if (isEnabled()) {
             setSupplementalIcon(R.drawable.ic_chevron_right, /* showDivider= */ false);
             setOnClickListener(v ->
-                    mFragmentController.launchFragment(TimeZonePickerFragment.getInstance()));
+                    mFragmentController.launchFragment(new TimeZonePickerFragment()));
         } else {
-            setSupplementalIcon(null, /* showDivider= */ false);
+            setSupplementalIcon((Icon) null, /* showDivider= */ false);
             setOnClickListener(null);
         }
     }

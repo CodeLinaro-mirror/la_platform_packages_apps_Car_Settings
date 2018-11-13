@@ -22,12 +22,16 @@ import android.app.ActivityManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
+import androidx.annotation.StyleRes;
 import androidx.car.widget.ListItem;
 import androidx.car.widget.ListItemProvider;
 import androidx.car.widget.TextListItem;
@@ -43,17 +47,30 @@ import java.util.List;
  * If a user confirms, all settings are reset for connectivity, Wi-Fi, and Bluetooth.
  */
 public class ResetNetworkConfirmFragment extends ListItemSettingsFragment {
+    @StyleRes private int mTitleTextAppearance;
 
-    /**
-     * Creates new instance of {@link ResetNetworkConfirmFragment}.
-     */
-    public static ResetNetworkConfirmFragment newInstance() {
-        ResetNetworkConfirmFragment fragment = new ResetNetworkConfirmFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.reset_network_confirm_title);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        fragment.setArguments(bundle);
-        return fragment;
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleId() {
+        return R.string.reset_network_confirm_title;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        TypedArray a = context.getTheme().obtainStyledAttributes(R.styleable.ListItem);
+
+        mTitleTextAppearance = a.getResourceId(
+                R.styleable.ListItem_listItemTitleTextAppearance,
+                R.style.TextAppearance_Car_Body1_Light);
+
+        a.recycle();
     }
 
     @Override
@@ -74,8 +91,9 @@ public class ResetNetworkConfirmFragment extends ListItemSettingsFragment {
     private List<ListItem> getListItems() {
         Context context = requireContext();
         TextListItem item = new TextListItem(context);
-        item.setBody(context.getString(R.string.reset_network_confirm_desc), /* asPrimary= */ true);
-        item.setHideDivider(true);
+        item.setBody(context.getString(R.string.reset_network_confirm_desc));
+        item.setShowDivider(false);
+        item.addViewBinder(vh -> vh.getBody().setTextAppearance(mTitleTextAppearance));
         return Collections.singletonList(item);
     }
 

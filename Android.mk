@@ -28,13 +28,14 @@ ifeq (,$(TARGET_BUILD_APPS))
 
   LOCAL_USE_AAPT2 := true
 
-  LOCAL_JAVA_LIBRARIES += android.car
+  LOCAL_JAVA_LIBRARIES := \
+      android.car
 
   LOCAL_STATIC_ANDROID_LIBRARIES := \
       androidx.car_car \
-      androidx.preference_preference \
-      androidx.legacy_legacy-preference-v14 \
       androidx.lifecycle_lifecycle-extensions \
+      androidx.preference_preference \
+      androidx-constraintlayout_constraintlayout \
       car-settings-lib \
       car-setup-wizard-lib \
       setup-wizard-lib-gingerbread-compat \
@@ -53,7 +54,10 @@ ifeq (,$(TARGET_BUILD_APPS))
 
   LOCAL_DEX_PREOPT := false
 
-  LOCAL_STATIC_JAVA_LIBRARIES += jsr305
+  LOCAL_STATIC_JAVA_LIBRARIES := \
+      android.car.user \
+      androidx-constraintlayout_constraintlayout-solver \
+      jsr305
 
   LOCAL_DX_FLAGS := --multi-dex
 
@@ -65,6 +69,66 @@ ifeq (,$(TARGET_BUILD_APPS))
   endif
   include $(BUILD_PACKAGE)
 endif
+
+###################################################################################
+# Duplicate of CarSettings which includes testing only resources for Robolectric #
+###################################################################################
+include $(CLEAR_VARS)
+
+# To avoid build errors, build empty package for non-platform builds
+# (for example, projected). See b/30064991
+ifeq (,$(TARGET_BUILD_APPS))
+  LOCAL_PACKAGE_NAME := CarSettingsForTesting
+  LOCAL_PRIVATE_PLATFORM_APIS := true
+
+  LOCAL_SRC_FILES := $(call all-java-files-under, src)
+
+  LOCAL_USE_AAPT2 := true
+
+  LOCAL_JAVA_LIBRARIES := \
+      android.car \
+      android.car.user
+
+  LOCAL_STATIC_ANDROID_LIBRARIES := \
+      androidx.car_car \
+      androidx.lifecycle_lifecycle-extensions \
+      androidx.preference_preference \
+      androidx-constraintlayout_constraintlayout \
+      car-settings-lib \
+      car-setup-wizard-lib \
+      setup-wizard-lib-gingerbread-compat \
+      SettingsLib
+
+  LOCAL_RESOURCE_DIR := \
+      $(LOCAL_PATH)/res \
+      $(LOCAL_PATH)/tests/robotests/res
+
+  LOCAL_CERTIFICATE := platform
+
+  LOCAL_MODULE_TAGS := optional
+
+  LOCAL_PROGUARD_ENABLED := disabled
+
+  LOCAL_PRIVILEGED_MODULE := true
+
+  LOCAL_DEX_PREOPT := false
+
+  LOCAL_STATIC_JAVA_LIBRARIES := \
+      android.car.user \
+      androidx-constraintlayout_constraintlayout-solver \
+      jsr305
+
+  LOCAL_DX_FLAGS := --multi-dex
+
+  ifdef DISABLE_AOSP_PHONE_SETTING
+    ifeq ($(DISABLE_AOSP_PHONE_SETTING),true)
+      # This will hide AOSP phone setting.
+      LOCAL_OVERRIDES_PACKAGES := Settings
+    endif
+  endif
+  include $(BUILD_PACKAGE)
+endif
+###################################################################################
 
 # Use the following include to make our test apk.
 ifeq (,$(ONE_SHOT_MAKEFILE))

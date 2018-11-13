@@ -19,11 +19,12 @@ package com.android.car.settings.users;
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 import static org.robolectric.RuntimeEnvironment.application;
 
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.os.UserManager;
@@ -53,8 +54,8 @@ import org.robolectric.shadows.ShadowApplication;
  * Tests for UserDetailsFragment.
  */
 @RunWith(CarSettingsRobolectricTestRunner.class)
-@Config(shadows = { ShadowUserIconProvider.class, ShadowTextListItem.class,
-        ShadowCarUserManagerHelper.class })
+@Config(shadows = {ShadowUserIconProvider.class, ShadowTextListItem.class,
+        ShadowCarUserManagerHelper.class})
 public class UserDetailsFragmentTest {
     private BaseTestActivity mTestActivity;
     private UserDetailsFragment mUserDetailsFragment;
@@ -156,7 +157,7 @@ public class UserDetailsFragmentTest {
         mRemoveUserButton.callOnClick();
 
         assertThat(mUserDetailsFragment.getFragmentManager().findFragmentByTag(
-                UserDetailsFragment.CONFIRM_REMOVE_DIALOG_TAG)).isNotNull();
+                UserDetailsFragment.CONFIRM_REMOVE_USER_DIALOG_TAG)).isNotNull();
     }
 
     /* Test that edit icon does not show up for non-current users. */
@@ -203,17 +204,17 @@ public class UserDetailsFragmentTest {
     public void testBackButtonPressedWhenRemoveUserSuccessful() {
         doReturn(true).when(mCarUserManagerHelper).removeUser(any(), any());
         createUserDetailsFragment();
-        mUserDetailsFragment.onRemoveUserConfirmed();
+        mUserDetailsFragment.removeUser();
 
         assertThat(mTestActivity.getOnBackPressedFlag()).isTrue();
     }
 
-    /* Test that onRemoveUserConfirmed invokes user removal. */
+    /* Test that removeUser invokes user removal. */
     @Test
-    public void testRemoveUserConfirmedInvokesRemoveUser() {
+    public void testRemoveUserInvokesRemoveUser() {
         UserInfo testUser = new UserInfo(/* id= */ 10, "Test User", /* flags= */ 0);
         createUserDetailsFragment(testUser);
-        mUserDetailsFragment.onRemoveUserConfirmed();
+        mUserDetailsFragment.removeUser();
 
         verify(mCarUserManagerHelper).removeUser(
                 testUser, application.getString(R.string.user_guest));
@@ -288,25 +289,120 @@ public class UserDetailsFragmentTest {
                 .isInstanceOf(NonAdminManagementItemProvider.class);
     }
 
-    /* Test that clicking assign admin button creates a confirm assign admin dialog. */
+    /* Test that trying to grant admin permissions creates a confirm grant admin dialog. */
     @Test
-    public void testAssignAdminClick() {
+    public void testOnGrantAdminPermission_confirmDialogShown() {
         createUserDetailsFragment();
 
-        mUserDetailsFragment.onAssignAdminClicked();
+        mUserDetailsFragment.onGrantAdminPermission();
 
         assertThat(mUserDetailsFragment.getFragmentManager().findFragmentByTag(
-                UserDetailsFragment.CONFIRM_ASSIGN_ADMIN_DIALOG_TAG)).isNotNull();
+                UserDetailsFragment.CONFIRM_GRANT_ADMIN_DIALOG_TAG)).isNotNull();
     }
 
     @Test
-    public void testAssignAdminConfirmed() {
+    public void testGrantAdmin() {
         UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
         createUserDetailsFragment(testUser);
 
-        mUserDetailsFragment.onAssignAdminConfirmed();
+        mUserDetailsFragment.grantAdmin();
 
-        verify(mCarUserManagerHelper).assignAdminPrivileges(testUser);
+        verify(mCarUserManagerHelper).grantAdminPermissions(testUser);
+    }
+
+    @Test
+    public void testHasCreateUserPermission_cannotCreateUsers_shouldBeFalse() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        doReturn(true).when(mCarUserManagerHelper).hasUserRestriction(
+                eq(UserManager.DISALLOW_ADD_USER), eq(testUser));
+        createUserDetailsFragment(testUser);
+
+        assertThat(mUserDetailsFragment.hasCreateUserPermission()).isFalse();
+    }
+
+    @Test
+    public void testHasCreateUserPermission_canCreateUsers_shouldBeTrue() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        doReturn(false).when(mCarUserManagerHelper).hasUserRestriction(
+                eq(UserManager.DISALLOW_ADD_USER), eq(testUser));
+        createUserDetailsFragment(testUser);
+
+        assertThat(mUserDetailsFragment.hasCreateUserPermission()).isTrue();
+    }
+
+
+    @Test
+    public void testOnCreateUserPermissionChanged() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        createUserDetailsFragment(testUser);
+
+        mUserDetailsFragment.onCreateUserPermissionChanged(/* enabled= */ true);
+
+        verify(mCarUserManagerHelper).setUserRestriction(
+                eq(testUser), eq(UserManager.DISALLOW_ADD_USER), eq(false));
+    }
+
+    @Test
+    public void testHasOutgoingCallsPermission_cannotMakeOutgoingCalls_shouldBeFalse() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        doReturn(true).when(mCarUserManagerHelper).hasUserRestriction(
+                eq(UserManager.DISALLOW_OUTGOING_CALLS), eq(testUser));
+        createUserDetailsFragment(testUser);
+
+        assertThat(mUserDetailsFragment.hasOutgoingCallsPermission()).isFalse();
+    }
+
+    @Test
+    public void testHasOutgoingCallsPermission_cantMakeOutgoingCalls_shouldBeTrue() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        doReturn(false).when(mCarUserManagerHelper).hasUserRestriction(
+                eq(UserManager.DISALLOW_OUTGOING_CALLS), eq(testUser));
+        createUserDetailsFragment(testUser);
+
+        assertThat(mUserDetailsFragment.hasOutgoingCallsPermission()).isTrue();
+    }
+
+
+    @Test
+    public void testOnGrantOutgoingCallsPermission() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        createUserDetailsFragment(testUser);
+
+        mUserDetailsFragment.onOutgoingCallsPermissionChanged(/* enabled= */ true);
+
+        verify(mCarUserManagerHelper).setUserRestriction(
+                eq(testUser), eq(UserManager.DISALLOW_OUTGOING_CALLS), eq(false));
+    }
+
+    @Test
+    public void testHasMessagingPermission_cannotMessage_shouldBeFalse() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        doReturn(true).when(mCarUserManagerHelper).hasUserRestriction(
+                eq(UserManager.DISALLOW_SMS), eq(testUser));
+        createUserDetailsFragment(testUser);
+
+        assertThat(mUserDetailsFragment.hasSmsMessagingPermission()).isFalse();
+    }
+
+    @Test
+    public void testHasMessagingPermission_cantMessage_shouldBeTrue() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        doReturn(false).when(mCarUserManagerHelper).hasUserRestriction(
+                eq(UserManager.DISALLOW_SMS), eq(testUser));
+        createUserDetailsFragment(testUser);
+
+        assertThat(mUserDetailsFragment.hasSmsMessagingPermission()).isTrue();
+    }
+
+    @Test
+    public void testOnGrantMessagingPermission() {
+        UserInfo testUser = new UserInfo(/* id= */ 10, "Non admin", /* flags= */ 0);
+        createUserDetailsFragment(testUser);
+
+        mUserDetailsFragment.onSmsMessagingPermissionChanged(/* enabled= */ true);
+
+        verify(mCarUserManagerHelper).setUserRestriction(
+                eq(testUser), eq(UserManager.DISALLOW_SMS), eq(false));
     }
 
     private void createUserDetailsFragment(UserInfo userInfo) {

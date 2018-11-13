@@ -20,11 +20,12 @@ import static java.util.Objects.requireNonNull;
 
 import android.app.AppOpsManager;
 import android.app.INotificationManager;
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -34,7 +35,9 @@ import android.webkit.IWebViewUpdateService;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.LayoutRes;
 import androidx.annotation.StringRes;
+import androidx.annotation.StyleRes;
 import androidx.car.widget.ListItem;
 import androidx.car.widget.ListItemProvider;
 import androidx.car.widget.TextListItem;
@@ -53,17 +56,30 @@ import java.util.List;
 public class ResetAppPrefFragment extends ListItemSettingsFragment {
 
     private static final Logger LOG = new Logger(ResetAppPrefFragment.class);
+    @StyleRes private int mTitleTextAppearance;
 
-    /**
-     * Creates new instance of {@link ResetAppPrefFragment}.
-     */
-    public static ResetAppPrefFragment newInstance() {
-        ResetAppPrefFragment fragment = new ResetAppPrefFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.reset_app_pref_title);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        fragment.setArguments(bundle);
-        return fragment;
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleId() {
+        return R.string.reset_app_pref_title;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        TypedArray a = context.getTheme().obtainStyledAttributes(R.styleable.ListItem);
+
+        mTitleTextAppearance = a.getResourceId(
+                R.styleable.ListItem_listItemTitleTextAppearance,
+                R.style.TextAppearance_Car_Body1_Light);
+
+        a.recycle();
     }
 
     @Override
@@ -90,8 +106,9 @@ public class ResetAppPrefFragment extends ListItemSettingsFragment {
     private TextListItem createTextOnlyItem(@StringRes int stringResId) {
         Context context = requireContext();
         TextListItem item = new TextListItem(context);
-        item.setBody(context.getString(stringResId), /* asPrimary= */ true);
-        item.setHideDivider(true);
+        item.setBody(context.getString(stringResId));
+        item.setShowDivider(false);
+        item.addViewBinder(vh -> vh.getBody().setTextAppearance(mTitleTextAppearance));
         return item;
     }
 

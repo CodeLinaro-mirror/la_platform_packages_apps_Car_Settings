@@ -18,7 +18,6 @@ package com.android.car.settings.accounts;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.accounts.AccountManagerCallback;
-import android.accounts.AccountManagerFuture;
 import android.accounts.AuthenticatorException;
 import android.accounts.OperationCanceledException;
 import android.app.Activity;
@@ -32,6 +31,8 @@ import android.os.UserHandle;
 import android.text.TextUtils;
 import android.widget.Button;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 import androidx.car.app.CarAlertDialog;
 import androidx.car.widget.ListItem;
 import androidx.car.widget.ListItemProvider;
@@ -40,6 +41,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.ErrorDialog;
 import com.android.car.settings.common.ListItemSettingsFragment;
 import com.android.car.settings.common.Logger;
 import com.android.settingslib.accounts.AuthenticatorHelper;
@@ -65,9 +67,7 @@ public class AccountDetailsFragment extends ListItemSettingsFragment
             Account account, UserInfo userInfo) {
         AccountDetailsFragment
                 accountDetailsFragment = new AccountDetailsFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        bundle.putInt(EXTRA_TITLE_ID, R.string.account_details_title);
+        Bundle bundle = new Bundle();
         bundle.putParcelable(EXTRA_ACCOUNT_INFO, account);
         bundle.putParcelable(EXTRA_USER_INFO, userInfo);
         accountDetailsFragment.setArguments(bundle);
@@ -75,28 +75,43 @@ public class AccountDetailsFragment extends ListItemSettingsFragment
     }
 
     @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleId() {
+        return R.string.account_details_title;
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAccount = getArguments().getParcelable(EXTRA_ACCOUNT_INFO);
         mUserInfo = getArguments().getParcelable(EXTRA_USER_INFO);
-    }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        // Should be created before calling getListItem().
         mAccountManagerHelper = new AccountManagerHelper(getContext(), this);
         mAccountManagerHelper.startListeningToAccountUpdates();
 
         mItemProvider = new ListItemProvider.ListProvider(getListItems());
+    }
 
-        // Super is called only AFTER item provider is instantiated, because
-        // super.onActivityCreated calls getItemProvider().
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         // Title was set in super.onActivityCreated, but override if account label is available.
         setFragmentTitle();
 
         showRemoveButton();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mAccountManagerHelper.stopListeningToAccountUpdates();
     }
 
     @Override
@@ -153,9 +168,7 @@ public class AccountDetailsFragment extends ListItemSettingsFragment
         private UserHandle mUserHandle;
 
         private final AccountManagerCallback<Bundle> mCallback =
-            new AccountManagerCallback<Bundle>() {
-                @Override
-                public void run(AccountManagerFuture<Bundle> future) {
+                future -> {
                     // If already out of this screen, don't proceed.
                     if (!getTargetFragment().isResumed()) {
                         return;
@@ -164,18 +177,19 @@ public class AccountDetailsFragment extends ListItemSettingsFragment
                     boolean success = false;
                     try {
                         success =
-                                future.getResult().getBoolean(AccountManager.KEY_BOOLEAN_RESULT);
+                                future.getResult().getBoolean(
+                                        AccountManager.KEY_BOOLEAN_RESULT);
                     } catch (OperationCanceledException | IOException | AuthenticatorException e) {
                         LOG.v("removeAccount error: " + e);
                     }
                     final Activity activity = getTargetFragment().getActivity();
                     if (!success && activity != null && !activity.isFinishing()) {
-                        RemoveAccountFailureDialog.show(getTargetFragment());
+                        ErrorDialog.show(getTargetFragment(),
+                                R.string.remove_account_error_title);
                     } else {
                         getTargetFragment().getFragmentManager().popBackStack();
                     }
-                }
-            };
+                };
 
         public static void show(
                 Fragment parent, Account account, UserHandle userHandle) {
@@ -213,29 +227,5 @@ public class AccountDetailsFragment extends ListItemSettingsFragment
                     mAccount, activity, mCallback, null, mUserHandle);
             dialog.dismiss();
         }
-    }
-
-    /**
-     * Dialog to tell user about account removal failure
-     */
-    public static class RemoveAccountFailureDialog extends DialogFragment {
-
-        private static final String DIALOG_TAG = "removeAccountFailed";
-
-        public static void show(Fragment parent) {
-            final RemoveAccountFailureDialog dialog = new RemoveAccountFailureDialog();
-            dialog.setTargetFragment(parent, 0);
-            dialog.show(parent.getFragmentManager(), DIALOG_TAG);
-        }
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            return new CarAlertDialog.Builder(getContext())
-                    .setTitle(R.string.really_remove_account_title)
-                    .setBody(R.string.remove_account_failed)
-                    .setPositiveButton(android.R.string.ok, null)
-                    .create();
-        }
-
     }
 }

@@ -185,30 +185,39 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Čas"</string>
     <string name="user_admin" msgid="1535484812908584809">"Správca"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Prihlásený/-á ako správca"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"Udeliť povolenia správcu"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"Nastaviť ako správcu"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"Používateľ bude môcť odstrániť ostatných používateľov (vrátane správcov) a obnoviť systém do výrobných nastavení."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"Túto akciu nie je možné vrátiť späť."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"Áno, nastaviť ako správcu"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"Pridanie používateľa"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Nový používateľ"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Pridať nového používateľa?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Keď pridáte nového používateľa, musí si nastaviť vlastný priestor."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Akýkoľvek používateľ môže aktualizovať aplikácie všetkých ostatných používateľov."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Dosiahnutý limit počtu používateľov"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="few">Môžete pridať maximálne <xliff:g id="COUNT">%d</xliff:g> používateľov.</item>
-      <item quantity="many">You can add up to <xliff:g id="COUNT">%d</xliff:g> users.</item>
-      <item quantity="other">Môžete pridať maximálne <xliff:g id="COUNT">%d</xliff:g> používateľov.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="few">Môžete vytvoriť až <xliff:g id="COUNT">%d</xliff:g> používateľov.</item>
+      <item quantity="many">You can create up to <xliff:g id="COUNT">%d</xliff:g> users.</item>
+      <item quantity="other">Môžete vytvoriť až <xliff:g id="COUNT">%d</xliff:g> používateľov.</item>
       <item quantity="one">Môžete vytvoriť iba jedného používateľa.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"Vytvorenie nového používateľa zlyhalo"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Odstránenie používateľa"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Odstrániť používateľa?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"Všetky aplikácie a dáta budú odstránené."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Používateľa sa nepodarilo odstrániť."</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Odmietnuť"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Znova"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"Odstrániť používateľa?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"Všetky aplikácie a údaje budú odstránené."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"Používateľa sa nepodarilo odstrániť."</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"Zavrieť"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"Skúsiť znova"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"Odstrániť posledného používateľa?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"Po odstránení posledného zostávajúceho používateľa tohto auta sa vytvorí nový správca."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"Všetky údaje, nastavenia a aplikácie priradené k tomuto používateľovi budú odstránené. Budete musieť znova nastaviť systém."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"Výber nového správcu"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"Potrebujete aspoň jedného správcu. Ak chcete tohto odstrániť, najprv vyberte jeho náhradníka."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"Vybrať správcu"</string>
     <string name="user_guest" msgid="3465399481257448601">"Hosť"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"Hosť"</string>
     <string name="user_switch" msgid="6544839750534690781">"Prepnúť"</string>
@@ -229,7 +238,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"Odstrániť účet"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Chcete odstrániť účet?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"Odstránením tohto účtu budú zo zariadenia odstránené aj všetky správy, kontakty a ďalšie dáta."</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"Správca túto zmenu zakázal"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"Účet sa nepodarilo odstrániť."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Zabezpečenie"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Zámka obrazovky"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Žiadna zámka"</string>
@@ -331,6 +340,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"Bežné heslá zablokoval správca IT. Skúste iné heslo."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"Vzostupná, zostupná alebo opakovaná sekvencia čísiel nie je povolená."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Možnosti zámky obrazovky"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : pred <xliff:g id="NUM_DAYS">%3$s</xliff:g> dňami"</string>
     <string name="forget" msgid="3971143908183848527">"Odstrániť"</string>
     <string name="delete_button" msgid="5840500432614610850">"Odstrániť"</string>
     <string name="remove_button" msgid="6664656962868194178">"Odstrániť"</string>
@@ -341,8 +351,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Ukončenie ukážkového režimu"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Ukážkový účet bude odstránený a systém sa obnoví do výrobných nastavení. Všetky dáta používateľa budú stratené."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Ukončiť ukážku"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"dokončiť nastavenie"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"teraz nie"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"ODMIETNUŤ"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Funkcia nie je k dispozícii za jazdy."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Za jazdy nie je možné pridať používateľa."</string>
 </resources>

@@ -16,7 +16,7 @@
 
 package com.android.car.settings.users;
 
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
@@ -36,6 +36,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.ErrorDialog;
 import com.android.car.settings.users.ConfirmCreateNewUserDialog.CancelCreateNewUserListener;
 import com.android.car.settings.users.ConfirmCreateNewUserDialog.ConfirmCreateNewUserListener;
 import com.android.internal.util.UserIcons;
@@ -272,7 +273,7 @@ public class UserGridRecyclerView extends PagedListView implements
                     // If there are restrictions, show a 50% opaque "add user" view
                     holder.mView.setAlpha(mOpacityDisabled);
                     holder.mView.setOnClickListener(
-                            v -> mBaseFragment.getFragmentController().showDOBlockingMessage());
+                            v -> mBaseFragment.getFragmentController().showBlockingMessage());
                 } else {
                     holder.mView.setOnClickListener(v -> handleAddUserClicked(v));
                 }
@@ -374,9 +375,8 @@ public class UserGridRecyclerView extends PagedListView implements
         public void onUserAddedFailure() {
             enableAddView();
             // Display failure dialog.
-            AddUserErrorDialog dialog = new AddUserErrorDialog();
             if (mBaseFragment != null) {
-                dialog.show(mBaseFragment);
+                ErrorDialog.show(mBaseFragment, R.string.add_user_error_title);
             }
         }
 

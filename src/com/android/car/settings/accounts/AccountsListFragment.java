@@ -17,13 +17,15 @@
 package com.android.car.settings.accounts;
 
 import android.accounts.Account;
-import android.car.user.CarUserManagerHelper;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.pm.UserInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.StringRes;
 import androidx.car.widget.ListItemProvider;
 
 import com.android.car.settings.R;
@@ -43,20 +45,21 @@ public class AccountsListFragment extends ListItemSettingsFragment
 
     private Button mAddAccountButton;
 
-    /**
-     * Creates new instance of CurrentUserDetailsFragment.
-     */
-    public static AccountsListFragment newInstance() {
-        AccountsListFragment accountsFragment = new AccountsListFragment();
-        Bundle bundle = ListItemSettingsFragment.getBundle();
-        bundle.putInt(EXTRA_TITLE_ID, R.string.accounts_settings_title);
-        bundle.putInt(EXTRA_ACTION_BAR_LAYOUT, R.layout.action_bar_with_button);
-        accountsFragment.setArguments(bundle);
-        return accountsFragment;
+    @Override
+    @LayoutRes
+    protected int getActionBarLayoutId() {
+        return R.layout.action_bar_with_button;
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
+    @StringRes
+    protected int getTitleId() {
+        return R.string.accounts_settings_title;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         mAccountManagerHelper = new AccountManagerHelper(getContext(), this);
         mAccountManagerHelper.startListeningToAccountUpdates();
 
@@ -66,9 +69,10 @@ public class AccountsListFragment extends ListItemSettingsFragment
 
         // Register to receive changes to the users.
         mCarUserManagerHelper.registerOnUsersUpdateListener(this);
+    }
 
-        // Super class's onActivityCreated need to be called after mContext is initialized.
-        // Because getListItems is called in there.
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         mAddAccountButton = (Button) getActivity().findViewById(R.id.action_button1);
@@ -117,6 +121,6 @@ public class AccountsListFragment extends ListItemSettingsFragment
     }
 
     private void onAddAccountClicked() {
-        getFragmentController().launchFragment(ChooseAccountFragment.newInstance());
+        getFragmentController().launchFragment(new ChooseAccountFragment());
     }
 }

@@ -183,30 +183,39 @@
     <string name="time_picker_title" msgid="7436045944320504639">"시간"</string>
     <string name="user_admin" msgid="1535484812908584809">"관리자"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"관리자로 로그인했습니다."</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"관리자 권한 부여 승인"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"관리자 권한 부여"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"사용자는 다른 관리자를 포함한 사용자를 삭제하고 시스템을 초기화할 수 있게 됩니다."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"이 작업은 되돌릴 수 없습니다."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"관리자 권한 부여"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"사용자 추가"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"새 사용자"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"새 사용자를 추가할까요?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"추가된 새로운 사용자는 자신의 공간을 설정해야 합니다."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"모든 사용자는 다른 사용자들을 위하여 앱을 업데이트할 수 있습니다."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"사용자 제한 도달"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="other">사용자를 <xliff:g id="COUNT">%d</xliff:g>명까지 추가할 수 있습니다.</item>
-      <item quantity="one">사용자를 한 명만 만들 수 있습니다.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="other">사용자는 <xliff:g id="COUNT">%d</xliff:g>명까지 만들 수 있습니다.</item>
+      <item quantity="one">사용자는 한 명만 만들 수 있습니다.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"새 사용자를 만들지 못했습니다."</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"사용자 삭제"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"사용자를 삭제할까요?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"모든 앱과 데이터가 삭제됩니다."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"사용자를 삭제하지 못함"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"닫기"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"다시 시도"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"이 사용자를 삭제하시겠습니까?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"모든 앱과 데이터가 삭제됩니다."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"사용자를 삭제하지 못했습니다"</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"닫기"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"재시도"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"마지막 사용자를 삭제하시겠습니까?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"이 자동차의 남은 사용자만 삭제한 후에 새 관리자를 생성합니다."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"이 사용자와 관련된 모든 데이터, 설정 및 앱이 삭제됩니다. 시스템을 다시 설정해야 합니다."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"새 관리자 선택"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"관리자 한 명 이상을 선택해야 합니다. 이 관리자를 삭제하려면 먼저 대체 관리자를 선택하세요."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"관리자 선택"</string>
     <string name="user_guest" msgid="3465399481257448601">"게스트"</string>
-    <string name="start_guest_session" msgid="4438752398760283201">"손님"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"게스트"</string>
     <string name="user_switch" msgid="6544839750534690781">"전환"</string>
     <string name="current_user_name" msgid="3813671533249316823">"사용자(%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"이름"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"계정 삭제"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"계정을 삭제할까요?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"계정을 삭제하면 기기의 메시지, 연락처 및 다른 데이터가 모두 지워집니다."</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"관리자가 이 변경을 허용하지 않습니다."</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"계정을 삭제하지 못했습니다"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"보안"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"화면 잠금"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"없음"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"IT 관리자가 일반적으로 사용되는 비밀번호를 허용하지 않습니다. 다른 비밀번호로 시도해 보세요."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"연속으로 올라가거나 내려가는 숫자 또는 반복되는 숫자의 배열은 허용되지 않습니다."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"화면 잠금 옵션"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g>: <xliff:g id="NUM_DAYS">%3$s</xliff:g>일 전"</string>
     <string name="forget" msgid="3971143908183848527">"삭제"</string>
     <string name="delete_button" msgid="5840500432614610850">"삭제"</string>
     <string name="remove_button" msgid="6664656962868194178">"삭제"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"데모 모드 종료"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"데모 계정을 삭제하고 시스템을 초기화합니다. 사용자 데이터는 모두 사라집니다."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"데모 종료"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"설정 완료"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"나중에"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"닫기"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"운전 중 기능 사용 불가"</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"운전 중에는 사용자를 추가할 수 없습니다."</string>
 </resources>

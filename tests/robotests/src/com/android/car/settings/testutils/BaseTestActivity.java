@@ -19,27 +19,27 @@ package com.android.car.settings.testutils;
 import android.car.drivingstate.CarUxRestrictions;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
+import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.UxRestrictionsProvider;
 
 /**
- * Test activity that extends {@link AppCompatActivity}.
- * Used for testing {@code BaseFragment} instances.
+ * Test activity used for testing {@code BaseFragment} instances.
  */
-public class BaseTestActivity extends AppCompatActivity implements
-        BaseFragment.FragmentController,
-        BaseFragment.UXRestrictionsProvider {
+public class BaseTestActivity extends FragmentActivity implements FragmentController,
+        UxRestrictionsProvider {
     private boolean mOnBackPressedFlag;
+    private CarUxRestrictions mRestrictionInfo = new CarUxRestrictions.Builder(/* reqOpt= */ true,
+            CarUxRestrictions.UX_RESTRICTIONS_BASELINE, /* timestamp= */ 0).build();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.app_compat_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.car_setting_activity);
     }
 
     /**
@@ -48,7 +48,7 @@ public class BaseTestActivity extends AppCompatActivity implements
      * @param fragment Fragment to add to activity.
      */
     @Override
-    public void launchFragment(BaseFragment fragment) {
+    public void launchFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)
@@ -57,17 +57,17 @@ public class BaseTestActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void showDOBlockingMessage() {
+    public void showBlockingMessage() {
         // no-op
     }
 
     @Override
     public CarUxRestrictions getCarUxRestrictions() {
-        return new CarUxRestrictions.Builder(
-                /* reqOpt= */ true,
-                CarUxRestrictions.UX_RESTRICTIONS_BASELINE,
-                /* timestamp= */ 0
-        ).build();
+        return mRestrictionInfo;
+    }
+
+    public void setCarUxRestrictions(CarUxRestrictions restrictionInfo) {
+        mRestrictionInfo = restrictionInfo;
     }
 
     public void reattachFragment(BaseFragment fragment) {

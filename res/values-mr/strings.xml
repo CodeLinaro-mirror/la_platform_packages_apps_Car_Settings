@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"वेळ"</string>
     <string name="user_admin" msgid="1535484812908584809">"प्रशासक"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"प्रशासक म्हणून साइन इन केले आहे"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"प्रशासक परवानग्या मंजूर करा"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"प्रशासक करा"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"वापरकर्ता इतर प्रशासकांसह वापरकर्त्यांना हटवू शकेल आणि सिस्टीम फॅक्टरी रीसेट करू शकेल."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"ही क्रिया परत उलट करता येणार नाही."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"होय, प्रशासक करा"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"वापरकर्ता जोडा"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"नवीन वापरकर्ता"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"नवीन वापरकर्ता जोडायचा?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"तुम्ही नवीन वापरकर्त्याला जोडल्यावर, त्या व्यक्तीने त्यांचे स्थान सेट करणे आवश्यक असते."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"कोणताही वापरकर्ता इतर सर्व वापरकर्त्यांसाठी अॅप्स अपडेट करू शकतो."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"वापरकर्ता मर्यादा गाठली"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="one">तुम्ही <xliff:g id="COUNT">%d</xliff:g> वापरकर्त्यापर्यंत जोडू शकता.</item>
-      <item quantity="other">तुम्ही <xliff:g id="COUNT">%d</xliff:g> वापरकर्त्यांपर्यंत जोडू शकता.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="one">तुम्ही <xliff:g id="COUNT">%d</xliff:g> वापरकर्ता तयार करू शकता.</item>
+      <item quantity="other">तुम्ही <xliff:g id="COUNT">%d</xliff:g> वापरकर्ते तयार करू शकता.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"नवीन वापरकर्ता तयार करता आला नाही"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"वापरकर्ता हटवा"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"हा वापरकर्ता काढायचा?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"सर्व अॅप्स आणि डेटा हटवला जाईल."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"वापरकर्ता काढता आला नाही."</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"डिसमिस करा"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"पुन्हा प्रयत्न करा"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"हा वापरकर्ता हटवायचा?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"सर्व अॅप्स आणि डेटा हटवला जाईल."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"वापरकर्ता हटवता आला नाही."</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"डिसमिस करा"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"पुन्हा प्रयत्न करा"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"शेवटचा वापरकर्ता हटवायचा?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"या कारसाठी फक्त उर्वरित वापरकर्ता हटवल्यानंतर नवीन प्रशासक तयार होईल."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"या वापरकर्त्याशी संबंधित सर्व डेटा, सेटिंग्ज आणि अॅप्स हटवले जातील. तुम्हाला पुन्हा सिस्टम सेट करण्याची आवश्यकता असेल"</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"नवीन प्रशासक निवडा"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"तुमच्याकडे किमान एक प्रशासक आवश्यक आहे. हे हटवण्यासाठी, पहिले बदली निवडा."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"प्रशासक निवडा"</string>
     <string name="user_guest" msgid="3465399481257448601">"अतिथी"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"अतिथी"</string>
     <string name="user_switch" msgid="6544839750534690781">"स्विच"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"खाते काढा"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"खाते काढायचे?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"हे खाते काढल्याने त्याचे सर्व संदेश, संपर्क आणि डिव्हाइसवरील इतर डेटा हटवला जाईल!"</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"या बदलास तुमच्या प्रशासकाने अनुमती नाही"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"खाते काढता आले नाही"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"सुरक्षितता"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"स्क्रीन लॉक"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"काहीही नाही"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"सामान्यत: वापरले जाणारे पासवर्ड तुमच्या IT प्रशासनाने ब्लॉक केलेले आहेत. दुसरा एखादा पासवर्ड वापरून पहा."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"अंकांच्या चढत्या, उतरत्या किंवा पुनरावृत्त क्रमाला अनुमती नाही."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"स्क्रीन लॉक पर्याय"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> दिवसांपूर्वी"</string>
     <string name="forget" msgid="3971143908183848527">"विसरा"</string>
     <string name="delete_button" msgid="5840500432614610850">"हटवा"</string>
     <string name="remove_button" msgid="6664656962868194178">"काढा"</string>
@@ -325,8 +335,8 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"डेमो मोडमधून बाहेर पडा"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"हे डेमो खाते हटवेल आणि फॅक्टरी डेटा सिस्टम रीसेट करेल. सर्व वापरकर्ता डेटा गमावेल."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"डेमो मोडमधून बाहेर पडा"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"सेटअप समाप्त करा"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"आता नाही"</string>
+    <!-- no translation found for suggestion_dismiss_button (4539412646977050641) -->
+    <skip />
     <string name="restricted_while_driving" msgid="6217369093121968299">"ड्राइव्ह करताना वैशिष्ट्य उपलब्ध नाही."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"ड्राइव्ह करत असताना वापरकर्त्याला जोडू शकत नाही."</string>
 </resources>

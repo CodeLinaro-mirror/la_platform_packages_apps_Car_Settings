@@ -24,7 +24,7 @@
     <string name="brightness" msgid="2919605130898772866">"明るさのレベル"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"明るさの自動調節"</string>
     <string name="auto_brightness_summary" msgid="4741887033140384352">"周囲に合わせて明るさを最適化する"</string>
-    <string name="condition_night_display_title" msgid="3777509730126972675">"読書灯 ON"</string>
+    <string name="condition_night_display_title" msgid="3777509730126972675">"夜間モード ON"</string>
     <string name="keywords_display" msgid="3978416985146943922">"画面、タッチスクリーン"</string>
     <string name="keywords_display_brightness_level" msgid="3956411572536209195">"画面を暗くする、タッチスクリーン、電池"</string>
     <string name="keywords_display_auto_brightness" msgid="2700310050333468752">"画面を暗くする、タッチスクリーン、電池"</string>
@@ -183,28 +183,37 @@
     <string name="time_picker_title" msgid="7436045944320504639">"時刻"</string>
     <string name="user_admin" msgid="1535484812908584809">"管理者"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"管理者としてログインしました"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"管理者権限を付与"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"管理者にする"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"このユーザーは、他の管理者を含むユーザーの削除、システムデータの初期化を行えるようになります。"</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"この操作は元に戻せません。"</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"はい、管理者にする"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"ユーザーを追加"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"新しいユーザー"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"新しいユーザーを追加しますか？"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"新しいユーザーを追加したら、そのユーザーは自分のスペースをセットアップする必要があります。"</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"どのユーザーも他のすべてのユーザーに代わってアプリを更新できます。"</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"ユーザー数が上限に達しました"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="other">最大 <xliff:g id="COUNT">%d</xliff:g> 人のユーザーを追加できます。</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="other">最大 <xliff:g id="COUNT">%d</xliff:g> 人のユーザーを作成できます。</item>
       <item quantity="one">作成できるユーザーは 1 人のみです。</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"新しいユーザーを作成できませんでした"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"ユーザーの削除"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"ユーザーを削除しますか？"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"すべてのアプリとデータが削除されます。"</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"ユーザーを削除できませんでした。"</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"閉じる"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"再試行"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"このユーザーの削除"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"すべてのアプリとデータが削除されます。"</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"ユーザーを削除できませんでした。"</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"閉じる"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"再試行"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"最後のユーザーの削除"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"この車の最後のユーザーを削除すると、新しい管理者ユーザーが作成されます。"</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"このユーザーに関連付けられているすべてのデータ、設定、アプリが削除されます。システムの再設定が必要になります。"</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"新しい管理者の選択"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"管理者は少なくとも 1 人必要です。この管理者を削除するには、まず代わりの管理者を選択してください。"</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"管理者を選択"</string>
     <string name="user_guest" msgid="3465399481257448601">"ゲスト"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"ゲスト"</string>
     <string name="user_switch" msgid="6544839750534690781">"切り替える"</string>
@@ -225,7 +234,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"アカウントを削除"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"アカウントを削除しますか？"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"このアカウントを削除すると、メール、連絡先などのすべてのデータも端末から削除されます。"</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"この変更は管理者によって許可されていません"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"アカウントを削除できませんでした。"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"セキュリティ"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"画面ロック"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"なし"</string>
@@ -315,6 +324,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"一般的なパスワードは IT 管理者によってブロックされています。別のパスワードをお試しください。"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"一連の数字を昇順や降順にしたり、繰り返したりすることはできません。"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"画面ロックの方法"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g>: <xliff:g id="NUM_DAYS">%3$s</xliff:g> 日前"</string>
     <string name="forget" msgid="3971143908183848527">"削除"</string>
     <string name="delete_button" msgid="5840500432614610850">"削除"</string>
     <string name="remove_button" msgid="6664656962868194178">"削除"</string>
@@ -325,8 +335,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"デモモードの終了"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"デモアカウントが削除され、システムが出荷時の設定にリセットされます。すべてのユーザーデータは失われます。"</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"デモを終了"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"設定を完了"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"後で行う"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"閉じる"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"この機能は運転中は利用できません。"</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"運転中はユーザーを追加できません。"</string>
 </resources>

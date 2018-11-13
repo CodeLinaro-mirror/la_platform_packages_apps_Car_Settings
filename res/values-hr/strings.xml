@@ -184,29 +184,38 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Vrijeme"</string>
     <string name="user_admin" msgid="1535484812908584809">"Administrator"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Prijavljeni ste kao administrator"</string>
-    <string name="grant_admin_privileges" msgid="931069208484384534">"Dodjeljivanje administratorskih dopuštenja"</string>
-    <string name="assign_admin_privileges" msgid="5984310883483215656">"Dodijeli status administratora"</string>
-    <string name="assign_admin_privileges_message" msgid="2568957340592800419">"Korisnik će moći brisati korisnike, uključujući druge administratore, i vratiti sustav na tvorničke postavke."</string>
+    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
+    <skip />
+    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
+    <skip />
     <string name="action_not_reversible_message" msgid="740401337875726973">"Ta se radnja ne može poništiti."</string>
-    <string name="confirm_assign_admin" msgid="8326579654857377888">"Da, dodijeli status administratora"</string>
+    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
+    <skip />
     <string name="user_add_user_menu" msgid="5319151436895941496">"Dodavanje korisnika"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Novi korisnik"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Dodati novog korisnika?"</string>
     <string name="user_add_user_message_setup" msgid="6030901156040053106">"Kada dodate novog korisnika, ta osoba mora postaviti vlastiti prostor."</string>
     <string name="user_add_user_message_update" msgid="1528170913388932459">"Svaki korisnik može ažurirati aplikacije za ostale korisnike."</string>
     <string name="user_limit_reached_title" msgid="8803355734556061238">"Dosegnuto je ograničenje korisnika"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="4809364467389495355">
-      <item quantity="one">Možete dodati najviše <xliff:g id="COUNT">%d</xliff:g> korisnika.</item>
-      <item quantity="few">Možete dodati najviše <xliff:g id="COUNT">%d</xliff:g> korisnika.</item>
-      <item quantity="other">Možete dodati najviše <xliff:g id="COUNT">%d</xliff:g> korisnika.</item>
+    <plurals name="user_limit_reached_message" formatted="false" msgid="2651922256448824747">
+      <item quantity="one">Možete izraditi najviše <xliff:g id="COUNT">%d</xliff:g> korisnika.</item>
+      <item quantity="few">Možete izraditi najviše <xliff:g id="COUNT">%d</xliff:g> korisnika.</item>
+      <item quantity="other">Možete izraditi najviše <xliff:g id="COUNT">%d</xliff:g> korisnika.</item>
     </plurals>
     <string name="add_user_error_title" msgid="3206300411663817038">"Izrada novog korisnika nije uspjela"</string>
-    <string name="user_delete_user_description" msgid="2300280525351142435">"Brisanje korisnika"</string>
-    <string name="really_remove_user_title" msgid="4990029019291756762">"Ukloniti korisnika?"</string>
-    <string name="really_remove_user_message" msgid="3828090902833944533">"Izbrisat će se sve aplikacije i podaci."</string>
-    <string name="remove_user_error_title" msgid="2038275458657689420">"Uklanjanje korisnika nije uspjelo."</string>
-    <string name="remove_user_error_dismiss" msgid="4006591159426844335">"Odbaci"</string>
-    <string name="remove_user_error_retry" msgid="8291692909396995093">"Pokušaj ponovo"</string>
+    <string name="delete_user_dialog_title" msgid="3422867434431562007">"Izbrisati ovog korisnika?"</string>
+    <string name="delete_user_dialog_message" msgid="4346777604351785057">"Izbrisat će se sve aplikacije i podaci."</string>
+    <string name="delete_user_error_title" msgid="7609819398530124827">"Brisanje korisnika nije uspjelo."</string>
+    <string name="delete_user_error_dismiss" msgid="429156446763738273">"Odbaci"</string>
+    <string name="delete_user_error_retry" msgid="5116434895572670563">"Pokušaj opet"</string>
+    <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"Brisati zadnjeg korisnika?"</string>
+    <string name="delete_last_user_admin_created_message" msgid="1856897729010319054">"Nakon brisanja jedinog preostalog korisnika ovog automobila, izradit će se novi admin. korisnik."</string>
+    <string name="delete_last_user_system_setup_required_message" msgid="8550730509371697989">"Izbrisat će se svi podaci, postavke i aplikacije povezane s tim korisnikom. Morat ćete ponovo postaviti sustav."</string>
+    <string name="choose_new_admin_title" msgid="1915428454917699587">"Odaberite novog administratora"</string>
+    <string name="choose_new_admin_message" msgid="7468286545352043354">"Potreban vam je barem jedan administrator. Da biste izbrisali ovoga, najprije odaberite zamjenu."</string>
+    <string name="choose_new_admin_label" msgid="5987653639387437939">"Odaberite administratora"</string>
     <string name="user_guest" msgid="3465399481257448601">"Gost"</string>
     <string name="start_guest_session" msgid="4438752398760283201">"Gost"</string>
     <string name="user_switch" msgid="6544839750534690781">"Prebaci"</string>
@@ -227,7 +236,7 @@
     <string name="remove_account_title" msgid="8840386525787836381">"Ukloni račun"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Ukloniti račun?"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"Ako uklonite taj račun, s uređaja će se izbrisati sve njegove poruke, kontakti i ostali podaci!"</string>
-    <string name="remove_account_failed" msgid="7472511529086294087">"Vaš administrator ne dopušta tu promjenu"</string>
+    <string name="remove_account_error_title" msgid="8368044943174826635">"Uklanjanje računa nije uspjelo."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Sigurnost"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Zaključavanje zaslona"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Ništa"</string>
@@ -323,6 +332,7 @@
     <string name="lockpassword_password_blacklisted_by_admin" msgid="7965893810326503891">"Vaš je IT administrator blokirao uobičajene zaporke. Pokušajte s nekom drugom zaporkom."</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"Uzastopno rastući ili padajući slijed brojeva ili ponavljanje brojeva nisu dopušteni."</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Opcije zaključavanja zaslona"</string>
+    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : prije <xliff:g id="NUM_DAYS">%3$s</xliff:g> dana"</string>
     <string name="forget" msgid="3971143908183848527">"Zaboravi"</string>
     <string name="delete_button" msgid="5840500432614610850">"Izbriši"</string>
     <string name="remove_button" msgid="6664656962868194178">"Ukloni"</string>
@@ -333,8 +343,7 @@
     <string name="exit_retail_mode_dialog_title" msgid="7970631760237469168">"Napustite demo-način"</string>
     <string name="exit_retail_mode_dialog_body" msgid="8314316171782527301">"Time će se izbrisati demo-račun, a sustav će se vratiti na tvorničko stanje. Svi će se podaci korisnika izgubiti."</string>
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Napustite demo-način"</string>
-    <string name="suggestion_primary_button" msgid="6421115494714083020">"dovršite postavljanje"</string>
-    <string name="suggestion_secondary_button" msgid="7075088546904464681">"ne sada"</string>
+    <string name="suggestion_dismiss_button" msgid="4539412646977050641">"ODBACI"</string>
     <string name="restricted_while_driving" msgid="6217369093121968299">"Značajka nije dostupna tijekom vožnje."</string>
     <string name="add_user_restricted_while_driving" msgid="6384004350628271556">"Nije moguće dodati korisnika tijekom vožnje."</string>
 </resources>
