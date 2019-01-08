@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
- * Copyright (c) 2018, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
-*/
+<!--  Copyright (C) 2018 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
  -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
@@ -114,9 +112,13 @@
       <item quantity="other"> zusätzliche Berechtigungen</item>
       <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> zusätzliche Berechtigung</item>
     </plurals>
+    <string name="location_settings_title" msgid="901334356682423679">"Standort"</string>
+    <string name="location_settings_recent_locations_title" msgid="518781212106200630">"Letzte Standortanfragen"</string>
+    <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Berechtigungen auf App-Ebene"</string>
+    <string name="location_settings_scanning_title" msgid="4253945869911300740">"Suche"</string>
+    <string name="location_settings_services_title" msgid="1186133632690970468">"Standortdienste"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"System"</string>
-    <string name="system_update_settings_list_item_title" msgid="5182439376921868735">"Systemupdates"</string>
-    <string name="system_update_settings_list_item_summary" msgid="7395202602021608371"></string>
+    <string name="system_update_settings_title" msgid="8448588267784138855">"Systemupdates"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android-Version"</string>
     <string name="security_patch" msgid="4794276590178386903">"Stand der Sicherheitsupdates"</string>
     <string name="model_info" msgid="4966408071657934452">"Modell"</string>
@@ -147,9 +149,14 @@
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Wird geladen…"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"Optionen zum Zurücksetzen"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Netzwerk, Apps oder Gerät zurücksetzen"</string>
-    <string name="reset_network_title" msgid="5571672360042035188">"WLAN und Bluetooth zurücksetzen"</string>
+    <string name="reset_network_title" msgid="1284233059990797263">"Netzwerk zurücksetzen"</string>
     <string name="reset_network_desc" msgid="602381374544634925">"Hierdurch werden alle Netzwerkeinstellungen zurückgesetzt, einschließlich:"</string>
-    <string name="reset_network_items" msgid="560284503269666087"><li>"WLAN"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"WLAN"</li></string>
+    <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"Mobile Daten"</li></string>
+    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"Bluetooth"</li></string>
+    <string name="reset_esim_title" msgid="8132107637911831211">"Alle eSIMs des Fahrzeugs löschen"</string>
+    <string name="reset_esim_desc" msgid="1437276625485586740">"Dein Mobilfunkvertrag wird dadurch nicht gekündigt."</string>
+    <string name="reset_network_select" msgid="2433825874868038739">"Netzwerk auswählen"</string>
     <string name="reset_network_button_text" msgid="8374174455632765033">"Einstellungen zurücksetzen"</string>
     <string name="reset_network_confirm_title" msgid="5255502723840197663">"Zurücksetzen?"</string>
     <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Alle Netzwerkeinstellungen zurücksetzen? Diese Aktion kann nicht rückgängig gemacht werden."</string>
@@ -183,15 +190,16 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Uhrzeit"</string>
     <string name="user_admin" msgid="1535484812908584809">"Administrator"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Als Administrator angemeldet"</string>
-    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
-    <skip />
+    <string name="grant_admin_permissions_title" msgid="4628430467359951437">"Alle Administrator-Berechtigungen"</string>
+    <string name="grant_admin_permissions_button_text" msgid="988239414372882401">"Als Administrator festlegen"</string>
+    <string name="grant_admin_permissions_message" msgid="1751910369004774830">"Der Nutzer kann dann andere Nutzer einschließlich anderer Administratoren löschen und das System auf die Werkseinstellungen zurücksetzen."</string>
     <string name="action_not_reversible_message" msgid="740401337875726973">"Diese Aktion lässt sich nicht rückgängig machen."</string>
-    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
-    <skip />
+    <string name="confirm_grant_admin" msgid="7852596890218647682">"Ja, als Administrator festlegen"</string>
+    <string name="create_user_permission_title" msgid="7781550880565935298">"Neue Nutzer erstellen"</string>
+    <string name="outgoing_calls_permission_title" msgid="1230180443712099293">"Anrufe tätigen"</string>
+    <string name="sms_messaging_permission_title" msgid="6099328509729071243">"SMS über mobile Daten des Autos senden und empfangen"</string>
+    <string name="install_apps_permission_title" msgid="3099705360827925296">"Neue Apps installieren"</string>
+    <string name="uninstall_apps_permission_title" msgid="8448422340567430659">"Apps deinstallieren"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"Nutzer hinzufügen"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Neuer Nutzer"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Neuen Nutzer hinzufügen?"</string>
@@ -222,7 +230,7 @@
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Nicht eingerichtet"</string>
     <string name="edit_user_name_title" msgid="6890782937520262478">"Nutzername bearbeiten"</string>
     <string name="users_list_title" msgid="770764290290240909">"Nutzer"</string>
-    <string name="user_details_title" msgid="1104762783367701498">"Nutzer"</string>
+    <string name="user_details_admin_title" msgid="3530292857178371891">"Berechtigungen für %1$s"</string>
     <string name="accounts_settings_title" msgid="436190037084293471">"Konten"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"Konto hinzufügen"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"Keine Konten hinzugefügt"</string>

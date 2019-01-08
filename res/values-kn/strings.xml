@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
- * Copyright (c) 2018, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
-*/
+<!--  Copyright (C) 2018 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
  -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
@@ -114,9 +112,13 @@
       <item quantity="one"><xliff:g id="COUNT_1">%d</xliff:g> ಹೆಚ್ಚುವರಿ ಅನುಮತಿಗಳು</item>
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> ಹೆಚ್ಚುವರಿ ಅನುಮತಿಗಳು</item>
     </plurals>
+    <string name="location_settings_title" msgid="901334356682423679">"ಸ್ಥಳ"</string>
+    <string name="location_settings_recent_locations_title" msgid="518781212106200630">"ಇತ್ತೀಚಿನ ಸ್ಥಳ ವಿನಂತಿಗಳು"</string>
+    <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"ಆ್ಯಪ್‌ ಹಂತದ ಅನುಮತಿಗಳು"</string>
+    <string name="location_settings_scanning_title" msgid="4253945869911300740">"ಸ್ಕ್ಯಾನ್ ಮಾಡುವಿಕೆ"</string>
+    <string name="location_settings_services_title" msgid="1186133632690970468">"ಸ್ಥಳ ಸೇವೆಗಳು"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"ಸಿಸ್ಟಂ"</string>
-    <string name="system_update_settings_list_item_title" msgid="5182439376921868735">"ಸಿಸ್ಟಂ ಅಪ್‌ಡೇಟ್‌ಗಳು"</string>
-    <string name="system_update_settings_list_item_summary" msgid="7395202602021608371"></string>
+    <string name="system_update_settings_title" msgid="8448588267784138855">"ಸಿಸ್ಟಂ ಅಪ್‌ಡೇಟ್‌ಗಳು"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android ಆವೃತ್ತಿ"</string>
     <string name="security_patch" msgid="4794276590178386903">"Android ಭದ್ರತೆ ಪ್ಯಾಚ್ ಮಟ್ಟ"</string>
     <string name="model_info" msgid="4966408071657934452">"ಮಾಡೆಲ್"</string>
@@ -147,9 +149,14 @@
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"ಲೋಡ್ ಆಗುತ್ತಿದೆ..."</string>
     <string name="reset_options_title" msgid="4388902952861833420">"ಮರುಹೊಂದಿಸುವ ಆಯ್ಕೆಗಳು"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"ನೆಟ್‌ವರ್ಕ್, ಆ್ಯಪ್‌ಗಳು ಅಥವಾ ಸಾಧನಗಳ ಮರುಹೊಂದಿಸುವಿಕೆ"</string>
-    <string name="reset_network_title" msgid="5571672360042035188">"ವೈ-ಫೈ, ಬ್ಲೂಟೂತ್ ಮರುಹೊಂದಿಸಿ"</string>
+    <string name="reset_network_title" msgid="1284233059990797263">"ನೆಟ್‌ವರ್ಕ್‌ ಮರುಹೊಂದಿಸಿ"</string>
     <string name="reset_network_desc" msgid="602381374544634925">"ಇದು ನೆಟ್‌ವರ್ಕ್‌ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಎಲ್ಲವನ್ನೂ ಮರುಹೊಂದಿಸುತ್ತದೆ, ಅವುಗಳಲ್ಲಿ ಈ ಮುಂದಿನವುಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ:"</string>
-    <string name="reset_network_items" msgid="560284503269666087"><li>"ವೈ-ಫೈ"</li>\n<li>"ಬ್ಲೂಟೂತ್"</li></string>
+    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"ವೈ-ಫೈ"</li></string>
+    <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"ಮೊಬೈಲ್ ಡೇಟಾ"</li></string>
+    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"ಬ್ಲೂಟೂತ್"</li></string>
+    <string name="reset_esim_title" msgid="8132107637911831211">"ಎಲ್ಲಾ ವಾಹನದ eSIMಗಳನ್ನು ಅಳಿಸಿ"</string>
+    <string name="reset_esim_desc" msgid="1437276625485586740">"ಇದು ನಿಮ್ಮ ಸೇವಾ ಯೋಜನೆಯನ್ನು ರದ್ದುಗೊಳಿಸುವುದಿಲ್ಲ."</string>
+    <string name="reset_network_select" msgid="2433825874868038739">"ನೆಟ್‌ವರ್ಕ್ ಆಯ್ಕೆಮಾಡಿ"</string>
     <string name="reset_network_button_text" msgid="8374174455632765033">"ಸೆಟ್ಟಿಂಗ್‌ ಮರುಹೊಂದಿಸಿ"</string>
     <string name="reset_network_confirm_title" msgid="5255502723840197663">"ಮರುಹೊಂದಿಸುವುದೇ?"</string>
     <string name="reset_network_confirm_desc" msgid="7721698076856330212">"ಎಲ್ಲಾ ನೆಟ್‌ವರ್ಕ್‌ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಮರುಹೊಂದಿಸುವುದೇ? ನೀವು ಈ ಕ್ರಿಯೆಯನ್ನು ರದ್ದುಗೊಳಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ!"</string>
@@ -183,15 +190,16 @@
     <string name="time_picker_title" msgid="7436045944320504639">"ಸಮಯ"</string>
     <string name="user_admin" msgid="1535484812908584809">"ನಿರ್ವಾಹಕ"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"ನಿರ್ವಾಹಕರಾಗಿ ಸೈನ್ ಇನ್ ಮಾಡಲಾಗಿದೆ"</string>
-    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
-    <skip />
+    <string name="grant_admin_permissions_title" msgid="4628430467359951437">"ಎಲ್ಲಾ ನಿರ್ವಾಹಕರ ಅನುಮತಿಗಳು"</string>
+    <string name="grant_admin_permissions_button_text" msgid="988239414372882401">"ನಿರ್ವಹಣೆ ಮಾಡಿ"</string>
+    <string name="grant_admin_permissions_message" msgid="1751910369004774830">"ಬಳಕೆದಾರರಿಗೆ ಇತರ ನಿರ್ವಾಹಕರು ಸೇರಿದಂತೆ ಬಳಕೆದಾರರನ್ನು ಅಳಿಸಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ, ಮತ್ತು ಸಿಸ್ಟಂ ಅನ್ನು ಫ್ಯಾಕ್ಟರಿ ರಿಸೆಟ್‌ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತದೆ."</string>
     <string name="action_not_reversible_message" msgid="740401337875726973">"ಈ ಕ್ರಿಯೆಯನ್ನು ಹಿಂತಿರುಗಿಸಲಾಗುವುದಿಲ್ಲ."</string>
-    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
-    <skip />
+    <string name="confirm_grant_admin" msgid="7852596890218647682">"ಹೌದು, ನಿರ್ವಹಣೆ ಮಾಡಿ"</string>
+    <string name="create_user_permission_title" msgid="7781550880565935298">"ಹೊಸ ಬಳಕೆದಾರರನ್ನು ರಚಿಸಿ"</string>
+    <string name="outgoing_calls_permission_title" msgid="1230180443712099293">"ಫೋನ್ ಕರೆಗಳನ್ನು ಮಾಡಿ"</string>
+    <string name="sms_messaging_permission_title" msgid="6099328509729071243">"ಕಾರ್‌ನ ಮೊಬೈಲ್ ಡೇಟಾದ ಮೂಲಕ ಸಂದೇಶ ಕಳುಹಿಸುವಿಕೆ"</string>
+    <string name="install_apps_permission_title" msgid="3099705360827925296">"ಹೊಸ ಆ್ಯಪ್‌ಗಳನ್ನು ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿ"</string>
+    <string name="uninstall_apps_permission_title" msgid="8448422340567430659">"ಆ್ಯಪ್‌ಗಳನ್ನು ಅನ್‌ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿ"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"ಬಳಕೆದಾರರನ್ನು ಸೇರಿಸಿ"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"ಹೊಸ ಬಳಕೆದಾರರು"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"ಬಳಕೆದಾರರನ್ನು ಸೇರಿಸುವುದೇ?"</string>
@@ -222,7 +230,7 @@
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"ಇನ್ನೂ ಸೆಟಪ್‌ ಮಾಡಿಲ್ಲ"</string>
     <string name="edit_user_name_title" msgid="6890782937520262478">"ಬಳಕೆದಾರರ ಹೆಸರನ್ನು ಎಡಿಟ್ ಮಾಡಿ"</string>
     <string name="users_list_title" msgid="770764290290240909">"ಬಳಕೆದಾರರು"</string>
-    <string name="user_details_title" msgid="1104762783367701498">"ಬಳಕೆದಾರ"</string>
+    <string name="user_details_admin_title" msgid="3530292857178371891">"%1$s ಗೆ ಅನುಮತಿಗಳನ್ನು ನೀಡಲಾಗಿದೆ"</string>
     <string name="accounts_settings_title" msgid="436190037084293471">"ಖಾತೆಗಳು"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"ಖಾತೆ ಸೇರಿಸಿ"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"ಯಾವುದೇ ಖಾತೆಗಳನ್ನು ಸೇರಿಸಿಲ್ಲ"</string>

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
- * Copyright (c) 2018, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
-*/
+<!--  Copyright (C) 2018 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
  -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
@@ -114,9 +112,13 @@
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> baimen gehigarri</item>
       <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> baimen gehigarri</item>
     </plurals>
+    <string name="location_settings_title" msgid="901334356682423679">"Kokapena"</string>
+    <string name="location_settings_recent_locations_title" msgid="518781212106200630">"Azken kokapen-eskaerak"</string>
+    <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Aplikazio-mailako baimenak"</string>
+    <string name="location_settings_scanning_title" msgid="4253945869911300740">"Bilaketa"</string>
+    <string name="location_settings_services_title" msgid="1186133632690970468">"Kokapen-zerbitzuak"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"Sistema"</string>
-    <string name="system_update_settings_list_item_title" msgid="5182439376921868735">"Sistemaren eguneratzeak"</string>
-    <string name="system_update_settings_list_item_summary" msgid="7395202602021608371"></string>
+    <string name="system_update_settings_title" msgid="8448588267784138855">"Sistemaren eguneratzeak"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android bertsioa"</string>
     <string name="security_patch" msgid="4794276590178386903">"Android segurtasun-adabakiaren maila"</string>
     <string name="model_info" msgid="4966408071657934452">"Modeloa"</string>
@@ -147,9 +149,14 @@
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Kargatzen…"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"Berrezartzeko aukerak"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Sarea, aplikazioak edo gailua berrezartzea"</string>
-    <string name="reset_network_title" msgid="5571672360042035188">"Berrezarri Wi-Fi eta Bluetooth konexioak"</string>
+    <string name="reset_network_title" msgid="1284233059990797263">"Berrezarri sarea"</string>
     <string name="reset_network_desc" msgid="602381374544634925">"Sareko ezarpen guztiak berrezarriko dira; besteak beste:"</string>
-    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi konexioa,"</li>\n<li>"Bluetooth konexioa."</li></string>
+    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"Wi‑Fi konexioa"</li></string>
+    <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"Datu-konexioa"</li></string>
+    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"Bluetooth konexioa"</li></string>
+    <string name="reset_esim_title" msgid="8132107637911831211">"Ezabatu ibilgailuaren eSIM txarteletako eduki guztia"</string>
+    <string name="reset_esim_desc" msgid="1437276625485586740">"Ez da utziko bertan behera daukazun zerbitzu-plana."</string>
+    <string name="reset_network_select" msgid="2433825874868038739">"Hautatu sarea"</string>
     <string name="reset_network_button_text" msgid="8374174455632765033">"Berrezarri ezarpenak"</string>
     <string name="reset_network_confirm_title" msgid="5255502723840197663">"Berrezarri egin nahi dituzu?"</string>
     <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Sareko ezarpen guztiak berrezarri nahi dituzu? Ezin da desegin ekintza hori."</string>
@@ -183,15 +190,16 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Ordua"</string>
     <string name="user_admin" msgid="1535484812908584809">"Administratzailea"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Administratzaile gisa hasi da saioa"</string>
-    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
-    <skip />
+    <string name="grant_admin_permissions_title" msgid="4628430467359951437">"Administratzaile-baimen guztiak"</string>
+    <string name="grant_admin_permissions_button_text" msgid="988239414372882401">"Egin administratzaile"</string>
+    <string name="grant_admin_permissions_message" msgid="1751910369004774830">"Erabiltzaile horrek beste erabiltzaileak ezabatu ahal izango ditu (beste administratzaileak barne), eta sistemako jatorrizko datuak berrezarri."</string>
     <string name="action_not_reversible_message" msgid="740401337875726973">"Ekintza hau ezingo da desegin."</string>
-    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
-    <skip />
+    <string name="confirm_grant_admin" msgid="7852596890218647682">"Bai, egin administratzaile"</string>
+    <string name="create_user_permission_title" msgid="7781550880565935298">"Erabiltzaile berriak sortu"</string>
+    <string name="outgoing_calls_permission_title" msgid="1230180443712099293">"Telefono-deiak egin"</string>
+    <string name="sms_messaging_permission_title" msgid="6099328509729071243">"Autoko datu-konexioa mezuetarako"</string>
+    <string name="install_apps_permission_title" msgid="3099705360827925296">"Aplikazio berriak instalatu"</string>
+    <string name="uninstall_apps_permission_title" msgid="8448422340567430659">"Aplikazioak desinstalatu"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"Gehitu erabiltzailea"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Erabiltzaile berria"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Beste erabiltzaile bat gehitu?"</string>
@@ -222,7 +230,7 @@
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Konfiguratu gabe"</string>
     <string name="edit_user_name_title" msgid="6890782937520262478">"Editatu erabiltzaile-izena"</string>
     <string name="users_list_title" msgid="770764290290240909">"Erabiltzaileak"</string>
-    <string name="user_details_title" msgid="1104762783367701498">"Erabiltzailea"</string>
+    <string name="user_details_admin_title" msgid="3530292857178371891">"%1$s erabiltzailearen baimenak"</string>
     <string name="accounts_settings_title" msgid="436190037084293471">"Kontuak"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"Gehitu kontua"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"Ez da gehitu konturik"</string>
