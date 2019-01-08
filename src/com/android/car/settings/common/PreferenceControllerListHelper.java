@@ -45,7 +45,7 @@ class PreferenceControllerListHelper {
      */
     @NonNull
     static List<BasePreferenceController> getPreferenceControllersFromXml(Context context,
-            @XmlRes int xmlResId) {
+            @XmlRes int xmlResId, FragmentController fragmentController) {
         List<BasePreferenceController> controllers = new ArrayList<>();
         List<Bundle> preferenceMetadata;
         try {
@@ -69,9 +69,10 @@ class PreferenceControllerListHelper {
             }
             BasePreferenceController controller;
             try {
-                controller = BasePreferenceController.createInstance(context, controllerName, key);
+                controller = BasePreferenceController.createInstance(context, controllerName, key,
+                        fragmentController);
             } catch (IllegalStateException e2) {
-                LOG.w("Cannot instantiate controller from reflection: " + controllerName);
+                LOG.e("Cannot instantiate controller from reflection: " + controllerName, e2);
                 continue;
             }
             controllers.add(controller);

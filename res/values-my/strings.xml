@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
- * Copyright (c) 2018, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
-*/
+<!--  Copyright (C) 2018 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
  -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
@@ -114,9 +112,13 @@
       <item quantity="other">နောက်ထပ် ခွင့်ပြုချက် <xliff:g id="COUNT_1">%d</xliff:g> ခု</item>
       <item quantity="one">နောက်ထပ် ခွင့်ပြုချက် <xliff:g id="COUNT_0">%d</xliff:g> ခု</item>
     </plurals>
+    <string name="location_settings_title" msgid="901334356682423679">"တည်နေရာ"</string>
+    <string name="location_settings_recent_locations_title" msgid="518781212106200630">"လတ်တလော တည်နေရာတောင်းခံမှုများ"</string>
+    <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"အက်ပ်အဆင့် ခွင့်ပြုချက်များ"</string>
+    <string name="location_settings_scanning_title" msgid="4253945869911300740">"စကင်ဖတ်နေသည်"</string>
+    <string name="location_settings_services_title" msgid="1186133632690970468">"တည်နေရာဝန်ဆောင်မှုများ"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"စနစ်"</string>
-    <string name="system_update_settings_list_item_title" msgid="5182439376921868735">"စနစ်အပ်ဒိတ်များ"</string>
-    <string name="system_update_settings_list_item_summary" msgid="7395202602021608371"></string>
+    <string name="system_update_settings_title" msgid="8448588267784138855">"စနစ်အပ်ဒိတ်များ"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android ဗားရှင်း"</string>
     <string name="security_patch" msgid="4794276590178386903">"Android လုံခြုံရေးပက်ချ်အဆင့်"</string>
     <string name="model_info" msgid="4966408071657934452">"မော်ဒယ်"</string>
@@ -147,9 +149,14 @@
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"ဖွင့်နေသည်…"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"ပြင်ဆင်သတ်မှတ်ရန် ရွေးစရာများ"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"ကွန်ရက်၊ အက်ပ်များ (သို့) စက်ပစ္စည်း ပြင်ဆင်သတ်မှတ်ခြင်း"</string>
-    <string name="reset_network_title" msgid="5571672360042035188">"Wi-Fi၊ ဘလူးတုသ် ပြင်ဆင်သတ်မှတ်ပါ"</string>
+    <string name="reset_network_title" msgid="1284233059990797263">"ကွန်ရက် ပြင်ဆင်သတ်မှတ်ရန်"</string>
     <string name="reset_network_desc" msgid="602381374544634925">"၎င်းသည် အောက်ပါတို့အပါအဝင် ကွန်ရက်ဆက်တင်များအားလုံးကို ပြင်ဆင်သတ်မှတ်လိုက်ပါမည်−"</string>
-    <string name="reset_network_items" msgid="560284503269666087"><li>"Wi‑Fi"</li>\n<li>"ဘလူးတုသ်"</li></string>
+    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"Wi‑Fi"</li></string>
+    <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"မိုဘိုင်းဒေတာ"</li></string>
+    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"ဘလူးတုသ်"</li></string>
+    <string name="reset_esim_title" msgid="8132107637911831211">"ယာဉ် eSIM အားလုံးကို ဖျက်ပါ"</string>
+    <string name="reset_esim_desc" msgid="1437276625485586740">"၎င်းက သင်၏ ဝန်ဆောင်မှုအစီအစဉ်ကို ပယ်ဖျက်မည်မဟုတ်ပါ။"</string>
+    <string name="reset_network_select" msgid="2433825874868038739">"ကွန်ရက် ရွေးပါ"</string>
     <string name="reset_network_button_text" msgid="8374174455632765033">"ဆက်တင်ပြင်ဆင်သတ်မှတ်ရန်"</string>
     <string name="reset_network_confirm_title" msgid="5255502723840197663">"ပြင်ဆင်သတ်မှတ်လိုပါသလား။"</string>
     <string name="reset_network_confirm_desc" msgid="7721698076856330212">"ကွန်ရက်ဆက်တင်များ အားလုံးကို ပြင်ဆင်သတ်မှတ်လိုပါသလား။ ဤလုပ်ဆောင်ချက်ကို ပြန်ပြင်၍ မရပါ။"</string>
@@ -183,15 +190,16 @@
     <string name="time_picker_title" msgid="7436045944320504639">"အချိန်"</string>
     <string name="user_admin" msgid="1535484812908584809">"စီမံခန့်ခွဲသူ"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"စီမံခန့်ခွဲသူအဖြစ် ဝင်ထားသည်"</string>
-    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
-    <skip />
+    <string name="grant_admin_permissions_title" msgid="4628430467359951437">"စီမံခန့်ခွဲသူ ခွင့်ပြုချက်အားလုံး"</string>
+    <string name="grant_admin_permissions_button_text" msgid="988239414372882401">"စီမံခန့်ခွဲသူ အဖြစ်ပြောင်းရန်"</string>
+    <string name="grant_admin_permissions_message" msgid="1751910369004774830">"အသုံးပြုသူသည် အခြား \'စီမံခန့်ခွဲသူများ\' အပါအဝင် အသုံးပြုသူများကို ဖျက်ခြင်းနှင့် စနစ်ကို ပြင်ဆင်သတ်မှတ်ခြင်း ပြုလုပ်နိုင်ပါမည်။"</string>
     <string name="action_not_reversible_message" msgid="740401337875726973">"ဤလုပ်ရပ်ကို ပြန်ပြင်၍မရပါ။"</string>
-    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
-    <skip />
+    <string name="confirm_grant_admin" msgid="7852596890218647682">"စီမံခန့်ခွဲသူအဖြစ် ပြောင်းရန်"</string>
+    <string name="create_user_permission_title" msgid="7781550880565935298">"အသုံးပြုသူအသစ်များ ပြုလုပ်ရန်"</string>
+    <string name="outgoing_calls_permission_title" msgid="1230180443712099293">"ဖုန်းခေါ်ဆိုမှုများ ပြုလုပ်ရန်"</string>
+    <string name="sms_messaging_permission_title" msgid="6099328509729071243">"ကား၏ မိုဘိုင်းဒေတာဖြင့် စာပို့ရန်"</string>
+    <string name="install_apps_permission_title" msgid="3099705360827925296">"အက်ပ်အသစ်များ ထည့်သွင်းရန်"</string>
+    <string name="uninstall_apps_permission_title" msgid="8448422340567430659">"အက်ပ်များ ဖယ်ရှားရန်"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"အသုံးပြုသူ ထည့်ရန်"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"အသုံးပြုသူ အသစ်"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"အသုံးပြုသူအသစ် ထည့်မလား။"</string>
@@ -222,7 +230,7 @@
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"စနစ်ထည့်သွင်းထားခြင်း မရှိပါ"</string>
     <string name="edit_user_name_title" msgid="6890782937520262478">"အသုံးပြုသူအမည် တည်းဖြတ်ခြင်း"</string>
     <string name="users_list_title" msgid="770764290290240909">"အသုံးပြုသူများ"</string>
-    <string name="user_details_title" msgid="1104762783367701498">"အသုံးပြုသူ"</string>
+    <string name="user_details_admin_title" msgid="3530292857178371891">"%1$s ကိုပေးထားသော ခွင့်ပြုချက်"</string>
     <string name="accounts_settings_title" msgid="436190037084293471">"အကောင့်များ"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"အကောင့်ထည့်ရန်"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"အကောင့်များ ထည့်မထားပါ"</string>

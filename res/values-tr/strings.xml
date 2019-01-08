@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
- * Copyright (c) 2018, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
-*/
+<!--  Copyright (C) 2018 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
  -->
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
@@ -114,9 +112,13 @@
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> ek izin</item>
       <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> ek izin</item>
     </plurals>
+    <string name="location_settings_title" msgid="901334356682423679">"Konum"</string>
+    <string name="location_settings_recent_locations_title" msgid="518781212106200630">"Son Konum İstekleri"</string>
+    <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Uygulama düzeyinde izinler"</string>
+    <string name="location_settings_scanning_title" msgid="4253945869911300740">"Tarama"</string>
+    <string name="location_settings_services_title" msgid="1186133632690970468">"Konum Hizmetleri"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"Sistem"</string>
-    <string name="system_update_settings_list_item_title" msgid="5182439376921868735">"Sistem güncellemeleri"</string>
-    <string name="system_update_settings_list_item_summary" msgid="7395202602021608371"></string>
+    <string name="system_update_settings_title" msgid="8448588267784138855">"Sistem güncellemeleri"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android sürümü"</string>
     <string name="security_patch" msgid="4794276590178386903">"Android güvenlik yaması düzeyi"</string>
     <string name="model_info" msgid="4966408071657934452">"Model"</string>
@@ -147,9 +149,14 @@
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Yükleniyor…"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"Sıfırlama seçenekleri"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Ağı, uygulamaları veya cihazı sıfırlama"</string>
-    <string name="reset_network_title" msgid="5571672360042035188">"Kablosuzu ve Bluetooth\'u sıfırla"</string>
+    <string name="reset_network_title" msgid="1284233059990797263">"Ağı sıfırla"</string>
     <string name="reset_network_desc" msgid="602381374544634925">"Bu işlem, şunlar dahil tüm ağ ayarlarını sıfırlayacak:"</string>
-    <string name="reset_network_items" msgid="560284503269666087"><li>"Kablosuz"</li>\n<li>"Bluetooth"</li></string>
+    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"Kablosuz"</li></string>
+    <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"Mobil veri"</li></string>
+    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"Bluetooth"</li></string>
+    <string name="reset_esim_title" msgid="8132107637911831211">"Tüm araç eSIM\'lerini sil"</string>
+    <string name="reset_esim_desc" msgid="1437276625485586740">"Bu işlem, hizmet planınızı iptal etmez."</string>
+    <string name="reset_network_select" msgid="2433825874868038739">"Ağ seçin"</string>
     <string name="reset_network_button_text" msgid="8374174455632765033">"Ayarları sıfırla"</string>
     <string name="reset_network_confirm_title" msgid="5255502723840197663">"Sıfırlansın mı?"</string>
     <string name="reset_network_confirm_desc" msgid="7721698076856330212">"Tüm ağ ayarları sıfırlansın mı? Bu işlem geri alınamaz!"</string>
@@ -183,15 +190,16 @@
     <string name="time_picker_title" msgid="7436045944320504639">"Saat"</string>
     <string name="user_admin" msgid="1535484812908584809">"Yönetici"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Yönetici olarak oturum açıldı"</string>
-    <!-- no translation found for grant_admin_permissions_title (7657671336369602749) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_button_text (988239414372882401) -->
-    <skip />
-    <!-- no translation found for grant_admin_permissions_message (1751910369004774830) -->
-    <skip />
+    <string name="grant_admin_permissions_title" msgid="4628430467359951437">"Tüm yönetici izinleri"</string>
+    <string name="grant_admin_permissions_button_text" msgid="988239414372882401">"Yönetici yap"</string>
+    <string name="grant_admin_permissions_message" msgid="1751910369004774830">"Kullanıcı, diğer Yöneticiler dahil tüm kullanıcıları silebilecek ve sistemi fabrika ayarlarına sıfırlayabilecektir."</string>
     <string name="action_not_reversible_message" msgid="740401337875726973">"Bu işlem geri alınamaz."</string>
-    <!-- no translation found for confirm_grant_admin (7852596890218647682) -->
-    <skip />
+    <string name="confirm_grant_admin" msgid="7852596890218647682">"Evet, yönetici yap"</string>
+    <string name="create_user_permission_title" msgid="7781550880565935298">"Yeni kullanıcı oluşturma"</string>
+    <string name="outgoing_calls_permission_title" msgid="1230180443712099293">"Telefon araması yapma"</string>
+    <string name="sms_messaging_permission_title" msgid="6099328509729071243">"Araç mobil verisiyle mesajlaşma"</string>
+    <string name="install_apps_permission_title" msgid="3099705360827925296">"Yeni uygulama yükleme"</string>
+    <string name="uninstall_apps_permission_title" msgid="8448422340567430659">"Uygulamaları kaldırma"</string>
     <string name="user_add_user_menu" msgid="5319151436895941496">"Kullanıcı ekle"</string>
     <string name="user_new_user_name" msgid="7115771396412339662">"Yeni kullanıcı"</string>
     <string name="user_add_user_title" msgid="7458813670614932479">"Kullanıcı eklensin mi?"</string>
@@ -222,7 +230,7 @@
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Yapılandırılmamış"</string>
     <string name="edit_user_name_title" msgid="6890782937520262478">"Kullanıcı adını düzenleme"</string>
     <string name="users_list_title" msgid="770764290290240909">"Kullanıcılar"</string>
-    <string name="user_details_title" msgid="1104762783367701498">"Kullanıcı"</string>
+    <string name="user_details_admin_title" msgid="3530292857178371891">"%1$s için izinler verildi"</string>
     <string name="accounts_settings_title" msgid="436190037084293471">"Hesaplar"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"Hesap ekle"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"Hiçbir hesap eklenmedi"</string>
