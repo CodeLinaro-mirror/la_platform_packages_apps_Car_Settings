@@ -1,93 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2018 The Android Open Source Project
+<!--
+    Copyright 2018 The Android Open Source Project
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+         http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:settings="http://schemas.android.com/apk/res-auto"
-                  android:orderingFromXml="false"
-                  android:title="@string/settings_label">
-    <Preference
-        android:key="suggestions"
-        android:order="0"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/settings_label">
+    <com.android.car.settings.common.LogicalPreferenceGroup
+        android:key="@string/pk_suggestions"
         settings:controller="com.android.car.settings.suggestions.SuggestionsPreferenceController"/>
     <Preference
         android:fragment="com.android.car.settings.display.DisplaySettingsFragment"
         android:icon="@drawable/ic_settings_display"
-        android:key="display_settings_entry"
-        android:order="100"
+        android:key="@string/pk_display_settings_entry"
         android:title="@string/display_settings"/>
     <Preference
         android:fragment="com.android.car.settings.sound.SoundSettingsFragment"
         android:icon="@drawable/ic_settings_sound"
-        android:key="sound_settings_entry"
-        android:order="200"
+        android:key="@string/pk_sound_settings_entry"
         android:title="@string/sound_settings"/>
     <Preference
         android:fragment="com.android.car.settings.wifi.WifiSettingsFragment"
         android:icon="@drawable/ic_settings_wifi"
-        android:key="wifi_settings_entry"
-        android:order="300"
+        android:key="@string/pk_wifi_settings_entry"
         android:title="@string/wifi_settings"
         settings:controller="com.android.car.settings.wifi.WifiEntryPreferenceController"/>
-    <Preference
-        android:key="wireless_extra_settings"
-        android:order="400"
+    <com.android.car.settings.common.LogicalPreferenceGroup
+        android:key="@string/pk_wireless_extra_settings"
         settings:controller="com.android.car.settings.common.ExtraSettingsPreferenceController">
         <intent android:action="com.android.settings.action.EXTRA_SETTINGS">
             <extra android:name="com.android.settings.category"
                    android:value="com.android.settings.category.wireless"/>
         </intent>
-    </Preference>
+    </com.android.car.settings.common.LogicalPreferenceGroup>
     <Preference
         android:fragment="com.android.car.settings.bluetooth.BluetoothSettingsFragment"
         android:icon="@drawable/ic_settings_bluetooth"
-        android:key="bluetooth_settings_entry"
-        android:order="500"
+        android:key="@string/pk_bluetooth_settings_entry"
         android:title="@string/bluetooth_settings"
         settings:controller="com.android.car.settings.bluetooth.BluetoothEntryPreferenceController"/>
     <Preference
-        android:fragment="com.android.car.settings.applications.ApplicationSettingsFragment"
+        android:fragment="com.android.car.settings.location.LocationSettingsFragment"
+        android:icon="@drawable/ic_settings_location"
+        android:key="@string/pk_location_settings_entry"
+        android:title="@string/location_settings_title"
+        settings:controller="com.android.car.settings.common.NoSetupPreferenceController"/>
+    <Preference
+        android:fragment="com.android.car.settings.applications.ApplicationsSettingsFragment"
         android:icon="@drawable/ic_settings_applications"
-        android:key="applications_settings_entry"
-        android:order="600"
+        android:key="@string/pk_applications_settings_entry"
         android:title="@string/applications_settings"
         settings:controller="com.android.car.settings.common.NoSetupPreferenceController"/>
     <Preference
         android:fragment="com.android.car.settings.datetime.DatetimeSettingsFragment"
         android:icon="@drawable/ic_settings_date_time"
-        android:key="date_time_settings_entry"
-        android:order="700"
+        android:key="@string/pk_date_time_settings_entry"
         android:title="@string/date_and_time_settings_title"
         settings:controller="com.android.car.settings.common.NoSetupPreferenceController"/>
     <Preference
         android:icon="@drawable/ic_user"
-        android:key="users_settings_entry"
-        android:order="800"
+        android:key="@string/pk_users_settings_entry"
         android:title="@string/users_list_title"
         settings:controller="com.android.car.settings.users.UsersEntryPreferenceController"/>
     <Preference
-        android:fragment="com.android.car.settings.accounts.AccountsListFragment"
+        android:fragment="com.android.car.settings.accounts.AccountSettingsFragment"
         android:icon="@drawable/ic_account"
-        android:key="accounts_settings_entry"
-        android:order="900"
+        android:key="@string/pk_accounts_settings_entry"
         android:title="@string/accounts_settings_title"
         settings:controller="com.android.car.settings.accounts.AccountsEntryPreferenceController"/>
     <Preference
         android:icon="@drawable/ic_lock"
-        android:key="security_settings_entry"
-        android:order="1000"
+        android:key="@string/pk_security_settings_entry"
         android:title="@string/security_settings_title"
         settings:controller="com.android.car.settings.security.SecurityEntryPreferenceController">
         <intent
@@ -97,26 +93,23 @@
     <Preference
         android:fragment="com.android.car.settings.system.SystemSettingsFragment"
         android:icon="@drawable/ic_settings_about"
-        android:key="system_settings_entry"
-        android:order="1100"
+        android:key="@string/pk_system_settings_entry"
         android:title="@string/system_setting_title"
         settings:controller="com.android.car.settings.common.NoSetupPreferenceController"/>
-    <Preference
-        android:key="device_extra_settings"
-        android:order="1200"
+    <com.android.car.settings.common.LogicalPreferenceGroup
+        android:key="@string/pk_device_extra_settings"
         settings:controller="com.android.car.settings.common.ExtraSettingsPreferenceController">
         <intent android:action="com.android.settings.action.EXTRA_SETTINGS">
             <extra android:name="com.android.settings.category"
                    android:value="com.android.settings.category.device"/>
         </intent>
-    </Preference>
-    <Preference
-        android:key="personal_extra_settings"
-        android:order="1300"
+    </com.android.car.settings.common.LogicalPreferenceGroup>
+    <com.android.car.settings.common.LogicalPreferenceGroup
+        android:key="@string/pk_personal_extra_settings"
         settings:controller="com.android.car.settings.common.ExtraSettingsPreferenceController">
         <intent android:action="com.android.settings.action.EXTRA_SETTINGS">
             <extra android:name="com.android.settings.category"
                    android:value="com.android.settings.category.personal"/>
         </intent>
-    </Preference>
+    </com.android.car.settings.common.LogicalPreferenceGroup>
 </PreferenceScreen>

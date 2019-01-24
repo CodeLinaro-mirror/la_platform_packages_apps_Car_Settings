@@ -21,6 +21,7 @@ import static com.android.car.settings.common.BasePreferenceController.DISABLED_
 
 import static com.google.common.truth.Truth.assertThat;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import android.car.userlib.CarUserManagerHelper;
@@ -33,10 +34,10 @@ import android.telephony.SubscriptionManager;
 import androidx.preference.Preference;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
+import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
 import com.android.car.settings.testutils.ShadowCarrierConfigManager;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -46,11 +47,8 @@ import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadow.api.Shadow;
 import org.robolectric.shadows.ShadowApplication;
-import org.robolectric.shadows.ShadowContextImpl;
-import org.robolectric.util.ReflectionHelpers;
 
 import java.util.List;
-import java.util.Map;
 
 /** Unit test for {@link SystemUpdatePreferenceController}. */
 @RunWith(CarSettingsRobolectricTestRunner.class)
@@ -66,19 +64,12 @@ public class SystemUpdatePreferenceControllerTest {
 
     @Before
     public void setUp() {
-        // Robolectric doesn't know about the carrier service, so we must add it ourselves.
-        getSystemServiceMap().put(Context.CARRIER_CONFIG_SERVICE,
-                CarrierConfigManager.class.getName());
         MockitoAnnotations.initMocks(this);
         ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
 
         mContext = RuntimeEnvironment.application;
-        mController = new SystemUpdatePreferenceController(mContext, PREFERENCE_KEY);
-    }
-
-    @After
-    public void tearDown() {
-        getSystemServiceMap().remove(Context.CARRIER_CONFIG_SERVICE);
+        mController = new SystemUpdatePreferenceController(mContext, PREFERENCE_KEY,
+                mock(FragmentController.class));
     }
 
     @Test
@@ -125,9 +116,5 @@ public class SystemUpdatePreferenceControllerTest {
         Intent broadcast = broadcasts.get(0);
         assertThat(broadcast.getAction()).isEqualTo(action);
         assertThat(broadcast.getStringExtra(key)).isEqualTo(value);
-    }
-
-    private Map<String, String> getSystemServiceMap() {
-        return ReflectionHelpers.getStaticField(ShadowContextImpl.class, "SYSTEM_SERVICE_MAP");
     }
 }

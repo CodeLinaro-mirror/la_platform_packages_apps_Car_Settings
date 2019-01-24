@@ -21,12 +21,14 @@ import static com.android.car.settings.common.BasePreferenceController.DISABLED_
 
 import static com.google.common.truth.Truth.assertThat;
 
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import android.car.userlib.CarUserManagerHelper;
 import android.provider.Settings;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
+import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
 
 import org.junit.After;
@@ -55,13 +57,14 @@ public class MasterClearEntryPreferenceControllerTest {
         ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
 
         mController = new MasterClearEntryPreferenceController(RuntimeEnvironment.application,
-                PREFERENCE_KEY);
+                PREFERENCE_KEY, mock(FragmentController.class));
     }
 
     @After
     public void tearDown() {
         Settings.Global.putInt(RuntimeEnvironment.application.getContentResolver(),
                 Settings.Global.DEVICE_DEMO_MODE, 0);
+        ShadowCarUserManagerHelper.reset();
     }
 
     @Test

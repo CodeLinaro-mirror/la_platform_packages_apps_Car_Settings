@@ -21,9 +21,11 @@ import android.content.Intent;
 import android.provider.Settings;
 
 import androidx.preference.Preference;
-import androidx.preference.SwitchPreference;
+import androidx.preference.TwoStatePreference;
 
+import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.NoSetupPreferenceController;
+import com.android.car.settings.common.PreferenceUtil;
 
 /**
  * Business logic which controls the auto datetime toggle.
@@ -31,24 +33,20 @@ import com.android.car.settings.common.NoSetupPreferenceController;
 public class AutoDatetimeTogglePreferenceController extends NoSetupPreferenceController
         implements Preference.OnPreferenceChangeListener {
 
-    public AutoDatetimeTogglePreferenceController(Context context, String preferenceKey) {
-        super(context, preferenceKey);
+    public AutoDatetimeTogglePreferenceController(Context context, String preferenceKey,
+            FragmentController fragmentController) {
+        super(context, preferenceKey, fragmentController);
     }
 
     @Override
     public void updateState(Preference preference) {
-        if (!(preference instanceof SwitchPreference)) {
-            throw new IllegalArgumentException("Expecting SwitchPreference");
-        }
-
-        ((SwitchPreference) preference).setChecked(isEnabled());
+        PreferenceUtil.requirePreferenceType(preference, TwoStatePreference.class);
+        ((TwoStatePreference) preference).setChecked(isEnabled());
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (!(preference instanceof SwitchPreference)) {
-            throw new IllegalArgumentException("Expecting SwitchPreference");
-        }
+        PreferenceUtil.requirePreferenceType(preference, TwoStatePreference.class);
         boolean isAutoDatetimeEnabled = (boolean) newValue;
         Settings.Global.putInt(
                 mContext.getContentResolver(),

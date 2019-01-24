@@ -38,6 +38,7 @@ ifeq (,$(TARGET_BUILD_APPS))
       androidx-constraintlayout_constraintlayout \
       car-settings-lib \
       car-setup-wizard-lib \
+      car-theme-lib \
       setup-wizard-lib-gingerbread-compat \
       SettingsLib
 
@@ -55,7 +56,7 @@ ifeq (,$(TARGET_BUILD_APPS))
   LOCAL_DEX_PREOPT := false
 
   LOCAL_STATIC_JAVA_LIBRARIES := \
-      android.car.user \
+      android.car.userlib \
       androidx-constraintlayout_constraintlayout-solver \
       jsr305
 
@@ -86,8 +87,7 @@ ifeq (,$(TARGET_BUILD_APPS))
   LOCAL_USE_AAPT2 := true
 
   LOCAL_JAVA_LIBRARIES := \
-      android.car \
-      android.car.user
+      android.car
 
   LOCAL_STATIC_ANDROID_LIBRARIES := \
       androidx.car_car \
@@ -96,6 +96,7 @@ ifeq (,$(TARGET_BUILD_APPS))
       androidx-constraintlayout_constraintlayout \
       car-settings-lib \
       car-setup-wizard-lib \
+      car-theme-lib \
       setup-wizard-lib-gingerbread-compat \
       SettingsLib
 
@@ -114,7 +115,7 @@ ifeq (,$(TARGET_BUILD_APPS))
   LOCAL_DEX_PREOPT := false
 
   LOCAL_STATIC_JAVA_LIBRARIES := \
-      android.car.user \
+      android.car.userlib \
       androidx-constraintlayout_constraintlayout-solver \
       jsr305
 
