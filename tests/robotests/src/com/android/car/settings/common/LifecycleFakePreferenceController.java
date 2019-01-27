@@ -26,7 +26,7 @@ import androidx.lifecycle.OnLifecycleEvent;
  * Preference controller which implements {@link LifecycleObserver} for testing automatic
  * registration.
  */
-public class LifecycleFakePreferenceController extends FakePreferenceController implements
+public class LifecycleFakePreferenceController extends FakeBasePreferenceController implements
         LifecycleObserver {
 
     boolean mOnCreateCalled = false;

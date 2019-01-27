@@ -16,25 +16,43 @@
 
 package com.android.car.settings.bluetooth;
 
-import android.bluetooth.BluetoothAdapter;
+import static android.content.pm.PackageManager.FEATURE_BLUETOOTH;
+import static android.os.UserManager.DISALLOW_BLUETOOTH;
+
+import android.car.drivingstate.CarUxRestrictions;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 
-import com.android.car.settings.common.BasePreferenceController;
+import androidx.preference.Preference;
+
 import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.PreferenceController;
 
 /**
  * Controller which determines if the top level entry into Bluetooth settings should be displayed
- * based on device capabilities.
+ * based on device capabilities and user restrictions.
  */
-public class BluetoothEntryPreferenceController extends BasePreferenceController {
+public class BluetoothEntryPreferenceController extends PreferenceController<Preference> {
+
+    private final CarUserManagerHelper mCarUserManagerHelper;
 
     public BluetoothEntryPreferenceController(Context context, String preferenceKey,
-            FragmentController fragmentController) {
-        super(context, preferenceKey, fragmentController);
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
+        super(context, preferenceKey, fragmentController, uxRestrictions);
+        mCarUserManagerHelper = new CarUserManagerHelper(context);
+    }
+
+    @Override
+    protected Class<Preference> getPreferenceType() {
+        return Preference.class;
     }
 
     @Override
     public int getAvailabilityStatus() {
-        return (BluetoothAdapter.getDefaultAdapter() != null) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
+        if (!getContext().getPackageManager().hasSystemFeature(FEATURE_BLUETOOTH)) {
+            return UNSUPPORTED_ON_DEVICE;
+        }
+        return mCarUserManagerHelper.isCurrentProcessUserHasRestriction(DISALLOW_BLUETOOTH)
+                ? DISABLED_FOR_USER : AVAILABLE;
     }
 }

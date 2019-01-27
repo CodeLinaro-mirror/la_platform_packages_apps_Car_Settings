@@ -35,7 +35,6 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -47,8 +46,7 @@ import org.robolectric.annotation.Config;
  * Tests for EditUsernameFragment.
  */
 @RunWith(CarSettingsRobolectricTestRunner.class)
-@Config(shadows = { ShadowCarUserManagerHelper.class })
-@Ignore
+@Config(shadows = {ShadowCarUserManagerHelper.class })
 public class EditUsernameFragmentTest {
     private BaseTestActivity mTestActivity;
 
@@ -61,9 +59,7 @@ public class EditUsernameFragmentTest {
     public void setUpTestActivity() {
         MockitoAnnotations.initMocks(this);
         ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
-        mTestActivity = Robolectric.buildActivity(BaseTestActivity.class)
-                .setup()
-                .get();
+        mTestActivity = Robolectric.setupActivity(BaseTestActivity.class);
     }
 
     @After

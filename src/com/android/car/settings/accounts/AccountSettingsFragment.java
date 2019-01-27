@@ -27,13 +27,12 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BasePreferenceFragment;
-import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.SettingsFragment;
 
 /**
  * Lists the user's accounts and any related options.
  */
-public class AccountSettingsFragment extends BasePreferenceFragment {
+public class AccountSettingsFragment extends SettingsFragment {
     @Override
     @XmlRes
     protected int getPreferenceScreenResId() {
@@ -73,6 +72,6 @@ public class AccountSettingsFragment extends BasePreferenceFragment {
     }
 
     private void onAddAccountClicked() {
-        ((FragmentController) requireActivity()).launchFragment(new AddAccountFragment());
+        launchFragment(new ChooseAccountFragment());
     }
 }

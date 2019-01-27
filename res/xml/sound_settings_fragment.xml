@@ -18,6 +18,23 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:key="@string/pk_volume_settings"
-    android:title="@string/sound_settings"
-    settings:controller="com.android.car.settings.sound.SoundSettingsPreferenceController"/>
+    android:title="@string/sound_settings">
+    <com.android.car.settings.common.LogicalPreferenceGroup
+        android:key="@string/pk_volume_settings"
+        settings:controller="com.android.car.settings.sound.VolumeSettingsPreferenceController"/>
+    <com.android.car.settings.sound.RingtonePreference
+        android:key="@string/pk_default_ringtone"
+        android:ringtoneType="ringtone"
+        android:title="@string/ringtone_title"
+        settings:controller="com.android.car.settings.sound.RingtonePreferenceController"/>
+    <com.android.car.settings.sound.RingtonePreference
+        android:key="@string/pk_default_notification"
+        android:ringtoneType="notification"
+        android:title="@string/notification_ringtone_title"
+        settings:controller="com.android.car.settings.sound.RingtonePreferenceController"/>
+    <com.android.car.settings.sound.RingtonePreference
+        android:key="@string/pk_default_alarm"
+        android:ringtoneType="alarm"
+        android:title="@string/alarm_ringtone_title"
+        settings:controller="com.android.car.settings.sound.RingtonePreferenceController"/>
+</PreferenceScreen>

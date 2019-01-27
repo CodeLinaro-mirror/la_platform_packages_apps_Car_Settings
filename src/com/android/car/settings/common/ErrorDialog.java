@@ -16,11 +16,11 @@
 
 package com.android.car.settings.common;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.StringRes;
-import androidx.car.app.CarAlertDialog;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
@@ -35,21 +35,30 @@ public class ErrorDialog extends DialogFragment {
      * Shows the error dialog.
      *
      * @param parent Fragment associated with the dialog.
-     * @param title Title for the error dialog.
+     * @param title  Title for the error dialog.
      */
     public static ErrorDialog show(Fragment parent, @StringRes int title) {
-        ErrorDialog dialog = new ErrorDialog();
-        Bundle bundle = new Bundle();
-        bundle.putInt(ERROR_DIALOG_TITLE_KEY, title);
-        dialog.setArguments(bundle);
+        ErrorDialog dialog = newInstance(title);
         dialog.setTargetFragment(parent, 0);
         dialog.show(parent.getFragmentManager(), DIALOG_TAG);
         return dialog;
     }
 
+    /**
+     * Creates an instance of error dialog with the appropriate title. This constructor should be
+     * used when starting an error dialog when we don't have a reference to the parent fragment.
+     */
+    public static ErrorDialog newInstance(@StringRes int title) {
+        ErrorDialog dialog = new ErrorDialog();
+        Bundle bundle = new Bundle();
+        bundle.putInt(ERROR_DIALOG_TITLE_KEY, title);
+        dialog.setArguments(bundle);
+        return dialog;
+    }
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        return new CarAlertDialog.Builder(getContext())
+        return new AlertDialog.Builder(getContext())
                 .setTitle(getArguments().getInt(ERROR_DIALOG_TITLE_KEY))
                 .setPositiveButton(android.R.string.ok, /* listener =*/ null)
                 .create();

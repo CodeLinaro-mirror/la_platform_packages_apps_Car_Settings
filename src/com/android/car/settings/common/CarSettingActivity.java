@@ -16,18 +16,17 @@
 
 package com.android.car.settings.common;
 
-import android.annotation.Nullable;
 import android.car.drivingstate.CarUxRestrictions;
 import android.car.drivingstate.CarUxRestrictionsManager.OnUxRestrictionsChangedListener;
 import android.content.Context;
 import android.content.Intent;
-import android.net.wifi.WifiManager;
+import android.content.IntentSender;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -36,8 +35,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.car.settings.R;
-import com.android.car.settings.quicksettings.QuickSettingFragment;
-import com.android.car.settings.wifi.WifiSettingsFragment;
 import com.android.car.theme.Themes;
 
 /**
@@ -47,6 +44,10 @@ import com.android.car.theme.Themes;
 public class CarSettingActivity extends FragmentActivity implements FragmentController,
         OnUxRestrictionsChangedListener, UxRestrictionsProvider, OnBackStackChangedListener,
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+    private static final Logger LOG = new Logger(CarSettingActivity.class);
+
+    public static final String META_DATA_KEY_FRAGMENT_CLASS =
+            "com.android.car.settings.FRAGMENT_CLASS";
 
     private CarUxRestrictionsHelper mUxRestrictionsHelper;
     private View mRestrictedMessage;
@@ -60,6 +61,7 @@ public class CarSettingActivity extends FragmentActivity implements FragmentCont
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.car_setting_activity);
         if (mUxRestrictionsHelper == null) {
             mUxRestrictionsHelper = new CarUxRestrictionsHelper(/* context= */ this, /* listener= */
@@ -73,19 +75,12 @@ public class CarSettingActivity extends FragmentActivity implements FragmentCont
     @Override
     public void onStart() {
         super.onStart();
-        Intent intent = getIntent();
-        if (intent != null) {
-            String action = intent.getAction();
-            if (Settings.ACTION_WIFI_SETTINGS.equals(action)
-                    || WifiManager.ACTION_PICK_WIFI_NETWORK.equals(action)) {
-                launchFragment(new WifiSettingsFragment());
-                return;
-            }
+        Fragment fragment = FragmentResolver.getFragmentForAction(getIntent().getAction());
+        if (fragment == null) {
+            fragment = Fragment.instantiate(this,
+                    getString(R.string.config_settings_hierarchy_root_fragment));
         }
-
-        if (getCurrentFragment() == null) {
-            launchFragment(new QuickSettingFragment());
-        }
+        launchFragment(fragment);
     }
 
     @Override
@@ -113,24 +108,23 @@ public class CarSettingActivity extends FragmentActivity implements FragmentCont
     @Override
     public void launchFragment(Fragment fragment) {
         if (fragment instanceof DialogFragment) {
-            DialogFragment dialogFragment = (DialogFragment) fragment;
-            dialogFragment.show(getSupportFragmentManager(), null);
-        } else {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .setCustomAnimations(
-                            Themes.getAttrResourceId(/* context= */ this,
-                                    android.R.attr.fragmentOpenEnterAnimation),
-                            Themes.getAttrResourceId(/* context= */ this,
-                                    android.R.attr.fragmentOpenExitAnimation),
-                            Themes.getAttrResourceId(/* context= */ this,
-                                    android.R.attr.fragmentCloseEnterAnimation),
-                            Themes.getAttrResourceId(/* context= */ this,
-                                    android.R.attr.fragmentCloseExitAnimation))
-                    .replace(R.id.fragment_container, fragment)
-                    .addToBackStack(null)
-                    .commit();
+            throw new IllegalArgumentException(
+                    "cannot launch dialogs with launchFragment() - use showDialog() instead");
         }
+        getSupportFragmentManager()
+                .beginTransaction()
+                .setCustomAnimations(
+                        Themes.getAttrResourceId(/* context= */ this,
+                                android.R.attr.fragmentOpenEnterAnimation),
+                        Themes.getAttrResourceId(/* context= */ this,
+                                android.R.attr.fragmentOpenExitAnimation),
+                        Themes.getAttrResourceId(/* context= */ this,
+                                android.R.attr.fragmentCloseEnterAnimation),
+                        Themes.getAttrResourceId(/* context= */ this,
+                                android.R.attr.fragmentCloseExitAnimation))
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     @Override
@@ -142,6 +136,37 @@ public class CarSettingActivity extends FragmentActivity implements FragmentCont
     public void showBlockingMessage() {
         Toast.makeText(
                 this, R.string.restricted_while_driving, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showDialog(DialogFragment dialogFragment, @Nullable String tag) {
+        dialogFragment.show(getSupportFragmentManager(), tag);
+    }
+
+    @Override
+    @Nullable
+    public DialogFragment findDialogByTag(String tag) {
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag(tag);
+        if (fragment instanceof DialogFragment) {
+            return (DialogFragment) fragment;
+        }
+        return null;
+    }
+
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode,
+            ActivityResultCallback callback) {
+        throw new UnsupportedOperationException(
+                "Unimplemented for activities that implement FragmentController");
+    }
+
+    @Override
+    public void startIntentSenderForResult(IntentSender intent, int requestCode,
+            @Nullable Intent fillInIntent, int flagsMask, int flagsValues, Bundle options,
+            ActivityResultCallback callback)
+            throws IntentSender.SendIntentException {
+        throw new UnsupportedOperationException(
+                "Unimplemented for activities that implement FragmentController");
     }
 
     @Override
