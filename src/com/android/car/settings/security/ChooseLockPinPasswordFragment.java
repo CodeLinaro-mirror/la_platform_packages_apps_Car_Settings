@@ -94,35 +94,35 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
                 R.string.choose_lock_pin_hints,
                 R.string.continue_button_text,
                 R.string.lockpassword_cancel_label,
-                R.drawable.ic_arrow_forward_on_disc),
+                R.drawable.ic_arrow_forward),
 
         PasswordInvalid(
                 R.string.lockpassword_invalid_password,
                 R.string.lockpin_invalid_pin,
                 R.string.continue_button_text,
                 R.string.lockpassword_clear_label,
-                R.drawable.ic_arrow_forward_on_disc),
+                R.drawable.ic_arrow_forward),
 
         NeedToConfirm(
                 R.string.confirm_your_password_header,
                 R.string.confirm_your_pin_header,
                 R.string.lockpassword_confirm_label,
                 R.string.lockpassword_cancel_label,
-                R.drawable.ic_check_on_disc),
+                R.drawable.ic_check),
 
         ConfirmWrong(
                 R.string.confirm_passwords_dont_match,
                 R.string.confirm_pins_dont_match,
                 R.string.continue_button_text,
                 R.string.lockpassword_cancel_label,
-                R.drawable.ic_check_on_disc),
+                R.drawable.ic_check),
 
         SaveFailure(
                 R.string.error_saving_password,
                 R.string.error_saving_lockpin,
                 R.string.lockscreen_retry_button_text,
                 R.string.lockpassword_cancel_label,
-                R.drawable.ic_check_on_disc);
+                R.drawable.ic_check);
 
         public final int alphaHint;
         public final int numericHint;
@@ -264,7 +264,6 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
         });
 
         mPasswordEntryInputDisabler = new TextViewInputDisabler(mPasswordField);
-        mProgressBar = (ProgressBar) getActivity().findViewById(R.id.progress_bar);
 
         mHintMessage = view.findViewById(R.id.hint_text);
 
@@ -297,13 +296,14 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        mProgressBar = requireActivity().findViewById(R.id.progress_bar);
 
         // Don't show toolbar title in Setup Wizard
         if (mIsInSetupWizard) {
-            ((TextView) getActivity().findViewById(R.id.title)).setText("");
+            ((TextView) requireActivity().findViewById(R.id.title)).setText("");
         }
 
-        mPrimaryButton = getActivity().findViewById(R.id.action_button1);
+        mPrimaryButton = requireActivity().findViewById(R.id.action_button1);
         mPrimaryButton.setOnClickListener(view -> handlePrimaryButtonClick());
         mSecondaryButton = getActivity().findViewById(R.id.action_button2);
         mSecondaryButton.setVisibility(View.VISIBLE);
@@ -333,6 +333,7 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
         if (mSavePasswordWorker != null) {
             mSavePasswordWorker.setListener(null);
         }
+        mProgressBar.setVisibility(View.GONE);
     }
 
     /**
@@ -477,7 +478,7 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
 
     @VisibleForTesting
     void onChosenLockSaveFinished(boolean isSaveSuccessful) {
-        setProgressBarVisible(false);
+        mProgressBar.setVisibility(View.GONE);
         if (isSaveSuccessful) {
             onComplete();
         } else {
@@ -507,7 +508,7 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
         mSavePasswordWorker.start(mUserId, mCurrentEntry, mExistingPassword,
                 mPasswordHelper.getPasswordQuality());
 
-        setProgressBarVisible(true);
+        mProgressBar.setVisibility(View.VISIBLE);
         updateSubmitButtonsState();
     }
 
@@ -552,12 +553,6 @@ public class ChooseLockPinPasswordFragment extends BaseFragment {
             setSecondaryButtonText(mUiStage.secondaryButtonText);
         }
         mPasswordEntryInputDisabler.setInputEnabled(inputAllowed);
-    }
-
-    private void setProgressBarVisible(boolean visible) {
-        if (mProgressBar != null) {
-            mProgressBar.setVisibility(visible ? View.VISIBLE : View.GONE);
-        }
     }
 
     /**

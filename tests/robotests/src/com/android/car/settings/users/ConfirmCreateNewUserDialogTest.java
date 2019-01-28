@@ -20,13 +20,13 @@ import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.Mockito.verify;
 
+import androidx.fragment.app.Fragment;
+
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.testutils.BaseTestActivity;
 import com.android.car.settings.testutils.DialogTestUtils;
-import com.android.car.settings.testutils.TestBaseFragment;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -39,24 +39,21 @@ import org.robolectric.Robolectric;
 @RunWith(CarSettingsRobolectricTestRunner.class)
 public class ConfirmCreateNewUserDialogTest {
     private BaseTestActivity mTestActivity;
-    private TestBaseFragment mTestFragment;
+    private Fragment mTestFragment;
     private ConfirmCreateNewUserDialog mDialog;
 
     @Before
     public void setUpTestActivity() {
         MockitoAnnotations.initMocks(this);
 
-        mTestActivity = Robolectric.buildActivity(BaseTestActivity.class)
-                .setup()
-                .get();
+        mTestActivity = Robolectric.setupActivity(BaseTestActivity.class);
 
-        mTestFragment = new TestBaseFragment();
+        mTestFragment = new Fragment();
         mTestActivity.launchFragment(mTestFragment);
 
         mDialog = new ConfirmCreateNewUserDialog();
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
     public void testConfirmCreateNewUserInvokesOnCreateNewUserConfirmed() {
         ConfirmCreateNewUserDialog.ConfirmCreateNewUserListener listener = Mockito.mock(
@@ -71,7 +68,6 @@ public class ConfirmCreateNewUserDialogTest {
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
     public void testCancelInvokesOnCreateNewUserCancelledListener() {
         ConfirmCreateNewUserDialog.CancelCreateNewUserListener listener = Mockito.mock(
@@ -86,7 +82,6 @@ public class ConfirmCreateNewUserDialogTest {
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
     public void testNoCancelClickListenerDismissesDialog() {
         showDialog();
@@ -97,7 +92,6 @@ public class ConfirmCreateNewUserDialogTest {
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
     public void testNoConfirmClickListenerDismissesDialog() {
         showDialog();

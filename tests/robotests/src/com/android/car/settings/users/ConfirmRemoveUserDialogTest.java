@@ -25,9 +25,9 @@ import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.R;
 import com.android.car.settings.testutils.BaseTestActivity;
 import com.android.car.settings.testutils.DialogTestUtils;
+import com.android.car.settings.users.ConfirmRemoveUserDialog.UserType;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -46,26 +46,23 @@ public class ConfirmRemoveUserDialogTest {
     public void setUpTestActivity() {
         MockitoAnnotations.initMocks(this);
 
-        mTestActivity = Robolectric.buildActivity(BaseTestActivity.class)
-                .setup()
-                .get();
+        mTestActivity = Robolectric.setupActivity(BaseTestActivity.class);
     }
 
     @Test
-    public void testConfirmRemoveUserTitle() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createDefault(null);
-
+    public void testConfirmRemoveDialogTitle_anyUser() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.ANY_USER, /* listener= */ null);
         showDialog(dlg);
 
         assertThat(DialogTestUtils.getTitle(dlg))
                 .isEqualTo(application.getString(R.string.delete_user_dialog_title));
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
-    public void testConfirmRemoveLastUserTitle() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createForLastUser(null);
-
+    public void testConfirmRemoveDialogTitle_lastUser() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.LAST_USER, /* listener= */ null);
         showDialog(dlg);
 
         assertThat(DialogTestUtils.getTitle(dlg))
@@ -73,9 +70,9 @@ public class ConfirmRemoveUserDialogTest {
     }
 
     @Test
-    public void testConfirmRemoveLastAdminTitle() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createForLastAdmin(null);
-
+    public void testConfirmRemoveDialogTitle_lastAdmin() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.LAST_ADMIN, /* listener= */ null);
         showDialog(dlg);
 
         assertThat(DialogTestUtils.getTitle(dlg))
@@ -83,69 +80,57 @@ public class ConfirmRemoveUserDialogTest {
     }
 
     @Test
-    public void testConfirmAnyUserInvokesOnRemoveUserConfirmed() {
+    public void testConfirmInvokesOnRemoveUserConfirmed_anyUser() {
         ConfirmRemoveUserDialog.ConfirmRemoveUserListener listener = Mockito.mock(
                 ConfirmRemoveUserDialog.ConfirmRemoveUserListener.class);
-        ConfirmRemoveUserDialog dialog = ConfirmRemoveUserDialog.createDefault(listener);
+        ConfirmRemoveUserDialog dialog =
+                ConfirmRemoveUserDialog.newInstance(
+                        UserType.ANY_USER, /* listener= */ listener);
         showDialog(dialog);
 
         // Invoke confirm remove user.
         DialogTestUtils.clickPositiveButton(dialog);
 
-        verify(listener).onRemoveUserConfirmed();
+        verify(listener).onRemoveUserConfirmed(UserType.ANY_USER);
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
-    public void testConfirmLastUserInvokesOnRemoveUserConfirmed() {
+    public void testConfirmInvokesOnRemoveUserConfirmed_lastUser() {
         ConfirmRemoveUserDialog.ConfirmRemoveUserListener listener = Mockito.mock(
                 ConfirmRemoveUserDialog.ConfirmRemoveUserListener.class);
-        ConfirmRemoveUserDialog dialog = ConfirmRemoveUserDialog.createForLastUser(listener);
-        dialog.setConfirmRemoveUserListener(listener);
+        ConfirmRemoveUserDialog dialog =
+                ConfirmRemoveUserDialog.newInstance(
+                        UserType.LAST_USER, /* listener= */ listener);
         showDialog(dialog);
 
         // Invoke confirm remove last user.
         DialogTestUtils.clickPositiveButton(dialog);
 
-        verify(listener).onRemoveUserConfirmed();
+        verify(listener).onRemoveUserConfirmed(UserType.LAST_USER);
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
     @Test
-    public void testConfirmLastAdminInvokesOnRemoveUserConfirmed() {
+    public void testConfirmInvokesOnRemoveUserConfirmed_lastAdmin() {
         ConfirmRemoveUserDialog.ConfirmRemoveUserListener listener = Mockito.mock(
                 ConfirmRemoveUserDialog.ConfirmRemoveUserListener.class);
-        ConfirmRemoveUserDialog dialog = ConfirmRemoveUserDialog.createForLastAdmin(listener);
-        dialog.setConfirmRemoveUserListener(listener);
+        ConfirmRemoveUserDialog dialog =
+                ConfirmRemoveUserDialog.newInstance(
+                        UserType.LAST_ADMIN, /* listener= */ listener);
         showDialog(dialog);
 
         // Invoke confirm remove last admin.
         DialogTestUtils.clickPositiveButton(dialog);
 
-        verify(listener).onRemoveUserConfirmed();
+        verify(listener).onRemoveUserConfirmed(UserType.LAST_ADMIN);
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
     @Test
-    public void testCancelOnRemoveAnyUserDialogDismissesDialog() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createDefault(null);
-
-        showDialog(dlg);
-
-        assertThat(isDialogShown()).isTrue(); // Dialog is shown.
-
-        // Invoke cancel.
-        DialogTestUtils.clickNegativeButton(dlg);
-
-        assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
-    }
-
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
-    @Test
-    public void testCancelOnRemoveLastUserDialogDismissesDialog() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createForLastUser(null);
-
+    public void testCancelOnRemoveDialogDismissesDialog_anyUser() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.ANY_USER, /* listener= */ null);
         showDialog(dlg);
 
         assertThat(isDialogShown()).isTrue(); // Dialog is shown.
@@ -157,9 +142,9 @@ public class ConfirmRemoveUserDialogTest {
     }
 
     @Test
-    public void testCancelOnRemoveLastAdminDialogDismissesDialog() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createForLastAdmin(null);
-
+    public void testCancelOnRemoveDialogDismissesDialog_lastUser() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.LAST_USER, /* listener= */ null);
         showDialog(dlg);
 
         assertThat(isDialogShown()).isTrue(); // Dialog is shown.
@@ -171,9 +156,23 @@ public class ConfirmRemoveUserDialogTest {
     }
 
     @Test
-    public void testNoClickListenerDismissesRemoveAnyUserDialog() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createDefault(null);
+    public void testCancelOnRemoveDialogDismissesDialog_lastAdmin() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.LAST_ADMIN, /* listener= */ null);
+        showDialog(dlg);
 
+        assertThat(isDialogShown()).isTrue(); // Dialog is shown.
+
+        // Invoke cancel.
+        DialogTestUtils.clickNegativeButton(dlg);
+
+        assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
+    }
+
+    @Test
+    public void testNoClickListenerDismissesRemoveDialog_anyUser() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.ANY_USER, /* listener= */ null);
         showDialog(dlg);
 
         // Invoke confirm remove user.
@@ -182,11 +181,10 @@ public class ConfirmRemoveUserDialogTest {
         assertThat(isDialogShown()).isFalse(); // Dialog is dismissed.
     }
 
-    @Ignore // Failing with IllegalStateException in android.graphics.text.MeasuredText.Builder
     @Test
-    public void testNoClickListenerDismissesRemoveLastUserDialog() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createForLastUser(null);
-
+    public void testNoClickListenerDismissesRemoveDialog_lastUser() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.LAST_USER, /* listener= */ null);
         showDialog(dlg);
 
         // Invoke confirm remove last user.
@@ -196,9 +194,9 @@ public class ConfirmRemoveUserDialogTest {
     }
 
     @Test
-    public void testNoClickListenerDismissesRemoveLastAdminrDialog() {
-        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.createForLastAdmin(null);
-
+    public void testNoClickListenerDismissesRemoveDialog_lastAdmin() {
+        ConfirmRemoveUserDialog dlg = ConfirmRemoveUserDialog.newInstance(
+                UserType.LAST_ADMIN, /* listener= */ null);
         showDialog(dlg);
 
         // Invoke confirm remove last admin.

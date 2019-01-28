@@ -16,6 +16,8 @@
 
 package com.android.car.settings.users;
 
+import static android.content.pm.UserInfo.FLAG_ADMIN;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
@@ -25,11 +27,12 @@ import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.UserInfo;
 
-import androidx.preference.PreferenceManager;
-import androidx.preference.PreferenceScreen;
+import androidx.lifecycle.Lifecycle;
+import androidx.preference.PreferenceGroup;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
-import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.LogicalPreferenceGroup;
+import com.android.car.settings.common.PreferenceControllerTestHelper;
 import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
 import com.android.car.settings.testutils.ShadowUserIconProvider;
 
@@ -42,38 +45,38 @@ import org.mockito.MockitoAnnotations;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 @RunWith(CarSettingsRobolectricTestRunner.class)
 @Config(shadows = {ShadowCarUserManagerHelper.class, ShadowUserIconProvider.class})
 public class UsersListPreferenceControllerTest {
 
-    private static final String PREFERENCE_KEY = "users_list";
     private static final UserInfo TEST_CURRENT_USER = new UserInfo(/* id= */ 10,
-            "TEST_USER_NAME", /* flags= */ 0);
+            "TEST_USER_NAME", FLAG_ADMIN);
     private static final UserInfo TEST_OTHER_USER = new UserInfo(/* id= */ 11,
             "TEST_OTHER_NAME", /* flags= */ 0);
-    private UsersListPreferenceController mController;
-    private PreferenceScreen mPreferenceScreen;
+
+    private PreferenceControllerTestHelper<UsersListPreferenceController> mControllerHelper;
+    private PreferenceGroup mPreferenceGroup;
     @Mock
     private CarUserManagerHelper mCarUserManagerHelper;
-    @Mock
-    private FragmentController mFragmentController;
 
     @Before
     public void setUp() {
         Context context = RuntimeEnvironment.application;
         MockitoAnnotations.initMocks(this);
         ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
-        mController = new UsersListPreferenceController(context, PREFERENCE_KEY,
-                mFragmentController);
-        mPreferenceScreen = new PreferenceManager(context).createPreferenceScreen(context);
-        mPreferenceScreen.setKey(PREFERENCE_KEY);
+        mPreferenceGroup = new LogicalPreferenceGroup(context);
+        mControllerHelper = new PreferenceControllerTestHelper<>(context,
+                UsersListPreferenceController.class, mPreferenceGroup);
 
         when(mCarUserManagerHelper.getCurrentProcessUserInfo()).thenReturn(TEST_CURRENT_USER);
         when(mCarUserManagerHelper.isCurrentProcessUser(TEST_CURRENT_USER)).thenReturn(true);
+        when(mCarUserManagerHelper.isCurrentProcessAdminUser()).thenReturn(true);
         when(mCarUserManagerHelper.getAllSwitchableUsers()).thenReturn(
-                Arrays.asList(TEST_OTHER_USER));
+                Collections.singletonList(TEST_OTHER_USER));
+
+        mControllerHelper.markState(Lifecycle.State.STARTED);
     }
 
     @After
@@ -82,29 +85,25 @@ public class UsersListPreferenceControllerTest {
     }
 
     @Test
-    public void testPreferencePerformClick_currentUser_openNewFragment() {
-        mController.displayPreference(mPreferenceScreen);
+    public void testPreferencePerformClick_currentAdminUser_openNewFragment() {
+        mPreferenceGroup.getPreference(0).performClick();
 
-        mPreferenceScreen.getPreference(0).performClick();
-
-        verify(mFragmentController).launchFragment(any(UserDetailsFragment.class));
+        verify(mControllerHelper.getMockFragmentController()).launchFragment(
+                any(UserDetailsFragment.class));
     }
 
     @Test
-    public void testPreferencePerformClick_otherUser_openNewFragment() {
-        mController.displayPreference(mPreferenceScreen);
+    public void testPreferencePerformClick_otherNonAdminUser_openNewFragment() {
+        mPreferenceGroup.getPreference(1).performClick();
 
-        mPreferenceScreen.getPreference(1).performClick();
-
-        verify(mFragmentController).launchFragment(any(UserDetailsFragment.class));
+        verify(mControllerHelper.getMockFragmentController()).launchFragment(
+                any(UserDetailsPermissionsFragment.class));
     }
 
     @Test
     public void testPreferencePerformClick_guestUser_noAction() {
-        mController.displayPreference(mPreferenceScreen);
+        mPreferenceGroup.getPreference(2).performClick();
 
-        mPreferenceScreen.getPreference(2).performClick();
-
-        verify(mFragmentController, never()).launchFragment(any());
+        verify(mControllerHelper.getMockFragmentController(), never()).launchFragment(any());
     }
 }

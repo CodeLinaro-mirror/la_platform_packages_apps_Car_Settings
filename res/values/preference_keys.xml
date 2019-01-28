@@ -24,7 +24,8 @@
     <string name="pk_suggestions" translatable="false">suggestions</string>
     <string name="pk_display_settings_entry" translatable="false">display_settings_entry</string>
     <string name="pk_sound_settings_entry" translatable="false">sound_settings_entry</string>
-    <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>
+    <string name="pk_network_and_internet_entry" translatable="false">network_and_internet_entry
+    </string>
     <string name="pk_wireless_extra_settings" translatable="false">wireless_extra_settings</string>
     <string name="pk_bluetooth_settings_entry" translatable="false">bluetooth_settings_entry
     </string>
@@ -40,7 +41,13 @@
     <string name="pk_device_extra_settings" translatable="false">device_extra_settings</string>
     <string name="pk_personal_extra_settings" translatable="false">personal_extra_settings</string>
 
+    <!-- Network -->
+    <string name="pk_mobile_network_settings_entry" translatable="false">mobile_network_settings_entry</string>
+    <string name="pk_mobile_data_toggle" translatable="false">mobile_data_toggle</string>
+    <string name="pk_data_usage_settings_entry" translatable="false">data_usage_settings_entry</string>
+
     <!-- WIFI -->
+    <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>
     <string name="pk_wifi_frequency" translatable="false">wifi_frequency</string>
     <string name="pk_wifi_signal_strength" translatable="false">wifi_signal_strength</string>
     <string name="pk_wifi_security" translatable="false">wifi_security</string>
@@ -51,6 +58,28 @@
     <string name="pk_wifi_subnet_mask" translatable="false">wifi_subnet_mask</string>
     <string name="pk_wifi_dns" translatable="false">wifi_dns</string>
     <string name="pk_wifi_link_speed" translatable="false">wifi_link_speed</string>
+    <string name="pk_wifi_list" translatable="false">wifi_list</string>
+    <string name="pk_add_wifi" translatable="false">add_wifi</string>
+    <string name="pk_wifi_status" translatable="false">wifi_status</string>
+    <string name="pk_add_wifi_network_name" translatable="false">add_wifi_network_name</string>
+    <string name="pk_add_wifi_security_group" translatable="false">add_wifi_security_group</string>
+    <string name="pk_add_wifi_security" translatable="false">add_wifi_security</string>
+    <string name="pk_add_wifi_password" translatable="false">add_wifi_password</string>
+
+    <!-- Bluetooth -->
+    <string name="pk_bluetooth_paired_devices" translatable="false">bluetooth_paired_devices
+    </string>
+    <string name="pk_bluetooth_pair_new_device" translatable="false">bluetooth_pair_new_device
+    </string>
+    <string name="pk_bluetooth_name" translatable="false">bluetooth_name</string>
+    <string name="pk_bluetooth_address" translatable="false">bluetooth_address</string>
+    <string name="pk_bluetooth_available_devices" translatable="false">bluetooth_available_devices
+    </string>
+    <string name="pk_bluetooth_device_name" translatable="false">bluetooth_device_name</string>
+    <string name="pk_bluetooth_device_profiles" translatable="false">bluetooth_device_profiles
+    </string>
+    <string name="pk_bluetooth_device_address" translatable="false">bluetooth_device_address
+    </string>
 
     <!-- Applications Settings -->
     <string name="pk_applications_settings_screen" translatable="false">
@@ -79,22 +108,22 @@
 
     <!-- Accounts -->
     <string name="pk_account_list" translatable="false">account_list</string>
+    <string name="pk_account_auto_sync" translatable="false">account_auto_sync</string>
     <string name="pk_add_account" translatable="false">add_account</string>
-    <string name="pk_account_details_title" translatable="false">account_details_title</string>
     <string name="pk_account_details" translatable="false">account_details</string>
     <string name="pk_account_sync" translatable="false">account_sync</string>
+    <string name="pk_account_sync_details" translatable="false">account_sync_details</string>
 
     <!-- Display Settings -->
-    <string name="pk_adaptive_brightness_switch" translatable="false">
-        adaptive_brightness_switch
+    <string name="pk_adaptive_brightness_switch" translatable="false">adaptive_brightness_switch
     </string>
     <string name="pk_brightness_level" translatable="false">brightness_level</string>
 
     <!-- Sound Settings -->
     <string name="pk_volume_settings" translatable="false">volume_settings</string>
-
-    <!-- Users Settings -->
-    <string name="pk_users_list" translatable="false">users_list</string>
+    <string name="pk_default_ringtone" translatable="false">default_ringtone</string>
+    <string name="pk_default_notification" translatable="false">default_notification</string>
+    <string name="pk_default_alarm" translatable="false">default_alarm</string>
 
     <!-- Location Settings -->
     <string name="pk_location_recent_requests_entry" translatable="false">
@@ -112,21 +141,37 @@
     <string name="pk_location_services" translatable="false">location_services</string>
     <string name="pk_location_footer" translatable="false">location_footer</string>
 
+    <!-- Users Settings -->
+    <string name="pk_users_list" translatable="false">users_list</string>
+    <string name="pk_choose_new_admin" translatable="false">choose_new_admin</string>
+    <string name="pk_edit_user_name_entry" translatable="false">edit_user_name_entry</string>
+    <string name="pk_make_user_admin" translatable="false">make_user_admin</string>
+    <string name="pk_user_permissions" translatable="false">user_permissions</string>
+
     <!-- Security Settings -->
     <string name="pk_no_lock" translatable="false">no_lock</string>
     <string name="pk_pattern_lock" translatable="false">pattern_lock</string>
     <string name="pk_password_lock" translatable="false">password_lock</string>
     <string name="pk_pin_lock" translatable="false">pin_lock</string>
+    <string name="pk_choose_lock_type" translatable="false">choose_lock_type</string>
+    <string name="pk_trusted_device" translatable="false">trusted_device</string>
+    <string name="pk_add_trusted_device" translatable="false">add_trusted_device</string>
 
     <!-- System Settings -->
-    <string name="pk_language_settings_entry" translatable="false">language_settings_entry</string>
+    <string name="pk_languages_and_input_settings" translatable="false">
+        languages_and_input_settings
+    </string>
     <string name="pk_system_update_settings" translatable="false">system_update_settings</string>
     <string name="pk_system_extra_settings" translatable="false">system_extra_settings</string>
     <string name="pk_about_settings_entry" translatable="false">about_settings_entry</string>
     <string name="pk_legal_information_entry" translatable="false">legal_information_entry</string>
     <string name="pk_reset_options_entry" translatable="false">reset_options_entry</string>
+    <string name="pk_developer_options_entry" translatable="false">developer_options_entry</string>
 
     <!-- Language Settings -->
+    <string name="pk_language_settings_entry" translatable="false">language_settings_entry</string>
+    <string name="pk_current_languages" translatable="false">current_languages</string>
+    <string name="pk_add_language" translatable="false">add_language</string>
     <string name="pk_language_picker" translatable="false">language_picker</string>
     <string name="pk_child_locale_picker" translatable="false">child_locale_picker</string>
 
@@ -152,4 +197,7 @@
     <string name="pk_reset_esim" translatable="false">reset_esim</string>
     <string name="pk_reset_network_subscription" translatable="false">reset_network_subscription
     </string>
+
+    <!-- Developer Options -->
+    <string name="pk_usb_debugging_toggle" translatable="false">usb_debugging_toggle</string>
 </resources>
