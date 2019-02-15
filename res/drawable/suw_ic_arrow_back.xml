@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright 2018 The Android Open Source Project
+    Copyright 2019 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -14,14 +14,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
-<vector
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="@dimen/icon_size"
-    android:height="@dimen/icon_size"
-    android:viewportHeight="24.0"
-    android:viewportWidth="24.0">
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="@dimen/car_primary_icon_size"
+        android:height="@dimen/car_primary_icon_size"
+        android:viewportWidth="48.0"
+        android:viewportHeight="48.0">
     <path
-        android:fillColor="?attr/iconColor"
-        android:pathData="M9,16.2l-3.5,-3.5a0.984,0.984 0,0 0,-1.4 0,0.984 0.984,0 0,0 0,1.4l4.19,4.19c0.39,0.39 1.02,0.39 1.41,0L20.3,7.7a0.984,0.984 0,0 0,0 -1.4,0.984 0.984,0 0,0 -1.4,0L9,16.2z"/>
+        android:pathData="M40,22H15.66l11.17,-11.17L24,8 8,24l16,16 2.83,-2.83L15.66,26H40v-4z"
+        android:fillColor="@color/car_tint_light"/>
 </vector>

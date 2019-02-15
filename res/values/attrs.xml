@@ -47,8 +47,7 @@
     </declare-styleable>
 
     <declare-styleable name="PinPadView">
-        <attr name="enterKeyDrawable" format="reference"/>
-        <attr name="keyTextColor" format="color"/>
+        <attr name="layout" format="reference"/>
     </declare-styleable>
 
     <declare-styleable name="Preference">
@@ -58,4 +57,15 @@
 
     <attr name="wifiSignalColor" format="color"/>
     <attr name="iconColor" format="color"/>
+    <attr name="userSwitcherBackground" format="reference"/>
+    <attr name="userSwitcherCurrentUserColor" format="color"/>
+    <attr name="userSwitcherAddIconColor" format="color"/>
+    <attr name="userSwitcherNameTextAppearance" format="reference"/>
+    <attr name="userSwitcherAddIconBackgroundColor" format="color"/>
+    <attr name="quickSettingsEnabledColor" format="color"/>
+    <attr name="quickSettingsDisabledColor" format="color"/>
+    <attr name="quickSettingsIconEnabledColor" format="color"/>
+    <attr name="quickSettingsIconDisabledColor" format="color"/>
+    <attr name="suggestionsPrimaryColor" format="color"/>
+    <attr name="suggestionsSecondaryColor" format="color"/>
 </resources>

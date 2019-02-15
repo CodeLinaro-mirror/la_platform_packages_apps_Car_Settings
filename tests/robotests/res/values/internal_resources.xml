@@ -17,4 +17,5 @@
 
 <resources>
     <bool name="config_automatic_brightness_available">true</bool>
+    <integer name="config_networkAvoidBadWifi">0</integer>
 </resources>

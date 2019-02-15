@@ -17,43 +17,98 @@
 
 <resources>
     <dimen name="icon_size">44dp</dimen>
-    <dimen name="seekbar_track_height">6dp</dimen>
-    <dimen name="seekbar_track_corner">3dp</dimen>
-    <dimen name="seekbar_padding_top">10dp</dimen>
-    <dimen name="switch_end_padding">5dp</dimen>
-    <dimen name="double_icon_size">112dp</dimen>
+    <dimen name="touch_target_size">@*android:dimen/car_touch_target_size</dimen>
 
+    <dimen name="button_min_width">@*android:dimen/car_button_min_width</dimen>
     <dimen name="button_fading_edge_length">40dp</dimen>
+    <dimen name="button_ripple_radius">@*android:dimen/car_radius_1</dimen>
 
-    <dimen name="action_bar_end_widget_margin_end">46dp</dimen>
-    <dimen name="optical_center_offset">1dp</dimen>
+    <!-- Action Bar -->
+    <dimen name="action_bar_height">@*android:dimen/car_app_bar_height</dimen>
+    <dimen name="action_bar_margin">@*android:dimen/car_margin</dimen>
+    <dimen name="action_bar_with_buttons_padding_end">@*android:dimen/car_keyline_1</dimen>
+    <dimen name="action_bar_button_margin_start">@*android:dimen/car_padding_4</dimen>
+    <dimen name="action_bar_button_padding_start">@*android:dimen/car_padding_3</dimen>
+    <dimen name="action_bar_button_padding_end">@*android:dimen/car_padding_3</dimen>
+    <dimen name="action_bar_icon_button_padding_start">@*android:dimen/car_padding_2</dimen>
+    <dimen name="action_bar_icon_button_padding_end">@*android:dimen/car_padding_2</dimen>
+    <dimen name="action_bar_icon_button_drawable_padding">@*android:dimen/car_padding_2</dimen>
 
-    <dimen name="tile_top_bottom_padding">15dp</dimen>
-    <dimen name="list_item_top_margin">25dp</dimen>
+    <!-- Suggestions -->
+    <dimen name="suggestions_top_bottom_margin">@*android:dimen/car_padding_4</dimen>
+    <dimen name="suggestions_corner_radius">@*android:dimen/car_radius_3</dimen>
+    <!-- Padding between the top of the card and the text -->
+    <dimen name="suggestions_text_padding_top">@*android:dimen/car_padding_2</dimen>
+    <!-- Padding between the bottom of the text and the action bar -->
+    <dimen name="suggestions_text_padding_bottom">@*android:dimen/car_padding_2</dimen>
+    <!-- The margin between the main suggestion text and the subtext -->
+    <dimen name="suggestions_subtext_margin_top">@*android:dimen/car_padding_1</dimen>
+    <dimen name="suggestions_padding_start">@*android:dimen/car_keyline_1</dimen>
+    <dimen name="suggestions_padding_end">@*android:dimen/car_keyline_1</dimen>
+    <dimen name="suggestions_action_bar_height">@*android:dimen/car_card_action_bar_height</dimen>
 
-    <integer name="bluetooth_name_length">32</integer>
+    <!-- Quick Settings -->
+    <dimen name="brightness_seekbar_margin_bottom">@*android:dimen/car_padding_4</dimen>
+    <dimen name="brightness_seekbar_height">@*android:dimen/car_single_line_list_item_height</dimen>
+    <dimen name="brightness_seekbar_track_height">6dp</dimen>
+    <dimen name="brightness_seekbar_track_corner">3dp</dimen>
+    <dimen name="brightness_knob_size">44dp</dimen>
+    <dimen name="tile_margin_start">@*android:dimen/car_padding_2</dimen>
+    <dimen name="tile_margin_end">@*android:dimen/car_padding_2</dimen>
+    <dimen name="tile_margin_bottom">@*android:dimen/car_padding_5</dimen>
+    <dimen name="tile_padding">10dp</dimen>
+    <dimen name="tile_icon_margin_bottom">@*android:dimen/car_padding_4</dimen>
+    <dimen name="circle_ripple_bg_radius">90dp</dimen>
 
+    <!-- Bluetooth -->
+    <dimen name="bluetooth_pin_dialog_margin_start">@*android:dimen/car_keyline_1</dimen>
+    <dimen name="bluetooth_pin_dialog_margin_end">@*android:dimen/car_keyline_1</dimen>
+    <dimen name="bluetooth_pin_dialog_section_height">
+        @*android:dimen/car_single_line_list_item_height
+    </dimen>
+    <dimen name="bluetooth_pin_dialog_text_margin_start">@*android:dimen/car_keyline_3</dimen>
+    <dimen name="bluetooth_pin_dialog_text_margin_end">@*android:dimen/car_keyline_3</dimen>
+    <dimen name="bluetooth_pin_dialog_subtext_margin_top">@*android:dimen/car_padding_1</dimen>
+
+    <!-- Edit Username -->
+    <dimen name="edit_username_padding_start">@*android:dimen/car_margin</dimen>
+    <dimen name="edit_username_padding_end">@*android:dimen/car_margin</dimen>
+    <dimen name="edit_username_text_padding_start">@*android:dimen/car_keyline_1</dimen>
+    <dimen name="edit_username_text_padding_end">@*android:dimen/car_keyline_1</dimen>
+    <dimen name="edit_username_text_padding_top">@*android:dimen/car_padding_3</dimen>
+
+    <!-- Security -->
+    <dimen name="choose_title_text_margin_bottom">@*android:dimen/car_padding_2</dimen>
+    <dimen name="choose_pin_title_text_margin_bottom">@*android:dimen/car_padding_5</dimen>
+    <dimen name="pin_password_entry_padding_horizontal">@*android:dimen/car_padding_2</dimen>
     <dimen name="pin_pad_key_width">120dp</dimen>
     <dimen name="pin_pad_key_height">80dp</dimen>
     <dimen name="pin_pad_key_margin">12dp</dimen>
     <dimen name="confirm_pattern_dimension">350dp</dimen>
+    <dimen name="confirm_lock_message_vertical_spacing">@*android:dimen/car_padding_2</dimen>
 
-    <dimen name="toggle_padding">10dp</dimen>
-    <dimen name="toggle_ripple">90dp</dimen>
-    <dimen name="brightness_knob_size">44dp</dimen>
-
-    <dimen name="two_action_preference_divider_width">1dp</dimen>
-
-    <!-- dimensions for the car user switcher -->
-    <dimen name="car_user_switcher_name_text_size">@dimen/car_body1_size</dimen>
-    <dimen name="car_user_switcher_image_avatar_size">@dimen/car_large_avatar_size</dimen>
-    <dimen name="car_user_switcher_vertical_spacing_between_users">@dimen/car_padding_5</dimen>
-    <dimen name="car_user_switcher_vertical_spacing_between_name_and_avatar">@dimen/car_padding_4
+    <!-- User Switcher -->
+    <dimen name="user_switcher_image_avatar_size">96dp</dimen>
+    <dimen name="user_switcher_vertical_spacing_between_users">@*android:dimen/car_padding_5
     </dimen>
-    <dimen name="car_user_switcher_margin_top">@dimen/car_padding_4</dimen>
-    <dimen name="car_user_switcher_current_user_circle_width">126dp</dimen>
-    <dimen name="car_user_switcher_current_user_circle_stroke_width">7dp</dimen>
+    <dimen name="user_switcher_vertical_spacing_between_name_and_avatar">
+        @*android:dimen/car_padding_4
+    </dimen>
+    <dimen name="user_switcher_current_user_circle_width">126dp</dimen>
+    <dimen name="user_switcher_current_user_circle_stroke_width">7dp</dimen>
 
+    <!-- Preferences -->
     <dimen name="preference_padding_top">@dimen/car_padding_2</dimen>
     <dimen name="preference_padding_bottom">@dimen/car_padding_2</dimen>
+    <dimen name="two_action_preference_divider_width">1dp</dimen>
+
+    <!-- Dimens for Setup Wizard -->
+
+    <dimen name="suw_icon_size">44dp</dimen>
+
+    <!-- Security -->
+    <dimen name="suw_pin_pad_key_width">120dp</dimen>
+    <dimen name="suw_pin_pad_key_height">80dp</dimen>
+    <dimen name="suw_pin_pad_key_margin">12dp</dimen>
+    <dimen name="suw_confirm_pattern_dimension">350dp</dimen>
 </resources>
