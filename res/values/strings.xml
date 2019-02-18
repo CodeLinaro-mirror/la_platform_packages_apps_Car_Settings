@@ -124,6 +124,28 @@
     <string name="wifi_details_ipv6_address_header">IPv6 addresses</string>
     <!-- Label for the gateway of the network -->
     <string name="wifi_gateway">Gateway</string>
+    <!-- Title of wifi specific settings, which control advanced behaviors of wifi. [CHAR LIMIT=30] -->
+    <string name="wifi_preferences_title">Wi\u2011Fi preferences</string>
+    <!-- Preference title for option to enable Wi-Fi when saved networks are nearby [CHAR LIMIT=40] -->
+    <string name="wifi_wakeup">Turn on Wi\u2011Fi automatically</string>
+    <!-- Preference summary for option to enable Wi-Fi when high quality saved networks are nearby [CHAR LIMIT=60] -->
+    <string name="wifi_wakeup_summary">Wi\u2011Fi will turn back on near high\u2011quality saved networks, like your home network</string>
+    <!-- Preference summary for auto-wifi when user needs to enable location scanning to toggle it [CHAR LIMIT=60] -->
+    <string name="wifi_wakeup_summary_no_location">Unavailable because location is turned off. Turn on <annotation id="link">location</annotation>.</string>
+    <!-- Wi-Fi settings dialog. Title of dialog displayed asking user to enable Wi-Fi Scanning [CHAR LIMIT=60]-->
+    <string name="wifi_settings_scanning_required_title">Turn on Wi\u2011Fi scanning?</string>
+    <!-- Wi-Fi settings dialog. Text for the confirmation button to enable Wi-Fi scanning. [CHAR LIMIT = 20]-->
+    <string name="wifi_settings_scanning_required_turn_on">Turn on</string>
+    <!-- Wi-Fi settings dialog. Text to show in toast for when user turns on wifi scanning. [CHAR LIMIT=NONE] -->
+    <string name="wifi_settings_scanning_required_enabled">Wi\u2011Fi scanning turned on</string>
+    <!-- Preference title for option to automatically switch away from bad wifi networks [CHAR LIMIT=60]-->
+    <string name="wifi_cellular_fallback_title">Switch to mobile data automatically</string>
+    <!-- Preference summary to automatically switch away from bad wifi networks [CHAR LIMIT=None]-->
+    <string name="wifi_cellular_fallback_summary">Use mobile data when Wi\u2011Fi has no internet access. Data usage charges may apply.</string>
+    <!-- url for the wifi scanning required dialog help page -->
+    <string name="help_uri_wifi_scanning_required" translatable="false"></string>
+    <!-- Button label to allow the user to view additional information [CHAR LIMIT=NONE] -->
+    <string name="learn_more">Learn more</string>
 
     <!-- Bluetooth settings --><skip/>
     <!-- Title of Bluetooth settings pages. [CHAR LIMIT=30] -->
@@ -191,6 +213,12 @@
     <string name="language_settings">Languages</string>
     <!-- Title of Languages & input settings screen. [CHAR LIMIT=30] -->
     <string name="languages_and_input_settings">Languages &amp; input</string>
+    <!-- Title of the main TTS settings screen. [CHAR LIMIT=50] -->
+    <string name="text_to_speech_settings">Text-to-speech output</string>
+    <!-- Title of preferred TTS settings screen. [CHAR LIMIT=30] -->
+    <string name="text_to_speech_preferred_engine_settings">Preferred engine</string>
+    <!-- Summay which identifies the currently selected preferred engine. [CHAR LIMIT=30] -->
+    <string name="text_to_speech_current_engine">Current engine</string>
 
     <!-- sound settings --><skip/>
     <!-- Sound settings screen heading -->
@@ -395,14 +423,7 @@
     <!-- Button title to reset all of user's app preferences. [CHAR LIMIT=40] -->
     <string name="reset_app_pref_title">Reset app preferences</string>
     <!-- Message on screen after user selects reset app preferences. [CHAR LIMIT=NONE] -->
-    <string name="reset_app_pref_desc">
-        This will reset all preferences for:\n\n\n
-        Disabled apps\n
-        Disabled app notifications\n
-        Default applications for actions\n
-        Background data restrictions for apps\n
-        Any permission restrictions\n\n\n
-        You will not lose any app data.
+    <string name="reset_app_pref_desc">This will reset all preferences for:\n\n<li>Disabled apps</li>\n<li>Disabled app notifications</li>\n<li>Default applications for actions</li>\n<li>Background data restrictions for apps</li>\n<li>Any permission restrictions</li>\n\nYou will not lose any app data.
     </string>
     <!-- Button on screen after user selects reset app preferences. [CHAR LIMIT=30] -->
     <string name="reset_app_pref_button_text">Reset apps</string>
@@ -614,6 +635,8 @@
     <string name="sync_button_sync_now">Sync now</string>
     <!-- Data synchronization settings screen, text for button that allows the user to cancel sync [CHAR LIMIT=30]-->
     <string name="sync_button_sync_cancel">Cancel sync</string>
+    <!-- Message when sync is currently failing [CHAR LIMIT=100] -->
+    <string name="sync_is_failing">Sync is currently experiencing problems. It will be back shortly.</string>
 
     <!-- security lock --><skip/>
     <!-- Title for security settings [CHAR LIMIT=20] -->
@@ -800,11 +823,11 @@
     <string name="build_info_fmt"><xliff:g example="google/gcar_emu_x86/..." id="fingerprint">%1$s</xliff:g>\n<xliff:g example="Thu Aug 30" id="date">%2$s</xliff:g> : <xliff:g example="4" id="num_days">%3$s</xliff:g> days ago</string>
 
     <!-- security trusted device --><skip/>
-    <!-- Label for button to add a trusted device [CHAR LIMIT=30] -->
+    <!-- Label for button to add a trusted device [CHAR LIMIT=50] -->
     <string name="add_device_title">Add trusted device</string>
-    <!-- Screen title and label for button of trusted device [CHAR LIMIT=20]> -->
+    <!-- Screen title and label for button of trusted device [CHAR LIMIT=30]> -->
     <string name="trusted_device">Trusted devices</string>
-    <!-- Subtitle of trusted device button in security page [CHAR LIMIT=20]-->
+    <!-- Subtitle of trusted device button in security page [CHAR LIMIT=30]-->
     <string name="trusted_device_subtitle">Device security</string>
 
     <!-- generic --><skip/>

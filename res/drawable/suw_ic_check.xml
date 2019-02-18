@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Copyright 2018 The Android Open Source Project
+    Copyright 2019 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
     limitations under the License.
 -->
 
-<resources>
-    <color name="toggle_bg_disabled">@color/car_grey_800</color>
-    <color name="toggle_icon_disabled">@color/car_grey_400</color>
-    <color name="google_blue_600">@color/google_blue_600_light</color>
-
-    <color name="car_user_switcher_add_user_background_color">@color/car_dark_blue_grey_600</color>
-    <color name="car_user_switcher_current_user_color">@color/car_teal_200</color>
-
-    <color name="car_suggestion_card">#172026</color>
-</resources>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/suw_icon_size"
+    android:height="@dimen/suw_icon_size"
+    android:viewportHeight="24"
+    android:viewportWidth="24">
+    <path
+        android:pathData="M0 0h24v24H0z"/>
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+</vector>
