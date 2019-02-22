@@ -128,9 +128,9 @@
     <string name="wifi_preferences_title">Wi\u2011Fi preferences</string>
     <!-- Preference title for option to enable Wi-Fi when saved networks are nearby [CHAR LIMIT=40] -->
     <string name="wifi_wakeup">Turn on Wi\u2011Fi automatically</string>
-    <!-- Preference summary for option to enable Wi-Fi when high quality saved networks are nearby [CHAR LIMIT=60] -->
+    <!-- Preference summary for option to enable Wi-Fi when high quality saved networks are nearby [CHAR LIMIT=120] -->
     <string name="wifi_wakeup_summary">Wi\u2011Fi will turn back on near high\u2011quality saved networks, like your home network</string>
-    <!-- Preference summary for auto-wifi when user needs to enable location scanning to toggle it [CHAR LIMIT=60] -->
+    <!-- Preference summary for auto-wifi when user needs to enable location scanning to toggle it [CHAR LIMIT=100] -->
     <string name="wifi_wakeup_summary_no_location">Unavailable because location is turned off. Turn on <annotation id="link">location</annotation>.</string>
     <!-- Wi-Fi settings dialog. Title of dialog displayed asking user to enable Wi-Fi Scanning [CHAR LIMIT=60]-->
     <string name="wifi_settings_scanning_required_title">Turn on Wi\u2011Fi scanning?</string>
@@ -213,12 +213,22 @@
     <string name="language_settings">Languages</string>
     <!-- Title of Languages & input settings screen. [CHAR LIMIT=30] -->
     <string name="languages_and_input_settings">Languages &amp; input</string>
+    <!-- Title for the 'Keyboard' preference sub-screen. [CHAR LIMIT=30] -->
+    <string name="keyboard_settings">Keyboard</string>
+    <!-- Title for the 'Available keyboards' preference sub-screen, where the user can turn on/off installed keyboards.[CHAR LIMIT=35] -->
+    <string name="manage_keyboard">Manage keyboards</string>
     <!-- Title of the main TTS settings screen. [CHAR LIMIT=50] -->
     <string name="text_to_speech_settings">Text-to-speech output</string>
     <!-- Title of preferred TTS settings screen. [CHAR LIMIT=30] -->
     <string name="text_to_speech_preferred_engine_settings">Preferred engine</string>
     <!-- Summay which identifies the currently selected preferred engine. [CHAR LIMIT=30] -->
     <string name="text_to_speech_current_engine">Current engine</string>
+    <!-- Title for the seek bar which controls the TTS speech rate. [CHAR LIMIT=40] -->
+    <string name="tts_speech_rate">Speech Rate</string>
+    <!-- Title for the seek bar which controls the TTS pitch. [CHAR LIMIT=30] -->
+    <string name="tts_pitch">Pitch</string>
+    <!-- Name for button that resets speech rate and pitch for synthesized voice to default values in the text to speech settings. [CHAR LIMIT=30] -->
+    <string name="tts_reset">Reset</string>
 
     <!-- sound settings --><skip/>
     <!-- Sound settings screen heading -->
@@ -245,7 +255,13 @@
     <string name="alarm_ringtone_title">Default alarm sound</string>
 
     <!-- applications --><skip/>
-    <!-- Applications settings title, on main settings screen. If clicked, the user is taken to a settings screen full of application settings-->
+    <!-- Apps and notifications settings title, on main settings screen. If clicked, the user is taken to a settings screen full of apps and notifications settings [CHAR LIMIT=40] -->
+    <string name="apps_and_notifications_settings">Apps &amp; notifications</string>
+    <!-- Preference which opens application settings when clicked [CHAR LIMIT=40] -->
+    <string name="all_applications">Show all apps</string>
+    <!-- Default app settings title, which allows user to select defaults for certain application types. [CHAR LIMIT=40] -->
+    <string name="default_applications">Default apps</string>
+    <!-- Applications settings title. If clicked, the user is taken to the list of installed applications. [CHAR LIMIT=40] -->
     <string name="applications_settings">App info</string>
     <!-- [CHAR LIMIT=25] Manage applications, individual application info screen, button label under Storage heading. Button to disable an existing application. -->
     <string name="disable_text">Disable</string>
@@ -271,6 +287,16 @@
         <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> additional permission</item>
         <item quantity="other"><xliff:g example="10" id="count">%d</xliff:g> additional permissions</item>
     </plurals>
+    <!-- Assistant and voice input settings title. This setting allows users to select the default assistant for the device. [CHAR LIMIT=40] -->
+    <string name="assist_and_voice_input_settings">Assist &amp; voice input</string>
+    <!-- Title of the autofill service settings screen. [CHAR LIMIT=40] -->
+    <string name="autofill_settings_title">Autofill service</string>
+    <!-- Title of the option to remove the default application. [CHAR LIMIT=30] -->
+    <string name="app_list_preference_none">None</string>
+    <!-- Label to show which application is chosen as the default application. [CHAR LIMIT=30] -->
+    <string name="default_app_selected_app">Selected</string>
+    <!-- Warning message about security implications of setting an assistant, displayed as a dialog message when the user selects an assistant. [CHAR_LIMIT=NONE]  -->
+    <string name="assistant_security_warning">The assistant will be able to read information about apps in use on your system, including information visible on your screen or accessible within the apps.</string>
 
     <!-- Location --><skip/>
     <!-- Main setting menu item to go into location settings [CHAR LIMIT=40] -->
@@ -829,6 +855,22 @@
     <string name="trusted_device">Trusted devices</string>
     <!-- Subtitle of trusted device button in security page [CHAR LIMIT=30]-->
     <string name="trusted_device_subtitle">Device security</string>
+    <!-- Confirm button label of confirm pairing code dialog [CHAR LIMIT=30]-->
+    <string name="trusted_device_confirm_button">Confirm</string>
+    <!-- Message shown on the add trusted device page [CHAR LIMIT=NONE]-->
+    <string name="add_trusted_device_instruction">Use the companion app to set up a trusted device. Once set up, you will be able to unlock your user profile when your phone is detected by the vehicle</string>
+    <!-- Step one of adding a trusted device [CHAR LIMIT=NONE]-->
+    <string name="trusted_device_download_app">1. Download the companion app on your phone</string>
+    <!-- Step two of adding a trusted device [CHAR LIMIT=NONE]-->
+    <string name="trusted_device_select_device">2. Select <xliff:g id="car_name" example="MyCar">%1$s</xliff:g> on your phone to pair the devices</string>
+    <!-- Messages shown to alert user about the safety of the trusted device feature [CHAR LIMIT=NONE]-->
+    <string name="trusted_device_safety_alert">Smart Lock can\'t detect security features of this device. To help protect your car, trusted device will only be able to keep your car unlocked once it\'s already unlocked by you. Your trusted device can keep your car unlocked when it\'s nearby, even if someone else is holding it.</string>
+    <!-- Confirm pairing code dialog title [CHAR LIMIT=60]-->
+    <string name="trusted_device_pairing_code_dialog_title">Add <xliff:g id="device_name" example="Pixel2">%1$s</xliff:g> as a trusted device</string>
+    <!-- Toast shown when user enrolls a device successfully [CHAR LIMIT=100]-->
+    <string name="trusted_device_success_enrollment_toast"><xliff:g id="device_name" example="Pixel2">%1$s</xliff:g> successfully added as a trusted device</string>
+    <!-- Toast shown when enrolling a device fails [CHAR LIMIT=50]-->
+    <string name="trusted_device_fail_enrollment_toast"><xliff:g id="device_name" example="Pixel2">%1$s</xliff:g> enrollment failed</string>
 
     <!-- generic --><skip/>
     <!-- Button label for generic forget action [CHAR LIMIT=20] -->

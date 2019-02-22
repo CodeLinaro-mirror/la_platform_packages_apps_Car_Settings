@@ -32,6 +32,8 @@
     <uses-permission android:name="android.permission.BACKUP"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    <uses-permission android:name="android.permission.CAR_ENROLL_TRUST"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA"/>
     <uses-permission android:name="android.permission.DELETE_CACHE_FILES"/>
@@ -112,6 +114,7 @@
 
             <intent-filter android:priority="1">
                 <action android:name="android.settings.APPLICATION_DETAILS_SETTINGS" />
+                <data android:scheme="package" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
