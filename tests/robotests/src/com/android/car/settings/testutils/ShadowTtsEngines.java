@@ -25,6 +25,7 @@ import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
 import java.util.List;
+import java.util.Locale;
 
 @Implements(TtsEngines.class)
 public class ShadowTtsEngines {
@@ -57,5 +58,25 @@ public class ShadowTtsEngines {
     @Implementation
     protected Intent getSettingsIntent(String engine) {
         return sInstance.getSettingsIntent(engine);
+    }
+
+    @Implementation
+    protected boolean isLocaleSetToDefaultForEngine(String engineName) {
+        return sInstance.isLocaleSetToDefaultForEngine(engineName);
+    }
+
+    @Implementation
+    protected Locale getLocalePrefForEngine(String engineName) {
+        return sInstance.getLocalePrefForEngine(engineName);
+    }
+
+    @Implementation
+    protected synchronized void updateLocalePrefForEngine(String engineName, Locale newLocale) {
+        sInstance.updateLocalePrefForEngine(engineName, newLocale);
+    }
+
+    @Implementation
+    protected Locale parseLocaleString(String localeString) {
+        return sInstance.parseLocaleString(localeString);
     }
 }
