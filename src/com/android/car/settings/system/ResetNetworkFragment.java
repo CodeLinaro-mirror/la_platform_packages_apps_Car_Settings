@@ -18,8 +18,6 @@ package com.android.car.settings.system;
 
 import static android.app.Activity.RESULT_OK;
 
-import static java.util.Objects.requireNonNull;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -28,8 +26,7 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BasePreferenceFragment;
-import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.SettingsFragment;
 import com.android.car.settings.security.CheckLockActivity;
 
 /**
@@ -37,7 +34,7 @@ import com.android.car.settings.security.CheckLockActivity;
  * values. If a user confirms, they will first be required to authenticate then presented with a
  * secondary confirmation: {@link ResetNetworkConfirmFragment}.
  */
-public class ResetNetworkFragment extends BasePreferenceFragment {
+public class ResetNetworkFragment extends SettingsFragment {
 
     // Arbitrary request code for starting CheckLockActivity when the reset button is clicked.
     private static final int REQUEST_CODE = 123;
@@ -57,8 +54,7 @@ public class ResetNetworkFragment extends BasePreferenceFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button resetSettingsButton = requireNonNull(getActivity()).findViewById(
-                R.id.action_button1);
+        Button resetSettingsButton = requireActivity().findViewById(R.id.action_button1);
         resetSettingsButton.setText(requireContext().getString(R.string.reset_network_button_text));
         resetSettingsButton.setOnClickListener(v -> startActivityForResult(new Intent(
                 getContext(), CheckLockActivity.class), REQUEST_CODE));
@@ -68,8 +64,7 @@ public class ResetNetworkFragment extends BasePreferenceFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
-            ((FragmentController) requireActivity()).launchFragment(
-                    new ResetNetworkConfirmFragment());
+            launchFragment(new ResetNetworkConfirmFragment());
         }
     }
 }

@@ -30,4 +30,24 @@
 
     <!-- user switcher column number TODO: move to support library-->
     <integer name="user_switcher_num_col">3</integer>
+
+    <!-- Number of times to select build number before enabling developer settings -->
+    <integer name="enable_developer_settings_click_count">7</integer>
+
+    <!-- Number of times to select build number before toast appears -->
+    <integer name="enable_developer_settings_clicks_to_show_toast_count">3</integer>
+
+    <!-- Maximum ems value for all settings buttons -->
+    <integer name="button_max_ems">9</integer>
+
+    <!-- Integers for Setup Wizard -->
+
+    <!-- Weight of the main content in the illustration_layout -->
+    <integer name="suw_content_weight">7</integer>
+
+    <!-- Weight of the illustration logo/video in the illustration_layout -->
+    <integer name="suw_illustration_weight">5</integer>
+
+    <!-- Maximum size in pixels of default app icons -->
+    <integer name="default_app_safe_icon_size">500</integer>
 </resources>

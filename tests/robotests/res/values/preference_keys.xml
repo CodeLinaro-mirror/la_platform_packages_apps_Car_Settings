@@ -15,8 +15,8 @@
 -->
 <!-- Namespaced with "tpk" (Test Preference Key) to avoid conflicts. -->
 <resources>
-    <!-- BasePreferenceFragmentTest -->
-    <string name="tpk_xml_controller" translatable="false">xml_controller</string>
-    <string name="tpk_lifecycle_controller" translatable="false">lifecycle_controller</string>
-    <string name="tpk_spy_controller" translatable="false">spy_controller</string>
+    <!-- SettingsFragmentTest -->
+    <string name="tpk_fake_controller" translatable="false">fake_controller</string>
+    <string name="tpk_edit_text_preference" translatable="false">edit_text_preference</string>
+    <string name="tpk_list_preference" translatable="false">list_preference</string>
 </resources>

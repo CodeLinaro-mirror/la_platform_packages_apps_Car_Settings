@@ -20,13 +20,17 @@ import android.app.admin.DevicePolicyManager;
 import android.car.drivingstate.CarUxRestrictions;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.ActivityResultCallback;
 import com.android.car.settings.common.BaseFragment;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
@@ -59,6 +63,10 @@ public class SetupWizardScreenLockActivity extends FragmentActivity implements
 
     @Override
     public void launchFragment(Fragment fragment) {
+        if (fragment instanceof DialogFragment) {
+            throw new IllegalArgumentException(
+                    "cannot launch dialogs with launchFragment() - use showDialog() instead");
+        }
         Bundle args = fragment.getArguments();
         if (args == null) {
             args = new Bundle();
@@ -83,6 +91,37 @@ public class SetupWizardScreenLockActivity extends FragmentActivity implements
 
     @Override
     public void showBlockingMessage() {
+    }
+
+    @Override
+    public void showDialog(DialogFragment dialogFragment, @Nullable String tag) {
+        dialogFragment.show(getSupportFragmentManager(), tag);
+    }
+
+    @Override
+    @Nullable
+    public DialogFragment findDialogByTag(String tag) {
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag(tag);
+        if (fragment instanceof DialogFragment) {
+            return (DialogFragment) fragment;
+        }
+        return null;
+    }
+
+    @Override
+    public void startActivityForResult(Intent intent, int requestCode,
+            ActivityResultCallback callback) {
+        throw new UnsupportedOperationException(
+                "Unimplemented for activities that implement FragmentController");
+    }
+
+    @Override
+    public void startIntentSenderForResult(IntentSender intent, int requestCode,
+            @Nullable Intent fillInIntent, int flagsMask, int flagsValues, Bundle options,
+            ActivityResultCallback callback)
+            throws IntentSender.SendIntentException {
+        throw new UnsupportedOperationException(
+                "Unimplemented for activities that implement FragmentController");
     }
 
     @Override

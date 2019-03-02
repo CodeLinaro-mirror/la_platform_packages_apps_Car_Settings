@@ -24,13 +24,18 @@ import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Shadow for {@link CarUserManagerHelper}
  */
 @Implements(CarUserManagerHelper.class)
 public class ShadowCarUserManagerHelper {
+    // First Map keys from user id to map of restrictions. Second Map keys from restriction id to
+    // bool.
+    private static Map<Integer, Map<String, Boolean>> sUserRestrictionMap = new HashMap<>();
     private static CarUserManagerHelper sMockInstance;
 
     public static void setMockInstance(CarUserManagerHelper userManagerHelper) {
@@ -40,31 +45,42 @@ public class ShadowCarUserManagerHelper {
     @Resetter
     public static void reset() {
         sMockInstance = null;
+        sUserRestrictionMap.clear();
     }
 
     @Implementation
-    public void setUserName(UserInfo user, String name) {
+    protected void setUserName(UserInfo user, String name) {
         sMockInstance.setUserName(user, name);
     }
 
     @Implementation
-    public UserInfo getCurrentProcessUserInfo() {
+    protected UserInfo getCurrentProcessUserInfo() {
         return sMockInstance.getCurrentProcessUserInfo();
     }
 
     @Implementation
-    public int getCurrentProcessUserId() {
+    protected UserInfo getCurrentForegroundUserInfo() {
+        return sMockInstance.getCurrentForegroundUserInfo();
+    }
+
+    @Implementation
+    protected int getCurrentProcessUserId() {
         return sMockInstance.getCurrentProcessUserId();
     }
 
     @Implementation
-    public boolean isCurrentProcessUser(UserInfo userInfo) {
+    protected boolean isCurrentProcessUser(UserInfo userInfo) {
         return sMockInstance.isCurrentProcessUser(userInfo);
     }
 
     @Implementation
-    public List<UserInfo> getAllSwitchableUsers() {
+    protected List<UserInfo> getAllSwitchableUsers() {
         return sMockInstance.getAllSwitchableUsers();
+    }
+
+    @Implementation
+    public List<UserInfo> getAllPersistentUsers() {
+        return sMockInstance.getAllPersistentUsers();
     }
 
     @Implementation
@@ -73,77 +89,89 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
-    public void registerOnUsersUpdateListener(OnUsersUpdateListener listener) {
+    protected void registerOnUsersUpdateListener(OnUsersUpdateListener listener) {
         sMockInstance.registerOnUsersUpdateListener(listener);
     }
 
     @Implementation
-    public void unregisterOnUsersUpdateListener(OnUsersUpdateListener listener) {
+    protected void unregisterOnUsersUpdateListener(OnUsersUpdateListener listener) {
         sMockInstance.unregisterOnUsersUpdateListener(listener);
     }
 
     @Implementation
-    public boolean isUserLimitReached() {
+    protected boolean isUserLimitReached() {
         return sMockInstance.isUserLimitReached();
     }
 
     @Implementation
-    public boolean canCurrentProcessModifyAccounts() {
+    protected boolean canCurrentProcessModifyAccounts() {
         return sMockInstance.canCurrentProcessModifyAccounts();
     }
 
     @Implementation
-    public boolean canCurrentProcessAddUsers() {
+    protected boolean canCurrentProcessAddUsers() {
         return sMockInstance.canCurrentProcessAddUsers();
     }
 
     @Implementation
-    public int getMaxSupportedRealUsers() {
+    protected int getMaxSupportedRealUsers() {
         return sMockInstance.getMaxSupportedRealUsers();
     }
 
     @Implementation
-    public boolean canCurrentProcessRemoveUsers() {
+    protected boolean canCurrentProcessRemoveUsers() {
         return sMockInstance.canCurrentProcessRemoveUsers();
     }
 
     @Implementation
-    public boolean canUserBeRemoved(UserInfo userInfo) {
+    protected boolean canUserBeRemoved(UserInfo userInfo) {
         return sMockInstance.canUserBeRemoved(userInfo);
     }
 
     @Implementation
-    public void grantAdminPermissions(UserInfo user) {
+    protected void grantAdminPermissions(UserInfo user) {
         sMockInstance.grantAdminPermissions(user);
     }
 
     @Implementation
-    public boolean isCurrentProcessDemoUser() {
+    protected boolean isCurrentProcessDemoUser() {
         return sMockInstance.isCurrentProcessDemoUser();
     }
 
     @Implementation
-    public boolean isCurrentProcessAdminUser() {
+    protected boolean isCurrentProcessAdminUser() {
         return sMockInstance.isCurrentProcessAdminUser();
     }
 
     @Implementation
-    public boolean isCurrentProcessGuestUser() {
+    protected boolean isCurrentProcessGuestUser() {
         return sMockInstance.isCurrentProcessGuestUser();
     }
 
     @Implementation
-    public boolean removeUser(UserInfo userInfo, String guestUserName) {
+    protected boolean isCurrentProcessUserHasRestriction(String restriction) {
+        return sMockInstance.isCurrentProcessUserHasRestriction(restriction);
+    }
+
+    @Implementation
+    protected boolean removeUser(UserInfo userInfo, String guestUserName) {
         return sMockInstance.removeUser(userInfo, guestUserName);
     }
 
     @Implementation
     public void setUserRestriction(UserInfo userInfo, String restriction, boolean enable) {
-        sMockInstance.setUserRestriction(userInfo, restriction, enable);
+        Map<String, Boolean> permissionsMap = sUserRestrictionMap.getOrDefault(userInfo.id,
+                new HashMap<>());
+        permissionsMap.put(restriction, enable);
+        sUserRestrictionMap.put(userInfo.id, permissionsMap);
     }
 
     @Implementation
     public boolean hasUserRestriction(String restriction, UserInfo userInfo) {
-        return sMockInstance.hasUserRestriction(restriction, userInfo);
+        // False by default, if nothing was added to our map,
+        if (!sUserRestrictionMap.containsKey(userInfo.id)) {
+            return false;
+        }
+        return sUserRestrictionMap.get(userInfo.id).getOrDefault(restriction, false);
     }
 }

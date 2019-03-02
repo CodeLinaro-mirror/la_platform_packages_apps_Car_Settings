@@ -16,35 +16,49 @@
 
 package com.android.car.settings.system;
 
+import static android.os.UserManager.DISALLOW_FACTORY_RESET;
+
+import android.car.drivingstate.CarUxRestrictions;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.os.UserManager;
 
+import androidx.preference.Preference;
+
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.NoSetupPreferenceController;
+import com.android.car.settings.common.PreferenceController;
 
 /**
  * Controller which determines if master clear (aka "factory reset") should be displayed based on
  * user status.
  */
-public class MasterClearEntryPreferenceController extends NoSetupPreferenceController {
+public class MasterClearEntryPreferenceController extends PreferenceController<Preference> {
 
     private final CarUserManagerHelper mCarUserManagerHelper;
 
     public MasterClearEntryPreferenceController(Context context, String preferenceKey,
-            FragmentController fragmentController) {
-        super(context, preferenceKey, fragmentController);
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
+        super(context, preferenceKey, fragmentController, uxRestrictions);
         mCarUserManagerHelper = new CarUserManagerHelper(context);
     }
 
     @Override
+    protected Class<Preference> getPreferenceType() {
+        return Preference.class;
+    }
+
+    @Override
     public int getAvailabilityStatus() {
-        return (mCarUserManagerHelper.isCurrentProcessAdminUser() || isDemoUser()) ? AVAILABLE
-                : DISABLED_FOR_USER;
+        return isUserRestricted() ? DISABLED_FOR_USER : AVAILABLE;
+    }
+
+    private boolean isUserRestricted() {
+        return !(mCarUserManagerHelper.isCurrentProcessAdminUser() || isDemoUser())
+                || mCarUserManagerHelper.isCurrentProcessUserHasRestriction(DISALLOW_FACTORY_RESET);
     }
 
     private boolean isDemoUser() {
-        return UserManager.isDeviceInDemoMode(mContext)
+        return UserManager.isDeviceInDemoMode(getContext())
                 && mCarUserManagerHelper.isCurrentProcessDemoUser();
     }
 }

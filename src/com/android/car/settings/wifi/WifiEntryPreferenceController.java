@@ -16,24 +16,48 @@
 
 package com.android.car.settings.wifi;
 
+import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 
-import com.android.car.settings.common.BasePreferenceController;
 import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.MasterSwitchPreference;
+import com.android.car.settings.common.PreferenceController;
 
 /**
  * Controller which determines if the top level entry into Wi-Fi settings should be displayed
  * based on device capabilities.
  */
-public class WifiEntryPreferenceController extends BasePreferenceController {
+public class WifiEntryPreferenceController extends PreferenceController<MasterSwitchPreference> {
+
+    private CarWifiManager mCarWifiManager;
 
     public WifiEntryPreferenceController(Context context, String preferenceKey,
-            FragmentController fragmentController) {
-        super(context, preferenceKey, fragmentController);
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
+        super(context, preferenceKey, fragmentController, uxRestrictions);
+        mCarWifiManager = new CarWifiManager(context);
     }
 
     @Override
-    public int getAvailabilityStatus() {
-        return WifiUtil.isWifiAvailable(mContext) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
+    protected Class<MasterSwitchPreference> getPreferenceType() {
+        return MasterSwitchPreference.class;
+    }
+
+    @Override
+    protected void onCreateInternal() {
+        getPreference().setSwitchToggleListener((preference, isChecked) -> {
+            if (isChecked != mCarWifiManager.isWifiEnabled()) {
+                mCarWifiManager.setWifiEnabled(isChecked);
+            }
+        });
+    }
+
+    @Override
+    protected int getAvailabilityStatus() {
+        return WifiUtil.isWifiAvailable(getContext()) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
+    }
+
+    @Override
+    protected void updateState(MasterSwitchPreference preference) {
+        preference.setSwitchChecked(mCarWifiManager.isWifiEnabled());
     }
 }

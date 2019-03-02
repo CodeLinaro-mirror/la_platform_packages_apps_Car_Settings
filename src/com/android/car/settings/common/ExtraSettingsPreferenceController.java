@@ -16,14 +16,16 @@
 
 package com.android.car.settings.common;
 
+import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 
+import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceScreen;
 
-import java.util.List;
+import java.util.Map;
 
 /**
  * Injects preferences from other system applications at a placeholder location. The placeholder
@@ -47,29 +49,48 @@ import java.util.List;
  * @see ExtraSettingsLoader
  */
 // TODO: investigate using SettingsLib Tiles.
-public class ExtraSettingsPreferenceController extends NoSetupPreferenceController {
+public class ExtraSettingsPreferenceController extends PreferenceController<PreferenceGroup> {
 
-    private final ExtraSettingsLoader mExtraSettingsLoader;
+    private ExtraSettingsLoader mExtraSettingsLoader;
     private boolean mSettingsLoaded;
 
     public ExtraSettingsPreferenceController(Context context, String preferenceKey,
-            FragmentController fragmentController) {
-        super(context, preferenceKey, fragmentController);
+            FragmentController fragmentController, CarUxRestrictions restrictionInfo) {
+        super(context, preferenceKey, fragmentController, restrictionInfo);
         mExtraSettingsLoader = new ExtraSettingsLoader(context);
     }
 
+    @VisibleForTesting(otherwise = VisibleForTesting.NONE)
+    public void setExtraSettingsLoader(ExtraSettingsLoader extraSettingsLoader) {
+        mExtraSettingsLoader = extraSettingsLoader;
+    }
+
     @Override
-    public void displayPreference(PreferenceScreen screen) {
-        PreferenceGroup preferenceGroup = (PreferenceGroup) screen.findPreference(
-                getPreferenceKey());
+    protected Class<PreferenceGroup> getPreferenceType() {
+        return PreferenceGroup.class;
+    }
+
+    @Override
+    protected void updateState(PreferenceGroup preference) {
+        Map<Preference, Bundle> preferenceBundleMap = mExtraSettingsLoader.loadPreferences(
+                preference.getIntent());
         if (!mSettingsLoaded) {
-            List<Preference> extraSettings = mExtraSettingsLoader.loadPreferences(
-                    preferenceGroup.getIntent());
-            for (Preference setting : extraSettings) {
-                preferenceGroup.addPreference(setting);
-            }
+            addExtraSettings(preferenceBundleMap);
             mSettingsLoaded = true;
         }
-        preferenceGroup.setVisible(isAvailable() && preferenceGroup.getPreferenceCount() > 0);
+        preference.setVisible(preference.getPreferenceCount() > 0);
+    }
+
+    /**
+     * Adds the extra settings from the system based on the intent that is passed in the preference
+     * group. All the preferences that resolve these intents will be added in the preference group.
+     *
+     * @param preferenceBundleMap a map of {@link Preference} and {@link Bundle} representing
+     * settings injected from system apps and their metadata.
+     */
+    protected void addExtraSettings(Map<Preference, Bundle> preferenceBundleMap) {
+        for (Preference setting : preferenceBundleMap.keySet()) {
+            getPreference().addPreference(setting);
+        }
     }
 }

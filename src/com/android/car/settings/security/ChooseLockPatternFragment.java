@@ -153,10 +153,10 @@ public class ChooseLockPatternFragment extends BaseFragment {
         final boolean mPatternEnabled;
 
         /**
-         * @param messageId The message displayed as instruction.
+         * @param messageId            The message displayed as instruction.
          * @param secondaryButtonState The state of the secondary button.
-         * @param primaryButtonState The state of the primary button.
-         * @param patternEnabled Whether the pattern widget is mEnabled.
+         * @param primaryButtonState   The state of the primary button.
+         * @param patternEnabled       Whether the pattern widget is mEnabled.
          */
         Stage(@StringRes int messageId,
                 SecondaryButtonState secondaryButtonState,
@@ -181,7 +181,7 @@ public class ChooseLockPatternFragment extends BaseFragment {
         Ok(R.string.okay, true);
 
         /**
-         * @param text The displayed mText for this mode.
+         * @param text    The displayed mText for this mode.
          * @param enabled Whether the button should be mEnabled.
          */
         PrimaryButtonState(@StringRes int text, boolean enabled) {
@@ -204,7 +204,7 @@ public class ChooseLockPatternFragment extends BaseFragment {
         Gone(ID_EMPTY_MESSAGE, false);
 
         /**
-         * @param textId The displayed mText for this mode.
+         * @param textId  The displayed mText for this mode.
          * @param enabled Whether the button should be mEnabled.
          */
         SecondaryButtonState(@StringRes int textId, boolean enabled) {
@@ -272,8 +272,6 @@ public class ChooseLockPatternFragment extends BaseFragment {
         mMessageText = view.findViewById(R.id.description_text);
         mMessageText.setText(getString(R.string.choose_lock_pattern_message));
 
-        mProgressBar = (ProgressBar) getActivity().findViewById(R.id.progress_bar);
-
         mLockPatternView = view.findViewById(R.id.lockPattern);
         mLockPatternView.setVisibility(View.VISIBLE);
         mLockPatternView.setEnabled(true);
@@ -299,15 +297,17 @@ public class ChooseLockPatternFragment extends BaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        // Don't show toolbar title in Setup Wizard
         if (mIsInSetupWizard) {
-            ((TextView) getActivity().findViewById(R.id.title)).setText("");
+            mProgressBar = requireActivity().findViewById(R.id.suw_progress_bar);
+            // Don't show toolbar title in Setup Wizard
+            ((TextView) requireActivity().findViewById(R.id.title)).setText("");
+        } else {
+            mProgressBar = requireActivity().findViewById(R.id.progress_bar);
         }
 
-        mPrimaryButton = getActivity().findViewById(R.id.action_button1);
+        mPrimaryButton = requireActivity().findViewById(R.id.action_button1);
         mPrimaryButton.setOnClickListener(view -> handlePrimaryButtonClick());
-        mSecondaryButton = getActivity().findViewById(R.id.action_button2);
+        mSecondaryButton = requireActivity().findViewById(R.id.action_button2);
         mSecondaryButton.setVisibility(View.VISIBLE);
         mSecondaryButton.setOnClickListener(view -> handleSecondaryButtonClick());
     }
@@ -336,6 +336,7 @@ public class ChooseLockPatternFragment extends BaseFragment {
         if (mSavePatternWorker != null) {
             mSavePatternWorker.setListener(null);
         }
+        mProgressBar.setVisibility(View.GONE);
     }
 
     /**
@@ -575,18 +576,12 @@ public class ChooseLockPatternFragment extends BaseFragment {
 
     @VisibleForTesting
     void onChosenLockSaveFinished(boolean isSaveSuccessful) {
-        setProgressBarVisible(false);
+        mProgressBar.setVisibility(View.GONE);
 
         if (isSaveSuccessful) {
             onComplete();
         } else {
             updateStage(Stage.SaveFailure);
-        }
-    }
-
-    private void setProgressBarVisible(boolean visible) {
-        if (mProgressBar != null) {
-            mProgressBar.setVisibility(visible ? View.VISIBLE : View.GONE);
         }
     }
 
@@ -610,7 +605,7 @@ public class ChooseLockPatternFragment extends BaseFragment {
         }
 
         mSavePatternWorker.start(mUserId, mChosenPattern, mCurrentPattern);
-        setProgressBarVisible(true);
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 
     @VisibleForTesting

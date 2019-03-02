@@ -20,10 +20,14 @@ import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.testng.Assert.assertThrows;
 
 import android.car.Car;
+import android.car.drivingstate.CarUxRestrictions;
 import android.car.drivingstate.CarUxRestrictionsManager;
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -31,11 +35,16 @@ import androidx.preference.Preference;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.R;
+import com.android.car.settings.datetime.DatetimeSettingsFragment;
+import com.android.car.settings.testutils.DummyFragment;
 import com.android.car.settings.testutils.ShadowCar;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.robolectric.Robolectric;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.android.controller.ActivityController;
 
@@ -43,22 +52,70 @@ import org.robolectric.android.controller.ActivityController;
 @RunWith(CarSettingsRobolectricTestRunner.class)
 public class CarSettingActivityTest {
 
+    private static final String TEST_TAG = "test_tag";
+
     private Context mContext;
     private ActivityController<CarSettingActivity> mActivityController;
     private CarSettingActivity mActivity;
 
+    @Mock
+    private CarUxRestrictionsManager mMockCarUxRestrictionsManager;
+
     @Before
-    public void setUp() {
-        ShadowCar.setCarManager(Car.CAR_UX_RESTRICTION_SERVICE,
-                mock(CarUxRestrictionsManager.class));
+    public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+        ShadowCar.setCarManager(Car.CAR_UX_RESTRICTION_SERVICE, mMockCarUxRestrictionsManager);
         mContext = RuntimeEnvironment.application;
         mActivityController = ActivityController.of(new CarSettingActivity());
         mActivity = mActivityController.get();
+        mActivityController.create();
+
+        CarUxRestrictions noSetupRestrictions = new CarUxRestrictions.Builder(
+                true, CarUxRestrictions.UX_RESTRICTIONS_BASELINE, 0).build();
+
+        when(mMockCarUxRestrictionsManager.getCurrentCarUxRestrictions())
+                .thenReturn(noSetupRestrictions);
+    }
+
+    @Test
+    public void launchWithIntent_resolveToFragment() {
+        MockitoAnnotations.initMocks(this);
+        Intent intent = new Intent("android.settings.DATE_SETTINGS");
+        CarSettingActivity activity =
+                Robolectric.buildActivity(CarSettingActivity.class, intent).setup().get();
+        assertThat(activity.getSupportFragmentManager().findFragmentById(R.id.fragment_container))
+                .isInstanceOf(DatetimeSettingsFragment.class);
+    }
+
+    @Test
+    public void launchWithEmptyIntent_resolveToDefaultFragment() {
+        CarSettingActivity activity =
+                Robolectric.buildActivity(CarSettingActivity.class).setup().get();
+        assertThat(activity.getSupportFragmentManager().findFragmentById(R.id.fragment_container))
+                .isInstanceOf(DummyFragment.class);
+    }
+
+    @Test
+    public void launchFragment_rootFragment_clearsBackStack() {
+        // Add fragment 1
+        TestFragment testFragment1 = new TestFragment();
+        mActivity.launchFragment(testFragment1);
+
+        // Add fragment 2
+        TestFragment testFragment2 = new TestFragment();
+        mActivity.launchFragment(testFragment2);
+
+        // Add root fragment
+        Fragment root = Fragment.instantiate(mContext,
+                mContext.getString(R.string.config_settings_hierarchy_root_fragment));
+        mActivity.launchFragment(root);
+
+        assertThat(mActivity.getSupportFragmentManager().getBackStackEntryCount())
+            .isEqualTo(1);
     }
 
     @Test
     public void onPreferenceStartFragment_launchesFragment() {
-        mActivityController.create();
         Preference pref = new Preference(mContext);
         pref.setFragment(TestFragment.class.getName());
 
@@ -69,10 +126,45 @@ public class CarSettingActivityTest {
     }
 
     @Test
-    public void testLaunchFragment_launchDialogFragment() {
+    public void testLaunchFragment_dialogFragment_throwsError() {
+        DialogFragment dialogFragment = new DialogFragment();
+
+        assertThrows(IllegalArgumentException.class,
+                () -> mActivity.launchFragment(dialogFragment));
+    }
+
+    @Test
+    public void testShowDialog_launchDialogFragment_noTag() {
         DialogFragment dialogFragment = mock(DialogFragment.class);
-        mActivity.launchFragment(dialogFragment);
+        mActivity.showDialog(dialogFragment, /* tag */ null);
         verify(dialogFragment).show(mActivity.getSupportFragmentManager(), null);
+    }
+
+    @Test
+    public void testShowDialog_launchDialogFragment_withTag() {
+        DialogFragment dialogFragment = mock(DialogFragment.class);
+        mActivity.showDialog(dialogFragment, TEST_TAG);
+        verify(dialogFragment).show(mActivity.getSupportFragmentManager(), TEST_TAG);
+    }
+
+    @Test
+    public void testFindDialogByTag_retrieveOriginalDialog() {
+        DialogFragment dialogFragment = new DialogFragment();
+        mActivity.showDialog(dialogFragment, TEST_TAG);
+        assertThat(mActivity.findDialogByTag(TEST_TAG)).isEqualTo(dialogFragment);
+    }
+
+    @Test
+    public void testFindDialogByTag_notDialogFragment() {
+        TestFragment fragment = new TestFragment();
+        mActivity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                fragment, TEST_TAG).commit();
+        assertThat(mActivity.findDialogByTag(TEST_TAG)).isNull();
+    }
+
+    @Test
+    public void testFindDialogByTag_noSuchFragment() {
+        assertThat(mActivity.findDialogByTag(TEST_TAG)).isNull();
     }
 
     /** Simple Fragment for testing use. */

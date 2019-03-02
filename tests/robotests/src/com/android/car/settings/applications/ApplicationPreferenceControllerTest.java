@@ -18,21 +18,17 @@ package com.android.car.settings.applications;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.when;
 import static org.testng.Assert.assertThrows;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 
+import androidx.lifecycle.Lifecycle;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceManager;
-import androidx.preference.PreferenceScreen;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
-import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.PreferenceControllerTestHelper;
+import com.android.settingslib.applications.ApplicationsState;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -43,42 +39,50 @@ import org.robolectric.RuntimeEnvironment;
 
 @RunWith(CarSettingsRobolectricTestRunner.class)
 public class ApplicationPreferenceControllerTest {
-    private static final String PREFERENCE_KEY = "application_details_screen";
     private static final String PACKAGE_NAME = "Test Package Name";
 
     private Preference mPreference;
-    private PreferenceScreen mPreferenceScreen;
+    private PreferenceControllerTestHelper<ApplicationPreferenceController>
+            mPreferenceControllerHelper;
     private ApplicationPreferenceController mController;
     @Mock
-    private ResolveInfo mResolveInfo;
+    private ApplicationsState mMockAppState;
     @Mock
-    private PackageManager mPackageManager;
+    private ApplicationsState.AppEntry mMockAppEntry;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         Context context = spy(RuntimeEnvironment.application);
-        when(context.getPackageManager()).thenReturn(mPackageManager);
-        when(mResolveInfo.loadLabel(mPackageManager)).thenReturn(PACKAGE_NAME);
+        mMockAppEntry.label = PACKAGE_NAME;
 
-        mPreferenceScreen = new PreferenceManager(context).createPreferenceScreen(context);
         mPreference = new Preference(context);
-        mPreference.setKey(PREFERENCE_KEY);
-        mPreferenceScreen.addPreference(mPreference);
-        mController = new ApplicationPreferenceController(context, PREFERENCE_KEY,
-                mock(FragmentController.class));
+        mPreferenceControllerHelper = new PreferenceControllerTestHelper<>(context,
+                ApplicationPreferenceController.class);
+        mController = mPreferenceControllerHelper.getController();
     }
 
     @Test
-    public void testDisplayPreference_noResolveInfo_throwException() {
+    public void testCheckInitialized_noAppState_throwException() {
+        mController.setAppEntry(mMockAppEntry);
         assertThrows(IllegalStateException.class,
-                () -> mController.displayPreference(mPreferenceScreen));
+                () -> mPreferenceControllerHelper.setPreference(mPreference));
     }
 
     @Test
-    public void testDisplayPreference_hasResolveInfo_setTitle() {
-        mController.setResolveInfo(mResolveInfo);
-        mController.displayPreference(mPreferenceScreen);
+    public void testCheckInitialized_noAppEntry_throwException() {
+        mController.setAppState(mMockAppState);
+        assertThrows(IllegalStateException.class,
+                () -> mPreferenceControllerHelper.setPreference(mPreference));
+    }
+
+    @Test
+    public void testRefreshUi_hasResolveInfo_setTitle() {
+        mController.setAppEntry(mMockAppEntry);
+        mController.setAppState(mMockAppState);
+        mPreferenceControllerHelper.setPreference(mPreference);
+        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
+        mController.refreshUi();
         assertThat(mPreference.getTitle()).isEqualTo(PACKAGE_NAME);
     }
 }

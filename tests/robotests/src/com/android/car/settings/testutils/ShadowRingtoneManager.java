@@ -25,21 +25,36 @@ import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Implements(RingtoneManager.class)
 public class ShadowRingtoneManager {
     private static Ringtone sRingtone;
+    private static Map<Integer, Uri> sSetDefaultRingtoneCalled = new HashMap<>();
 
     public static void setRingtone(Ringtone ringtone) {
         sRingtone = ringtone;
     }
 
     @Implementation
-    public static Ringtone getRingtone(final Context context, Uri ringtoneUri) {
+    protected static Ringtone getRingtone(final Context context, Uri ringtoneUri) {
         return sRingtone;
+    }
+
+    @Implementation
+    public static void setActualDefaultRingtoneUri(Context context, int type, Uri ringtoneUri) {
+        sSetDefaultRingtoneCalled.put(type, ringtoneUri);
+    }
+
+    @Implementation
+    public static Uri getActualDefaultRingtoneUri(Context context, int type) {
+        return sSetDefaultRingtoneCalled.getOrDefault(type, null);
     }
 
     @Resetter
     public static void reset() {
         sRingtone = null;
+        sSetDefaultRingtoneCalled.clear();
     }
 }

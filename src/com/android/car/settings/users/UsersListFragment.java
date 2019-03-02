@@ -30,14 +30,14 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.BasePreferenceFragment;
 import com.android.car.settings.common.CarUxRestrictionsHelper;
 import com.android.car.settings.common.ErrorDialog;
+import com.android.car.settings.common.SettingsFragment;
 
 /**
  * Lists all Users available on this device.
  */
-public class UsersListFragment extends BasePreferenceFragment implements
+public class UsersListFragment extends SettingsFragment implements
         ConfirmCreateNewUserDialog.ConfirmCreateNewUserListener,
         ConfirmExitRetailModeDialog.ConfirmExitRetailModeListener,
         AddNewUserTask.AddNewUserListener {
@@ -50,6 +50,8 @@ public class UsersListFragment extends BasePreferenceFragment implements
     private Button mAddUserButton;
 
     private AsyncTask mAddNewUserTask;
+    /** Indicates that a task is running. */
+    private boolean mIsBusy;
     private float mOpacityDisabled;
     private float mOpacityEnabled;
     private boolean mRestricted;
@@ -78,12 +80,12 @@ public class UsersListFragment extends BasePreferenceFragment implements
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mProgressBar = getActivity().findViewById(R.id.progress_bar);
+        mProgressBar = requireActivity().findViewById(R.id.progress_bar);
 
         mAddUserButton = getActivity().findViewById(R.id.action_button1);
         mAddUserButton.setOnClickListener(v -> {
             if (mRestricted) {
-                getFragmentController().showBlockingMessage();
+                showBlockingMessage();
             } else {
                 handleAddUserClicked();
             }
@@ -103,10 +105,11 @@ public class UsersListFragment extends BasePreferenceFragment implements
 
     @Override
     public void onCreateNewUserConfirmed() {
-        setAddUserEnabled(false);
         mAddNewUserTask =
                 new AddNewUserTask(mCarUserManagerHelper, /* addNewUserListener= */ this)
                         .execute(getContext().getString(R.string.user_new_user_name));
+        mIsBusy = true;
+        updateUi();
     }
 
     /**
@@ -126,6 +129,18 @@ public class UsersListFragment extends BasePreferenceFragment implements
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        updateUi();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
 
@@ -136,19 +151,21 @@ public class UsersListFragment extends BasePreferenceFragment implements
 
     @Override
     public void onUserAddedSuccess() {
-        setAddUserEnabled(true);
+        mIsBusy = false;
+        updateUi();
     }
 
     @Override
     public void onUserAddedFailure() {
-        setAddUserEnabled(true);
+        mIsBusy = false;
+        updateUi();
         // Display failure dialog.
         ErrorDialog.show(this, R.string.add_user_error_title);
     }
 
-    private void setAddUserEnabled(boolean enabled) {
-        mAddUserButton.setEnabled(enabled);
-        mProgressBar.setVisibility(enabled ? View.VISIBLE : View.GONE);
+    private void updateUi() {
+        mAddUserButton.setEnabled(!mIsBusy);
+        mProgressBar.setVisibility(mIsBusy ? View.VISIBLE : View.GONE);
     }
 
     private void handleAddUserClicked() {

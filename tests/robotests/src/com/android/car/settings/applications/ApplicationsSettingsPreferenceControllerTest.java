@@ -26,15 +26,17 @@ import static org.mockito.Mockito.when;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 
+import androidx.lifecycle.Lifecycle;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
-import androidx.preference.PreferenceScreen;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
-import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.PreferenceControllerTestHelper;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -49,20 +51,26 @@ import java.util.List;
 @RunWith(CarSettingsRobolectricTestRunner.class)
 public class ApplicationsSettingsPreferenceControllerTest {
 
-    private static final String PREFERENCE_KEY = "applications_settings_screen";
     private static final String APP_NAME_1 = "Some Application";
     private static final String APP_NAME_2 = "Other Application";
+    private static final String PKG_NAME_1 = "Some package";
+    private static final String PKG_NAME_2 = "Other package";
 
-    private PreferenceScreen mPreferenceScreen;
+    private PreferenceGroup mPreferenceGroup;
+    private PreferenceControllerTestHelper<ApplicationsSettingsPreferenceController>
+            mPreferenceControllerHelper;
     private ApplicationsSettingsPreferenceController mController;
-    @Mock
-    private FragmentController mFragmentController;
+
     @Mock
     private PackageManager mPackageManager;
     @Mock
-    private ResolveInfo mResolveInfo1;
+    private ResolveInfo mMockResolveInfo1;
     @Mock
-    private ResolveInfo mResolveInfo2;
+    private ResolveInfo mMockResolveInfo2;
+    @Mock
+    private ActivityInfo mMockActivityInfo1;
+    @Mock
+    private ActivityInfo mMockActivityInfo2;
 
     @Before
     public void setUp() {
@@ -70,56 +78,60 @@ public class ApplicationsSettingsPreferenceControllerTest {
         Context context = spy(RuntimeEnvironment.application);
         when(context.getPackageManager()).thenReturn(mPackageManager);
 
-        mPreferenceScreen = new PreferenceManager(context).createPreferenceScreen(context);
-        mPreferenceScreen.setKey(PREFERENCE_KEY);
-        mController = new ApplicationsSettingsPreferenceController(context, PREFERENCE_KEY,
-                mFragmentController);
+        mPreferenceGroup = new PreferenceManager(context).createPreferenceScreen(context);
+        mPreferenceControllerHelper = new PreferenceControllerTestHelper<>(context,
+                ApplicationsSettingsPreferenceController.class, mPreferenceGroup);
+        mController = mPreferenceControllerHelper.getController();
 
-        when(mResolveInfo1.loadLabel(any(PackageManager.class))).thenReturn(APP_NAME_1);
-        when(mResolveInfo2.loadLabel(any(PackageManager.class))).thenReturn(APP_NAME_2);
+        when(mMockResolveInfo1.loadLabel(any(PackageManager.class))).thenReturn(APP_NAME_1);
+        when(mMockResolveInfo2.loadLabel(any(PackageManager.class))).thenReturn(APP_NAME_2);
+        mMockActivityInfo1.packageName = PKG_NAME_1;
+        mMockActivityInfo2.packageName = PKG_NAME_2;
+        mMockResolveInfo1.activityInfo = mMockActivityInfo1;
+        mMockResolveInfo2.activityInfo = mMockActivityInfo2;
 
         List<ResolveInfo> testList = new ArrayList<>();
-        testList.add(mResolveInfo1);
-        testList.add(mResolveInfo2);
+        testList.add(mMockResolveInfo1);
+        testList.add(mMockResolveInfo2);
 
         // Cannot use specific intent because it doesn't have a proper "equals" method.
         when(mPackageManager.queryIntentActivities(any(Intent.class),
                 eq(PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS
                         | PackageManager.MATCH_DISABLED_COMPONENTS))).thenReturn(testList);
+
+        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
     }
 
     @Test
-    public void displayPreference_hasElements() {
-        mController.displayPreference(mPreferenceScreen);
-        assertThat(mPreferenceScreen.getPreferenceCount()).isEqualTo(2);
+    public void refreshUi_hasElements() {
+        assertThat(mPreferenceGroup.getPreferenceCount()).isEqualTo(2);
     }
 
     @Test
-    public void displayPreference_orderIsCorrect() {
-        mController.displayPreference(mPreferenceScreen);
+    public void refreshUi_orderIsCorrect() {
         List<String> computedOrder = new ArrayList<>();
-        for (int i = 0; i < mPreferenceScreen.getPreferenceCount(); i++) {
-            computedOrder.add(mPreferenceScreen.getPreference(i).getTitle().toString());
+        for (int i = 0; i < mPreferenceGroup.getPreferenceCount(); i++) {
+            computedOrder.add(mPreferenceGroup.getPreference(i).getTitle().toString());
         }
 
         assertThat(computedOrder).containsExactly(APP_NAME_2, APP_NAME_1);
     }
 
     @Test
-    public void displayPreference_preferenceClick() {
-        mController.displayPreference(mPreferenceScreen);
-        Preference preference = mPreferenceScreen.getPreference(0);
+    public void preferenceClick_launchesDetailFragment() {
+        Preference preference = mPreferenceGroup.getPreference(0);
         preference.performClick();
-        verify(mFragmentController).launchFragment(any(ApplicationDetailsFragment.class));
+        verify(mPreferenceControllerHelper.getMockFragmentController()).launchFragment(
+                any(ApplicationDetailsFragment.class));
     }
 
     @Test
-    public void displayPreference_multipleCalls() {
-        mController.displayPreference(mPreferenceScreen);
-        assertThat(mPreferenceScreen.getPreferenceCount()).isEqualTo(2);
+    public void refreshUi_multipleCalls() {
+        mController.refreshUi();
+        assertThat(mPreferenceGroup.getPreferenceCount()).isEqualTo(2);
 
         // Second call shouldn't add more items to the list.
-        mController.displayPreference(mPreferenceScreen);
-        assertThat(mPreferenceScreen.getPreferenceCount()).isEqualTo(2);
+        mController.refreshUi();
+        assertThat(mPreferenceGroup.getPreferenceCount()).isEqualTo(2);
     }
 }

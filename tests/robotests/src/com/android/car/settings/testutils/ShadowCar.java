@@ -46,7 +46,7 @@ public class ShadowCar {
      * Returns a mocked version of a {@link Car} object.
      */
     @Implementation
-    public static Car createCar(Context context, ServiceConnection serviceConnection) {
+    protected static Car createCar(Context context, ServiceConnection serviceConnection) {
         if (serviceConnection != null) {
             doAnswer((Answer<Void>) invocation -> {
                 serviceConnection.onServiceConnected(null, null);
@@ -57,6 +57,23 @@ public class ShadowCar {
                 return null;
             }).when(sMockCar).disconnect();
         }
+        doReturn(sIsConnected).when(sMockCar).isConnected();
+        if (sServiceName != null) {
+            try {
+                doReturn(sCarManager).when(sMockCar).getCarManager(sServiceName);
+            } catch (CarNotConnectedException e) {
+                // do nothing, have to do this because compiler doesn't understand mock can't throw
+                // exception.
+            }
+        }
+        return sMockCar;
+    }
+
+    /**
+     * Returns a mocked version of a {@link Car} object.
+     */
+    @Implementation
+    protected static Car createCar(Context context) {
         doReturn(sIsConnected).when(sMockCar).isConnected();
         if (sServiceName != null) {
             try {

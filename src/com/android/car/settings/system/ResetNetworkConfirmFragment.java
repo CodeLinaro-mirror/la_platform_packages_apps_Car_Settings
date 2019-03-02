@@ -16,38 +16,51 @@
 
 package com.android.car.settings.system;
 
-import static java.util.Objects.requireNonNull;
-
 import android.app.ActivityManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
+import android.content.ContentResolver;
 import android.content.Context;
-import android.content.res.TypedArray;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.net.NetworkPolicyManager;
+import android.net.Uri;
 import android.net.wifi.WifiManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.RecoverySystem;
+import android.provider.Telephony;
+import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.LayoutRes;
-import androidx.annotation.StringRes;
-import androidx.annotation.StyleRes;
-import androidx.car.widget.ListItem;
-import androidx.car.widget.ListItemProvider;
-import androidx.car.widget.TextListItem;
+import androidx.annotation.VisibleForTesting;
+import androidx.annotation.XmlRes;
+import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.ListItemSettingsFragment;
-
-import java.util.Collections;
-import java.util.List;
+import com.android.car.settings.common.ErrorDialog;
+import com.android.car.settings.common.SettingsFragment;
 
 /**
  * Final warning presented to user to confirm restoring network settings to the factory default.
  * If a user confirms, all settings are reset for connectivity, Wi-Fi, and Bluetooth.
  */
-public class ResetNetworkConfirmFragment extends ListItemSettingsFragment {
-    @StyleRes private int mTitleTextAppearance;
+public class ResetNetworkConfirmFragment extends SettingsFragment {
+
+    // Copied from com.android.settings.network.ApnSettings.
+    @VisibleForTesting
+    static final String RESTORE_CARRIERS_URI = "content://telephony/carriers/restore";
+
+    @Override
+    @XmlRes
+    protected int getPreferenceScreenResId() {
+        return R.xml.reset_network_confirm_fragment;
+    }
 
     @Override
     @LayoutRes
@@ -56,45 +69,12 @@ public class ResetNetworkConfirmFragment extends ListItemSettingsFragment {
     }
 
     @Override
-    @StringRes
-    protected int getTitleId() {
-        return R.string.reset_network_confirm_title;
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        TypedArray a = context.getTheme().obtainStyledAttributes(R.styleable.ListItem);
-
-        mTitleTextAppearance = a.getResourceId(
-                R.styleable.ListItem_listItemTitleTextAppearance,
-                R.style.TextAppearance_Car_Body1_Light);
-
-        a.recycle();
-    }
-
-    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button resetSettingsButton = requireNonNull(getActivity()).findViewById(
-                R.id.action_button1);
+        Button resetSettingsButton = requireActivity().findViewById(R.id.action_button1);
         resetSettingsButton.setText(
-                getContext().getString(R.string.reset_network_confirm_button_text));
+                requireContext().getString(R.string.reset_network_confirm_button_text));
         resetSettingsButton.setOnClickListener(v -> resetNetwork());
-    }
-
-    @Override
-    public ListItemProvider getItemProvider() {
-        return new ListItemProvider.ListProvider(getListItems());
-    }
-
-    private List<ListItem> getListItems() {
-        Context context = requireContext();
-        TextListItem item = new TextListItem(context);
-        item.setBody(context.getString(R.string.reset_network_confirm_desc));
-        item.setShowDivider(false);
-        item.addViewBinder(vh -> vh.getBody().setTextAppearance(mTitleTextAppearance));
-        return Collections.singletonList(item);
     }
 
     private void resetNetwork() {
@@ -102,7 +82,7 @@ public class ResetNetworkConfirmFragment extends ListItemSettingsFragment {
             return;
         }
 
-        Context context = requireNonNull(getActivity()).getApplicationContext();
+        Context context = requireActivity().getApplicationContext();
 
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -125,7 +105,99 @@ public class ResetNetworkConfirmFragment extends ListItemSettingsFragment {
             }
         }
 
-        Toast.makeText(requireContext(), R.string.reset_network_complete_toast,
+        int networkSubscriptionId = getNetworkSubscriptionId();
+        TelephonyManager telephonyManager = (TelephonyManager)
+                context.getSystemService(Context.TELEPHONY_SERVICE);
+        if (telephonyManager != null) {
+            telephonyManager.factoryReset(networkSubscriptionId);
+        }
+
+        NetworkPolicyManager policyManager = (NetworkPolicyManager)
+                context.getSystemService(Context.NETWORK_POLICY_SERVICE);
+        if (policyManager != null) {
+            String subscriberId = telephonyManager.getSubscriberId(networkSubscriptionId);
+            policyManager.factoryReset(subscriberId);
+        }
+
+        restoreDefaultApn(context, networkSubscriptionId);
+
+        // There has been issues when Sms raw table somehow stores orphan
+        // fragments. They lead to garbled message when new fragments come
+        // in and combined with those stale ones. In case this happens again,
+        // user can reset all network settings which will clean up this table.
+        cleanUpSmsRawTable(context);
+
+        if (shouldResetEsim()) {
+            new EraseEsimAsyncTask(getContext(), context.getPackageName(), this).execute();
+        } else {
+            showCompletionToast(getContext());
+        }
+    }
+
+    private boolean shouldResetEsim() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(
+                requireContext());
+        return sharedPreferences.getBoolean(requireContext().getString(R.string.pk_reset_esim),
+                false);
+    }
+
+    private int getNetworkSubscriptionId() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(
+                requireContext());
+        String stringId = sharedPreferences.getString(
+                requireContext().getString(R.string.pk_reset_network_subscription), null);
+        if (TextUtils.isEmpty(stringId)) {
+            return SubscriptionManager.INVALID_SUBSCRIPTION_ID;
+        }
+        return Integer.parseInt(stringId);
+    }
+
+    private void restoreDefaultApn(Context context, int subscriptionId) {
+        Uri uri = Uri.parse(RESTORE_CARRIERS_URI);
+
+        if (SubscriptionManager.isUsableSubIdValue(subscriptionId)) {
+            uri = Uri.withAppendedPath(uri, "subId/" + subscriptionId);
+        }
+
+        ContentResolver resolver = context.getContentResolver();
+        resolver.delete(uri, null, null);
+    }
+
+    private void cleanUpSmsRawTable(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+        Uri uri = Uri.withAppendedPath(Telephony.Sms.CONTENT_URI, "raw/permanentDelete");
+        resolver.delete(uri, null, null);
+    }
+
+    private static void showCompletionToast(Context context) {
+        Toast.makeText(context, R.string.reset_network_complete_toast,
                 Toast.LENGTH_SHORT).show();
+    }
+
+    private static class EraseEsimAsyncTask extends AsyncTask<Void, Void, Boolean> {
+
+        private final Context mContext;
+        private final String mPackageName;
+        private final Fragment mFragment;
+
+        EraseEsimAsyncTask(Context context, String packageName, Fragment parent) {
+            mContext = context;
+            mPackageName = packageName;
+            mFragment = parent;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            return RecoverySystem.wipeEuiccData(mContext, mPackageName);
+        }
+
+        @Override
+        protected void onPostExecute(Boolean succeeded) {
+            if (succeeded) {
+                showCompletionToast(mContext);
+            } else {
+                ErrorDialog.show(mFragment, R.string.reset_esim_error_title);
+            }
+        }
     }
 }

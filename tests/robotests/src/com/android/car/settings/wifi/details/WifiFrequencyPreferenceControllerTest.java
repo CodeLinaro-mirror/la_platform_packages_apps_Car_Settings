@@ -26,12 +26,11 @@ import android.content.pm.PackageManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 
-import androidx.preference.PreferenceManager;
-import androidx.preference.PreferenceScreen;
+import androidx.lifecycle.Lifecycle;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.R;
-import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.PreferenceControllerTestHelper;
 import com.android.settingslib.wifi.AccessPoint;
 
 import org.junit.Before;
@@ -40,12 +39,9 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.shadows.ShadowPackageManager;
 
 @RunWith(CarSettingsRobolectricTestRunner.class)
 public class WifiFrequencyPreferenceControllerTest {
-
-    private static final String PREFERENCE_KEY = "somePreferenceKey";
 
     @Mock
     private AccessPoint mMockAccessPoint;
@@ -55,11 +51,8 @@ public class WifiFrequencyPreferenceControllerTest {
     private NetworkInfo mMockNetworkInfo;
     @Mock
     private WifiInfo mMockWifiInfo;
-    @Mock
-    private FragmentController mMockFragmentController;
 
-    private PreferenceScreen mPreferenceScreen;
-    private WifiDetailPreference mPreference;
+    private WifiDetailsPreference mPreference;
     private Context mContext;
     private WifiFrequencyPreferenceController mController;
 
@@ -68,34 +61,35 @@ public class WifiFrequencyPreferenceControllerTest {
         MockitoAnnotations.initMocks(this);
 
         mContext = RuntimeEnvironment.application;
-        ShadowPackageManager pm = shadowOf(mContext.getPackageManager());
-        pm.setSystemFeature(PackageManager.FEATURE_WIFI, true);
-        mPreferenceScreen = new PreferenceManager(mContext).createPreferenceScreen(mContext);
-        mPreference = new WifiDetailPreference(mContext);
-        mPreference.setKey(PREFERENCE_KEY);
-        mPreferenceScreen.addPreference(mPreference);
+        shadowOf(mContext.getPackageManager()).setSystemFeature(PackageManager.FEATURE_WIFI, true);
+        mPreference = new WifiDetailsPreference(mContext);
+
+        PreferenceControllerTestHelper<WifiFrequencyPreferenceController> controllerHelper =
+                new PreferenceControllerTestHelper<>(mContext,
+                        WifiFrequencyPreferenceController.class, mPreference);
+        mController = (WifiFrequencyPreferenceController) controllerHelper.getController().init(
+                mMockAccessPoint, mMockWifiInfoProvider);
+        controllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
+
         when(mMockWifiInfoProvider.getWifiInfo()).thenReturn(mMockWifiInfo);
         when(mMockWifiInfo.getFrequency()).thenReturn(AccessPoint.LOWER_FREQ_24GHZ);
-        when(mMockAccessPoint.isActive()).thenReturn(true);
-
-        mController = newController();
-    }
-
-    private WifiFrequencyPreferenceController newController() {
-        return (WifiFrequencyPreferenceController) new WifiFrequencyPreferenceController(
-                mContext, PREFERENCE_KEY, mMockFragmentController)
-                .init(mMockAccessPoint, mMockWifiInfoProvider);
     }
 
     @Test
     public void onWifiChanged_shouldHaveDetailTextSet() {
-        String expected =
-                mContext.getResources().getString(R.string.wifi_band_5ghz);
-
-        mController.displayPreference(mPreferenceScreen);
+        when(mMockAccessPoint.isActive()).thenReturn(true);
         when(mMockWifiInfo.getFrequency()).thenReturn(AccessPoint.LOWER_FREQ_5GHZ);
-        mController.onWifiChanged(mMockNetworkInfo, mMockWifiInfo);
 
+        String expected = mContext.getResources().getString(R.string.wifi_band_5ghz);
+        mController.onWifiChanged(mMockNetworkInfo, mMockWifiInfo);
         assertThat(mPreference.getDetailText()).isEqualTo(expected);
+    }
+
+    @Test
+    public void onWifiChanged_isNotActive_noUpdate() {
+        when(mMockAccessPoint.isActive()).thenReturn(false);
+
+        mController.onWifiChanged(mMockNetworkInfo, mMockWifiInfo);
+        assertThat(mPreference.getDetailText()).isNull();
     }
 }

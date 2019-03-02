@@ -16,53 +16,107 @@
 
 package com.android.car.settings.wifi;
 
-import static com.android.car.settings.common.BasePreferenceController.AVAILABLE;
-import static com.android.car.settings.common.BasePreferenceController.UNSUPPORTED_ON_DEVICE;
+import static com.android.car.settings.common.PreferenceController.AVAILABLE;
+import static com.android.car.settings.common.PreferenceController.UNSUPPORTED_ON_DEVICE;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import com.android.car.settings.CarSettingsRobolectricTestRunner;
-import com.android.car.settings.common.FragmentController;
+import androidx.lifecycle.Lifecycle;
 
+import com.android.car.settings.CarSettingsRobolectricTestRunner;
+import com.android.car.settings.common.MasterSwitchPreference;
+import com.android.car.settings.common.PreferenceControllerTestHelper;
+import com.android.car.settings.testutils.ShadowCarWifiManager;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.Shadows;
-import org.robolectric.shadows.ShadowPackageManager;
+import org.robolectric.annotation.Config;
 
 /** Unit test for {@link WifiEntryPreferenceController}. */
 @RunWith(CarSettingsRobolectricTestRunner.class)
+@Config(shadows = {ShadowCarWifiManager.class})
 public class WifiEntryPreferenceControllerTest {
 
-    private static final String PREFERENCE_KEY = "preference_key";
-
-    private ShadowPackageManager mShadowPackageManager;
+    private Context mContext;
+    private MasterSwitchPreference mMasterSwitchPreference;
+    private PreferenceControllerTestHelper<WifiEntryPreferenceController> mControllerHelper;
     private WifiEntryPreferenceController mController;
+    @Mock
+    private CarWifiManager mCarWifiManager;
 
     @Before
     public void setUp() {
-        Context context = RuntimeEnvironment.application;
-        mShadowPackageManager = Shadows.shadowOf(context.getPackageManager());
-        mController = new WifiEntryPreferenceController(context, PREFERENCE_KEY,
-                mock(FragmentController.class));
+        MockitoAnnotations.initMocks(this);
+        ShadowCarWifiManager.setInstance(mCarWifiManager);
+        mContext = RuntimeEnvironment.application;
+        mMasterSwitchPreference = new MasterSwitchPreference(mContext);
+        mControllerHelper = new PreferenceControllerTestHelper<>(mContext,
+                WifiEntryPreferenceController.class, mMasterSwitchPreference);
+        mController = mControllerHelper.getController();
+    }
+
+    @After
+    public void tearDown() {
+        ShadowCarWifiManager.reset();
+    }
+
+    @Test
+    public void onCreate_setsListener() {
+        Shadows.shadowOf(mContext.getPackageManager()).setSystemFeature(
+                PackageManager.FEATURE_WIFI, /* supported= */ true);
+        assertThat(mMasterSwitchPreference.getSwitchToggleListener()).isNull();
+
+        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
+        assertThat(mMasterSwitchPreference.getSwitchToggleListener()).isNotNull();
+    }
+
+    @Test
+    public void refreshUi_wifiDisabled_setsSwitchUnchecked() {
+        Shadows.shadowOf(mContext.getPackageManager()).setSystemFeature(
+                PackageManager.FEATURE_WIFI, /* supported= */ true);
+        when(mCarWifiManager.isWifiEnabled()).thenReturn(false);
+        mMasterSwitchPreference.setSwitchChecked(true);
+        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
+
+        mController.refreshUi();
+        assertThat(mMasterSwitchPreference.isSwitchChecked()).isFalse();
+    }
+
+    @Test
+    public void refreshUi_wifiEnabled_setsSwitchChecked() {
+        Shadows.shadowOf(mContext.getPackageManager()).setSystemFeature(
+                PackageManager.FEATURE_WIFI, /* supported= */ true);
+        when(mCarWifiManager.isWifiEnabled()).thenReturn(true);
+        mMasterSwitchPreference.setSwitchChecked(false);
+        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
+
+        mController.refreshUi();
+        assertThat(mMasterSwitchPreference.isSwitchChecked()).isTrue();
     }
 
     @Test
     public void getAvailabilityStatus_wifiAvailable_available() {
-        mShadowPackageManager.setSystemFeature(PackageManager.FEATURE_WIFI, /* supported= */ true);
+        Shadows.shadowOf(mContext.getPackageManager()).setSystemFeature(
+                PackageManager.FEATURE_WIFI, /* supported= */ true);
 
         assertThat(mController.getAvailabilityStatus()).isEqualTo(AVAILABLE);
     }
 
     @Test
     public void getAvailabilityStatus_wifiNotAvailable_unsupportedOnDevice() {
-        mShadowPackageManager.setSystemFeature(PackageManager.FEATURE_WIFI, /* supported= */ false);
+        Shadows.shadowOf(mContext.getPackageManager()).setSystemFeature(
+                PackageManager.FEATURE_WIFI, /* supported= */ false);
 
         assertThat(mController.getAvailabilityStatus()).isEqualTo(UNSUPPORTED_ON_DEVICE);
     }

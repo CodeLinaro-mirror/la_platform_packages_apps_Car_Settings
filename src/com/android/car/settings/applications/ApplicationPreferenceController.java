@@ -16,46 +16,67 @@
 
 package com.android.car.settings.applications;
 
+import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
+import android.graphics.drawable.Drawable;
 
 import androidx.preference.Preference;
-import androidx.preference.PreferenceScreen;
 
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.NoSetupPreferenceController;
+import com.android.car.settings.common.PreferenceController;
+import com.android.settingslib.applications.ApplicationsState;
+import com.android.settingslib.applications.ApplicationsState.AppEntry;
 
 /** Business logic for the Application field in the application details page. */
-public class ApplicationPreferenceController extends NoSetupPreferenceController {
+public class ApplicationPreferenceController extends PreferenceController<Preference> {
 
-    private PackageManager mPackageManager;
-    private ResolveInfo mResolveInfo;
+    private AppEntry mAppEntry;
+    private ApplicationsState mApplicationsState;
 
     public ApplicationPreferenceController(Context context, String preferenceKey,
-            FragmentController fragmentController) {
-        super(context, preferenceKey, fragmentController);
-        mPackageManager = mContext.getPackageManager();
-    }
-
-    /** Sets the resolve info which is used to load the app name and icon. */
-    public void setResolveInfo(ResolveInfo resolveInfo) {
-        mResolveInfo = resolveInfo;
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
+        super(context, preferenceKey, fragmentController, uxRestrictions);
     }
 
     @Override
-    public void displayPreference(PreferenceScreen screen) {
-        super.displayPreference(screen);
-        verifyResolveInfo();
-        Preference preference = screen.findPreference(getPreferenceKey());
-        preference.setTitle(mResolveInfo.loadLabel(mPackageManager));
-        preference.setIcon(mResolveInfo.loadIcon(mPackageManager));
+    protected Class<Preference> getPreferenceType() {
+        return Preference.class;
     }
 
-    private void verifyResolveInfo() {
-        if (mResolveInfo == null) {
+    /** Sets the {@link AppEntry} which is used to load the app name and icon. */
+    public ApplicationPreferenceController setAppEntry(AppEntry appEntry) {
+        mAppEntry = appEntry;
+        return this;
+    }
+
+    /** Sets the {@link ApplicationsState} which is used to load the app name and icon. */
+    public ApplicationPreferenceController setAppState(ApplicationsState applicationsState) {
+        mApplicationsState = applicationsState;
+        return this;
+    }
+
+
+    @Override
+    protected void checkInitialized() {
+        if (mAppEntry == null || mApplicationsState == null) {
             throw new IllegalStateException(
-                    "ResolveInfo should be set before calling this function");
+                    "AppEntry and AppState should be set before calling this function");
         }
+    }
+
+    @Override
+    protected void updateState(Preference preference) {
+        preference.setTitle(getAppName());
+        preference.setIcon(getAppIcon());
+    }
+
+    private String getAppName() {
+        mAppEntry.ensureLabel(getContext());
+        return mAppEntry.label;
+    }
+
+    private Drawable getAppIcon() {
+        mApplicationsState.ensureIcon(mAppEntry);
+        return mAppEntry.icon;
     }
 }

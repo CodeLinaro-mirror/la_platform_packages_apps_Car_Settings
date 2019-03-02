@@ -16,25 +16,40 @@
 
 package com.android.car.settings.system;
 
+import static android.os.UserManager.DISALLOW_NETWORK_RESET;
+
+import android.car.drivingstate.CarUxRestrictions;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 
+import androidx.preference.Preference;
+
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.NoSetupPreferenceController;
+import com.android.car.settings.common.PreferenceController;
 
 /** Controller which determines if network reset should be displayed based on user status. */
-public class ResetNetworkEntryPreferenceController extends NoSetupPreferenceController {
+public class ResetNetworkEntryPreferenceController extends PreferenceController<Preference> {
 
     private final CarUserManagerHelper mCarUserManagerHelper;
 
     public ResetNetworkEntryPreferenceController(Context context, String preferenceKey,
-            FragmentController fragmentController) {
-        super(context, preferenceKey, fragmentController);
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
+        super(context, preferenceKey, fragmentController, uxRestrictions);
         mCarUserManagerHelper = new CarUserManagerHelper(context);
     }
 
     @Override
+    protected Class<Preference> getPreferenceType() {
+        return Preference.class;
+    }
+
+    @Override
     public int getAvailabilityStatus() {
-        return mCarUserManagerHelper.isCurrentProcessAdminUser() ? AVAILABLE : DISABLED_FOR_USER;
+        return isUserRestricted() ? DISABLED_FOR_USER : AVAILABLE;
+    }
+
+    private boolean isUserRestricted() {
+        return !mCarUserManagerHelper.isCurrentProcessAdminUser()
+                || mCarUserManagerHelper.isCurrentProcessUserHasRestriction(DISALLOW_NETWORK_RESET);
     }
 }
