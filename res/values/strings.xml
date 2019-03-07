@@ -47,6 +47,12 @@
     <string name="confirm_mobile_data_disable">Turn off mobile data?</string>
     <!-- Data usage settings [CHAR LIMIT=30] -->
     <string name="data_usage_settings">Data usage</string>
+    <!-- Title of button and screen for billing cycle preferences [CHAR LIMIT=40] -->
+    <string name="data_warning_limit_title">Data warning &amp; limit</string>
+    <!-- Label for switch about whether to warn user about usage [CHAR LIMIT=30] -->
+    <string name="set_data_warning">Set data warning</string>
+    <!-- Label for button to set the amount of data before user is warned about usage [CHAR LIMIT=30] -->
+    <string name="data_warning">Data warning</string>
 
     <!-- wifi settings--><skip/>
     <!-- Used in the 1st-level settings screen to go to the 2nd-level settings screen  [CHAR LIMIT=20]-->
@@ -297,6 +303,18 @@
     <string name="default_app_selected_app">Selected</string>
     <!-- Warning message about security implications of setting an assistant, displayed as a dialog message when the user selects an assistant. [CHAR_LIMIT=NONE]  -->
     <string name="assistant_security_warning">The assistant will be able to read information about apps in use on your system, including information visible on your screen or accessible within the apps.</string>
+    <!-- Message of the warning dialog for setting the auto-fill app. [CHAR_LIMIT=NONE] -->
+    <string name="autofill_confirmation_message">
+        <![CDATA[
+        <b>Make sure you trust this app</b>
+        <br/>
+        <br/>
+        <xliff:g id="app_name" example="Google Autofill">%1$s</xliff:g> uses what\'s on
+        your screen to determine what can be autofilled.
+        ]]>
+    </string>
+    <!-- Title of preference to add new autofill services. [CHAR_LIMIT=30] -->
+    <string name="autofill_add_service">Add service</string>
 
     <!-- Location --><skip/>
     <!-- Main setting menu item to go into location settings [CHAR LIMIT=40] -->
@@ -340,6 +358,8 @@
     <string name="kernel_version">Kernel version</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
     <string name="build_number">Build number</string>
+    <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
+    <string name="bluetooth_mac_address">Bluetooth address</string>
 
     <!-- About phone screen, show when a value of some status item is unavailable. -->
     <string name="device_info_not_available">Not available</string>
@@ -459,6 +479,23 @@
     <!-- Master Clear --><skip/>
     <!-- Button title to factory data reset the entire device. The "(factory reset)" part is optional for translation. [CHAR LIMIT=40]-->
     <string name="master_clear_title">Erase all data (factory reset)</string>
+    <!-- Message on screen after user selects factory reset. [CHAR LIMIT=NONE] -->
+    <string name="master_clear_desc">This will erase all data from your vehicle\u2019s head unit, including:\n\n<li>Your Google account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li></string>
+    <!-- The list of current accounts follows this text. [CHAR LIMIT=NONE] -->
+    <string name="master_clear_accounts">You are currently signed into the following accounts:</string>
+    <!-- Message on screen if other users are present on the device after user selects factory reset. [CHAR LIMIT=NONE] -->
+    <string name="master_clear_other_users_present">There are other users present on this vehicle.</string>
+    <!-- Button on screen after user selects factory reset. [CHAR LIMIT=30] -->
+    <string name="master_clear_button_text">Reset vehicle</string>
+    <!-- Master clear confirmation screen title. [CHAR LIMIT=30] -->
+    <string name="master_clear_confirm_title">Reset?</string>
+    <!-- Message on screen after user selects Reset device button. [CHAR LIMIT=NONE] -->
+    <string name="master_clear_confirm_desc">Erase all your personal information and downloaded apps?  You can\u2019t undo this action!</string>
+    <string name="master_clear_confirm_button_text">Erase everything</string>
+    <!-- Master clear progress screen title. [CHAR LIMIT=30] -->
+    <string name="master_clear_progress_title" >Erasing</string>
+    <!-- Master clear progress screen text. [CHAR LIMIT=75] -->
+    <string name="master_clear_progress_text">Please wait...</string>
 
     <!-- Date and time settings --><skip/>
     <!-- Main Settings screen setting option name to go into the date and time settings-->
@@ -853,10 +890,19 @@
     <string name="add_device_title">Add trusted device</string>
     <!-- Screen title and label for button of trusted device [CHAR LIMIT=30]> -->
     <string name="trusted_device">Trusted devices</string>
-    <!-- Subtitle of trusted device button in security page [CHAR LIMIT=30]-->
-    <string name="trusted_device_subtitle">Device security</string>
+    <!-- Subtitle of trusted device button in security page which displays the number of devices that are considered trusted[CHAR LIMIT=30]-->
+    <plurals name="trusted_device_subtitle">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> device</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> devices</item>
+    </plurals>
+    <!-- Message in dialog which will remind the user what a trusted device can do. [CHAR LIMIT=NONE]-->
+    <string name="remove_device_message">Your <xliff:g id="connected_device_name" example="Pixel2">%1$s</xliff:g> will unlock this car when it\'s connected. If someone takes your <xliff:g id="connected_device_name" example="Pixel2">%1$s</xliff:g>, they may be able to access this device</string>
     <!-- Confirm button label of confirm pairing code dialog [CHAR LIMIT=30]-->
     <string name="trusted_device_confirm_button">Confirm</string>
+    <!-- Confirm button label of confirm remove device dialog [CHAR LIMIT=40]-->
+    <string name="trusted_device_remove_button">Remove trusted device</string>
+    <!-- Cancel button label of confirm remove device dialog [CHAR LIMIT=20]-->
+    <string name="trusted_device_done_button">Done</string>
     <!-- Message shown on the add trusted device page [CHAR LIMIT=NONE]-->
     <string name="add_trusted_device_instruction">Use the companion app to set up a trusted device. Once set up, you will be able to unlock your user profile when your phone is detected by the vehicle</string>
     <!-- Step one of adding a trusted device [CHAR LIMIT=NONE]-->
