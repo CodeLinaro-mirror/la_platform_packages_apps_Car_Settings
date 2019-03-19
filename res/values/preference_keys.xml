@@ -49,9 +49,14 @@
     </string>
     <string name="pk_mobile_data_toggle" translatable="false">mobile_data_toggle</string>
     <string name="pk_data_usage_settings_entry" translatable="false">data_usage_settings_entry</string>
+    <string name="pk_data_warning_and_limit" translatable="false">data_warning_and_limit</string>
+    <string name="pk_data_usage_cycle" translatable="false">data_usage_cycle</string>
     <string name="pk_data_warning_group" translatable="false">data_warning_group</string>
     <string name="pk_data_set_warning" translatable="false">data_set_warning</string>
     <string name="pk_data_warning" translatable="false">data_warning</string>
+    <string name="pk_data_limit_group" translatable="false">data_limit_group</string>
+    <string name="pk_data_set_limit" translatable="false">data_set_limit</string>
+    <string name="pk_data_limit" translatable="false">data_limit</string>
 
     <!-- WIFI -->
     <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>
@@ -119,9 +124,12 @@
     <!-- Default apps Settings -->
     <string name="pk_default_assist_and_voice" translatable="false">default_assist_and_voice
     </string>
+    <string name="pk_default_assist" translatable="false">default_assist</string>
     <string name="pk_default_assist_and_voice_options" translatable="false">
         default_assist_and_voice_options
     </string>
+    <string name="pk_assist_use_text_context" translatable="false">assist_use_text_context</string>
+    <string name="pk_assist_use_screenshot" translatable="false">assist_use_screenshot</string>
     <string name="pk_default_autofill_options" translatable="false">default_autofill_options</string>
 
     <!-- DateTime Settings -->

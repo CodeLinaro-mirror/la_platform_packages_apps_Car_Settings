@@ -15,19 +15,24 @@
  */
 package com.android.car.settings.testutils;
 
+import android.annotation.NonNull;
 import android.annotation.UserIdInt;
 import android.app.ApplicationPackageManager;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ModuleInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
+import org.robolectric.annotation.Resetter;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /** Shadow of ApplicationPackageManager that allows the getting of content providers per user. */
@@ -35,27 +40,79 @@ import java.util.List;
 public class ShadowApplicationPackageManager extends
         org.robolectric.shadows.ShadowApplicationPackageManager {
 
+    private static List<ResolveInfo> sResolveInfos = null;
+    private static Resources sResources = null;
+
+    private List<ResolveInfo> mHomeActivities = Collections.emptyList();
+    private ComponentName mDefaultHomeActivity;
+
+    @Resetter
+    public static void reset() {
+        sResolveInfos = null;
+        sResources = null;
+    }
+
     @Implementation
-    public Drawable getUserBadgedIcon(Drawable icon, UserHandle user) {
+    @NonNull
+    protected List<ModuleInfo> getInstalledModules(@PackageManager.ModuleInfoFlags int flags) {
+        return Collections.emptyList();
+    }
+
+    @Implementation
+    protected Drawable getUserBadgedIcon(Drawable icon, UserHandle user) {
         return icon;
     }
 
     @Override
     @Implementation
-    public ProviderInfo resolveContentProviderAsUser(String name, int flags,
+    protected ProviderInfo resolveContentProviderAsUser(String name, int flags,
             @UserIdInt int userId) {
         return resolveContentProvider(name, flags);
     }
 
     @Implementation
-    public int getPackageUidAsUser(String packageName, int flags, int userId)
+    protected int getPackageUidAsUser(String packageName, int flags, int userId)
             throws PackageManager.NameNotFoundException {
         return 0;
     }
 
     @Implementation
-    public List<ResolveInfo> queryIntentActivitiesAsUser(Intent intent,
+    protected Resources getResourcesForApplication(String appPackageName)
+            throws PackageManager.NameNotFoundException {
+        return sResources;
+    }
+
+    @Implementation
+    protected List<ResolveInfo> queryIntentActivitiesAsUser(Intent intent,
             @PackageManager.ResolveInfoFlags int flags, @UserIdInt int userId) {
-        return new ArrayList<ResolveInfo>();
+        return sResolveInfos == null ? Collections.emptyList() : sResolveInfos;
+    }
+
+    @Implementation
+    @Override
+    protected ComponentName getHomeActivities(List<ResolveInfo> outActivities) {
+        outActivities.addAll(mHomeActivities);
+        return mDefaultHomeActivity;
+    }
+
+    public void setHomeActivities(List<ResolveInfo> homeActivities) {
+        mHomeActivities = homeActivities;
+    }
+
+    public void setDefaultHomeActivity(ComponentName defaultHomeActivity) {
+        mDefaultHomeActivity = defaultHomeActivity;
+    }
+
+    /**
+     * If resolveInfos are set by this method then
+     * {@link ShadowApplicationPackageManager#queryIntentActivitiesAsUser}
+     * method will return the same list.
+     */
+    public static void setListOfActivities(List<ResolveInfo> resolveInfos) {
+        sResolveInfos = resolveInfos;
+    }
+
+    public static void setResources(Resources resources) {
+        sResources = resources;
     }
 }
