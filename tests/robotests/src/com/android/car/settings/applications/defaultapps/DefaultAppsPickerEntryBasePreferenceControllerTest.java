@@ -19,7 +19,6 @@ package com.android.car.settings.applications.defaultapps;
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
@@ -30,7 +29,6 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.Lifecycle;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
-import com.android.car.settings.R;
 import com.android.car.settings.common.ButtonPreference;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
@@ -45,19 +43,19 @@ import org.robolectric.shadows.ShadowApplication;
 @RunWith(CarSettingsRobolectricTestRunner.class)
 public class DefaultAppsPickerEntryBasePreferenceControllerTest {
 
-    private static final CharSequence TEST_LABEL = "Test Label";
     private static final Intent TEST_INTENT = new Intent(Settings.ACTION_SETTINGS);
 
     private static class TestDefaultAppsPickerEntryBasePreferenceController extends
             DefaultAppsPickerEntryBasePreferenceController {
 
+        private final DefaultAppInfo mDefaultAppInfo;
         private Intent mSettingIntent;
-        private DefaultAppInfo mDefaultAppInfo;
 
         TestDefaultAppsPickerEntryBasePreferenceController(Context context,
                 String preferenceKey, FragmentController fragmentController,
                 CarUxRestrictions uxRestrictions) {
             super(context, preferenceKey, fragmentController, uxRestrictions);
+            mDefaultAppInfo = mock(DefaultAppInfo.class);
         }
 
         @Nullable
@@ -74,10 +72,6 @@ public class DefaultAppsPickerEntryBasePreferenceControllerTest {
         @Override
         protected DefaultAppInfo getCurrentDefaultAppInfo() {
             return mDefaultAppInfo;
-        }
-
-        protected void setCurrentDefaultAppInfo(DefaultAppInfo defaultAppInfo) {
-            mDefaultAppInfo = defaultAppInfo;
         }
     }
 
@@ -112,44 +106,6 @@ public class DefaultAppsPickerEntryBasePreferenceControllerTest {
         mController.refreshUi();
 
         assertThat(mButtonPreference.isActionShown()).isFalse();
-    }
-
-    @Test
-    public void refreshUi_hasDefaultAppWithLabel_summaryAndIconAreSet() {
-        DefaultAppInfo defaultAppInfo = mock(DefaultAppInfo.class);
-        when(defaultAppInfo.loadLabel()).thenReturn(TEST_LABEL);
-        when(defaultAppInfo.loadIcon()).thenReturn(mContext.getDrawable(R.drawable.test_icon));
-        mController.setCurrentDefaultAppInfo(defaultAppInfo);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
-        mController.refreshUi();
-
-        assertThat(mButtonPreference.getSummary()).isEqualTo(TEST_LABEL);
-        assertThat(mButtonPreference.getIcon()).isNotNull();
-    }
-
-    @Test
-    public void refreshUi_hasDefaultAppWithoutLabel_summaryAndIconAreNotSet() {
-        DefaultAppInfo defaultAppInfo = mock(DefaultAppInfo.class);
-        when(defaultAppInfo.loadLabel()).thenReturn(null);
-        when(defaultAppInfo.loadIcon()).thenReturn(null);
-        mController.setCurrentDefaultAppInfo(defaultAppInfo);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
-        mController.refreshUi();
-
-        assertThat(mButtonPreference.getSummary()).isEqualTo(
-                mContext.getString(R.string.app_list_preference_none));
-        assertThat(mButtonPreference.getIcon()).isNull();
-    }
-
-    @Test
-    public void refreshUi_hasNoDefaultApp_summaryAndIconAreNotSet() {
-        mController.setCurrentDefaultAppInfo(null);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
-        mController.refreshUi();
-
-        assertThat(mButtonPreference.getSummary()).isEqualTo(
-                mContext.getString(R.string.app_list_preference_none));
-        assertThat(mButtonPreference.getIcon()).isNull();
     }
 
     @Test

@@ -17,16 +17,16 @@
 package com.android.car.settings.security;
 
 import android.annotation.Nullable;
+import android.app.admin.DevicePolicyManager;
 import android.bluetooth.BluetoothDevice;
 import android.car.Car;
 import android.car.CarNotConnectedException;
 import android.car.drivingstate.CarUxRestrictions;
 import android.car.trust.CarTrustAgentEnrollmentManager;
+import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.RemoteException;
-import android.preference.PreferenceManager;
-import android.view.WindowManagerGlobal;
 import android.widget.Toast;
 
 import androidx.annotation.VisibleForTesting;
@@ -36,19 +36,21 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceController;
+import com.android.internal.widget.LockPatternUtils;
 import com.android.settingslib.utils.ThreadUtils;
 
 /**
  * Business logic when user click on add trusted device, a new screen will be shown and user can add
  * a trusted device using CarTrustAgentEnrollmentManager, confirm pairing code dialog base on that.
  * TODO(wentingzhai): test the enrollment process when CarTrustAgentEnrollment Service is done.
- *
  */
 public class AddTrustedDevicePreferenceController extends PreferenceController<Preference> {
 
     private static final Logger LOG = new Logger(AddTrustedDevicePreferenceController.class);
     private final SharedPreferences mPrefs;
     private final Car mCar;
+    private final CarUserManagerHelper mCarUserManagerHelper;
+    private final LockPatternUtils mLockPatternUtils;
     private BluetoothDevice mBluetoothDevice;
     @Nullable
     private CarTrustAgentEnrollmentManager mCarTrustAgentEnrollmentManager;
@@ -72,13 +74,9 @@ public class AddTrustedDevicePreferenceController extends PreferenceController<P
 
                 @Override
                 public void onEscrowTokenAdded(long handle) {
-                    try {
-                        // User need to enter the correct authentication of the car to activate the
-                        // added token.
-                        WindowManagerGlobal.getWindowManagerService().lockNow(/* options= */ null);
-                    } catch (RemoteException e) {
-                        LOG.e(e.getMessage(), e);
-                    }
+                    // User need to enter the correct authentication of the car to activate the
+                    // added token.
+                    getContext().startActivity(new Intent(getContext(), CheckLockActivity.class));
                 }
 
                 @Override
@@ -91,11 +89,9 @@ public class AddTrustedDevicePreferenceController extends PreferenceController<P
                         ThreadUtils.postOnMainThread(
                                 () -> mPrefs.edit().putString(String.valueOf(handle),
                                         mBluetoothDevice.getName()).apply());
-                        Toast.makeText(getContext(),
-                                getContext().getString(
-                                        R.string.trusted_device_success_enrollment_toast,
-                                        mBluetoothDevice.getName()),
-                                Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), getContext().getString(
+                                R.string.trusted_device_success_enrollment_toast,
+                                mBluetoothDevice.getName()), Toast.LENGTH_LONG).show();
                     } else {
                         LOG.d(handle + " has been deactivated");
                     }
@@ -161,7 +157,11 @@ public class AddTrustedDevicePreferenceController extends PreferenceController<P
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mCar = Car.createCar(context);
-        mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        mCarUserManagerHelper = new CarUserManagerHelper(context);
+        mLockPatternUtils = new LockPatternUtils(context);
+        mPrefs = context.getSharedPreferences(
+                context.getString(R.string.trusted_device_preference_file_key),
+                Context.MODE_PRIVATE);
         try {
             mCarTrustAgentEnrollmentManager = (CarTrustAgentEnrollmentManager) mCar.getCarManager(
                     Car.CAR_TRUST_AGENT_ENROLLMENT_SERVICE);
@@ -175,6 +175,17 @@ public class AddTrustedDevicePreferenceController extends PreferenceController<P
         if (mCarTrustAgentEnrollmentManager == null) {
             throw new IllegalStateException("mCarTrustAgentEnrollmentManager is null.");
         }
+    }
+
+    @Override
+    protected void updateState(Preference preference) {
+        preference.setEnabled(hasPassword());
+    }
+
+    private boolean hasPassword() {
+        return mLockPatternUtils.getKeyguardStoredPasswordQuality(
+                mCarUserManagerHelper.getCurrentProcessUserId())
+                != DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED;
     }
 
     @Override
@@ -196,8 +207,7 @@ public class AddTrustedDevicePreferenceController extends PreferenceController<P
     @Override
     protected void onStartInternal() {
         try {
-            mCarTrustAgentEnrollmentManager.setEnrollmentCallback(
-                    mCarTrustAgentEnrollmentCallback);
+            mCarTrustAgentEnrollmentManager.setEnrollmentCallback(mCarTrustAgentEnrollmentCallback);
             mCarTrustAgentEnrollmentManager.setBleCallback(mCarTrustAgentBleCallback);
         } catch (CarNotConnectedException e) {
             LOG.e(e.getMessage(), e);
