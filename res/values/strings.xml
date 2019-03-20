@@ -35,6 +35,8 @@
     <string name="keywords_display_night_display">dim screen, night, tint</string>
     <!-- Label for night mode toggle tile in quick setting [CHAR LIMIT=20] -->
     <string name="night_mode_tile_label">Night mode</string>
+    <!-- Toast message when Wi-Fi or Bluetooth is disallowed in airplane mode -->
+    <string name="in_airplane_mode">In Airplane mode</string>
 
     <!-- wifi settings--><skip />
     <!-- Used in the 1st-level settings screen to go to the 2nd-level settings screen  [CHAR LIMIT=20]-->

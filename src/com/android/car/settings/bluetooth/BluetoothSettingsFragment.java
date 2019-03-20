@@ -21,11 +21,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import androidx.car.widget.PagedListView;
@@ -37,6 +39,7 @@ import com.android.settingslib.bluetooth.BluetoothCallback;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 import com.android.settingslib.bluetooth.LocalBluetoothAdapter;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
+import com.android.settingslib.WirelessUtils;
 
 /**
  * Hosts Bluetooth related preferences.
@@ -99,7 +102,19 @@ public class BluetoothSettingsFragment extends BaseFragment implements Bluetooth
         );
 
         mBluetoothSwitch.setOnCheckedChangeListener((v, isChecked) -> {
-                if (mBluetoothSwitch.isChecked()) {
+                Context context = getContext();
+
+                // Show toast message if Bluetooth is not allowed in airplane mode
+                if (isChecked &&
+                        !WirelessUtils.isRadioAllowed(context, Settings.Global.RADIO_BLUETOOTH)) {
+                    LOG.e("Disallow to toggle Bluetooth in airplane mode");
+                    Toast.makeText(context, R.string.in_airplane_mode, Toast.LENGTH_SHORT).show();
+                    // Reset switch to off.
+                    mBluetoothSwitch.setChecked(false);
+                    return;
+                }
+
+                if (isChecked) {
                     // bt scan was turned on at state listener, when state is on.
                     mLocalAdapter.setBluetoothEnabled(true);
                 } else {
