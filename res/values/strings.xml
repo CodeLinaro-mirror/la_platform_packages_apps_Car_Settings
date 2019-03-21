@@ -49,10 +49,20 @@
     <string name="data_usage_settings">Data usage</string>
     <!-- Title of button and screen for billing cycle preferences [CHAR LIMIT=40] -->
     <string name="data_warning_limit_title">Data warning &amp; limit</string>
-    <!-- Label for switch about whether to warn user about usage [CHAR LIMIT=30] -->
+    <!-- Title of button for application usage cycle preferences [CHAR LIMIT=40] -->
+    <string name="app_usage_cycle">App data usage cycle</string>
+    <!-- Label for switch about whether to warn user about usage [CHAR LIMIT=40] -->
     <string name="set_data_warning">Set data warning</string>
     <!-- Label for button to set the amount of data before user is warned about usage [CHAR LIMIT=30] -->
     <string name="data_warning">Data warning</string>
+    <!-- Label for switch about whether to limit how much data can be used [CHAR LIMIT=30] -->
+    <string name="set_data_limit">Set data limit</string>
+    <!-- Label for button to set the amount of data before user is limited [CHAR LIMIT=30] -->
+    <string name="data_limit">Data limit</string>
+    <!-- Title of dialog shown before user limits data usage. [CHAR LIMIT=48] -->
+    <string name="data_usage_limit_dialog_title">Limiting data usage</string>
+    <!-- Body of dialog shown before user limits mobile data usage. [CHAR LIMIT=NONE] -->
+    <string name="data_usage_limit_dialog_mobile" >Your vehicle\u2019s head unit will turn off mobile data once it reaches the limit you set.\n\nSince data usage is measured by the head unit, and your carrier may account for usage differently, consider setting a conservative limit.</string>
 
     <!-- wifi settings--><skip/>
     <!-- Used in the 1st-level settings screen to go to the 2nd-level settings screen  [CHAR LIMIT=20]-->
@@ -269,10 +279,22 @@
     <string name="default_applications">Default apps</string>
     <!-- Applications settings title. If clicked, the user is taken to the list of installed applications. [CHAR LIMIT=40] -->
     <string name="applications_settings">App info</string>
-    <!-- [CHAR LIMIT=25] Manage applications, individual application info screen, button label under Storage heading. Button to disable an existing application. -->
+    <!-- Manage applications, text label for button to kill / force stop an application. [CHAR LIMIT=30] -->
+    <string name="force_stop">Force stop</string>
+    <!-- Manage applications, title for dialog when killing persistent apps. [CHAR LIMIT=40] -->
+    <string name="force_stop_dialog_title">Force stop?</string>
+    <!-- Manage applications, text for dialog when killing persistent apps. [CHAR LIMIT=200] -->
+    <string name="force_stop_dialog_text">If you force stop an app, it may misbehave.</string>
+    <!-- Manage applications, individual application info screen. Button to disable an existing application. [CHAR LIMIT=25] -->
     <string name="disable_text">Disable</string>
-    <!-- [CHAR LIMIT=25] Manage applications, individual application info screen, button label under Storage heading. Button to re-enable an existing application. -->
+    <!-- Manage applications, individual application info screen. Button to re-enable an existing application. [CHAR LIMIT=25] -->
     <string name="enable_text">Enable</string>
+    <!-- Manage applications, individual application info screen. Button to remove the application from the system. [CHAR LIMIT=25] -->
+    <string name="uninstall_text">Uninstall</string>
+    <!-- Manage applications, text for dialog when disabling apps. [CHAR LIMIT=200] -->
+    <string name="app_disable_dialog_text">If you disable this app, Android and other apps may no longer function as intended.</string>
+    <!-- Manage applications, label for option to disable app. [CHAR LIMIT=30] -->
+    <string name="app_disable_dialog_positive">Disable app</string>
     <!-- Manage applications, individual application info screen, heading for settings related to the app's permissions. for example, it may list all the permissions the app has. -->
     <string name="permissions_label">Permissions</string>
     <!-- Label for displaying application version. -->
@@ -285,16 +307,24 @@
     <string name="data_usage_summary_title">Data usage</string>
     <!-- Activity title for Appk data usage summary. [CHAR LIMIT=25] -->
     <string name="data_usage_app_summary_title">App data usage</string>
-    <!-- Manage applications, text label for button to kill / force stop an application -->
-    <string name="force_stop">Force stop</string>
     <string name="computing_size">Computing\u2026</string>
     <!-- Runtime permissions preference summary.  Number of additional permissions granted. [CHAR LIMIT=40] -->
     <plurals name="runtime_permissions_additional_count">
         <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> additional permission</item>
         <item quantity="other"><xliff:g example="10" id="count">%d</xliff:g> additional permissions</item>
     </plurals>
-    <!-- Assistant and voice input settings title. This setting allows users to select the default assistant for the device. [CHAR LIMIT=40] -->
+    <!-- Assistant and voice input settings title. This setting goes into the manage assistant settings page. [CHAR LIMIT=40] -->
     <string name="assist_and_voice_input_settings">Assist &amp; voice input</string>
+    <!-- Default assistant settings title. This setting allows users to select the default assistant for the device. [CHAR LIMIT=40] -->
+    <string name="assist_app_settings">Assist app</string>
+    <!-- Title for the text context preference to determine whether assist can access the data currently displayed on-screen [CHAR LIMIT=40] -->
+    <string name="assist_access_context_title">Use text from screen</string>
+    <!-- Summary for the text context preference to determine whether assist can access the data currently displayed on-screen [CHAR LIMIT=NONE] -->
+    <string name="assist_access_context_summary">Allow the assist app to access the screen contents as text</string>
+    <!-- Title for the screenshot context preference to determine whether assist can access the screenshot of your screen [CHAR LIMIT=40] -->
+    <string name="assist_access_screenshot_title">Use screenshot</string>
+    <!-- Summary for the screenshot context preference to determine whether assist can access the screenshot of your screen [CHAR LIMIT=NONE] -->
+    <string name="assist_access_screenshot_summary">Allow the assist app to access an image of the screen</string>
     <!-- Title of the autofill service settings screen. [CHAR LIMIT=40] -->
     <string name="autofill_settings_title">Autofill service</string>
     <!-- Title of the option to remove the default application. [CHAR LIMIT=30] -->
@@ -895,6 +925,8 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> device</item>
         <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> devices</item>
     </plurals>
+    <!-- Preference file key for trusted device -->
+    <string name="trusted_device_preference_file_key" translatable="false">trusted_device_shared_preference</string>
     <!-- Message in dialog which will remind the user what a trusted device can do. [CHAR LIMIT=NONE]-->
     <string name="remove_device_message">Your <xliff:g id="connected_device_name" example="Pixel2">%1$s</xliff:g> will unlock this car when it\'s connected. If someone takes your <xliff:g id="connected_device_name" example="Pixel2">%1$s</xliff:g>, they may be able to access this device</string>
     <!-- Confirm button label of confirm pairing code dialog [CHAR LIMIT=30]-->
@@ -917,6 +949,8 @@
     <string name="trusted_device_success_enrollment_toast"><xliff:g id="device_name" example="Pixel2">%1$s</xliff:g> successfully added as a trusted device</string>
     <!-- Toast shown when enrolling a device fails [CHAR LIMIT=50]-->
     <string name="trusted_device_fail_enrollment_toast"><xliff:g id="device_name" example="Pixel2">%1$s</xliff:g> enrollment failed</string>
+    <!-- Message shown when user have not set authentication [CHAR LIMIT=NONE]-->
+    <string name="trusted_device_set_authentication_reminder">Adding a trusted device requires you to set an authentication method next. If you do not have your trusted device with you, authentication will be required to access your profile.</string>
 
     <!-- generic --><skip/>
     <!-- Button label for generic forget action [CHAR LIMIT=20] -->
