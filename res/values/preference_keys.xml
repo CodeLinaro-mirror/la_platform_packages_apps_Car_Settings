@@ -49,6 +49,14 @@
     </string>
     <string name="pk_mobile_data_toggle" translatable="false">mobile_data_toggle</string>
     <string name="pk_data_usage_settings_entry" translatable="false">data_usage_settings_entry</string>
+    <string name="pk_data_warning_and_limit" translatable="false">data_warning_and_limit</string>
+    <string name="pk_data_usage_cycle" translatable="false">data_usage_cycle</string>
+    <string name="pk_data_warning_group" translatable="false">data_warning_group</string>
+    <string name="pk_data_set_warning" translatable="false">data_set_warning</string>
+    <string name="pk_data_warning" translatable="false">data_warning</string>
+    <string name="pk_data_limit_group" translatable="false">data_limit_group</string>
+    <string name="pk_data_set_limit" translatable="false">data_set_limit</string>
+    <string name="pk_data_limit" translatable="false">data_limit</string>
 
     <!-- WIFI -->
     <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>
@@ -116,9 +124,13 @@
     <!-- Default apps Settings -->
     <string name="pk_default_assist_and_voice" translatable="false">default_assist_and_voice
     </string>
+    <string name="pk_default_assist" translatable="false">default_assist</string>
     <string name="pk_default_assist_and_voice_options" translatable="false">
         default_assist_and_voice_options
     </string>
+    <string name="pk_assist_use_text_context" translatable="false">assist_use_text_context</string>
+    <string name="pk_assist_use_screenshot" translatable="false">assist_use_screenshot</string>
+    <string name="pk_default_autofill_options" translatable="false">default_autofill_options</string>
 
     <!-- DateTime Settings -->
     <string name="pk_auto_datetime_switch" translatable="false">auto_datetime_switch</string>
@@ -218,7 +230,7 @@
     <string name="pk_keyboard_entry" translatable="false">keyboard_entry</string>
     <string name="pk_enabled_keyboards" translatable="false">enabled_keyboards</string>
     <string name="pk_manage_keyboard" translatable="false">manage_keyboard</string>
-    <string name="pk_available_keyboards" translatable="false">available_keyboards</string>
+    <string name="pk_keyboard_management" translatable="false">keyboard_management</string>
 
     <!-- TTS Settings -->
     <string name="pk_tts_settings_entry" translatable="false">tts_settings_entry</string>
@@ -241,6 +253,7 @@
     <string name="pk_security_patch" translatable="false">security_patch</string>
     <string name="pk_kernel_version" translatable="false">kernel_version</string>
     <string name="pk_build_number" translatable="false">build_number</string>
+    <string name="pk_about_bluetooth_mac_address" translatable="false">about_bluetooth_mac_address</string>
 
     <!-- Reset Options -->
     <string name="pk_reset_network" translatable="false">reset_network</string>
@@ -251,6 +264,17 @@
     <string name="pk_reset_network_items" translatable="false">reset_network_items</string>
     <string name="pk_reset_esim" translatable="false">reset_esim</string>
     <string name="pk_reset_network_subscription" translatable="false">reset_network_subscription
+    </string>
+
+    <!-- Master Clear -->
+    <string name="pk_master_clear_desc" translatable="false">master_clear_desc</string>
+    <string name="pk_master_clear_account_list" translatable="false">master_clear_account_list
+    </string>
+    <string name="pk_master_clear_other_users_present" translatable="false">
+        master_clear_other_users_present
+    </string>
+    <string name="pk_master_clear_reset_esim" translatable="false">master_clear_reset_esim</string>
+    <string name="pk_master_clear_confirm_desc" translatable="false">master_clear_confirm_desc
     </string>
 
     <!-- Developer Options -->

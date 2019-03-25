@@ -14,25 +14,28 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.network;
+package com.android.car.settings.system;
 
+import android.bluetooth.BluetoothAdapter;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.telephony.SubscriptionManager;
-import android.telephony.SubscriptionPlan;
+import android.content.pm.PackageManager;
 
 import androidx.preference.Preference;
 
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceController;
 
-/** Preference controller which shows how much data has been used so far. */
-public class DataUsageEntryPreferenceController extends PreferenceController<Preference> {
+/** Updates the vehicle bluetooth mac address summary. */
+public class BluetoothMacAddressPreferenceController extends
+        PreferenceController<Preference> {
 
-    public DataUsageEntryPreferenceController(Context context, String preferenceKey,
+    private BluetoothAdapter mBluetoothAdapter;
+
+    public BluetoothMacAddressPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     @Override
@@ -42,32 +45,14 @@ public class DataUsageEntryPreferenceController extends PreferenceController<Pre
 
     @Override
     protected int getAvailabilityStatus() {
-        if (!NetworkUtils.hasMobileNetwork(
-                getContext().getSystemService(ConnectivityManager.class))) {
+        if (!getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
             return UNSUPPORTED_ON_DEVICE;
         }
-        return AVAILABLE;
+        return super.getAvailabilityStatus();
     }
 
     @Override
     protected void updateState(Preference preference) {
-        preference.setSummary(formatUsedData());
+        preference.setSummary(mBluetoothAdapter.getAddress());
     }
-
-    private CharSequence formatUsedData() {
-        SubscriptionManager subscriptionManager = getContext().getSystemService(
-                SubscriptionManager.class);
-        int defaultSubId = subscriptionManager.getDefaultSubscriptionId();
-        if (defaultSubId == SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
-            return null;
-        }
-        SubscriptionPlan defaultPlan = NetworkUtils.getPrimaryPlan(subscriptionManager,
-                defaultSubId);
-        if (defaultPlan == null) {
-            return null;
-        }
-
-        return NetworkUtils.bytesToIecUnits(getContext(), defaultPlan.getDataUsageBytes());
-    }
-
 }

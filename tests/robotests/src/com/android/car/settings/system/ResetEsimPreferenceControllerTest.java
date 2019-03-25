@@ -42,13 +42,11 @@ import org.robolectric.shadows.ShadowEuiccManager;
 public class ResetEsimPreferenceControllerTest {
 
     private Context mContext;
-    private ShadowEuiccManager mShadowEuiccManager;
     private ResetEsimPreferenceController mController;
 
     @Before
     public void setUp() {
         mContext = RuntimeEnvironment.application;
-        mShadowEuiccManager = Shadow.extract(mContext.getSystemService(Context.EUICC_SERVICE));
         mController = new PreferenceControllerTestHelper<>(mContext,
                 ResetEsimPreferenceController.class,
                 new SwitchPreference(mContext)).getController();
@@ -63,21 +61,21 @@ public class ResetEsimPreferenceControllerTest {
 
     @Test
     public void getAvailabilityStatus_disabledEuiccManager_unsupportedOnDevice() {
-        mShadowEuiccManager.setIsEnabled(false);
+        getShadowEuiccManager().setIsEnabled(false);
 
         assertThat(mController.getAvailabilityStatus()).isEqualTo(UNSUPPORTED_ON_DEVICE);
     }
 
     @Test
     public void getAvailabilityStatus_euiccNotProvisioned_unsupportedOnDevice() {
-        mShadowEuiccManager.setIsEnabled(true);
+        getShadowEuiccManager().setIsEnabled(true);
 
         assertThat(mController.getAvailabilityStatus()).isEqualTo(UNSUPPORTED_ON_DEVICE);
     }
 
     @Test
     public void getAvailabilityStatus_euiccNotProvisioned_developer_available() {
-        mShadowEuiccManager.setIsEnabled(true);
+        getShadowEuiccManager().setIsEnabled(true);
         Settings.Global.putInt(mContext.getContentResolver(),
                 Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 1);
 
@@ -86,9 +84,13 @@ public class ResetEsimPreferenceControllerTest {
 
     @Test
     public void getAvailabilityStatus_euiccProvisioned_available() {
-        mShadowEuiccManager.setIsEnabled(true);
+        getShadowEuiccManager().setIsEnabled(true);
         Settings.Global.putInt(mContext.getContentResolver(), Settings.Global.EUICC_PROVISIONED, 1);
 
         assertThat(mController.getAvailabilityStatus()).isEqualTo(AVAILABLE);
+    }
+
+    private ShadowEuiccManager getShadowEuiccManager() {
+        return Shadow.extract(mContext.getSystemService(Context.EUICC_SERVICE));
     }
 }
