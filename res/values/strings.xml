@@ -47,6 +47,36 @@
     <string name="confirm_mobile_data_disable">Turn off mobile data?</string>
     <!-- Data usage settings [CHAR LIMIT=30] -->
     <string name="data_usage_settings">Data usage</string>
+    <!-- Data usage title text [CHAR LIMIT=30] -->
+    <string name="data_usage_title">Primary data</string>
+    <!-- Data usage, amount used [CHAR LIMIT=30] -->
+    <string name="data_used_formatted"><xliff:g name="value" example="500">^1</xliff:g> <xliff:g name="units" example="GB">^2</xliff:g> used</string>
+    <!-- Format for a summary describing the amount of data before the user is warned [CHAR LIMIT=40] -->
+    <string name="cell_data_warning"><xliff:g name="amount" example="1 GB">^1</xliff:g> data warning</string>
+    <!-- Format for a summary describing the amount of data the limit is set to [CHAR LIMIT=40] -->
+    <string name="cell_data_limit"><xliff:g name="amount" example="1 GB">^1</xliff:g> data limit</string>
+    <!-- Format for a summary describing the amount of data before the user is warned or limited [CHAR LIMIT=80] -->
+    <string name="cell_data_warning_and_limit"><xliff:g name="amount" example="1 GB">^1</xliff:g> data warning / <xliff:g name="amount" example="2 GB">^2</xliff:g> data limit</string>
+    <!-- Informational text about time left in billing cycle [CHAR LIMIT=40] -->
+    <plurals name="billing_cycle_days_left">
+        <item quantity="one">%d day left</item>
+        <item quantity="other">%d days left</item>
+    </plurals>
+    <!-- Informational text about time left in billing cycle [CHAR LIMIT=40] -->
+    <string name="billing_cycle_none_left">No time remaining</string>
+    <!-- Informational text about time left in billing cycle [CHAR LIMIT=40] -->
+    <string name="billing_cycle_less_than_one_day_left">Less than 1 day left</string>
+    <!-- Informational text about carrier and update time [CHAR LIMIT=32] -->
+    <string name="carrier_and_update_text">Updated by <xliff:g name="carrier" example="Google Fi">^1</xliff:g> <xliff:g name="time" example="3m">^2</xliff:g> ago</string>
+    <!-- Informational text about update time only, without carrier. First argument intentionally skipped. [CHAR LIMIT=30] -->
+    <string name="no_carrier_update_text">Updated <xliff:g name="time" example="3m">^2</xliff:g> ago</string>
+    <!-- Informational text about a recent carrier and update time [CHAR LIMIT=34] -->
+    <string name="carrier_and_update_now_text">Updated by <xliff:g name="carrier" example="Google Fi">^1</xliff:g> just now</string>
+    <!-- Informational text about recent update time only, without carrier [CHAR LIMIT=30] -->
+    <string name="no_carrier_update_now_text">Updated just now</string>
+    <!-- Button to launch external data plan app [CHAR LIMIT=30] -->
+    <string name="launch_manage_plan_text">View plan</string>
+
     <!-- Title of button and screen for billing cycle preferences [CHAR LIMIT=40] -->
     <string name="data_warning_limit_title">Data warning &amp; limit</string>
     <!-- Title of button for application usage cycle preferences [CHAR LIMIT=40] -->
@@ -297,6 +327,8 @@
     <string name="app_disable_dialog_positive">Disable app</string>
     <!-- Manage applications, individual application info screen, heading for settings related to the app's permissions. for example, it may list all the permissions the app has. -->
     <string name="permissions_label">Permissions</string>
+    <!-- Label for the toggle that enables/disables an app's notifications. [CHAR LIMIT=20] -->
+    <string name="notifications_label">Notifications</string>
     <!-- Label for displaying application version. -->
     <string name="application_version_label">Version: %1$s</string>
     <!-- Runtime permissions preference summary, shown when the app has no permissions granted. [CHAR LIMIT=40] -->
@@ -668,6 +700,16 @@
     <string name="users_list_title">Users</string>
     <!-- Title for the user details page that shows the permissions granted to the user. The parameter is the name of the user. [CHAR LIMIT=40] -->
     <string name="user_details_admin_title">Permissions granted to %1$s</string>
+
+    <!-- Storage management --><skip/>
+    <!-- Title for settings that lead into information about device storage [CHAR LIMIT=35] -->
+    <string name="storage_settings_title">Storage</string>
+    <!-- Preference label for the Photos & Videos storage section. [CHAR LIMIT=50] -->
+    <string name="storage_photos_videos">Photos &amp; videos</string>
+    <!-- Preference label for the Music & Audio storage section. [CHAR LIMIT=50] -->
+    <string name="storage_music_audio">Music &amp; audio</string>
+    <!-- Car storage settings summary. Displayed when the total memory usage is being calculated. Will be replaced with a number like "12.3 GB" when finished calculating. [CHAR LIMIT=30] -->
+    <string name="memory_calculating_size">Calculating\u2026</string>
 
     <!-- Account management --><skip/>
     <!-- Title for settings that lead into information about User's accounts [CHAR LIMIT=35] -->
