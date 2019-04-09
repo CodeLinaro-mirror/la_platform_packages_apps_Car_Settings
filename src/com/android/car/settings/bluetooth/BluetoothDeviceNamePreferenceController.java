@@ -24,9 +24,9 @@ import android.util.Pair;
 
 import androidx.preference.Preference;
 
+import com.android.car.apps.common.util.Themes;
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
-import com.android.car.theme.Themes;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 
 import java.util.StringJoiner;
@@ -55,10 +55,7 @@ public class BluetoothDeviceNamePreferenceController extends
         Pair<Drawable, String> pair =
                 com.android.settingslib.bluetooth.BluetoothUtils.getBtClassDrawableWithDescription(
                         getContext(),
-                        cachedDevice,
-                        getContext().getResources().getFraction(
-                                R.fraction.bt_battery_scale_fraction, /* base= */1, /* pbase= */
-                                1));
+                        cachedDevice);
         StringJoiner summaryJoiner = new StringJoiner(System.lineSeparator());
         summaryJoiner.setEmptyValue("");
 
