@@ -18,6 +18,7 @@ package com.android.car.settings.storage;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
+import android.util.SparseArray;
 
 import com.android.car.settings.common.FragmentController;
 
@@ -33,7 +34,10 @@ public class StorageMediaCategoryPreferenceController extends StorageUsageBasePr
     }
 
     @Override
-    protected long calculateCategoryUsage(StorageAsyncLoader.AppsStorageResult data) {
+    protected long calculateCategoryUsage(SparseArray<StorageAsyncLoader.AppsStorageResult> result,
+            long usedSizeBytes) {
+        StorageAsyncLoader.AppsStorageResult data = result.get(
+                getCarUserManagerHelper().getCurrentProcessUserId());
         return data.getMusicAppsSize() + data.getExternalStats().audioBytes;
     }
 }
