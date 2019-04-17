@@ -30,6 +30,7 @@ import androidx.preference.PreferenceGroup;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.Logger;
 import com.android.settingslib.bluetooth.BluetoothDeviceFilter;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 
@@ -43,8 +44,12 @@ import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 public class BluetoothUnbondedDevicesPreferenceController extends
         BluetoothDevicesGroupPreferenceController {
 
+    private static final Logger LOG = new Logger(
+            BluetoothUnbondedDevicesPreferenceController.class);
+
     private final BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     private final AlwaysDiscoverable mAlwaysDiscoverable;
+    private boolean mIsScanningEnabled;
 
     public BluetoothUnbondedDevicesPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
@@ -59,7 +64,10 @@ public class BluetoothUnbondedDevicesPreferenceController extends
 
     @Override
     protected void onDeviceClicked(CachedBluetoothDevice cachedDevice) {
+        LOG.d("onDeviceClicked: " + cachedDevice);
+        disableScanning();
         if (cachedDevice.startPairing()) {
+            LOG.d("startPairing");
             // Indicate that this client (vehicle) would like access to contacts (PBAP) and messages
             // (MAP) if there is a server which permits it (usually a phone).
             cachedDevice.getDevice().setPhonebookAccessPermission(BluetoothDevice.ACCESS_ALLOWED);
@@ -67,6 +75,7 @@ public class BluetoothUnbondedDevicesPreferenceController extends
         } else {
             BluetoothUtils.showError(getContext(), cachedDevice.getName(),
                     R.string.bluetooth_pairing_error_message);
+            refreshUi();
         }
     }
 
@@ -114,6 +123,7 @@ public class BluetoothUnbondedDevicesPreferenceController extends
      * Calls are idempotent.
      */
     private void enableScanning() {
+        mIsScanningEnabled = true;
         if (!mBluetoothAdapter.isDiscovering()) {
             mBluetoothAdapter.startDiscovery();
         }
@@ -123,6 +133,7 @@ public class BluetoothUnbondedDevicesPreferenceController extends
 
     /** Stops scanning for devices and disables interaction. Calls are idempotent. */
     private void disableScanning() {
+        mIsScanningEnabled = false;
         getPreference().setEnabled(false);
         mAlwaysDiscoverable.stop();
         if (mBluetoothAdapter.isDiscovering()) {
@@ -131,7 +142,17 @@ public class BluetoothUnbondedDevicesPreferenceController extends
     }
 
     @Override
+    public void onScanningStateChanged(boolean started) {
+        LOG.d("onScanningStateChanged started: " + started + " mIsScanningEnabled: "
+                + mIsScanningEnabled);
+        if (!started && mIsScanningEnabled) {
+            enableScanning();
+        }
+    }
+
+    @Override
     public void onDeviceBondStateChanged(CachedBluetoothDevice cachedDevice, int bondState) {
+        LOG.d("onDeviceBondStateChanged device: " + cachedDevice + " state: " + bondState);
         refreshUi();
     }
 

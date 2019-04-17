@@ -134,6 +134,30 @@ public class BluetoothUnbondedDevicesPreferenceControllerTest {
     }
 
     @Test
+    public void onScanningStateChanged_scanningEnabled_receiveStopped_restartsScanning() {
+        mControllerHelper.markState(Lifecycle.State.STARTED);
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isTrue();
+
+        BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
+        mController.onScanningStateChanged(/* started= */ false);
+
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isTrue();
+    }
+
+    @Test
+    public void onScanningStateChanged_scanningDisabled_receiveStopped_doesNothing() {
+        mControllerHelper.markState(Lifecycle.State.STARTED);
+        // Set a device bonding to disable scanning.
+        when(mUnbondedCachedDevice.getBondState()).thenReturn(BluetoothDevice.BOND_BONDING);
+        mController.refreshUi();
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isFalse();
+
+        mController.onScanningStateChanged(/* started= */ false);
+
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isFalse();
+    }
+
+    @Test
     public void onDeviceBondStateChanged_refreshesUi() {
         mControllerHelper.markState(Lifecycle.State.STARTED);
         assertThat(mPreferenceGroup.getPreferenceCount()).isEqualTo(1);
@@ -155,6 +179,32 @@ public class BluetoothUnbondedDevicesPreferenceControllerTest {
         devicePreference.performClick();
 
         verify(mUnbondedCachedDevice).startPairing();
+    }
+
+    @Test
+    public void onDeviceClicked_pairingStarted_cancelsScanning() {
+        mControllerHelper.markState(Lifecycle.State.STARTED);
+        BluetoothDevicePreference devicePreference =
+                (BluetoothDevicePreference) mPreferenceGroup.getPreference(0);
+        when(mUnbondedCachedDevice.startPairing()).thenReturn(true);
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isTrue();
+
+        devicePreference.performClick();
+
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isFalse();
+    }
+
+    @Test
+    public void onDeviceClicked_pairingStartFails_resumeScanning() {
+        mControllerHelper.markState(Lifecycle.State.STARTED);
+        BluetoothDevicePreference devicePreference =
+                (BluetoothDevicePreference) mPreferenceGroup.getPreference(0);
+        when(mUnbondedCachedDevice.startPairing()).thenReturn(false);
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isTrue();
+
+        devicePreference.performClick();
+
+        assertThat(BluetoothAdapter.getDefaultAdapter().isDiscovering()).isTrue();
     }
 
     @Test
