@@ -22,11 +22,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.ArrayMap;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -191,8 +193,18 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
 
             TextView titleView = actionBarContainer.requireViewById(R.id.title);
             titleView.setText(getPreferenceScreen().getTitle());
-            actionBarContainer.requireViewById(R.id.action_bar_icon_container).setOnClickListener(
-                    v -> requireActivity().onBackPressed());
+
+            // If the fragment is root, change the back button to settings icon.
+            ImageView imageView = actionBarContainer.requireViewById(R.id.back_button);
+            if (requireActivity().getSupportFragmentManager().getBackStackEntryCount() == 1) {
+                imageView.setImageResource(R.drawable.ic_launcher_settings);
+                imageView.setTag(R.id.back_button, R.drawable.ic_launcher_settings);
+            } else {
+                imageView.setTag(R.id.back_button, R.drawable.ic_arrow_back);
+                actionBarContainer.requireViewById(R.id.action_bar_icon_container)
+                        .setOnClickListener(
+                                v -> requireActivity().onBackPressed());
+            }
         }
     }
 
@@ -232,9 +244,12 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
         }
 
         DialogFragment dialogFragment;
-        if (preference instanceof EditTextPreference) {
+        if (preference instanceof PasswordEditTextPreference) {
             dialogFragment = SettingsEditTextPreferenceDialogFragment.newInstance(
-                    preference.getKey());
+                    preference.getKey(), InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        } else if (preference instanceof EditTextPreference) {
+            dialogFragment = SettingsEditTextPreferenceDialogFragment.newInstance(
+                    preference.getKey(), InputType.TYPE_CLASS_TEXT);
         } else if (preference instanceof ListPreference) {
             dialogFragment = SettingsListPreferenceDialogFragment.newInstance(preference.getKey());
         } else {
