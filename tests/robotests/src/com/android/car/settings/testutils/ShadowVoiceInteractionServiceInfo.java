@@ -75,5 +75,6 @@ public class ShadowVoiceInteractionServiceInfo {
     public static void reset() {
         sSupportsAssistMap.clear();
         sRecognitionServiceMap.clear();
+        sSettingsActivityMap.clear();
     }
 }
