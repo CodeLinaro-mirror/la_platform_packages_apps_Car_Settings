@@ -155,7 +155,7 @@ public class AddTrustedDevicePreferenceControllerTest {
                         CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback.class);
         verify(mMockCarTrustAgentEnrollmentManager).setBleCallback(callBack.capture());
 
-        callBack.getValue().onEnrollmentAdvertisingFailed(12);
+        callBack.getValue().onEnrollmentAdvertisingFailed();
 
         verify(mPreferenceControllerHelper.getMockFragmentController()).goBack();
     }
@@ -182,9 +182,6 @@ public class AddTrustedDevicePreferenceControllerTest {
         verify(mMockCarTrustAgentEnrollmentManager).setBleCallback(bleCallBack.capture());
 
         bleCallBack.getValue().onBleEnrollmentDeviceConnected(mBluetoothDevice);
-
-        verify(mMockCarTrustAgentEnrollmentManager).initiateEnrollmentHandshake(
-                any(BluetoothDevice.class));
     }
 
     @Test
