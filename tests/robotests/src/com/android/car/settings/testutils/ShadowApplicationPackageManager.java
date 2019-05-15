@@ -15,12 +15,15 @@
  */
 package com.android.car.settings.testutils;
 
+import static android.content.pm.PackageManager.INTENT_FILTER_DOMAIN_VERIFICATION_STATUS_UNDEFINED;
+
 import android.annotation.NonNull;
 import android.annotation.UserIdInt;
 import android.app.ApplicationPackageManager;
 import android.content.ComponentName;
-import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.IPackageDataObserver;
 import android.content.pm.ModuleInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
@@ -28,29 +31,39 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.UserHandle;
+import android.util.Pair;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /** Shadow of ApplicationPackageManager that allows the getting of content providers per user. */
 @Implements(value = ApplicationPackageManager.class)
 public class ShadowApplicationPackageManager extends
         org.robolectric.shadows.ShadowApplicationPackageManager {
 
-    private static List<ResolveInfo> sResolveInfos = null;
     private static Resources sResources = null;
+    private static PackageManager sPackageManager;
 
+    private final Map<Integer, String> mUserIdToDefaultBrowserMap = new HashMap<>();
+    private final Map<String, ComponentName> mPkgToDefaultActivityMap = new HashMap<>();
+    private final Map<String, IntentFilter> mPkgToDefaultActivityIntentFilterMap = new HashMap<>();
+    private final Map<IntentFilter, ComponentName> mPreferredActivities = new LinkedHashMap<>();
+    private final Map<Pair<String, Integer>, Integer> mPkgAndUserIdToIntentVerificationStatusMap =
+            new HashMap<>();
     private List<ResolveInfo> mHomeActivities = Collections.emptyList();
     private ComponentName mDefaultHomeActivity;
 
     @Resetter
     public static void reset() {
-        sResolveInfos = null;
         sResources = null;
+        sPackageManager = null;
     }
 
     @Implementation
@@ -78,6 +91,11 @@ public class ShadowApplicationPackageManager extends
     }
 
     @Implementation
+    protected void deleteApplicationCacheFiles(String packageName, IPackageDataObserver observer) {
+        sPackageManager.deleteApplicationCacheFiles(packageName, observer);
+    }
+
+    @Implementation
     protected Resources getResourcesForApplication(String appPackageName)
             throws PackageManager.NameNotFoundException {
         return sResources;
@@ -89,9 +107,9 @@ public class ShadowApplicationPackageManager extends
     }
 
     @Implementation
-    protected List<ResolveInfo> queryIntentActivitiesAsUser(Intent intent,
-            @PackageManager.ResolveInfoFlags int flags, @UserIdInt int userId) {
-        return sResolveInfos == null ? Collections.emptyList() : sResolveInfos;
+    protected ApplicationInfo getApplicationInfoAsUser(String packageName, int flags, int userId)
+            throws PackageManager.NameNotFoundException {
+        return getApplicationInfo(packageName, flags);
     }
 
     @Implementation
@@ -99,6 +117,67 @@ public class ShadowApplicationPackageManager extends
     protected ComponentName getHomeActivities(List<ResolveInfo> outActivities) {
         outActivities.addAll(mHomeActivities);
         return mDefaultHomeActivity;
+    }
+
+    @Implementation
+    @Override
+    protected void clearPackagePreferredActivities(String packageName) {
+        mPreferredActivities.clear();
+    }
+
+    @Implementation
+    @Override
+    public int getPreferredActivities(List<IntentFilter> outFilters,
+            List<ComponentName> outActivities, String packageName) {
+        for (IntentFilter filter : mPreferredActivities.keySet()) {
+            ComponentName name = mPreferredActivities.get(filter);
+            // If packageName is null, match everything, else filter by packageName.
+            if (packageName == null) {
+                outFilters.add(filter);
+                outActivities.add(name);
+            } else if (name.getPackageName().equals(packageName)) {
+                outFilters.add(filter);
+                outActivities.add(name);
+            }
+        }
+        return 0;
+    }
+
+    @Implementation
+    @Override
+    public void addPreferredActivity(IntentFilter filter, int match, ComponentName[] set,
+            ComponentName activity) {
+        mPreferredActivities.put(filter, activity);
+    }
+
+    @Implementation
+    @Override
+    protected String getDefaultBrowserPackageNameAsUser(int userId) {
+        return mUserIdToDefaultBrowserMap.getOrDefault(userId, null);
+    }
+
+    @Implementation
+    @Override
+    protected boolean setDefaultBrowserPackageNameAsUser(String packageName, int userId) {
+        mUserIdToDefaultBrowserMap.put(userId, packageName);
+        return true;
+    }
+
+    @Implementation
+    @Override
+    protected int getIntentVerificationStatusAsUser(String packageName, int userId) {
+        Pair<String, Integer> key = new Pair<>(packageName, userId);
+        return mPkgAndUserIdToIntentVerificationStatusMap.getOrDefault(key,
+                INTENT_FILTER_DOMAIN_VERIFICATION_STATUS_UNDEFINED);
+    }
+
+    @Implementation
+    @Override
+    protected boolean updateIntentVerificationStatusAsUser(String packageName, int status,
+            int userId) {
+        Pair<String, Integer> key = new Pair<>(packageName, userId);
+        mPkgAndUserIdToIntentVerificationStatusMap.put(key, status);
+        return true;
     }
 
     public void setHomeActivities(List<ResolveInfo> homeActivities) {
@@ -109,16 +188,11 @@ public class ShadowApplicationPackageManager extends
         mDefaultHomeActivity = defaultHomeActivity;
     }
 
-    /**
-     * If resolveInfos are set by this method then
-     * {@link ShadowApplicationPackageManager#queryIntentActivitiesAsUser}
-     * method will return the same list.
-     */
-    public static void setListOfActivities(List<ResolveInfo> resolveInfos) {
-        sResolveInfos = resolveInfos;
-    }
-
     public static void setResources(Resources resources) {
         sResources = resources;
+    }
+
+    public static void setPackageManager(PackageManager packageManager) {
+        sPackageManager = packageManager;
     }
 }
