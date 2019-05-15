@@ -16,20 +16,20 @@
 
 package com.android.car.settings.security;
 
+import static android.content.pm.PackageManager.FEATURE_BLUETOOTH;
+import static android.os.UserManager.DISALLOW_BLUETOOTH;
+import static android.os.UserManager.DISALLOW_CONFIG_BLUETOOTH;
+
+import static com.android.car.settings.common.PreferenceController.AVAILABLE;
+import static com.android.car.settings.common.PreferenceController.DISABLED_FOR_USER;
+import static com.android.car.settings.common.PreferenceController.UNSUPPORTED_ON_DEVICE;
+
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.app.admin.DevicePolicyManager;
 import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.car.Car;
-import android.car.CarNotConnectedException;
-import android.car.trust.CarTrustAgentEnrollmentManager;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 
@@ -37,8 +37,10 @@ import androidx.lifecycle.Lifecycle;
 import androidx.preference.Preference;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
+import com.android.car.settings.R;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
-import com.android.car.settings.testutils.ShadowCar;
+import com.android.car.settings.testutils.ShadowBluetoothAdapter;
+import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
 import com.android.car.settings.testutils.ShadowLockPatternUtils;
 import com.android.internal.widget.LockPatternUtils;
 
@@ -46,58 +48,106 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.Shadows;
 import org.robolectric.annotation.Config;
-import org.robolectric.shadows.ShadowApplication;
 
 
 /**
  * Unit tests for {@link AddTrustedDevicePreferenceController}.
  */
 @RunWith(CarSettingsRobolectricTestRunner.class)
-@Config(shadows = {ShadowCar.class, ShadowLockPatternUtils.class})
+@Config(shadows = {ShadowLockPatternUtils.class, ShadowBluetoothAdapter.class,
+        ShadowCarUserManagerHelper.class})
 public class AddTrustedDevicePreferenceControllerTest {
 
-    private static final String ADDRESS = "00:11:22:33:AA:BB";
     private Context mContext;
     private PreferenceControllerTestHelper<AddTrustedDevicePreferenceController>
             mPreferenceControllerHelper;
     @Mock
-    private CarTrustAgentEnrollmentManager mMockCarTrustAgentEnrollmentManager;
-    @Mock
     private LockPatternUtils mLockPatternUtils;
+    @Mock
+    private CarUserManagerHelper mCarUserManagerHelper;
     private Preference mPreference;
     private AddTrustedDevicePreferenceController mController;
-    private CarUserManagerHelper mCarUserManagerHelper;
-    private BluetoothDevice mBluetoothDevice;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         mContext = RuntimeEnvironment.application;
-        ShadowCar.setCarManager(Car.CAR_TRUST_AGENT_ENROLLMENT_SERVICE,
-                mMockCarTrustAgentEnrollmentManager);
         ShadowLockPatternUtils.setInstance(mLockPatternUtils);
+        ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
         mPreference = new Preference(mContext);
         mPreferenceControllerHelper = new PreferenceControllerTestHelper<>(mContext,
                 AddTrustedDevicePreferenceController.class, mPreference);
         mController = mPreferenceControllerHelper.getController();
-        mCarUserManagerHelper = new CarUserManagerHelper(mContext);
+        Shadows.shadowOf(RuntimeEnvironment.application.getPackageManager()).setSystemFeature(
+                FEATURE_BLUETOOTH, /* supported= */ true);
         mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        mBluetoothDevice = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(ADDRESS);
     }
 
     @After
     public void tearDown() {
-        ShadowCar.reset();
         ShadowLockPatternUtils.reset();
+        ShadowBluetoothAdapter.reset();
+        ShadowCarUserManagerHelper.reset();
     }
 
     @Test
-    public void onPreferenceClicked_hasPassword_startAdvertising() throws CarNotConnectedException {
+    public void refreshUi_hasPassword_preferenceEnabled() {
+        when(mLockPatternUtils.getKeyguardStoredPasswordQuality(
+                mCarUserManagerHelper.getCurrentProcessUserId())).thenReturn(
+                DevicePolicyManager.PASSWORD_QUALITY_SOMETHING);
+        when(mCarUserManagerHelper.isCurrentProcessUserHasRestriction(
+                DISALLOW_BLUETOOTH)).thenReturn(false);
+
+        mController.refreshUi();
+
+        assertThat(mPreference.isEnabled()).isTrue();
+    }
+
+    @Test
+    public void refreshUi_noPassword_preferenceDisabled() {
+        when(mLockPatternUtils.getKeyguardStoredPasswordQuality(
+                mCarUserManagerHelper.getCurrentProcessUserId())).thenReturn(
+                DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED);
+        when(mCarUserManagerHelper.isCurrentProcessUserHasRestriction(
+                DISALLOW_BLUETOOTH)).thenReturn(false);
+
+        mController.refreshUi();
+
+        assertThat(mPreference.isEnabled()).isFalse();
+    }
+
+    @Test
+    public void refreshUi_bluetoothAdapterEnabled_setsEmptySummary() {
+        when(mLockPatternUtils.getKeyguardStoredPasswordQuality(
+                mCarUserManagerHelper.getCurrentProcessUserId())).thenReturn(
+                DevicePolicyManager.PASSWORD_QUALITY_SOMETHING);
+        when(mCarUserManagerHelper.isCurrentProcessUserHasRestriction(
+                DISALLOW_BLUETOOTH)).thenReturn(false);
+        BluetoothAdapter.getDefaultAdapter().enable();
+
+        mController.refreshUi();
+
+        assertThat(mPreference.getSummary().toString()).isEmpty();
+    }
+
+    @Test
+    public void refreshUi_bluetoothAdapterDisabled_setsTurnOnToAddSummary() {
+        BluetoothAdapter.getDefaultAdapter().disable();
+
+        mController.refreshUi();
+
+        assertThat(mPreference.getSummary()).isEqualTo(
+                mContext.getString(R.string.add_device_summary));
+    }
+
+    @Test
+    public void onPreferenceClicked_hasPassword_enableBluetooth() {
+        BluetoothAdapter.getDefaultAdapter().disable();
         when(mLockPatternUtils.getKeyguardStoredPasswordQuality(
                 mCarUserManagerHelper.getCurrentProcessUserId())).thenReturn(
                 DevicePolicyManager.PASSWORD_QUALITY_SOMETHING);
@@ -105,113 +155,43 @@ public class AddTrustedDevicePreferenceControllerTest {
 
         mPreference.performClick();
 
-        verify(mMockCarTrustAgentEnrollmentManager).startEnrollmentAdvertising();
+        assertThat(BluetoothAdapter.getDefaultAdapter().isEnabled()).isTrue();
     }
 
     @Test
-    public void onAuthStringAvailable_showDialog() throws CarNotConnectedException {
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentEnrollmentCallback>
-                enrollmentCallBack =
-                ArgumentCaptor.forClass(
-                        CarTrustAgentEnrollmentManager.CarTrustAgentEnrollmentCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setEnrollmentCallback(
-                enrollmentCallBack.capture());
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback> bleCallBack =
-                ArgumentCaptor.forClass(
-                        CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setBleCallback(bleCallBack.capture());
+    public void getAvailabilityStatus_bluetoothNotAvailable_unsupportedOnDevice() {
+        Shadows.shadowOf(RuntimeEnvironment.application.getPackageManager()).setSystemFeature(
+                FEATURE_BLUETOOTH, /* supported= */ false);
 
-        bleCallBack.getValue().onBleEnrollmentDeviceConnected(mBluetoothDevice);
-        enrollmentCallBack.getValue().onAuthStringAvailable(mBluetoothDevice, "123");
-
-        verify(mPreferenceControllerHelper.getMockFragmentController()).showDialog(
-                any(ConfirmPairingCodeDialog.class), anyString());
+        assertThat(mController.getAvailabilityStatus()).isEqualTo(UNSUPPORTED_ON_DEVICE);
     }
 
     @Test
-    public void onEscrowTokenActiveStateChanged_returnToListFragment()
-            throws CarNotConnectedException {
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentEnrollmentCallback> callBack =
-                ArgumentCaptor.forClass(
-                        CarTrustAgentEnrollmentManager.CarTrustAgentEnrollmentCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setEnrollmentCallback(callBack.capture());
+    public void getAvailabilityStatus_disallowBluetoothUserRestriction_disabledForUser() {
+        Shadows.shadowOf(RuntimeEnvironment.application.getPackageManager()).setSystemFeature(
+                FEATURE_BLUETOOTH, /* supported= */ true);
+        when(mCarUserManagerHelper.isCurrentProcessUserHasRestriction(
+                DISALLOW_BLUETOOTH)).thenReturn(true);
 
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback>
-                bleCallBack = ArgumentCaptor.forClass(
-                CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setBleCallback(bleCallBack.capture());
-
-        bleCallBack.getValue().onBleEnrollmentDeviceConnected(mBluetoothDevice);
-        callBack.getValue().onEscrowTokenActiveStateChanged(123, true);
-
-        verify(mPreferenceControllerHelper.getMockFragmentController()).goBack();
+        assertThat(mController.getAvailabilityStatus()).isEqualTo(DISABLED_FOR_USER);
     }
 
     @Test
-    public void onEnrollmentAdvertisingFailed_returnToListFragment()
-            throws CarNotConnectedException {
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback> callBack =
-                ArgumentCaptor.forClass(
-                        CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setBleCallback(callBack.capture());
+    public void getAvailabilityStatus_disallowConfigBluetoothUserRestriction_disabledForUser() {
+        Shadows.shadowOf(RuntimeEnvironment.application.getPackageManager()).setSystemFeature(
+                FEATURE_BLUETOOTH, /* supported= */ true);
+        when(mCarUserManagerHelper.isCurrentProcessUserHasRestriction(
+                DISALLOW_CONFIG_BLUETOOTH)).thenReturn(true);
 
-        callBack.getValue().onEnrollmentAdvertisingFailed();
-
-        verify(mPreferenceControllerHelper.getMockFragmentController()).goBack();
+        assertThat(mController.getAvailabilityStatus()).isEqualTo(DISABLED_FOR_USER);
     }
 
     @Test
-    public void onEscrowTokenAdded_startCheckLockActivity()
-            throws CarNotConnectedException {
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentEnrollmentCallback> callBack =
-                ArgumentCaptor.forClass(
-                        CarTrustAgentEnrollmentManager.CarTrustAgentEnrollmentCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setEnrollmentCallback(callBack.capture());
+    public void getAvailabilityStatus_available() {
+        Shadows.shadowOf(RuntimeEnvironment.application.getPackageManager()).setSystemFeature(
+                FEATURE_BLUETOOTH, /* supported= */ true);
+        // No user restrictions.
 
-        callBack.getValue().onEscrowTokenAdded(1);
-
-        assertThat(ShadowApplication.getInstance().getNextStartedActivity().getComponent()
-                .getClassName()).isEqualTo(CheckLockActivity.class.getName());
-    }
-
-    @Test
-    public void onBluetoothDeviceConnected_initiateHandshake() throws CarNotConnectedException {
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback>
-                bleCallBack = ArgumentCaptor.forClass(
-                CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setBleCallback(bleCallBack.capture());
-
-        bleCallBack.getValue().onBleEnrollmentDeviceConnected(mBluetoothDevice);
-    }
-
-    @Test
-    public void onPairingCodeDialogConfirmed_handShakeAccepted()
-            throws CarNotConnectedException {
-        ArgumentCaptor<CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback>
-                bleCallBack = ArgumentCaptor.forClass(
-                CarTrustAgentEnrollmentManager.CarTrustAgentBleCallback.class);
-        verify(mMockCarTrustAgentEnrollmentManager).setBleCallback(bleCallBack.capture());
-
-        bleCallBack.getValue().onBleEnrollmentDeviceConnected(mBluetoothDevice);
-        mController.mConfirmParingCodeListener.onConfirmPairingCode();
-
-        verify(mMockCarTrustAgentEnrollmentManager).enrollmentHandshakeAccepted(mBluetoothDevice);
-
-    }
-
-    @Test
-    public void onPairingCodeDialogCancelled_returnToListFragment() {
-        mController.mConfirmParingCodeListener.onDialogCancelled();
-        verify(mPreferenceControllerHelper.getMockFragmentController()).goBack();
-    }
-
-    @Test
-    public void refreshUi_noPassword_preferenceDisabled() {
-        when(mLockPatternUtils.getKeyguardStoredPasswordQuality(anyInt())).thenReturn(
-                DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED);
-
-        mController.refreshUi();
-
-        assertThat(mPreference.isEnabled()).isFalse();
+        assertThat(mController.getAvailabilityStatus()).isEqualTo(AVAILABLE);
     }
 }
