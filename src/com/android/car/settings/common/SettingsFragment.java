@@ -27,6 +27,7 @@ import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -191,8 +192,18 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
 
             TextView titleView = actionBarContainer.requireViewById(R.id.title);
             titleView.setText(getPreferenceScreen().getTitle());
-            actionBarContainer.requireViewById(R.id.action_bar_icon_container).setOnClickListener(
-                    v -> requireActivity().onBackPressed());
+
+            // If the fragment is root, change the back button to settings icon.
+            ImageView imageView = actionBarContainer.requireViewById(R.id.back_button);
+            if (requireActivity().getSupportFragmentManager().getBackStackEntryCount() == 1) {
+                imageView.setImageResource(R.drawable.ic_launcher_settings);
+                imageView.setTag(R.id.back_button, R.drawable.ic_launcher_settings);
+            } else {
+                imageView.setTag(R.id.back_button, R.drawable.ic_arrow_back);
+                actionBarContainer.requireViewById(R.id.action_bar_icon_container)
+                        .setOnClickListener(
+                                v -> requireActivity().onBackPressed());
+            }
         }
     }
 
@@ -232,9 +243,16 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
         }
 
         DialogFragment dialogFragment;
-        if (preference instanceof EditTextPreference) {
-            dialogFragment = SettingsEditTextPreferenceDialogFragment.newInstance(
-                    preference.getKey());
+        if (preference instanceof ValidatedEditTextPreference) {
+            if (preference instanceof PasswordEditTextPreference) {
+                dialogFragment = PasswordEditTextPreferenceDialogFragment.newInstance(
+                        preference.getKey());
+            } else {
+                dialogFragment = ValidatedEditTextPreferenceDialogFragment.newInstance(
+                        preference.getKey());
+            }
+        } else if (preference instanceof EditTextPreference) {
+            dialogFragment = EditTextPreferenceDialogFragment.newInstance(preference.getKey());
         } else if (preference instanceof ListPreference) {
             dialogFragment = SettingsListPreferenceDialogFragment.newInstance(preference.getKey());
         } else {
@@ -242,6 +260,7 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
                     "Tried to display dialog for unknown preference type. Did you forget to "
                             + "override onDisplayPreferenceDialog()?");
         }
+
         dialogFragment.setTargetFragment(/* fragment= */ this, /* requestCode= */ 0);
         showDialog(dialogFragment, DIALOG_FRAGMENT_TAG);
     }
@@ -310,7 +329,6 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
     }
 
     // Allocates the next available startActivityForResult request index.
-
     private int allocateRequestIndex(ActivityResultCallback callback) {
         // Sanity check that we haven't exhausted the request index space.
         if (mActivityResultCallbackMap.size() >= MAX_NUM_PENDING_ACTIVITY_RESULT_CALLBACKS) {

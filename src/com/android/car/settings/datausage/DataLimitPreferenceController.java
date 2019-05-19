@@ -17,15 +17,11 @@
 package com.android.car.settings.datausage;
 
 import static android.net.NetworkPolicy.LIMIT_DISABLED;
+import static android.net.NetworkPolicy.WARNING_DISABLED;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
-import android.net.NetworkPolicy;
-import android.net.NetworkPolicyManager;
-import android.net.NetworkTemplate;
 import android.os.Bundle;
-import android.telephony.SubscriptionManager;
-import android.telephony.TelephonyManager;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
@@ -36,31 +32,29 @@ import androidx.preference.TwoStatePreference;
 import com.android.car.settings.R;
 import com.android.car.settings.common.ConfirmationDialogFragment;
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.PreferenceController;
-import com.android.settingslib.NetworkPolicyEditor;
+import com.android.car.settings.datausage.UsageBytesThresholdPickerDialog.BytesThresholdPickedListener;
 
 /** Controls setting the data limit threshold. */
-public class DataLimitPreferenceController extends PreferenceController<PreferenceGroup> implements
-        Preference.OnPreferenceChangeListener, ConfirmationDialogFragment.ConfirmListener {
+public class DataLimitPreferenceController extends
+        DataWarningAndLimitBasePreferenceController<PreferenceGroup> implements
+        Preference.OnPreferenceChangeListener, ConfirmationDialogFragment.ConfirmListener,
+        Preference.OnPreferenceClickListener {
 
     @VisibleForTesting
     static final float LIMIT_BYTES_MULTIPLIER = 1.2f;
     private static final long GIB_IN_BYTES = 1024 * 1024 * 1024;
 
-    private final NetworkPolicyEditor mPolicyEditor;
-    private final TelephonyManager mTelephonyManager;
-    private final SubscriptionManager mSubscriptionManager;
+    private final BytesThresholdPickedListener mThresholdPickedListener = numBytes -> {
+        getNetworkPolicyEditor().setPolicyLimitBytes(getNetworkTemplate(), numBytes);
+        refreshUi();
+    };
 
     private TwoStatePreference mEnableDataLimitPreference;
     private Preference mSetDataLimitPreference;
-    private NetworkTemplate mNetworkTemplate;
 
     public DataLimitPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
-        mPolicyEditor = new NetworkPolicyEditor(NetworkPolicyManager.from(context));
-        mTelephonyManager = context.getSystemService(TelephonyManager.class);
-        mSubscriptionManager = context.getSystemService(SubscriptionManager.class);
     }
 
     @Override
@@ -75,19 +69,25 @@ public class DataLimitPreferenceController extends PreferenceController<Preferen
         mEnableDataLimitPreference.setOnPreferenceChangeListener(this);
         mSetDataLimitPreference = getPreference().findPreference(
                 getContext().getString(R.string.pk_data_limit));
-        mNetworkTemplate = DataUsageUtils.getMobileNetworkTemplate(mTelephonyManager,
-                DataUsageUtils.getDefaultSubscriptionId(mSubscriptionManager));
+        mSetDataLimitPreference.setOnPreferenceClickListener(this);
 
         ConfirmationDialogFragment.resetListeners(
                 (ConfirmationDialogFragment) getFragmentController().findDialogByTag(
                         ConfirmationDialogFragment.TAG),
                 /* confirmListener= */ this,
                 /* rejectListener= */ null);
+
+        UsageBytesThresholdPickerDialog dialog =
+                (UsageBytesThresholdPickerDialog) getFragmentController().findDialogByTag(
+                        UsageBytesThresholdPickerDialog.TAG);
+        if (dialog != null) {
+            dialog.setBytesThresholdPickedListener(mThresholdPickedListener);
+        }
     }
 
     @Override
     protected void updateState(PreferenceGroup preference) {
-        long limitBytes = mPolicyEditor.getPolicyLimitBytes(mNetworkTemplate);
+        long limitBytes = getNetworkPolicyEditor().getPolicyLimitBytes(getNetworkTemplate());
 
         if (limitBytes == LIMIT_DISABLED) {
             mEnableDataLimitPreference.setChecked(false);
@@ -104,7 +104,7 @@ public class DataLimitPreferenceController extends PreferenceController<Preferen
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean enabled = (Boolean) newValue;
         if (!enabled) {
-            mPolicyEditor.setPolicyLimitBytes(mNetworkTemplate, LIMIT_DISABLED);
+            getNetworkPolicyEditor().setPolicyLimitBytes(getNetworkTemplate(), LIMIT_DISABLED);
             refreshUi();
             return true;
         }
@@ -124,15 +124,25 @@ public class DataLimitPreferenceController extends PreferenceController<Preferen
 
     @Override
     public void onConfirm(@Nullable Bundle arguments) {
-        NetworkPolicy policy = mPolicyEditor.getPolicy(mNetworkTemplate);
+        long warningBytes = getNetworkPolicyEditor().getPolicyWarningBytes(getNetworkTemplate());
         long minLimitBytes = 0;
-        if (policy != null) {
-            minLimitBytes = (long) (policy.warningBytes * LIMIT_BYTES_MULTIPLIER);
+        if (warningBytes != WARNING_DISABLED) {
+            minLimitBytes = (long) (warningBytes * LIMIT_BYTES_MULTIPLIER);
         }
 
         long limitBytes = Math.max(5 * GIB_IN_BYTES, minLimitBytes);
 
-        mPolicyEditor.setPolicyLimitBytes(mNetworkTemplate, limitBytes);
+        getNetworkPolicyEditor().setPolicyLimitBytes(getNetworkTemplate(), limitBytes);
         refreshUi();
+    }
+
+    @Override
+    public boolean onPreferenceClick(Preference preference) {
+        UsageBytesThresholdPickerDialog dialog = UsageBytesThresholdPickerDialog.newInstance(
+                R.string.data_usage_limit_editor_title,
+                getNetworkPolicyEditor().getPolicyLimitBytes(getNetworkTemplate()));
+        dialog.setBytesThresholdPickedListener(mThresholdPickedListener);
+        getFragmentController().showDialog(dialog, UsageBytesThresholdPickerDialog.TAG);
+        return true;
     }
 }
