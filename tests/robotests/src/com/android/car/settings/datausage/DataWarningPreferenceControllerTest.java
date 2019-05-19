@@ -20,15 +20,13 @@ import static android.net.NetworkPolicy.WARNING_DISABLED;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.Mockito.mock;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.content.Context;
-import android.net.NetworkPolicyManager;
 import android.net.NetworkTemplate;
-import android.telephony.SubscriptionInfo;
-import android.telephony.SubscriptionManager;
-import android.telephony.TelephonyManager;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.Preference;
@@ -38,23 +36,20 @@ import androidx.preference.TwoStatePreference;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.R;
+import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.LogicalPreferenceGroup;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
-import com.android.car.settings.testutils.ShadowNetworkPolicyEditor;
-import com.android.car.settings.testutils.ShadowSubscriptionManager;
-import com.android.car.settings.testutils.ShadowTelephonyManager;
 import com.android.settingslib.NetworkPolicyEditor;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 
 @RunWith(CarSettingsRobolectricTestRunner.class)
-@Config(shadows = {ShadowTelephonyManager.class, ShadowSubscriptionManager.class,
-        ShadowNetworkPolicyEditor.class})
 public class DataWarningPreferenceControllerTest {
 
     private static final long BYTES_IN_GIGABYTE = 1024 * 1024 * 1024;
@@ -62,15 +57,15 @@ public class DataWarningPreferenceControllerTest {
     private TwoStatePreference mEnablePreference;
     private Preference mWarningPreference;
     private DataWarningPreferenceController mController;
+    private FragmentController mFragmentController;
+    @Mock
     private NetworkPolicyEditor mPolicyEditor;
+    @Mock
     private NetworkTemplate mNetworkTemplate;
 
     @Before
     public void setUp() {
-        SubscriptionInfo info = mock(SubscriptionInfo.class);
-        when(info.getSubscriptionId()).thenReturn(1);
-        ShadowSubscriptionManager.setDefaultDataSubscriptionInfo(info);
-
+        MockitoAnnotations.initMocks(this);
         Context context = RuntimeEnvironment.application;
 
         PreferenceGroup preferenceGroup = new LogicalPreferenceGroup(context);
@@ -78,6 +73,7 @@ public class DataWarningPreferenceControllerTest {
                 new PreferenceControllerTestHelper<>(context,
                         DataWarningPreferenceController.class, preferenceGroup);
         mController = controllerHelper.getController();
+        mFragmentController = controllerHelper.getMockFragmentController();
 
         mEnablePreference = new SwitchPreference(context);
         mEnablePreference.setKey(context.getString(R.string.pk_data_set_warning));
@@ -86,26 +82,14 @@ public class DataWarningPreferenceControllerTest {
         mWarningPreference.setKey(context.getString(R.string.pk_data_warning));
         preferenceGroup.addPreference(mWarningPreference);
 
-        // Used to set the policy editor values for test purposes.
-        mPolicyEditor = new NetworkPolicyEditor(NetworkPolicyManager.from(context));
-        mNetworkTemplate = DataUsageUtils.getMobileNetworkTemplate(
-                context.getSystemService(TelephonyManager.class),
-                DataUsageUtils.getDefaultSubscriptionId(
-                        context.getSystemService(SubscriptionManager.class)));
-
+        mController.setNetworkPolicyEditor(mPolicyEditor);
+        mController.setNetworkTemplate(mNetworkTemplate);
         controllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
-    }
-
-    @After
-    public void tearDown() {
-        ShadowTelephonyManager.reset();
-        ShadowSubscriptionManager.reset();
-        ShadowNetworkPolicyEditor.reset();
     }
 
     @Test
     public void refreshUi_warningDisabled_summaryEmpty() {
-        mPolicyEditor.setPolicyWarningBytes(mNetworkTemplate, WARNING_DISABLED);
+        when(mPolicyEditor.getPolicyWarningBytes(mNetworkTemplate)).thenReturn(WARNING_DISABLED);
         mController.refreshUi();
 
         assertThat(mWarningPreference.getSummary()).isNull();
@@ -113,7 +97,7 @@ public class DataWarningPreferenceControllerTest {
 
     @Test
     public void refreshUi_warningDisabled_preferenceDisabled() {
-        mPolicyEditor.setPolicyWarningBytes(mNetworkTemplate, WARNING_DISABLED);
+        when(mPolicyEditor.getPolicyWarningBytes(mNetworkTemplate)).thenReturn(WARNING_DISABLED);
         mController.refreshUi();
 
         assertThat(mWarningPreference.isEnabled()).isFalse();
@@ -121,7 +105,7 @@ public class DataWarningPreferenceControllerTest {
 
     @Test
     public void refreshUi_warningDisabled_switchUnchecked() {
-        mPolicyEditor.setPolicyWarningBytes(mNetworkTemplate, WARNING_DISABLED);
+        when(mPolicyEditor.getPolicyWarningBytes(mNetworkTemplate)).thenReturn(WARNING_DISABLED);
         mController.refreshUi();
 
         assertThat(mEnablePreference.isChecked()).isFalse();
@@ -129,7 +113,8 @@ public class DataWarningPreferenceControllerTest {
 
     @Test
     public void refreshUi_warningEnabled_summaryPopulated() {
-        mPolicyEditor.setPolicyWarningBytes(mNetworkTemplate, 3 * BYTES_IN_GIGABYTE);
+        when(mPolicyEditor.getPolicyWarningBytes(mNetworkTemplate)).thenReturn(
+                3 * BYTES_IN_GIGABYTE);
         mController.refreshUi();
 
         assertThat(mWarningPreference.getSummary().toString()).isNotEmpty();
@@ -137,7 +122,8 @@ public class DataWarningPreferenceControllerTest {
 
     @Test
     public void refreshUi_warningEnabled_preferenceEnabled() {
-        mPolicyEditor.setPolicyWarningBytes(mNetworkTemplate, 3 * BYTES_IN_GIGABYTE);
+        when(mPolicyEditor.getPolicyWarningBytes(mNetworkTemplate)).thenReturn(
+                3 * BYTES_IN_GIGABYTE);
         mController.refreshUi();
 
         assertThat(mWarningPreference.isEnabled()).isTrue();
@@ -145,41 +131,33 @@ public class DataWarningPreferenceControllerTest {
 
     @Test
     public void refreshUi_warningEnabled_switchChecked() {
-        mPolicyEditor.setPolicyWarningBytes(mNetworkTemplate, 3 * BYTES_IN_GIGABYTE);
+        when(mPolicyEditor.getPolicyWarningBytes(mNetworkTemplate)).thenReturn(
+                3 * BYTES_IN_GIGABYTE);
         mController.refreshUi();
 
         assertThat(mEnablePreference.isChecked()).isTrue();
     }
 
     @Test
-    public void onPreferenceChanged_toggleFalse_summaryRemoved() {
-        mWarningPreference.setSummary("test summary");
+    public void onPreferenceChanged_toggleFalse_warningBytesDisabled() {
         mEnablePreference.callChangeListener(false);
-
-        assertThat(mWarningPreference.getSummary()).isNull();
+        verify(mPolicyEditor).setPolicyWarningBytes(mNetworkTemplate, WARNING_DISABLED);
     }
 
     @Test
-    public void onPreferenceChanged_toggleFalse_preferenceDisabled() {
-        mWarningPreference.setEnabled(true);
-        mEnablePreference.callChangeListener(false);
-
-        assertThat(mWarningPreference.isEnabled()).isFalse();
-    }
-
-    @Test
-    public void onPreferenceChanged_toggleTrue_summaryAdded() {
-        mWarningPreference.setSummary(null);
+    public void onPreferenceChanged_toggleTrue_warningBytesNotDisabled() {
         mEnablePreference.callChangeListener(true);
 
-        assertThat(mWarningPreference.getSummary().toString()).isNotEmpty();
+        ArgumentCaptor<Long> setWarning = ArgumentCaptor.forClass(Long.class);
+        verify(mPolicyEditor).setPolicyWarningBytes(eq(mNetworkTemplate), setWarning.capture());
+        assertThat(setWarning.getValue()).isNotEqualTo(WARNING_DISABLED);
     }
 
     @Test
-    public void onPreferenceChanged_toggleTrue_preferenceEnabled() {
-        mWarningPreference.setEnabled(false);
-        mEnablePreference.callChangeListener(true);
+    public void onPreferenceClicked_showsPickerDialog() {
+        mWarningPreference.performClick();
 
-        assertThat(mWarningPreference.isEnabled()).isTrue();
+        verify(mFragmentController).showDialog(any(UsageBytesThresholdPickerDialog.class),
+                eq(UsageBytesThresholdPickerDialog.TAG));
     }
 }

@@ -30,6 +30,7 @@ import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.widget.FrameLayout;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.Preference;
@@ -97,7 +98,7 @@ public class SettingsFragmentTest {
 
         assertThat(mFragment.getFragmentManager().findFragmentByTag(
                 SettingsFragment.DIALOG_FRAGMENT_TAG)).isInstanceOf(
-                SettingsEditTextPreferenceDialogFragment.class);
+                EditTextPreferenceDialogFragment.class);
     }
 
     @Test
@@ -129,7 +130,7 @@ public class SettingsFragmentTest {
                 mContext.getString(R.string.tpk_edit_text_preference)).performClick();
         assertThat(mFragment.getFragmentManager().findFragmentByTag(
                 SettingsFragment.DIALOG_FRAGMENT_TAG)).isInstanceOf(
-                SettingsEditTextPreferenceDialogFragment.class);
+                EditTextPreferenceDialogFragment.class);
 
         // Attempt to show another.
         mFragment.getPreferenceScreen().findPreference(
@@ -138,7 +139,7 @@ public class SettingsFragmentTest {
         // Assert only one shown at a time.
         assertThat(mFragment.getFragmentManager().findFragmentByTag(
                 SettingsFragment.DIALOG_FRAGMENT_TAG)).isInstanceOf(
-                SettingsEditTextPreferenceDialogFragment.class);
+                EditTextPreferenceDialogFragment.class);
     }
 
     @Test
@@ -266,6 +267,36 @@ public class SettingsFragmentTest {
         mFragment.onActivityResult(fragmentReqCode, resCode, new Intent());
         verify(callback, never()).processActivityResult(anyInt(), anyInt(),
                 any(Intent.class));
+    }
+
+    @Test
+    public void onActivityCreated_hasAppIconIfRoot() {
+        mFragmentController.setup();
+        TestSettingsFragment otherFragment = new TestSettingsFragment();
+        mFragment.launchFragment(otherFragment);
+
+        FrameLayout actionBarContainer =
+                otherFragment.requireActivity().findViewById(R.id.action_bar);
+
+        assertThat(actionBarContainer.requireViewById(R.id.back_button).getTag(R.id.back_button))
+                .isEqualTo(R.drawable.ic_launcher_settings);
+    }
+
+    @Test
+    public void onActivityCreated_hasBackArrowIconIfNotRoot() {
+        mFragmentController.setup();
+
+        TestSettingsFragment otherFragment1 = new TestSettingsFragment();
+        mFragment.launchFragment(otherFragment1);
+
+        TestSettingsFragment otherFragment2 = new TestSettingsFragment();
+        mFragment.launchFragment(otherFragment2);
+
+        FrameLayout actionBarContainer =
+                otherFragment2.requireActivity().findViewById(R.id.action_bar);
+
+        assertThat(actionBarContainer.requireViewById(R.id.back_button).getTag(R.id.back_button))
+                .isEqualTo(R.drawable.ic_arrow_back);
     }
 
     /** Concrete {@link SettingsFragment} for testing. */

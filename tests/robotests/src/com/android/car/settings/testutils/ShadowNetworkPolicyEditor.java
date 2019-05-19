@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The Android Open Source Project
+ * Copyright (C) 2011 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,8 @@
 
 package com.android.car.settings.testutils;
 
-import static android.net.NetworkPolicy.LIMIT_DISABLED;
-import static android.net.NetworkPolicy.WARNING_DISABLED;
-
-import static org.mockito.Mockito.mock;
-
 import android.net.NetworkPolicy;
 import android.net.NetworkTemplate;
-import android.util.RecurrenceRule;
 
 import com.android.settingslib.NetworkPolicyEditor;
 
@@ -31,50 +25,22 @@ import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
 import org.robolectric.annotation.Resetter;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Implements(NetworkPolicyEditor.class)
 public class ShadowNetworkPolicyEditor {
 
-    private static final Map<String, Long> sWarningBytesMap = new HashMap<>();
-    private static final Map<String, Long> sLimitBytesMap = new HashMap<>();
+    private static NetworkPolicy sNetworkPolicy;
 
     @Implementation
-    protected long getPolicyWarningBytes(NetworkTemplate template) {
-        return sWarningBytesMap.getOrDefault(template.getSubscriberId(), WARNING_DISABLED);
+    public NetworkPolicy getPolicy(NetworkTemplate template) {
+        return sNetworkPolicy;
     }
 
-    @Implementation
-    protected void setPolicyWarningBytes(NetworkTemplate template, long warningBytes) {
-        sWarningBytesMap.put(template.getSubscriberId(), warningBytes);
-    }
-
-    @Implementation
-    protected long getPolicyLimitBytes(NetworkTemplate template) {
-        return sLimitBytesMap.getOrDefault(template.getSubscriberId(), LIMIT_DISABLED);
-    }
-
-    @Implementation
-    protected void setPolicyLimitBytes(NetworkTemplate template, long limitBytes) {
-        sLimitBytesMap.put(template.getSubscriberId(), limitBytes);
-    }
-
-    @Implementation
-    protected NetworkPolicy getPolicy(NetworkTemplate template) {
-        NetworkPolicy policy = new NetworkPolicy(template, mock(RecurrenceRule.class),
-                getPolicyWarningBytes(template), getPolicyLimitBytes(template), 0, 0, 0, false,
-                false);
-        if (sWarningBytesMap.containsKey(template.getSubscriberId()) || sLimitBytesMap.containsKey(
-                template.getSubscriberId())) {
-            return policy;
-        }
-        return null;
+    public static void setNetworkPolicy(NetworkPolicy networkPolicy) {
+        sNetworkPolicy = networkPolicy;
     }
 
     @Resetter
     public static void reset() {
-        sWarningBytesMap.clear();
-        sLimitBytesMap.clear();
+        sNetworkPolicy = null;
     }
 }

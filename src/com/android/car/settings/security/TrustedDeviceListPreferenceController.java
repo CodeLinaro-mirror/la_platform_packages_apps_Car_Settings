@@ -20,12 +20,11 @@ import android.annotation.Nullable;
 import android.app.admin.DevicePolicyManager;
 import android.bluetooth.BluetoothDevice;
 import android.car.Car;
-import android.car.CarNotConnectedException;
 import android.car.drivingstate.CarUxRestrictions;
 import android.car.trust.CarTrustAgentEnrollmentManager;
+import android.car.trust.TrustedDeviceInfo;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
-import android.content.SharedPreferences;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
@@ -36,7 +35,6 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceController;
 import com.android.internal.widget.LockPatternUtils;
-import com.android.settingslib.utils.ThreadUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +44,6 @@ import java.util.List;
  */
 public class TrustedDeviceListPreferenceController extends PreferenceController<PreferenceGroup> {
     private static final Logger LOG = new Logger(TrustedDeviceListPreferenceController.class);
-    private final SharedPreferences mPrefs;
     private final CarUserManagerHelper mCarUserManagerHelper;
     private final LockPatternUtils mLockPatternUtils;
     private final Car mCar;
@@ -69,12 +66,8 @@ public class TrustedDeviceListPreferenceController extends PreferenceController<
                 }
 
                 @Override
-                public void onTrustRevoked(long handle, boolean success) {
-                    if (success) {
-                        ThreadUtils.postOnMainThread(
-                                () -> mPrefs.edit().remove(String.valueOf(handle)).commit());
-                        refreshUi();
-                    }
+                public void onEscrowTokenRemoved(long handle) {
+                    refreshUi();
                 }
 
                 @Override
@@ -89,11 +82,8 @@ public class TrustedDeviceListPreferenceController extends PreferenceController<
     final ConfirmRemoveDeviceDialog.ConfirmRemoveDeviceListener mConfirmRemoveDeviceListener =
             new ConfirmRemoveDeviceDialog.ConfirmRemoveDeviceListener() {
                 public void onConfirmRemoveDevice(long handle) {
-                    try {
-                        mCarTrustAgentEnrollmentManager.revokeTrust(handle);
-                    } catch (CarNotConnectedException e) {
-                        LOG.e(e.getMessage(), e);
-                    }
+                    mCarTrustAgentEnrollmentManager.removeEscrowToken(handle,
+                            mCarUserManagerHelper.getCurrentProcessUserId());
                 }
             };
 
@@ -102,16 +92,10 @@ public class TrustedDeviceListPreferenceController extends PreferenceController<
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mCarUserManagerHelper = new CarUserManagerHelper(context);
         mLockPatternUtils = new LockPatternUtils(context);
-        mPrefs = context.getSharedPreferences(
-                context.getString(R.string.trusted_device_preference_file_key),
-                Context.MODE_PRIVATE);
         mCar = Car.createCar(context);
-        try {
-            mCarTrustAgentEnrollmentManager = (CarTrustAgentEnrollmentManager) mCar.getCarManager(
-                    Car.CAR_TRUST_AGENT_ENROLLMENT_SERVICE);
-        } catch (CarNotConnectedException e) {
-            LOG.e("failed to get car manager", e);
-        }
+        mCarTrustAgentEnrollmentManager = (CarTrustAgentEnrollmentManager) mCar.getCarManager(
+                Car.CAR_TRUST_AGENT_ENROLLMENT_SERVICE);
+
     }
 
     @Override
@@ -152,20 +136,13 @@ public class TrustedDeviceListPreferenceController extends PreferenceController<
 
     @Override
     protected void onStartInternal() {
-        try {
-            mCarTrustAgentEnrollmentManager.setEnrollmentCallback(mCarTrustAgentEnrollmentCallback);
-        } catch (CarNotConnectedException e) {
-            LOG.e("failed to set enrollment callback", e);
-        }
+        mCarTrustAgentEnrollmentManager.setEnrollmentCallback(mCarTrustAgentEnrollmentCallback);
+
     }
 
     @Override
     protected void onStopInternal() {
-        try {
-            mCarTrustAgentEnrollmentManager.setEnrollmentCallback(null);
-        } catch (CarNotConnectedException e) {
-            LOG.e("failed to reset enrollment callback", e);
-        }
+        mCarTrustAgentEnrollmentManager.setEnrollmentCallback(null);
     }
 
     /**
@@ -189,32 +166,24 @@ public class TrustedDeviceListPreferenceController extends PreferenceController<
 
     private List<Preference> createTrustDevicePreferenceList() {
         List<Preference> trustedDevicesList = new ArrayList<>();
-        List<Integer> handles = new ArrayList<>();
-        try {
-            handles = mCarTrustAgentEnrollmentManager.getEnrollmentHandlesForUser(
-                    mCarUserManagerHelper.getCurrentProcessUserId());
-        } catch (CarNotConnectedException e) {
-            LOG.e(e.getMessage(), e);
-        }
-        for (Integer handle : handles) {
-            String res = mPrefs.getString(String.valueOf(handle), null);
-            if (res != null) {
-                trustedDevicesList.add(createTrustedDevicePreference(res, handle));
-            } else {
-                LOG.e("Can not find device name for handle: " + handle);
-            }
+        List<TrustedDeviceInfo> devices =
+                mCarTrustAgentEnrollmentManager.getEnrolledDeviceInfoForUser(
+                        mCarUserManagerHelper.getCurrentProcessUserId());
+        for (TrustedDeviceInfo deviceInfo : devices) {
+            trustedDevicesList.add(
+                    createTrustedDevicePreference(deviceInfo.getName(), deviceInfo.getHandle()));
         }
         return trustedDevicesList;
     }
 
-    private Preference createTrustedDevicePreference(String deviceName, long deviceId) {
+    private Preference createTrustedDevicePreference(String deviceName, long handle) {
         Preference preference = new Preference(getContext());
         preference.setIcon(R.drawable.ic_settings_bluetooth);
         preference.setTitle(deviceName);
-        preference.setKey(String.valueOf(deviceId));
+        preference.setKey(String.valueOf(handle));
         preference.setOnPreferenceClickListener((Preference pref) -> {
             ConfirmRemoveDeviceDialog dialog = ConfirmRemoveDeviceDialog.newInstance(deviceName,
-                    deviceId);
+                    handle);
             dialog.setConfirmRemoveDeviceListener(mConfirmRemoveDeviceListener);
             getFragmentController().showDialog(dialog, ConfirmRemoveDeviceDialog.TAG);
             return true;
