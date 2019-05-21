@@ -34,7 +34,40 @@
     <string name="mobile_network_toggle_title" msgid="3515647310810280063">"मोबाइल डेटा"</string>
     <string name="mobile_network_toggle_summary" msgid="8698267487987697148">"मोबाइल नेटवर्क प्रयोग गरी डेटामाथि पहुँच राख्नु…"</string>
     <string name="confirm_mobile_data_disable" msgid="826493998804496639">"मोबाइल डेटा निष्क्रिय पार्ने हो?"</string>
+    <!-- no translation found for sim_selection_required_pref (6599562910262785784) -->
+    <skip />
+    <!-- no translation found for sim_change_data_title (6677115745127365131) -->
+    <skip />
+    <!-- no translation found for sim_change_data_message (4669775284395549069) -->
+    <skip />
+    <!-- no translation found for sim_change_data_ok (2348804996223271081) -->
+    <skip />
+    <!-- no translation found for roaming_title (6218635014519017734) -->
+    <skip />
+    <!-- no translation found for roaming_summary (7476127740259728901) -->
+    <skip />
+    <string name="roaming_alert_title" msgid="4433901635766775763">"डेटा रोमिङ गर्ने अनुमति दिने हो?"</string>
+    <string name="roaming_warning" msgid="5313281900566657209">"तपाईंले चर्को शुल्क तिर्नु पर्ने हुन सक्छ।"</string>
     <string name="data_usage_settings" msgid="7877132994777987848">"डेटाको प्रयोग"</string>
+    <string name="data_usage_title" msgid="2923515974389203812">"प्राथमिक डेटा"</string>
+    <string name="data_used_formatted" msgid="6684557577780068339">"<xliff:g id="ID_1">^1</xliff:g><xliff:g id="ID_2">^2</xliff:g> प्रयोग गरियो"</string>
+    <string name="cell_data_warning" msgid="8997739664336571149">"डेटासम्बन्धी चेतावनी: <xliff:g id="ID_1">^1</xliff:g>"</string>
+    <string name="cell_data_limit" msgid="6862164869877993009">"डेटाको सीमा: <xliff:g id="ID_1">^1</xliff:g>"</string>
+    <string name="cell_data_warning_and_limit" msgid="5003954080814312475">"डेटासम्बन्धी चेतावनी: <xliff:g id="ID_1">^1</xliff:g> / डेटाको सीमा: <xliff:g id="ID_2">^2</xliff:g>"</string>
+    <plurals name="billing_cycle_days_left" formatted="false" msgid="9163059632851951402">
+      <item quantity="other">%d दिन बाँकी</item>
+      <item quantity="one">%d दिन बाँकी</item>
+    </plurals>
+    <string name="billing_cycle_none_left" msgid="3499893148398931302">"समय बाँकी छैन"</string>
+    <string name="billing_cycle_less_than_one_day_left" msgid="8121013296375203759">"१ दिनभन्दा कम समय बाँकी"</string>
+    <string name="carrier_and_update_text" msgid="4351043160977741244">"<xliff:g id="ID_1">^1</xliff:g> ले <xliff:g id="ID_2">^2</xliff:g> अघि अद्यावधिक गरेको"</string>
+    <string name="no_carrier_update_text" msgid="4396108017586427442">"<xliff:g id="ID_1">^2</xliff:g> अघि अद्यावधिक गरिएको"</string>
+    <string name="carrier_and_update_now_text" msgid="9058821833613481573">"<xliff:g id="ID_1">^1</xliff:g> ले अहिले भर्खरै अद्यावधिक गरेको"</string>
+    <string name="no_carrier_update_now_text" msgid="5953142546373783189">"अहिले भर्खरै अद्यावधिक गरिएको"</string>
+    <string name="launch_manage_plan_text" msgid="906657488611815787">"योजना हेर्नुहोस्"</string>
+    <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"प्रयोगको चक्र रिसेट गर्ने मिति"</string>
+    <string name="cycle_reset_day_of_month_picker_subtitle" msgid="5361061448258189846">"प्रत्येक महिनाको निम्न मिति:"</string>
+    <string name="cycle_reset_day_of_month_picker_positive_button" msgid="6919858010423269305">"सेट गर्नुहोस्"</string>
     <string name="data_warning_limit_title" msgid="4950868241810828601">"डेटासम्बन्धी चेतावनी तथा सीमा"</string>
     <string name="app_usage_cycle" msgid="8445927080245880296">"अनुप्रयोगको डेटा प्रयोगको चक्र"</string>
     <string name="set_data_warning" msgid="6628236612886588097">"डेटासम्बन्धी चेतावनी सेट गर्नु"</string>
@@ -43,6 +76,9 @@
     <string name="data_limit" msgid="227338836292511425">"डेटाको सीमा"</string>
     <string name="data_usage_limit_dialog_title" msgid="1864716658371721883">"डेटाको प्रयोग सीमित गर्दै"</string>
     <string name="data_usage_limit_dialog_mobile" msgid="3633960011913085089">"तपाईंले सेट गर्नुभएको अधिकतम डेटा प्रयोगको सीमामा पुगेपछि तपाईंको सवारी साधनको मुख्य भागले मोबाइल डेटालाई निष्क्रिय पार्ने छ।\n\nतपाईंको सवारी साधनको मुख्य भागले र तपाईंको सेवा प्रदायकले फरक तरिकाले डेटा प्रयोगको मापन गर्ने हुनाले विवेकपूर्ण तरिकाले यसको सीमा सेट गर्ने कुराबारे विचार गर्नुहोस्।"</string>
+    <string name="data_usage_warning_editor_title" msgid="2041517150169038813">"डेटा उपयोगसम्बन्धी चेतावनी सेट गर्नुहोस्"</string>
+    <string name="data_usage_limit_editor_title" msgid="133468242379286689">"डेटा उपयोगसम्बन्धी सीमा सेट गर्नुहोस्"</string>
+    <string name="usage_bytes_threshold_picker_positive_button" msgid="4625479840977965519">"सेट गर्नुहोस्"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi-Fi"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Wi-Fi सक्रिय गरिँदै…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Wi-Fi निष्क्रिय पारिँदै…"</string>
@@ -93,6 +129,19 @@
     <string name="wifi_cellular_fallback_title" msgid="8322675436784870862">"Wi-Fi  बाट बदलेर स्वतः मोबाइल डेटा प्रयोग गर्नुहोस्"</string>
     <string name="wifi_cellular_fallback_summary" msgid="2433848528924203758">"Wi-Fi मार्फत इन्टरनेट उपलब्ध नभएको बेलामा मोबाइल डेटाको प्रयोग गर्नुहोस्। डेटा प्रयोगको शुल्क लाग्न सक्छ।"</string>
     <string name="learn_more" msgid="8214605928933358604">"थप जान्नुहोस्"</string>
+    <!-- no translation found for wifi_hotspot_name_title (8844779338692535356) -->
+    <skip />
+    <!-- no translation found for wifi_hotspot_name_summary_connecting (5262510450498600038) -->
+    <skip />
+    <!-- no translation found for wifi_hotspot_name_summary_connected (7421325340822195506) -->
+    <skip />
+    <!-- no translation found for wifi_hotspot_password_title (4103948315849351988) -->
+    <skip />
+    <!-- no translation found for wifi_hotspot_ap_band_title (7685279281668988593) -->
+    <skip />
+    <string name="tether_settings_title_all" msgid="4663704772599383169">"हटस्पट तथा टेदरिङ"</string>
+    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Wi‑Fi हटस्पट स्वतः निष्क्रिय पार्नुहोस्"</string>
+    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"कुनै पनि यन्त्र नजोडिँदा Wi‑Fi हटस्पट स्वतः निष्क्रिय हुने छ"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"ब्लुटुथ"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"बेनामी यन्त्र"</string>
     <string name="bluetooth_paired_devices" msgid="6463199569164652410">"जोडा बनाइएका यन्त्रहरू"</string>
@@ -146,6 +195,8 @@
     <string name="apps_and_notifications_settings" msgid="8704585874333781975">"अनुप्रयोग तथा सूचनाहरू"</string>
     <string name="all_applications" msgid="7798210477486822168">"सबै अनुप्रयोगहरू देखाउनुहोस्"</string>
     <string name="default_applications" msgid="1558183275638697087">"पूर्वनिर्धारित अनुप्रयोगहरू"</string>
+    <string name="app_permissions" msgid="32799922508313948">"अनुप्रयोगसम्बन्धी अनुमति"</string>
+    <string name="app_permissions_summary" msgid="1842858532315056367">"<xliff:g id="APPS">%1$s</xliff:g> प्रयोग गरिरहेका अनुप्रयोगहरू"</string>
     <string name="applications_settings" msgid="794261395191035632">"अनुप्रयोगसम्बन्धी जानकारी"</string>
     <string name="force_stop" msgid="2153183697014720520">"जबर्जस्ती रोक्नुहोस्"</string>
     <string name="force_stop_dialog_title" msgid="3342850939200388694">"जबरजस्ती रोक्ने हो?"</string>
@@ -156,6 +207,7 @@
     <string name="app_disable_dialog_text" msgid="7731155411006654025">"तपाईंले यो अनुप्रयोगलाई असक्षम पार्नुभयो भने Android र अन्य अनुप्रयोगहरूले अब उप्रान्त अपेक्षाअनुसार कार्य नगर्न सक्छन्।"</string>
     <string name="app_disable_dialog_positive" msgid="4448684722791563349">"अनुप्रयोगलाई असक्षम पार्नुहोस्"</string>
     <string name="permissions_label" msgid="2701446753515612685">"अनुमतिहरू"</string>
+    <string name="notifications_label" msgid="6586089149665170731">"सूचनाहरू"</string>
     <string name="application_version_label" msgid="8556889839783311649">"संस्करण: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"कुनै पनि अनुमति प्रदान गरिएको छैन"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"कुनै पनि अनुमतिका लागि अनुरोध गरिएको छैन"</string>
@@ -172,14 +224,14 @@
     <string name="assist_access_context_summary" msgid="2374281280599443774">"सहायक अनुप्रयोगलाई स्क्रिनमा रहेको कुनै सामग्रीमाथि पाठका रूपमा पहुँच राख्ने अनुमति दिनुहोस्"</string>
     <string name="assist_access_screenshot_title" msgid="2855956879971465044">"स्क्रिसट प्रयोग गर्नुहोस्"</string>
     <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"सहायक अनुप्रयोगलाई स्क्रिनमा रहेको कुनै छविमाथि पहुँच राख्ने अनुमति दिनुहोस्"</string>
-    <!-- no translation found for voice_input_settings_title (3238707827815647526) -->
-    <skip />
+    <string name="voice_input_settings_title" msgid="3238707827815647526">"आवाज संलग्न इनपुट"</string>
     <string name="autofill_settings_title" msgid="1188754272680049972">"स्वतः भरण सेवा"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"कुनै पनि होइन"</string>
     <string name="default_app_selected_app" msgid="5289396663745484773">"चयन गरिएको"</string>
     <string name="assistant_security_warning" msgid="1844807956967428012">"सहायकले तपाईंको स्क्रिनमा देख्न सकिने वा अनुप्रयोगहरूभित्र पहुँच राख्न सकिने जानकारीलगायत तपाईंको प्रणालीमा प्रयोगमा रहेका अनुप्रयोगहरूबारे जानकारी पढ्न सक्ने छ।"</string>
     <string name="autofill_confirmation_message" msgid="1832984461556991378">"&lt;b&gt;तपाईं यो अनुप्रयोगमाथि भरोसा गर्नुहुन्छ भन्ने कुरा सुनिश्चित गर्नुहोस्&lt;/b&gt; &lt;br/&gt; &lt;br/&gt; &lt;xliff:g id=app_name example=Google Autofill&gt;%1$s&lt;/xliff:g&gt; यस अनुप्रयोगले स्वतः भर्न सकिने कुराहरूको निर्धारण गर्न तपाईंको स्क्रिनमा भएका वस्तुहरूको प्रयोग गर्छ।"</string>
     <string name="autofill_add_service" msgid="6413893366443609951">"सेवा थप्नुहोस्"</string>
+    <string name="special_access" msgid="5730278220917123811">"विशेष अनुप्रयोगमाथिको पहुँच"</string>
     <string name="location_settings_title" msgid="901334356682423679">"स्थान"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"हालका स्थानसम्बन्धी अनुरोधहरू"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"हालसालैका स्थानसम्बन्धी कुनै पनि अनुरोध छैन"</string>
@@ -218,6 +270,7 @@
     <string name="webview_license_title" msgid="6442372337052056463">"प्रणालीका WebView इजाजतपत्रहरू"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"वालपेपरहरू"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"स्याटेलाइटमार्फत इमेजरी प्रदायकहरू:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
+    <string name="regulatory_info_text" msgid="8890339124198005428"></string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"तेस्रो पक्षीय इजाजतपत्रहरू"</string>
     <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"इजाजतपत्रहरू लोड गर्दा समस्या भयो।"</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"लोड गर्दै…"</string>
@@ -320,6 +373,14 @@
     <string name="edit_user_name_title" msgid="6890782937520262478">"प्रयोगकर्ताको नाम सम्पादन गर्नु…"</string>
     <string name="users_list_title" msgid="770764290290240909">"प्रयोगकर्ताहरू"</string>
     <string name="user_details_admin_title" msgid="3530292857178371891">"%1$s लाई अनुमति प्रदान गरियो"</string>
+    <string name="storage_settings_title" msgid="8957054192781341797">"भण्डारण"</string>
+    <string name="storage_music_audio" msgid="7827147379976134040">"सङ्गीत तथा अडियो"</string>
+    <string name="storage_other_apps" msgid="945509804756782640">"अन्य अनुप्रयोगहरू"</string>
+    <string name="storage_files" msgid="6382081694781340364">"फाइलहरू"</string>
+    <string name="storage_system" msgid="1271345630248014010">"प्रणाली"</string>
+    <string name="storage_detail_dialog_system" msgid="796365720531622361">"प्रणालीमा Android को संस्करण <xliff:g id="VERSION">%s</xliff:g> चलाउन प्रयोग भएका फाइलहरू समावेश छन्"</string>
+    <string name="storage_audio_files_title" msgid="5183170457027181700">"अडियो फाइलहरू"</string>
+    <string name="memory_calculating_size" msgid="1672238502950390033">"गणना गर्दै…"</string>
     <string name="accounts_settings_title" msgid="436190037084293471">"खाताहरू"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"खाता थप्नुहोस्"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"कुनै पनि खाता थपिएन"</string>
@@ -442,6 +503,8 @@
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"स्क्रिन लकका विकल्पहरू"</string>
     <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> दिनअघि"</string>
     <string name="add_device_title" msgid="8452168024017866232">"विश्वसनीय यन्त्र थप्नुहोस्"</string>
+    <!-- no translation found for add_device_summary (5368217520710573302) -->
+    <skip />
     <string name="trusted_device" msgid="5637378361866787603">"विश्वसनीय यन्त्रहरू"</string>
     <plurals name="trusted_device_subtitle" formatted="false" msgid="462041049834264945">
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> यन्त्रहरू</item>
@@ -456,9 +519,10 @@
     <string name="trusted_device_select_device" msgid="198902765179270739">"२. यन्त्रहरूको जोडा बनाउन आफ्नो फोनमा <xliff:g id="CAR_NAME">%1$s</xliff:g> चयन गर्नुहोस्"</string>
     <string name="trusted_device_safety_alert" msgid="8937542424166378247">"Smart Lock ले यस यन्त्रका सुरक्षासम्बन्धी सुविधाहरू पत्ता लगाउन सक्दैन। तपाईंको कारलाई सुरक्षित राख्न मद्दत गर्नका लागि विश्वसनीय यन्त्रले तपाईंले अनलक गरेपछि मात्र तपाईंको कार अनलक अवस्थामा राख्न सक्ने छ। तपाईंको विश्वसनीय यन्त्र जोसुकैका हातमा भए तापनि त्यसले तपाईंको कार वरपर हुँदा त्यसलाई अनलक अवस्थामा राख्न सक्छ।"</string>
     <string name="trusted_device_pairing_code_dialog_title" msgid="6551880047490332731">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> लाई विश्वसनीय यन्त्रका रूपमा थप्नुहोस्"</string>
-    <string name="trusted_device_success_enrollment_toast" msgid="3275482710090416690">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> लाई सफलतापूर्वक कुनै विश्वसनीय यन्त्रका रूपमा थपियो"</string>
+    <string name="trusted_device_success_enrollment_toast" msgid="1238468775285575827">"फोन सफलतापूर्वक दर्ता गरिएको छ"</string>
     <string name="trusted_device_fail_enrollment_toast" msgid="6801324174861209092">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> दर्ता गर्न सकिएन"</string>
     <string name="trusted_device_set_authentication_reminder" msgid="5947077589994822305">"कुनै विश्वसनीय यन्त्र थप्दा तपाईंले यसपछिको चरणमा प्रमाणीकरण विधि सेट गर्नु पर्छ। तपाईंसँग आफ्नो विश्वसनीय यन्त्र छैन भने तपाईंको प्रोफाइलमाथि पहुँच राख्न प्रमाणीकरणको आवश्यकता पर्ने छ।"</string>
+    <string name="trusted_device_disconnected_toast" msgid="2541862946536880255">"यन्त्र विच्छेद गरियो।"</string>
     <string name="forget" msgid="3971143908183848527">"बिर्सनुहोस्"</string>
     <string name="connect" msgid="5861699594602380150">"जडान गर्नुहोस्"</string>
     <string name="disconnect" msgid="6140789953324820336">"विच्छेद गर्नुहोस्"</string>

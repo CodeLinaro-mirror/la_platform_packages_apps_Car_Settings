@@ -25,13 +25,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/usage_cycler_reset_day_of_month_picker_margin_vertical"/>
+        app:layout_constraintGuide_begin="@dimen/usage_pickers_margin_vertical"/>
 
     <TextView
         android:id="@+id/subtitle_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/usage_cycler_reset_day_of_month_picker_text_margin_end"
+        android:layout_marginEnd="@dimen/usage_pickers_text_margin_end"
         android:text="@string/cycle_reset_day_of_month_picker_subtitle"
         android:textAppearance="?android:attr/textAppearanceLarge"
         app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
@@ -84,5 +84,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="@dimen/usage_cycler_reset_day_of_month_picker_margin_vertical"/>
+        app:layout_constraintGuide_end="@dimen/usage_pickers_margin_vertical"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
