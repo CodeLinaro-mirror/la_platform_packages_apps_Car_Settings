@@ -41,6 +41,8 @@ public class ShadowCarWifiManager {
     private static CarWifiManager sInstance;
     private static int sCurrentState = STATE_UNKNOWN;
     private static WifiConfiguration sWifiConfiguration = new WifiConfiguration();
+    private static boolean sIsDualModeSupported = true;
+    private static boolean sIsDualBandSupported = true;
 
     public static void setInstance(CarWifiManager wifiManager) {
         sInstance = wifiManager;
@@ -51,6 +53,8 @@ public class ShadowCarWifiManager {
         sInstance = null;
         sWifiConfiguration = new WifiConfiguration();
         sCurrentState = STATE_UNKNOWN;
+        sIsDualModeSupported = true;
+        sIsDualBandSupported = true;
     }
 
     @Implementation
@@ -119,6 +123,29 @@ public class ShadowCarWifiManager {
     @Implementation
     public void connectToPublicWifi(AccessPoint accessPoint, WifiManager.ActionListener listener) {
         sInstance.connectToPublicWifi(accessPoint, listener);
+    }
+
+    @Implementation
+    protected boolean isDualModeSupported() {
+        return sIsDualModeSupported;
+    }
+
+    @Implementation
+    protected String getCountryCode() {
+        return "1";
+    }
+
+    @Implementation
+    protected boolean isDualBandSupported() {
+        return sIsDualBandSupported;
+    }
+
+    public static void setIsDualModeSupported(boolean supported) {
+        sIsDualModeSupported = supported;
+    }
+
+    public static void setIsDualBandSupported(boolean supported) {
+        sIsDualBandSupported = supported;
     }
 
     public static int getCurrentState() {
