@@ -30,6 +30,11 @@
         android:title="@string/notification_access_title"
         settings:controller="com.android.car.settings.common.DefaultRestrictionsPreferenceController"/>
     <Preference
+        android:fragment="com.android.car.settings.applications.specialaccess.PremiumSmsAccessFragment"
+        android:key="@string/pk_premium_sms_access_entry"
+        android:title="@string/premium_sms_access_title"
+        settings:controller="com.android.car.settings.applications.specialaccess.PremiumSmsAccessEntryPreferenceController"/>
+    <Preference
         android:fragment="com.android.car.settings.applications.specialaccess.UsageAccessFragment"
         android:key="@string/pk_usage_access_entry"
         android:title="@string/usage_access_title"
@@ -39,4 +44,8 @@
         android:key="@string/pk_wifi_control_entry"
         android:title="@string/wifi_control_title"
         settings:controller="com.android.car.settings.common.DefaultRestrictionsPreferenceController"/>
+    <Preference
+        android:key="@string/pk_more_special_access"
+        android:title="@string/more_special_access_title"
+        settings:controller="com.android.car.settings.applications.specialaccess.MoreSpecialAccessPreferenceController"/>
 </PreferenceScreen>
