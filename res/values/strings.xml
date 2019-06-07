@@ -176,14 +176,16 @@
     <string name="wifi_failed_forget_message">Failed to forget network</string>
     <!-- Failured notification for connect -->
     <string name="wifi_failed_connect_message">Failed to connect to network</string>
-    <!-- Button message shown on the button adding manual setting. Used in Wifi Setup For Setup Wizard with XL screen. -->
+    <!-- Button message shown on the button adding manual setting. -->
     <string name="wifi_setup_add_network">Add network</string>
-    <!-- Button label to connect to a Wi-Fi network. Used in SetupWizard for XLarge screen [CHAR LIMIT=10] -->
+    <!-- Button label to connect to a Wi-Fi network. [CHAR LIMIT=10] -->
     <string name="wifi_setup_connect">Connect</string>
     <!-- Label for the password of the secured network -->
     <string name="wifi_password">Password</string>
     <!-- Label for the check box to show password -->
     <string name="wifi_show_password">Show password</string>
+    <!-- Toast message when trying to connect to a hidden wifi network without a network name. [CHAR LIMIT=NONE] -->
+    <string name="wifi_no_network_name">Please enter a network name</string>
     <!-- Label for the SSID of the network -->
     <string name="wifi_ssid">Network name</string>
     <!-- Hint for a text field to enter the SSID of a hidden wifi network. [CHAR LIMIT=35] -->
@@ -268,14 +270,42 @@
     <string name="wifi_hotspot_name_summary_connected">Other devices can connect to <xliff:g id="wifi_hotspot_name">%1$s</xliff:g></string>
     <!-- Label for Wifi hotspot password. [CHAR LIMIT=30]-->
     <string name="wifi_hotspot_password_title">Hotspot password</string>
+    <!-- Label for Wifi security type title [CHAR LIMIT=15]-->
+    <string name="wifi_hotspot_security_title">Security</string>
+    <!-- Label for Wifi security type WPA2-Personal [CHAR LIMIT=25]-->
+    <string name="wifi_hotspot_wpa2_personal">WPA2-Personal</string>
+    <!-- Label for Wifi security type WPA2-Personal [CHAR LIMIT=25]-->
+    <string name="wifi_hotspot_security_none">None</string>
     <!-- Label for Wifi hotspot AP Band. [CHAR LIMIT=15]-->
     <string name="wifi_hotspot_ap_band_title">AP Band</string>
+    <!-- Label for the RadioGroup to choose wifi ap band [CHAR LIMIT=25]-->
+    <string name="wifi_ap_band_config">Select AP Band</string>
+    <!-- Label for the radio button to choose wifi ap channel automatically [CHAR LIMIT=10]-->
+    <string name="wifi_ap_choose_auto">Auto</string>
+    <!-- Label for the radio button to choose wifi ap 2.4 GHz band [CHAR LIMIT=25]-->
+    <string name="wifi_ap_choose_2G">2.4 GHz Band</string>
+    <!-- Label for the radio button to only choose wifi ap 5GHz band [CHAR LIMIT=25]-->
+    <string name="wifi_ap_choose_5G">5.0 GHz Band</string>
+    <!-- Label for the radio button to prefer 5GHz wifi ap band  [CHAR LIMIT=80]-->
+    <string name="wifi_ap_prefer_5G">5.0 GHz Band preferred</string>
+    <!-- Label for adding to the list of selected bands when 2.4 GHz is selected [CHAR LIMIT=15]-->
+    <string name="wifi_ap_2G">2.4 GHz</string>
+    <!-- Label for adding to the list of selected bands when 5.0 GHz is selected [CHAR LIMIT=15]-->
+    <string name="wifi_ap_5G">5.0 GHz</string>
+    <!-- Label that is shown as a dialog summary informing users they must pick at LEAST one band for their hotspot [CHAR LIMIT=25]-->
+    <string name="wifi_ap_band_select_one">Choose at least one band for Wi\u2011Fi hotspot:</string>
     <!-- Tethering controls, item title to go into the tethering settings when USB, Bluetooth and Wifi tethering are available [CHAR LIMIT=60]-->
     <string name="tether_settings_title_all">Hotspot &amp; tethering</string>
     <!-- Title for the toggle to turn off hotspot automatically [CHAR LIMIT=50]-->
     <string name="wifi_hotspot_auto_off_title">Turn off hotspot automatically</string>
     <!-- Summary for the toggle to turn off hotspot automatically [CHAR LIMIT=100]-->
     <string name="wifi_hotspot_auto_off_summary">Wi\u2011Fi hotspot will turn off if no devices are connected</string>
+    <!-- This string asks the user whether or not to allow an app to enable WiFi. [CHAR LIMIT=NONE] -->
+    <string name="wifi_ask_enable"><xliff:g id="requester" example="FancyApp">%s</xliff:g> wants to turn on Wi-Fi</string>
+    <!-- This string asks the user whether or not to allow an app to disable WiFi. [CHAR LIMIT=NONE] -->
+    <string name="wifi_ask_disable"><xliff:g id="requester" example="FancyApp">%s</xliff:g> wants to turn off Wi-Fi</string>
+    <!-- Summary text when Wi-Fi has error -->
+    <string name="wifi_error">Error</string>
 
     <!-- Bluetooth settings --><skip/>
     <!-- Title of Bluetooth settings pages. [CHAR LIMIT=30] -->
@@ -310,6 +340,18 @@
     <string name="bluetooth_profiles">Profiles</string>
     <!-- Title for BT error dialogs. -->
     <string name="bluetooth_error_title"></string>
+    <!-- Strings for msg to display to user while bluetooth is turning on [CHAR LIMIT=60] -->
+    <string name="bluetooth_turning_on">"Turning Bluetooth on\u2026"</string>
+    <!-- Strings for msg to display to user while bluetooth is turning off [CHAR LIMIT=60] -->
+    <string name="bluetooth_turning_off">"Turning Bluetooth off\u2026"</string>
+    <!-- This string asks the user whether or not to allow an app to enable bluetooth. [CHAR LIMIT=100] -->
+    <string name="bluetooth_ask_enablement"><xliff:g id="app_name" example="FancyApp">%1$s</xliff:g> wants to turn on Bluetooth</string>
+    <!-- This string asks the user whether or not to allow an app to disable bluetooth. [CHAR LIMIT=100] -->
+    <string name="bluetooth_ask_disablement"><xliff:g id="app_name" example="FancyApp">%1$s</xliff:g> wants to turn off Bluetooth</string>
+    <!-- This string asks the user whether or not to allow an app to enable bluetooth. [CHAR LIMIT=100] -->
+    <string name="bluetooth_ask_enablement_no_name">An app wants to turn on Bluetooth</string>
+    <!-- This string asks the user whether or not to allow an app to disable bluetooth. [CHAR LIMIT=100] -->
+    <string name="bluetooth_ask_disablement_no_name">An app wants to turn off Bluetooth</string>
 
     <!-- Bluetooth pairing --><skip/>
     <!-- Notification ticker text (shown in the status bar) when a Bluetooth device wants to pair with us -->
@@ -338,6 +380,8 @@
     <string name="bluetooth_notif_title">Pairing request</string>
     <!-- Notification message when a Bluetooth device wants to pair with us -->
     <string name="bluetooth_notif_message">Tap to pair with <xliff:g id="device_name">%1$s</xliff:g>.</string>
+    <!-- Title for page which supports selecting a Bluetooth device from other applications. [CHAR_LIMIT=40]-->
+    <string name="bluetooth_device_picker">Choose Bluetooth device</string>
 
     <!-- Language settings screen heading. [CHAR LIMIT=30] -->
     <string name="language_settings">Languages</string>
@@ -384,6 +428,134 @@
     <!-- Sound settings screen, title for the option defining the default alarm sound. [CHAR LIMIT=30] -->
     <string name="alarm_ringtone_title">Default alarm sound</string>
 
+    <!-- Units Settings -->
+    <!-- Units Settings title [CHAR LIMIT=10] -->
+    <string name="units_settings">Units</string>
+    <string name="units_speed_title">Speed</string>
+    <string name="units_distance_title">Distance</string>
+    <string name="units_fuel_consumption_title">Fuel consumption</string>
+    <string name="units_energy_consumption_title">Energy consumption</string>
+    <string name="units_temperature_title">Temperature</string>
+    <string name="units_volume_title">Volume</string>
+    <string name="units_pressure_title">Pressure</string>
+
+    <!--Units list entry, it shows the unit abbreviation (not translated) and then the same unit as it is pronounced, in that order. (e.g. mph - Miles per hour) [CHAR LIMIT = 120] -->
+    <string name="units_list_entry"><xliff:g example="mph" id="unit_abbreviation">%1$s</xliff:g> - <xliff:g example="Miles per hour" id="unit_pronunciation">%2$s</xliff:g></string>
+    <!--Units template for ratio units with numerators and denominators [CHAR LIMIT = 50]-->
+    <string name="units_ratio"><xliff:g example="km" id="unit_numerator">%1$s</xliff:g>/<xliff:g example="h" id="unit_denominator">%2$s</xliff:g></string>
+    <!--Units numerator part that can be used in ratio units string template-->
+    <string name="units_ratio_numerator"><xliff:g example="10" id="unit_numerator_quantity">%1$d</xliff:g><xliff:g example="kWh" id="unit_numerator_unit">%2$s</xliff:g></string>
+    <!--Units denominator part that can be used in ratio units string template-->
+    <string name="units_ratio_denominator"><xliff:g example="100" id="unit_denominator_quantity">%1$d</xliff:g><xliff:g example="mi" id="unit_denominator_unit">%2$s</xliff:g></string>
+    <!-- Meter per Second Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_meter_per_sec">Meter per Second</string>
+    <!-- Revolutions per Minute Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_rpm">Revolutions per Minute</string>
+    <!-- Hertz Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_hertz">Hertz</string>
+    <!-- Percentile Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_percentile">Percentile</string>
+    <!-- Millimeter Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_millimeter">Millimeter</string>
+    <!-- Meter Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_meter">Meter</string>
+    <!-- Kilometer Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_kilometer">Kilometer</string>
+    <!-- Mile Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_mile">Mile</string>
+    <!-- Celsius Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_celsius">Celsius</string>
+    <!-- Fahrenheit Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_fahrenheit">Fahrenheit</string>
+    <!-- Kelvin Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_kelvin">Kelvin</string>
+    <!-- Milliliter Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_milliliter">Milliliter</string>
+    <!-- Liter Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_liter">Liter</string>
+    <!-- Gallon Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_us_gallon">Gallon</string>
+    <!-- Imperial Gallon Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_imperial_gallon">Imperial Gallon</string>
+    <!-- Nanosecond Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_nano_secs">Nanosecond</string>
+    <!-- Second Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_secs">Second</string>
+    <!-- Year Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_year">Year</string>
+    <!-- Kilopascal Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_kilopascal">Kilopascal</string>
+    <!-- Watt Hour Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_watt_hour">Watt Hour</string>
+    <!-- Milliampere Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_milliampere">Milliampere</string>
+    <!-- Millivolt Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_millivolt">Millivolt</string>
+    <!-- Milliwatt Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_milliwatts">Milliwatt</string>
+    <!-- Ampere hour Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_ampere_hour">Ampere hour</string>
+    <!-- Kilowatt hour Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_kilowatt_hour">Kilowatt hour</string>
+    <!-- Pounds per square inch Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_psi">Pounds per square inch</string>
+    <!-- Miles per hour Unit as it is pronounced [CHAR LIMIT = 50]-->
+    <string name="units_unit_name_miles_per_hour">Miles per hour</string>
+    <!-- Kilometers per hour Unit as it is pronounced [CHAR LIMIT = 50]-->
+    <string name="units_unit_name_kilometers_per_hour">Kilometers per hour</string>
+    <!-- Bar Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_bar">Bar</string>
+    <!-- Degree Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_degrees">Degree</string>
+    <!-- Miles per Kilowatt Unit as it is pronounced [CHAR LIMIT=80]-->
+    <string name="units_unit_name_kilowatt_per_hundred_miles">Kilowatt per hundred Miles</string>
+    <!-- Kilometers per Kilowatt Unit as it is pronounced [CHAR LIMIT=80]-->
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers">Kilowatt per hundred Kilometers</string>
+    <!--Miles per gallon Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_miles_per_gallon_us">Miles per Gallon (US)</string>
+    <!--Miles per gallon Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_miles_per_gallon_uk">Miles per Gallon (UK)</string>
+    <!--Kilometers per liter Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_kilometers_per_liter">Kilometers per Liter</string>
+    <!--Kilometers per liter Unit as it is pronounced [CHAR LIMIT=50]-->
+    <string name="units_unit_name_liter_per_hundred_kilometers">Liters per hundred Kilometers</string>
+
+    <!-- Units in abbreviated form -->
+    <string name="units_unit_abbreviation_meter_per_sec" translatable="false">m/s</string>
+    <string name="units_unit_abbreviation_rpm" translatable="false">RPM</string>
+    <string name="units_unit_abbreviation_hertz" translatable="false">Hz</string>
+    <string name="units_unit_abbreviation_percentile" translatable="false">%</string>
+    <string name="units_unit_abbreviation_millimeter" translatable="false">mm</string>
+    <string name="units_unit_abbreviation_meter" translatable="false">m</string>
+    <string name="units_unit_abbreviation_kilometer" translatable="false">km</string>
+    <string name="units_unit_abbreviation_mile" translatable="false">mi</string>
+    <string name="units_unit_abbreviation_celsius" translatable="false">°C</string>
+    <string name="units_unit_abbreviation_fahrenheit" translatable="false">°F</string>
+    <string name="units_unit_abbreviation_kelvin" translatable="false">K</string>
+    <string name="units_unit_abbreviation_milliliter" translatable="false">ml</string>
+    <string name="units_unit_abbreviation_liter" translatable="false">L</string>
+    <string name="units_unit_abbreviation_us_gallon" translatable="false">gal</string>
+    <string name="units_unit_abbreviation_imperial_gallon" translatable="false">IG</string>
+    <string name="units_unit_abbreviation_nano_secs" translatable="false">ns</string>
+    <string name="units_unit_abbreviation_secs" translatable="false">s</string>
+    <string name="units_unit_abbreviation_year" translatable="false">y</string>
+    <string name="units_unit_abbreviation_kilopascal" translatable="false">kPa</string>
+    <string name="units_unit_abbreviation_watt_hour" translatable="false">Wh</string>
+    <string name="units_unit_abbreviation_milliampere" translatable="false">mA</string>
+    <string name="units_unit_abbreviation_millivolt" translatable="false">mV</string>
+    <string name="units_unit_abbreviation_milliwatts" translatable="false">mW</string>
+    <string name="units_unit_abbreviation_ampere_hour" translatable="false">Ah</string>
+    <string name="units_unit_abbreviation_kilowatt_hour" translatable="false">kWh</string>
+    <string name="units_unit_abbreviation_psi" translatable="false">PSI</string>
+    <string name="units_unit_abbreviation_bar" translatable="false">bar</string>
+    <string name="units_unit_abbreviation_degrees" translatable="false">°</string>
+    <string name="units_unit_abbreviation_miles_per_hour" translatable="false">mph</string>
+    <string name="units_unit_abbreviation_kilometers_per_hour" translatable="false">km/h</string>
+    <string name="units_unit_abbreviation_miles_per_gallon_us" translatable="false">mpg (US)</string>
+    <string name="units_unit_abbreviation_miles_per_gallon_uk" translatable="false">mpg (UK)</string>
+    <string name="units_unit_abbreviation_kilometers_per_liter" translatable="false">km/L</string>
+    <string name="units_unit_abbreviation_liters_per_hundred_kilometers" translatable="false">L/100km</string>
+
     <!-- applications --><skip/>
     <!-- Apps and notifications settings title, on main settings screen. If clicked, the user is taken to a settings screen full of apps and notifications settings [CHAR LIMIT=40] -->
     <string name="apps_and_notifications_settings">Apps &amp; notifications</string>
@@ -413,6 +585,8 @@
     <string name="app_disable_dialog_text">If you disable this app, Android and other apps may no longer function as intended.</string>
     <!-- Manage applications, label for option to disable app. [CHAR LIMIT=30] -->
     <string name="app_disable_dialog_positive">Disable app</string>
+    <!-- Manage applications, text informing that an application is not installed for the current user. [CHAR_LIMIT=NONE] -->
+    <string name="not_installed">Not installed for this user</string>
     <!-- Manage applications, individual application info screen, heading for settings related to the app's permissions. for example, it may list all the permissions the app has. -->
     <string name="permissions_label">Permissions</string>
     <!-- Label for the toggle that enables/disables an app's notifications. [CHAR LIMIT=20] -->
@@ -433,6 +607,8 @@
         <item quantity="one"><xliff:g example="1" id="count">%d</xliff:g> additional permission</item>
         <item quantity="other"><xliff:g example="10" id="count">%d</xliff:g> additional permissions</item>
     </plurals>
+    <!-- Dialog body explaining that the app just selected by the user will not work after a reboot until after the user enters their credentials, such as a PIN or password. [CHAR LIMIT=NONE] -->
+    <string name="direct_boot_unaware_dialog_message_car">Note: After a reboot, this app can\'t start until you unlock your vehicle.</string>
     <!-- Assistant and voice input settings title. This setting goes into the manage assistant settings page. [CHAR LIMIT=40] -->
     <string name="assist_and_voice_input_settings">Assist &amp; voice input</string>
     <!-- Default assistant settings title. This setting allows users to select the default assistant for the device. [CHAR LIMIT=40] -->
@@ -500,6 +676,14 @@
 
     <!-- Label for screen where user can grant applications special access to various systems. [CHAR_LIMIT=60] -->
     <string name="special_access">Special app access</string>
+    <!-- Text for toggle button to control whether system processes are shown in app lists. [CHAR_LIMIT=30] -->
+    <string name="show_system">Show system</string>
+    <!-- Text for toggle button to control whether system processes are hidden in app lists. [CHAR_LIMIT=30] -->
+    <string name="hide_system">Hide system</string>
+    <!-- Title for managing apps which can modify system settings. [CHAR_LIMIT=40] -->
+    <string name="modify_system_settings_title">Modify system settings</string>
+    <!-- Description of modifying system settings. [CHAR_LIMIT=NONE] -->
+    <string name="modify_system_settings_description">This permission allows an app to modify system settings.</string>
     <!-- Title for managing components which can listen to notifications. [CHAR_LIMIT=30] -->
     <string name="notification_access_title">Notification access</string>
     <!-- Title for a warning message about security implications of enabling a notification listener, displayed as a dialog message. [CHAR_LIMIT=NONE] -->
@@ -512,6 +696,20 @@
     <string name="notification_listener_revoke_warning_confirm">Turn off</string>
     <!-- Negative button for a dialog warning message about revoking notification listener access. [CHAR_LIMIT=30] -->
     <string name="notification_listener_revoke_warning_cancel">Cancel</string>
+    <!-- Title for screen controlling which apps have access to send premium sms messages. [CHAR_LIMIT=60] -->
+    <string name="premium_sms_access_title">Premium SMS access</string>
+    <!-- Message shown for option to enable Premium SMS for an app. [CHAR_LIMIT=NONE] -->
+    <string name="premium_sms_access_description">Premium SMS may cost you money and will add up to your carrier bills. If you enable permission for an app, you will be able to send premium SMS using that app.</string>
+    <!-- Title for managing apps which can query usage data. [CHAR_LIMIT=30] -->
+    <string name="usage_access_title">Usage access</string>
+    <!-- Description of the usage access permission. [CHAR_LIMIT=NONE] -->
+    <string name="usage_access_description">Usage access allows an app to track what other apps you\u2019re using and how often, as well as your carrier, language settings, and other details.</string>
+    <!-- Title for managing apps which can change Wi-Fi state. [CHAR_LIMIT=30] -->
+    <string name="wifi_control_title">Wi-Fi control</string>
+    <!-- Description of the change wifi state permission. [CHAR_LIMIT=NONE] -->
+    <string name="wifi_control_description">Wi-Fi control allows an app to turn Wi-Fi on or off, scan and connect to Wi-Fi networks, add or remove networks, or start a local-only hotspot.</string>
+    <!-- Title for item that when selected will launch into additional special access settings. [CHAR_LIMIT=30] -->
+    <string name="more_special_access_title">More</string>
 
     <!-- Location --><skip/>
     <!-- Main setting menu item to go into location settings [CHAR LIMIT=40] -->
@@ -700,8 +898,6 @@
     <!-- Date and time settings --><skip/>
     <!-- Main Settings screen setting option name to go into the date and time settings-->
     <string name="date_and_time_settings_title">Date &amp; time</string>
-    <!-- Title for Date & Time settings screen in SetupWizard [CHAR LIMIT=40] -->
-    <string name="date_and_time_settings_title_setup_wizard">Set date and time</string>
     <!-- Main Settings screen setting option summary text for the item to go into the date and time settings. -->
     <string name="date_and_time_settings_summary">Set date, time, time zone, &amp; formats</string>
     <!-- Date & time setting screen setting check box title if the date and time should be determined automatically [CHAR LIMIT=30] -->
@@ -867,11 +1063,11 @@
     <string name="storage_clear_user_data_text">Clear storage</string>
     <!-- Individual application info screen, button label under Storage heading. Text label for button [CHAR LIMIT=35] -->
     <string name="storage_clear_cache_btn_text">Clear cache</string>
-    <!-- Individual application screen, confirmation dialog title. Displays when user selects to "Clear data". [CHAR LIMIT=35] -->
+    <!-- Individual application screen, confirmation dialog title. Displays when user selects to "Clear data". [CHAR LIMIT=45] -->
     <string name="storage_clear_data_dlg_title">Delete app data?</string>
     <!-- Individual application screen, confirmation dialog message. Displays when user selects to "Clear data". It warns the user of the consequences of clearing the data for an app. [CHAR LIMIT=200] -->
     <string name="storage_clear_data_dlg_text">All this app\u2019s data will be deleted permanently. This includes all files, settings, accounts, databases, etc.</string>
-    <!-- Text for dialog if clear data fails. [CHAR LIMIT=50] -->
+    <!-- Text for dialog if clear data fails. [CHAR LIMIT=55] -->
     <string name="storage_clear_failed_dlg_text">Couldn\u2019t clear storage for app.</string>
 
     <!-- Account management --><skip/>
@@ -1151,7 +1347,7 @@
     <!-- Messages shown to alert user about the safety of the trusted device feature [CHAR LIMIT=NONE]-->
     <string name="trusted_device_safety_alert">Smart Lock can\'t detect security features of this device. To help protect your car, trusted device will only be able to keep your car unlocked once it\'s already unlocked by you. Your trusted device can keep your car unlocked when it\'s nearby, even if someone else is holding it.</string>
     <!-- Confirm pairing code dialog title [CHAR LIMIT=60]-->
-    <string name="trusted_device_pairing_code_dialog_title">Add <xliff:g id="device_name" example="Pixel2">%1$s</xliff:g> as a trusted device</string>
+    <string name="trusted_device_pairing_code_dialog_title">Please confirm that the pairing codes match</string>
     <!-- Toast shown when user enrolls a device successfully [CHAR LIMIT=100]-->
     <string name="trusted_device_success_enrollment_toast">Phone has been enrolled successfully</string>
     <!-- Toast shown when enrolling a device fails [CHAR LIMIT=50]-->
