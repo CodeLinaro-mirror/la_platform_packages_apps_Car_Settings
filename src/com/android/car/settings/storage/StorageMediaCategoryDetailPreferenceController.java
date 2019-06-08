@@ -18,6 +18,8 @@ package com.android.car.settings.storage;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 
+import androidx.preference.Preference;
+
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 import com.android.settingslib.applications.ApplicationsState;
@@ -33,7 +35,6 @@ public class StorageMediaCategoryDetailPreferenceController extends
         StorageApplicationListPreferenceController {
 
     private long mExternalAudioBytes;
-    private boolean mIsStorageAudioPreferenceAdded;
 
     public StorageMediaCategoryDetailPreferenceController(Context context,
             String preferenceKey, FragmentController fragmentController,
@@ -44,16 +45,20 @@ public class StorageMediaCategoryDetailPreferenceController extends
     @Override
     public void onDataLoaded(ArrayList<ApplicationsState.AppEntry> apps) {
         super.onDataLoaded(apps);
-        if (mIsStorageAudioPreferenceAdded) {
-            return;
-        }
-        getPreference().addPreference(
-                createPreference(getContext().getString(R.string.storage_audio_files_title),
-                        Long.toString(mExternalAudioBytes),
-                        getContext().getDrawable(R.drawable.ic_headset), /* key= */ null));
-        mIsStorageAudioPreferenceAdded = true;
+        Preference preference = createPreference(
+                getContext().getString(R.string.storage_audio_files_title),
+                Long.toString(mExternalAudioBytes),
+                getContext().getDrawable(R.drawable.ic_headset),
+                getContext().getString(R.string.pk_storage_music_audio_files));
+        // remove the onClickListener which was set above with null key. This preference should
+        // do nothing on click.
+        preference.setOnPreferenceClickListener(null);
+        getPreference().addPreference(preference);
     }
 
+    /**
+     * Sets the external audio bytes
+     */
     public void setExternalAudioBytes(long externalAudioBytes) {
         mExternalAudioBytes = externalAudioBytes;
     }
