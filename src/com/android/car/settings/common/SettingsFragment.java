@@ -36,8 +36,10 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import androidx.annotation.XmlRes;
+import androidx.constraintlayout.widget.Guideline;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
@@ -195,9 +197,18 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
 
             // If the fragment is root, change the back button to settings icon.
             ImageView imageView = actionBarContainer.requireViewById(R.id.back_button);
-            if (requireActivity().getSupportFragmentManager().getBackStackEntryCount() == 1) {
-                imageView.setImageResource(R.drawable.ic_launcher_settings);
-                imageView.setTag(R.id.back_button, R.drawable.ic_launcher_settings);
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            if (fragmentManager.getBackStackEntryCount() == 1
+                    && fragmentManager.findFragmentByTag("0") != null
+                    && fragmentManager.findFragmentByTag("0").getClass().getName().equals(
+                    getString(R.string.config_settings_hierarchy_root_fragment))) {
+                if (getContext().getResources()
+                        .getBoolean(R.bool.config_show_settings_root_exit_icon)) {
+                    imageView.setImageResource(R.drawable.ic_launcher_settings);
+                    imageView.setTag(R.id.back_button, R.drawable.ic_launcher_settings);
+                } else {
+                    hideExitIcon();
+                }
             } else {
                 imageView.setTag(R.id.back_button, R.drawable.ic_arrow_back);
                 actionBarContainer.requireViewById(R.id.action_bar_icon_container)
@@ -354,5 +365,14 @@ public abstract class SettingsFragment extends PreferenceFragmentCompat implemen
         if ((requestCode & 0xff00) != 0) {
             throw new IllegalArgumentException("Can only use lower 8 bits for requestCode");
         }
+    }
+
+    private void hideExitIcon() {
+        requireActivity().findViewById(R.id.action_bar_icon_container)
+                .setVisibility(FrameLayout.GONE);
+
+        Guideline guideLine = (Guideline) requireActivity().findViewById(R.id.start_margin);
+        guideLine.setGuidelineBegin(getResources()
+                .getDimensionPixelOffset(R.dimen.action_bar_no_icon_start_margin));
     }
 }

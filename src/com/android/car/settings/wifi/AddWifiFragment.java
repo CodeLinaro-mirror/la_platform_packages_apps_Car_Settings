@@ -16,60 +16,55 @@
 
 package com.android.car.settings.wifi;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.net.wifi.WifiConfiguration;
-import android.net.wifi.WifiManager;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.LayoutRes;
-import androidx.annotation.Nullable;
 import androidx.annotation.XmlRes;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.SettingsFragment;
 import com.android.settingslib.wifi.AccessPoint;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.regex.Pattern;
-
 /**
- * Adds a wifi network, the network can be public or private. If ADD_NETWORK_MODE is not specified
- * in the intent, then it needs to contain AccessPoint information, which is be use that to
- * render UI, e.g. show SSID etc.
+ * Adds a hidden wifi network. The connect button on the fragment is only used for unsecure hidden
+ * networks. The remaining security types can be connected via pressing connect on the password
+ * dialog.
  */
 public class AddWifiFragment extends SettingsFragment {
-    public static final String EXTRA_AP_STATE = "extra_ap_state";
-
     private static final Logger LOG = new Logger(AddWifiFragment.class);
-    private static final Pattern HEX_PATTERN = Pattern.compile("^[0-9A-F]+$");
-    private static final int INVALID_NET_ID = -1;
+    private static final String KEY_NETWORK_NAME = "network_name";
+    private static final String KEY_SECURITY_TYPE = "security_type";
 
-    @Nullable
-    private AccessPoint mAccessPoint;
-    private WifiManager mWifiManager;
-    private Button mAddWifiButton;
-
-    private int mSelectedPosition = AccessPointSecurity.SECURITY_NONE_POSITION;
-
-    /**
-     * Gets an instance of this class.
-     */
-    public static AddWifiFragment getInstance(@Nullable AccessPoint accessPoint) {
-        AddWifiFragment addWifiFragment = new AddWifiFragment();
-        Bundle bundle = new Bundle();
-        Bundle accessPointState = new Bundle();
-        if (accessPoint != null) {
-            accessPoint.saveWifiState(accessPointState);
-            bundle.putBundle(EXTRA_AP_STATE, accessPointState);
+    private final BroadcastReceiver mNameChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mNetworkName = intent.getStringExtra(
+                    NetworkNamePreferenceController.KEY_NETWORK_NAME);
+            setButtonEnabledState();
         }
-        addWifiFragment.setArguments(bundle);
-        return addWifiFragment;
-    }
+    };
+
+    private final BroadcastReceiver mSecurityChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mSecurityType = intent.getIntExtra(
+                    NetworkSecurityPreferenceController.KEY_SECURITY_TYPE,
+                    AccessPoint.SECURITY_NONE);
+            setButtonEnabledState();
+        }
+    };
+
+    private Button mAddWifiButton;
+    private String mNetworkName;
+    private int mSecurityType = AccessPoint.SECURITY_NONE;
 
     @Override
     @XmlRes
@@ -84,29 +79,19 @@ public class AddWifiFragment extends SettingsFragment {
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-
-        if (getArguments().keySet().contains(EXTRA_AP_STATE)) {
-            mAccessPoint = new AccessPoint(getContext(), getArguments().getBundle(EXTRA_AP_STATE));
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            mNetworkName = savedInstanceState.getString(KEY_NETWORK_NAME);
+            mSecurityType = savedInstanceState.getInt(KEY_SECURITY_TYPE, AccessPoint.SECURITY_NONE);
         }
-        mWifiManager = getContext().getSystemService(WifiManager.class);
+    }
 
-        List<AddNetworkBasePreferenceController> controllers = Arrays.asList(
-                use(NetworkNamePreferenceController.class, R.string.pk_add_wifi_network_name),
-                use(NetworkSecurityGroupPreferenceController.class,
-                        R.string.pk_add_wifi_security_group));
-
-        for (AddNetworkBasePreferenceController controller : controllers) {
-            controller.setAccessPoint(mAccessPoint);
-        }
-
-        use(NetworkNamePreferenceController.class, R.string.pk_add_wifi_network_name)
-                .setTextChangeListener(newName -> {
-                    if (mAddWifiButton != null) {
-                        mAddWifiButton.setEnabled(!TextUtils.isEmpty(newName));
-                    }
-                });
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_NETWORK_NAME, mNetworkName);
+        outState.putInt(KEY_SECURITY_TYPE, mSecurityType);
     }
 
     @Override
@@ -115,90 +100,40 @@ public class AddWifiFragment extends SettingsFragment {
 
         mAddWifiButton = getActivity().findViewById(R.id.action_button1);
         mAddWifiButton.setText(R.string.wifi_setup_connect);
+        setButtonEnabledState();
+
+        // This only needs to handle hidden/unsecure networks.
         mAddWifiButton.setOnClickListener(v -> {
-            int netId = connectToAccessPoint();
+            int netId = WifiUtil.connectToAccessPoint(getContext(), mNetworkName,
+                    AccessPoint.SECURITY_NONE, /* password= */ null, /* hidden= */ true);
+
             LOG.d("connected to netId: " + netId);
-            if (netId != INVALID_NET_ID) {
+            if (netId != WifiUtil.INVALID_NET_ID) {
                 goBack();
             }
         });
-        mAddWifiButton.setEnabled(mAccessPoint != null);
     }
 
-    /**
-     * Returns netId. -1 if connection fails.
-     */
-    private int connectToAccessPoint() {
-        NetworkSecurityGroupPreferenceController controller = use(
-                NetworkSecurityGroupPreferenceController.class,
-                R.string.pk_add_wifi_security_group);
-        WifiConfiguration wifiConfig = new WifiConfiguration();
-        wifiConfig.SSID = String.format("\"%s\"", getSsId());
-        wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-        wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-        wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
-        wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
-        wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
-        wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP104);
-        int security;
-        if (mAccessPoint == null) {
-            security = controller.getSelectedSecurityType();
-            wifiConfig.hiddenSSID = true;
-        } else {
-            security = mAccessPoint.getSecurity();
-        }
-        switch (security) {
-            case AccessPoint.SECURITY_NONE:
-                wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-                wifiConfig.allowedAuthAlgorithms.clear();
-                wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
-                wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
-                break;
-            case AccessPoint.SECURITY_WEP:
-                wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-                wifiConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
-                wifiConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.SHARED);
-                String password = controller.getPasswordText();
-                wifiConfig.wepKeys[0] = isHexString(password) ? password
-                        : "\"" + password + "\"";
-                wifiConfig.wepTxKeyIndex = 0;
-                break;
-            case AccessPoint.SECURITY_PSK:
-            case AccessPoint.SECURITY_EAP:
-                wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
-                wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
-                wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
-                wifiConfig.preSharedKey = String.format(
-                        "\"%s\"", controller.getPasswordText());
-                break;
-            default:
-                LOG.w("invalid security type: " + security);
-                break;
-        }
-        int netId = mWifiManager.addNetwork(wifiConfig);
-        // this only means wifiManager failed writing the new wifiConfig to db, doesn't mean
-        // the network exists/is valid
-        if (netId == INVALID_NET_ID) {
-            Toast.makeText(getContext(),
-                    R.string.wifi_failed_connect_message,
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            mWifiManager.enableNetwork(netId, true);
-        }
-        return netId;
+    @Override
+    public void onStart() {
+        super.onStart();
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mNameChangeReceiver,
+                new IntentFilter(NetworkNamePreferenceController.ACTION_NAME_CHANGE));
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mSecurityChangeReceiver,
+                new IntentFilter(NetworkSecurityPreferenceController.ACTION_SECURITY_CHANGE));
     }
 
-    private boolean isHexString(String password) {
-        return HEX_PATTERN.matcher(password).matches();
+    @Override
+    public void onStop() {
+        super.onStop();
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mNameChangeReceiver);
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mSecurityChangeReceiver);
     }
 
-    // TODO: handle null case, show warning message etc.
-    private String getSsId() {
-        if (mAccessPoint == null) {
-            return use(NetworkNamePreferenceController.class,
-                    R.string.pk_add_wifi_network_name).getNetworkName();
-        } else {
-            return mAccessPoint.getSsid().toString();
+    private void setButtonEnabledState() {
+        if (mAddWifiButton != null) {
+            mAddWifiButton.setEnabled(
+                    !TextUtils.isEmpty(mNetworkName) && mSecurityType == AccessPoint.SECURITY_NONE);
         }
     }
 }

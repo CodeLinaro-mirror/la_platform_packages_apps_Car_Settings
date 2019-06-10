@@ -19,19 +19,14 @@ package com.android.car.settings.wifi;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
-import android.text.TextUtils;
 
-import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
-import com.android.car.settings.R;
 import com.android.car.settings.common.Logger;
 import com.android.settingslib.wifi.AccessPoint;
 
-/**
- * Renders a {@link AccessPoint} as a preference.
- */
-public class AccessPointPreference extends Preference {
+/** Renders a {@link AccessPoint} as a preference. */
+public class AccessPointPreference extends ButtonPasswordEditTextPreference {
     private static final Logger LOG = new Logger(AccessPointPreference.class);
     private static final int[] STATE_SECURED = {
             com.android.settingslib.R.attr.state_encrypted
@@ -50,16 +45,7 @@ public class AccessPointPreference extends Preference {
                 .obtainStyledAttributes(sWifiSignalAttributes).getDrawable(0);
         mAccessPoint = accessPoint;
         LOG.d("creating preference for ap: " + mAccessPoint);
-        setKey(accessPoint.getKey());
         setIcon(getAccessPointIcon());
-        setTitle(accessPoint.getConfigName());
-        String summary = accessPoint.getSummary();
-        if (!TextUtils.isEmpty(summary)) {
-            setSummary(summary);
-        }
-        if (accessPoint.isSaved()) {
-            setWidgetLayoutResource(R.layout.access_point_preference_widget);
-        }
     }
 
     /**
@@ -73,6 +59,23 @@ public class AccessPointPreference extends Preference {
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
         setIcon(getAccessPointIcon());
+    }
+
+    @Override
+    protected void onClick() {
+        if (shouldShowPasswordDialog()) {
+            super.onClick();
+        }
+    }
+
+    /**
+     * Show password dialog for one of the following conditions:
+     * 1. AP with some security but is not saved and not active
+     * 2. AP that has been saved, but not enabled due to wrong password.
+     */
+    private boolean shouldShowPasswordDialog() {
+        return mAccessPoint.getSecurity() != AccessPoint.SECURITY_NONE && (!mAccessPoint.isSaved()
+                || WifiUtil.isAccessPointDisabledByWrongPassword(mAccessPoint));
     }
 
     private Drawable getAccessPointIcon() {
