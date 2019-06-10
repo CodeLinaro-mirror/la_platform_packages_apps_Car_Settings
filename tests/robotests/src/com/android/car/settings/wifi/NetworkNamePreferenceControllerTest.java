@@ -18,90 +18,76 @@ package com.android.car.settings.wifi;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.EditTextPreference;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
+import com.android.car.settings.R;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
-import com.android.settingslib.wifi.AccessPoint;
+import com.android.car.settings.testutils.ShadowLocalBroadcastManager;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.robolectric.RuntimeEnvironment;
+import org.robolectric.annotation.Config;
+
+import java.util.List;
 
 @RunWith(CarSettingsRobolectricTestRunner.class)
+@Config(shadows = {ShadowLocalBroadcastManager.class})
 public class NetworkNamePreferenceControllerTest {
 
     private static final String TEST_SSID = "test_ssid";
 
     private Context mContext;
     private EditTextPreference mEditTextPreference;
-    private PreferenceControllerTestHelper<NetworkNamePreferenceController>
-            mPreferenceControllerHelper;
     private NetworkNamePreferenceController mController;
-    @Mock
-    private AccessPoint mAccessPoint;
-    @Mock
-    private NetworkNamePreferenceController.NetworkNameChangeListener mNetworkNameChangeListener;
 
     @Before
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         mContext = RuntimeEnvironment.application;
         mEditTextPreference = new EditTextPreference(mContext);
-        mPreferenceControllerHelper = new PreferenceControllerTestHelper<>(mContext,
-                NetworkNamePreferenceController.class, mEditTextPreference);
-        mController = mPreferenceControllerHelper.getController();
-        mController.setTextChangeListener(mNetworkNameChangeListener);
-        when(mAccessPoint.getSsid()).thenReturn(TEST_SSID);
+        PreferenceControllerTestHelper<NetworkNamePreferenceController> controllerHelper =
+                new PreferenceControllerTestHelper<>(mContext,
+                        NetworkNamePreferenceController.class, mEditTextPreference);
+        mController = controllerHelper.getController();
+        controllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
+    }
+
+    @After
+    public void tearDown() {
+        ShadowLocalBroadcastManager.reset();
     }
 
     @Test
-    public void testOnStartInternal_hasAccessPoint_textIsSet() {
-        mController.setAccessPoint(mAccessPoint);
-        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        assertThat(mEditTextPreference.getText()).isEqualTo(TEST_SSID);
+    public void refreshUi_defaultState_showsDefaultString() {
+        mController.refreshUi();
+        assertThat(mEditTextPreference.getSummary()).isEqualTo(
+                mContext.getString(R.string.default_network_name_summary));
     }
 
     @Test
-    public void testOnStartInternal_noAccessPoint_textIsNotSet() {
-        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        assertThat(mEditTextPreference.getText()).isNull();
-    }
-
-    @Test
-    public void testOnStartInternal_hasAccessPoint_isNotSelectable() {
-        mController.setAccessPoint(mAccessPoint);
-        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        assertThat(mEditTextPreference.isSelectable()).isFalse();
-    }
-
-    @Test
-    public void testOnStartInternal_noAccessPoint_isSelectable() {
-        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        assertThat(mEditTextPreference.isSelectable()).isTrue();
-    }
-
-    @Test
-    public void testHandlePreferenceChanged_newTextIsSet() {
-        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
+    public void handlePreferenceChanged_newTextIsSet() {
         mEditTextPreference.setText("Old value");
         mEditTextPreference.callChangeListener("New value");
         assertThat(mEditTextPreference.getSummary()).isEqualTo("New value");
     }
 
     @Test
-    public void testHandlePreferenceChanged_listenerIsCalled() {
-        mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
-        mEditTextPreference.callChangeListener("New value");
-        verify(mNetworkNameChangeListener).onNetworkNameChanged("New value");
+    public void handlePreferenceChanged_broadcastIsSent() {
+        String value = "New value";
+        mEditTextPreference.callChangeListener(value);
+
+        List<Intent> intents = ShadowLocalBroadcastManager.getSentBroadcastIntents();
+        assertThat(intents).hasSize(1);
+        assertThat(intents.get(0).getAction()).isEqualTo(
+                NetworkNamePreferenceController.ACTION_NAME_CHANGE);
+        assertThat(intents.get(0).getStringExtra(
+                NetworkNamePreferenceController.KEY_NETWORK_NAME)).isEqualTo(value);
     }
 }
