@@ -31,21 +31,24 @@
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Mod malam"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Rangkaian &amp; Internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Rangkaian mudah alih"</string>
+    <plurals name="mobile_network_summary_count" formatted="false" msgid="6917348330386831454">
+      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> SIM</item>
+      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> SIM</item>
+    </plurals>
+    <string name="mobile_network_active_sim" msgid="1901674954229832811">"Aktif / SIM"</string>
+    <string name="mobile_network_inactive_sim" msgid="3644984830926224318">"Tidak aktif / SIM"</string>
+    <string name="mobile_network_active_esim" msgid="5864100786496761032">"Aktif / SIM Dimuat Turun"</string>
+    <string name="mobile_network_inactive_esim" msgid="1397332352238119032">"Tidak Aktif / SIM Dimuat Turun"</string>
+    <string name="mobile_network_list_add_more" msgid="6174294462747070655">"Tambah lagi"</string>
     <string name="mobile_network_toggle_title" msgid="3515647310810280063">"Data mudah alih"</string>
     <string name="mobile_network_toggle_summary" msgid="8698267487987697148">"Akses data menggunakan rangkaian mudah alih"</string>
     <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Matikan data mudah alih?"</string>
-    <!-- no translation found for sim_selection_required_pref (6599562910262785784) -->
-    <skip />
-    <!-- no translation found for sim_change_data_title (6677115745127365131) -->
-    <skip />
-    <!-- no translation found for sim_change_data_message (4669775284395549069) -->
-    <skip />
-    <!-- no translation found for sim_change_data_ok (2348804996223271081) -->
-    <skip />
-    <!-- no translation found for roaming_title (6218635014519017734) -->
-    <skip />
-    <!-- no translation found for roaming_summary (7476127740259728901) -->
-    <skip />
+    <string name="sim_selection_required_pref" msgid="6599562910262785784">"Pilihan diperlukan"</string>
+    <string name="sim_change_data_title" msgid="6677115745127365131">"Gunakan data mudah alih <xliff:g id="CARRIER">%1$s</xliff:g>?"</string>
+    <string name="sim_change_data_message" msgid="4669775284395549069">"Anda menggunakan <xliff:g id="CARRIER2_0">%2$s</xliff:g> untuk data mudah alih. Jika anda bertukar kepada <xliff:g id="CARRIER1">%1$s</xliff:g>, <xliff:g id="CARRIER2_1">%2$s</xliff:g> tidak lagi digunakan untuk data mudah alih."</string>
+    <string name="sim_change_data_ok" msgid="2348804996223271081">"Gunakan <xliff:g id="CARRIER">%1$s</xliff:g>"</string>
+    <string name="roaming_title" msgid="6218635014519017734">"Perayauan"</string>
+    <string name="roaming_summary" msgid="7476127740259728901">"Sambung ke perkhidmatan data semasa perayauan"</string>
     <string name="roaming_alert_title" msgid="4433901635766775763">"Benarkan perayauan data?"</string>
     <string name="roaming_warning" msgid="5313281900566657209">"Anda mungkin dikenakan caj yang tinggi."</string>
     <string name="data_usage_settings" msgid="7877132994777987848">"Penggunaan data"</string>
@@ -65,6 +68,8 @@
     <string name="carrier_and_update_now_text" msgid="9058821833613481573">"Dikemas kini oleh <xliff:g id="ID_1">^1</xliff:g> sebentar td"</string>
     <string name="no_carrier_update_now_text" msgid="5953142546373783189">"Dikemas kini sebentar tadi"</string>
     <string name="launch_manage_plan_text" msgid="906657488611815787">"Lihat pelan"</string>
+    <string name="app_data_usage" msgid="3878609885080232877">"Penggunaan data apl"</string>
+    <string name="data_usage_app_restricted" msgid="4570970078120010951">"terhad"</string>
     <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"Tarikh tetapan semula kitaran penggunaan"</string>
     <string name="cycle_reset_day_of_month_picker_subtitle" msgid="5361061448258189846">"Tarikh setiap bulan:"</string>
     <string name="cycle_reset_day_of_month_picker_positive_button" msgid="6919858010423269305">"Tetapkan"</string>
@@ -90,6 +95,7 @@
     <string name="wifi_setup_connect" msgid="3512399573397979101">"Sambung"</string>
     <string name="wifi_password" msgid="5565632142720292397">"Kata Laluan"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"Tunjukkan kata laluan"</string>
+    <string name="wifi_no_network_name" msgid="6819604337231313594">"Sila masukkan nama rangkaian"</string>
     <string name="wifi_ssid" msgid="488604828159458741">"Nama rangkaian"</string>
     <string name="wifi_ssid_hint" msgid="3170608752313710099">"Masukkan SSID"</string>
     <string name="wifi_security" msgid="158358046038876532">"Keselamatan"</string>
@@ -129,19 +135,31 @@
     <string name="wifi_cellular_fallback_title" msgid="8322675436784870862">"Beralih kepada data mudah alih secara automatik"</string>
     <string name="wifi_cellular_fallback_summary" msgid="2433848528924203758">"Gunakan data mudah alih apabila Wi-Fi tiada akses Internet. Caj penggunaan data mungkin dikenakan."</string>
     <string name="learn_more" msgid="8214605928933358604">"Ketahui lebih lanjut"</string>
-    <!-- no translation found for wifi_hotspot_name_title (8844779338692535356) -->
-    <skip />
-    <!-- no translation found for wifi_hotspot_name_summary_connecting (5262510450498600038) -->
-    <skip />
-    <!-- no translation found for wifi_hotspot_name_summary_connected (7421325340822195506) -->
-    <skip />
-    <!-- no translation found for wifi_hotspot_password_title (4103948315849351988) -->
-    <skip />
-    <!-- no translation found for wifi_hotspot_ap_band_title (7685279281668988593) -->
-    <skip />
+    <string name="wifi_hotspot_name_title" msgid="8844779338692535356">"Nama tempat liputan"</string>
+    <string name="wifi_hotspot_name_summary_connecting" msgid="5262510450498600038">"Menghidupkan <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>..."</string>
+    <string name="wifi_hotspot_name_summary_connected" msgid="7421325340822195506">"Peranti lain boleh bersambung ke <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>"</string>
+    <string name="wifi_hotspot_password_title" msgid="4103948315849351988">"Kata laluan tempat liputan"</string>
+    <string name="wifi_hotspot_security_title" msgid="2299925790743587725">"Keselamatan"</string>
+    <string name="wifi_hotspot_wpa2_personal" msgid="7135181212837798318">"WPA2-Personal"</string>
+    <string name="wifi_hotspot_security_none" msgid="2514844105085054386">"Tiada"</string>
+    <string name="wifi_hotspot_ap_band_title" msgid="7685279281668988593">"Jalur AP"</string>
+    <string name="wifi_ap_band_config" msgid="6143905484067008736">"Pilih Jalur AP"</string>
+    <string name="wifi_ap_choose_auto" msgid="3779526909841604566">"Automatik"</string>
+    <string name="wifi_ap_choose_2G" msgid="6356913773766753502">"Jalur 2.4 GHz"</string>
+    <string name="wifi_ap_choose_5G" msgid="8561440488455528673">"Jalur 5.0 GHz"</string>
+    <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Jalur 5.0 GHz diutamakan"</string>
+    <string name="wifi_ap_2G" msgid="5364135697314262014">"2.4 GHz"</string>
+    <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 GHz"</string>
+    <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Pilih jalur untuk tempat liputan Wi-Fi:"</string>
     <string name="tether_settings_title_all" msgid="4663704772599383169">"Tempat liputan &amp; penambatan"</string>
     <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Matikan tempat liputan secara automatik"</string>
     <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Tempat liputan Wi‑Fi akan dimatikan jika tiada peranti disambungkan"</string>
+    <!-- no translation found for wifi_ask_enable (4452418245680754578) -->
+    <skip />
+    <!-- no translation found for wifi_ask_disable (2949290055916181553) -->
+    <skip />
+    <!-- no translation found for wifi_error (3105105447117289410) -->
+    <skip />
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"Peranti tidak bernama"</string>
     <string name="bluetooth_paired_devices" msgid="6463199569164652410">"Peranti gandingan"</string>
@@ -158,6 +176,18 @@
     <string name="bluetooth_available_devices" msgid="1854446368146061448">"Peranti yang tersedia"</string>
     <string name="bluetooth_profiles" msgid="5580372290862835951">"Profil"</string>
     <string name="bluetooth_error_title" msgid="2341600997536511742"></string>
+    <!-- no translation found for bluetooth_turning_on (7046983059601710414) -->
+    <skip />
+    <!-- no translation found for bluetooth_turning_off (1753975097241024061) -->
+    <skip />
+    <!-- no translation found for bluetooth_ask_enablement (8565428400407368667) -->
+    <skip />
+    <!-- no translation found for bluetooth_ask_disablement (6056441896274912839) -->
+    <skip />
+    <!-- no translation found for bluetooth_ask_enablement_no_name (3191739265037605547) -->
+    <skip />
+    <!-- no translation found for bluetooth_ask_disablement_no_name (5694464250599567283) -->
+    <skip />
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Permintaan penggandingan Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Gandingkan &amp; sambung"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Kod penggandingan Bluetooth"</string>
@@ -171,6 +201,7 @@
     <string name="bluetooth_pin_values_hint" msgid="1561325817559141687">"Biasanya 0000 atau 1234"</string>
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Permintaan penggandingan"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Sentuh untuk berganding dengan <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
+    <string name="bluetooth_device_picker" msgid="673238198452345475">"Pilih peranti Bluetooth"</string>
     <string name="language_settings" msgid="2079258598337245546">"Bahasa"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Bahasa &amp; input"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"Papan kekunci"</string>
@@ -192,6 +223,102 @@
     <string name="ringtone_title" msgid="8370531086214517972">"Nada dering telefon"</string>
     <string name="notification_ringtone_title" msgid="8661716239594010288">"Bunyi pemberitahuan lalai"</string>
     <string name="alarm_ringtone_title" msgid="3257364170646440908">"Bunyi penggera lalai"</string>
+    <!-- no translation found for units_settings (402325305096925886) -->
+    <skip />
+    <!-- no translation found for units_speed_title (7115143916747108160) -->
+    <skip />
+    <!-- no translation found for units_distance_title (6257691565990474635) -->
+    <skip />
+    <!-- no translation found for units_fuel_consumption_title (6415108114453652570) -->
+    <skip />
+    <!-- no translation found for units_energy_consumption_title (2775408854562057609) -->
+    <skip />
+    <!-- no translation found for units_temperature_title (22994498606206991) -->
+    <skip />
+    <!-- no translation found for units_volume_title (1912873077839446914) -->
+    <skip />
+    <!-- no translation found for units_pressure_title (7477179239294531518) -->
+    <skip />
+    <!-- no translation found for units_list_entry (7277796571051055840) -->
+    <skip />
+    <!-- no translation found for units_ratio (1085608614216280006) -->
+    <skip />
+    <!-- no translation found for units_ratio_numerator (3462102280813794384) -->
+    <skip />
+    <!-- no translation found for units_ratio_denominator (6737154450651499228) -->
+    <skip />
+    <!-- no translation found for units_unit_name_meter_per_sec (9151123661434898991) -->
+    <skip />
+    <!-- no translation found for units_unit_name_rpm (4084216808160262380) -->
+    <skip />
+    <!-- no translation found for units_unit_name_hertz (5373975672472735625) -->
+    <skip />
+    <!-- no translation found for units_unit_name_percentile (1630667431830186060) -->
+    <skip />
+    <!-- no translation found for units_unit_name_millimeter (318832924604375755) -->
+    <skip />
+    <!-- no translation found for units_unit_name_meter (4778344873095502130) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilometer (4351417123421381297) -->
+    <skip />
+    <!-- no translation found for units_unit_name_mile (8337486880403419613) -->
+    <skip />
+    <!-- no translation found for units_unit_name_celsius (1642787068882598698) -->
+    <skip />
+    <!-- no translation found for units_unit_name_fahrenheit (7617395181535026095) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kelvin (4043908998904418360) -->
+    <skip />
+    <!-- no translation found for units_unit_name_milliliter (2735564290593738653) -->
+    <skip />
+    <!-- no translation found for units_unit_name_liter (2682609997247920434) -->
+    <skip />
+    <!-- no translation found for units_unit_name_us_gallon (2991675590060288099) -->
+    <skip />
+    <!-- no translation found for units_unit_name_imperial_gallon (7827144733136304182) -->
+    <skip />
+    <!-- no translation found for units_unit_name_nano_secs (7258767560309570567) -->
+    <skip />
+    <!-- no translation found for units_unit_name_secs (2282853373442592245) -->
+    <skip />
+    <!-- no translation found for units_unit_name_year (8237348390239986270) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilopascal (371397110720444118) -->
+    <skip />
+    <!-- no translation found for units_unit_name_watt_hour (1581554497071668301) -->
+    <skip />
+    <!-- no translation found for units_unit_name_milliampere (4477388320207031153) -->
+    <skip />
+    <!-- no translation found for units_unit_name_millivolt (4730384331465782188) -->
+    <skip />
+    <!-- no translation found for units_unit_name_milliwatts (6689028603486588098) -->
+    <skip />
+    <!-- no translation found for units_unit_name_ampere_hour (6139925422033142476) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilowatt_hour (4282251431283475831) -->
+    <skip />
+    <!-- no translation found for units_unit_name_psi (9199487304284041266) -->
+    <skip />
+    <!-- no translation found for units_unit_name_miles_per_hour (3988395919988136895) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilometers_per_hour (8243061370606677881) -->
+    <skip />
+    <!-- no translation found for units_unit_name_bar (4051903414466411804) -->
+    <skip />
+    <!-- no translation found for units_unit_name_degrees (47944625323398947) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilowatt_per_hundred_miles (715836273168653604) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilowatt_per_hundred_kilometers (2761254652642587883) -->
+    <skip />
+    <!-- no translation found for units_unit_name_miles_per_gallon_us (3911349970584135950) -->
+    <skip />
+    <!-- no translation found for units_unit_name_miles_per_gallon_uk (7700318800709988481) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilometers_per_liter (8769902235588571155) -->
+    <skip />
+    <!-- no translation found for units_unit_name_liter_per_hundred_kilometers (4867647387452453552) -->
+    <skip />
     <string name="apps_and_notifications_settings" msgid="8704585874333781975">"Apl &amp; pemberitahuan"</string>
     <string name="all_applications" msgid="7798210477486822168">"Tunjukkan semua apl"</string>
     <string name="default_applications" msgid="1558183275638697087">"Apl lalai"</string>
@@ -206,6 +333,7 @@
     <string name="uninstall_text" msgid="277907956072833012">"Nyahpasang"</string>
     <string name="app_disable_dialog_text" msgid="7731155411006654025">"Jika anda melumpuhkan apl ini, Android dan apl lain mungkin tidak berfungsi seperti yang dimaksudkan lagi."</string>
     <string name="app_disable_dialog_positive" msgid="4448684722791563349">"Lumpuhkan apl"</string>
+    <string name="not_installed" msgid="4218816013370552746">"Tidak dipasang untuk pengguna ini"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Kebenaran"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Pemberitahuan"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Versi: %1$s"</string>
@@ -218,6 +346,7 @@
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> kebenaran tambahan</item>
       <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> kebenaran tambahan</item>
     </plurals>
+    <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"Perhatian: Selepas but semula, apl ini tidak dapat dimulakan sehingga anda membuka kunci kenderaan."</string>
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"Bantu &amp; input suara"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"Apl Bantu"</string>
     <string name="assist_access_context_title" msgid="8034851731390785301">"Gunakan teks daripada skrin"</string>
@@ -231,7 +360,39 @@
     <string name="assistant_security_warning" msgid="1844807956967428012">"Pembantu akan dapat membaca maklumat tentang apl yang sedang digunakan pada sistem anda, termasuk maklumat yang kelihatan pada skrin atau yang dapat diakses dalam apl."</string>
     <string name="autofill_confirmation_message" msgid="1832984461556991378">"&lt;b&gt;Pastikan anda mempercayai apl ini&lt;/b&gt; &lt;br/&gt; &lt;br/&gt; &lt;xliff:g id=app_name example=Google Autofill&gt;%1$s&lt;/xliff:g&gt; menggunakan item yang terdapat pada skrin anda untuk menentukan perkara yang boleh dilengkapkan secara automatik."</string>
     <string name="autofill_add_service" msgid="6413893366443609951">"Tambahkan perkhidmatan"</string>
+    <string name="app_launch_domain_links_title" msgid="774480184927726651">"Membuka pautan"</string>
+    <string name="domain_url_section_title" msgid="9070403140947787214">"Apl yang dipasang"</string>
+    <string name="domain_urls_summary_none" msgid="3077803215088293183">"Jangan buka pautan yang disokong"</string>
+    <string name="domain_urls_summary_one" msgid="5072257421806034237">"Buka <xliff:g id="DOMAIN">%s</xliff:g>"</string>
+    <string name="domain_urls_summary_some" msgid="5523153458016701725">"Buka <xliff:g id="DOMAIN">%s</xliff:g> dan URL lain"</string>
+    <string name="app_launch_title" msgid="3442601467010363057">"Buka secara lalai"</string>
+    <string name="app_launch_other_defaults_title" msgid="5734827759507953180">"Pilihan lalai yang lain"</string>
+    <string name="auto_launch_disable_text" msgid="3595315315092716391">"Tiada pilihan lalai ditetapkan."</string>
+    <string name="auto_launch_enable_text" msgid="7230832269574106901">"Anda memilih untuk melancarkan apl ini secara lalai bagi sesetengah tindakan."</string>
+    <string name="auto_launch_reset_text" msgid="590439611312092392">"Kosongkan pilihan lalai"</string>
+    <string name="app_launch_open_domain_urls_title" msgid="4705344946367759393">"Buka pautan yang disokong"</string>
+    <string name="app_link_open_always" msgid="5783167184335545230">"Buka dalam apl ini"</string>
+    <string name="app_link_open_ask" msgid="7242075065136237456">"Tanya setiap kali"</string>
+    <string name="app_link_open_never" msgid="2173174327831792316">"Jangan buka dalam apl ini"</string>
+    <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Pautan yang disokong"</string>
     <string name="special_access" msgid="5730278220917123811">"Akses apl khas"</string>
+    <string name="show_system" msgid="4401355756969485287">"Tunjukkan sistem"</string>
+    <string name="hide_system" msgid="8845453295584638040">"Sembunyikan sistem"</string>
+    <string name="modify_system_settings_title" msgid="4596320571562433972">"Ubah suai tetapan sistem"</string>
+    <string name="modify_system_settings_description" msgid="5295023124419592452">"Kebenaran ini membolehkan apl mengubah suai tetapan sistem."</string>
+    <string name="notification_access_title" msgid="1467340098885813473">"Akses pemberitahuan"</string>
+    <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"Benarkan akses pemberitahuan untuk <xliff:g id="SERVICE">%1$s</xliff:g>?"</string>
+    <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> akan dapat membaca semua pemberitahuan, termasuk maklumat peribadi seperti nama kenalan dan teks mesej yang anda terima. Selain itu, apl tersebut juga dapat mengetepikan pemberitahuan atau mencetuskan butang tindakan yang terdapat pada apl ini. \n\nTindakan ini turut memberi apl tersebut keupayaan untuk menghidupkan atau mematikan ciri Jangan Ganggu dan menukar tetapan yang berkaitan."</string>
+    <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"Jika anda mematikan akses pemberitahuan untuk <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g>, akses ciri Jangan Ganggu mungkin turut dimatikan."</string>
+    <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Matikan"</string>
+    <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Batal"</string>
+    <string name="premium_sms_access_title" msgid="1409118461646148686">"Akses SMS Premium"</string>
+    <string name="premium_sms_access_description" msgid="7119026067677052169">"SMS Premium bukan percuma dan cajnya akan ditambahkan pada bil pembawa anda. Jika anda mendayakan kebenaran untuk apl, anda akan dapat menghantar SMS premium menggunakan apl itu."</string>
+    <string name="usage_access_title" msgid="7153427122072303254">"Akses penggunaan"</string>
+    <string name="usage_access_description" msgid="2413168719257435422">"Akses penggunaan membenarkan apl mengesan apl lain yang anda gunakan dan kekerapan penggunaan tersebut serta pembawa, tetapan bahasa dan butiran anda yang lain."</string>
+    <string name="wifi_control_title" msgid="5660436566907731929">"Kawalan Wi-Fi"</string>
+    <string name="wifi_control_description" msgid="6021926850423169261">"Kawalan Wi-Fi membenarkan apl menghidupkan atau mematikan Wi-Fi, mengimbas dan menyambung ke rangkaian Wi-Fi, menambah atau mengalih keluar rangkaian, atau memulakan tempat liputan setempat sahaja."</string>
+    <string name="more_special_access_title" msgid="166115485446645971">"Lagi"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Lokasi"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Permintaan Lokasi Terbaharu"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Tiada permintaan lokasi terbaharu"</string>
@@ -312,7 +473,6 @@
     <string name="master_clear_progress_title" msgid="7087480656932674774">"Memadam"</string>
     <string name="master_clear_progress_text" msgid="3440789441935303176">"Sila tunggu..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Tarikh &amp; masa"</string>
-    <string name="date_and_time_settings_title_setup_wizard" msgid="7580119979694174107">"Tetapkan tarikh dan masa"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Tetapkan tarikh, masa, zon waktu &amp; format"</string>
     <string name="date_time_auto" msgid="3570339569471779767">"Tarikh &amp; masa automatik"</string>
     <string name="date_time_auto_summary" msgid="3311706425095342759">"Gunakan waktu yang diberikan oleh rangkaian"</string>
@@ -381,6 +541,15 @@
     <string name="storage_detail_dialog_system" msgid="796365720531622361">"Sistem termasuk fail yang digunakan untuk menjalankan Android versi <xliff:g id="VERSION">%s</xliff:g>"</string>
     <string name="storage_audio_files_title" msgid="5183170457027181700">"Fail audio"</string>
     <string name="memory_calculating_size" msgid="1672238502950390033">"Mengira…"</string>
+    <string name="storage_application_size_label" msgid="1146156683170661354">"Saiz apl"</string>
+    <string name="storage_data_size_label" msgid="5022911581004239367">"Data pengguna"</string>
+    <string name="storage_cache_size_label" msgid="6361308766707419555">"Cache"</string>
+    <string name="storage_total_size_label" msgid="3892138268243791912">"Jumlah"</string>
+    <string name="storage_clear_user_data_text" msgid="8787615136779130680">"Kosongkan storan"</string>
+    <string name="storage_clear_cache_btn_text" msgid="8449547925966775612">"Kosongkan cache"</string>
+    <string name="storage_clear_data_dlg_title" msgid="5863775997588969879">"Padamkan data apl?"</string>
+    <string name="storage_clear_data_dlg_text" msgid="795055288575727801">"Semua data apl ini akan dipadamkan secara kekal. Ini termasuk semua fail, tetapan, akaun, pangkalan data, dll."</string>
+    <string name="storage_clear_failed_dlg_text" msgid="6710485971686866306">"Tidak dapat mengosongkan storan untuk apl."</string>
     <string name="accounts_settings_title" msgid="436190037084293471">"Akaun"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"Tambah akaun"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"Tiada akaun yang ditambahkan"</string>
@@ -503,8 +672,7 @@
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Pilihan kunci skrin"</string>
     <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> hari lalu"</string>
     <string name="add_device_title" msgid="8452168024017866232">"Tambah peranti dipercayai"</string>
-    <!-- no translation found for add_device_summary (5368217520710573302) -->
-    <skip />
+    <string name="add_device_summary" msgid="5368217520710573302">"Bluetooth akan dihidupkan untuk peranti dipercayai"</string>
     <string name="trusted_device" msgid="5637378361866787603">"Peranti dipercayai"</string>
     <plurals name="trusted_device_subtitle" formatted="false" msgid="462041049834264945">
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> peranti</item>
@@ -518,7 +686,8 @@
     <string name="trusted_device_download_app" msgid="6971096140154499983">"1. Muat turun apl rakan pada telefon anda"</string>
     <string name="trusted_device_select_device" msgid="198902765179270739">"2. Pilih <xliff:g id="CAR_NAME">%1$s</xliff:g> pada telefon anda untuk menggandingkan peranti tersebut"</string>
     <string name="trusted_device_safety_alert" msgid="8937542424166378247">"Smart Lock tidak dapat mengesan ciri keselamatan peranti ini. Untuk melindungi kereta anda, peranti yang dipercayai hanya dapat memastikan kereta anda kekal tidak berkunci setelah anda membuka kunci kereta anda itu. Peranti yang dipercayai boleh memastikan kereta anda kekal tidak berkunci apabila berada berdekatan, walaupun orang lain yang memegang peranti itu."</string>
-    <string name="trusted_device_pairing_code_dialog_title" msgid="6551880047490332731">"Tambahkan <xliff:g id="DEVICE_NAME">%1$s</xliff:g> sebagai peranti yang dipercayai"</string>
+    <!-- no translation found for trusted_device_pairing_code_dialog_title (8173792468216796873) -->
+    <skip />
     <string name="trusted_device_success_enrollment_toast" msgid="1238468775285575827">"Telefon telah berjaya didaftarkan"</string>
     <string name="trusted_device_fail_enrollment_toast" msgid="6801324174861209092">"Pendaftaran <xliff:g id="DEVICE_NAME">%1$s</xliff:g> gagal"</string>
     <string name="trusted_device_set_authentication_reminder" msgid="5947077589994822305">"Penambahan peranti yang dipercayai memerlukan anda menetapkan kaedah pengesahan selepas ini. Jika peranti yang dipercayai tiada dengan anda, pengesahan perlu mengakses profil anda."</string>
@@ -529,6 +698,8 @@
     <string name="delete_button" msgid="5840500432614610850">"Padam"</string>
     <string name="remove_button" msgid="6664656962868194178">"Alih keluar"</string>
     <string name="cancel" msgid="750286395700355455">"Batal"</string>
+    <string name="allow" msgid="7519431342750394402">"Benarkan"</string>
+    <string name="deny" msgid="340512788979930804">"Tolak"</string>
     <string name="backspace_key" msgid="1545590866688979099">"Kekunci undur ruang"</string>
     <string name="enter_key" msgid="2121394305541579468">"Kekunci enter"</string>
     <string name="exit_retail_button_text" msgid="6093240315583384473">"Keluar drpd Tunjuk Cara"</string>
