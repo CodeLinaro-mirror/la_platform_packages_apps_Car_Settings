@@ -30,6 +30,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.annotation.XmlRes;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.car.apps.common.widget.PagedRecyclerView;
 import com.android.car.settings.R;
 import com.android.car.settings.common.ActivityResultCallback;
 import com.android.car.settings.common.SettingsFragment;
@@ -69,15 +70,22 @@ public class MasterClearFragment extends SettingsFragment implements ActivityRes
                         CHECK_LOCK_REQUEST_CODE, /* callback= */ this));
         masterClearButton.setEnabled(false);
 
-        masterClearButton.getViewTreeObserver().addOnGlobalLayoutListener(
+        RecyclerView recyclerView = getListView();
+        recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(
                 new ViewTreeObserver.OnGlobalLayoutListener() {
                     @Override
                     public void onGlobalLayout() {
+                        if (recyclerView instanceof PagedRecyclerView) {
+                            PagedRecyclerView pagedRecyclerView = (PagedRecyclerView) recyclerView;
+                            if (!pagedRecyclerView.fullyInitialized()) {
+                                return;
+                            }
+                        }
                         masterClearButton.setEnabled(isAtEnd());
-                        masterClearButton.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        recyclerView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     }
                 });
-        getListView().setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
+        recyclerView.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
             if (isAtEnd()) {
                 masterClearButton.setEnabled(true);
             }
@@ -93,7 +101,10 @@ public class MasterClearFragment extends SettingsFragment implements ActivityRes
 
     /** Returns {@code true} if the RecyclerView is completely displaying the last item. */
     private boolean isAtEnd() {
-        RecyclerView.LayoutManager layoutManager = getListView().getLayoutManager();
+        RecyclerView recyclerView = getListView();
+        RecyclerView.LayoutManager layoutManager = (recyclerView instanceof PagedRecyclerView)
+                ? ((PagedRecyclerView) recyclerView).getEffectiveLayoutManager()
+                : recyclerView.getLayoutManager();
         if (layoutManager == null || layoutManager.getChildCount() == 0) {
             return true;
         }
