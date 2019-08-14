@@ -76,6 +76,12 @@
     <string name="pk_wifi_tether_auto_off" translatable="false">wifi_tether_auto_off</string>
     <string name="pk_wifi_tether_password" translatable="false">wifi_tether_password</string>
     <string name="pk_wifi_tether_name" translatable="false">wifi_tether_name</string>
+    <string name="pk_p2p_tether_settings_entry" translatable="false">p2p_tether_settings_entry</string>
+    <string name="pk_p2p_tether_name" translatable="false">p2p_tether_name</string>
+    <string name="pk_p2p_tether_security" translatable="false">p2p_tether_security</string>
+    <string name="pk_p2p_tether_password" translatable="false">p2p_tether_password</string>
+    <string name="pk_p2p_tether_auto_off" translatable="false">p2p_tether_auto_off</string>
+    <string name="pk_p2p_tether_ap_band" translatable="false">p2p_tether_ap_band</string>
 
     <!-- WIFI -->
     <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>

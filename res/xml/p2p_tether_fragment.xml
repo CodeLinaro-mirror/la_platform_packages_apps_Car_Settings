@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2019, The Linux Foundation. All rights reserved.
+
+     Redistribution and use in source and binary forms, with or without
+     modification, are permitted provided that the following conditions are
+     met:
+         * Redistributions of source code must retain the above copyright
+           notice, this list of conditions and the following disclaimer.
+         * Redistributions in binary form must reproduce the above
+           copyright notice, this list of conditions and the following
+           disclaimer in the documentation and/or other materials provided
+           with the distribution.
+         * Neither the name of The Linux Foundation nor the names of its
+           contributors may be used to endorse or promote products derived
+           from this software without specific prior written permission.
+
+     THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+     WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+     ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+     BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+     CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+     SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+     BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+     WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+     OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+     IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:settings="http://schemas.android.com/apk/res-auto"
+                  android:title="@string/p2p_tether_settings_title" >
+    <com.android.car.settings.common.ValidatedEditTextPreference
+        android:key="@string/pk_wifi_tether_name"
+        android:title="@string/wifi_hotspot_name_title"
+        settings:controller="com.android.car.settings.wifi.P2pTetherNamePreferenceController"/>
+    <Preference
+        android:key="@string/pk_wifi_tether_security"
+        android:title="@string/wifi_hotspot_security_title"
+        android:summary="@string/wifi_hotspot_wpa2_personal"
+        android:persistent="false"/>
+    <com.android.car.settings.common.ValidatedEditTextPreference
+        android:key="@string/pk_wifi_tether_password"
+        android:title="@string/wifi_hotspot_password_title"
+        android:persistent="false"
+        settings:controller="com.android.car.settings.wifi.P2pTetherPasswordPreferenceController"/>
+    <SwitchPreference
+        android:key="@string/pk_wifi_tether_auto_off"
+        android:title="@string/wifi_hotspot_auto_off_title"
+        android:summary="@string/wifi_hotspot_auto_off_summary"
+        android:persistent="false"
+        settings:controller="com.android.car.settings.wifi.WifiTetherAutoOffPreferenceController"/>
+    <ListPreference
+        android:key="@string/pk_wifi_tether_ap_band"
+        android:title="@string/wifi_hotspot_ap_band_title"
+        android:dialogTitle="@string/wifi_hotspot_ap_band_title"
+        android:persistent="false"
+        settings:controller="com.android.car.settings.wifi.P2pTetherApBandPreferenceController"/>
+</PreferenceScreen>

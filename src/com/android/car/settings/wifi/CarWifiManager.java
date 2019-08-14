@@ -20,6 +20,8 @@ import android.content.Context;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
+import android.net.wifi.p2p.WifiP2pConfig;
+import android.net.wifi.p2p.WifiP2pManager;
 
 import androidx.annotation.UiThread;
 
@@ -39,6 +41,7 @@ public class CarWifiManager implements WifiTracker.WifiListener {
 
     private WifiTracker mWifiTracker;
     private WifiManager mWifiManager;
+    private WifiP2pManager mWifiP2pManager;
 
     public interface Listener {
         /**
@@ -64,6 +67,7 @@ public class CarWifiManager implements WifiTracker.WifiListener {
 
     public CarWifiManager(Context context) {
         mContext = context;
+        mWifiP2pManager = mContext.getSystemService(WifiP2pManager.class);
         mWifiManager = mContext.getSystemService(WifiManager.class);
         mWifiTracker = new WifiTracker(context, this, true, true);
     }
@@ -155,6 +159,14 @@ public class CarWifiManager implements WifiTracker.WifiListener {
             }
         }
         return null;
+    }
+
+    public WifiP2pConfig getP2pTetherConfiguration() {
+        return mWifiP2pManager.getP2pTetherConfiguration();
+    }
+
+    public boolean setP2pTetherConfiguration(WifiP2pConfig config) {
+        return mWifiP2pManager.setP2pTetherConfiguration(config);
     }
 
     /**

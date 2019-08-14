@@ -19,6 +19,7 @@ package com.android.car.settings.wifi;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.net.wifi.WifiConfiguration;
+import android.net.wifi.p2p.WifiP2pConfig;
 import android.text.TextUtils;
 
 import androidx.annotation.CallSuper;
@@ -91,6 +92,14 @@ public abstract class WifiTetherBasePreferenceController<V extends Preference> e
 
     protected CarWifiManager getCarWifiManager() {
         return mCarWifiManager;
+    }
+
+    protected WifiP2pConfig getCarP2pTetherConfiguration() {
+        return mCarWifiManager.getP2pTetherConfiguration();
+    }
+
+    protected void setCarP2pTetherConfiguration(WifiP2pConfig config) {
+        mCarWifiManager.setP2pTetherConfiguration(config);
     }
 
     protected abstract String getSummary();
