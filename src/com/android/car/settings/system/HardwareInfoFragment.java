@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The Android Open Source Project
+ * Copyright (C) 2019 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,19 @@
  * limitations under the License.
  */
 
-package com.android.car.settings;
+package com.android.car.settings.system;
 
-import org.junit.runners.model.InitializationError;
-import org.robolectric.RobolectricTestRunner;
+import androidx.annotation.XmlRes;
 
-/**
- * TODO: Remove this and use RobolectricTestRunner in all tests.
- */
-public class CarSettingsRobolectricTestRunner extends RobolectricTestRunner {
-    /**
-     * We don't actually want to change this behavior, so we just call super.
-     */
-    public CarSettingsRobolectricTestRunner(Class<?> testClass) throws InitializationError {
-        super(testClass);
+import com.android.car.settings.R;
+import com.android.car.settings.common.SettingsFragment;
+
+/** Fragment showing hardware info such as model name and serial number. */
+public class HardwareInfoFragment extends SettingsFragment {
+
+    @Override
+    @XmlRes
+    protected int getPreferenceScreenResId() {
+        return R.xml.hardware_info_fragment;
     }
 }

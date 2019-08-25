@@ -18,22 +18,22 @@ package com.android.car.settings.users;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import android.car.userlib.CarUserManagerHelper;
+import android.content.Context;
 import android.content.pm.UserInfo;
+import android.os.Process;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.view.View;
 import android.widget.Button;
 
-import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.R;
 import com.android.car.settings.common.ConfirmationDialogFragment;
 import com.android.car.settings.testutils.BaseTestActivity;
 import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
 import com.android.car.settings.testutils.ShadowUserIconProvider;
-import com.android.car.settings.testutils.ShadowUserManager;
 
 import org.junit.After;
 import org.junit.Before;
@@ -42,13 +42,16 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
+import org.robolectric.RuntimeEnvironment;
+import org.robolectric.Shadows;
 import org.robolectric.annotation.Config;
+import org.robolectric.shadows.ShadowUserManager;
 
-import java.util.Arrays;
+import java.util.Collections;
 
-@RunWith(CarSettingsRobolectricTestRunner.class)
-@Config(shadows = {ShadowUserManager.class, ShadowCarUserManagerHelper.class,
-        ShadowUserIconProvider.class})
+@RunWith(RobolectricTestRunner.class)
+@Config(shadows = {ShadowCarUserManagerHelper.class, ShadowUserIconProvider.class})
 public class UserDetailsBaseFragmentTest {
 
     /*
@@ -68,20 +71,21 @@ public class UserDetailsBaseFragmentTest {
         }
     }
 
+    private Context mContext;
     private BaseTestActivity mTestActivity;
     private UserDetailsBaseFragment mUserDetailsBaseFragment;
     @Mock
     private CarUserManagerHelper mCarUserManagerHelper;
-    @Mock
-    private UserManager mUserManager;
 
     private Button mRemoveUserButton;
 
     @Before
     public void setUpTestActivity() {
+        mContext = RuntimeEnvironment.application;
         MockitoAnnotations.initMocks(this);
         ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
-        ShadowUserManager.setInstance(mUserManager);
+
+        setCurrentUserWithFlags(/* flags= */ 0);
 
         mTestActivity = Robolectric.setupActivity(BaseTestActivity.class);
     }
@@ -89,70 +93,76 @@ public class UserDetailsBaseFragmentTest {
     @After
     public void tearDown() {
         ShadowCarUserManagerHelper.reset();
-        ShadowUserManager.reset();
     }
 
     @Test
     public void testRemoveUserButtonVisible_whenAllowedToRemoveUsers() {
-        when(mCarUserManagerHelper.canCurrentProcessRemoveUsers()).thenReturn(true);
-        when(mCarUserManagerHelper.canUserBeRemoved(any())).thenReturn(true);
-        when(mCarUserManagerHelper.isCurrentProcessDemoUser()).thenReturn(false);
-        createUserDetailsBaseFragment();
+        getShadowUserManager().setUserRestriction(
+                Process.myUserHandle(), UserManager.DISALLOW_REMOVE_USER, false);
+        createUserDetailsBaseFragment(/* userId= */ 1);
 
         assertThat(mRemoveUserButton.getVisibility()).isEqualTo(View.VISIBLE);
     }
 
     @Test
-    public void testRemoveUserButtonHidden_whenNotAllowedToRemoveUSers() {
-        when(mCarUserManagerHelper.canCurrentProcessRemoveUsers()).thenReturn(false);
-        when(mCarUserManagerHelper.canUserBeRemoved(any())).thenReturn(true);
-        when(mCarUserManagerHelper.isCurrentProcessDemoUser()).thenReturn(false);
-        createUserDetailsBaseFragment();
+    public void testRemoveUserButtonHidden_whenNotAllowedToRemoveUsers() {
+        getShadowUserManager().setUserRestriction(
+                Process.myUserHandle(), UserManager.DISALLOW_REMOVE_USER, true);
+        createUserDetailsBaseFragment(/* userId= */ 1);
 
         assertThat(mRemoveUserButton.getVisibility()).isEqualTo(View.GONE);
     }
 
     @Test
-    public void testRemoveUserButtonHidden_whenUserCannotBeRemoved() {
-        when(mCarUserManagerHelper.canCurrentProcessRemoveUsers()).thenReturn(true);
-        when(mCarUserManagerHelper.canUserBeRemoved(any())).thenReturn(false);
-        when(mCarUserManagerHelper.isCurrentProcessDemoUser()).thenReturn(false);
-        createUserDetailsBaseFragment();
+    public void testRemoveUserButtonHidden_whenUserIsSystemUser() {
+        getShadowUserManager().setUserRestriction(
+                Process.myUserHandle(), UserManager.DISALLOW_REMOVE_USER, false);
+
+        createUserDetailsBaseFragment(UserHandle.USER_SYSTEM);
 
         assertThat(mRemoveUserButton.getVisibility()).isEqualTo(View.GONE);
     }
 
     @Test
     public void testRemoveUserButtonHidden_demoUser() {
-        when(mCarUserManagerHelper.canCurrentProcessRemoveUsers()).thenReturn(true);
-        when(mCarUserManagerHelper.canUserBeRemoved(any())).thenReturn(true);
-        when(mCarUserManagerHelper.isCurrentProcessDemoUser()).thenReturn(true);
-        createUserDetailsBaseFragment();
+        getShadowUserManager().setUserRestriction(
+                Process.myUserHandle(), UserManager.DISALLOW_REMOVE_USER, false);
+        setCurrentUserWithFlags(UserInfo.FLAG_DEMO);
+        createUserDetailsBaseFragment(/* userId= */ 1);
 
         assertThat(mRemoveUserButton.getVisibility()).isEqualTo(View.GONE);
     }
 
     @Test
     public void testRemoveUserButtonClick_createsRemovalDialog() {
-        when(mCarUserManagerHelper.canCurrentProcessRemoveUsers()).thenReturn(true);
-        when(mCarUserManagerHelper.canUserBeRemoved(any())).thenReturn(true);
-        when(mCarUserManagerHelper.isCurrentProcessDemoUser()).thenReturn(false);
+        getShadowUserManager().setUserRestriction(
+                Process.myUserHandle(), UserManager.DISALLOW_REMOVE_USER, false);
         when(mCarUserManagerHelper.getAllPersistentUsers()).thenReturn(
-                Arrays.asList(new UserInfo()));
-        createUserDetailsBaseFragment();
+                Collections.singletonList(new UserInfo()));
+        createUserDetailsBaseFragment(/* userId= */ 1);
         mRemoveUserButton.performClick();
 
         assertThat(mUserDetailsBaseFragment.findDialogByTag(
                 ConfirmationDialogFragment.TAG)).isNotNull();
     }
 
-    private void createUserDetailsBaseFragment() {
+    private void createUserDetailsBaseFragment(int userId) {
         UserInfo testUser = new UserInfo();
+        testUser.id = userId;
         // Use UserDetailsFragment, since we cannot test an abstract class.
         mUserDetailsBaseFragment = UserDetailsBaseFragment.addUserIdToFragmentArguments(
                 new TestUserDetailsBaseFragment(), testUser.id);
-        when(mUserManager.getUserInfo(testUser.id)).thenReturn(testUser);
+        getShadowUserManager().addUser(testUser.id, "testUser", /* flags= */ 0);
         mTestActivity.launchFragment(mUserDetailsBaseFragment);
-        mRemoveUserButton = (Button) mTestActivity.findViewById(R.id.action_button1);
+        mRemoveUserButton = mTestActivity.findViewById(R.id.action_button1);
+    }
+
+    private void setCurrentUserWithFlags(int flags) {
+        UserInfo userInfo = new UserInfo(UserHandle.myUserId(), "test name", flags);
+        getShadowUserManager().addUser(userInfo.id, userInfo.name, userInfo.flags);
+    }
+
+    private ShadowUserManager getShadowUserManager() {
+        return Shadows.shadowOf(UserManager.get(mContext));
     }
 }
