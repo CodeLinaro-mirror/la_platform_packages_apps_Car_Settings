@@ -30,16 +30,17 @@ import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.UserHandle;
+import android.os.UserManager;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
-import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.R;
 import com.android.car.settings.security.CheckLockActivity;
 import com.android.car.settings.testutils.FragmentController;
+import com.android.car.settings.testutils.ShadowAccountManager;
 import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
-import com.android.car.settings.testutils.ShadowUserManager;
 
 import org.junit.After;
 import org.junit.Before;
@@ -47,6 +48,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.Shadows;
 import org.robolectric.annotation.Config;
@@ -55,8 +57,8 @@ import org.robolectric.shadows.ShadowApplication;
 import java.util.Collections;
 
 /** Unit test for {@link MasterClearFragment}. */
-@RunWith(CarSettingsRobolectricTestRunner.class)
-@Config(shadows = {ShadowCarUserManagerHelper.class, ShadowUserManager.class})
+@RunWith(RobolectricTestRunner.class)
+@Config(shadows = {ShadowCarUserManagerHelper.class, ShadowAccountManager.class})
 public class MasterClearFragmentTest {
 
     @Mock
@@ -70,9 +72,14 @@ public class MasterClearFragmentTest {
         MockitoAnnotations.initMocks(this);
         Context context = RuntimeEnvironment.application;
         ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
+        int userId = UserHandle.myUserId();
+        Shadows.shadowOf(UserManager.get(context)).addUser(userId, "User Name", /* flags= */ 0);
+        Shadows.shadowOf(UserManager.get(context)).addProfile(userId, userId,
+                "Profile Name", /* profileFlags= */ 0);
         Shadows.shadowOf(context.getPackageManager())
                 .setSystemFeature(PackageManager.FEATURE_AUTOMOTIVE, true);
         when(mCarUserManagerHelper.getAllSwitchableUsers()).thenReturn(Collections.emptyList());
+        when(mCarUserManagerHelper.getCurrentProcessUserId()).thenReturn(userId);
 
         mFragment = FragmentController.of(new MasterClearFragment()).setup();
     }
@@ -80,7 +87,6 @@ public class MasterClearFragmentTest {
     @After
     public void tearDown() {
         ShadowCarUserManagerHelper.reset();
-        ShadowUserManager.reset();
     }
 
     @Test

@@ -118,13 +118,15 @@ public class UserGridRecyclerView extends RecyclerView implements
                 continue;
             }
 
-            UserRecord record = new UserRecord(userInfo, false /* isStartGuestSession */,
-                    false /* isAddUser */, isForeground);
+            UserRecord record = new UserRecord(userInfo,
+                    /* isStartGuestSession= */ false,
+                    /* isAddUser= */ false,
+                    isForeground);
             userRecords.add(record);
         }
 
         // Add start guest user record if the system is not logged in as guest already.
-        if (!mCarUserManagerHelper.isForegroundUserGuest()) {
+        if (!mCarUserManagerHelper.getCurrentForegroundUserInfo().isGuest()) {
             userRecords.add(createStartGuestUserRecord());
         }
 
@@ -138,7 +140,9 @@ public class UserGridRecyclerView extends RecyclerView implements
 
     private UserRecord createForegroundUserRecord() {
         return new UserRecord(mCarUserManagerHelper.getCurrentForegroundUserInfo(),
-                false /* isStartGuestSession */, false /* isAddUser */, true /* isForeground */);
+                /* isStartGuestSession= */ false,
+                /* isAddUser= */ false,
+                /* isForeground= */ true);
     }
 
     /**
@@ -163,8 +167,10 @@ public class UserGridRecyclerView extends RecyclerView implements
     private UserRecord createStartGuestUserRecord() {
         UserInfo userInfo = new UserInfo();
         userInfo.name = mContext.getString(R.string.start_guest_session);
-        return new UserRecord(userInfo, true /* isStartGuestSession */,
-                false /* isAddUser */, false /* isForeground */);
+        return new UserRecord(userInfo,
+                /* isStartGuestSession= */ true,
+                /* isAddUser= */ false,
+                /* isForeground= */ false);
     }
 
     /**
@@ -173,8 +179,10 @@ public class UserGridRecyclerView extends RecyclerView implements
     private UserRecord createAddUserRecord() {
         UserInfo userInfo = new UserInfo();
         userInfo.name = mContext.getString(R.string.user_add_user_menu);
-        return new UserRecord(userInfo, false /* isStartGuestSession */,
-                true /* isAddUser */, false /* isForeground */);
+        return new UserRecord(userInfo,
+                /* isStartGuestSession= */ false,
+                /* isAddUser= */ true,
+                /* isForeground= */ false);
     }
 
     public void setFragment(BaseFragment fragment) {
@@ -289,7 +297,7 @@ public class UserGridRecyclerView extends RecyclerView implements
                     // If there are restrictions, show a 50% opaque "add user" view
                     holder.mView.setAlpha(mOpacityDisabled);
                     holder.mView.setOnClickListener(
-                            v -> mBaseFragment.getFragmentController().showBlockingMessage());
+                            v -> mBaseFragment.getFragmentHost().showBlockingMessage());
                 } else {
                     holder.mView.setOnClickListener(v -> handleAddUserClicked(v));
                 }

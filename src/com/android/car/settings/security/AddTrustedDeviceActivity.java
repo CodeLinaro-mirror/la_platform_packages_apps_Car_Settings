@@ -84,7 +84,7 @@ public class AddTrustedDeviceActivity extends BaseCarSettingsActivity implements
                     ConfirmPairingCodeDialog dialog = ConfirmPairingCodeDialog.newInstance(
                             authString);
                     dialog.setConfirmPairingCodeListener(mConfirmParingCodeListener);
-                    showDialog(dialog, ConfirmPairingCodeDialog.TAG);
+                    dialog.show(getSupportFragmentManager(), ConfirmPairingCodeDialog.TAG);
                 }
 
                 @Override
@@ -166,7 +166,8 @@ public class AddTrustedDeviceActivity extends BaseCarSettingsActivity implements
             mHandle = savedInstanceState.getLong(CURRENT_HANDLE_KEY);
         }
         ConfirmPairingCodeDialog dialog =
-                (ConfirmPairingCodeDialog) findDialogByTag(ConfirmPairingCodeDialog.TAG);
+                (ConfirmPairingCodeDialog) getSupportFragmentManager().findFragmentByTag(
+                        ConfirmPairingCodeDialog.TAG);
         if (dialog != null) {
             dialog.setConfirmPairingCodeListener(mConfirmParingCodeListener);
         }
@@ -188,15 +189,16 @@ public class AddTrustedDeviceActivity extends BaseCarSettingsActivity implements
         }
         mCarTrustAgentEnrollmentManager.setEnrollmentCallback(mCarTrustAgentEnrollmentCallback);
         mCarTrustAgentEnrollmentManager.setBleCallback(mCarTrustAgentBleCallback);
-
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        // When activity is pausing not because of a configuration change
+        // When activity is pausing not because of a configuration change, e.g. user click
+        // notifications.
         if (getChangingConfigurations() == 0) {
             mCarTrustAgentEnrollmentManager.terminateEnrollmentHandshake();
+            finish();
         }
     }
 

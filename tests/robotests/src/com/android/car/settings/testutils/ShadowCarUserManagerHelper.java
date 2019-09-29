@@ -49,11 +49,6 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
-    protected void setUserName(UserInfo user, String name) {
-        sMockInstance.setUserName(user, name);
-    }
-
-    @Implementation
     protected UserInfo getCurrentProcessUserInfo() {
         return sMockInstance.getCurrentProcessUserInfo();
     }
@@ -114,43 +109,13 @@ public class ShadowCarUserManagerHelper {
     }
 
     @Implementation
-    protected boolean canCurrentProcessAddUsers() {
-        return sMockInstance.canCurrentProcessAddUsers();
-    }
-
-    @Implementation
     protected int getMaxSupportedRealUsers() {
         return sMockInstance.getMaxSupportedRealUsers();
     }
 
     @Implementation
-    protected boolean canCurrentProcessRemoveUsers() {
-        return sMockInstance.canCurrentProcessRemoveUsers();
-    }
-
-    @Implementation
-    protected boolean canUserBeRemoved(UserInfo userInfo) {
-        return sMockInstance.canUserBeRemoved(userInfo);
-    }
-
-    @Implementation
     protected void grantAdminPermissions(UserInfo user) {
         sMockInstance.grantAdminPermissions(user);
-    }
-
-    @Implementation
-    protected boolean isCurrentProcessDemoUser() {
-        return sMockInstance.isCurrentProcessDemoUser();
-    }
-
-    @Implementation
-    protected boolean isCurrentProcessAdminUser() {
-        return sMockInstance.isCurrentProcessAdminUser();
-    }
-
-    @Implementation
-    protected boolean isCurrentProcessGuestUser() {
-        return sMockInstance.isCurrentProcessGuestUser();
     }
 
     @Implementation

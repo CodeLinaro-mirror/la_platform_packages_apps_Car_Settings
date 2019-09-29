@@ -35,11 +35,13 @@ import com.android.car.settings.common.PreferenceController;
 public class MasterClearEntryPreferenceController extends PreferenceController<Preference> {
 
     private final CarUserManagerHelper mCarUserManagerHelper;
+    private final UserManager mUserManager;
 
     public MasterClearEntryPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mCarUserManagerHelper = new CarUserManagerHelper(context);
+        mUserManager = UserManager.get(context);
     }
 
     @Override
@@ -53,12 +55,12 @@ public class MasterClearEntryPreferenceController extends PreferenceController<P
     }
 
     private boolean isUserRestricted() {
-        return !(mCarUserManagerHelper.isCurrentProcessAdminUser() || isDemoUser())
+        return !(mUserManager.isAdminUser() || isDemoUser())
                 || mCarUserManagerHelper.isCurrentProcessUserHasRestriction(DISALLOW_FACTORY_RESET);
     }
 
     private boolean isDemoUser() {
         return UserManager.isDeviceInDemoMode(getContext())
-                && mCarUserManagerHelper.isCurrentProcessDemoUser();
+                && mUserManager.isDemoUser();
     }
 }
