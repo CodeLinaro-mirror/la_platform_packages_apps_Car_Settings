@@ -16,12 +16,20 @@
 
 package com.android.car.settings.users;
 
+import static android.os.UserManager.DISALLOW_ADD_USER;
+
+import android.app.ActivityManager;
 import android.car.userlib.CarUserManagerHelper;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.os.UserHandle;
+import android.os.UserManager;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,25 +51,39 @@ import com.android.internal.util.UserIcons;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Displays a GridLayout with icons for the users in the system to allow switching between users.
  * One of the uses of this is for the lock screen in auto.
  */
-public class UserGridRecyclerView extends RecyclerView implements
-        CarUserManagerHelper.OnUsersUpdateListener {
+public class UserGridRecyclerView extends RecyclerView {
+
+    private static final String MAX_USERS_LIMIT_REACHED_DIALOG_TAG =
+            "com.android.car.settings.users.MaxUsersLimitReachedDialog";
+    private static final String CONFIRM_CREATE_NEW_USER_DIALOG_TAG =
+            "com.android.car.settings.users.ConfirmCreateNewUserDialog";
 
     private UserAdapter mAdapter;
     private CarUserManagerHelper mCarUserManagerHelper;
+    private UserManager mUserManager;
     private Context mContext;
     private BaseFragment mBaseFragment;
     public AddNewUserTask mAddNewUserTask;
     public boolean mEnableAddUserButton;
 
+    private final BroadcastReceiver mUserUpdateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            onUsersUpdate();
+        }
+    };
+
     public UserGridRecyclerView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         mCarUserManagerHelper = new CarUserManagerHelper(mContext);
+        mUserManager = UserManager.get(mContext);
         mEnableAddUserButton = true;
 
         addItemDecoration(new ItemSpacingDecoration(context.getResources().getDimensionPixelSize(
@@ -74,7 +96,7 @@ public class UserGridRecyclerView extends RecyclerView implements
     @Override
     public void onFinishInflate() {
         super.onFinishInflate();
-        mCarUserManagerHelper.registerOnUsersUpdateListener(this);
+        registerForUserEvents();
     }
 
     /**
@@ -83,7 +105,7 @@ public class UserGridRecyclerView extends RecyclerView implements
     @Override
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mCarUserManagerHelper.unregisterOnUsersUpdateListener(this);
+        unregisterForUserEvents();
         if (mAddNewUserTask != null) {
             mAddNewUserTask.cancel(/* mayInterruptIfRunning= */ false);
         }
@@ -93,8 +115,7 @@ public class UserGridRecyclerView extends RecyclerView implements
      * Initializes the adapter that populates the grid layout
      */
     public void buildAdapter() {
-        List<UserRecord> userRecords = createUserRecords(mCarUserManagerHelper
-                .getAllUsers());
+        List<UserRecord> userRecords = createUserRecords(getUsersForUserGrid());
         mAdapter = new UserAdapter(mContext, userRecords);
         super.setAdapter(mAdapter);
     }
@@ -110,8 +131,7 @@ public class UserGridRecyclerView extends RecyclerView implements
 
         // If the foreground user CAN switch to other users, iterate through all users.
         for (UserInfo userInfo : userInfoList) {
-            boolean isForeground =
-                    mCarUserManagerHelper.getCurrentForegroundUserId() == userInfo.id;
+            boolean isForeground = ActivityManager.getCurrentUser() == userInfo.id;
 
             if (!isForeground && userInfo.isGuest()) {
                 // Don't display temporary running background guests in the switcher.
@@ -126,12 +146,13 @@ public class UserGridRecyclerView extends RecyclerView implements
         }
 
         // Add start guest user record if the system is not logged in as guest already.
-        if (!mCarUserManagerHelper.getCurrentForegroundUserInfo().isGuest()) {
+        if (!getCurrentForegroundUserInfo().isGuest()) {
             userRecords.add(createStartGuestUserRecord());
         }
 
         // Add "add user" record if the foreground user can add users
-        if (mCarUserManagerHelper.canForegroundUserAddUsers()) {
+        UserHandle fgUserHandle = UserHandle.of(ActivityManager.getCurrentUser());
+        if (!mUserManager.hasUserRestriction(DISALLOW_ADD_USER, fgUserHandle)) {
             userRecords.add(createAddUserRecord());
         }
 
@@ -139,10 +160,14 @@ public class UserGridRecyclerView extends RecyclerView implements
     }
 
     private UserRecord createForegroundUserRecord() {
-        return new UserRecord(mCarUserManagerHelper.getCurrentForegroundUserInfo(),
+        return new UserRecord(getCurrentForegroundUserInfo(),
                 /* isStartGuestSession= */ false,
                 /* isAddUser= */ false,
                 /* isForeground= */ true);
+    }
+
+    private UserInfo getCurrentForegroundUserInfo() {
+        return mUserManager.getUserInfo(ActivityManager.getCurrentUser());
     }
 
     /**
@@ -189,14 +214,39 @@ public class UserGridRecyclerView extends RecyclerView implements
         mBaseFragment = fragment;
     }
 
-    @Override
-    public void onUsersUpdate() {
+    private void onUsersUpdate() {
         // If you can show the add user button, there is no restriction
         mAdapter.setAddUserRestricted(!mEnableAddUserButton);
         mAdapter.clearUsers();
-        mAdapter.updateUsers(createUserRecords(mCarUserManagerHelper
-                .getAllUsers()));
+        mAdapter.updateUsers(createUserRecords(getUsersForUserGrid()));
         mAdapter.notifyDataSetChanged();
+    }
+
+    private List<UserInfo> getUsersForUserGrid() {
+        List<UserInfo> users = UserManager.get(mContext).getUsers(/* excludeDying= */ true);
+        return users.stream()
+                .filter(UserInfo::supportsSwitchToByUser)
+                .collect(Collectors.toList());
+    }
+
+    private void registerForUserEvents() {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Intent.ACTION_USER_REMOVED);
+        filter.addAction(Intent.ACTION_USER_ADDED);
+        filter.addAction(Intent.ACTION_USER_INFO_CHANGED);
+        filter.addAction(Intent.ACTION_USER_SWITCHED);
+        filter.addAction(Intent.ACTION_USER_STOPPED);
+        filter.addAction(Intent.ACTION_USER_UNLOCKED);
+        mContext.registerReceiverAsUser(
+                mUserUpdateReceiver,
+                UserHandle.ALL,
+                filter,
+                /* broadcastPermission= */ null,
+                /* scheduler= */ null);
+    }
+
+    private void unregisterForUserEvents() {
+        mContext.unregisterReceiver(mUserUpdateReceiver);
     }
 
     /**
@@ -238,6 +288,7 @@ public class UserGridRecyclerView extends RecyclerView implements
             mNewUserName = mRes.getString(R.string.user_new_user_name);
             mOpacityDisabled = mRes.getFloat(R.dimen.opacity_disabled);
             mOpacityEnabled = mRes.getFloat(R.dimen.opacity_enabled);
+            resetDialogListeners();
         }
 
         /**
@@ -317,6 +368,21 @@ public class UserGridRecyclerView extends RecyclerView implements
             mIsAddUserRestricted = isAddUserRestricted;
         }
 
+        /** Resets listeners for shown dialog fragments. */
+        private void resetDialogListeners() {
+            if (mBaseFragment != null) {
+                ConfirmationDialogFragment dialog =
+                        (ConfirmationDialogFragment) mBaseFragment
+                                .getFragmentManager()
+                                .findFragmentByTag(CONFIRM_CREATE_NEW_USER_DIALOG_TAG);
+                ConfirmationDialogFragment.resetListeners(
+                        dialog,
+                        mConfirmListener,
+                        mRejectListener,
+                        /* neutralListener= */ null);
+            }
+        }
+
         private void handleUserSwitch(UserInfo userInfo) {
             if (mCarUserManagerHelper.switchToUser(userInfo)) {
                 // Successful switch, close Settings app.
@@ -332,7 +398,7 @@ public class UserGridRecyclerView extends RecyclerView implements
         }
 
         private void handleAddUserClicked(View addUserView) {
-            if (mCarUserManagerHelper.isUserLimitReached()) {
+            if (!mUserManager.canAddMoreUsers()) {
                 showMaxUsersLimitReachedDialog();
             } else {
                 mAddUserView = addUserView;
@@ -343,18 +409,19 @@ public class UserGridRecyclerView extends RecyclerView implements
         }
 
         private void showMaxUsersLimitReachedDialog() {
-            MaxUsersLimitReachedDialog dialog = new MaxUsersLimitReachedDialog(
-                    mCarUserManagerHelper.getMaxSupportedRealUsers());
-            if (mBaseFragment != null) {
-                dialog.show(mBaseFragment);
-            }
+            ConfirmationDialogFragment dialogFragment =
+                    UsersDialogProvider.getMaxUsersLimitReachedDialogFragment(getContext(),
+                            mCarUserManagerHelper.getMaxSupportedRealUsers());
+            dialogFragment.show(
+                    mBaseFragment.getFragmentManager(), MAX_USERS_LIMIT_REACHED_DIALOG_TAG);
         }
 
         private void showConfirmCreateNewUserDialog() {
             ConfirmationDialogFragment dialogFragment =
                     UsersDialogProvider.getConfirmCreateNewUserDialogFragment(getContext(),
                             mConfirmListener, mRejectListener);
-            dialogFragment.show(mBaseFragment.getFragmentManager(), ConfirmationDialogFragment.TAG);
+            dialogFragment.show(
+                    mBaseFragment.getFragmentManager(), CONFIRM_CREATE_NEW_USER_DIALOG_TAG);
         }
 
         private Bitmap getUserRecordIcon(UserRecord userRecord) {

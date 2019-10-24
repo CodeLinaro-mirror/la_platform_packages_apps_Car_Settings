@@ -54,12 +54,16 @@ public class MakeAdminPreferenceController extends
     /** Ensure that the listener is reset if the dialog was open during a configuration change. */
     @Override
     protected void onCreateInternal() {
+        super.onCreateInternal();
         ConfirmationDialogFragment dialog =
                 (ConfirmationDialogFragment) getFragmentController().findDialogByTag(
                         ConfirmationDialogFragment.TAG);
 
-        ConfirmationDialogFragment.resetListeners(dialog, mConfirmListener, /* rejectListener= */
-                null);
+        ConfirmationDialogFragment.resetListeners(
+                dialog,
+                mConfirmListener,
+                /* rejectListener= */ null,
+                /* neutralListener= */ null);
     }
 
     @Override

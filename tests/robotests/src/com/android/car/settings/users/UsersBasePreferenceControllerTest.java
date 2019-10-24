@@ -20,13 +20,11 @@ import static android.content.pm.UserInfo.FLAG_ADMIN;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.car.drivingstate.CarUxRestrictions;
-import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.UserInfo;
 
 import androidx.lifecycle.Lifecycle;
@@ -36,14 +34,13 @@ import androidx.preference.PreferenceGroup;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.LogicalPreferenceGroup;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
-import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
+import com.android.car.settings.testutils.ShadowUserHelper;
 import com.android.car.settings.testutils.ShadowUserIconProvider;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RobolectricTestRunner;
@@ -55,7 +52,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowCarUserManagerHelper.class, ShadowUserIconProvider.class})
+@Config(shadows = {ShadowUserIconProvider.class, ShadowUserHelper.class})
 public class UsersBasePreferenceControllerTest {
 
     private static class TestUsersBasePreferenceController extends UsersBasePreferenceController {
@@ -74,38 +71,43 @@ public class UsersBasePreferenceControllerTest {
             "TEST_USER_NAME", /* flags= */ 0);
     private static final UserInfo TEST_OTHER_USER = new UserInfo(/* id= */ 11,
             "TEST_OTHER_NAME", /* flags= */ 0);
+
+    private static final List<String> LISTENER_ACTIONS =
+            Collections.singletonList(Intent.ACTION_USER_INFO_CHANGED);
+
     private PreferenceControllerTestHelper<TestUsersBasePreferenceController> mControllerHelper;
     private TestUsersBasePreferenceController mController;
     private PreferenceGroup mPreferenceGroup;
+    private Context mContext;
     @Mock
-    private CarUserManagerHelper mCarUserManagerHelper;
+    private UserHelper mUserHelper;
 
     @Before
     public void setUp() {
-        Context context = RuntimeEnvironment.application;
+        mContext = RuntimeEnvironment.application;
         MockitoAnnotations.initMocks(this);
-        ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
-        mPreferenceGroup = new LogicalPreferenceGroup(context);
-        mControllerHelper = new PreferenceControllerTestHelper<>(context,
+        ShadowUserHelper.setInstance(mUserHelper);
+        mPreferenceGroup = new LogicalPreferenceGroup(mContext);
+        mControllerHelper = new PreferenceControllerTestHelper<>(mContext,
                 TestUsersBasePreferenceController.class, mPreferenceGroup);
         mController = mControllerHelper.getController();
-        when(mCarUserManagerHelper.getCurrentProcessUserInfo()).thenReturn(TEST_CURRENT_USER);
-        when(mCarUserManagerHelper.isCurrentProcessUser(TEST_CURRENT_USER)).thenReturn(true);
-        when(mCarUserManagerHelper.getAllSwitchableUsers()).thenReturn(
+        when(mUserHelper.getCurrentProcessUserInfo()).thenReturn(TEST_CURRENT_USER);
+        when(mUserHelper.isCurrentProcessUser(TEST_CURRENT_USER)).thenReturn(true);
+        when(mUserHelper.getAllSwitchableUsers()).thenReturn(
                 Collections.singletonList(TEST_OTHER_USER));
     }
 
     @After
     public void tearDown() {
-        ShadowCarUserManagerHelper.reset();
+        ShadowUserHelper.reset();
     }
 
     @Test
     public void onCreate_registersOnUsersUpdateListener() {
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
 
-        verify(mCarUserManagerHelper).registerOnUsersUpdateListener(
-                any(CarUserManagerHelper.OnUsersUpdateListener.class));
+        assertThat(BroadcastReceiverHelpers.getRegisteredReceiverWithActions(LISTENER_ACTIONS))
+                .isNotNull();
     }
 
     @Test
@@ -118,12 +120,11 @@ public class UsersBasePreferenceControllerTest {
 
     @Test
     public void onDestroy_unregistersOnUsersUpdateListener() {
+        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
         mControllerHelper.markState(Lifecycle.State.STARTED);
-
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_DESTROY);
-
-        verify(mCarUserManagerHelper).unregisterOnUsersUpdateListener(
-                any(CarUserManagerHelper.OnUsersUpdateListener.class));
+        assertThat(BroadcastReceiverHelpers.getRegisteredReceiverWithActions(LISTENER_ACTIONS))
+                .isNull();
     }
 
     @Test
@@ -138,7 +139,7 @@ public class UsersBasePreferenceControllerTest {
 
         // Mock a change so that other user becomes an admin.
         UserInfo adminOtherUser = new UserInfo(/* id= */ 11, "TEST_OTHER_NAME", FLAG_ADMIN);
-        when(mCarUserManagerHelper.getAllSwitchableUsers()).thenReturn(
+        when(mUserHelper.getAllSwitchableUsers()).thenReturn(
                 Collections.singletonList(adminOtherUser));
 
         mController.refreshUi();
@@ -173,10 +174,7 @@ public class UsersBasePreferenceControllerTest {
 
     @Test
     public void onUsersUpdated_updatesGroup() {
-        ArgumentCaptor<CarUserManagerHelper.OnUsersUpdateListener> listenerCaptor =
-                ArgumentCaptor.forClass(CarUserManagerHelper.OnUsersUpdateListener.class);
         mControllerHelper.markState(Lifecycle.State.STARTED);
-        verify(mCarUserManagerHelper).registerOnUsersUpdateListener(listenerCaptor.capture());
 
         // Store the list of previous Preferences.
         List<Preference> currentPreferences = new ArrayList<>();
@@ -186,10 +184,10 @@ public class UsersBasePreferenceControllerTest {
 
         // Mock a change so that other user becomes an admin.
         UserInfo adminOtherUser = new UserInfo(/* id= */ 11, "TEST_OTHER_NAME", FLAG_ADMIN);
-        when(mCarUserManagerHelper.getAllSwitchableUsers()).thenReturn(
+        when(mUserHelper.getAllSwitchableUsers()).thenReturn(
                 Collections.singletonList(adminOtherUser));
 
-        listenerCaptor.getValue().onUsersUpdate();
+        mContext.sendBroadcast(new Intent(LISTENER_ACTIONS.get(0)));
 
         List<Preference> newPreferences = new ArrayList<>();
         for (int i = 0; i < mPreferenceGroup.getPreferenceCount(); i++) {

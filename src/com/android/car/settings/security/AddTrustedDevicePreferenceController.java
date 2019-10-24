@@ -22,9 +22,10 @@ import static android.os.UserManager.DISALLOW_CONFIG_BLUETOOTH;
 import android.app.admin.DevicePolicyManager;
 import android.bluetooth.BluetoothAdapter;
 import android.car.drivingstate.CarUxRestrictions;
-import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.os.UserHandle;
+import android.os.UserManager;
 
 import androidx.preference.Preference;
 
@@ -38,13 +39,13 @@ import com.android.internal.widget.LockPatternUtils;
  * quality of current user.
  */
 public class AddTrustedDevicePreferenceController extends PreferenceController<Preference> {
-    private CarUserManagerHelper mCarUserManagerHelper;
+    private UserManager mUserManager;
     private LockPatternUtils mLockPatternUtils;
 
     public AddTrustedDevicePreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
-        mCarUserManagerHelper = new CarUserManagerHelper(context);
+        mUserManager = UserManager.get(context);
         mLockPatternUtils = new LockPatternUtils(context);
     }
 
@@ -57,9 +58,8 @@ public class AddTrustedDevicePreferenceController extends PreferenceController<P
     }
 
     private boolean isUserRestricted() {
-        return mCarUserManagerHelper.isCurrentProcessUserHasRestriction(DISALLOW_BLUETOOTH)
-                || mCarUserManagerHelper.isCurrentProcessUserHasRestriction(
-                DISALLOW_CONFIG_BLUETOOTH);
+        return mUserManager.hasUserRestriction(DISALLOW_BLUETOOTH)
+                || mUserManager.hasUserRestriction(DISALLOW_CONFIG_BLUETOOTH);
     }
 
     @Override
@@ -71,8 +71,7 @@ public class AddTrustedDevicePreferenceController extends PreferenceController<P
     }
 
     private boolean hasPassword() {
-        return mLockPatternUtils.getKeyguardStoredPasswordQuality(
-                mCarUserManagerHelper.getCurrentProcessUserId())
+        return mLockPatternUtils.getKeyguardStoredPasswordQuality(UserHandle.myUserId())
                 != DevicePolicyManager.PASSWORD_QUALITY_UNSPECIFIED;
     }
 

@@ -86,8 +86,11 @@ public abstract class UserDetailsBaseFragment extends SettingsFragment {
 
         ConfirmationDialogFragment dialogFragment =
                 (ConfirmationDialogFragment) findDialogByTag(ConfirmationDialogFragment.TAG);
-        ConfirmationDialogFragment.resetListeners(dialogFragment,
-                mConfirmListener, /* rejectListener= */ null);
+        ConfirmationDialogFragment.resetListeners(
+                dialogFragment,
+                mConfirmListener,
+                /* rejectListener= */ null,
+                /* neutralListener= */ null);
     }
 
     @Override
@@ -97,11 +100,6 @@ public abstract class UserDetailsBaseFragment extends SettingsFragment {
 
         TextView titleView = getActivity().findViewById(R.id.title);
         titleView.setText(getTitleText());
-    }
-
-    /** Make CarUserManagerHelper available to subclasses. */
-    protected CarUserManagerHelper getCarUserManagerHelper() {
-        return mCarUserManagerHelper;
     }
 
     /** Make UserInfo available to subclasses. */
@@ -131,9 +129,10 @@ public abstract class UserDetailsBaseFragment extends SettingsFragment {
     }
 
     private void showConfirmRemoveUserDialog() {
-        boolean isLastUser = mCarUserManagerHelper.getAllPersistentUsers().size() == 1;
+        UserHelper userHelper = UserHelper.getInstance(getContext());
+        boolean isLastUser = userHelper.getAllPersistentUsers().size() == 1;
         boolean isLastAdmin = mUserInfo.isAdmin()
-                && mCarUserManagerHelper.getAllAdminUsers().size() == 1;
+                && userHelper.getAllAdminUsers().size() == 1;
 
         ConfirmationDialogFragment dialogFragment;
 

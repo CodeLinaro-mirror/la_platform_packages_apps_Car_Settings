@@ -19,9 +19,9 @@ package com.android.car.settings.users;
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
@@ -30,8 +30,10 @@ import android.content.pm.UserInfo;
 import androidx.preference.Preference;
 
 import com.android.car.settings.R;
+import com.android.car.settings.testutils.ShadowUserHelper;
 import com.android.car.settings.testutils.ShadowUserIconProvider;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -45,7 +47,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowUserIconProvider.class})
+@Config(shadows = {ShadowUserIconProvider.class, ShadowUserHelper.class})
 public class UsersPreferenceProviderTest {
 
     private static final String TEST_CURRENT_USER_NAME = "Current User";
@@ -71,19 +73,27 @@ public class UsersPreferenceProviderTest {
     private CarUserManagerHelper mCarUserManagerHelper;
     @Mock
     private UsersPreferenceProvider.UserClickListener mUserClickListener;
+    @Mock
+    private UserHelper mUserHelper;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
+        ShadowUserHelper.setInstance(mUserHelper);
         mContext = RuntimeEnvironment.application;
 
         List<UserInfo> users = Arrays.asList(TEST_OTHER_USER_1, TEST_GUEST_USER_1,
                 TEST_GUEST_USER_2,
                 TEST_OTHER_USER_2);
 
-        doReturn(TEST_CURRENT_USER).when(mCarUserManagerHelper).getCurrentProcessUserInfo();
-        doReturn(true).when(mCarUserManagerHelper).isCurrentProcessUser(TEST_CURRENT_USER);
-        doReturn(users).when(mCarUserManagerHelper).getAllSwitchableUsers();
+        when(mUserHelper.getCurrentProcessUserInfo()).thenReturn(TEST_CURRENT_USER);
+        when(mUserHelper.isCurrentProcessUser(TEST_CURRENT_USER)).thenReturn(true);
+        when(mUserHelper.getAllSwitchableUsers()).thenReturn(users);
+    }
+
+    @After
+    public void tearDown() {
+        ShadowUserHelper.reset();
     }
 
     @Test

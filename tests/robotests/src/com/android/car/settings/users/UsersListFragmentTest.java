@@ -19,8 +19,8 @@ package com.android.car.settings.users;
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
@@ -30,10 +30,11 @@ import android.os.UserManager;
 import android.widget.Button;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.ConfirmationDialogFragment;
 import com.android.car.settings.testutils.BaseTestActivity;
 import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
+import com.android.car.settings.testutils.ShadowUserHelper;
 import com.android.car.settings.testutils.ShadowUserIconProvider;
+import com.android.car.settings.testutils.ShadowUserManager;
 
 import org.junit.After;
 import org.junit.Before;
@@ -53,7 +54,8 @@ import java.util.ArrayList;
  * Tests for UserDetailsFragment.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowCarUserManagerHelper.class, ShadowUserIconProvider.class})
+@Config(shadows = {ShadowCarUserManagerHelper.class, ShadowUserIconProvider.class,
+        ShadowUserHelper.class, ShadowUserManager.class})
 public class UsersListFragmentTest {
 
     private Context mContext;
@@ -64,25 +66,30 @@ public class UsersListFragmentTest {
     @Mock
     private CarUserManagerHelper mCarUserManagerHelper;
 
+    @Mock
+    private UserHelper mUserHelper;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         ShadowCarUserManagerHelper.setMockInstance(mCarUserManagerHelper);
+        ShadowUserHelper.setInstance(mUserHelper);
         mContext = RuntimeEnvironment.application;
         mTestActivity = Robolectric.setupActivity(BaseTestActivity.class);
     }
 
     @After
     public void tearDown() {
+        ShadowUserHelper.reset();
         ShadowCarUserManagerHelper.reset();
+        ShadowUserManager.reset();
     }
 
     /* Test that onCreateNewUserConfirmed invokes a creation of a new non-admin. */
     @Test
     public void testOnCreateNewUserConfirmedInvokesCreateNewNonAdminUser() {
         createUsersListFragment(/* flags= */ 0);
-        mFragment.mConfirmListener.onConfirm(/* arguments= */ null);
+        mFragment.mConfirmCreateNewUserListener.onConfirm(/* arguments= */ null);
         Robolectric.flushBackgroundThreadScheduler();
         verify(mCarUserManagerHelper)
                 .createNewNonAdminUser(mContext.getString(R.string.user_new_user_name));
@@ -93,18 +100,17 @@ public class UsersListFragmentTest {
     public void testCallOnClick_demoUser_exitRetailMode() {
         createUsersListFragment(UserInfo.FLAG_DEMO);
         mActionButton.callOnClick();
-        assertThat(isDialogShown(ConfirmExitRetailModeDialog.DIALOG_TAG)).isTrue();
+        assertThat(isDialogShown(UsersListFragment.CONFIRM_EXIT_RETAIL_MODE_DIALOG_TAG)).isTrue();
     }
 
     /* Test that if the max num of users is reached, click on the button informs user of that. */
     @Test
     public void testCallOnClick_userLimitReached_showErrorDialog() {
-        doReturn(5).when(mCarUserManagerHelper).getMaxSupportedRealUsers();
-        doReturn(true).when(mCarUserManagerHelper).isUserLimitReached();
+        ShadowUserManager.setCanAddMoreUsers(false);
         createUsersListFragment(/* flags= */ 0);
 
         mActionButton.callOnClick();
-        assertThat(isDialogShown(MaxUsersLimitReachedDialog.DIALOG_TAG)).isTrue();
+        assertThat(isDialogShown(UsersListFragment.MAX_USERS_LIMIT_REACHED_DIALOG_TAG)).isTrue();
     }
 
     /* Test that if user can add other users, click on the button creates a dialog to confirm. */
@@ -113,7 +119,7 @@ public class UsersListFragmentTest {
         createUsersListFragment(/* flags= */ 0);
 
         mActionButton.callOnClick();
-        assertThat(isDialogShown(ConfirmationDialogFragment.TAG)).isTrue();
+        assertThat(isDialogShown(UsersListFragment.CONFIRM_CREATE_NEW_USER_DIALOG_TAG)).isTrue();
     }
 
     private void createUsersListFragment(int flags) {
@@ -121,9 +127,9 @@ public class UsersListFragmentTest {
                 "User Name", flags);
         UserInfo testUser = UserManager.get(mContext).getUserInfo(UserHandle.myUserId());
         mFragment = new UsersListFragment();
-        doReturn(testUser).when(mCarUserManagerHelper).getCurrentProcessUserInfo();
-        doReturn(new ArrayList<UserInfo>()).when(mCarUserManagerHelper).getAllSwitchableUsers();
-        doReturn(null).when(mCarUserManagerHelper).createNewNonAdminUser(any());
+        when(mUserHelper.getCurrentProcessUserInfo()).thenReturn(testUser);
+        when(mUserHelper.getAllSwitchableUsers()).thenReturn(new ArrayList<>());
+        when(mCarUserManagerHelper.createNewNonAdminUser(any())).thenReturn(null);
         mTestActivity.launchFragment(mFragment);
         refreshButtons();
     }

@@ -83,7 +83,7 @@ public class UsersPreferenceProvider {
      */
     public List<Preference> createUserList() {
         List<Preference> users = new ArrayList<>();
-        UserInfo currUserInfo = mCarUserManagerHelper.getCurrentProcessUserInfo();
+        UserInfo currUserInfo = UserHelper.getInstance(mContext).getCurrentProcessUserInfo();
 
         // Show current user
         if (mIncludeCurrentUser) {
@@ -91,7 +91,7 @@ public class UsersPreferenceProvider {
         }
 
         // Display other users on the system
-        List<UserInfo> infos = mCarUserManagerHelper.getAllSwitchableUsers();
+        List<UserInfo> infos = UserHelper.getInstance(mContext).getAllSwitchableUsers();
         for (UserInfo userInfo : infos) {
             if (!userInfo.isGuest()) { // Do not show guest users.
                 users.add(createUserPreference(userInfo));
@@ -110,8 +110,7 @@ public class UsersPreferenceProvider {
         Preference preference = new Preference(mContext);
         preference.setIcon(
                 new UserIconProvider(mCarUserManagerHelper).getUserIcon(userInfo, mContext));
-        preference.setTitle(
-                UserUtils.getUserDisplayName(mContext, mCarUserManagerHelper, userInfo));
+        preference.setTitle(UserUtils.getUserDisplayName(mContext, userInfo));
 
         if (!userInfo.isInitialized()) {
             preference.setSummary(R.string.user_summary_not_set_up);
@@ -141,6 +140,6 @@ public class UsersPreferenceProvider {
     }
 
     private boolean isCurrentUser(UserInfo userInfo) {
-        return mCarUserManagerHelper.isCurrentProcessUser(userInfo);
+        return UserHelper.getInstance(mContext).isCurrentProcessUser(userInfo);
     }
 }
