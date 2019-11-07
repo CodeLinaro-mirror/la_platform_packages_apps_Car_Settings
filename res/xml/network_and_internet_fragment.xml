@@ -32,6 +32,12 @@
         android:icon="@drawable/ic_wifi_tethering"
         settings:controller="com.android.car.settings.wifi.WifiTetherPreferenceController"/>
     <Preference
+        android:fragment="com.android.car.settings.wifi.P2pTetherFragment"
+        android:key="@string/pk_p2p_tether_settings_entry"
+        android:title="@string/p2p_tether_settings_title"
+        android:icon="@drawable/ic_wifi_tethering"
+        settings:controller="com.android.car.settings.wifi.P2pTetherPreferenceController"/>
+    <Preference
         android:fragment="com.android.car.settings.network.MobileNetworkFragment"
         android:icon="@drawable/ic_settings_cellular"
         android:key="@string/pk_mobile_network_settings_entry"
