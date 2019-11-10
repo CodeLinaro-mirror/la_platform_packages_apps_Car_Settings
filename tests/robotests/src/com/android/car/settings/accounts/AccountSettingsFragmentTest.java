@@ -18,14 +18,14 @@ package com.android.car.settings.accounts;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.when;
 import static org.robolectric.RuntimeEnvironment.application;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.accounts.AuthenticatorDescription;
-import android.car.userlib.CarUserManagerHelper;
 import android.content.pm.UserInfo;
+import android.os.UserHandle;
 import android.os.UserManager;
 import android.view.View;
 import android.widget.Button;
@@ -33,8 +33,9 @@ import android.widget.Button;
 import com.android.car.settings.R;
 import com.android.car.settings.testutils.BaseTestActivity;
 import com.android.car.settings.testutils.ShadowAccountManager;
-import com.android.car.settings.testutils.ShadowCarUserManagerHelper;
 import com.android.car.settings.testutils.ShadowContentResolver;
+import com.android.car.settings.testutils.ShadowUserHelper;
+import com.android.car.settings.users.UserHelper;
 
 import org.junit.After;
 import org.junit.Before;
@@ -53,37 +54,35 @@ import org.robolectric.shadows.ShadowUserManager;
  * Tests for AccountSettingsFragment class.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowCarUserManagerHelper.class, ShadowAccountManager.class,
-        ShadowContentResolver.class})
+@Config(shadows = {ShadowAccountManager.class, ShadowContentResolver.class, ShadowUserHelper.class})
 public class AccountSettingsFragmentTest {
-    private static final int USER_ID = 111;
+    private final int mUserId = UserHandle.myUserId();
 
     private BaseTestActivity mActivity;
     private AccountSettingsFragment mFragment;
 
     @Mock
-    private CarUserManagerHelper mMockCarUserManagerHelper;
+    private UserHelper mMockUserHelper;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-
+        ShadowUserHelper.setInstance(mMockUserHelper);
         // Set up user info
-        ShadowCarUserManagerHelper.setMockInstance(mMockCarUserManagerHelper);
-        doReturn(new UserInfo(USER_ID, "USER", /* flags= */ 0)).when(
-                mMockCarUserManagerHelper).getCurrentProcessUserInfo();
+        when(mMockUserHelper.getCurrentProcessUserInfo())
+                .thenReturn(new UserInfo(mUserId, "USER", /* flags= */ 0));
 
         mActivity = Robolectric.setupActivity(BaseTestActivity.class);
     }
 
     @After
     public void tearDown() {
-        ShadowCarUserManagerHelper.reset();
+        ShadowUserHelper.reset();
     }
 
     @Test
     public void cannotModifyUsers_addAccountButtonShouldNotBeVisible() {
-        doReturn(false).when(mMockCarUserManagerHelper).canCurrentProcessModifyAccounts();
+        when(mMockUserHelper.canCurrentProcessModifyAccounts()).thenReturn(false);
         initFragment();
 
         Button addAccountButton = mFragment.requireActivity().findViewById(R.id.action_button1);
@@ -92,7 +91,7 @@ public class AccountSettingsFragmentTest {
 
     @Test
     public void canModifyUsers_addAccountButtonShouldBeVisible() {
-        doReturn(true).when(mMockCarUserManagerHelper).canCurrentProcessModifyAccounts();
+        when(mMockUserHelper.canCurrentProcessModifyAccounts()).thenReturn(true);
         initFragment();
 
         Button addAccountButton = mFragment.requireActivity().findViewById(R.id.action_button1);
@@ -101,7 +100,7 @@ public class AccountSettingsFragmentTest {
 
     @Test
     public void clickAddAccountButton_shouldOpenChooseAccountFragment() {
-        doReturn(true).when(mMockCarUserManagerHelper).canCurrentProcessModifyAccounts();
+        when(mMockUserHelper.canCurrentProcessModifyAccounts()).thenReturn(true);
         initFragment();
 
         Button addAccountButton = mFragment.requireActivity().findViewById(R.id.action_button1);
@@ -113,10 +112,10 @@ public class AccountSettingsFragmentTest {
 
     @Test
     public void clickAddAccountButton_shouldNotOpenChooseAccountFragmentWhenOneType() {
-        doReturn(true).when(mMockCarUserManagerHelper).canCurrentProcessModifyAccounts();
-        getShadowUserManager().addProfile(USER_ID, USER_ID,
-                String.valueOf(USER_ID), /* profileFlags= */ 0);
-        addAccountAndDescription(USER_ID, "accountName", R.string.account_type1_label);
+        when(mMockUserHelper.canCurrentProcessModifyAccounts()).thenReturn(true);
+        getShadowUserManager().addProfile(mUserId, mUserId,
+                String.valueOf(mUserId), /* profileFlags= */ 0);
+        addAccountAndDescription(mUserId, "accountName", R.string.account_type1_label);
         initFragment();
 
         Button addAccountButton = mFragment.requireActivity().findViewById(R.id.action_button1);
@@ -128,11 +127,11 @@ public class AccountSettingsFragmentTest {
 
     @Test
     public void clickAddAccountButton_shouldOpenChooseAccountFragmentWhenTwoTypes() {
-        doReturn(true).when(mMockCarUserManagerHelper).canCurrentProcessModifyAccounts();
-        getShadowUserManager().addProfile(USER_ID, USER_ID,
-                String.valueOf(USER_ID), /* profileFlags= */ 0);
-        addAccountAndDescription(USER_ID, "accountName1", R.string.account_type1_label);
-        addAccountAndDescription(USER_ID, "accountName2", R.string.account_type2_label);
+        when(mMockUserHelper.canCurrentProcessModifyAccounts()).thenReturn(true);
+        getShadowUserManager().addProfile(mUserId, mUserId,
+                String.valueOf(mUserId), /* profileFlags= */ 0);
+        addAccountAndDescription(mUserId, "accountName1", R.string.account_type1_label);
+        addAccountAndDescription(mUserId, "accountName2", R.string.account_type2_label);
         initFragment();
 
         Button addAccountButton = mFragment.requireActivity().findViewById(R.id.action_button1);

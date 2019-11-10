@@ -17,8 +17,8 @@
 package com.android.car.settings.applications.defaultapps;
 
 import android.car.drivingstate.CarUxRestrictions;
-import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
+import android.os.UserHandle;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
@@ -45,7 +45,6 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
     private static final String DIALOG_KEY_ARG = "key_arg";
     protected static final String NONE_PREFERENCE_KEY = "";
 
-    private final CarUserManagerHelper mCarUserManagerHelper;
     private final Map<String, DefaultAppInfo> mDefaultAppInfoMap = new HashMap<>();
     private final ConfirmationDialogFragment.ConfirmListener mConfirmListener = arguments -> {
         setCurrentDefault(arguments.getString(DIALOG_KEY_ARG));
@@ -55,7 +54,6 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
     public DefaultAppsPickerBasePreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
-        mCarUserManagerHelper = new CarUserManagerHelper(context);
     }
 
     @Override
@@ -64,7 +62,8 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
                 (ConfirmationDialogFragment) getFragmentController().findDialogByTag(
                         ConfirmationDialogFragment.TAG),
                 mConfirmListener,
-                /* rejectListener= */ null);
+                /* rejectListener= */ null,
+                /* neutralListener= */ null);
     }
 
     @Override
@@ -152,7 +151,7 @@ public abstract class DefaultAppsPickerBasePreferenceController extends
 
     /** Gets the current process user id. */
     protected int getCurrentProcessUserId() {
-        return mCarUserManagerHelper.getCurrentProcessUserId();
+        return UserHandle.myUserId();
     }
 
     /**

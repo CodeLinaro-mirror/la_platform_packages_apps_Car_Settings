@@ -92,13 +92,15 @@ public class KeyboardManagementPreferenceController extends
                 getFragmentController().findDialogByTag(DIRECT_BOOT_WARN_DIALOG_TAG);
         ConfirmationDialogFragment.resetListeners(dialogFragment,
                 mDirectBootWarnConfirmListener,
-                mRejectListener);
+                mRejectListener,
+                /* neutralListener= */ null);
 
         dialogFragment = (ConfirmationDialogFragment) getFragmentController()
                 .findDialogByTag(SECURITY_WARN_DIALOG_TAG);
         ConfirmationDialogFragment.resetListeners(dialogFragment,
                 mSecurityWarnDialogConfirmListener,
-                mRejectListener);
+                mRejectListener,
+                /* neutralListener= */ null);
     }
 
     @Override
@@ -127,6 +129,10 @@ public class KeyboardManagementPreferenceController extends
 
         for (InputMethodInfo inputMethodInfo : inputMethodInfos) {
             if (!isInputMethodAllowedByOrganization(permittedInputMethodsSet, inputMethodInfo)) {
+                continue;
+            }
+
+            if (inputMethodInfo.getPackageName().equals(InputMethodUtil.GOOGLE_VOICE_TYPING)) {
                 continue;
             }
 

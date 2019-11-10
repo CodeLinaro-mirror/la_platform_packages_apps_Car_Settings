@@ -16,13 +16,14 @@
 
 package com.android.car.settings.users;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
+import static com.google.common.truth.Truth.assertThat;
+
 import static org.testng.Assert.assertThrows;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.UserInfo;
 
 import androidx.lifecycle.Lifecycle;
@@ -37,12 +38,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
+
+import java.util.Collections;
+import java.util.List;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(shadows = {ShadowCarUserManagerHelper.class, ShadowUserIconProvider.class})
@@ -61,6 +64,9 @@ public class UserDetailsBasePreferenceControllerTest {
             return Preference.class;
         }
     }
+
+    private static final List<String> LISTENER_ACTIONS =
+            Collections.singletonList(Intent.ACTION_USER_INFO_CHANGED);
 
     private PreferenceControllerTestHelper<TestUserDetailsBasePreferenceController>
             mPreferenceControllerHelper;
@@ -95,8 +101,9 @@ public class UserDetailsBasePreferenceControllerTest {
         mController.setUserInfo(new UserInfo());
         mPreferenceControllerHelper.setPreference(mPreference);
         mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
-        verify(mCarUserManagerHelper).registerOnUsersUpdateListener(any(CarUserManagerHelper
-                .OnUsersUpdateListener.class));
+
+        assertThat(BroadcastReceiverHelpers.getRegisteredReceiverWithActions(LISTENER_ACTIONS))
+                .isNotNull();
     }
 
     @Test
@@ -104,12 +111,9 @@ public class UserDetailsBasePreferenceControllerTest {
         mController.setUserInfo(new UserInfo());
         mPreferenceControllerHelper.setPreference(mPreference);
         mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);
-        ArgumentCaptor<CarUserManagerHelper.OnUsersUpdateListener> listenerArgumentCaptor =
-                ArgumentCaptor.forClass(CarUserManagerHelper.OnUsersUpdateListener.class);
-        verify(mCarUserManagerHelper).registerOnUsersUpdateListener(
-                listenerArgumentCaptor.capture());
         mPreferenceControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_DESTROY);
-        verify(mCarUserManagerHelper).unregisterOnUsersUpdateListener(
-                listenerArgumentCaptor.getValue());
+
+        assertThat(BroadcastReceiverHelpers.getRegisteredReceiverWithActions(LISTENER_ACTIONS))
+                .isNull();
     }
 }
