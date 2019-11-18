@@ -307,6 +307,9 @@
     <!-- Summary text when Wi-Fi has error -->
     <string name="wifi_error">Error</string>
 
+    <!-- P2p (Autonomous GO) tether settings -->
+    <string name="p2p_tether_settings_title">P2P &amp; tethering</string>
+
     <!-- Bluetooth settings --><skip/>
     <!-- Title of Bluetooth settings pages. [CHAR LIMIT=30] -->
     <string name="bluetooth_settings_title">Bluetooth</string>
