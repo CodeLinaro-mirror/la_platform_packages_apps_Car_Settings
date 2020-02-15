@@ -480,7 +480,7 @@
     <string name="choose_new_admin_message" msgid="7468286545352043354">"Você precisa de pelo menos um administrador. Para excluir este, primeiro escolha um substituto."</string>
     <string name="choose_new_admin_label" msgid="5987653639387437939">"Escolher administrador"</string>
     <string name="user_guest" msgid="3465399481257448601">"Convidado"</string>
-    <string name="start_guest_session" msgid="4438752398760283201">"Visitante"</string>
+    <string name="start_guest_session" msgid="4438752398760283201">"Convidado"</string>
     <string name="user_switch" msgid="6544839750534690781">"Alternar"</string>
     <string name="current_user_name" msgid="3813671533249316823">"Você (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Nome"</string>
@@ -540,6 +540,8 @@
     <string name="sync_button_sync_now" msgid="5767643057970371315">"Sincronizar agora"</string>
     <string name="sync_button_sync_cancel" msgid="7739510554513641393">"Cancelar a sincronização"</string>
     <string name="sync_is_failing" msgid="5766255460901806206">"A sincronização está enfrentando problemas no momento. Ela será retomada em breve."</string>
+    <!-- no translation found for privacy_settings_title (3150145262029229572) -->
+    <skip />
     <string name="security_settings_title" msgid="6955331714774709746">"Segurança"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Bloqueio de tela"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Nenhum"</string>
