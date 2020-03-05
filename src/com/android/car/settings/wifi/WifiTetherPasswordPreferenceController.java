@@ -140,7 +140,10 @@ public class WifiTetherPasswordPreferenceController extends
     }
 
     private String getSyncedPassword() {
-        if (getCarWifiApConfig().getAuthType() == WifiConfiguration.KeyMgmt.NONE) {
+        int authType = getCarWifiApConfig().getAuthType();
+
+        if (authType == WifiConfiguration.KeyMgmt.NONE
+              || authType == WifiConfiguration.KeyMgmt.OWE) {
             return null;
         }
 
@@ -174,7 +177,8 @@ public class WifiTetherPasswordPreferenceController extends
 
     private void updatePasswordDisplay() {
         getPreference().setText(mPassword);
-        getPreference().setVisible(mSecurityType != WifiConfiguration.KeyMgmt.NONE);
+        getPreference().setVisible(mSecurityType != WifiConfiguration.KeyMgmt.NONE
+                                && mSecurityType != WifiConfiguration.KeyMgmt.OWE);
         getPreference().setSummary(getSummary());
     }
 

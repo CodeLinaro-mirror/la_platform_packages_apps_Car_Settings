@@ -56,7 +56,10 @@ public class WifiTetherSecurityPreferenceController extends
         mSecurityType = getCarWifiApConfig().getAuthType();
         getPreference().setEntries(
                 getContext().getResources().getStringArray(R.array.wifi_tether_security));
-        String[] entryValues = {Integer.toString(WifiConfiguration.KeyMgmt.WPA2_PSK),
+        String[] entryValues = {
+                Integer.toString(WifiConfiguration.KeyMgmt.SAE),
+                Integer.toString(WifiConfiguration.KeyMgmt.WPA2_PSK),
+                Integer.toString(WifiConfiguration.KeyMgmt.OWE),
                 Integer.toString(WifiConfiguration.KeyMgmt.NONE)};
         getPreference().setEntryValues(entryValues);
         getPreference().setValue(String.valueOf(mSecurityType));
@@ -79,8 +82,16 @@ public class WifiTetherSecurityPreferenceController extends
 
     @Override
     protected String getSummary() {
-        int stringResId = mSecurityType == WifiConfiguration.KeyMgmt.WPA2_PSK
-                ? R.string.wifi_hotspot_wpa2_personal : R.string.wifi_hotspot_security_none;
+        int stringResId;
+        if (mSecurityType == WifiConfiguration.KeyMgmt.SAE) {
+            stringResId = R.string.wifi_security_psk_sae;
+        } else if (mSecurityType == WifiConfiguration.KeyMgmt.WPA2_PSK) {
+            stringResId = R.string.wifi_hotspot_wpa2_personal;
+        } else if (mSecurityType == WifiConfiguration.KeyMgmt.OWE) {
+            stringResId = R.string.wifi_security_owe;
+        } else { // none
+            stringResId = R.string.wifi_hotspot_security_none;
+        }
         return getContext().getString(stringResId);
     }
 
@@ -94,7 +105,8 @@ public class WifiTetherSecurityPreferenceController extends
         config.allowedKeyManagement.clear();
         config.allowedKeyManagement.set(mSecurityType);
 
-        if (mSecurityType == WifiConfiguration.KeyMgmt.NONE) {
+        if (mSecurityType == WifiConfiguration.KeyMgmt.NONE
+              || mSecurityType == WifiConfiguration.KeyMgmt.OWE) {
             config.preSharedKey = "";
         } else {
             config.preSharedKey = getSavedPassword();
