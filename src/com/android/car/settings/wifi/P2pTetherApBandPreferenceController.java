@@ -183,8 +183,8 @@ public class P2pTetherApBandPreferenceController extends
 
     private void updatePreferenceEntries() {
         Resources res = getContext().getResources();
-        int entriesRes = R.array.wifi_ap_band_config_full;
-        int summariesRes = R.array.wifi_ap_band_summary_full;
+        int entriesRes = R.array.p2p_ap_band_config_full;
+        int summariesRes = R.array.p2p_ap_band_summary_full;
         // change the list options if this is a dual mode device
         if (mIsDualMode) {
             entriesRes = R.array.wifi_ap_band_dual_mode;
