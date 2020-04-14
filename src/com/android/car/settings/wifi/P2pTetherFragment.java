@@ -46,20 +46,21 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ProgressBar;
-import android.widget.Switch;
 
-import androidx.annotation.LayoutRes;
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.SettingsFragment;
+import com.android.car.ui.toolbar.MenuItem;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Fragment to host tethering-related preferences.
  */
-public class P2pTetherFragment extends SettingsFragment implements Switch.OnCheckedChangeListener {
+public class P2pTetherFragment extends SettingsFragment {
 
     private static final String TAG = "P2pTetherFragment";
     private CarWifiManager mCarWifiManager;
@@ -67,7 +68,8 @@ public class P2pTetherFragment extends SettingsFragment implements Switch.OnChec
     private WifiP2pManager mWifiP2pManager;
     private WifiP2pManager.Channel mChannel;
     private ProgressBar mProgressBar;
-    private Switch mTetherSwitch;
+    private MenuItem mTetherSwitch;
+    private boolean mChecked = false;
 
 /*    private final ConnectivityManager.OnStartTetheringCallback mOnStartTetheringCallback =
             new ConnectivityManager.OnStartTetheringCallback() {
@@ -79,11 +81,39 @@ public class P2pTetherFragment extends SettingsFragment implements Switch.OnChec
                 }
             };
 */
+    @Override
+    public List<MenuItem> getToolbarMenuItems() {
+        return Collections.singletonList(mTetherSwitch);
+    }
 
     @Override
-    @LayoutRes
-    protected int getActionBarLayoutId() {
-        return R.layout.action_bar_with_toggle;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mTetherSwitch = new MenuItem.Builder(getContext())
+                .setCheckable()
+                .setChecked(false)
+                .setOnClickListener(i -> {
+                    if (!mTetherSwitch.isChecked()) {
+                        mConnectivityManager.stopTethering(ConnectivityManager.TETHERING_P2P);
+                    } else {
+                        mConnectivityManager.startTethering(ConnectivityManager.TETHERING_P2P,
+                                /* showProvisioningUi= */ true,
+                                new ConnectivityManager.OnStartTetheringCallback() {
+                                    public void onTetheringStarted() {
+                                        Log.e(TAG, "Start Tether success");
+                                    }
+                                    public void onTetheringFailed() {
+                                        Log.e(TAG, "Start Tether failure");
+                                        mTetherSwitch.setChecked(false);
+                                        mTetherSwitch.setEnabled(true);
+                                    }
+                                },
+                                new Handler(Looper.getMainLooper()));
+                    }
+                })
+                .build();
+         setupTetherSwitch();
     }
 
     @Override
@@ -108,9 +138,7 @@ public class P2pTetherFragment extends SettingsFragment implements Switch.OnChec
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mProgressBar = getActivity().findViewById(R.id.progress_bar);
-        mTetherSwitch = getActivity().findViewById(R.id.toggle_switch);
-        setupTetherSwitch();
+        mProgressBar = getToolbar().getProgressBar();
     }
 
     @Override
@@ -137,28 +165,6 @@ public class P2pTetherFragment extends SettingsFragment implements Switch.OnChec
 //        mCarWifiManager.destroy();
 //    }
 
-    @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-        if (!isChecked) {
-            Log.d(TAG, "stop P2P Tethering...");
-            mConnectivityManager.stopTethering(ConnectivityManager.TETHERING_P2P);
-        } else {
-            Log.d(TAG, "start P2P Tethering...");
-            mConnectivityManager.startTethering(ConnectivityManager.TETHERING_P2P,
-                true /* showProvisioningUi */,
-                new ConnectivityManager.OnStartTetheringCallback() {
-                    public void onTetheringStarted() {
-                        Log.e(TAG, "Start Tether success");
-                    }
-                    public void onTetheringFailed() {
-                        Log.e(TAG, "Start Tether failure");
-                        mTetherSwitch.setChecked(false);
-                        mTetherSwitch.setEnabled(true);
-                    }
-                }, new Handler(Looper.getMainLooper()));
-        }
-    }
-
     protected void setupTetherSwitch() {
         mWifiP2pManager.requestConnectionInfo(mChannel, new WifiP2pManager.ConnectionInfoListener() {
             @Override
@@ -171,14 +177,9 @@ public class P2pTetherFragment extends SettingsFragment implements Switch.OnChec
                 } else {
                     checked = true;
                 }
-                setupTetherSwitch2(checked);
+                mTetherSwitch.setChecked(checked);
             }
         });
-    }
-
-    protected void setupTetherSwitch2(boolean checked) {
-        mTetherSwitch.setChecked(checked);
-        mTetherSwitch.setOnCheckedChangeListener(this);
     }
 
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
