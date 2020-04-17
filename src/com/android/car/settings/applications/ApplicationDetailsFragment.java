@@ -247,9 +247,9 @@ public class ApplicationDetailsFragment extends SettingsFragment implements Acti
                 enabled && !mUserManager.hasUserRestriction(UserManager.DISALLOW_APPS_CONTROL));
     }
 
-    private void updateUninstallButton() {
+    private void updateUninstallButtonInner(boolean isAppEnabled) {
         if (isBundledApp()) {
-            if (isAppEnabled()) {
+            if (isAppEnabled) {
                 mUninstallButton.setTitle(R.string.disable_text);
                 mUninstallButton.setOnClickListener(mDisableClickListener);
             } else {
@@ -262,6 +262,10 @@ public class ApplicationDetailsFragment extends SettingsFragment implements Acti
         }
 
         mUninstallButton.setEnabled(!shouldDisableUninstallButton());
+    }
+
+    private void updateUninstallButton() {
+        updateUninstallButtonInner(isAppEnabled());
     }
 
     private boolean shouldDisableUninstallButton() {
@@ -433,6 +437,7 @@ public class ApplicationDetailsFragment extends SettingsFragment implements Acti
                 public void onConfirm(@Nullable Bundle arguments) {
                     mPm.setApplicationEnabledSetting(mPackageName,
                             PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER, /* flags= */ 0);
+                    updateUninstallButtonInner(false);
                 }
             };
 
@@ -450,12 +455,12 @@ public class ApplicationDetailsFragment extends SettingsFragment implements Acti
     private final MenuItem.OnClickListener mEnableClickListener = i -> {
         mPm.setApplicationEnabledSetting(mPackageName,
                 PackageManager.COMPONENT_ENABLED_STATE_DEFAULT, /* flags= */ 0);
+        updateUninstallButtonInner(true);
     };
 
     private final MenuItem.OnClickListener mUninstallClickListener = i -> {
         Uri packageUri = Uri.parse("package:" + mPackageName);
         Intent uninstallIntent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
-        uninstallIntent.putExtra(Intent.EXTRA_UNINSTALL_ALL_USERS, true);
         uninstallIntent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
         startActivityForResult(uninstallIntent, UNINSTALL_REQUEST_CODE, /* callback= */
                 ApplicationDetailsFragment.this);
