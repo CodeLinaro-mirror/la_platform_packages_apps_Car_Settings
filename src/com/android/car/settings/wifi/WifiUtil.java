@@ -45,7 +45,7 @@ public class WifiUtil {
 
     /** Value that is returned when we fail to connect wifi. */
     public static final int INVALID_NET_ID = -1;
-    private static final Pattern HEX_PATTERN = Pattern.compile("^[0-9A-F]+$");
+    private static final Pattern HEX_PATTERN = Pattern.compile("^[0-9a-fA-F]+$");
 
     @DrawableRes
     public static int getIconRes(int state) {
