@@ -19,12 +19,12 @@ package com.android.car.settings.bluetooth;
 import static com.google.common.truth.Truth.assertThat;
 
 import android.content.Context;
-import android.view.View;
 
 import com.android.car.settings.R;
 import com.android.car.settings.testutils.FragmentController;
 import com.android.car.settings.testutils.ShadowBluetoothAdapter;
 import com.android.car.settings.testutils.ShadowBluetoothPan;
+import com.android.car.ui.core.testsupport.CarUiInstallerRobolectric;
 import com.android.car.ui.toolbar.Toolbar;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
 
@@ -55,6 +55,9 @@ public class BluetoothDevicePickerFragmentTest {
 
         mFragment = new BluetoothDevicePickerFragment();
         mFragmentController = FragmentController.of(mFragment);
+
+        // Needed to install Install CarUiLib BaseLayouts Toolbar for test activity
+        CarUiInstallerRobolectric.install();
     }
 
     @After
@@ -75,7 +78,7 @@ public class BluetoothDevicePickerFragmentTest {
         mFragmentController.setup();
         Toolbar toolbar = mFragment.requireActivity().findViewById(R.id.toolbar);
 
-        assertThat(toolbar.getProgressBar().getVisibility()).isEqualTo(View.VISIBLE);
+        assertThat(toolbar.getProgressBar().isVisible()).isTrue();
     }
 
     @Test
@@ -93,6 +96,6 @@ public class BluetoothDevicePickerFragmentTest {
 
         mFragmentController.stop();
 
-        assertThat(toolbar.getProgressBar().getVisibility()).isEqualTo(View.GONE);
+        assertThat(toolbar.getProgressBar().isVisible()).isFalse();
     }
 }
