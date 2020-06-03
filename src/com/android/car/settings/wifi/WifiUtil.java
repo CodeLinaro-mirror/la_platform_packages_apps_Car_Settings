@@ -179,8 +179,11 @@ public class WifiUtil {
                 wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
                 wifiConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
                 wifiConfig.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.SHARED);
-                wifiConfig.wepKeys[0] = isHexString(password) ? password
-                        : "\"" + password + "\"";
+                int length = password.length();
+                // WEP-40, WEP-104, and 256-bit WEP (WEP-232?)
+                boolean isHexLength = (length == 10 || length == 26 || length == 58);
+                wifiConfig.wepKeys[0] = (isHexString(password) && isHexLength) ? password
+                    : "\"" + password + "\"";
                 wifiConfig.wepTxKeyIndex = 0;
                 break;
             case AccessPoint.SECURITY_PSK:
