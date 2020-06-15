@@ -19,8 +19,12 @@ package com.android.car.settings.search;
 import static com.android.car.settings.common.PreferenceXmlParser.METADATA_KEY;
 import static com.android.car.settings.common.PreferenceXmlParser.MetadataFlag.FLAG_NEED_KEY;
 
+import android.annotation.Nullable;
 import android.content.Context;
 import android.provider.SearchIndexableResource;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.XmlRes;
 
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceXmlParser;
@@ -41,18 +45,28 @@ public class CarBaseSearchIndexProvider implements Indexable.SearchIndexProvider
     private static final Logger LOG = new Logger(CarBaseSearchIndexProvider.class);
 
     private final int mXmlRes;
-    private final String mIntent;
+    private final String mIntentAction;
+    private final String mIntentClass;
 
-    public CarBaseSearchIndexProvider(int xmlRes, String intent) {
+    public CarBaseSearchIndexProvider(@XmlRes int xmlRes, String intentAction) {
         mXmlRes = xmlRes;
-        mIntent = intent;
+        mIntentAction = intentAction;
+        mIntentClass = null;
+    }
+
+    public CarBaseSearchIndexProvider(@XmlRes int xmlRes, @NonNull Class intentClass) {
+        mXmlRes = xmlRes;
+        mIntentAction = null;
+        mIntentClass = intentClass.getName();
     }
 
     @Override
     public List<SearchIndexableResource> getXmlResourcesToIndex(Context context, boolean enabled) {
         SearchIndexableResource sir = new SearchIndexableResource(context);
         sir.xmlResId = mXmlRes;
-        sir.intentAction = mIntent;
+        sir.intentAction = mIntentAction;
+        sir.intentTargetPackage = context.getPackageName();
+        sir.intentTargetClass = mIntentClass;
         return Collections.singletonList(sir);
     }
 
@@ -88,5 +102,20 @@ public class CarBaseSearchIndexProvider implements Indexable.SearchIndexProvider
      */
     protected boolean isPageSearchEnabled(Context context) {
         return true;
+    }
+
+    /**
+     * Creates a SearchIndexableRaw object from the provided parameters.
+     */
+    protected SearchIndexableRaw createRawDataEntry(Context context, String key, String title,
+            @Nullable String screenTitle) {
+        SearchIndexableRaw raw = new SearchIndexableRaw(context);
+        raw.key = key;
+        raw.title = title;
+        raw.screenTitle = screenTitle;
+        raw.intentAction = mIntentAction;
+        raw.intentTargetPackage = context.getPackageName();
+        raw.intentTargetClass = mIntentClass;
+        return raw;
     }
 }
