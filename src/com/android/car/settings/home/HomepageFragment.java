@@ -16,6 +16,7 @@
 
 package com.android.car.settings.home;
 
+import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +27,8 @@ import androidx.annotation.XmlRes;
 import com.android.car.settings.R;
 import com.android.car.settings.common.SettingsFragment;
 import com.android.car.ui.toolbar.MenuItem;
+import com.android.car.ui.toolbar.Toolbar;
+import com.android.car.ui.toolbar.ToolbarController;
 
 import java.util.Collections;
 import java.util.List;
@@ -64,7 +67,26 @@ public class HomepageFragment extends SettingsFragment {
         mSearchButton = new MenuItem.Builder(getContext())
                 .setToSearch()
                 .setOnClickListener(i -> onSearchButtonClicked())
+                .setUxRestrictions(CarUxRestrictions.UX_RESTRICTIONS_NO_KEYBOARD)
                 .build();
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ToolbarController toolbar = getToolbar();
+        if (toolbar != null) {
+            // If the fragment is root, change the back button to settings icon.
+            if (!getContext().getResources().getBoolean(R.bool.config_is_quick_settings_root)) {
+                toolbar.setState(Toolbar.State.HOME);
+                toolbar.setLogo(getContext().getResources()
+                        .getBoolean(R.bool.config_show_settings_root_exit_icon)
+                        ? R.drawable.ic_launcher_settings
+                        : 0);
+            } else {
+                toolbar.setState(Toolbar.State.SUBPAGE);
+            }
+        }
     }
 
     private void onSearchButtonClicked() {

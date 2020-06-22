@@ -20,6 +20,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.UserInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -29,17 +30,17 @@ import android.os.UserManager;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.BaseFragment;
-import com.android.car.settings.home.HomepageFragment;
+import com.android.car.settings.common.CarSettingActivities;
 import com.android.car.settings.users.UserIconProvider;
-import com.android.car.settings.users.UserSwitcherFragment;
+import com.android.car.settings.users.UserSwitcherActivity;
 import com.android.car.ui.toolbar.MenuItem;
 import com.android.car.ui.toolbar.Toolbar;
 
@@ -61,6 +62,14 @@ public class QuickSettingFragment extends BaseFragment {
     private MenuItem mFullSettingsBtn;
     private MenuItem mUserSwitcherBtn;
     private TextView mBuildInfo;
+
+    private ActivityResultLauncher<Intent> mStartForResult = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.FINISH_TASK_WITH_ACTIVITY) {
+                    getActivity().finish();
+                }
+            });
 
     @Override
     @LayoutRes
@@ -98,12 +107,7 @@ public class QuickSettingFragment extends BaseFragment {
 
     @Override
     protected Toolbar.State getToolbarState() {
-        Activity activity = requireActivity();
-        FragmentManager fragmentManager = ((FragmentActivity) activity).getSupportFragmentManager();
-        if (fragmentManager.getBackStackEntryCount() == 1
-                && fragmentManager.findFragmentByTag("0") != null
-                && fragmentManager.findFragmentByTag("0").getClass().getName().equals(
-                getString(R.string.config_settings_hierarchy_root_fragment))
+        if (getContext().getResources().getBoolean(R.bool.config_is_quick_settings_root)
                 && !getContext().getResources()
                 .getBoolean(R.bool.config_show_settings_root_exit_icon)) {
             return Toolbar.State.HOME;
@@ -124,7 +128,8 @@ public class QuickSettingFragment extends BaseFragment {
         mUserSwitcherBtn = new MenuItem.Builder(getContext())
                 .setTitle(getString(R.string.user_switch))
                 .setOnClickListener(i ->
-                        getFragmentHost().launchFragment(new UserSwitcherFragment()))
+                        mStartForResult.launch(
+                                new Intent(getContext(), UserSwitcherActivity.class)))
                 .setIcon(R.drawable.ic_user)
                 .setShowIconAndTitle(true)
                 .setVisible(showUserSwitcher())
@@ -132,8 +137,7 @@ public class QuickSettingFragment extends BaseFragment {
                 .build();
         mFullSettingsBtn = new MenuItem.Builder(getContext())
                 .setTitle(getString(R.string.more_settings_label))
-                .setOnClickListener(i ->
-                        getFragmentHost().launchFragment(new HomepageFragment()))
+                .setOnClickListener(i -> launchFullSettings())
                 .setIcon(R.drawable.ic_settings_gear)
                 .setShowIconAndTitle(true)
                 .setUxRestrictions(CarUxRestrictions.UX_RESTRICTIONS_NO_SETUP)
@@ -155,6 +159,13 @@ public class QuickSettingFragment extends BaseFragment {
         // In non-user builds (that is, user-debug, eng, etc), display some version information.
         if (!Build.IS_USER) {
             refreshBuildInfo();
+        }
+    }
+
+    private void launchFullSettings() {
+        startActivity(new Intent(getContext(), CarSettingActivities.HomepageActivity.class));
+        if (!getContext().getResources().getBoolean(R.bool.config_is_quick_settings_root)) {
+            getActivity().finish();
         }
     }
 
@@ -203,7 +214,7 @@ public class QuickSettingFragment extends BaseFragment {
     }
 
     /**
-     *  Quick Settings should be viewable while driving
+     * Quick Settings should be viewable while driving
      */
     @Override
     protected boolean canBeShown(@NonNull CarUxRestrictions carUxRestrictions) {

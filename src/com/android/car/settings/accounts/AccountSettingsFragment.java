@@ -24,10 +24,14 @@ import android.provider.Settings;
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.CarSettingActivities;
 import com.android.car.settings.common.SettingsFragment;
+import com.android.car.settings.search.CarBaseSearchIndexProvider;
 import com.android.car.settings.users.UserHelper;
 import com.android.car.ui.toolbar.MenuItem;
+import com.android.settingslib.search.SearchIndexable;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -37,6 +41,7 @@ import java.util.Set;
 /**
  * Lists the user's accounts and any related options.
  */
+@SearchIndexable
 public class AccountSettingsFragment extends SettingsFragment {
     private MenuItem mAddAccountButton;
 
@@ -100,7 +105,22 @@ public class AccountSettingsFragment extends SettingsFragment {
             startActivity(
                     AddAccountActivity.createAddAccountActivityIntent(getContext(), accountType));
         } else {
-            launchFragment(new ChooseAccountFragment());
+            startActivity(new Intent(getContext(),
+                    CarSettingActivities.ChooseAccountActivity.class));
         }
     }
+
+    /**
+     * Data provider for Settings Search.
+     */
+    public static final CarBaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new CarBaseSearchIndexProvider(R.xml.account_settings_fragment,
+                    Settings.ACTION_SYNC_SETTINGS) {
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> nonIndexableKeys = new ArrayList<>();
+                    nonIndexableKeys.add(context.getString(R.string.pk_account_list));
+                    return nonIndexableKeys;
+                }
+            };
 }
