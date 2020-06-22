@@ -16,13 +16,16 @@
 
 package com.android.car.settings.users;
 
+import android.car.Car;
 import android.car.drivingstate.CarUxRestrictions;
+import android.car.user.CarUserManager;
 import android.car.userlib.CarUserManagerHelper;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.UserManager;
+import android.provider.Settings;
 
 import androidx.annotation.XmlRes;
 
@@ -30,9 +33,11 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.ConfirmationDialogFragment;
 import com.android.car.settings.common.ErrorDialog;
 import com.android.car.settings.common.SettingsFragment;
+import com.android.car.settings.search.CarBaseSearchIndexProvider;
 import com.android.car.ui.toolbar.MenuItem;
 import com.android.car.ui.toolbar.ProgressBarController;
 import com.android.internal.annotations.VisibleForTesting;
+import com.android.settingslib.search.SearchIndexable;
 
 import java.util.Collections;
 import java.util.List;
@@ -40,6 +45,7 @@ import java.util.List;
 /**
  * Lists all Users available on this device.
  */
+@SearchIndexable
 public class UsersListFragment extends SettingsFragment implements
         AddNewUserTask.AddNewUserListener {
     private static final String FACTORY_RESET_PACKAGE_NAME = "android";
@@ -54,6 +60,8 @@ public class UsersListFragment extends SettingsFragment implements
     static final String MAX_USERS_LIMIT_REACHED_DIALOG_TAG =
             "com.android.car.settings.users.MaxUsersLimitReachedDialog";
 
+    private Car mCar;
+    private CarUserManager mCarUserManager;
     private CarUserManagerHelper mCarUserManagerHelper;
     private UserManager mUserManager;
 
@@ -66,8 +74,9 @@ public class UsersListFragment extends SettingsFragment implements
 
     @VisibleForTesting
     final ConfirmationDialogFragment.ConfirmListener mConfirmCreateNewUserListener = arguments -> {
-        mAddNewUserTask = new AddNewUserTask(mCarUserManagerHelper, /* addNewUserListener= */
-                this).execute(getContext().getString(R.string.user_new_user_name));
+        mAddNewUserTask = new AddNewUserTask(mCarUserManagerHelper,
+                mCarUserManager, /* addNewUserListener= */ this).execute(
+                getContext().getString(R.string.user_new_user_name));
         mIsBusy = true;
         updateUi();
     };
@@ -102,7 +111,9 @@ public class UsersListFragment extends SettingsFragment implements
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mCar = Car.createCar(context);
         mCarUserManagerHelper = new CarUserManagerHelper(getContext());
+        mCarUserManager = (CarUserManager) mCar.getCarManager(Car.CAR_USER_SERVICE);
         mUserManager = UserManager.get(getContext());
     }
 
@@ -155,6 +166,9 @@ public class UsersListFragment extends SettingsFragment implements
 
         if (mAddNewUserTask != null) {
             mAddNewUserTask.cancel(/* mayInterruptIfRunning= */ false);
+        }
+        if (mCar != null) {
+            mCar.disconnect();
         }
     }
 
@@ -212,4 +226,11 @@ public class UsersListFragment extends SettingsFragment implements
     private boolean canCurrentProcessAddUsers() {
         return !mUserManager.hasUserRestriction(UserManager.DISALLOW_ADD_USER);
     }
+
+    /**
+     * Data provider for Settings Search.
+     */
+    public static final CarBaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new CarBaseSearchIndexProvider(R.xml.users_list_fragment,
+                    Settings.ACTION_USER_SETTINGS);
 }
