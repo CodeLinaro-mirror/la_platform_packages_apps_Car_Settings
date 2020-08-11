@@ -29,6 +29,7 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceController;
+import com.android.car.settings.wifi.WifiUtil;
 import com.android.settingslib.wifi.AccessPoint;
 
 /** Business logic relating to the security type and associated password. */
@@ -90,7 +91,7 @@ public class NetworkPasswordPreferenceController extends
         } else {
             getPreference().setDialogTitle(mNetworkName);
         }
-        preference.setVisible(mSecurityType != AccessPoint.SECURITY_NONE);
+        preference.setVisible(!WifiUtil.isOpenOweNetwork(mSecurityType));
     }
 
     @Override

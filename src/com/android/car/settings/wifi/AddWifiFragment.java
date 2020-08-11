@@ -30,6 +30,7 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.SettingsFragment;
 import com.android.car.ui.toolbar.MenuItem;
+import com.android.car.settings.wifi.WifiUtil;
 import com.android.settingslib.wifi.AccessPoint;
 
 import java.util.Collections;
@@ -92,7 +93,7 @@ public class AddWifiFragment extends SettingsFragment {
                 .setOnClickListener(i -> {
                     // This only needs to handle hidden/unsecure networks.
                     int netId = WifiUtil.connectToAccessPoint(getContext(), mNetworkName,
-                            AccessPoint.SECURITY_NONE, /* password= */ null, /* hidden= */ true);
+                            mSecurityType, /* password= */ null, /* hidden= */ true);
                     LOG.d("connected to netId: " + netId);
                     if (netId != WifiUtil.INVALID_NET_ID) {
                         goBack();
@@ -128,7 +129,7 @@ public class AddWifiFragment extends SettingsFragment {
     private void setButtonEnabledState() {
         if (mAddWifiButton != null) {
             mAddWifiButton.setEnabled(
-                    !TextUtils.isEmpty(mNetworkName) && mSecurityType == AccessPoint.SECURITY_NONE);
+                    !TextUtils.isEmpty(mNetworkName) && WifiUtil.isOpenOweNetwork(mSecurityType));
         }
     }
 }

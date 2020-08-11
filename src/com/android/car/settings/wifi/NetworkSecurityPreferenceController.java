@@ -47,8 +47,10 @@ public class NetworkSecurityPreferenceController extends PreferenceController<Li
 
     private static final List<Integer> SECURITY_TYPES = Arrays.asList(
             AccessPoint.SECURITY_NONE,
+            AccessPoint.SECURITY_OWE,
             AccessPoint.SECURITY_WEP,
             AccessPoint.SECURITY_PSK,
+            AccessPoint.SECURITY_SAE,
             AccessPoint.SECURITY_EAP);
 
     private CharSequence[] mSecurityTypeNames;
@@ -105,8 +107,10 @@ public class NetworkSecurityPreferenceController extends PreferenceController<Li
     private static Map<Integer, Integer> createSecurityTypeDescMap() {
         Map<Integer, Integer> map = new HashMap<>();
         map.put(AccessPoint.SECURITY_NONE, R.string.wifi_security_none);
+        map.put(AccessPoint.SECURITY_OWE, R.string.wifi_security_owe);
         map.put(AccessPoint.SECURITY_WEP, R.string.wifi_security_wep);
         map.put(AccessPoint.SECURITY_PSK, R.string.wifi_security_psk_generic);
+        map.put(AccessPoint.SECURITY_SAE, R.string.wifi_security_sae);
         map.put(AccessPoint.SECURITY_EAP, R.string.wifi_security_eap);
         return map;
     }
