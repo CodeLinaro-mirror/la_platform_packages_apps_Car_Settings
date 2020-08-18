@@ -36,12 +36,12 @@ import androidx.annotation.VisibleForTesting;
 import androidx.annotation.XmlRes;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
 import com.android.car.settings.R;
+import com.android.car.ui.preference.DisabledPreferenceCallback;
 import com.android.car.ui.preference.PreferenceFragment;
 import com.android.car.ui.toolbar.MenuItem;
 import com.android.car.ui.toolbar.Toolbar;
@@ -82,6 +82,7 @@ public abstract class SettingsFragment extends PreferenceFragment implements
 
     private CarUxRestrictions mUxRestrictions;
     private int mCurrentRequestIndex = 0;
+    private String mRestrictedWhileDrivingMessage;
 
     /**
      * Returns the resource id for the preference XML of this fragment.
@@ -164,6 +165,8 @@ public abstract class SettingsFragment extends PreferenceFragment implements
             mPreferenceControllersLookup.computeIfAbsent(controller.getClass(),
                     k -> new ArrayList<>(/* initialCapacity= */ 1)).add(controller);
         });
+
+        mRestrictedWhileDrivingMessage = context.getString(R.string.restricted_while_driving);
     }
 
     @Override
@@ -186,7 +189,15 @@ public abstract class SettingsFragment extends PreferenceFragment implements
         addPreferencesFromResource(resId);
         PreferenceScreen screen = getPreferenceScreen();
         for (PreferenceController controller : mPreferenceControllers) {
-            controller.setPreference(screen.findPreference(controller.getPreferenceKey()));
+            Preference pref = screen.findPreference(controller.getPreferenceKey());
+
+            controller.setPreference(pref);
+
+            if (pref instanceof DisabledPreferenceCallback && controller.getAvailabilityStatus()
+                    != PreferenceController.AVAILABLE_FOR_VIEWING) {
+                ((DisabledPreferenceCallback) pref).setMessageToShowWhenDisabledPreferenceClicked(
+                        mRestrictedWhileDrivingMessage);
+            }
         }
     }
 
@@ -207,21 +218,6 @@ public abstract class SettingsFragment extends PreferenceFragment implements
             toolbar.setTitle(getPreferenceScreen().getTitle());
             toolbar.setMenuItems(items);
             toolbar.setNavButtonMode(Toolbar.NavButtonMode.BACK);
-
-            // If the fragment is root, change the back button to settings icon.
-            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
-            if (fragmentManager.getBackStackEntryCount() == 1
-                    && fragmentManager.findFragmentByTag("0") != null
-                    && fragmentManager.findFragmentByTag("0").getClass().getName().equals(
-                    getString(R.string.config_settings_hierarchy_root_fragment))) {
-                toolbar.setState(Toolbar.State.HOME);
-                toolbar.setLogo(getContext().getResources()
-                        .getBoolean(R.bool.config_show_settings_root_exit_icon)
-                        ? R.drawable.ic_launcher_settings
-                        : 0);
-            } else {
-                toolbar.setState(Toolbar.State.SUBPAGE);
-            }
         }
     }
 
