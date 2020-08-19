@@ -32,6 +32,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import android.content.SharedPreferences;
 
 /** Business logic to select the security type when adding a hidden network. */
 public class NetworkSecurityPreferenceController extends PreferenceController<ListPreference> {
@@ -41,6 +42,10 @@ public class NetworkSecurityPreferenceController extends PreferenceController<Li
             "com.android.car.settings.wifi.SecurityChangeAction";
     /** Key used to store the selected security type. */
     public static final String KEY_SECURITY_TYPE = "security_type";
+    protected static final String SHARED_SECURITY_TYPE = "com.android.car.settings.wifi.SHARED_SECURITY_TYPE";
+    private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(
+                    NetworkPasswordPreferenceController.SHARED_PREFERENCE_PATH,
+                    Context.MODE_PRIVATE);
 
     private static final Map<Integer, Integer> SECURITY_TYPE_TO_DESC_RES =
             createSecurityTypeDescMap();
@@ -83,6 +88,7 @@ public class NetworkSecurityPreferenceController extends PreferenceController<Li
         getPreference().setEntries(mSecurityTypeNames);
         getPreference().setEntryValues(mSecurityTypeIds);
         getPreference().setDefaultValue(Integer.toString(AccessPoint.SECURITY_NONE));
+        mSharedPreferences.edit().putInt(SHARED_SECURITY_TYPE, AccessPoint.SECURITY_NONE).commit();
     }
 
     @Override
@@ -99,6 +105,7 @@ public class NetworkSecurityPreferenceController extends PreferenceController<Li
     }
 
     private void notifySecurityChange(int securityType) {
+        mSharedPreferences.edit().putInt(SHARED_SECURITY_TYPE, securityType).commit();
         Intent intent = new Intent(ACTION_SECURITY_CHANGE);
         intent.putExtra(KEY_SECURITY_TYPE, securityType);
         LocalBroadcastManager.getInstance(getContext()).sendBroadcastSync(intent);
