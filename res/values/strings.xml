@@ -276,8 +276,6 @@
     <string name="wifi_hotspot_wpa2_personal">WPA2-Personal</string>
     <!-- Label for Wifi security type WPA2-Personal [CHAR LIMIT=25]-->
     <string name="wifi_hotspot_security_none">None</string>
-    <!-- Label for Wifi security type WPA3-Personal Transition [CHAR LIMIT=25]-->
-    <string name="wifi_hotspot_wpa3_transition">WPA2/WPA3-Personal</string>
     <!-- Label for Wifi hotspot AP Band. [CHAR LIMIT=15]-->
     <string name="wifi_hotspot_ap_band_title">AP Band</string>
     <!-- Label for the RadioGroup to choose wifi ap band [CHAR LIMIT=25]-->

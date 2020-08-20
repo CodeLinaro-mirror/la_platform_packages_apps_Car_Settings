@@ -48,7 +48,8 @@ public class WifiTetherSecurityPreferenceController extends
     private String[] mSecurityEntries;
     private String[] mSecurityValues;
     private boolean mSecurityCapaFetched;
-    private boolean mSaeSapSupprted;
+    private boolean mSaeSapSupported;
+    private boolean mOweSapSupported;
     private WifiManager.SoftApCallback mSoftApCallback = new WifiManager.SoftApCallback() {
         @Override
         public void onCapabilityChanged(SoftApCapability capability) {
@@ -59,16 +60,29 @@ public class WifiTetherSecurityPreferenceController extends
 
             mSecurityCapaFetched = true;
 
-            if (capability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_SAE))
-                mSaeSapSupprted = true;
-                if (mSaeSapSupprted) {
-            // Add SAE Transition security type
-                    securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION));
-                    securityEntries.add(mContext.getString(R.string.wifi_security_psk_sae));
-                }
+            if (capability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_SAE)) {
+                mSaeSapSupported = true;
+            }
+            if (capability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_OWE)) {
+                mOweSapSupported = true;
+            }
+
+            // Add SAE transition security type
+            if (mSaeSapSupported) {
+                securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION));
+                securityEntries.add(mContext.getString(R.string.wifi_security_sae));
+            }
+
             // Add WPA2-PSK security type
             securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_WPA2_PSK));
             securityEntries.add(mContext.getString(R.string.wifi_security_wpa2));
+
+            // Add OWE transition security type
+            if (mOweSapSupported) {
+                securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION));
+                securityEntries.add(mContext.getString(R.string.wifi_security_owe));
+            }
+
             // Add open security type
             securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_OPEN));
             securityEntries.add(mContext.getString(R.string.wifi_security_none));
@@ -87,16 +101,25 @@ public class WifiTetherSecurityPreferenceController extends
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA2_PSK;
         } else if (config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OPEN) {
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_OPEN;
-        } else if (mSaeSapSupprted
+        } else if (mOweSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION;
+        } else if (mOweSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OWE) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_OWE;
+        } else if (mSaeSapSupported
                     && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION) {
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION;
+        } else if (mSaeSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE;
         } else {
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA2_PSK;
         }
         getPreference().setEntries(mSecurityEntries);
         getPreference().setEntryValues(mSecurityValues);
         getPreference().setValue(String.valueOf(mSecurityType));
-     }
+    }
 
     private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(
                     WifiTetherPasswordPreferenceController.SHARED_PREFERENCE_PATH,
@@ -146,11 +169,19 @@ public class WifiTetherSecurityPreferenceController extends
 
     @Override
     protected String getSummary() {
-        int stringResId = R.string.wifi_hotspot_wpa2_personal;
-        if(mSecurityType == SoftApConfiguration.SECURITY_TYPE_OPEN){
-            stringResId = R.string.wifi_hotspot_security_none;
-        } else if(mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION){
-            stringResId = R.string.wifi_hotspot_wpa3_transition;
+        int stringResId = R.string.wifi_security_wpa2;
+        if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OPEN) {
+            stringResId = R.string.wifi_security_none;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION) {
+            // use sae to hide transition details from user
+            stringResId = R.string.wifi_security_sae;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE) {
+            stringResId = R.string.wifi_security_sae;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION) {
+            // use owe to hide transition details from user
+            stringResId = R.string.wifi_security_owe;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OWE) {
+            stringResId = R.string.wifi_security_owe;
         }
         return getContext().getString(stringResId);
     }
