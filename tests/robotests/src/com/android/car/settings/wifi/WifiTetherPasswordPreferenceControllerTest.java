@@ -19,14 +19,12 @@ package com.android.car.settings.wifi;
 import static com.google.common.truth.Truth.assertThat;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiConfiguration;
 import android.text.InputType;
 import android.text.TextUtils;
 
 import androidx.lifecycle.Lifecycle;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
@@ -52,14 +50,12 @@ public class WifiTetherPasswordPreferenceControllerTest {
     private PreferenceControllerTestHelper<WifiTetherPasswordPreferenceController>
             mControllerHelper;
     private CarWifiManager mCarWifiManager;
-    private LocalBroadcastManager mLocalBroadcastManager;
     private WifiTetherPasswordPreferenceController mController;
 
     @Before
     public void setup() {
         mContext = RuntimeEnvironment.application;
         mCarWifiManager = new CarWifiManager(mContext);
-        mLocalBroadcastManager = LocalBroadcastManager.getInstance(mContext);
         mPreference = new ValidatedEditTextPreference(mContext);
         mControllerHelper =
                 new PreferenceControllerTestHelper<WifiTetherPasswordPreferenceController>(mContext,
@@ -149,63 +145,6 @@ public class WifiTetherPasswordPreferenceControllerTest {
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
 
         assertThat(!mPreference.isVisible()).isTrue();
-    }
-
-    @Test
-    public void onStart_receiverIsRegisteredOnLocalBroadcastManager() {
-        WifiConfiguration config = new WifiConfiguration();
-        mCarWifiManager.setWifiApConfig(config);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-
-        assertThat(
-                ShadowLocalBroadcastManager.getRegisteredBroadcastReceivers().size())
-                .isEqualTo(1);
-    }
-
-    @Test
-    public void onStop_receiverIsUnregisteredFromLocalBroadcastManager() {
-        WifiConfiguration config = new WifiConfiguration();
-        mCarWifiManager.setWifiApConfig(config);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_STOP);
-
-        assertThat(
-                ShadowLocalBroadcastManager.getRegisteredBroadcastReceivers().size())
-                .isEqualTo(0);
-    }
-
-    @Test
-    public void onSecurityChangedToNone_visibilityIsFalse() {
-        WifiConfiguration config = new WifiConfiguration();
-        config.allowedKeyManagement.clear();
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA2_PSK);
-        mCarWifiManager.setWifiApConfig(config);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-
-        Intent intent = new Intent(
-                WifiTetherSecurityPreferenceController.ACTION_SECURITY_TYPE_CHANGED);
-        intent.putExtra(WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
-                WifiConfiguration.KeyMgmt.NONE);
-        mLocalBroadcastManager.sendBroadcast(intent);
-
-        assertThat(mPreference.isVisible()).isFalse();
-    }
-
-    @Test
-    public void onSecurityChangedToWPA2PSK_visibilityIsTrue() {
-        WifiConfiguration config = new WifiConfiguration();
-        config.allowedKeyManagement.clear();
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-        mCarWifiManager.setWifiApConfig(config);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-
-        Intent intent = new Intent(
-                WifiTetherSecurityPreferenceController.ACTION_SECURITY_TYPE_CHANGED);
-        intent.putExtra(WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
-                WifiConfiguration.KeyMgmt.WPA2_PSK);
-        mLocalBroadcastManager.sendBroadcast(intent);
-
-        assertThat(mPreference.isVisible()).isTrue();
     }
 
     @Test

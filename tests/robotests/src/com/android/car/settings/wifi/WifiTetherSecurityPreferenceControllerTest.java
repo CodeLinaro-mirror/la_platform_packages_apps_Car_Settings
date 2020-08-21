@@ -19,12 +19,10 @@ package com.android.car.settings.wifi;
 import static com.google.common.truth.Truth.assertThat;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiConfiguration;
 
 import androidx.lifecycle.Lifecycle;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.ListPreference;
 
 import com.android.car.settings.CarSettingsRobolectricTestRunner;
@@ -48,14 +46,12 @@ public class WifiTetherSecurityPreferenceControllerTest {
     private PreferenceControllerTestHelper<WifiTetherSecurityPreferenceController>
             mControllerHelper;
     private CarWifiManager mCarWifiManager;
-    private LocalBroadcastManager mLocalBroadcastManager;
     private WifiTetherSecurityPreferenceController mController;
 
     @Before
     public void setup() {
         mContext = RuntimeEnvironment.application;
         mCarWifiManager = new CarWifiManager(mContext);
-        mLocalBroadcastManager = LocalBroadcastManager.getInstance(mContext);
         mPreference = new ListPreference(mContext);
         mControllerHelper =
                 new PreferenceControllerTestHelper<WifiTetherSecurityPreferenceController>(mContext,
@@ -154,63 +150,5 @@ public class WifiTetherSecurityPreferenceControllerTest {
                 Integer.toString(WifiConfiguration.KeyMgmt.WPA2_PSK));
 
         assertThat(mCarWifiManager.getWifiApConfig().preSharedKey).isEqualTo(savedPassword);
-    }
-
-    @Test
-    public void onPreferenceChanged_broadcastsExactlyOneIntent() {
-        WifiConfiguration config = new WifiConfiguration();
-        config.allowedKeyManagement.clear();
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-        mCarWifiManager.setWifiApConfig(config);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-
-        int newSecurityType = WifiConfiguration.KeyMgmt.WPA2_PSK;
-        mController.handlePreferenceChanged(mPreference, newSecurityType);
-
-        assertThat(ShadowLocalBroadcastManager.getSentBroadcastIntents().size()).isEqualTo(1);
-    }
-
-    @Test
-    public void onPreferenceChangedToWPA2PSK_broadcastsSecurityTypeWPA2PSK() {
-        WifiConfiguration config = new WifiConfiguration();
-        config.allowedKeyManagement.clear();
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-        mCarWifiManager.setWifiApConfig(config);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-
-        int newSecurityType = WifiConfiguration.KeyMgmt.WPA2_PSK;
-
-        mController.handlePreferenceChanged(mPreference, newSecurityType);
-
-        Intent expectedIntent = new Intent(
-                WifiTetherSecurityPreferenceController.ACTION_SECURITY_TYPE_CHANGED);
-        expectedIntent.putExtra(WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
-                newSecurityType);
-
-        assertThat(
-                ShadowLocalBroadcastManager.getSentBroadcastIntents().get(0).toString())
-                .isEqualTo(expectedIntent.toString());
-    }
-
-    @Test
-    public void onPreferenceChangedToNone_broadcastsSecurityTypeNone() {
-        WifiConfiguration config = new WifiConfiguration();
-        config.allowedKeyManagement.clear();
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA2_PSK);
-        mCarWifiManager.setWifiApConfig(config);
-        mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-
-        int newSecurityType = WifiConfiguration.KeyMgmt.NONE;
-
-        mController.handlePreferenceChanged(mPreference, newSecurityType);
-
-        Intent expectedIntent = new Intent(
-                WifiTetherSecurityPreferenceController.ACTION_SECURITY_TYPE_CHANGED);
-        expectedIntent.putExtra(WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
-                newSecurityType);
-
-        assertThat(
-                ShadowLocalBroadcastManager.getSentBroadcastIntents().get(0).toString())
-                .isEqualTo(expectedIntent.toString());
     }
 }
