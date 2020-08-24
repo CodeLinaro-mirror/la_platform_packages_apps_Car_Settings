@@ -20,6 +20,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -48,6 +49,8 @@ public class AddWifiFragment extends SettingsFragment {
     private static final Logger LOG = new Logger(AddWifiFragment.class);
     private static final String KEY_NETWORK_NAME = "network_name";
     private static final String KEY_SECURITY_TYPE = "security_type";
+
+    private static final int SHARED_SECURITY_TYPE_UNSET = -1;
 
     private final BroadcastReceiver mNameChangeReceiver = new BroadcastReceiver() {
         @Override
@@ -140,6 +143,15 @@ public class AddWifiFragment extends SettingsFragment {
     @Override
     public void onStart() {
         super.onStart();
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(
+                                NetworkPasswordPreferenceController.SHARED_PREFERENCE_PATH,
+                                Context.MODE_PRIVATE);
+        int newSecurityType = sharedPreferences.getInt(
+                                NetworkSecurityPreferenceController.SHARED_SECURITY_TYPE,
+                               /* defaultValue= */ SHARED_SECURITY_TYPE_UNSET);
+        if (mSecurityType != newSecurityType && newSecurityType != SHARED_SECURITY_TYPE_UNSET) {
+            mSecurityType = newSecurityType;
+        }
         setButtonEnabledState();
     }
 
