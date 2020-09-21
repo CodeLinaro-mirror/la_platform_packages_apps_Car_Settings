@@ -663,6 +663,7 @@
         <activity
             android:name=".system.RegulatoryInfoDisplayActivity"
             android:label="@string/regulatory_labels"
+            android:exported="true"
             android:enabled="@bool/config_show_regulatory_info">
             <intent-filter>
                 <action android:name="android.settings.SHOW_REGULATORY_INFO" />
@@ -683,6 +684,7 @@
             android:theme="@style/ActionDialogTheme"
             android:excludeFromRecents="true"
             android:clearTaskOnLaunch="true"
+            android:exported="true"
             android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.net.wifi.action.REQUEST_ENABLE" />
@@ -714,7 +716,8 @@
                  android:exported="true"
                  android:permission="com.android.car.settings.SET_INITIAL_LOCK"/>
 
-        <receiver android:name=".bluetooth.BluetoothPairingRequest">
+        <receiver android:name=".bluetooth.BluetoothPairingRequest"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
             </intent-filter>
