@@ -16,6 +16,7 @@
 
 package com.android.car.settings.users;
 
+import static android.car.test.mocks.AndroidMockitoHelper.mockUmGetAliveUsers;
 import static android.os.UserManager.USER_TYPE_SYSTEM_HEADLESS;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -31,6 +32,7 @@ import android.car.user.CarUserManager;
 import android.car.user.UserCreationResult;
 import android.car.user.UserRemovalResult;
 import android.car.user.UserSwitchResult;
+import android.car.util.concurrent.AndroidAsyncFuture;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
@@ -52,10 +54,6 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowProcess;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(shadows = {ShadowActivityManager.class, ShadowUserManager.class,
@@ -300,7 +298,7 @@ public class UserHelperTest {
         when(mMockUserManager.isAdminUser()).thenReturn(true);
 
         assertThat(mUserHelper.removeUser(mContext, nonAdminUser)).isTrue();
-        verify(mMockCarUserManager).removeUser(nonAdminUserId);
+        verify(mMockCarUserManager).removeUser(UserHandle.of(nonAdminUserId));
     }
 
     @Test
@@ -318,7 +316,7 @@ public class UserHelperTest {
 
         // If Non-Admin is trying to remove someone other than themselves, they should fail.
         assertThat(mUserHelper.removeUser(mContext, user2)).isFalse();
-        verify(mMockCarUserManager, never()).removeUser(user2.id);
+        verify(mMockCarUserManager, never()).removeUser(UserHandle.of(user2.id));
     }
 
 
@@ -333,6 +331,7 @@ public class UserHelperTest {
         UserInfo nonAdminInfo = createNonAdminUser(baseId + 1);
         mockGetUsers(adminUser, nonAdminInfo);
         UserInfo newAdminInfo = createAdminUser(baseId + 2);
+        mockRemoveUserSuccess();
         mockCreateUser(DEFAULT_ADMIN_NAME, UserInfo.FLAG_ADMIN,
                 UserCreationResult.STATUS_SUCCESSFUL, newAdminInfo);
         mockSwitchUserSuccess();
@@ -341,7 +340,7 @@ public class UserHelperTest {
 
         verify(mMockCarUserManager).createUser(DEFAULT_ADMIN_NAME, UserInfo.FLAG_ADMIN);
         verify(mMockCarUserManager).switchUser(newAdminInfo.id);
-        verify(mMockCarUserManager).removeUser(adminUser.id);
+        verify(mMockCarUserManager).removeUser(UserHandle.of(adminUser.id));
     }
 
     @Test
@@ -362,7 +361,7 @@ public class UserHelperTest {
         mUserHelper.removeUser(mContext, adminUser);
         verify(mMockCarUserManager).createUser(DEFAULT_ADMIN_NAME, UserInfo.FLAG_ADMIN);
         verify(mMockCarUserManager, never()).switchUser(anyInt());
-        verify(mMockCarUserManager, never()).removeUser(adminUser.id);
+        verify(mMockCarUserManager, never()).removeUser(UserHandle.of(adminUser.id));
     }
 
     @Test
@@ -375,13 +374,14 @@ public class UserHelperTest {
         mockGetUsers(currentUser);
 
         UserInfo guestUser = createGuestUser(baseId + 1);
+        mockRemoveUserSuccess();
         mockCreateGuest(DEFAULT_GUEST_NAME, UserCreationResult.STATUS_SUCCESSFUL, guestUser);
         mockSwitchUserSuccess();
 
         mUserHelper.removeUser(mContext, currentUser);
         verify(mMockCarUserManager).createGuest(DEFAULT_GUEST_NAME);
         verify(mMockCarUserManager).switchUser(guestUser.id);
-        verify(mMockCarUserManager).removeUser(currentUser.id);
+        verify(mMockCarUserManager).removeUser(UserHandle.of(currentUser.id));
     }
 
     @Test
@@ -475,18 +475,16 @@ public class UserHelperTest {
     }
 
     private void mockGetUsers(UserInfo... users) {
-        List<UserInfo> testUsers = new ArrayList<>(Arrays.asList(users));
-        when(mMockUserManager.getUsers()).thenReturn(testUsers);
-        when(mMockUserManager.getUsers(true)).thenReturn(testUsers);
-        when(mMockUserManager.getUsers(false)).thenReturn(testUsers);
+        mockUmGetAliveUsers(mMockUserManager, users);
     }
 
     private void mockRemoveUser(int userId, int status) {
-        when(mMockCarUserManager.removeUser(userId)).thenReturn(new UserRemovalResult(status));
+        when(mMockCarUserManager.removeUser(UserHandle.of(userId)))
+                .thenReturn(new UserRemovalResult(status));
     }
 
     private void mockRemoveUserSuccess() {
-        when(mMockCarUserManager.removeUser(anyInt()))
+        when(mMockCarUserManager.removeUser(any()))
                 .thenReturn(new UserRemovalResult(UserRemovalResult.STATUS_SUCCESSFUL));
     }
 
@@ -494,25 +492,27 @@ public class UserHelperTest {
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
         future.complete(new UserCreationResult(UserCreationResult.STATUS_ANDROID_FAILURE,
                 null, null));
-        when(mMockCarUserManager.createUser(any(), anyInt())).thenReturn(future);
-        when(mMockCarUserManager.createGuest(any())).thenReturn(future);
+        AndroidAsyncFuture<UserCreationResult> asyncFuture = new AndroidAsyncFuture<>(future);
+        when(mMockCarUserManager.createUser(any(), anyInt())).thenReturn(asyncFuture);
+        when(mMockCarUserManager.createGuest(any())).thenReturn(asyncFuture);
     }
 
     private void mockCreateUser(String name, int flag, int status, UserInfo userInfo) {
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
         future.complete(new UserCreationResult(status, userInfo, null));
-        when(mMockCarUserManager.createUser(name, flag)).thenReturn(future);
+        when(mMockCarUserManager.createUser(name, flag))
+                .thenReturn(new AndroidAsyncFuture<>(future));
     }
 
     private void mockCreateGuest(String name, int status, UserInfo userInfo) {
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
         future.complete(new UserCreationResult(status, userInfo, null));
-        when(mMockCarUserManager.createGuest(name)).thenReturn(future);
+        when(mMockCarUserManager.createGuest(name)).thenReturn(new AndroidAsyncFuture<>(future));
     }
 
     private void mockSwitchUserSuccess() {
         AndroidFuture<UserSwitchResult> future = new AndroidFuture<>();
         future.complete(new UserSwitchResult(UserSwitchResult.STATUS_SUCCESSFUL, null));
-        when(mMockCarUserManager.switchUser(anyInt())).thenReturn(future);
+        when(mMockCarUserManager.switchUser(anyInt())).thenReturn(new AndroidAsyncFuture<>(future));
     }
 }

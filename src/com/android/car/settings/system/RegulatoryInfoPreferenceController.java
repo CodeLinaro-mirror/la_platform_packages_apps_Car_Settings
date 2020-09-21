@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 The Android Open Source Project
+ * Copyright (C) 2020 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,35 +18,42 @@ package com.android.car.settings.system;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
-import android.os.SystemProperties;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.provider.Settings;
 
 import androidx.annotation.VisibleForTesting;
+import androidx.preference.Preference;
 
 import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.PreferenceController;
 
-/**
- * Factory reset specific version of {@link ResetEsimPreferenceController} that is only available if
- * the system property {@code masterclear.allow_retain_esim_profiles_after_fdr} is also true.
- */
-public class MasterClearResetEsimPreferenceController extends ResetEsimPreferenceController {
+/** Controls the visibility of the regulatory info preference. */
+public class RegulatoryInfoPreferenceController extends PreferenceController<Preference> {
 
-    @VisibleForTesting
-    static final String KEY_SHOW_ESIM_RESET_CHECKBOX =
-            "masterclear.allow_retain_esim_profiles_after_fdr";
+    private static final Intent INTENT_PROBE = new Intent(Settings.ACTION_SHOW_REGULATORY_INFO);
 
-    public MasterClearResetEsimPreferenceController(Context context, String preferenceKey,
+    private PackageManager mPm;
+
+    public RegulatoryInfoPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
+        mPm = context.getPackageManager();
+    }
+
+    @Override
+    protected Class<Preference> getPreferenceType() {
+        return Preference.class;
     }
 
     @Override
     protected int getAvailabilityStatus() {
-        int status = super.getAvailabilityStatus();
-        if (status == AVAILABLE) {
-            return SystemProperties.get(KEY_SHOW_ESIM_RESET_CHECKBOX,
-                    Boolean.FALSE.toString()).equals(Boolean.TRUE.toString()) ? AVAILABLE
-                    : UNSUPPORTED_ON_DEVICE;
-        }
-        return status;
+        return mPm.queryIntentActivities(INTENT_PROBE, /* flags= */ 0).isEmpty()
+                ? UNSUPPORTED_ON_DEVICE : AVAILABLE;
+    }
+
+    @VisibleForTesting
+    void setPackageManager(PackageManager pm) {
+        mPm = pm;
     }
 }

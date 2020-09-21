@@ -11,10 +11,15 @@ android_test {
     ],
 
     static_libs: [
+        "android.car",
         "androidx.test.core",
         "androidx.test.rules",
         "androidx.test.ext.junit",
         "androidx.test.ext.truth",
+        "mockito-target-minus-junit4",
+        "platform-test-annotations",
+        "truth-prebuilt",
+        "testng",
     ],
 
     instrumentation_for: "CarSettingsForTesting",
