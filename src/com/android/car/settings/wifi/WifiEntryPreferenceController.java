@@ -55,19 +55,12 @@ public class WifiEntryPreferenceController extends PreferenceController<MasterSw
     @Override
     protected void onStartInternal() {
         mCarWifiManager.addListener(this);
-        mCarWifiManager.start();
         getPreference().setSwitchChecked(mCarWifiManager.isWifiEnabled());
     }
 
     @Override
     protected void onStopInternal() {
         mCarWifiManager.removeListener(this);
-        mCarWifiManager.stop();
-    }
-
-    @Override
-    protected void onDestroyInternal() {
-        mCarWifiManager.destroy();
     }
 
     @Override
