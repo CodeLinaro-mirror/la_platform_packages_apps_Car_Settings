@@ -23,6 +23,7 @@ import android.graphics.drawable.StateListDrawable;
 import androidx.preference.PreferenceViewHolder;
 
 import com.android.car.settings.common.Logger;
+import com.android.car.settings.wifi.WifiUtil;
 import com.android.settingslib.wifi.AccessPoint;
 
 /** Renders a {@link AccessPoint} as a preference. */
@@ -74,7 +75,7 @@ public class AccessPointPreference extends ButtonPasswordEditTextPreference {
      * 2. AP that has been saved, but not enabled due to wrong password.
      */
     private boolean shouldShowPasswordDialog() {
-        return mAccessPoint.getSecurity() != AccessPoint.SECURITY_NONE && (!mAccessPoint.isSaved()
+        return !WifiUtil.isOpenOweNetwork(mAccessPoint.getSecurity()) && (!mAccessPoint.isSaved()
                 || WifiUtil.isAccessPointDisabledByWrongPassword(mAccessPoint));
     }
 
@@ -84,7 +85,7 @@ public class AccessPointPreference extends ButtonPasswordEditTextPreference {
             return null;
         }
         mWifiSld.setState(
-                (mAccessPoint.getSecurity() != AccessPoint.SECURITY_NONE)
+                (!WifiUtil.isOpenOweNetwork(mAccessPoint.getSecurity()))
                         ? STATE_SECURED
                         : STATE_NONE);
         Drawable drawable = mWifiSld.getCurrent();

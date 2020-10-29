@@ -161,12 +161,17 @@ public class WifiUtil {
         WifiManager wifiManager = context.getSystemService(WifiManager.class);
         WifiConfiguration wifiConfig = new WifiConfiguration();
         wifiConfig.SSID = String.format("\"%s\"", ssid);
-        wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-        wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-        wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
-        wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
-        wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
-        wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP104);
+
+        // not set pairwise and group ciphers for WPA3 network
+        if (security != AccessPoint.SECURITY_OWE
+              && security != AccessPoint.SECURITY_SAE) {
+            wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
+            wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
+            wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
+            wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.WPA);
+            wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP40);
+            wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.WEP104);
+        }
         wifiConfig.hiddenSSID = hidden;
         switch (security) {
             case AccessPoint.SECURITY_NONE:
@@ -193,8 +198,17 @@ public class WifiUtil {
                 wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
                 wifiConfig.preSharedKey = String.format("\"%s\"", password);
                 break;
+            case AccessPoint.SECURITY_SAE:
+                wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.SAE);
+                wifiConfig.requirePMF = true;
+                wifiConfig.preSharedKey = '"' + password + '"';
+                break;
+            case AccessPoint.SECURITY_OWE:
+                wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.OWE);
+                wifiConfig.requirePMF = true;
+                break;
             default:
-                throw new IllegalArgumentException("invalid security type");
+                throw new IllegalArgumentException("invalid security type - " + security);
         }
         int netId = wifiManager.addNetwork(wifiConfig);
         // This only means wifiManager failed writing the new wifiConfig to the db. It doesn't mean
@@ -269,5 +283,10 @@ public class WifiUtil {
         public void onFailure(int reason) {
             Toast.makeText(mContext, mFailureMessage, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public static boolean isOpenOweNetwork(int security) {
+       return security == AccessPoint.SECURITY_NONE
+             || security == AccessPoint.SECURITY_OWE;
     }
 }

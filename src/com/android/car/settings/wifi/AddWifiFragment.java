@@ -20,6 +20,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 
@@ -30,6 +31,7 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.SettingsFragment;
 import com.android.car.ui.toolbar.MenuItem;
+import com.android.car.settings.wifi.WifiUtil;
 import com.android.settingslib.wifi.AccessPoint;
 
 import java.util.Collections;
@@ -44,6 +46,8 @@ public class AddWifiFragment extends SettingsFragment {
     private static final Logger LOG = new Logger(AddWifiFragment.class);
     private static final String KEY_NETWORK_NAME = "network_name";
     private static final String KEY_SECURITY_TYPE = "security_type";
+
+    private static final int SHARED_SECURITY_TYPE_UNSET = -1;
 
     private final BroadcastReceiver mNameChangeReceiver = new BroadcastReceiver() {
         @Override
@@ -92,7 +96,7 @@ public class AddWifiFragment extends SettingsFragment {
                 .setOnClickListener(i -> {
                     // This only needs to handle hidden/unsecure networks.
                     int netId = WifiUtil.connectToAccessPoint(getContext(), mNetworkName,
-                            AccessPoint.SECURITY_NONE, /* password= */ null, /* hidden= */ true);
+                            mSecurityType, /* password= */ null, /* hidden= */ true);
                     LOG.d("connected to netId: " + netId);
                     if (netId != WifiUtil.INVALID_NET_ID) {
                         goBack();
@@ -116,6 +120,17 @@ public class AddWifiFragment extends SettingsFragment {
                 new IntentFilter(NetworkNamePreferenceController.ACTION_NAME_CHANGE));
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mSecurityChangeReceiver,
                 new IntentFilter(NetworkSecurityPreferenceController.ACTION_SECURITY_CHANGE));
+
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(
+                NetworkPasswordPreferenceController.SHARED_PREFERENCE_PATH,
+                Context.MODE_PRIVATE);
+        int newSecurityType = sharedPreferences.getInt(
+                NetworkSecurityPreferenceController.SHARED_SECURITY_TYPE,
+                /* defaultValue= */ SHARED_SECURITY_TYPE_UNSET);
+        if (mSecurityType != newSecurityType && newSecurityType != SHARED_SECURITY_TYPE_UNSET) {
+            mSecurityType = newSecurityType;
+            setButtonEnabledState();
+        }
     }
 
     @Override
@@ -128,7 +143,7 @@ public class AddWifiFragment extends SettingsFragment {
     private void setButtonEnabledState() {
         if (mAddWifiButton != null) {
             mAddWifiButton.setEnabled(
-                    !TextUtils.isEmpty(mNetworkName) && mSecurityType == AccessPoint.SECURITY_NONE);
+                    !TextUtils.isEmpty(mNetworkName) && WifiUtil.isOpenOweNetwork(mSecurityType));
         }
     }
 }

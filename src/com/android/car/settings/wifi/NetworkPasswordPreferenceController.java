@@ -29,13 +29,19 @@ import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceController;
+import com.android.car.settings.wifi.WifiUtil;
 import com.android.settingslib.wifi.AccessPoint;
+import android.content.SharedPreferences;
 
 /** Business logic relating to the security type and associated password. */
 public class NetworkPasswordPreferenceController extends
         PreferenceController<NetworkNameRestrictedPasswordEditTextPreference> {
 
     private static final Logger LOG = new Logger(NetworkPasswordPreferenceController.class);
+    private static final int SHARED_SECURITY_TYPE_UNSET = -1;
+    protected static final String SHARED_PREFERENCE_PATH =
+             "com.android.car.settings.wifi.NetworkPasswordPreferenceController";
+    private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(SHARED_PREFERENCE_PATH, Context.MODE_PRIVATE);
 
     private final BroadcastReceiver mNameChangeReceiver = new BroadcastReceiver() {
         @Override
@@ -73,6 +79,13 @@ public class NetworkPasswordPreferenceController extends
     protected void onStartInternal() {
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mNameChangeReceiver,
                 new IntentFilter(NetworkNamePreferenceController.ACTION_NAME_CHANGE));
+        int newSecurityType = mSharedPreferences.getInt(
+                 NetworkSecurityPreferenceController.SHARED_SECURITY_TYPE,
+                 /* defaultValue= */ SHARED_SECURITY_TYPE_UNSET);
+        if (mSecurityType != newSecurityType && newSecurityType != SHARED_SECURITY_TYPE_UNSET) {
+            mSecurityType = newSecurityType;
+            refreshUi();
+        }
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mSecurityChangeReceiver,
                 new IntentFilter(NetworkSecurityPreferenceController.ACTION_SECURITY_CHANGE));
     }
@@ -90,7 +103,7 @@ public class NetworkPasswordPreferenceController extends
         } else {
             getPreference().setDialogTitle(mNetworkName);
         }
-        preference.setVisible(mSecurityType != AccessPoint.SECURITY_NONE);
+        preference.setVisible(!WifiUtil.isOpenOweNetwork(mSecurityType));
     }
 
     @Override
