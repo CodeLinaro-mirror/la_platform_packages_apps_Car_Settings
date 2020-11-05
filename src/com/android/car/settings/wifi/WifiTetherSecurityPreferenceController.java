@@ -26,6 +26,12 @@ import androidx.preference.ListPreference;
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 
+import android.net.wifi.SoftApCapability;
+import android.net.wifi.WifiManager;
+import android.os.Handler;
+import android.os.HandlerExecutor;
+import android.util.Log;
+import java.util.ArrayList;
 /**
  * Controls WiFi Hotspot Security Type configuration.
  */
@@ -36,6 +42,84 @@ public class WifiTetherSecurityPreferenceController extends
             "com.android.car.settings.wifi.KEY_SECURITY_TYPE";
 
     private int mSecurityType;
+    private static final String TAG = "WifiTetherSecurityPreferenceController";
+    final Context mContext;
+    private WifiManager mWifiManager;
+    private String[] mSecurityEntries;
+    private String[] mSecurityValues;
+    private boolean mSecurityCapaFetched;
+    private boolean mSaeSapSupported;
+    private boolean mOweSapSupported;
+    private WifiManager.SoftApCallback mSoftApCallback = new WifiManager.SoftApCallback() {
+        @Override
+        public void onCapabilityChanged(SoftApCapability capability) {
+            if (mSecurityCapaFetched)
+                return;
+            ArrayList<String> securityEntries =  new ArrayList<String>();
+            ArrayList<String> securityValues =  new ArrayList<String>();
+
+            mSecurityCapaFetched = true;
+
+            if (capability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_SAE)) {
+                mSaeSapSupported = true;
+            }
+            if (capability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_OWE)) {
+                mOweSapSupported = true;
+            }
+
+            // Add SAE transition security type
+            if (mSaeSapSupported) {
+                securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION));
+                securityEntries.add(mContext.getString(R.string.wifi_security_sae));
+            }
+
+            // Add WPA2-PSK security type
+            securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_WPA2_PSK));
+            securityEntries.add(mContext.getString(R.string.wifi_security_wpa2));
+
+            // Add OWE transition security type
+            if (mOweSapSupported) {
+                securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION));
+                securityEntries.add(mContext.getString(R.string.wifi_security_owe));
+            }
+
+            // Add open security type
+            securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_OPEN));
+            securityEntries.add(mContext.getString(R.string.wifi_security_none));
+
+            mSecurityEntries = securityEntries.toArray(new String[securityEntries.size()]);
+            mSecurityValues = securityValues.toArray(new String[securityValues.size()]);
+
+            updateDisplay();
+            Log.i(TAG, "Updated supported SoftAp AKMs");
+        }
+    };
+
+    private void updateDisplay() {
+        final SoftApConfiguration config = getCarSoftApConfig();
+        if (config == null) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA2_PSK;
+        } else if (config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OPEN) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_OPEN;
+        } else if (mOweSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION;
+        } else if (mOweSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OWE) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_OWE;
+        } else if (mSaeSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION;
+        } else if (mSaeSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE;
+        } else {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA2_PSK;
+        }
+        getPreference().setEntries(mSecurityEntries);
+        getPreference().setEntryValues(mSecurityValues);
+        getPreference().setValue(String.valueOf(mSecurityType));
+    }
 
     private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(
                     WifiTetherPasswordPreferenceController.SHARED_PREFERENCE_PATH,
@@ -44,6 +128,9 @@ public class WifiTetherSecurityPreferenceController extends
     public WifiTetherSecurityPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
+        mContext = context;
+        mWifiManager = (WifiManager) mContext.getSystemService(Context.WIFI_SERVICE);
+        mWifiManager.registerSoftApCallback(new HandlerExecutor(new Handler()), mSoftApCallback);
     }
 
     @Override
@@ -55,12 +142,8 @@ public class WifiTetherSecurityPreferenceController extends
     protected void onCreateInternal() {
         super.onCreateInternal();
         mSecurityType = getCarSoftApConfig().getSecurityType();
-        getPreference().setEntries(
-                getContext().getResources().getStringArray(R.array.wifi_tether_security));
-        String[] entryValues = {
-                Integer.toString(SoftApConfiguration.SECURITY_TYPE_WPA2_PSK),
-                Integer.toString(SoftApConfiguration.SECURITY_TYPE_OPEN)};
-        getPreference().setEntryValues(entryValues);
+        getPreference().setEntries(mSecurityEntries);
+        getPreference().setEntryValues(mSecurityValues);
         getPreference().setValue(String.valueOf(mSecurityType));
     }
 
@@ -86,8 +169,20 @@ public class WifiTetherSecurityPreferenceController extends
 
     @Override
     protected String getSummary() {
-        int stringResId = mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA2_PSK
-                ? R.string.wifi_hotspot_wpa2_personal : R.string.wifi_hotspot_security_none;
+        int stringResId = R.string.wifi_security_wpa2;
+        if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OPEN) {
+            stringResId = R.string.wifi_security_none;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION) {
+            // use sae to hide transition details from user
+            stringResId = R.string.wifi_security_sae;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE) {
+            stringResId = R.string.wifi_security_sae;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION) {
+            // use owe to hide transition details from user
+            stringResId = R.string.wifi_security_owe;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OWE) {
+            stringResId = R.string.wifi_security_owe;
+        }
         return getContext().getString(stringResId);
     }
 
