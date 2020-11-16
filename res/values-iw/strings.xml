@@ -84,7 +84,7 @@
     <string name="set_data_limit" msgid="7136539812414500084">"הגדרת מגבלת נתונים"</string>
     <string name="data_limit" msgid="227338836292511425">"מגבלת נתונים"</string>
     <string name="data_usage_limit_dialog_title" msgid="1864716658371721883">"הגבלת שימוש בחבילת הגלישה"</string>
-    <string name="data_usage_limit_dialog_mobile" msgid="3633960011913085089">"כשיחידת הראש ברכב תגיע למגבלה שהגדרת, היא תשבית את חבילת הגלישה.\n\nמכיוון שעשויים להיות הבדלים בין השימוש בחבילת הגלישה שנמדד על ידי יחידת הראש לבין השימוש שנמדד על ידי הספק, מומלץ להגדיר מגבלה סבירה."</string>
+    <string name="data_usage_limit_dialog_mobile" msgid="3633960011913085089">"כשהיחידה הראשית ברכב תגיע למגבלה שהגדרת, היא תשבית את חבילת הגלישה.\n\nמכיוון שעשויים להיות הבדלים בין השימוש בחבילת הגלישה שנמדד על ידי היחידה הראשית לבין השימוש שנמדד על ידי הספק, מומלץ להגדיר מגבלה סבירה."</string>
     <string name="data_usage_warning_editor_title" msgid="2041517150169038813">"הגדרת אזהרה לגבי שימוש בחבילת הגלישה"</string>
     <string name="data_usage_limit_editor_title" msgid="133468242379286689">"מגבלה לשימוש בחבילת הגלישה"</string>
     <string name="usage_bytes_threshold_picker_positive_button" msgid="4625479840977965519">"הגדרה"</string>
@@ -428,7 +428,7 @@
     <string name="reset_app_pref_button_text" msgid="6270820447321231609">"איפוס אפליקציות"</string>
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"העדפות האפליקציה אופסו"</string>
     <string name="factory_reset_title" msgid="4019066569214122052">"מחיקת כל הנתונים (איפוס להגדרות מקוריות)"</string>
-    <string name="factory_reset_desc" msgid="7133390564019035242">"פעולה זו תמחק את כל הנתונים מיחידת הראש של הרכב שלך, כולל:\n\n"<li>"חשבון Google שלך"</li>\n<li>"נתוני מערכת ואפליקציות והגדרות"</li>\n<li>"אפליקציות שהורדו"</li></string>
+    <string name="factory_reset_desc" msgid="7133390564019035242">"פעולה זו תמחק את כל הנתונים מהיחידה הראשית של הרכב שלך, כולל:\n\n"<li>"חשבון Google שלך"</li>\n<li>"נתוני מערכת ואפליקציות והגדרות"</li>\n<li>"אפליקציות שהורדו"</li></string>
     <string name="factory_reset_accounts" msgid="5523956654938834209">"יש לך חיבור פעיל כרגע אל החשבונות הבאים:"</string>
     <string name="factory_reset_other_users_present" msgid="3708751471946901936">"קיימים משתמשים נוספים ברכב זה."</string>
     <string name="factory_reset_button_text" msgid="5364900277201550546">"איפוס הרכב"</string>
