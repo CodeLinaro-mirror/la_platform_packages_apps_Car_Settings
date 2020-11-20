@@ -423,7 +423,7 @@
     <string name="reset_app_pref_desc" msgid="579392665146962149">"Овим ћете ресетовати сва подешавања за:\n\n"<li>"Онемогућене апликације"</li>\n<li>"Обавештења о онемогућеним апликацијама"</li>\n<li>"Подразумеване апликације за радње"</li>\n<li>"Ограничења за позадинске податке за апликације"</li>\n<li>"Сва ограничења за дозволе"</li>\n\n"Нећете изгубити никакве податке апликације."</string>
     <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Ресетуј апликације"</string>
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Подешавања апликација су ресетована"</string>
-    <string name="factory_reset_title" msgid="4019066569214122052">"Обриши све податке"</string>
+    <string name="factory_reset_title" msgid="4019066569214122052">"Обриши све податке (фабричка подешавања)"</string>
     <string name="factory_reset_desc" msgid="7133390564019035242">"Овим бришете све податке из интерне меморије возила, укључујући:\n\n"<li>"Google налог"</li>\n<li>"податке и подешавања система и апликација"</li>\n<li>"преузете апликације"</li></string>
     <string name="factory_reset_accounts" msgid="5523956654938834209">"Тренутно сте пријављени на следеће налоге:"</string>
     <string name="factory_reset_other_users_present" msgid="3708751471946901936">"У овом возилу су присутни и други корисници."</string>
@@ -532,7 +532,7 @@
     <string name="user_cannot_add_accounts_message" msgid="6775605884544906797">"Ограничени профили не могу да додају налоге"</string>
     <string name="remove_account_title" msgid="8840386525787836381">"Уклони налог"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"Желите да уклоните налог?"</string>
-    <string name="really_remove_account_message" msgid="4296769280849579900">"Ако уклоните овај налог, избрисаћете све поруке, контакте и друге податке са уређаја!"</string>
+    <string name="really_remove_account_message" msgid="4296769280849579900">"Ако уклоните овај налог, избрисаћете све поруке, контакте и друге податке са уређаја."</string>
     <string name="remove_account_error_title" msgid="8368044943174826635">"Уклањање налога није успело."</string>
     <string name="account_sync_title" msgid="6541844336300236915">"Синхронизација налога"</string>
     <string name="account_sync_summary_some_on" msgid="4525960296068027182">"Синхронизација је укључена за одређене ставке (<xliff:g id="ID_1">%1$d</xliff:g> од <xliff:g id="ID_2">%2$d</xliff:g>)"</string>
@@ -574,15 +574,15 @@
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"Нацртајте шаблон за откључавање"</string>
     <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"Подигните прст када завршите"</string>
     <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"Шаблон је снимљен"</string>
-    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Поново нацртајте шаблон ради потврде"</string>
+    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Поново нацртајте шаблон да бисте потврдили"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"Повежите бар 4 тачке. Пробајте поново."</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"Погрешан шаблон"</string>
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Како нацртати шаблон за откључавање"</string>
     <string name="error_saving_lockpattern" msgid="2933512812768570130">"Грешка при чувању шаблона"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts" msgid="4636307830951251013">"Превише нетачних покушаја. Пробајте поново за <xliff:g id="NUMBER">%d</xliff:g> сек."</string>
     <string name="okay" msgid="4589873324439764349">"Потврди"</string>
-    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Желите ли да укл. зак. екрана?"</string>
-    <string name="remove_screen_lock_message" msgid="6675850371585564965">"Овим ћете дозволити свима приступ вашем налогу"</string>
+    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Уклонићете закључавање екрана?"</string>
+    <string name="remove_screen_lock_message" msgid="6675850371585564965">"Тада ће свако моћи да приступи вашем налогу"</string>
     <string name="lock_settings_enter_pin" msgid="1669172111244633904">"Унесите PIN"</string>
     <string name="lock_settings_enter_password" msgid="2636669926649496367">"Унесите лозинку"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Подесите PIN из безбедносних разлога"</string>
