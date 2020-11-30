@@ -174,7 +174,7 @@
     <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"התאמה של מכשיר חדש"</string>
     <string name="bluetooth_pair_new_device_summary" msgid="2497221247690369031">"Bluetooth יופעל לצורך התאמה"</string>
     <string name="bluetooth_disconnect_title" msgid="7675271355910637528">"לנתק את המכשיר?"</string>
-    <string name="bluetooth_disconnect_all_profiles" msgid="2017519733701757244">"יתבצע ניתוק של הרכב מ-<xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
+    <string name="bluetooth_disconnect_all_profiles" msgid="2017519733701757244">"הרכב יתנתק מ-<xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_vehicle_mac_address" msgid="7069234636525805937">"כתובת ה-Bluetooth של הרכב: <xliff:g id="ADDRESS">%1$s</xliff:g>"</string>
     <string name="bluetooth_device_mac_address" msgid="3949829271575045069">"כתובת המכשיר לחיבור דרך Bluetooth: <xliff:g id="ADDRESS">%1$s</xliff:g>"</string>
     <string name="bluetooth_name" msgid="2609869978821094114">"שם הרכב"</string>
@@ -342,6 +342,7 @@
     <string name="special_access" msgid="5730278220917123811">"הרשאת גישה מיוחדת לאפליקציה"</string>
     <string name="show_system" msgid="4401355756969485287">"הצגת המערכת"</string>
     <string name="hide_system" msgid="8845453295584638040">"הסתרת המערכת"</string>
+    <string name="hide_system_apps" msgid="6583947381056154020">"הסתרת אפליקציות מערכת"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"שינוי הגדרות המערכת"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"ההרשאה הזו מתירה לאפליקציה לשנות את הגדרות המערכת."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"גישה להתראות"</string>

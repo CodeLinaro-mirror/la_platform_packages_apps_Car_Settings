@@ -195,14 +195,14 @@
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"بلوٹوتھ جوڑا بنانے کا کوڈ"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"PIN میں حروف یا علامات شامل ہیں"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"جوڑا بنانے کا کوڈ ٹائپ کریں پھر Return یا Enter دبائیں"</string>
-    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> کے ساتھ جوڑا بنائیں؟"</string>
+    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"‫<xliff:g id="DEVICE_NAME">%1$s</xliff:g> کے ساتھ جوڑا بنائیں؟"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> کو اپنے رابطوں اور کال کی سرگزشت تک رسائی کی اجازت دیں"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"آپ کو دوسرے آلہ پر بھی یہ PIN ٹائپ کرنے کی ضرورت پڑ سکتی ہے۔"</string>
     <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"آپ کو دیگر آلہ پر بھی اس پاس کلید کو ٹائپ کرنے کی ضرورت پڑ سکتی ہے۔"</string>
     <string name="bluetooth_pin_values_hint_16_digits" msgid="418776900816984778">"16 ہندسے ہونے چاہئیں"</string>
     <string name="bluetooth_pin_values_hint" msgid="1561325817559141687">"عام طور پر 0000 یا 1234"</string>
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"جوڑا بنانے کی درخواست"</string>
-    <string name="bluetooth_notif_message" msgid="1060821000510108726">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> کے ساتھ جوڑا بنانے کیلئے تھپتھپائیں۔"</string>
+    <string name="bluetooth_notif_message" msgid="1060821000510108726">"‫<xliff:g id="DEVICE_NAME">%1$s</xliff:g> کے ساتھ جوڑا بنانے کیلئے تھپتھپائیں۔"</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"بلوٹوتھ آلہ منتخب کریں"</string>
     <string name="language_settings" msgid="2079258598337245546">"زبانیں"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"زبانیں اور ان پٹ"</string>
@@ -336,6 +336,7 @@
     <string name="special_access" msgid="5730278220917123811">"خاص ایپ تک رسائی"</string>
     <string name="show_system" msgid="4401355756969485287">"سسٹم دکھائیں"</string>
     <string name="hide_system" msgid="8845453295584638040">"سسٹم چھپائیں"</string>
+    <string name="hide_system_apps" msgid="6583947381056154020">"سسٹم ایپس کو چھپائیں"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"سسٹم کی ترتیبات میں ترمیم کریں"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"اس اجازت سے ایپ کو سسٹم کی ترتیبات میں ترمیم کرنے میں سہولت ہوتی ہے۔"</string>
     <string name="notification_access_title" msgid="1467340098885813473">"اطلاع تک رسائی"</string>
