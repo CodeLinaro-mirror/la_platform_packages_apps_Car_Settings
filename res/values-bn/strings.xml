@@ -192,7 +192,7 @@
     <string name="bluetooth_ask_enablement_and_discovery_no_name" msgid="907153034209916282">"একটি অ্যাপ ব্লুটুথ চালু করতে চায় এবং আপনার হেডইউনিটটিকে অন্যান্য ডিভাইসের জন্য <xliff:g id="TIMEOUT">%1$d</xliff:g> সেকেন্ড দেখাতে চায়।"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"ব্লুটুথ পেয়ার করার অনুরোধ"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"পেয়ার এবং কানেক্ট করুন"</string>
-    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ব্লুটুথ এর সাথে পেয়ার করার কোড"</string>
+    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ব্লুটুথ-এর সাথে পেয়ার করার কোড"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"পিনে অক্ষর বা চিহ্ন রয়েছে"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"যুক্ত করার কোড লিখে রিটার্ন অথবা এন্টার টিপুন"</string>
     <string name="bluetooth_pairing_request" msgid="4769675459526556801">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> এর সাথে পেয়ার করবেন?"</string>
@@ -336,6 +336,7 @@
     <string name="special_access" msgid="5730278220917123811">"অ্যাপের বিশেষ অ্যাক্সেস"</string>
     <string name="show_system" msgid="4401355756969485287">"সিস্টেম অ্যাপ দেখুন"</string>
     <string name="hide_system" msgid="8845453295584638040">"সিস্টেম লুকান"</string>
+    <string name="hide_system_apps" msgid="6583947381056154020">"সিস্টেম অ্যাপ আড়াল করুন"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"সিস্টেম সেটিংস পরিবর্তন করুন"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"এই অনুমতিটি কোনও অ্যাপকে সিস্টেম সেটিংস পরিবর্তন করার অনুমতি দেয়।"</string>
     <string name="notification_access_title" msgid="1467340098885813473">"বিজ্ঞপ্তি অ্যাক্সেস"</string>

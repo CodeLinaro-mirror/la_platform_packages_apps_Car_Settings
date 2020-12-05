@@ -170,7 +170,7 @@
     <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"จับคู่อุปกรณ์ใหม่"</string>
     <string name="bluetooth_pair_new_device_summary" msgid="2497221247690369031">"บลูทูธจะเปิดเพื่อจับคู่อุปกรณ์"</string>
     <string name="bluetooth_disconnect_title" msgid="7675271355910637528">"เลิกเชื่อมต่ออุปกรณ์ไหม"</string>
-    <string name="bluetooth_disconnect_all_profiles" msgid="2017519733701757244">"พาหนะจะยกเลิกการเชื่อมต่อจาก <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
+    <string name="bluetooth_disconnect_all_profiles" msgid="2017519733701757244">"รถของคุณจะยกเลิกการเชื่อมต่อกับ <xliff:g id="DEVICE_NAME">%1$s</xliff:g>"</string>
     <string name="bluetooth_vehicle_mac_address" msgid="7069234636525805937">"ที่อยู่บลูทูธของพาหนะ: <xliff:g id="ADDRESS">%1$s</xliff:g>"</string>
     <string name="bluetooth_device_mac_address" msgid="3949829271575045069">"ที่อยู่บลูทูธของอุปกรณ์: <xliff:g id="ADDRESS">%1$s</xliff:g>"</string>
     <string name="bluetooth_name" msgid="2609869978821094114">"ชื่อพาหนะ"</string>
@@ -336,6 +336,7 @@
     <string name="special_access" msgid="5730278220917123811">"สิทธิ์เข้าถึงพิเศษของแอป"</string>
     <string name="show_system" msgid="4401355756969485287">"แสดงระบบ"</string>
     <string name="hide_system" msgid="8845453295584638040">"ซ่อนระบบ"</string>
+    <string name="hide_system_apps" msgid="6583947381056154020">"ซ่อนแอปของระบบ"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"แก้ไขการตั้งค่าระบบ"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"สิทธิ์นี้อนุญาตให้แอปแก้ไขการตั้งค่าระบบได้"</string>
     <string name="notification_access_title" msgid="1467340098885813473">"การเข้าถึงการแจ้งเตือน"</string>

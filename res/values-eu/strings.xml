@@ -192,7 +192,7 @@
     <string name="bluetooth_ask_enablement_and_discovery_no_name" msgid="907153034209916282">"Aplikazio batek Bluetooth-a aktibatu, eta gailu nagusia <xliff:g id="TIMEOUT">%1$d</xliff:g> segundoz ikusgai ezarri nahi du beste gailu batzuen aurrean."</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Bluetooth bidez parekatzeko eskaera"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Parekatu eta konektatu"</string>
-    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Bluetooth parekatze-kodea"</string>
+    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Bluetooth bidez parekatzeko kodea"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"PIN kodeak hizkiak edo ikurrak ditu"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"Idatzi parekatze-kodea eta sakatu Itzuli edo Sartu"</string>
     <string name="bluetooth_pairing_request" msgid="4769675459526556801">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> gailuarekin parekatu nahi duzu?"</string>
@@ -336,6 +336,7 @@
     <string name="special_access" msgid="5730278220917123811">"Aplikazio-baimen bereziak"</string>
     <string name="show_system" msgid="4401355756969485287">"Erakutsi sistemaren prozesuak"</string>
     <string name="hide_system" msgid="8845453295584638040">"Ezkutatu sistemaren prozesuak"</string>
+    <string name="hide_system_apps" msgid="6583947381056154020">"Ezkutatu sistemaren aplikazioak"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Aldatu sistemaren ezarpenak"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Baimen honekin, sistemaren ezarpenak alda ditzakete aplikazioek."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Jakinarazpenetarako sarbidea"</string>
@@ -359,7 +360,7 @@
     <string name="system_setting_title" msgid="6864599341809463440">"Sistema"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Sistemaren eguneratzeak"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android-en bertsioa"</string>
-    <string name="security_patch" msgid="4794276590178386903">"Android segurtasun-adabakiaren maila"</string>
+    <string name="security_patch" msgid="4794276590178386903">"Android-en segurtasun-adabakiaren maila"</string>
     <string name="hardware_info" msgid="3973165746261507658">"Modeloa eta hardwarea"</string>
     <string name="hardware_info_summary" msgid="8262576443254075921">"Modeloa: <xliff:g id="MODEL">%1$s</xliff:g>"</string>
     <string name="baseband_version" msgid="2370088062235041897">"Oinarri-bandaren bertsioa"</string>
@@ -561,7 +562,7 @@
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Aukeratu PIN kodea"</string>
     <string name="lockscreen_choose_your_pattern" msgid="6801175111142593404">"Aukeratu eredu bat"</string>
     <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Aukeratu pasahitza"</string>
-    <string name="current_screen_lock" msgid="637651611145979587">"Uneko pantailaren blokeoa"</string>
+    <string name="current_screen_lock" msgid="637651611145979587">"Ezarrita dagoen pantailaren blokeoa"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Babestuta egoteko, ezarri eredu bat"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Garbitu"</string>
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"Utzi"</string>
