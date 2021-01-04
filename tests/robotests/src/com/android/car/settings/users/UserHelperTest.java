@@ -16,6 +16,7 @@
 
 package com.android.car.settings.users;
 
+import static android.car.test.mocks.AndroidMockitoHelper.mockUmGetAliveUsers;
 import static android.os.UserManager.USER_TYPE_SYSTEM_HEADLESS;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -31,6 +32,7 @@ import android.car.user.CarUserManager;
 import android.car.user.UserCreationResult;
 import android.car.user.UserRemovalResult;
 import android.car.user.UserSwitchResult;
+import android.car.util.concurrent.AndroidAsyncFuture;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
@@ -52,10 +54,6 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowProcess;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(shadows = {ShadowActivityManager.class, ShadowUserManager.class,
@@ -333,6 +331,7 @@ public class UserHelperTest {
         UserInfo nonAdminInfo = createNonAdminUser(baseId + 1);
         mockGetUsers(adminUser, nonAdminInfo);
         UserInfo newAdminInfo = createAdminUser(baseId + 2);
+        mockRemoveUserSuccess();
         mockCreateUser(DEFAULT_ADMIN_NAME, UserInfo.FLAG_ADMIN,
                 UserCreationResult.STATUS_SUCCESSFUL, newAdminInfo);
         mockSwitchUserSuccess();
@@ -375,6 +374,7 @@ public class UserHelperTest {
         mockGetUsers(currentUser);
 
         UserInfo guestUser = createGuestUser(baseId + 1);
+        mockRemoveUserSuccess();
         mockCreateGuest(DEFAULT_GUEST_NAME, UserCreationResult.STATUS_SUCCESSFUL, guestUser);
         mockSwitchUserSuccess();
 
@@ -475,10 +475,7 @@ public class UserHelperTest {
     }
 
     private void mockGetUsers(UserInfo... users) {
-        List<UserInfo> testUsers = new ArrayList<>(Arrays.asList(users));
-        when(mMockUserManager.getUsers()).thenReturn(testUsers);
-        when(mMockUserManager.getUsers(true)).thenReturn(testUsers);
-        when(mMockUserManager.getUsers(false)).thenReturn(testUsers);
+        mockUmGetAliveUsers(mMockUserManager, users);
     }
 
     private void mockRemoveUser(int userId, int status) {
@@ -494,25 +491,27 @@ public class UserHelperTest {
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
         future.complete(new UserCreationResult(UserCreationResult.STATUS_ANDROID_FAILURE,
                 null, null));
-        when(mMockCarUserManager.createUser(any(), anyInt())).thenReturn(future);
-        when(mMockCarUserManager.createGuest(any())).thenReturn(future);
+        AndroidAsyncFuture<UserCreationResult> asyncFuture = new AndroidAsyncFuture<>(future);
+        when(mMockCarUserManager.createUser(any(), anyInt())).thenReturn(asyncFuture);
+        when(mMockCarUserManager.createGuest(any())).thenReturn(asyncFuture);
     }
 
     private void mockCreateUser(String name, int flag, int status, UserInfo userInfo) {
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
         future.complete(new UserCreationResult(status, userInfo, null));
-        when(mMockCarUserManager.createUser(name, flag)).thenReturn(future);
+        when(mMockCarUserManager.createUser(name, flag))
+                .thenReturn(new AndroidAsyncFuture<>(future));
     }
 
     private void mockCreateGuest(String name, int status, UserInfo userInfo) {
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
         future.complete(new UserCreationResult(status, userInfo, null));
-        when(mMockCarUserManager.createGuest(name)).thenReturn(future);
+        when(mMockCarUserManager.createGuest(name)).thenReturn(new AndroidAsyncFuture<>(future));
     }
 
     private void mockSwitchUserSuccess() {
         AndroidFuture<UserSwitchResult> future = new AndroidFuture<>();
         future.complete(new UserSwitchResult(UserSwitchResult.STATUS_SUCCESSFUL, null));
-        when(mMockCarUserManager.switchUser(anyInt())).thenReturn(future);
+        when(mMockCarUserManager.switchUser(anyInt())).thenReturn(new AndroidAsyncFuture<>(future));
     }
 }

@@ -77,6 +77,8 @@
     <string name="pk_wifi_tether_auto_off" translatable="false">wifi_tether_auto_off</string>
     <string name="pk_wifi_tether_password" translatable="false">wifi_tether_password</string>
     <string name="pk_wifi_tether_name" translatable="false">wifi_tether_name</string>
+    <string name="pk_wifi_tether_state_switch" translatable="false">wifi_tether_state_switch
+    </string>
 
     <!-- WIFI -->
     <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>
@@ -99,6 +101,11 @@
     <string name="pk_wifi_preferences" translatable="false">wifi_preferences</string>
     <string name="pk_wifi_cellular_fallback" translatable="false">wifi_cellular_fallback</string>
     <string name="pk_enable_wifi_wakeup" translatable="false">enable_wifi_wakeup</string>
+    <string name="pk_wifi_state_switch" translatable="false">wifi_state_switch</string>
+    <string name="pk_wifi_details_header" translatable="false">wifi_details_header
+    </string>
+    <string name="pk_wifi_details_action_buttons" translatable="false">wifi_details_action_buttons
+    </string>
 
     <!-- Bluetooth -->
     <string name="pk_bluetooth_paired_devices" translatable="false">bluetooth_paired_devicesd
@@ -115,6 +122,10 @@
     <string name="pk_bluetooth_device_address" translatable="false">bluetooth_device_address
     </string>
     <string name="pk_bluetooth_device_picker" translatable="false">bluetooth_device_picker</string>
+    <string name="pk_bluetooth_state_switch" translatable="false">bluetooth_state_switch</string>
+    <string name="pk_bluetooth_device_action_buttons" translatable="false">
+        bluetooth_device_action_buttons
+    </string>
 
     <!-- Applications and Notifications Settings -->
     <string name="pk_applications_settings_screen_entry" translatable="false">
@@ -291,6 +302,7 @@
     </string>
     <string name="pk_location_services" translatable="false">location_services</string>
     <string name="pk_location_footer" translatable="false">location_footer</string>
+    <string name="pk_location_state_switch" translatable="false">location_state_switch</string>
 
     <!-- Users Settings -->
     <string name="pk_users_list" translatable="false">users_list</string>
@@ -375,7 +387,7 @@
     <!-- Reset Options -->
     <string name="pk_reset_network" translatable="false">reset_network</string>
     <string name="pk_reset_app_pref" translatable="false">reset_app_pref</string>
-    <string name="pk_master_clear" translatable="false">master_clear</string>
+    <string name="pk_factory_reset" translatable="false">factory_reset</string>
 
     <!-- Reset Network -->
     <string name="pk_reset_network_items" translatable="false">reset_network_items</string>
@@ -383,15 +395,15 @@
     <string name="pk_reset_network_subscription" translatable="false">reset_network_subscription
     </string>
 
-    <!-- Master Clear -->
-    <string name="pk_master_clear_desc" translatable="false">master_clear_desc</string>
-    <string name="pk_master_clear_account_list" translatable="false">master_clear_account_list
+    <!-- Factory Clear -->
+    <string name="pk_factory_reset_desc" translatable="false">factory_reset_desc</string>
+    <string name="pk_factory_reset_account_list" translatable="false">factory_reset_account_list
     </string>
-    <string name="pk_master_clear_other_users_present" translatable="false">
-        master_clear_other_users_present
+    <string name="pk_factory_reset_other_users_present" translatable="false">
+        factory_reset_other_users_present
     </string>
-    <string name="pk_master_clear_reset_esim" translatable="false">master_clear_reset_esim</string>
-    <string name="pk_master_clear_confirm_desc" translatable="false">master_clear_confirm_desc
+    <string name="pk_factory_reset_reset_esim" translatable="false">factory_reset_reset_esim</string>
+    <string name="pk_factory_reset_confirm_desc" translatable="false">factory_reset_confirm_desc
     </string>
 
     <!-- Developer Options -->

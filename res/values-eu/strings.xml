@@ -121,7 +121,7 @@
     <string name="wifi_network_detail" msgid="9070182553555487360">"Sarearen xehetasunak"</string>
     <string name="wifi_mac_address" msgid="1466178247802349180">"MAC helbidea"</string>
     <string name="wifi_ip_address_title" msgid="300539799594024884">"IP helbidea"</string>
-    <string name="wifi_subnet_mask" msgid="6238171812379380608">"Azpisarearen maskara"</string>
+    <string name="wifi_subnet_mask" msgid="6238171812379380608">"Azpisare-maskara"</string>
     <string name="wifi_dns" msgid="1841448353154932801">"DNS"</string>
     <string name="wifi_details_ipv6_address_header" msgid="4707181386646531890">"IPv6 helbideak"</string>
     <string name="wifi_gateway" msgid="4975799192860431013">"Atebidea"</string>
@@ -157,6 +157,13 @@
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> aplikazioak wifia aktibatu nahi du"</string>
     <string name="wifi_ask_disable" msgid="2949290055916181553">"<xliff:g id="REQUESTER">%s</xliff:g> aplikazioak wifia desaktibatu nahi du"</string>
     <string name="wifi_error" msgid="3105105447117289410">"Errorea"</string>
+    <string name="network_connection_request_dialog_title" msgid="8449606155059098762">"<xliff:g id="APPNAME">%1$s</xliff:g> aplikazioarekin erabili behar den gailua"</string>
+    <string name="network_connection_timeout_dialog_message" msgid="2536299451668687586">"Ez da aurkitu gailurik. Ziurtatu gailuak piztuta daudela eta konekta daitezkeela."</string>
+    <string name="network_connection_timeout_dialog_ok" msgid="2228662561126434792">"Saiatu berriro"</string>
+    <string name="network_connection_errorstate_dialog_message" msgid="4268321315241218483">"Arazoren bat izan da. Aplikazioak bertan behera utzi du gailu bat aukeratzeko eskaera."</string>
+    <string name="network_connection_connect_successful" msgid="7893957133113302365">"Konektatu da"</string>
+    <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Erakutsi guztiak"</string>
+    <string name="progress_scanning" msgid="7191583064717479795">"Bilatzen"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth-a"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"Izenik gabeko gailua"</string>
     <string name="bluetooth_paired_devices" msgid="6463199569164652410">"Parekatutako gailuak"</string>
@@ -412,16 +419,16 @@
     <string name="reset_app_pref_desc" msgid="579392665146962149">"Hauen hobespen guztiak berrezarriko dira:\n\n"<li>"desgaitutako aplikazioak,"</li>\n<li>"desgaitutako aplikazio-jakinarazpenak,"</li>\n<li>"ekintza jakinetarako aplikazio lehenetsiak,"</li>\n<li>"aplikazioen atzeko planoko datuen murriztapenak eta"</li>\n<li>"baimen-murriztapenak."</li>\n\n"Ez dituzu galduko aplikazioetako datuak."</string>
     <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Berrezarri aplikazioak"</string>
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Berrezarri dira aplikazioen hobespenak"</string>
-    <string name="master_clear_title" msgid="8515335233363214414">"Ezabatu datu guztiak (berrezarri jatorrizkoak)"</string>
-    <string name="master_clear_desc" msgid="9058719802779893535">"Ibilgailuaren gailu nagusiko datu guztiak ezabatuko dira, honako hauek barne:\n\n"<li>"Google kontua,"</li>\n<li>"sistemako eta aplikazioetako datuak eta ezarpenak,"</li>\n<li>"deskargatutako aplikazioak."</li></string>
-    <string name="master_clear_accounts" msgid="7797522012993567494">"Kontu hauetan hasi duzu saioa:"</string>
-    <string name="master_clear_other_users_present" msgid="8383376863095743337">"Beste erabiltzaile batzuk daude ibilgailu honetan."</string>
-    <string name="master_clear_button_text" msgid="8010754220392741160">"Berrezarri ibilgailua"</string>
-    <string name="master_clear_confirm_title" msgid="8646455623132887370">"Berrezarri egin nahi dituzu?"</string>
-    <string name="master_clear_confirm_desc" msgid="8920446291698038558">"Informazio pertsonal guztia eta deskargatutako aplikazioak ezabatu nahi dituzu? Ekintza hori ezin da desegin."</string>
-    <string name="master_clear_confirm_button_text" msgid="7981254968588121786">"Ezabatu eduki guztia"</string>
-    <string name="master_clear_progress_title" msgid="7087480656932674774">"Eduki guztia ezabatzen"</string>
-    <string name="master_clear_progress_text" msgid="3440789441935303176">"Itxaron, mesedez…"</string>
+    <string name="factory_reset_title" msgid="4019066569214122052">"Ezabatu datu guztiak (berrezarri jatorrizkoak)"</string>
+    <string name="factory_reset_desc" msgid="7133390564019035242">"Ibilgailuaren gailu nagusiko datu guztiak ezabatuko dira, honako hauek barne:\n\n"<li>"Google-ko kontua,"</li>\n<li>"sistemako eta aplikazioetako datuak eta ezarpenak,"</li>\n<li>"deskargatutako aplikazioak."</li></string>
+    <string name="factory_reset_accounts" msgid="5523956654938834209">"Kontu hauetan hasi duzu saioa:"</string>
+    <string name="factory_reset_other_users_present" msgid="3708751471946901936">"Beste erabiltzaile batzuk daude ibilgailu honetan."</string>
+    <string name="factory_reset_button_text" msgid="5364900277201550546">"Berrezarri ibilgailua"</string>
+    <string name="factory_reset_confirm_title" msgid="569087764460471326">"Berrezarri egin nahi dituzu?"</string>
+    <string name="factory_reset_confirm_desc" msgid="5075292788128840731">"Informazio pertsonal guztia eta deskargatutako aplikazioak ezabatu nahi dituzu? Ekintza ezin da desegin."</string>
+    <string name="factory_reset_confirm_button_text" msgid="1797490544756481809">"Ezabatu eduki guztia"</string>
+    <string name="factory_reset_progress_title" msgid="4580937077054738173">"Eduki guztia ezabatzen"</string>
+    <string name="factory_reset_progress_text" msgid="7704636573522634757">"Itxaron, mesedez…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Data eta ordua"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Ezarri data, ordua, ordu-zona eta formatuak"</string>
     <string name="date_time_auto" msgid="3570339569471779767">"Data eta ordu automatikoa"</string>
@@ -525,7 +532,7 @@
     <string name="account_sync_title" msgid="6541844336300236915">"Kontuaren sinkronizazioa"</string>
     <string name="account_sync_summary_some_on" msgid="4525960296068027182">"<xliff:g id="ID_1">%1$d</xliff:g>/<xliff:g id="ID_2">%2$d</xliff:g> elementuk aktibatuta daukate sinkronizazioa"</string>
     <string name="account_sync_summary_all_on" msgid="3652264471870312725">"Elementu guztiek aktibatuta daukate sinkronizazioa"</string>
-    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"Elementu guztiek desaktibatuta dute sinkronizazioa"</string>
+    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"Elementu guztiek desaktibatuta daukate sinkronizazioa"</string>
     <string name="sync_disabled" msgid="393531064334628258">"Sinkroniz. DESAKTIBATUTA"</string>
     <string name="sync_error" msgid="6698021343089247914">"Sinkronizazio-errorea"</string>
     <string name="last_synced" msgid="4745124489150101529">"Azken sinkronizazioa: <xliff:g id="LAST_SYNC_TIME">%1$s</xliff:g>"</string>
@@ -567,6 +574,7 @@
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"Eredua ez da zuzena"</string>
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Desblokeatzeko eredua nola marraztu"</string>
     <string name="error_saving_lockpattern" msgid="2933512812768570130">"Errore bat gertatu da eredua gordetzean"</string>
+    <string name="lockpattern_too_many_failed_confirmation_attempts" msgid="4636307830951251013">"Saiakera oker gehiegi egin dituzu. Saiatu berriro <xliff:g id="NUMBER">%d</xliff:g> segundo barru."</string>
     <string name="okay" msgid="4589873324439764349">"Ados"</string>
     <string name="remove_screen_lock_title" msgid="1234382338764193387">"Pantailaren blokeoa kendu?"</string>
     <string name="remove_screen_lock_message" msgid="6675850371585564965">"Edonork atzitu ahalko du zure kontua"</string>
@@ -586,7 +594,7 @@
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"Garbitu"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Utzi"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Berretsi"</string>
-    <string name="choose_lock_password_hints" msgid="3903696950202491593">"Gutxienez lau karaktere izan behar ditu"</string>
+    <string name="choose_lock_password_hints" msgid="3903696950202491593">"Lau karaktere izan behar ditu gutxienez"</string>
     <string name="lockpassword_password_too_short" msgid="6681218025001328405">"Gutxienez <xliff:g id="COUNT">%d</xliff:g> karaktere izan behar ditu"</string>
     <string name="lockpassword_pin_too_short" msgid="6363004004424904218">"PIN kodeak <xliff:g id="COUNT">%d</xliff:g> digitu izan behar ditu gutxienez"</string>
     <string name="lockpassword_password_too_long" msgid="7530214940279491291">"Gehienez <xliff:g id="NUMBER">%d</xliff:g> karaktere izan behar ditu"</string>
@@ -595,7 +603,7 @@
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Gailuaren administratzaileak ez du eman beste PIN kode bat erabiltzeko baimenik"</string>
     <string name="lockpassword_pin_blacklisted_by_admin" msgid="7412709707800738442">"IKT saileko administratzaileak blokeatu egiten ditu asmatzen errazak diren PIN kodeak. Erabili beste PIN bat."</string>
     <string name="lockpassword_illegal_character" msgid="1984970060523635618">"Ezin da erabili onartzen ez den karaktererik."</string>
-    <string name="lockpassword_invalid_password" msgid="1690956113717418430">"Pasahitzak ez du balio; gutxienez lau karaktere izan behar ditu."</string>
+    <string name="lockpassword_invalid_password" msgid="1690956113717418430">"Pasahitzak ez du balio; lau karaktere izan behar ditu gutxienez."</string>
     <plurals name="lockpassword_password_requires_letters" formatted="false" msgid="424616259312760303">
       <item quantity="other">Gutxienez <xliff:g id="COUNT">%d</xliff:g> hizki izan behar ditu</item>
       <item quantity="one">Gutxienez 1 hizki izan behar du</item>
