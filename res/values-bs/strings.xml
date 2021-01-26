@@ -229,6 +229,7 @@
     <string name="ringtone_title" msgid="8370531086214517972">"Melodija zvona telefona"</string>
     <string name="notification_ringtone_title" msgid="8661716239594010288">"Zadani zvuk obavještenja"</string>
     <string name="alarm_ringtone_title" msgid="3257364170646440908">"Zadani zvuk alarma"</string>
+    <string name="ringtone_picker_save_title" msgid="4388137432517227001">"Sačuvaj"</string>
     <string name="units_settings" msgid="402325305096925886">"Jedinice"</string>
     <string name="units_speed_title" msgid="7115143916747108160">"Brzina"</string>
     <string name="units_distance_title" msgid="6257691565990474635">"Razdaljina"</string>
@@ -298,7 +299,7 @@
     <string name="application_version_label" msgid="8556889839783311649">"Verzija: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Nema dodijeljenih odobrenja"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"Nema zatraženih odobrenja"</string>
-    <string name="storage_type_internal" msgid="8918688427078709570">"%s u unutrašnjoj memoriji"</string>
+    <string name="storage_type_internal" msgid="8918688427078709570">"%s u unutrašnjoj pohrani"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Prijenos podataka"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Prijenos podataka za apl."</string>
     <string name="computing_size" msgid="5791407621793083965">"Računanje…"</string>
@@ -431,7 +432,7 @@
     <string name="factory_reset_button_text" msgid="5364900277201550546">"Vrati vozilo na zadano"</string>
     <string name="factory_reset_confirm_title" msgid="569087764460471326">"Vratiti na zadano?"</string>
     <string name="factory_reset_confirm_desc" msgid="5075292788128840731">"Potpuno izbrisati sve vaše lične podatke i preuzete aplikacije? Ovu radnju ne možete poništiti!"</string>
-    <string name="factory_reset_confirm_button_text" msgid="1797490544756481809">"Potpuno izbriši sve podatke"</string>
+    <string name="factory_reset_confirm_button_text" msgid="1797490544756481809">"Izbriši sve podatke"</string>
     <string name="factory_reset_progress_title" msgid="4580937077054738173">"Potpuno brisanje podataka"</string>
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Pričekajte..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Datum i vrijeme"</string>
@@ -599,7 +600,7 @@
     <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"Lozinke se ne podudaraju"</string>
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"Obriši"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Otkaži"</string>
-    <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Potvrdi"</string>
+    <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Potvrdite"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Mora sadržavati najmanje 4 znaka"</string>
     <string name="lockpassword_password_too_short" msgid="6681218025001328405">"Broj znakova mora biti najmanje <xliff:g id="COUNT">%d</xliff:g>"</string>
     <string name="lockpassword_pin_too_short" msgid="6363004004424904218">"Broj cifri u PIN-u mora biti najmanje <xliff:g id="COUNT">%d</xliff:g>"</string>
