@@ -26,7 +26,7 @@ public class BaseTestSettingsFragment extends SettingsFragment {
 
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.empty_preference_screen;
+        return R.xml.test_preference_screen;
     }
 
     @Override
