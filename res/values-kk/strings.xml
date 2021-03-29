@@ -93,6 +93,10 @@
     <string name="wifi_failed_connect_message" msgid="4447498225022147324">"Желіге қосылмады"</string>
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"Желі қосу"</string>
     <string name="wifi_setup_connect" msgid="3512399573397979101">"Қосылу"</string>
+    <!-- no translation found for wifi_connecting (1930665730621677960) -->
+    <skip />
+    <!-- no translation found for wifi_not_in_range_message (2617126307140203787) -->
+    <skip />
     <string name="wifi_password" msgid="5565632142720292397">"Құпия сөз"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"Құпия сөзді көрсету"</string>
     <string name="wifi_no_network_name" msgid="6819604337231313594">"Желі атауын енгізіңіз."</string>
@@ -342,8 +346,8 @@
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Бұл рұқсат қолданбаға жүйе параметрлерін өзгертуге рұқсат етеді."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Хабарландыруларды пайдалану"</string>
     <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"<xliff:g id="SERVICE">%1$s</xliff:g> қызметіне хабарландыруларды пайдалануға рұқсат берілсін бе?"</string>
-    <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> барлық хабарландыруларды, соның ішінде контакт аттары, сізге келген хабарлардың мәтіні сияқты жеке ақпаратты оқи алатын болады. Сондай-ақ хабарландыруларды өзгерте, жаба немесе олардағы әрекет түймелерін қоса алады. \n\nБұл, сондай-ақ қолданбаға \"Мазаламау\" режимін қосуға немесе өшіруге және тиісті параметрлерді өзгертуге мүмкіндік береді."</string>
-    <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"Егер <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> үшін хабарландыруларды пайдалану мүмкіндігін өшірсеңіз, \"Мазаламау\" режимін пайдалану мүмкін болмайды."</string>
+    <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> барлық хабарландыруларды, соның ішінде контакт аттары, сізге келген хабарлардың мәтіні сияқты жеке ақпаратты оқи алатын болады. Сондай-ақ хабарландыруларды өзгерте, жаба немесе олардағы әрекет түймелерін қоса алады. \n\nБұл, сондай-ақ қолданбаға Мазаламау режимін қосуға немесе өшіруге және тиісті параметрлерді өзгертуге мүмкіндік береді."</string>
+    <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"Егер <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> үшін хабарландыруларды пайдалану мүмкіндігін өшірсеңіз, Мазаламау режимін пайдалану мүмкін болмайды."</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Өшіру"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Бас тарту"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"Ақылы SMS жіберу"</string>
@@ -660,4 +664,5 @@
     <string name="restricted_while_driving" msgid="6587569249519274524">"Көлік жүргізу кезінде бұл функция жұмыс істемейді."</string>
     <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"Көлік жүргізу кезінде пайдаланушыны енгізу мүмкін емес."</string>
     <string name="default_search_query" msgid="3137420627428857068">"Іздеу"</string>
+    <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistant және Voice"</string>
 </resources>

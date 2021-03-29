@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The Android Open Source Project
+ * Copyright (C) 2021 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,31 +14,22 @@
  * limitations under the License.
  */
 
-package com.android.car.settings.applications.assist;
-
-import android.provider.Settings;
+package com.android.car.settings.privacy;
 
 import androidx.annotation.XmlRes;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.SettingsFragment;
-import com.android.car.settings.search.CarBaseSearchIndexProvider;
-import com.android.settingslib.search.SearchIndexable;
 
-/** Assistant management settings screen. */
-@SearchIndexable
-public class ManageAssistFragment extends SettingsFragment {
+/**
+ * Privacy features related to in vehicle data control.
+ */
+public class VehicleDataFragment extends SettingsFragment {
 
     @Override
     @XmlRes
     protected int getPreferenceScreenResId() {
-        return R.xml.manage_assist_fragment;
+        return R.xml.vehicle_data_fragment;
     }
 
-    /**
-     * Data provider for Settings Search.
-     */
-    public static final CarBaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new CarBaseSearchIndexProvider(R.xml.manage_assist_fragment,
-                    Settings.ACTION_VOICE_INPUT_SETTINGS);
 }
