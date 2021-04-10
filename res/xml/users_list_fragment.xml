@@ -18,13 +18,12 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:title="@string/users_list_title"
+    android:title="@string/manage_other_profiles_button_text"
     android:key="@string/psk_users_list">
     <com.android.car.settings.common.LogicalPreferenceGroup
         android:key="@string/pk_users_list"
         settings:controller="com.android.car.settings.users.UsersListPreferenceController"/>
-    <com.android.car.settings.common.ColoredPreference
+    <Preference
         android:key="@string/pk_add_user"
-        style="@style/ColoredAccentPreferenceStyle"
         settings:controller="com.android.car.settings.users.AddUserPreferenceController"/>
 </PreferenceScreen>
