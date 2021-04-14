@@ -28,6 +28,7 @@ import com.android.settingslib.wifi.WifiTracker;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executor;
 
 /**
  * Manages Wifi configuration: e.g. monitors wifi states, change wifi setting etc.
@@ -169,6 +170,16 @@ public class CarWifiManager implements WifiTracker.WifiListener {
      */
     public boolean isWifiApEnabled() {
         return mWifiManager.isWifiApEnabled();
+    }
+
+    /** Adds callback for Soft AP */
+    public void registerSoftApCallback(Executor executor, WifiManager.SoftApCallback callback) {
+        mWifiManager.registerSoftApCallback(executor, callback);
+    }
+
+    /** Removes callback for Soft AP */
+    public void unregisterSoftApCallback(WifiManager.SoftApCallback callback) {
+        mWifiManager.unregisterSoftApCallback(callback);
     }
 
     /**
