@@ -93,6 +93,10 @@
     <string name="wifi_failed_connect_message" msgid="4447498225022147324">"నెట్‌వర్క్‌కు కనెక్ట్ చేయడం విఫలమైంది"</string>
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"నెట్‌వర్క్‌ను జోడించు"</string>
     <string name="wifi_setup_connect" msgid="3512399573397979101">"కనెక్ట్"</string>
+    <!-- no translation found for wifi_connecting (1930665730621677960) -->
+    <skip />
+    <!-- no translation found for wifi_not_in_range_message (2617126307140203787) -->
+    <skip />
     <string name="wifi_password" msgid="5565632142720292397">"పాస్‌‌వర్డ్"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"పాస్‌వర్డ్‌ను చూపు"</string>
     <string name="wifi_no_network_name" msgid="6819604337231313594">"దయచేసి నెట్‌వర్క్‌ పేరును నమోదు చేయండి"</string>
@@ -475,8 +479,7 @@
     <string name="delete_user_dialog_title" msgid="3422867434431562007">"ఈ వినియోగదారును తొలగించాలా?"</string>
     <string name="delete_user_dialog_message" msgid="4346777604351785057">"అన్ని యాప్‌లు మరియు డేటా తొలగించబడతాయి."</string>
     <string name="delete_user_error_title" msgid="7609819398530124827">"వినియెగదారును తొలగించడం విఫలమైంది."</string>
-    <!-- no translation found for delete_user_error_set_ephemeral_title (9062453678745644817) -->
-    <skip />
+    <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"మీరు ప్రొఫైల్‌లను మార్చినప్పుడు లేదా వాహనాన్ని రీస్టార్ట్ చేసినప్పుడు ఈ ప్రొఫైల్ తొలగించబడుతుంది."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"విస్మరించు"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"మళ్లీ ప్రయత్నించు"</string>
     <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"చివరి వినియోగదారుని తొలగించాలా?"</string>
@@ -661,4 +664,5 @@
     <string name="restricted_while_driving" msgid="6587569249519274524">"డ్రైవింగ్ చేస్తున్నప్పుడు ఈ ఫీచర్ అందుబాటులో ఉండదు"</string>
     <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"డ్రైవింగ్ చేస్తున్నప్పుడు, యూజర్‌ను జోడించడం సాధ్యం కాదు"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Search"</string>
+    <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistant &amp; వాయిస్"</string>
 </resources>

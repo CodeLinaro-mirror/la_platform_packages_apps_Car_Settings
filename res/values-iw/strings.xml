@@ -97,6 +97,10 @@
     <string name="wifi_failed_connect_message" msgid="4447498225022147324">"נכשל הניסיון להתחבר לרשת"</string>
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"הוספת רשת"</string>
     <string name="wifi_setup_connect" msgid="3512399573397979101">"התחברות"</string>
+    <!-- no translation found for wifi_connecting (1930665730621677960) -->
+    <skip />
+    <!-- no translation found for wifi_not_in_range_message (2617126307140203787) -->
+    <skip />
     <string name="wifi_password" msgid="5565632142720292397">"סיסמה"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"הצגת סיסמה"</string>
     <string name="wifi_no_network_name" msgid="6819604337231313594">"יש להזין שם רשת"</string>
@@ -485,8 +489,7 @@
     <string name="delete_user_dialog_title" msgid="3422867434431562007">"למחוק את המשתמש הזה?"</string>
     <string name="delete_user_dialog_message" msgid="4346777604351785057">"כל האפליקציות והנתונים יימחקו."</string>
     <string name="delete_user_error_title" msgid="7609819398530124827">"לא ניתן היה למחוק את המשתמש."</string>
-    <!-- no translation found for delete_user_error_set_ephemeral_title (9062453678745644817) -->
-    <skip />
+    <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"הפרופיל הזה יימחק במהלך החלפת פרופילים או הפעלה מחדש של הרכב."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"ביטול"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"ניסיון חוזר"</string>
     <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"למחוק את המשתמש האחרון?"</string>
@@ -683,4 +686,5 @@
     <string name="restricted_while_driving" msgid="6587569249519274524">"התכונה לא זמינה בזמן הנהיגה"</string>
     <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"לא ניתן להוסיף משתמש בזמן הנהיגה"</string>
     <string name="default_search_query" msgid="3137420627428857068">"חיפוש"</string>
+    <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistant והקול"</string>
 </resources>

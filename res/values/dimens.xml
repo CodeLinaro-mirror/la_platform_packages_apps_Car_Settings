@@ -26,6 +26,7 @@
 
     <!-- Activity -->
     <dimen name="top_level_menu_width">550dp</dimen>
+    <dimen name="top_level_divider_width">1dp</dimen>
 
     <!-- Action Bar -->
     <dimen name="action_bar_height">@*android:dimen/car_app_bar_height</dimen>
@@ -172,5 +173,8 @@
     <dimen name="action_buttons_margin_bottom">@*android:dimen/car_padding_1</dimen>
     <dimen name="action_buttons_icon_margin_end">@*android:dimen/car_padding_1</dimen>
     <dimen name="action_buttons_divider_height">@dimen/divider_preference_height</dimen>
+
+    <!-- Top-level menu icons -->
+    <dimen name="toplevel_foreground_icon_inset">8dp</dimen>
 
 </resources>

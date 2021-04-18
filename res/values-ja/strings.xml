@@ -93,6 +93,10 @@
     <string name="wifi_failed_connect_message" msgid="4447498225022147324">"ネットワークに接続できませんでした"</string>
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"ネットワークを追加"</string>
     <string name="wifi_setup_connect" msgid="3512399573397979101">"接続"</string>
+    <!-- no translation found for wifi_connecting (1930665730621677960) -->
+    <skip />
+    <!-- no translation found for wifi_not_in_range_message (2617126307140203787) -->
+    <skip />
     <string name="wifi_password" msgid="5565632142720292397">"パスワード"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"パスワードを表示する"</string>
     <string name="wifi_no_network_name" msgid="6819604337231313594">"ネットワーク名を入力してください。"</string>
@@ -342,7 +346,7 @@
     <string name="modify_system_settings_description" msgid="5295023124419592452">"この権限により、アプリはシステム設定を変更できるようになります。"</string>
     <string name="notification_access_title" msgid="1467340098885813473">"通知へのアクセス"</string>
     <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"通知へのアクセス を <xliff:g id="SERVICE">%1$s</xliff:g> に許可しますか？"</string>
-    <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> はすべての通知を読み取ることができます。通知には、連絡先名などの個人情報や受信したメッセージの本文も含まれます。また、通知を非表示にしたり、通知内のボタン操作を実行したりすることもできます。\n\nこれにより、アプリがサイレント モード設定を切り替えたり、関連する設定を変更したりすることも可能になります。"</string>
+    <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> がすべての通知を読み取れるようになります。通知には、連絡先名などの個人情報や受信したメッセージの本文も含まれます。また、通知を非表示にしたり、通知内の操作ボタンをタップしたりすることも許可されます。\n\nこれにより、アプリがサイレント モード設定を切り替えたり、関連する設定を変更したりすることも可能になります。"</string>
     <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> の通知アクセスを無効にすると、サイレント モードのアクセスも無効になります。"</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"無効にする"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"キャンセル"</string>
@@ -660,4 +664,5 @@
     <string name="restricted_while_driving" msgid="6587569249519274524">"この機能は運転中は利用できません"</string>
     <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"運転中はユーザーを追加できません"</string>
     <string name="default_search_query" msgid="3137420627428857068">"検索"</string>
+    <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"アシスタントと音声"</string>
 </resources>

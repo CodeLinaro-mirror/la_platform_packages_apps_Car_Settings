@@ -93,6 +93,10 @@
     <string name="wifi_failed_connect_message" msgid="4447498225022147324">"ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਰਿਹਾ"</string>
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"ਨੈੱਟਵਰਕ ਸ਼ਾਮਲ ਕਰੋ"</string>
     <string name="wifi_setup_connect" msgid="3512399573397979101">"ਕਨੈਕਟ ਕਰੋ"</string>
+    <!-- no translation found for wifi_connecting (1930665730621677960) -->
+    <skip />
+    <!-- no translation found for wifi_not_in_range_message (2617126307140203787) -->
+    <skip />
     <string name="wifi_password" msgid="5565632142720292397">"ਪਾਸਵਰਡ"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"ਪਾਸਵਰਡ ਦਿਖਾਓ"</string>
     <string name="wifi_no_network_name" msgid="6819604337231313594">"ਕਿਰਪਾ ਕਰਕੇ ਨੈੱਟਵਰਕ ਦਾ ਨਾਮ ਦਾਖਲ ਕਰੋ"</string>
@@ -475,8 +479,7 @@
     <string name="delete_user_dialog_title" msgid="3422867434431562007">"ਇਸ ਵਰਤੋਂਕਾਰ ਨੂੰ ਮਿਟਾਈਏ?"</string>
     <string name="delete_user_dialog_message" msgid="4346777604351785057">"ਸਾਰੀਆਂ ਐਪਾਂ ਅਤੇ ਡਾਟਾ ਮਿਟਾ ਦਿੱਤੇ ਜਾਣਗੇ।"</string>
     <string name="delete_user_error_title" msgid="7609819398530124827">"ਵਰਤੋਂਕਾਰ ਮਿਟਾਉਣਾ ਅਸਫਲ ਰਿਹਾ।"</string>
-    <!-- no translation found for delete_user_error_set_ephemeral_title (9062453678745644817) -->
-    <skip />
+    <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"ਜਦੋਂ ਤੁਸੀਂ ਪ੍ਰੋਫਾਈਲ ਬਦਲਦੇ ਹੋ ਜਾਂ ਵਾਹਨ ਮੁੜ-ਸ਼ੁਰੂ ਕਰਦੇ ਹੋ ਤਾਂ ਇਹ ਪ੍ਰੋਫਾਈਲ ਮਿਟ ਜਾਵੇਗਾ।"</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"ਖਾਰਜ ਕਰੋ"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ"</string>
     <string name="delete_last_user_dialog_title" msgid="3644392025675369680">"ਪਿਛਲਾ ਵਰਤੋਂਕਾਰ ਮਿਟਾਈਏ?"</string>
@@ -661,4 +664,5 @@
     <string name="restricted_while_driving" msgid="6587569249519274524">"ਚਲਦੀ ਗੱਡੀ ਵਿੱਚ ਇਹ ਵਿਸ਼ੇਸ਼ਤਾ ਉਪਲਬਧ ਨਹੀਂ ਹੈ"</string>
     <string name="add_user_restricted_while_driving" msgid="4754946754222453656">"ਚਲਦੀ ਗੱਡੀ ਵਿੱਚ ਵਰਤੋਂਕਾਰ ਸ਼ਾਮਲ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ"</string>
     <string name="default_search_query" msgid="3137420627428857068">"ਖੋਜ"</string>
+    <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistant ਅਤੇ Voice"</string>
 </resources>
