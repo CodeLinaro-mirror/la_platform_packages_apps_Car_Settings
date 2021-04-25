@@ -52,6 +52,11 @@
     <dimen name="brightness_seekbar_track_height">6dp</dimen>
     <dimen name="brightness_seekbar_track_corner">3dp</dimen>
     <dimen name="brightness_knob_size">44dp</dimen>
+    <dimen name="brightness_knob_inner_ring_inner_radius">22dp</dimen>
+    <dimen name="brightness_knob_thumb_inner_ring_thickness">8dp</dimen>
+    <dimen name="brightness_knob_thumb_outer_ring_inner_radius">30dp</dimen>
+    <dimen name="brightness_knob_thumb_outer_ring_thickness">8dp</dimen>
+
     <dimen name="tile_margin_start">@*android:dimen/car_padding_2</dimen>
     <dimen name="tile_margin_end">@*android:dimen/car_padding_2</dimen>
     <dimen name="tile_margin_bottom">@*android:dimen/car_padding_5</dimen>
@@ -173,7 +178,9 @@
     <!-- Top-level menu -->
     <dimen name="top_level_menu_width">550dp</dimen>
     <dimen name="top_level_divider_width">1dp</dimen>
+    <dimen name="top_level_preference_min_height">80dp</dimen>
+    <dimen name="top_level_preference_corner_radius">40dp</dimen>
     <dimen name="top_level_recyclerview_margin_right">@*android:dimen/car_padding_2</dimen>
-    <dimen name="toplevel_foreground_icon_inset">8dp</dimen>
+    <dimen name="top_level_foreground_icon_inset">8dp</dimen>
 
 </resources>

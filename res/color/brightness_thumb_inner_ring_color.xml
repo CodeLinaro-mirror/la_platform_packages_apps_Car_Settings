@@ -14,7 +14,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@*android:color/car_card_ripple_background" />
+    <item android:state_selected="true" android:color="@color/car_ui_rotary_focus_fill_color"/>
+    <item android:color="@android:color/transparent"/>
 </selector>
