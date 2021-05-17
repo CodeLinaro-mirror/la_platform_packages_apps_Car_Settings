@@ -18,7 +18,9 @@ package com.android.car.settings.common;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +31,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.car.settings.R;
 
@@ -76,6 +80,13 @@ public class TopLevelMenuFragment extends SettingsFragment {
     }
 
     @Override
+    public RecyclerView onCreateRecyclerView(LayoutInflater inflater, ViewGroup parent,
+            Bundle savedInstanceState) {
+        inflater.inflate(R.layout.top_level_recyclerview, parent, /* attachToRoot= */ true);
+        return parent.requireViewById(R.id.recycler_view);
+    }
+
+    @Override
     public void launchFragment(@Nullable Fragment fragment) {
         if (fragment == null) {
             return;
@@ -108,6 +119,14 @@ public class TopLevelMenuFragment extends SettingsFragment {
         clearBackStack();
         updatePreferenceHighlight(preference.getKey());
         return super.onPreferenceTreeClick(preference);
+    }
+
+    @Override
+    protected HighlightablePreferenceGroupAdapter createHighlightableAdapter(
+            PreferenceScreen preferenceScreen) {
+        return new HighlightablePreferenceGroupAdapter(preferenceScreen,
+                R.drawable.top_level_preference_background,
+                R.drawable.top_level_preference_highlight);
     }
 
     private void updatePreferenceHighlight(String key) {

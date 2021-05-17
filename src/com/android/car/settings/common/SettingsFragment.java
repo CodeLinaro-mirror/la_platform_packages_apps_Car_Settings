@@ -28,6 +28,8 @@ import android.util.ArrayMap;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.ContextThemeWrapper;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -205,6 +207,13 @@ public abstract class SettingsFragment extends PreferenceFragment implements
     }
 
     @Override
+    public RecyclerView onCreateRecyclerView(LayoutInflater inflater, ViewGroup parent,
+            Bundle savedInstanceState) {
+        inflater.inflate(R.layout.settings_recyclerview_default, parent, /* attachToRoot= */ true);
+        return parent.requireViewById(R.id.recycler_view);
+    }
+
+    @Override
     protected void setupToolbar(@NonNull ToolbarController toolbar) {
         List<MenuItem> items = getToolbarMenuItems();
         if (items != null) {
@@ -234,8 +243,18 @@ public abstract class SettingsFragment extends PreferenceFragment implements
 
     @Override
     protected RecyclerView.Adapter onCreateAdapter(PreferenceScreen preferenceScreen) {
-        mAdapter = new HighlightablePreferenceGroupAdapter(preferenceScreen);
+        mAdapter = createHighlightableAdapter(preferenceScreen);
         return mAdapter;
+    }
+
+    /**
+     * Returns a HighlightablePreferenceGroupAdapter to be used as the RecyclerView.Adapter for
+     * this fragment. Subclasses can override this method to return their own
+     * HighlightablePreferenceGroupAdapter instance.
+     */
+    protected HighlightablePreferenceGroupAdapter createHighlightableAdapter(
+            PreferenceScreen preferenceScreen) {
+        return new HighlightablePreferenceGroupAdapter(preferenceScreen);
     }
 
     protected void requestPreferenceHighlight(String key) {

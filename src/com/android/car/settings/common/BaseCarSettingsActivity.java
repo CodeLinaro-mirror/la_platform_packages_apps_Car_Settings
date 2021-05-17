@@ -198,6 +198,15 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
 
     @Override
     public void launchFragment(Fragment fragment) {
+        if (mIsSinglePane) {
+            Intent intent = SubSettingsActivity.newInstance(/* context= */ this, fragment);
+            startActivity(intent);
+        } else {
+            launchFragmentInternal(fragment);
+        }
+    }
+
+    private void launchFragmentInternal(Fragment fragment) {
         if (fragment instanceof DialogFragment) {
             throw new IllegalArgumentException(
                     "cannot launch dialogs with launchFragment() - use showDialog() instead");
@@ -300,16 +309,16 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
     @Nullable
     protected abstract Fragment getInitialFragment();
 
-    protected void launchIfDifferent(Fragment newFragment) {
+    protected Fragment getCurrentFragment() {
+        return getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+    }
+
+    private void launchIfDifferent(Fragment newFragment) {
         Fragment currentFragment = getCurrentFragment();
         if ((newFragment != null) && differentFragment(newFragment, currentFragment)) {
             LOG.d("launchIfDifferent: " + newFragment + " replacing " + currentFragment);
-            launchFragment(newFragment);
+            launchFragmentInternal(newFragment);
         }
-    }
-
-    protected Fragment getCurrentFragment() {
-        return getSupportFragmentManager().findFragmentById(R.id.fragment_container);
     }
 
     /**
@@ -343,7 +352,10 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
         try {
             ActivityInfo ai = getPackageManager().getActivityInfo(getComponentName(),
                     PackageManager.GET_META_DATA);
-            if (ai == null || ai.metaData == null) return;
+            if (ai == null || ai.metaData == null) {
+                mIsSinglePane = getResources().getBoolean(R.bool.config_global_force_single_pane);
+                return;
+            }
             mTopLevelHeaderKey = ai.metaData.getString(META_DATA_KEY_HEADER_KEY);
             mIsSinglePane = ai.metaData.getBoolean(META_DATA_KEY_SINGLE_PANE,
                     getResources().getBoolean(R.bool.config_global_force_single_pane));
@@ -360,8 +372,8 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
                 insets -> globalToolbarWrappedView.setPadding(
                         insets.getLeft(), insets.getTop(), insets.getRight(),
                         insets.getBottom()), /* hasToolbar= */ true);
-        mGlobalToolbar.setState(Toolbar.State.SUBPAGE);
         if (mIsSinglePane) {
+            mGlobalToolbar.setState(Toolbar.State.SUBPAGE);
             findViewById(R.id.top_level_menu).setVisibility(View.GONE);
             findViewById(R.id.top_level_divider).setVisibility(View.GONE);
             return;
@@ -381,12 +393,7 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
         List<MenuItem> items = Collections.singletonList(searchButton);
 
         mGlobalToolbar.setTitle(R.string.settings_label);
-        mGlobalToolbar.setState(Toolbar.State.SUBPAGE);
-        mGlobalToolbar.setNavButtonMode(Toolbar.NavButtonMode.CLOSE);
-        mGlobalToolbar.registerOnBackListener(() -> {
-            finish();
-            return true;
-        });
+        mGlobalToolbar.setState(Toolbar.State.HOME);
         mGlobalToolbar.setLogo(R.drawable.ic_launcher_settings);
         mGlobalToolbar.setMenuItems(items);
     }
@@ -395,7 +402,7 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
         if (mMiniToolbar == null) {
             return;
         }
-        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1 || !isTaskRoot()) {
             mMiniToolbar.setState(Toolbar.State.SUBPAGE);
             mMiniToolbar.setNavButtonMode(Toolbar.NavButtonMode.BACK);
         } else {
