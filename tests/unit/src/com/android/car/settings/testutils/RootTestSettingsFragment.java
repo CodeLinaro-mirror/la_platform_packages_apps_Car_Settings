@@ -19,17 +19,16 @@ package com.android.car.settings.testutils;
 import android.os.Bundle;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.SettingsFragment;
-import com.android.car.ui.toolbar.Toolbar;
+import com.android.car.ui.toolbar.NavButtonMode;
 import com.android.car.ui.toolbar.ToolbarController;
 
 /**
- * Empty Fragment.
+ * Empty root fragment.
  */
-public class DummyFragment extends SettingsFragment {
+public class RootTestSettingsFragment extends BaseTestSettingsFragment {
     @Override
     protected int getPreferenceScreenResId() {
-        return R.xml.settings_fragment;
+        return R.xml.test_base_settings_fragment;
     }
 
     @Override
@@ -38,14 +37,14 @@ public class DummyFragment extends SettingsFragment {
         ToolbarController toolbar = getToolbar();
         if (toolbar != null) {
             // If the fragment is root, change the back button to settings icon.
-            if (getContext().getResources().getBoolean(R.bool.config_is_dummy_fragment_root)) {
-                toolbar.setState(Toolbar.State.HOME);
+            if (getContext().getResources().getBoolean(R.bool.config_is_root_fragment_root)) {
+                toolbar.setNavButtonMode(NavButtonMode.DISABLED);
                 toolbar.setLogo(getContext().getResources()
                         .getBoolean(R.bool.config_show_settings_root_exit_icon)
                         ? R.drawable.ic_launcher_settings
                         : 0);
             } else {
-                toolbar.setState(Toolbar.State.SUBPAGE);
+                toolbar.setNavButtonMode(NavButtonMode.BACK);
             }
         }
     }
