@@ -53,6 +53,7 @@ import com.android.car.ui.core.CarUi;
 import com.android.car.ui.toolbar.MenuItem;
 import com.android.car.ui.toolbar.Toolbar;
 import com.android.car.ui.toolbar.ToolbarController;
+import com.android.settingslib.core.lifecycle.HideNonSystemOverlayMixin;
 
 import java.util.Collections;
 import java.util.List;
@@ -131,6 +132,7 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
         if (savedInstanceState != null) {
             mHasNewIntent = savedInstanceState.getBoolean(KEY_HAS_NEW_INTENT, mHasNewIntent);
         }
@@ -198,6 +200,11 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
 
     @Override
     public void launchFragment(Fragment fragment) {
+        if (fragment instanceof DialogFragment) {
+            throw new IllegalArgumentException(
+                    "cannot launch dialogs with launchFragment() - use showDialog() instead");
+        }
+
         if (mIsSinglePane) {
             Intent intent = SubSettingsActivity.newInstance(/* context= */ this, fragment);
             startActivity(intent);
@@ -207,11 +214,6 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
     }
 
     private void launchFragmentInternal(Fragment fragment) {
-        if (fragment instanceof DialogFragment) {
-            throw new IllegalArgumentException(
-                    "cannot launch dialogs with launchFragment() - use showDialog() instead");
-        }
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .setCustomAnimations(
@@ -374,7 +376,7 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
                         insets.getBottom()), /* hasToolbar= */ true);
         if (mIsSinglePane) {
             mGlobalToolbar.setState(Toolbar.State.SUBPAGE);
-            findViewById(R.id.top_level_menu).setVisibility(View.GONE);
+            findViewById(R.id.top_level_menu_container).setVisibility(View.GONE);
             findViewById(R.id.top_level_divider).setVisibility(View.GONE);
             return;
         }
@@ -440,7 +442,7 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
             mHasInitialFocus = false;
             return;
         }
-        View focusArea = fragmentView.findViewById(R.id.car_ui_focus_area);
+        View focusArea = fragmentView.findViewById(R.id.settings_car_ui_focus_area);
 
         if (focusArea == null) {
             focusArea = fragmentView.findViewById(R.id.settings_content_focus_area);
