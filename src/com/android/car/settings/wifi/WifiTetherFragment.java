@@ -50,11 +50,9 @@ public class WifiTetherFragment extends SettingsFragment {
     private MenuItem mTetherSwitch;
     private boolean mRestartBooked = false;
 
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+    private WifiManager.SoftApCallback mSoftApCallback = new WifiManager.SoftApCallback() {
         @Override
-        public void onReceive(Context context, Intent intent) {
-            int state = intent.getIntExtra(
-                    WifiManager.EXTRA_WIFI_AP_STATE, WifiManager.WIFI_AP_STATE_FAILED);
+        public void onStateChanged(int state, int failureReason) {
             handleWifiApStateChanged(state);
         }
     };
@@ -106,8 +104,7 @@ public class WifiTetherFragment extends SettingsFragment {
     @Override
     public void onStart() {
         super.onStart();
-        getContext().registerReceiver(mReceiver,
-                new IntentFilter(WifiManager.WIFI_AP_STATE_CHANGED_ACTION));
+        mCarWifiManager.registerSoftApCallback(getContext().getMainExecutor(), mSoftApCallback);
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mRestartReceiver,
                 new IntentFilter(
                         WifiTetherBasePreferenceController.ACTION_RESTART_WIFI_TETHERING));
@@ -118,7 +115,7 @@ public class WifiTetherFragment extends SettingsFragment {
     public void onStop() {
         super.onStop();
         mCarWifiManager.stop();
-        getContext().unregisterReceiver(mReceiver);
+        mCarWifiManager.unregisterSoftApCallback(mSoftApCallback);
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mRestartReceiver);
     }
 
