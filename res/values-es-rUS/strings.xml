@@ -314,7 +314,7 @@
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> apps en desuso</item>
       <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> app en desuso</item>
     </plurals>
-    <string name="unused_apps_switch" msgid="4433958286200341563">"Quita los permisos y libera espacio"</string>
+    <string name="unused_apps_switch" msgid="4433958286200341563">"Quitar permisos y liberar espacio"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s de almacenamiento interno"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Uso de datos"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Uso de datos de la app"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Espera…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Fecha y hora"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Establecer fecha, hora, zona horaria y formatos"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"Fecha y hora automáticas"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"Usar la hora proporcionada por la red"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"Zona horaria automática"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"Usar la zona horaria proporcionada por la red"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Establecer hora automátic."</string>
+    <string name="zone_auto" msgid="4174874778459184605">"Establecer zona horaria autom."</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"Formato de 24 horas"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Usar formato de 24 horas"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Hora"</string>
