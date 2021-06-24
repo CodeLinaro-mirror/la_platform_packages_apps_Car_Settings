@@ -328,7 +328,7 @@
     <string name="assist_app_settings" msgid="9085261410166776497">"सहायक एप"</string>
     <string name="assist_access_context_title" msgid="8034851731390785301">"स्क्रिनमा रहेको पाठ प्रयोग गर्नुहोस्"</string>
     <string name="assist_access_context_summary" msgid="2374281280599443774">"सहायक एपलाई स्क्रिनमा रहेको कुनै सामग्रीमाथि पाठका रूपमा पहुँच राख्ने अनुमति दिनुहोस्"</string>
-    <string name="assist_access_screenshot_title" msgid="2855956879971465044">"स्क्रिसट प्रयोग गर्नुहोस्"</string>
+    <string name="assist_access_screenshot_title" msgid="2855956879971465044">"स्क्रिनसट प्रयोग गरियोस्"</string>
     <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"सहायक एपलाई स्क्रिनमा रहेको कुनै छविमाथि पहुँच राख्ने अनुमति दिनुहोस्"</string>
     <string name="voice_input_settings_title" msgid="3238707827815647526">"आवाज संलग्न इनपुट"</string>
     <string name="autofill_settings_title" msgid="1188754272680049972">"अटोफिल सेवा"</string>
@@ -347,7 +347,7 @@
     <string name="auto_launch_disable_text" msgid="3595315315092716391">"कुनै डिफल्ट मान सेट गरिएको छैन।"</string>
     <string name="auto_launch_enable_text" msgid="7230832269574106901">"तपाईंले केही कारवाहीका लागि यो एप पूर्वनिर्धारति रूपमा छनौट गर्नुभएको छ।"</string>
     <string name="auto_launch_reset_text" msgid="590439611312092392">"डिफल्ट मानहरू हटाउनुहोस्"</string>
-    <string name="app_launch_open_domain_urls_title" msgid="4705344946367759393">"समर्थित लिंकहरू खोल्नुहोस्"</string>
+    <string name="app_launch_open_domain_urls_title" msgid="4705344946367759393">"खोल्न मिल्ने लिंक खोल्न सकियोस्"</string>
     <string name="app_link_open_always" msgid="5783167184335545230">"यो एपमा खोल्नुहोस्"</string>
     <string name="app_link_open_ask" msgid="7242075065136237456">"प्रत्येक पटक सोधियोस्"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"यो एपमा नखोल्नुहोस्"</string>
@@ -375,7 +375,7 @@
     <string name="premium_sms_access_description" msgid="7119026067677052169">"प्रिमियम SMS सुविधा सक्रिय गर्नाले तपाईंलाई पैसा लाग्न सक्छ र उक्त लागत तपाईंको सेवा प्रदायकलाई तिर्नु पर्ने बिलमा जोडिने छ। तपाईंले एपका लागि अनुमति सक्षम पार्नुभएका खण्डमा तपाईं त्यस एपको प्रयोग गरेर प्रिमियम SMS पठाउन सक्नु हुने छ।"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"प्रयोग गर्ने अनुमति"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"प्रयोगको पहुँचले एपलाई तपाईंले आफ्नो सेवा प्रदायक, भाषासम्बन्धी सेटिङ र अन्य विवरणहरूसहित अन्य कुन कुन एपहरू गरिरहनुभएको छ र कत्तिको प्रयोग गर्नुहुन्छ भन्ने कुरा ट्र्याक गर्न दिन्छ।"</string>
-    <string name="wifi_control_title" msgid="5660436566907731929">"Wi-Fi को नियन्त्रण"</string>
+    <string name="wifi_control_title" msgid="5660436566907731929">"Wi-Fi कन्ट्रोल"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"Wi-Fi नियन्त्रकले एपलाई Wi-Fi सक्रिय गर्ने वा निष्क्रिय पार्ने, स्क्यान गरी Wi-Fi नेटवर्कमा जडान गर्ने, नेटवर्कहरू थप्ने वा हटाउने, वा स्थानीय रूपमा मात्र प्रयोग गर्न मिल्ने हटस्पट सुरु गर्ने अनुमति दिन्छ।"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"थप"</string>
     <string name="location_settings_title" msgid="901334356682423679">"स्थान"</string>
@@ -383,8 +383,8 @@
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"हालसालैका स्थानसम्बन्धी कुनै पनि अनुरोध छैन"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"एप स्तरीय अनुमति"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"लोकेसनमा आधारित सेवाहरू"</string>
-    <string name="location_use_location_title" msgid="117735895374606680">"स्थानसम्बन्धी सेवा प्रयोग गर्नुहोस्"</string>
-    <string name="location_settings_footer" msgid="296892848338100051">"तपाईंको डिभाइसको स्थान अनुमान गर्न स्थानसम्बन्धी सेवाले GPS, Wi‑Fi, मोबाइल नेटवर्क र सेन्सरलगायतका स्रोतहरू प्रयोग गर्न सक्छ।"</string>
+    <string name="location_use_location_title" msgid="117735895374606680">"लोकेसन सर्भिस प्रयोग गर्नुहोस्"</string>
+    <string name="location_settings_footer" msgid="296892848338100051">"तपाईंको डिभाइसको स्थान अनुमान गर्न लोकेसन सर्भिसले GPS, Wi‑Fi, मोबाइल नेटवर्क र सेन्सरलगायतका स्रोतहरू प्रयोग गर्न सक्छ।"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"प्रणाली"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"प्रणालीसम्बन्धी अद्यावधिकहरू"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"उन्नत"</string>
@@ -462,19 +462,19 @@
     <string name="factory_reset_progress_title" msgid="4580937077054738173">"मेटाउँदै"</string>
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"कृपया प्रतीक्षा गर्नुहोस्..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"मिति र समय"</string>
-    <string name="date_and_time_settings_summary" msgid="7669856855390804666">"मिति, समय, समय क्षेत्र र प्रारूपहरू सेट गर्नुहोस्"</string>
+    <string name="date_and_time_settings_summary" msgid="7669856855390804666">"मिति, समय, प्रामाणिक समय र प्रारूपहरू सेट गर्नुहोस्"</string>
     <string name="date_time_auto" msgid="6018635902717385962">"समय स्वतः सेट गरियोस्"</string>
     <string name="zone_auto" msgid="4174874778459184605">"प्रामाणिक समय स्वतः सेट गरियोस्"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"२४ घन्टे ढाँचा"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"२४-घन्टे ढाँचा प्रयोग गर्नुहोस्"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"समय"</string>
     <string name="date_time_set_time" msgid="6449555153906058248">"समय सेट गर्नुहोस्"</string>
-    <string name="date_time_set_timezone_title" msgid="3001779256157093425">"समय क्षेत्र"</string>
-    <string name="date_time_set_timezone" msgid="4759353576185916944">"समय क्षेत्र चयन गर्नुहोस्"</string>
+    <string name="date_time_set_timezone_title" msgid="3001779256157093425">"प्रामाणिक समय"</string>
+    <string name="date_time_set_timezone" msgid="4759353576185916944">"प्रामाणिक समय चयन गर्नुहोस्"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"मिति"</string>
     <string name="date_time_set_date" msgid="2537494485643283230">"मिति सेट गर्नुहोस्"</string>
     <string name="zone_list_menu_sort_alphabetically" msgid="7041628618528523514">"वर्णानुक्रममा क्रमबद्ध गर्नुहोस्"</string>
-    <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"समय क्षेत्रका आधारमा क्रमबद्ध गर्नुहोस्"</string>
+    <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"प्रामाणिक समयका आधारमा क्रमबद्ध गर्नुहोस्"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"मिति"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"समय"</string>
     <string name="user_admin" msgid="1535484812908584809">"प्रशासक"</string>
