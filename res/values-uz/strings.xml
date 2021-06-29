@@ -83,7 +83,7 @@
     <string name="network_and_internet_oem_network_title" msgid="6436902713696212250">"OEM tarmoq"</string>
     <string name="network_and_internet_data_usage_time_range_summary" msgid="1792995626433410056">"%2$s - %3$s orasida %1$s sarflandi"</string>
     <string name="network_and_internet_join_other_network_title" msgid="7126831320010062712">"Boshqa tarmoqqa ulanish"</string>
-    <string name="network_and_internet_network_preferences_title" msgid="2983548049081168876">"Tarmoqqa ulanish sozlamalari"</string>
+    <string name="network_and_internet_network_preferences_title" msgid="2983548049081168876">"Tarmoq parametrlari"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi‑Fi"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Wi‑Fi yoqilmoqda…"</string>
     <string name="wifi_stopping" msgid="3534173972547890148">"Wi‑Fi faolsizlantirilmoqda…"</string>
@@ -218,8 +218,8 @@
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"Barcha tillar"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"Klaviatura"</string>
     <string name="manage_keyboard" msgid="4045394766282200132">"Klaviaturalar boshqaruvi"</string>
-    <string name="text_to_speech_settings" msgid="811985746199507343">"Matnni nutqqa aylantirish"</string>
-    <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"Asosiy vosita"</string>
+    <string name="text_to_speech_settings" msgid="811985746199507343">"Matnni nutqqa aylantirish vositasi"</string>
+    <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"Standart sintezator"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"Joriy sintezator"</string>
     <string name="tts_speech_rate" msgid="4512944877291943133">"Nutq tezligi"</string>
     <string name="tts_pitch" msgid="2389171233852604923">"Ohang"</string>
@@ -371,7 +371,7 @@
     <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"Agar <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> uchun bildirishnomalar ruxsati faolsizlantirilganda, Bezovta qilinmasin ruxsati ham faolsizlantirilishi mumkin."</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Ha"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Bekor qilish"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Pulli SMS yuborish"</string>
+    <string name="premium_sms_access_title" msgid="1409118461646148686">"Pulli SMS yuborishga ruxsat"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"SMS uchun sizdan haq olinishi va operatorga qoʻshimcha to‘lov amalga oshirilishi mumkin. Agar ilova uchun ruxsatnoma taqdim etsangiz, oʻsha ilovadan SMS yuborishingiz mumkin boʻladi."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Foydalanish tarixiga kirish"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Foydalanish tarixiga kirish huquqi qanday ilovalardan va qancha muddatda foydalanishingiz, shuningdek, tarmoq operatori, til va boshqa parametrlarni kuzatish imkonini beradi."</string>
@@ -463,8 +463,10 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Kutib turing…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Sana va vaqt"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Sana, vaqt, vaqt zonasi, &amp; formatlarini o‘rnatish"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"Vaqtni avtomatik sozlash"</string>
-    <string name="zone_auto" msgid="4174874778459184605">"Vaqt mintaqasini avtomatik belgilash"</string>
+    <string name="date_time_auto" msgid="3570339569471779767">"Avtomatik sana va vaqt"</string>
+    <string name="date_time_auto_summary" msgid="3311706425095342759">"Tarmoq vaqtidan foydalanish"</string>
+    <string name="zone_auto" msgid="3701878581920206160">"Avtomatik vaqt mintaqasi"</string>
+    <string name="zone_auto_summary" msgid="4345856882906981864">"Tarmoq vaqt mintaqasidan foydalanish"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24 soatlik format"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"24 soatlik format"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Vaqt"</string>

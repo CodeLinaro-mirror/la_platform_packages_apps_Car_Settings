@@ -128,7 +128,7 @@
     <string name="wifi_details_ipv6_address_header" msgid="4707181386646531890">"IPv6-adresser"</string>
     <string name="wifi_gateway" msgid="4975799192860431013">"Gateway"</string>
     <string name="wifi_preferences_title" msgid="772788844257225510">"Inställningar för wifi"</string>
-    <string name="wifi_wakeup" msgid="7451825226044542000">"Aktivera wifi automatiskt"</string>
+    <string name="wifi_wakeup" msgid="7451825226044542000">"Aktivera Wi‑Fi automatiskt"</string>
     <string name="wifi_wakeup_summary" msgid="7237521683331291414">"Wi‑Fi aktiveras i närheten av sparade nätverk, t.ex ditt hemnätverk"</string>
     <string name="wifi_wakeup_summary_no_location" msgid="2821576525488435259">"Ej tillgängligt när plats är inaktiverat. Aktivera "<annotation id="link">"plats"</annotation>"."</string>
     <string name="wifi_settings_scanning_required_title" msgid="2726782203331704928">"Vill du aktivera wifi-sökning?"</string>
@@ -379,8 +379,8 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Med wifi-styrning får den här appen behörighet att aktivera eller inaktivera wifi, söka efter och ansluta till wifi-nätverk, lägga till eller ta bort nätverk samt starta en lokal surfzon."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Mer"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Plats"</string>
-    <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Nyligen gjorda platsförfrågningar"</string>
-    <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Inga platsförfrågningar har gjorts nyligen"</string>
+    <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Nyligen gjorda platsbegäranden"</string>
+    <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Inga platsbegäranden har gjorts nyligen"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Behörigheter på appnivå"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Platstjänster"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Använd plats"</string>
@@ -463,8 +463,10 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Vänta …"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Datum och tid"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Ange datum, tidszon och format"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"Ange tiden automatiskt"</string>
-    <string name="zone_auto" msgid="4174874778459184605">"Ange tidszon automatiskt"</string>
+    <string name="date_time_auto" msgid="3570339569471779767">"Automatiskt datum och tid"</string>
+    <string name="date_time_auto_summary" msgid="3311706425095342759">"Använd nätverkets tid"</string>
+    <string name="zone_auto" msgid="3701878581920206160">"Automatisk tidszon"</string>
+    <string name="zone_auto_summary" msgid="4345856882906981864">"Använd nätverkets tidszon"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24-timmarsformat"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Använd 24-timmarsformat"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Tid"</string>

@@ -16,7 +16,6 @@
 
 package com.android.car.settings.bluetooth;
 
-import static android.car.hardware.power.PowerComponent.BLUETOOTH;
 import static android.os.UserManager.DISALLOW_BLUETOOTH;
 
 import android.bluetooth.BluetoothAdapter;
@@ -26,25 +25,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.UserManager;
-import android.widget.Toast;
 
 import androidx.annotation.VisibleForTesting;
-import androidx.preference.Preference;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.ClickableWhileDisabledSwitchPreference;
+import com.android.car.settings.common.ColoredSwitchPreference;
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.PowerPolicyListener;
 import com.android.car.settings.common.PreferenceController;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
-
-import java.util.function.Consumer;
 
 /**
  * Enables/disables bluetooth state via SwitchPreference.
  */
 public class BluetoothStateSwitchPreferenceController extends
-        PreferenceController<ClickableWhileDisabledSwitchPreference> {
+        PreferenceController<ColoredSwitchPreference> {
 
     private final Context mContext;
     private final IntentFilter mIntentFilter = new IntentFilter(
@@ -61,39 +55,31 @@ public class BluetoothStateSwitchPreferenceController extends
     private UserManager mUserManager;
     private boolean mUpdating = false;
 
-    @VisibleForTesting
-    final PowerPolicyListener mPowerPolicyListener;
-
     public BluetoothStateSwitchPreferenceController(Context context,
             String preferenceKey,
             FragmentController fragmentController,
             CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mContext = context;
-        mPowerPolicyListener = new PowerPolicyListener(context, BLUETOOTH,
-                isOn -> {
-                    enableSwitchPreference(getPreference(), isOn, /* forPowerPolicy= */ true);
-                });
     }
 
     @Override
-    protected Class<ClickableWhileDisabledSwitchPreference> getPreferenceType() {
-        return ClickableWhileDisabledSwitchPreference.class;
+    protected Class<ColoredSwitchPreference> getPreferenceType() {
+        return ColoredSwitchPreference.class;
     }
 
     @Override
-    protected void updateState(ClickableWhileDisabledSwitchPreference preference) {
+    protected void updateState(ColoredSwitchPreference preference) {
         updateSwitchPreference(mBluetoothAdapter.getState() == BluetoothAdapter.STATE_ON
                 || mBluetoothAdapter.getState() == BluetoothAdapter.STATE_TURNING_ON);
     }
 
     @Override
-    protected boolean handlePreferenceChanged(ClickableWhileDisabledSwitchPreference preference,
-            Object newValue) {
+    protected boolean handlePreferenceChanged(ColoredSwitchPreference preference, Object newValue) {
         if (mUpdating) {
             return false;
         }
-        enableSwitchPreference(preference, /* enabled= */ false, /* forPowerPolicy= */ false);
+        preference.setEnabled(false);
         boolean bluetoothEnabled = (Boolean) newValue;
         if (bluetoothEnabled) {
             mBluetoothAdapter.enable();
@@ -122,19 +108,9 @@ public class BluetoothStateSwitchPreferenceController extends
     }
 
     @Override
-    protected void onResumeInternal() {
-        mPowerPolicyListener.handleCurrentPolicy();
-    }
-
-    @Override
     protected void onStopInternal() {
         mContext.unregisterReceiver(mReceiver);
         mLocalBluetoothManager.setForegroundActivity(null);
-    }
-
-    @Override
-    protected void onDestroyInternal() {
-        mPowerPolicyListener.release();
     }
 
     private boolean isUserRestricted() {
@@ -148,24 +124,20 @@ public class BluetoothStateSwitchPreferenceController extends
         mUpdating = true;
         switch (state) {
             case BluetoothAdapter.STATE_TURNING_ON:
-                enableSwitchPreference(getPreference(), /* enabled= */ false,
-                        /* forPowerPolicy= */ false);
+                getPreference().setEnabled(false);
                 updateSwitchPreference(true);
                 break;
             case BluetoothAdapter.STATE_ON:
-                enableSwitchPreference(getPreference(), !isUserRestricted(),
-                        /* forPowerPolicy= */ false);
+                getPreference().setEnabled(!isUserRestricted());
                 updateSwitchPreference(true);
                 break;
             case BluetoothAdapter.STATE_TURNING_OFF:
-                enableSwitchPreference(getPreference(), /* enabled= */ false,
-                        /* forPowerPolicy= */ false);
+                getPreference().setEnabled(false);
                 updateSwitchPreference(false);
                 break;
             case BluetoothAdapter.STATE_OFF:
             default:
-                enableSwitchPreference(getPreference(), !isUserRestricted(),
-                        /* forPowerPolicy= */ false);
+                getPreference().setEnabled(!isUserRestricted());
                 updateSwitchPreference(false);
         }
         mUpdating = false;
@@ -177,19 +149,8 @@ public class BluetoothStateSwitchPreferenceController extends
     }
 
     private void updateSwitchPreference(boolean enabled) {
-        String bluetoothName = BluetoothAdapter.getDefaultAdapter().getName();
-        getPreference().setSummary(enabled ? getContext()
-                .getString(R.string.bluetooth_state_switch_summary, bluetoothName) : null);
+        getPreference().setTitle(enabled ? R.string.car_ui_preference_switch_on
+                : R.string.car_ui_preference_switch_off);
         getPreference().setChecked(enabled);
-    }
-
-    private void enableSwitchPreference(ClickableWhileDisabledSwitchPreference preference,
-            boolean enabled, boolean forPowerPolicy) {
-        Consumer<Preference> listener = !forPowerPolicy ? null : p ->
-                Toast.makeText(getContext(),
-                        getContext().getString(R.string.power_component_disabled),
-                        Toast.LENGTH_LONG).show();
-        preference.setDisabledClickListener(listener);
-        preference.setEnabled(enabled);
     }
 }

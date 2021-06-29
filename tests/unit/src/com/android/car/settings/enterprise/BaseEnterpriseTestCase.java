@@ -59,14 +59,9 @@ abstract class BaseEnterpriseTestCase {
     @Mock
     private DevicePolicyManager mDpm;
 
-    @Mock
-    protected PackageManager mPm;
-
     @Before
     public final void setFixtures() throws Exception {
         when(mSpiedContext.getSystemService(DevicePolicyManager.class)).thenReturn(mDpm);
-        when(mSpiedContext.getSystemService(PackageManager.class)).thenReturn(mPm);
-        when(mSpiedContext.getPackageManager()).thenReturn(mPm);
 
         PackageManager pm = mRealContext.getPackageManager();
         ActivityInfo defaultInfo = pm.getReceiverInfo(mDefaultAdmin, PackageManager.GET_META_DATA);
@@ -101,15 +96,7 @@ abstract class BaseEnterpriseTestCase {
         when(mDpm.getActiveAdmins()).thenReturn(Arrays.asList(admin));
     }
 
-    protected final void mockGetLongSupportMessageForUser(CharSequence message) {
+    protected void mockGetLongSupportMessageForUser(CharSequence message) {
         when(mDpm.getLongSupportMessageForUser(eq(mDefaultAdmin), anyInt())).thenReturn(message);
-    }
-
-    protected final void mockHasDeviceAdminFeature() {
-        when(mPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN)).thenReturn(true);
-    }
-
-    protected final void mockNoDeviceAdminFeature() {
-        when(mPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN)).thenReturn(false);
     }
 }

@@ -21,7 +21,6 @@ import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.pm.PackageManager;
 
-import androidx.annotation.VisibleForTesting;
 import androidx.preference.Preference;
 
 import com.android.car.settings.common.FragmentController;
@@ -35,16 +34,8 @@ public class BluetoothMacAddressPreferenceController extends
 
     public BluetoothMacAddressPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
-        this(context, preferenceKey, fragmentController, uxRestrictions,
-                BluetoothAdapter.getDefaultAdapter());
-    }
-
-    @VisibleForTesting
-    BluetoothMacAddressPreferenceController(Context context, String preferenceKey,
-            FragmentController fragmentController, CarUxRestrictions uxRestrictions,
-            BluetoothAdapter bluetoothAdapter) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
-        mBluetoothAdapter = bluetoothAdapter;
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     @Override

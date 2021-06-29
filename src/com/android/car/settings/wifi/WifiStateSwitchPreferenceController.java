@@ -16,58 +16,44 @@
 
 package com.android.car.settings.wifi;
 
-import static android.car.hardware.power.PowerComponent.WIFI;
-
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.net.wifi.WifiManager;
-import android.widget.Toast;
-
-import androidx.annotation.VisibleForTesting;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.ClickableWhileDisabledSwitchPreference;
+import com.android.car.settings.common.ColoredSwitchPreference;
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.PowerPolicyListener;
 import com.android.car.settings.common.PreferenceController;
 
 /**
  * Enables/disables Wifi state via SwitchPreference.
  */
 public class WifiStateSwitchPreferenceController extends
-        PreferenceController<ClickableWhileDisabledSwitchPreference>
+        PreferenceController<ColoredSwitchPreference>
         implements CarWifiManager.Listener {
 
     private final CarWifiManager mCarWifiManager;
-
-    @VisibleForTesting
-    final PowerPolicyListener mPowerPolicyListener;
 
     public WifiStateSwitchPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController,
             CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
-        mPowerPolicyListener = new PowerPolicyListener(context, WIFI,
-                isOn -> {
-                    enableSwitchPreference(getPreference(), isOn);
-                });
         mCarWifiManager = new CarWifiManager(context,
                 getFragmentController().getSettingsLifecycle());
     }
 
     @Override
-    protected Class<ClickableWhileDisabledSwitchPreference> getPreferenceType() {
-        return ClickableWhileDisabledSwitchPreference.class;
+    protected Class<ColoredSwitchPreference> getPreferenceType() {
+        return ColoredSwitchPreference.class;
     }
 
     @Override
-    protected void updateState(ClickableWhileDisabledSwitchPreference preference) {
+    protected void updateState(ColoredSwitchPreference preference) {
         updateSwitchPreference(preference, mCarWifiManager.isWifiEnabled());
     }
 
     @Override
-    protected boolean handlePreferenceChanged(ClickableWhileDisabledSwitchPreference preference,
-            Object newValue) {
+    protected boolean handlePreferenceChanged(ColoredSwitchPreference preference, Object newValue) {
         boolean wifiEnabled = (Boolean) newValue;
         mCarWifiManager.setWifiEnabled(wifiEnabled);
         return true;
@@ -77,10 +63,6 @@ public class WifiStateSwitchPreferenceController extends
     protected void onCreateInternal() {
         getPreference().setContentDescription(
                 getContext().getString(R.string.wifi_state_switch_content_description));
-        getPreference().setDisabledClickListener(p ->
-                Toast.makeText(getContext(),
-                        getContext().getString(R.string.power_component_disabled),
-                        Toast.LENGTH_LONG).show());
     }
 
     @Override
@@ -90,18 +72,8 @@ public class WifiStateSwitchPreferenceController extends
     }
 
     @Override
-    protected void onResumeInternal() {
-        mPowerPolicyListener.handleCurrentPolicy();
-    }
-
-    @Override
     protected void onStopInternal() {
         mCarWifiManager.removeListener(this);
-    }
-
-    @Override
-    protected void onDestroyInternal() {
-        mPowerPolicyListener.release();
     }
 
     @Override
@@ -115,13 +87,7 @@ public class WifiStateSwitchPreferenceController extends
                 || state == WifiManager.WIFI_STATE_ENABLING);
     }
 
-    private void updateSwitchPreference(ClickableWhileDisabledSwitchPreference preference,
-            boolean enabled) {
+    private void updateSwitchPreference(ColoredSwitchPreference preference, boolean enabled) {
         preference.setChecked(enabled);
-    }
-
-    private void enableSwitchPreference(ClickableWhileDisabledSwitchPreference preference,
-            boolean enabled) {
-        preference.setEnabled(enabled);
     }
 }

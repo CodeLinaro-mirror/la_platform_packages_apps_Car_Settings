@@ -30,8 +30,8 @@
     <string name="pk_bluetooth_settings_entry" translatable="false">bluetooth_settings_entry
     </string>
     <string name="pk_location_settings_entry" translatable="false">location_settings_entry</string>
-    <string name="pk_notifications_settings_entry" translatable="false">
-        notifications_settings_entry
+    <string name="pk_apps_and_notifications_settings_entry" translatable="false">
+        apps_and_notifications_settings_entry
     </string>
     <string name="pk_date_time_settings_entry" translatable="false">date_time_settings_entry
     </string>
@@ -41,9 +41,6 @@
     <string name="pk_privacy_settings_entry" translatable="false">privacy_settings_entry</string>
     <string name="pk_storage_settings_entry" translatable="false">storage_settings_entry</string>
     <string name="pk_security_settings_entry" translatable="false">security_settings_entry</string>
-    <string name="pk_apps_settings_entry" translatable="false">
-        apps_settings_entry
-    </string>
     <string name="pk_assistant_and_voice_settings_entry" translatable="false">
         assistant_and_voice_settings_entry
     </string>
@@ -137,21 +134,10 @@
         bluetooth_device_action_buttons
     </string>
 
-    <!-- Notifications Settings -->
-    <string name="pk_notifications_settings_recently_sent" translatable="false">
-        notifications_settings_recently_sent
-    </string>
-    <string name="pk_notifications_settings_all_apps" translatable="false">
-        notifications_settings_all_apps
-    </string>
-
-    <!-- Applications Settings -->
+    <!-- Applications and Notifications Settings -->
     <string name="pk_applications_settings_screen_entry" translatable="false">
         applications_settings_screen_entry
     </string>
-    <string name="pk_recent_apps_group" translatable="false">recent_apps_group</string>
-    <string name="pk_recent_apps_list" translatable="false">recent_apps_list</string>
-    <string name="pk_recent_apps_view_all" translatable="false">recent_apps_view_all</string>
     <string name="pk_default_applications_settings_entry" translatable="false">
         default_applications_entry
     </string>
@@ -257,6 +243,17 @@
     </string>
     <string name="pk_more_special_access" translatable="false">more_special_access</string>
 
+    <!-- DateTime Settings -->
+    <string name="pk_auto_datetime_switch" translatable="false">auto_datetime_switch</string>
+    <string name="pk_auto_timezone_switch" translatable="false">auto_timezone_switch</string>
+    <string name="pk_date_picker_entry" translatable="false">date_picker_entry</string>
+    <string name="pk_time_picker_entry" translatable="false">time_picker_entry</string>
+    <string name="pk_timezone_picker_screen_entry" translatable="false">
+        timezone_picker_screen_entry
+    </string>
+    <string name="pk_use_24hour_switch" translatable="false">use_24hour_switch</string>
+    <string name="pk_timezone_picker_screen" translatable="false">timezone_picker_screen</string>
+
     <!-- Accounts -->
     <string name="pk_account_list" translatable="false">account_list</string>
     <string name="pk_account_settings" translatable="false">account_settings</string>
@@ -272,7 +269,6 @@
     <string name="pk_account_group" translatable="false">account_group</string>
 
     <!-- Privacy -->
-    <string name="pk_privacy_work_policy" translatable="false">privacy_work_policy</string>
     <string name="pk_privacy_manage_perms" translatable="false">privacy_manage_perms</string>
     <string name="pk_show_password" translatable="false">privacy_show_password</string>
     <string name="pk_privacy_extra_settings" translatable="false">privacy_extra_settings</string>
@@ -319,16 +315,6 @@
     </string>
     <string name="pk_brightness_level" translatable="false">brightness_level</string>
     <string name="pk_display_extra_settings" translatable="false">display_extra_settings</string>
-    <!-- DateTime Settings -->
-    <string name="pk_auto_datetime_switch" translatable="false">auto_datetime_switch</string>
-    <string name="pk_auto_timezone_switch" translatable="false">auto_timezone_switch</string>
-    <string name="pk_date_picker_entry" translatable="false">date_picker_entry</string>
-    <string name="pk_time_picker_entry" translatable="false">time_picker_entry</string>
-    <string name="pk_timezone_picker_screen_entry" translatable="false">
-        timezone_picker_screen_entry
-    </string>
-    <string name="pk_use_24hour_switch" translatable="false">use_24hour_switch</string>
-    <string name="pk_timezone_picker_screen" translatable="false">timezone_picker_screen</string>
 
     <!-- Sound Settings -->
     <string name="pk_volume_settings" translatable="false">volume_settings</string>

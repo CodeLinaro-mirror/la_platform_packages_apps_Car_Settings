@@ -88,7 +88,7 @@ public class AppDataUsageFragment extends SettingsFragment {
             subId = DataUsageUtils.getDefaultSubscriptionId(subscriptionManager);
         }
         mNetworkTemplate = DataUsageUtils.getMobileNetworkTemplate(telephonyManager, subId);
-        mPolicyEditor = getNetworkPolicyEditor(context);
+        mPolicyEditor = new NetworkPolicyEditor(NetworkPolicyManager.from(context));
         mAppsNetworkStatsManager = new AppsNetworkStatsManager(getContext());
         mAppsNetworkStatsManager.registerListener(
                 use(AppDataUsagePreferenceController.class, R.string.pk_app_data_usage_detail));
@@ -114,7 +114,8 @@ public class AppDataUsageFragment extends SettingsFragment {
 
         NetworkPolicy policy = mPolicyEditor.getPolicy(mNetworkTemplate);
         if (policy != null) {
-            Iterator<Pair<ZonedDateTime, ZonedDateTime>> it = getCycleIterator(policy);
+            Iterator<Pair<ZonedDateTime, ZonedDateTime>> it = NetworkPolicyManager
+                    .cycleIterator(policy);
             while (it.hasNext()) {
                 Pair<ZonedDateTime, ZonedDateTime> cycle = it.next();
                 start = cycle.first.toInstant().toEpochMilli();
@@ -141,15 +142,5 @@ public class AppDataUsageFragment extends SettingsFragment {
     @VisibleForTesting(otherwise = VisibleForTesting.NONE)
     Bundle getBundle() {
         return mBundle;
-    }
-
-    @VisibleForTesting
-    NetworkPolicyEditor getNetworkPolicyEditor(Context context) {
-        return new NetworkPolicyEditor(NetworkPolicyManager.from(context));
-    }
-
-    @VisibleForTesting
-    Iterator<Pair<ZonedDateTime, ZonedDateTime>> getCycleIterator(NetworkPolicy policy) {
-        return NetworkPolicyManager.cycleIterator(policy);
     }
 }

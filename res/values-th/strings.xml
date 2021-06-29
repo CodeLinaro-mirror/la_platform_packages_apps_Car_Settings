@@ -429,7 +429,7 @@
     </plurals>
     <string name="show_dev_on" msgid="5339077400040834808">"ตอนนี้คุณเป็นนักพัฒนาซอฟต์แวร์แล้ว!"</string>
     <string name="show_dev_already" msgid="1678087328973865736">"ไม่จำเป็น คุณเป็นนักพัฒนาซอฟต์แวร์อยู่แล้ว"</string>
-    <string name="developer_options_settings" msgid="1530739225109118480">"ตัวเลือกสำหรับนักพัฒนาแอป"</string>
+    <string name="developer_options_settings" msgid="1530739225109118480">"ตัวเลือกสำหรับนักพัฒนาซอฟต์แวร์"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"ตัวเลือกการรีเซ็ต"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"การรีเซ็ตเครือข่าย แอป หรืออุปกรณ์"</string>
     <string name="reset_network_title" msgid="1284233059990797263">"รีเซ็ตเครือข่าย"</string>
@@ -463,8 +463,10 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"โปรดรอสักครู่..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"วันที่และเวลา"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"ตั้งวันที่ เวลา เขตเวลาและรูปแบบ"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"ตั้งเวลาอัตโนมัติ"</string>
-    <string name="zone_auto" msgid="4174874778459184605">"ตั้งเขตเวลาอัตโนมัติ"</string>
+    <string name="date_time_auto" msgid="3570339569471779767">"วันที่และเวลาอัตโนมัติ"</string>
+    <string name="date_time_auto_summary" msgid="3311706425095342759">"ใช้เวลาที่ระบุโดยเครือข่าย"</string>
+    <string name="zone_auto" msgid="3701878581920206160">"เขตเวลาอัตโนมัติ"</string>
+    <string name="zone_auto_summary" msgid="4345856882906981864">"ใช้เขตเวลาที่ระบุโดยเครือข่าย"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"รูปแบบ 24 ชั่วโมง"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"ใช้รูปแบบ 24 ชั่วโมง"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"เวลา"</string>

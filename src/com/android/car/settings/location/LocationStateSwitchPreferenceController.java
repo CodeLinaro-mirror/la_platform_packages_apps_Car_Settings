@@ -16,8 +16,6 @@
 
 package com.android.car.settings.location;
 
-import static android.car.hardware.power.PowerComponent.LOCATION;
-
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -26,14 +24,10 @@ import android.content.IntentFilter;
 import android.location.LocationManager;
 import android.os.UserHandle;
 import android.provider.Settings;
-import android.widget.Toast;
-
-import androidx.annotation.VisibleForTesting;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.ClickableWhileDisabledSwitchPreference;
+import com.android.car.settings.common.ColoredSwitchPreference;
 import com.android.car.settings.common.FragmentController;
-import com.android.car.settings.common.PowerPolicyListener;
 import com.android.car.settings.common.PreferenceController;
 import com.android.settingslib.Utils;
 
@@ -41,7 +35,7 @@ import com.android.settingslib.Utils;
  * Enables/disables location state via SwitchPreference.
  */
 public class LocationStateSwitchPreferenceController extends
-        PreferenceController<ClickableWhileDisabledSwitchPreference> {
+        PreferenceController<ColoredSwitchPreference> {
 
     private static final IntentFilter INTENT_FILTER_LOCATION_MODE_CHANGED =
             new IntentFilter(LocationManager.MODE_CHANGED_ACTION);
@@ -55,9 +49,6 @@ public class LocationStateSwitchPreferenceController extends
         }
     };
 
-    @VisibleForTesting
-    final PowerPolicyListener mPowerPolicyListener;
-
     public LocationStateSwitchPreferenceController(Context context,
             String preferenceKey,
             FragmentController fragmentController,
@@ -65,25 +56,20 @@ public class LocationStateSwitchPreferenceController extends
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mContext = context;
         mLocationManager = context.getSystemService(LocationManager.class);
-        mPowerPolicyListener = new PowerPolicyListener(context, LOCATION,
-                isOn -> {
-                    enableSwitchPreference(getPreference(), isOn);
-                });
     }
 
     @Override
-    protected Class<ClickableWhileDisabledSwitchPreference> getPreferenceType() {
-        return ClickableWhileDisabledSwitchPreference.class;
+    protected Class<ColoredSwitchPreference> getPreferenceType() {
+        return ColoredSwitchPreference.class;
     }
 
     @Override
-    protected void updateState(ClickableWhileDisabledSwitchPreference preference) {
+    protected void updateState(ColoredSwitchPreference preference) {
         updateSwitchPreference(preference, mLocationManager.isLocationEnabled());
     }
 
     @Override
-    protected boolean handlePreferenceChanged(ClickableWhileDisabledSwitchPreference preference,
-            Object newValue) {
+    protected boolean handlePreferenceChanged(ColoredSwitchPreference preference, Object newValue) {
         boolean locationEnabled = (Boolean) newValue;
         Utils.updateLocationEnabled(
                 mContext,
@@ -97,10 +83,6 @@ public class LocationStateSwitchPreferenceController extends
     protected void onCreateInternal() {
         getPreference().setContentDescription(
                 getContext().getString(R.string.location_state_switch_content_description));
-        getPreference().setDisabledClickListener(p ->
-                Toast.makeText(getContext(),
-                        getContext().getString(R.string.power_component_disabled),
-                        Toast.LENGTH_LONG).show());
     }
 
     @Override
@@ -109,29 +91,13 @@ public class LocationStateSwitchPreferenceController extends
     }
 
     @Override
-    protected void onResumeInternal() {
-        mPowerPolicyListener.handleCurrentPolicy();
-    }
-
-    @Override
     protected void onStopInternal() {
         mContext.unregisterReceiver(mReceiver);
     }
 
-    @Override
-    protected void onDestroyInternal() {
-        mPowerPolicyListener.release();
-    }
-
-    private void updateSwitchPreference(ClickableWhileDisabledSwitchPreference preference,
-            boolean enabled) {
+    private void updateSwitchPreference(ColoredSwitchPreference preference, boolean enabled) {
         preference.setTitle(enabled ? R.string.car_ui_preference_switch_on
                 : R.string.car_ui_preference_switch_off);
         preference.setChecked(enabled);
-    }
-
-    private void enableSwitchPreference(ClickableWhileDisabledSwitchPreference preference,
-            boolean enabled) {
-        preference.setEnabled(enabled);
     }
 }

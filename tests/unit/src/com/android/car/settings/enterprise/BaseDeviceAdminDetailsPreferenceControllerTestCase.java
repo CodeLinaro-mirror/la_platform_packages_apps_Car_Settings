@@ -20,8 +20,25 @@ import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
+import android.car.drivingstate.CarUxRestrictions;
+
+import androidx.preference.Preference;
+
+import com.android.car.settings.common.FragmentController;
+
+import org.mockito.Mock;
+
 abstract class BaseDeviceAdminDetailsPreferenceControllerTestCase<T extends
-        BaseDeviceAdminDetailsPreferenceController> extends BasePreferenceControllerTestCase {
+        BaseDeviceAdminDetailsPreferenceController> extends BaseEnterpriseTestCase {
+
+    protected final String mPreferenceKey = "Da Key";
+    protected final CarUxRestrictions mUxRestrictions = new CarUxRestrictions.Builder(
+            /* reqOpt= */ true, CarUxRestrictions.UX_RESTRICTIONS_FULLY_RESTRICTED, /* time= */ 0)
+                    .build();
+    @Mock
+    protected FragmentController mFragmentController;
+    @Mock
+    protected Preference mPreference;
 
     protected final void verifyPreferenceTitleNeverSet() {
         verify(mPreference, never()).setTitle(any());

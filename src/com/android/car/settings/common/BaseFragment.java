@@ -33,7 +33,7 @@ import androidx.fragment.app.Fragment;
 
 import com.android.car.settings.R;
 import com.android.car.ui.toolbar.MenuItem;
-import com.android.car.ui.toolbar.NavButtonMode;
+import com.android.car.ui.toolbar.Toolbar;
 import com.android.car.ui.toolbar.ToolbarController;
 
 import java.util.List;
@@ -95,8 +95,12 @@ public abstract class BaseFragment extends Fragment implements
         return null;
     }
 
-    protected NavButtonMode getToolbarNavButtonStyle() {
-        return NavButtonMode.BACK;
+    protected Toolbar.State getToolbarState() {
+        return Toolbar.State.SUBPAGE;
+    }
+
+    protected Toolbar.NavButtonMode getToolbarNavButtonStyle() {
+        return Toolbar.NavButtonMode.BACK;
     }
 
     protected final ToolbarController getToolbar() {
@@ -138,6 +142,7 @@ public abstract class BaseFragment extends Fragment implements
             toolbar.setTitle(getTitleId());
             toolbar.setMenuItems(items);
             if (getActivity().getIntent().getBooleanExtra(META_DATA_KEY_SINGLE_PANE, false)) {
+                toolbar.setState(getToolbarState());
                 toolbar.setNavButtonMode(getToolbarNavButtonStyle());
             }
         }

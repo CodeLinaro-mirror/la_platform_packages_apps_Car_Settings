@@ -347,7 +347,7 @@
     <string name="auto_launch_disable_text" msgid="3595315315092716391">"No s\'ha definit cap valor predeterminat."</string>
     <string name="auto_launch_enable_text" msgid="7230832269574106901">"Has triat executar l\'aplicació de manera predeterminada per fer algunes accions."</string>
     <string name="auto_launch_reset_text" msgid="590439611312092392">"Esborra els valors predeterminats"</string>
-    <string name="app_launch_open_domain_urls_title" msgid="4705344946367759393">"Obre els enllaços admesos"</string>
+    <string name="app_launch_open_domain_urls_title" msgid="4705344946367759393">"Obrir els enllaços admesos"</string>
     <string name="app_link_open_always" msgid="5783167184335545230">"Obre en aquesta aplicació"</string>
     <string name="app_link_open_ask" msgid="7242075065136237456">"Pregunta sempre"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"No obris en aquesta aplicació"</string>
@@ -463,8 +463,10 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Espera..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Data i hora"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Estableix la data, l\'hora, la zona horària i els formats"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"Defineix l\'hora automàticament"</string>
-    <string name="zone_auto" msgid="4174874778459184605">"Defineix zona horària automàt."</string>
+    <string name="date_time_auto" msgid="3570339569471779767">"Data i hora automàtiques"</string>
+    <string name="date_time_auto_summary" msgid="3311706425095342759">"Utilitza l\'hora proporcionada per la xarxa"</string>
+    <string name="zone_auto" msgid="3701878581920206160">"Zona horària automàtica"</string>
+    <string name="zone_auto_summary" msgid="4345856882906981864">"Utilitza la zona horària proporcionada per la xarxa"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"Format de 24 hores"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Utilitza el format de 24 hores"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Hora"</string>
@@ -564,7 +566,7 @@
     <string name="account_sync_title" msgid="6541844336300236915">"Sincronització del compte"</string>
     <string name="account_sync_summary_some_on" msgid="4525960296068027182">"Sincronització activada per a <xliff:g id="ID_1">%1$d</xliff:g> de <xliff:g id="ID_2">%2$d</xliff:g> elements"</string>
     <string name="account_sync_summary_all_on" msgid="3652264471870312725">"Sincronització activada per a tots els elements"</string>
-    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"Sincronització desactivada per a tots els elements"</string>
+    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"La sincronització està desactivada per a tots els elements"</string>
     <string name="sync_disabled" msgid="393531064334628258">"Sincronització desactivada"</string>
     <string name="sync_error" msgid="6698021343089247914">"Error de sincronització"</string>
     <string name="last_synced" msgid="4745124489150101529">"Última sincronització: <xliff:g id="LAST_SYNC_TIME">%1$s</xliff:g>"</string>

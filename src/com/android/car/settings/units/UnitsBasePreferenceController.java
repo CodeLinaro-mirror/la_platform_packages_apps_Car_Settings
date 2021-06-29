@@ -102,7 +102,8 @@ public abstract class UnitsBasePreferenceController extends PreferenceController
     @CallSuper
     protected void onCreateInternal() {
         super.onCreateInternal();
-        mCarUnitsManager = createCarUnitsManager();
+        mCarUnitsManager = new CarUnitsManager(getContext());
+        mCarUnitsManager.connect();
         mCarUnitsManager.registerCarServiceListener(mOnCarServiceListener);
     }
 
@@ -170,11 +171,6 @@ public abstract class UnitsBasePreferenceController extends PreferenceController
 
     protected CarUnitsManager getCarUnitsManager() {
         return mCarUnitsManager;
-    }
-
-    @VisibleForTesting
-    CarUnitsManager createCarUnitsManager() {
-        return new CarUnitsManager(getContext());
     }
 
     private Unit getUnitUsedByThisProperty() {

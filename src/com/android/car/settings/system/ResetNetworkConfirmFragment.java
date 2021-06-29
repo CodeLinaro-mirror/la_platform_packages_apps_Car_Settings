@@ -57,8 +57,6 @@ public class ResetNetworkConfirmFragment extends SettingsFragment {
     // Copied from com.android.settings.network.ApnSettings.
     @VisibleForTesting
     static final String RESTORE_CARRIERS_URI = "content://telephony/carriers/restore";
-    @VisibleForTesting
-    AsyncTask<Void, Void, Boolean> mEraseEsimAsyncTask;
 
     private MenuItem mResetButton;
 
@@ -88,7 +86,7 @@ public class ResetNetworkConfirmFragment extends SettingsFragment {
             return;
         }
 
-        Context context = getApplicationContext();
+        Context context = requireActivity().getApplicationContext();
 
         ConnectivityManager connectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -134,9 +132,7 @@ public class ResetNetworkConfirmFragment extends SettingsFragment {
         cleanUpSmsRawTable(context);
 
         if (shouldResetEsim()) {
-            mEraseEsimAsyncTask = new EraseEsimAsyncTask(getContext(), context.getPackageName(),
-                    this);
-            mEraseEsimAsyncTask.execute();
+            new EraseEsimAsyncTask(getContext(), context.getPackageName(), this).execute();
         } else {
             showCompletionToast(getContext());
         }
@@ -180,11 +176,6 @@ public class ResetNetworkConfirmFragment extends SettingsFragment {
     private static void showCompletionToast(Context context) {
         Toast.makeText(context, R.string.reset_network_complete_toast,
                 Toast.LENGTH_SHORT).show();
-    }
-
-    @VisibleForTesting
-    Context getApplicationContext() {
-        return requireActivity().getApplicationContext();
     }
 
     private static class EraseEsimAsyncTask extends AsyncTask<Void, Void, Boolean> {

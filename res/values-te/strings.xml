@@ -305,7 +305,7 @@
     <string name="not_installed" msgid="4163454337822508007">"ఈ ప్రొఫైల్‌లో ఇన్‌స్టాల్ చేయబడలేదు"</string>
     <string name="permissions_label" msgid="2701446753515612685">"అనుమతులు"</string>
     <string name="notifications_label" msgid="6586089149665170731">"నోటిఫికేషన్‌లు"</string>
-    <string name="storage_application_label" msgid="5911779903670978586">"స్టోరేజ్ &amp; కాష్"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"నిల్వ &amp; కాష్"</string>
     <string name="application_version_label" msgid="8556889839783311649">"వెర్షన్: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"అనుమతులు మంజూరు కాలేదు"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"అనుమతులను అభ్యర్థించలేదు"</string>
@@ -374,7 +374,7 @@
     <string name="premium_sms_access_title" msgid="1409118461646148686">"ప్రీమియం SMS యాక్సెస్"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"ప్రీమియం SMSతో మీకు డబ్బు ఖర్చు కావచ్చు, ఈ ఛార్జీ మీ క్యారియర్ బిల్లులలో విధించబడుతుంది. మీరు ఒక యాప్‌కు అనుమతిని ఇస్తే, ఆ యాప్‌ను ఉపయోగించి మీరు ప్రీమియం SMSను పంపగలరు."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"వినియోగ యాక్సెస్"</string>
-    <string name="usage_access_description" msgid="2413168719257435422">"\'వినియోగ యాక్సెస్\' ద్వారా యాప్, మీరు ఏయే ఇతర యాప్‌లను ఉపయోగిస్తున్నారో, వాటిని ఎంత తరచుగా ఉపయోగిస్తున్నారో, అలాగే మీ క్యారియర్, భాష సెట్టింగ్‌లు, ఇతర వివరాలను ట్రాక్ చేయగలదు."</string>
+    <string name="usage_access_description" msgid="2413168719257435422">"వినియోగ యాక్సెస్‌తో యాప్ మీరు ఉపయోగించే ఇతర యాప్‌ల గురించి మరియు వాటిని ఎంత తరచుగా ఉపయోగిస్తున్నారనే దాని గురించి అలాగే మీ క్యారియర్, భాష సెట్టింగ్‌లు మరియు ఇతర వివరాలను ట్రాక్ చేయగలదు."</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Wi-Fi కంట్రోల్‌"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"యాప్‌కు Wi-Fiను ఆన్ లేదా ఆఫ్ చేయడానికి, Wi-Fi నెట్‌వర్క్‌లను స్కాన్ చేసి, కనెక్ట్ చేయడానికి, నెట్‌వర్క్‌లను జోడించడానికి లేదా తీసివేయడానికి, స్థానికం-మాత్రమే హాట్‌స్పాట్‌ను ప్రారంభించడానికి ఈ Wi-Fi కంట్రోలర్ అనుమతిస్తుంది."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"మరిన్ని"</string>
@@ -463,8 +463,10 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"దయచేసి వేచి ఉండండి..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"తేదీ &amp; సమయం"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"తేదీ, సమయం, సమయ మండలి &amp; ఫార్మాట్‌లను సెట్ చేయండి"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"ఆటోమేటిక్‌గా టైమ్‌ను సెట్ చేయి"</string>
-    <string name="zone_auto" msgid="4174874778459184605">"ఆటోమేటిక్‌గా టైమ్ జోన్‌ను సెట్ చేయండి"</string>
+    <string name="date_time_auto" msgid="3570339569471779767">"ఆటోమేటిక్‌గా తేదీ &amp; సమయం"</string>
+    <string name="date_time_auto_summary" msgid="3311706425095342759">"నెట్‌వర్క్ అందించిన సమయాన్ని ఉపయోగించు"</string>
+    <string name="zone_auto" msgid="3701878581920206160">"ఆటోమేటిక్ సమయ మండలి"</string>
+    <string name="zone_auto_summary" msgid="4345856882906981864">"నెట్‌వర్క్ అందించిన సమయ మండలిని ఉపయోగించు"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24‑గంటల ఫార్మాట్"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"24-గంటల ఫార్మాట్‌ని ఉపయోగించు"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"సమయం"</string>

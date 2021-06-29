@@ -16,6 +16,8 @@
 
 package com.android.car.settings.system;
 
+import static android.content.Context.CARRIER_CONFIG_SERVICE;
+
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
@@ -101,8 +103,8 @@ public class SystemUpdatePreferenceController extends PreferenceController<Prefe
 
     @Override
     protected boolean handlePreferenceClicked(Preference preference) {
-        CarrierConfigManager configManager = getContext().getSystemService(
-                CarrierConfigManager.class);
+        CarrierConfigManager configManager = (CarrierConfigManager) getContext().getSystemService(
+                CARRIER_CONFIG_SERVICE);
         PersistableBundle b = configManager.getConfig();
         if (b != null && b.getBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL)) {
             ciActionOnSysUpdate(b);

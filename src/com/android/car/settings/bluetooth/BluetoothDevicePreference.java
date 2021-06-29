@@ -19,17 +19,14 @@ package com.android.car.settings.bluetooth;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.SystemProperties;
-import android.util.AttributeSet;
 import android.util.Pair;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 
 import com.android.car.apps.common.util.Themes;
 import com.android.car.settings.R;
-import com.android.car.settings.common.MultiActionPreference;
-import com.android.car.settings.common.ToggleButtonActionItem;
+import com.android.car.ui.preference.CarUiTwoActionIconPreference;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 
 /**
@@ -40,7 +37,7 @@ import com.android.settingslib.bluetooth.CachedBluetoothDevice;
  * CachedBluetoothDevice#compareTo(CachedBluetoothDevice)}. If two devices are considered equal, the
  * default preference sort ordering is used (see {@link #compareTo(Preference)}.
  */
-public class BluetoothDevicePreference extends MultiActionPreference {
+public class BluetoothDevicePreference extends CarUiTwoActionIconPreference {
     private static final String BLUETOOTH_SHOW_DEVICES_WITHOUT_NAMES_PROPERTY =
             "persist.bluetooth.showdeviceswithoutnames";
 
@@ -48,26 +45,13 @@ public class BluetoothDevicePreference extends MultiActionPreference {
     private final boolean mShowDevicesWithoutNames;
     private final CachedBluetoothDevice.Callback mDeviceCallback = this::refreshUi;
 
-    private UpdateToggleButtonListener mUpdateToggleButtonListener;
-
     public BluetoothDevicePreference(Context context, CachedBluetoothDevice cachedDevice) {
         super(context);
         mCachedDevice = cachedDevice;
         mShowDevicesWithoutNames = SystemProperties.getBoolean(
                 BLUETOOTH_SHOW_DEVICES_WITHOUT_NAMES_PROPERTY, false);
-    }
-
-    @Override
-    protected void init(@Nullable AttributeSet attrs) {
-        mActionItemArray[0] = new ToggleButtonActionItem(this);
-        mActionItemArray[1] = new ToggleButtonActionItem(this);
-        mActionItemArray[2] = new ToggleButtonActionItem(this);
-        super.init(attrs);
-
-        // Hide actions by default.
-        mActionItemArray[0].setVisible(false);
-        mActionItemArray[1].setVisible(false);
-        mActionItemArray[2].setVisible(false);
+        // Hide action by default.
+        setSecondaryActionVisible(false);
     }
 
     /**
@@ -75,14 +59,6 @@ public class BluetoothDevicePreference extends MultiActionPreference {
      */
     public CachedBluetoothDevice getCachedDevice() {
         return mCachedDevice;
-    }
-
-    /**
-     * Sets the {@link UpdateToggleButtonListener} that will be called when the toggle buttons
-     * may need to change state.
-     */
-    public void setToggleButtonUpdateListener(UpdateToggleButtonListener listener) {
-        mUpdateToggleButtonListener = listener;
     }
 
     @Override
@@ -102,7 +78,7 @@ public class BluetoothDevicePreference extends MultiActionPreference {
         setTitle(mCachedDevice.getName());
         setSummary(mCachedDevice.getCarConnectionSummary());
 
-        Pair<Drawable, String> pair = com.android.settingslib.bluetooth.BluetoothUtils
+        final Pair<Drawable, String> pair = com.android.settingslib.bluetooth.BluetoothUtils
                 .getBtClassDrawableWithDescription(getContext(), mCachedDevice);
         if (pair.first != null) {
             setIcon(pair.first);
@@ -112,9 +88,6 @@ public class BluetoothDevicePreference extends MultiActionPreference {
         setEnabled(!mCachedDevice.isBusy());
         setVisible(mShowDevicesWithoutNames || mCachedDevice.hasHumanReadableName());
 
-        if (mUpdateToggleButtonListener != null) {
-            mUpdateToggleButtonListener.updateToggleButtonState(this);
-        }
         // Notify since the ordering may have changed.
         notifyHierarchyChanged();
     }
@@ -141,31 +114,5 @@ public class BluetoothDevicePreference extends MultiActionPreference {
 
         return mCachedDevice
                 .compareTo(((BluetoothDevicePreference) another).mCachedDevice);
-    }
-
-    @Override
-    public ToggleButtonActionItem getActionItem(ActionItem actionItem) {
-        switch(actionItem) {
-            case ACTION_ITEM1:
-                return (ToggleButtonActionItem) mActionItemArray[0];
-            case ACTION_ITEM2:
-                return (ToggleButtonActionItem) mActionItemArray[1];
-            case ACTION_ITEM3:
-                return (ToggleButtonActionItem) mActionItemArray[2];
-            default:
-                throw new IllegalArgumentException("Invalid button requested");
-        }
-    }
-
-    /**
-     * Callback for when toggle buttons may need to be updated
-     */
-    public interface UpdateToggleButtonListener {
-        /**
-         * Preference state has changed and toggle button changes should be handled.
-         *
-         * @param preference the preference that has been changed
-         */
-        void updateToggleButtonState(BluetoothDevicePreference preference);
     }
 }

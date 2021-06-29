@@ -29,7 +29,7 @@ import androidx.preference.SwitchPreference;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.android.car.settings.common.ClickableWhileDisabledSwitchPreference;
+import com.android.car.settings.common.ColoredSwitchPreference;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestUtil;
 
@@ -59,7 +59,7 @@ public class WifiStateSwitchPreferenceControllerTest {
         mCarUxRestrictions = new CarUxRestrictions.Builder(/* reqOpt= */ true,
                 CarUxRestrictions.UX_RESTRICTIONS_BASELINE, /* timestamp= */ 0).build();
 
-        mSwitchPreference = new ClickableWhileDisabledSwitchPreference(mContext);
+        mSwitchPreference = new ColoredSwitchPreference(mContext);
         when(mFragmentController.getSettingsLifecycle()).thenReturn(mMockLifecycle);
         mPreferenceController = new WifiStateSwitchPreferenceController(mContext,
                 /* preferenceKey= */ "key", mFragmentController, mCarUxRestrictions);
@@ -69,7 +69,7 @@ public class WifiStateSwitchPreferenceControllerTest {
 
     @Test
     public void onWifiStateChanged_disabled_setsSwitchUnchecked() {
-        initializePreference(/* checked= */ true, /* enabled= */ true);
+        initializePreference(/* enabled= */ true);
         mPreferenceController.onWifiStateChanged(WifiManager.WIFI_STATE_DISABLED);
 
         assertThat(mSwitchPreference.isChecked()).isFalse();
@@ -77,7 +77,7 @@ public class WifiStateSwitchPreferenceControllerTest {
 
     @Test
     public void onWifiStateChanged_enabled_setsSwitchChecked() {
-        initializePreference(/* checked= */ false, /* enabled= */ true);
+        initializePreference(/* enabled= */ false);
         mPreferenceController.onWifiStateChanged(WifiManager.WIFI_STATE_ENABLED);
 
         assertThat(mSwitchPreference.isChecked()).isTrue();
@@ -85,35 +85,14 @@ public class WifiStateSwitchPreferenceControllerTest {
 
     @Test
     public void onWifiStateChanged_enabling_setsSwitchChecked() {
-        initializePreference(/* checked= */ false, /* enabled= */ true);
+        initializePreference(/* enabled= */ false);
         mPreferenceController.onWifiStateChanged(WifiManager.WIFI_STATE_ENABLING);
 
         assertThat(mSwitchPreference.isChecked()).isTrue();
     }
 
-    @Test
-    public void onPolicyChanged_enabled_setsSwitchEnabled() {
-        initializePreference(/* checked= */ false, /* enabled= */ false);
-
-        mPreferenceController.mPowerPolicyListener.getPolicyChangeHandler()
-                .handlePolicyChange(/* isOn= */ true);
-
-        assertThat(mSwitchPreference.isEnabled()).isTrue();
-    }
-
-    @Test
-    public void onPolicyChanged_disabled_setsSwitchDisabled() {
-        initializePreference(/* checked= */ false, /* enabled= */ true);
-
-        mPreferenceController.mPowerPolicyListener.getPolicyChangeHandler()
-                .handlePolicyChange(/* isOn= */ false);
-
-        assertThat(mSwitchPreference.isEnabled()).isFalse();
-    }
-
-    private void initializePreference(boolean checked, boolean enabled) {
-        mCarWifiManager.setWifiEnabled(checked);
-        mSwitchPreference.setChecked(checked);
-        mSwitchPreference.setEnabled(enabled);
+    private void initializePreference(boolean enabled) {
+        mCarWifiManager.setWifiEnabled(enabled);
+        mSwitchPreference.setChecked(enabled);
     }
 }
