@@ -373,7 +373,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"取消"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"付費短訊存取權"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"付費短訊的費用可能高昂，並會增加您流動網絡供應商帳單的款項。如果您為應用程式開放權限，將可以透過該應用程式發送付費短訊。"</string>
-    <string name="usage_access_title" msgid="7153427122072303254">"使用紀錄存取權"</string>
+    <string name="usage_access_title" msgid="7153427122072303254">"使用記錄存取權"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"使用記錄存取權允許應用程式追蹤您正在使用的其他應用程式和使用頻率，以及流動網絡供應商、語言設定和其他詳情。"</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Wi-Fi 控制"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"Wi-Fi 控制允許應用程式開啟或關閉 Wi-Fi，掃瞄和連線至 Wi-Fi 網絡、新增或移除網絡，或啟動僅限本機的熱點。"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"請稍候…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"日期和時間"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"設定日期、時間、時區和格式"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"自動設定日期和時間"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"使用網絡提供的時間"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"自動設定時區"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"使用網絡提供的時區"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"自動設定時間"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"自動設定時區"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24 小時制"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"使用 24 小時制"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"時間"</string>

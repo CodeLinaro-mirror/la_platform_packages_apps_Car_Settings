@@ -169,7 +169,7 @@
     <string name="progress_scanning" msgid="7191583064717479795">"शोधत आहे"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"ब्लूटूथ"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"निनावी डिव्हाइस"</string>
-    <string name="bluetooth_paired_devices" msgid="6463199569164652410">"पेअर केलेले डिव्हाइस"</string>
+    <string name="bluetooth_paired_devices" msgid="6463199569164652410">"पेअर केलेली डिव्हाइस"</string>
     <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"नवीन डिव्हाइस पेअर करा"</string>
     <string name="bluetooth_pair_new_device_summary" msgid="2497221247690369031">"पेअर करण्यासाठी ब्लूटूथ सुरू होईल"</string>
     <string name="bluetooth_disconnect_title" msgid="7675271355910637528">"डिव्हाइस डिस्‍कनेक्‍ट करायचे?"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"कृपया प्रतीक्षा करा…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"तारीख आणि वेळ"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"तारीख, वेळ, टाइम झोन आणि फॉरमॅट सेट करा"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"आपोआप तारीख आणि वेळ"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"नेटवर्कने-प्रदान केलेली वेळ वापरा"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"आपोआप टाइम झोन"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"नेटवर्कने-प्रदान केलेला टाइम झोन वापरा"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"वेळ आपोआप सेट करा"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"टाइमझोन आपोआप सेट करा"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"२४‑तास फॉरमॅट"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"२४-तास फॉरमॅट वापरा"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"वेळ"</string>

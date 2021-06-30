@@ -29,6 +29,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="array" name="config_top_level_injection_categories"/>
       <item type="array" name="config_unbonded_device_filter_allowlist"/>
       <item type="array" name="premium_sms_access_values"/>
+      <item type="array" name="recent_apps_ignored_packages"/>
       <item type="array" name="wifi_ap_band"/>
       <item type="array" name="wifi_ap_band_config_2G_only"/>
       <item type="array" name="wifi_ap_band_config_full"/>
@@ -65,6 +66,14 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="bool" name="config_top_level_enable_chevrons"/>
       <item type="bool" name="config_top_level_injection_background_always_use_default"/>
       <item type="bool" name="config_top_level_injection_enable_summaries"/>
+      <item type="color" name="bluetooth_bonded_device_background"/>
+      <item type="color" name="bluetooth_bonded_device_foreground"/>
+      <item type="color" name="bluetooth_bonded_device_icon_color_checked"/>
+      <item type="color" name="bluetooth_bonded_device_icon_color_unchecked"/>
+      <item type="color" name="bluetooth_bonded_device_off_background_color"/>
+      <item type="color" name="bluetooth_device_icon_color"/>
+      <item type="color" name="bluetooth_disabled_device_background_color"/>
+      <item type="color" name="bluetooth_disabled_device_icon_color"/>
       <item type="color" name="brightness_thumb_inner_ring_color"/>
       <item type="color" name="brightness_thumb_outer_ring_color"/>
       <item type="color" name="car_grey_400_with_disable"/>
@@ -79,7 +88,6 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="color" name="top_level_bluetooth_background"/>
       <item type="color" name="top_level_bluetooth_icon"/>
       <item type="color" name="top_level_date_time_background"/>
-      <item type="color" name="top_level_date_time_icon"/>
       <item type="color" name="top_level_display_background"/>
       <item type="color" name="top_level_display_icon"/>
       <item type="color" name="top_level_icon_default"/>
@@ -89,6 +97,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="color" name="top_level_location_icon"/>
       <item type="color" name="top_level_network_and_internet_background"/>
       <item type="color" name="top_level_network_and_internet_icon"/>
+      <item type="color" name="top_level_notifications_background"/>
+      <item type="color" name="top_level_notifications_icon"/>
       <item type="color" name="top_level_privacy_background"/>
       <item type="color" name="top_level_privacy_icon"/>
       <item type="color" name="top_level_profiles_and_accounts_background"/>
@@ -123,6 +133,12 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="dimen" name="ap_preference_item_icon_margin_end"/>
       <item type="dimen" name="ap_preference_item_padding_end"/>
       <item type="dimen" name="ap_preference_item_padding_start"/>
+      <item type="dimen" name="bluetooth_bonded_device_border_width"/>
+      <item type="dimen" name="bluetooth_bonded_device_button_radius"/>
+      <item type="dimen" name="bluetooth_bonded_device_button_size"/>
+      <item type="dimen" name="bluetooth_bonded_device_foreground_icon_inset"/>
+      <item type="dimen" name="bluetooth_device_foreground_icon_inset"/>
+      <item type="dimen" name="bluetooth_device_icon_size"/>
       <item type="dimen" name="bluetooth_pin_dialog_margin_end"/>
       <item type="dimen" name="bluetooth_pin_dialog_margin_start"/>
       <item type="dimen" name="bluetooth_pin_dialog_section_height"/>
@@ -163,6 +179,11 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="dimen" name="entity_header_inner_margin"/>
       <item type="dimen" name="entity_header_margin_bottom"/>
       <item type="dimen" name="icon_size"/>
+      <item type="dimen" name="multi_action_preference_item_container_padding"/>
+      <item type="dimen" name="multi_action_preference_item_divider_margin_end"/>
+      <item type="dimen" name="multi_action_preference_toggle_button_margin"/>
+      <item type="dimen" name="multi_action_preference_toggle_button_radius"/>
+      <item type="dimen" name="multi_action_preference_toggle_button_size"/>
       <item type="dimen" name="number_picker_text_size"/>
       <item type="dimen" name="opacity_disabled"/>
       <item type="dimen" name="opacity_enabled"/>
@@ -215,6 +236,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="dimen" name="usage_number_text_size"/>
       <item type="dimen" name="usage_pickers_margin_vertical"/>
       <item type="dimen" name="usage_pickers_text_margin_end"/>
+      <item type="drawable" name="bluetooth_bonded_device_rotary_background"/>
       <item type="drawable" name="brightness_seekbar_background"/>
       <item type="drawable" name="brightness_seekbar_track"/>
       <item type="drawable" name="button_ripple_bg"/>
@@ -229,9 +251,16 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_audio_navi"/>
       <item type="drawable" name="ic_backspace"/>
       <item type="drawable" name="ic_block"/>
+      <item type="drawable" name="ic_bluetooth_button"/>
+      <item type="drawable" name="ic_bluetooth_button_unavailable"/>
+      <item type="drawable" name="ic_bluetooth_media"/>
+      <item type="drawable" name="ic_bluetooth_media_unavailable"/>
+      <item type="drawable" name="ic_bluetooth_phone"/>
+      <item type="drawable" name="ic_bluetooth_phone_unavailable"/>
       <item type="drawable" name="ic_brightness_knob"/>
       <item type="drawable" name="ic_brightness_knob_stretched"/>
       <item type="drawable" name="ic_brightness_knob_with_focus"/>
+      <item type="drawable" name="ic_car"/>
       <item type="drawable" name="ic_cellular_data"/>
       <item type="drawable" name="ic_check"/>
       <item type="drawable" name="ic_check_box"/>
@@ -240,6 +269,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_check_circle"/>
       <item type="drawable" name="ic_chevron_right"/>
       <item type="drawable" name="ic_close"/>
+      <item type="drawable" name="ic_date_time"/>
       <item type="drawable" name="ic_delete"/>
       <item type="drawable" name="ic_edit"/>
       <item type="drawable" name="ic_find_device_disabled"/>
@@ -284,10 +314,10 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_top_level_applications"/>
       <item type="drawable" name="ic_top_level_assistant_and_voice"/>
       <item type="drawable" name="ic_top_level_bluetooth"/>
-      <item type="drawable" name="ic_top_level_date_time"/>
       <item type="drawable" name="ic_top_level_display"/>
       <item type="drawable" name="ic_top_level_location"/>
       <item type="drawable" name="ic_top_level_network_and_internet"/>
+      <item type="drawable" name="ic_top_level_notifications"/>
       <item type="drawable" name="ic_top_level_privacy"/>
       <item type="drawable" name="ic_top_level_profiles_and_accounts"/>
       <item type="drawable" name="ic_top_level_security"/>
@@ -373,6 +403,13 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="id" name="managed_device"/>
       <item type="id" name="message"/>
       <item type="id" name="message_below_pin"/>
+      <item type="id" name="multi_action_preference_divider"/>
+      <item type="id" name="multi_action_preference_first_action_container"/>
+      <item type="id" name="multi_action_preference_item_container1"/>
+      <item type="id" name="multi_action_preference_item_container2"/>
+      <item type="id" name="multi_action_preference_item_container3"/>
+      <item type="id" name="multi_action_preference_second_action_container"/>
+      <item type="id" name="multi_action_preference_toggle_button"/>
       <item type="id" name="pairing_caption"/>
       <item type="id" name="pairing_code_message"/>
       <item type="id" name="pairing_subhead"/>
@@ -429,6 +466,10 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="integer" name="millisecond_app_data_update_interval"/>
       <item type="integer" name="millisecond_max_app_load_wait_interval"/>
       <item type="integer" name="quick_setting_column_count"/>
+      <item type="integer" name="recent_apps_days_threshold"/>
+      <item type="integer" name="recent_apps_max_count"/>
+      <item type="integer" name="recent_notifications_apps_list_count"/>
+      <item type="integer" name="recent_notifications_days_threshold"/>
       <item type="integer" name="user_switcher_num_col"/>
       <item type="layout" name="action_buttons_preference"/>
       <item type="layout" name="bluetooth_pin_confirm"/>
@@ -450,6 +491,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="layout" name="entity_header_preference"/>
       <item type="layout" name="fallback_home_finishing_boot"/>
       <item type="layout" name="logical_preference_group"/>
+      <item type="layout" name="multi_action_preference"/>
+      <item type="layout" name="multi_action_preference_toggle_button"/>
       <item type="layout" name="pin_pad_view"/>
       <item type="layout" name="preference_dialog_password_edittext"/>
       <item type="layout" name="preference_settings_icon"/>
@@ -682,6 +725,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="date_time_set_time_title"/>
       <item type="string" name="date_time_set_timezone"/>
       <item type="string" name="date_time_set_timezone_title"/>
+      <item type="string" name="default_admin_support_msg"/>
       <item type="string" name="default_app_selected_app"/>
       <item type="string" name="default_applications"/>
       <item type="string" name="default_network_name_summary"/>
@@ -760,13 +804,14 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="hardware_info_summary"/>
       <item type="string" name="hardware_revision"/>
       <item type="string" name="help_uri_wifi_scanning_required"/>
+      <item type="string" name="help_url_action_disabled_by_it_admin"/>
       <item type="string" name="hide_system"/>
       <item type="string" name="hide_system_apps"/>
       <item type="string" name="hk_AboutSettingsActivity"/>
       <item type="string" name="hk_AddWifiActivity"/>
       <item type="string" name="hk_ApplicationsDetailsActivity"/>
       <item type="string" name="hk_ApplicationsSettingsActivity"/>
-      <item type="string" name="hk_AppsAndNotificationsActivity"/>
+      <item type="string" name="hk_AppsActivity"/>
       <item type="string" name="hk_AssistantAndVoiceSettingsActivity"/>
       <item type="string" name="hk_BluetoothDevicePickerActivity"/>
       <item type="string" name="hk_BluetoothSettingsActivity"/>
@@ -787,6 +832,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="hk_ModifySystemSettingsActivity"/>
       <item type="string" name="hk_NetworkAndInternetActivity"/>
       <item type="string" name="hk_NotificationAccessActivity"/>
+      <item type="string" name="hk_NotificationsActivity"/>
       <item type="string" name="hk_PremiumSmsAccessActivity"/>
       <item type="string" name="hk_PrivacySettingsActivity"/>
       <item type="string" name="hk_ProfileDetailsActivity"/>
@@ -928,6 +974,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="one"/>
       <item type="string" name="outgoing_calls_permission_title"/>
       <item type="string" name="permissions_label"/>
+      <item type="string" name="power_component_disabled"/>
       <item type="string" name="premium_sms_access_description"/>
       <item type="string" name="premium_sms_access_title"/>
       <item type="string" name="privacy_location_summary"/>
@@ -1232,6 +1279,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="wifi_wakeup"/>
       <item type="string" name="wifi_wakeup_summary"/>
       <item type="string" name="wifi_wakeup_summary_no_location"/>
+      <item type="string" name="work_policy_privacy_settings"/>
+      <item type="string" name="work_policy_privacy_settings_summary"/>
       <item type="string" name="zero"/>
       <item type="string" name="zone_auto"/>
       <item type="string" name="zone_list_menu_sort_alphabetically"/>
@@ -1260,7 +1309,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="xml" name="application_details_fragment"/>
       <item type="xml" name="application_launch_settings_fragment"/>
       <item type="xml" name="applications_settings_fragment"/>
-      <item type="xml" name="apps_and_notifications_fragment"/>
+      <item type="xml" name="apps_fragment"/>
       <item type="xml" name="assistant_and_voice_fragment"/>
       <item type="xml" name="bluetooth_device_details_fragment"/>
       <item type="xml" name="bluetooth_device_picker_fragment"/>
@@ -1297,6 +1346,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="xml" name="modify_system_settings_fragment"/>
       <item type="xml" name="network_and_internet_fragment"/>
       <item type="xml" name="notification_access_fragment"/>
+      <item type="xml" name="notifications_fragment"/>
       <item type="xml" name="preferred_engine_fragment"/>
       <item type="xml" name="premium_sms_access_fragment"/>
       <item type="xml" name="privacy_settings_fragment"/>

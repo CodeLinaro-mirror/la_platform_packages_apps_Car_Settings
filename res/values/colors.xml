@@ -25,7 +25,7 @@
     <color name="top_level_units_icon">@color/top_level_icon_default</color>
     <color name="top_level_location_icon">@color/top_level_icon_default</color>
     <color name="top_level_applications_icon">@color/top_level_icon_default</color>
-    <color name="top_level_date_time_icon">@color/top_level_icon_default</color>
+    <color name="top_level_notifications_icon">@color/top_level_icon_default</color>
     <color name="top_level_profiles_and_accounts_icon">@color/top_level_icon_default</color>
     <color name="top_level_privacy_icon">@color/top_level_icon_default</color>
     <color name="top_level_storage_icon">@color/top_level_icon_default</color>
@@ -37,4 +37,12 @@
 
     <!-- Default background color for injected top-level icons -->
     <color name="top_level_injected_default_background">#4285F4</color>
+
+    <!-- Bluetooth -->
+    <color name="bluetooth_bonded_device_off_background_color">#626262</color>
+    <color name="bluetooth_bonded_device_icon_color_checked">@android:color/black</color>
+    <color name="bluetooth_bonded_device_icon_color_unchecked">@android:color/white</color>
+    <color name="bluetooth_disabled_device_background_color">@android:color/black</color>
+    <color name="bluetooth_disabled_device_icon_color">#75FFFFFF</color>
+    <color name="bluetooth_device_icon_color">@android:color/white</color>
 </resources>
