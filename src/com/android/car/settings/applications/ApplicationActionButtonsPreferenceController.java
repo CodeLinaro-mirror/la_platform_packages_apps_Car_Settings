@@ -21,6 +21,7 @@ import static android.app.Activity.RESULT_OK;
 import static com.android.car.settings.applications.ApplicationsUtils.isKeepEnabledPackage;
 import static com.android.car.settings.applications.ApplicationsUtils.isProfileOrDeviceOwner;
 import static com.android.car.settings.common.ActionButtonsPreference.ActionButtons;
+import static com.android.car.settings.enterprise.ActionDisabledByAdminDialogFragment.DISABLED_BY_ADMIN_CONFIRM_DIALOG_TAG;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -58,6 +59,7 @@ import com.android.settingslib.Utils;
 import com.android.settingslib.applications.ApplicationsState;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -84,15 +86,18 @@ public class ApplicationActionButtonsPreferenceController extends
     private static final Logger LOG = new Logger(
             ApplicationActionButtonsPreferenceController.class);
 
+    private static final List<String> FORCE_STOP_RESTRICTIONS =
+            Arrays.asList(UserManager.DISALLOW_APPS_CONTROL);
+    private static final List<String> UNINSTALL_RESTRICTIONS =
+            Arrays.asList(UserManager.DISALLOW_UNINSTALL_APPS, UserManager.DISALLOW_APPS_CONTROL);
+
     @VisibleForTesting
     static final String DISABLE_CONFIRM_DIALOG_TAG =
             "com.android.car.settings.applications.DisableConfirmDialog";
     @VisibleForTesting
     static final String FORCE_STOP_CONFIRM_DIALOG_TAG =
             "com.android.car.settings.applications.ForceStopConfirmDialog";
-    @VisibleForTesting
-    static final String DISABLED_BY_ADMIN_CONFIRM_DIALOG_TAG =
-            "com.android.car.settings.applications.DisabledByAdminConfirmDialog";
+
     @VisibleForTesting
     static final int UNINSTALL_REQUEST_CODE = 10;
 
@@ -123,7 +128,7 @@ public class ApplicationActionButtonsPreferenceController extends
             };
 
     private final View.OnClickListener mForceStopClickListener = i -> {
-        if (ignoreActionBecauseItsDisabledByAdmin()) return;
+        if (ignoreActionBecauseItsDisabledByAdmin(FORCE_STOP_RESTRICTIONS)) return;
         ConfirmationDialogFragment dialogFragment =
                 new ConfirmationDialogFragment.Builder(getContext())
                         .setTitle(R.string.force_stop_dialog_title)
@@ -174,7 +179,7 @@ public class ApplicationActionButtonsPreferenceController extends
     };
 
     private final View.OnClickListener mUninstallClickListener = i -> {
-        if (ignoreActionBecauseItsDisabledByAdmin()) return;
+        if (ignoreActionBecauseItsDisabledByAdmin(UNINSTALL_RESTRICTIONS)) return;
         Uri packageUri = Uri.parse("package:" + mPackageName);
         Intent uninstallIntent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
         uninstallIntent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
@@ -540,8 +545,8 @@ public class ApplicationActionButtonsPreferenceController extends
         }
     }
 
-    private boolean ignoreActionBecauseItsDisabledByAdmin() {
-        if (mRestriction == null) return false;
+    private boolean ignoreActionBecauseItsDisabledByAdmin(List<String> restrictions) {
+        if (mRestriction == null || !restrictions.contains(mRestriction)) return false;
 
         LOG.d("Ignoring action because of " + mRestriction);
         getFragmentController().showDialog(ActionDisabledByAdminDialogFragment.newInstance(

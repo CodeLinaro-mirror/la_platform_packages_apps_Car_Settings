@@ -71,13 +71,13 @@
     <string name="cycle_reset_day_of_month_picker_positive_button" msgid="6919858010423269305">"ಹೊಂದಿಸಿ"</string>
     <string name="data_warning_limit_title" msgid="4950868241810828601">"ಡೇಟಾ ಎಚ್ಚರಿಕೆ ಮತ್ತು ಮಿತಿ"</string>
     <string name="app_usage_cycle" msgid="8445927080245880296">"ಆ್ಯಪ್‌ ಡೇಟಾ ಬಳಕೆ ಆವರ್ತನೆ"</string>
-    <string name="set_data_warning" msgid="6628236612886588097">"ಡೇಟಾ ಎಚ್ಚರಿಕೆಯನ್ನು ಹೊಂದಿಸಿ"</string>
+    <string name="set_data_warning" msgid="6628236612886588097">"ಡೇಟಾ ಎಚ್ಚರಿಕೆಯನ್ನು ಸೆಟ್ ಮಾಡಿ"</string>
     <string name="data_warning" msgid="116776633806885370">"ಡೇಟಾ ಎಚ್ಚರಿಕೆ"</string>
     <string name="set_data_limit" msgid="7136539812414500084">"ಡೇಟಾ ಮಿತಿ ಹೊಂದಿಸಿ"</string>
     <string name="data_limit" msgid="227338836292511425">"ಡೇಟಾ ಮಿತಿ"</string>
     <string name="data_usage_limit_dialog_title" msgid="1864716658371721883">"ಡೇಟಾ ಬಳಕೆಯನ್ನು ಮಿತಿಗೊಳಿಸುವಿಕೆ"</string>
     <string name="data_usage_limit_dialog_mobile" msgid="3633960011913085089">"ನೀವು ಹೊಂದಿಸಿರುವ ಮಿತಿಯನ್ನು ತಲುಪಿದಾಗ ನಿಮ್ಮ ವಾಹನದ ಹೆಡ್ ಯೂನಿಟ್ ಒಮ್ಮೆ ನಿಮ್ಮ ಮೊಬೈಲ್ ಡೇಟಾವನ್ನು ಆಫ್ ಮಾಡುತ್ತದೆ.\n\n ಡೇಟಾ ಬಳಕೆಯನ್ನು ಹೆಡ್ ಯೂನಿಟ್ ಮೂಲಕ ಅಳೆಯಲಾಗುವ ಕಾರಣ ಮತ್ತು ನಿಮ್ಮ ವಾಹಕವು ಬಳಕೆಯನ್ನು ಬೇರೆ ರೀತಿಯಲ್ಲಿ ಪರಿಗಣಿಸಬಹುದಾದ ಕಾರಣ, ಸುರಕ್ಷಿತ ಮಿತಿಯನ್ನು ಹೊಂದಿಸುವುದು ಸೂಕ್ತ."</string>
-    <string name="data_usage_warning_editor_title" msgid="2041517150169038813">"ಡೇಟಾ ಬಳಕೆ ಎಚ್ಚರಿಕೆಯನ್ನು ಹೊಂದಿಸಿ"</string>
+    <string name="data_usage_warning_editor_title" msgid="2041517150169038813">"ಡೇಟಾ ಬಳಕೆ ಎಚ್ಚರಿಕೆಯನ್ನು ಸೆಟ್ ಮಾಡಿ"</string>
     <string name="data_usage_limit_editor_title" msgid="133468242379286689">"ಡೇಟಾ ಬಳಕೆ ಮಿತಿಯನ್ನು ಹೊಂದಿಸಿ"</string>
     <string name="usage_bytes_threshold_picker_positive_button" msgid="4625479840977965519">"ಹೊಂದಿಸಿ"</string>
     <string name="network_and_internet_oem_network_title" msgid="6436902713696212250">"OEM ನೆಟ್‌ವರ್ಕ್"</string>
@@ -203,7 +203,7 @@
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ಬ್ಲೂಟೂತ್ ಜೋಡಣೆ ಕೋಡ್"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"ಅಕ್ಷರಗಳು ಅಥವಾ ಚಿಹ್ನೆಗಳನ್ನು ಪಿನ್‌ ಹೊಂದಿದೆ"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"ಜೋಡಣೆ ಕೋಡ್‌ ಟೈಪ್‌ ಮಾಡಿ ತದನಂತರ ರಿಟರ್ನ್‌ ಅಥವಾ ಎಂಟರ್‌ ಒತ್ತಿ."</string>
-    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> ಜೊತೆ ಜೋಡಿಸುವುದೇ?"</string>
+    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> ಜೊತೆ ಜೋಡಿಸಬೇಕೇ?"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"ನಿಮ್ಮ ಸಂಪರ್ಕಗಳು ಹಾಗೂ ಕರೆ ಇತಿಹಾಸವನ್ನು ಪ್ರವೇಶಿಸಲು <xliff:g id="DEVICE_NAME">%1$s</xliff:g> ಸಾಧನವನ್ನು ಅನುಮತಿಸಿ"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"ನಿಮಗೆ ಇತರ ಸಾಧನದಲ್ಲಿ ಈ ಪಿನ್‌ ಟೈಪ್‌ ಮಾಡುವ ಅಗತ್ಯವಿರಬಹುದು."</string>
     <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"ನಿಮಗೆ ಇತರ ಸಾಧನದಲ್ಲಿ ಈ ಪಾಸ್‌ಕೀಯನ್ನು ಟೈಪ್‌ ಮಾಡುವ ಅಗತ್ಯವಿರಬಹುದು."</string>
@@ -430,7 +430,7 @@
     <string name="show_dev_on" msgid="5339077400040834808">"ಇದೀಗ ನೀವು ಡೆವಲಪರ್‌!"</string>
     <string name="show_dev_already" msgid="1678087328973865736">"ಅಗತ್ಯವಿಲ್ಲ, ನೀವು ಈಗಾಗಲೇ ಡೆವಲಪರ್‌ ಆಗಿರುವಿರಿ."</string>
     <string name="developer_options_settings" msgid="1530739225109118480">"ಡೆವಲಪರ್ ಆಯ್ಕೆಗಳು"</string>
-    <string name="reset_options_title" msgid="4388902952861833420">"ಮರುಹೊಂದಿಸುವ ಆಯ್ಕೆಗಳು"</string>
+    <string name="reset_options_title" msgid="4388902952861833420">"ರೀಸೆಟ್ ಆಯ್ಕೆಗಳು"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"ನೆಟ್‌ವರ್ಕ್, ಆ್ಯಪ್‌ಗಳು ಅಥವಾ ಸಾಧನಗಳ ಮರುಹೊಂದಿಸುವಿಕೆ"</string>
     <string name="reset_network_title" msgid="1284233059990797263">"ನೆಟ್‌ವರ್ಕ್‌ ಮರುಹೊಂದಿಸಿ"</string>
     <string name="reset_network_desc" msgid="602381374544634925">"ಇದು ನೆಟ್‌ವರ್ಕ್‌ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಎಲ್ಲವನ್ನೂ ಮರುಹೊಂದಿಸುತ್ತದೆ, ಅವುಗಳಲ್ಲಿ ಈ ಮುಂದಿನವುಗಳನ್ನು ಒಳಗೊಂಡಿರುತ್ತದೆ:"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"ನಿರೀಕ್ಷಿಸಿ..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"ದಿನಾಂಕ ಮತ್ತು ಸಮಯ"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"ದಿನಾಂಕ, ಸಮಯ, ಸಮಯದ ವಲಯದ, ಮತ್ತು ಫರ್ಮ್ಯಾಟ್‌ಗಳನ್ನು ಹೊಂದಿಸಿ"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"ಸ್ವಯಂಚಾಲಿತ ದಿನಾಂಕ ಮತ್ತು ಸಮಯ"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"ನೆಟ್‌ವರ್ಕ್‌ ಒದಗಿಸಿದ ಸಮಯವನ್ನು ಬಳಸಿ"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"ಸ್ವಯಂಚಾಲಿತ ಸಮಯ ವಲಯ"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"ನೆಟ್‌ವರ್ಕ್‌ ಒದಗಿಸಿದ ಸಮಯ ವಲಯವನ್ನು ಬಳಸಿ"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"ಸಮಯ - ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೆಟ್‌ಮಾಡಿ"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"ಸಮಯವಲಯ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸೆಟ್‌ಮಾಡಿ"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24‑ಗಂಟೆಯ ಫಾರ್ಮ್ಯಾಟ್‌"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"24-ಗಂಟೆಯ ಫಾರ್ಮ್ಯಾಟ್‌‌ ಬಳಸಿ"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"ಸಮಯ"</string>
@@ -550,7 +548,7 @@
     <string name="no_accounts_added" msgid="5148163140691096055">"ಯಾವುದೇ ಖಾತೆಗಳನ್ನು ಸೇರಿಸಿಲ್ಲ"</string>
     <string name="account_list_title" msgid="7631588514613843065">"<xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g> ಅವರಿಗಾಗಿ ಖಾತೆಗಳು"</string>
     <string name="account_auto_sync_title" msgid="3238816995364191432">"ಡೇಟಾವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸಿಂಕ್ ಮಾಡಿ"</string>
-    <string name="account_auto_sync_summary" msgid="6963837893148304128">"ಆ್ಯಪ್‌ಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಡೇಟಾವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಲಿ"</string>
+    <string name="account_auto_sync_summary" msgid="6963837893148304128">"ಆ್ಯಪ್‌ಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಡೇಟಾವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಲು ಬಿಡಿ"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="6027487764261344033">"ಸ್ವಯಂ-ಸಿಂಕ್‌ ಡೇಟಾ ಆನ್‌‌ಮಾಡುವುದೇ?"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="2770233931307606956">"ವೆಬ್‌ನಲ್ಲಿ ನಿಮ್ಮ ಖಾತೆಗಳಿಗೆ ಮಾಡಲಾದ ಯಾವುದೇ ಬದಲಾವಣೆಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ನಿಮ್ಮ ಸಾಧನಕ್ಕೆ ನಕಲಿಸಲಾಗುತ್ತದೆ. \n\nಫೋನ್‌ನಲ್ಲಿ ನೀವು ಮಾಡುವ ಯಾವುದೇ ಬದಲಾವಣೆಗಳನ್ನು ಕೆಲವು ಖಾತೆಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ವೆಬ್‌ಗೆ ನಕಲಿಸುತ್ತವೆ. Google ಖಾತೆ ಕಾರ್ಯನಿರ್ವಹಿಸುವ ರೀತಿ ಇದು."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="1235955038330202536">"ಸ್ವಯಂ-ಸಿಂಕ್‌ ಡೇಟಾ ಆಫ್‌ ಮಾಡುವುದೇ?"</string>

@@ -66,7 +66,7 @@
     <string name="launch_manage_plan_text" msgid="906657488611815787">"Преглед на плана"</string>
     <string name="app_data_usage" msgid="3878609885080232877">"Пренос на данни от прилож."</string>
     <string name="data_usage_app_restricted" msgid="4570970078120010951">"ограничено"</string>
-    <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"Дата на възстановяване на цикъла за използване"</string>
+    <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"Дата на нулиране на цикъла за използване"</string>
     <string name="cycle_reset_day_of_month_picker_subtitle" msgid="5361061448258189846">"Дата от всеки месец:"</string>
     <string name="cycle_reset_day_of_month_picker_positive_button" msgid="6919858010423269305">"Задаване"</string>
     <string name="data_warning_limit_title" msgid="4950868241810828601">"Предупреждение и лимит за данните"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Моля, изчакайте..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Дата и час"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Задаване на дата, час, часова зона и формати"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"Автоматична дата и час"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"Използване на часа, предоставен от мрежата"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"Автоматична часова зона"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"Използване на часовата зона, предоставена от мрежата"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Автоматично задаване на часа"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"Авт. задаване на часовата зона"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24-часов формат"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Използване на 24-часов формат"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Час"</string>

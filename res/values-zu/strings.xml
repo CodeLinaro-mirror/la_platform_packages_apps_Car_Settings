@@ -391,7 +391,7 @@
     <string name="system_advanced_summary" msgid="5833643795981791953">"Mayelana, ulwazi lwezomthetho, setha kabusha, nokuningi"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Inguqulo ye-Android"</string>
     <string name="security_patch" msgid="4794276590178386903">"Ileveli yokuvikeleka ye-Android"</string>
-    <string name="hardware_info" msgid="3973165746261507658">"Imodeli nezingxenyekazi zekhompuyutha"</string>
+    <string name="hardware_info" msgid="3973165746261507658">"Imodeli nezingxenyekazi zekhompyutha"</string>
     <string name="hardware_info_summary" msgid="8262576443254075921">"Imodeli: <xliff:g id="MODEL">%1$s</xliff:g>"</string>
     <string name="baseband_version" msgid="2370088062235041897">"Inguqulo ye-Baseband"</string>
     <string name="kernel_version" msgid="7327212934187011508">"Inguqulo ye-Kernel"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Sicela ulinde..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Idethi nesikhathi"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Setha idethi, isikhathi, umkhwawulo wesikhathi namafomethi"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"Idethi nesikhathi ezizenzakalelayo"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"Sebenzisa isikhathi esinikeziwe senethiwekhi"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"Umkhawulo wesikhathi ozenzakalelayo"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"Sebenzisa umkhawulo wesikhathi esinikeziwe senethiwekhi"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Setha isikhathi ngokuzenzekelayo"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"Setha izoni yesikhathi ngokuzenzekelayo"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24‑ihora ngefomethi"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Sebenzisa ifomethi ye-24 amahora"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Isikhathi"</string>

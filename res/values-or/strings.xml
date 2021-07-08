@@ -195,7 +195,7 @@
     <string name="bluetooth_ask_enablement_and_discovery_no_name" msgid="907153034209916282">"ଏକ ଆପ୍ ବ୍ଲୁଟୁଥ୍ ଚାଲୁ କରିବା ପାଇଁ ଚାହୁଁଛି ଏବଂ <xliff:g id="TIMEOUT">%1$d</xliff:g> ସେକେଣ୍ଡ ପାଇଁ ଆପଣଙ୍କର ହେଡୟୁନିଟ୍‌କୁ ଅନ୍ୟ ଡିଭାଇସ୍‌‌ଗୁଡିକରେ ଦେଖାଇବା ପାଇଁ ଚାହୁଁଛି।"</string>
     <string name="bluetooth_state_switch_summary" msgid="171929910916432266">"ଅନ୍ୟ ଡିଭାଇସକୁ %1$s ଭାବରେ ଦେଖାଯାଏ"</string>
     <string name="bluetooth_my_devices" msgid="6352010339607939612">"ମୋ ଡିଭାଇସ୍"</string>
-    <string name="bluetooth_previously_connected" msgid="5206229557831180323">"ପୂର୍ବରୁ ସଂଯୋଗ କରାଯାଇଥିବା"</string>
+    <string name="bluetooth_previously_connected" msgid="5206229557831180323">"ପୂର୍ବରୁ ସଂଯୋଗ ହୋ‍ଇଛି"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s ସଂଯୋଗ କରାଯାଇଛି"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s ବିଚ୍ଛିନ୍ନ କରାଯାଇଛି"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"ବ୍ଲୁଟୂଥ୍‍ ପେୟାର୍ କରିବା ପାଇଁ ଅନୁରୋଧ"</string>
@@ -408,8 +408,8 @@
     <string name="legal_information" msgid="1838443759229784762">"ଆଇନ ସୂଚନା"</string>
     <string name="contributors_title" msgid="7698463793409916113">"ଅବଦାନକାରୀ"</string>
     <string name="manual" msgid="4819839169843240804">"ମାନୁଆଲ୍‌"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"ରେଗୁଲେଟରୀ ଲେବଲ୍ସ"</string>
-    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"ସୁରକ୍ଷା ଓ ନିୟାମକ ପୁସ୍ତିକା"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"ନିୟାମକ ଲେବଲଗୁଡ଼ିକ"</string>
+    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"ସୁରକ୍ଷା ଓ ନିୟାମକ ମାନୁଆଲ୍"</string>
     <string name="copyright_title" msgid="4220237202917417876">"କପୀରାଇଟ୍‌"</string>
     <string name="license_title" msgid="936705938435249965">"ଲାଇସେନ୍ସ"</string>
     <string name="terms_title" msgid="5201471373602628765">"ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"ତାରିଖ ଓ ସମୟ"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"ତାରିଖ, ସମୟ, ସମୟ ଅଞ୍ଚଳ, ଓ ଫର୍ମାଟ୍‌ ସେଟ୍‌ କରନ୍ତୁ"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"ଅଟୋମେଟିକ୍ ତାରିଖ ଓ ସମୟ"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"ନେଟ୍‌ୱର୍କ ପ୍ରଦତ୍ତ ସମୟ ବ୍ୟବହାର କରନ୍ତୁ"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"ସ୍ୱଚାଳିତ ସମୟ କ୍ଷେତ୍ର"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"ନେଟ୍‌ୱର୍କ ପ୍ରଦତ୍ତ ସମୟ କ୍ଷେତ୍ର ବ୍ୟବହାର କରନ୍ତୁ"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"ସ୍ୱଚାଳିତ ଭାବେ ସମୟ ସେଟ୍ କରନ୍ତୁ"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"ସ୍ୱଚାଳିତ ଭାବେ ଟାଇମ ଜୋନ ସେଟ କର"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24‑ଘଣ୍ଟିଆ ଫର୍ମାଟ୍‌"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"24-ଘଣ୍ଟିଆ ଫର୍ମାଟ ବ୍ୟବହାର କରନ୍ତୁ"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"ସମୟ"</string>
@@ -611,7 +609,7 @@
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"ଏକ ଅନଲକ ପାଟର୍ନ ଆଙ୍କନ୍ତୁ"</string>
     <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"ହୋଇଯିବା ପରେ ଆଙ୍ଗୁଠି କାଢ଼ିଦିଅନ୍ତୁ"</string>
     <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"ପାଟର୍ନ ରେକର୍ଡ ହେଲା"</string>
-    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"ନିଶ୍ଚିତ କରିବାକୁ ପାଟର୍ନ ପୁନଃ ଅଙ୍କନ କରନ୍ତୁ"</string>
+    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"ସୁନିଶ୍ଚିତ କରିବାକୁ ପାଟର୍ନ ପୁଣି ଡ୍ର କରନ୍ତୁ"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"ଅତିକମରେ 4ଟି ଡଟ୍ ଯୋଗ କରନ୍ତୁ। ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।"</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"ଭୁଲ ପାଟର୍ନ"</string>
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"ଏକ ଅନ୍‌ଲକ୍‌ ପାଟର୍ନ କିପରି ଅଙ୍କାଯିବ"</string>

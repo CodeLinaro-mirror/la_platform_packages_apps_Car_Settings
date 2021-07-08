@@ -28,8 +28,8 @@
     <string name="network_and_internet" msgid="4229023630498537530">"ネットワークとインターネット"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"モバイル ネットワーク"</string>
     <plurals name="mobile_network_summary_count" formatted="false" msgid="6917348330386831454">
-      <item quantity="other">SIM: <xliff:g id="COUNT_1">%1$d</xliff:g> 枚</item>
-      <item quantity="one">SIM: <xliff:g id="COUNT_0">%1$d</xliff:g> 枚</item>
+      <item quantity="other">SIM: <xliff:g id="COUNT_1">%1$d</xliff:g> つ</item>
+      <item quantity="one">SIM: <xliff:g id="COUNT_0">%1$d</xliff:g> つ</item>
     </plurals>
     <string name="mobile_network_active_sim" msgid="1901674954229832811">"有効 / SIM"</string>
     <string name="mobile_network_inactive_sim" msgid="3644984830926224318">"無効 / SIM"</string>
@@ -311,8 +311,8 @@
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"リクエストされた権限はありません"</string>
     <string name="unused_apps" msgid="648471933781010395">"使用されていないアプリ"</string>
     <plurals name="unused_apps_summary" formatted="false" msgid="6410080383909014362">
-      <item quantity="other">使用していないアプリ: <xliff:g id="COUNT_1">%d</xliff:g> 個</item>
-      <item quantity="one">使用していないアプリ: <xliff:g id="COUNT_0">%d</xliff:g> 個</item>
+      <item quantity="other">使用されていないアプリ: <xliff:g id="COUNT_1">%d</xliff:g> 個</item>
+      <item quantity="one">使用されていないアプリ: <xliff:g id="COUNT_0">%d</xliff:g> 個</item>
     </plurals>
     <string name="unused_apps_switch" msgid="4433958286200341563">"権限を削除して空き容量を増やす"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s（内部ストレージ）"</string>
@@ -364,7 +364,7 @@
     <string name="hide_system" msgid="8845453295584638040">"システムアプリを表示しない"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"システムアプリを表示しない"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"システム設定の変更"</string>
-    <string name="modify_system_settings_description" msgid="5295023124419592452">"この権限により、アプリはシステム設定を変更できるようになります。"</string>
+    <string name="modify_system_settings_description" msgid="5295023124419592452">"この権限により、アプリはシステム設定を変更できます。"</string>
     <string name="notification_access_title" msgid="1467340098885813473">"通知へのアクセス"</string>
     <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"通知へのアクセス を <xliff:g id="SERVICE">%1$s</xliff:g> に許可しますか？"</string>
     <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> がすべての通知を読み取れるようになります。通知には、連絡先名などの個人情報や受信したメッセージの本文も含まれます。また、通知を非表示にしたり、通知内の操作ボタンをタップしたりすることも許可されます。\n\nこれにより、アプリがサイレント モード設定を切り替えたり、関連する設定を変更したりすることも可能になります。"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"お待ちください..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"日付と時刻"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"日付、時刻、タイムゾーン、フォーマットを設定する"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"日付と時刻を自動設定"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"ネットワークから提供された時刻を使用する"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"タイムゾーンを自動設定する"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"ネットワークから提供されたタイムゾーンを使用する"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"日時を自動的に設定"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"タイムゾーンを自動的に設定"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24 時間表示"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"24 時間表示"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"時刻"</string>

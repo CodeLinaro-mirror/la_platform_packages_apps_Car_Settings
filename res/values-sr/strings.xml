@@ -131,7 +131,7 @@
     <string name="wifi_gateway" msgid="4975799192860431013">"Мрежни пролаз"</string>
     <string name="wifi_preferences_title" msgid="772788844257225510">"Подешавања Wi‑Fi-ја"</string>
     <string name="wifi_wakeup" msgid="7451825226044542000">"Аутоматски укључи Wi‑Fi"</string>
-    <string name="wifi_wakeup_summary" msgid="7237521683331291414">"Wi‑Fi ће се поново укључити у близини сачуваних мрежа високог квалитета, као што је кућна мрежа"</string>
+    <string name="wifi_wakeup_summary" msgid="7237521683331291414">"WiFi ће се поново укључити у  близини сачуваних мрежа високог квалитета, као што је кућна мрежа"</string>
     <string name="wifi_wakeup_summary_no_location" msgid="2821576525488435259">"Није доступно јер је локација искључена. Укључите "<annotation id="link">"локацију"</annotation>"."</string>
     <string name="wifi_settings_scanning_required_title" msgid="2726782203331704928">"Желите ли да укључите WiFi скенирање?"</string>
     <string name="wifi_settings_scanning_required_turn_on" msgid="4464931023377210050">"Укључи"</string>
@@ -424,7 +424,7 @@
     <string name="status_serial_number" msgid="9158889113131907656">"Серијски број"</string>
     <string name="hardware_revision" msgid="5713759927934872874">"Верзија хардвера"</string>
     <string name="regulatory_info_text" msgid="8890339124198005428"></string>
-    <string name="settings_license_activity_title" msgid="8499293744313077709">"Лиценце треће стране"</string>
+    <string name="settings_license_activity_title" msgid="8499293744313077709">"Лиценце трећих страна"</string>
     <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"Дошло је до проблема при учитавању лиценци."</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Учитава се…"</string>
     <plurals name="show_dev_countdown" formatted="false" msgid="2968627665608969405">
@@ -468,10 +468,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Сачекајте…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Датум и време"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Подесите датум, време, временску зону и формате"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"Аутоматски датум и време"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"Користи време мреже"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"Аутоматска временска зона"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"Користи временску зону мреже"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Подеси време аутоматски"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"Подеси врем. зону аутоматски"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24-часовни формат"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Користи 24-часовни формат"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Време"</string>
@@ -556,7 +554,7 @@
     <string name="no_accounts_added" msgid="5148163140691096055">"Ниједан налог није додат"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Налози за корисника <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Аутоматски синхронизуј податке"</string>
-    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Омогући апликацијама да аутоматски освежавају податке"</string>
+    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Омогућава апликацијама да аутоматски освежавају податке"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="6027487764261344033">"Укључити аутом. синх. података?"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="2770233931307606956">"Све промене које унесете на налоге на вебу ће аутоматски бити копиране на уређај.\n\nНеки налози могу и аутоматски да копирају на веб све промене које унесете на телефону. Тако функционише Google налог."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="1235955038330202536">"Искључити аутом. синх. података?"</string>
@@ -616,7 +614,7 @@
     <string name="lockpattern_pattern_confirmed" msgid="5984306638250515385">"Нови шаблон за откључавање"</string>
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"Нацртајте шаблон за откључавање"</string>
     <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"Подигните прст када завршите"</string>
-    <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"Шаблон је снимљен"</string>
+    <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"Шаблон је запамћен"</string>
     <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Поново нацртајте шаблон да бисте потврдили"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"Повежите бар 4 тачке. Пробајте поново."</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"Погрешан шаблон"</string>
