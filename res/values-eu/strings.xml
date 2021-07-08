@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Itxaron, mesedez…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Data eta ordua"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Ezarri data, ordua, ordu-zona eta formatuak"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"Data eta ordu automatikoa"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"Erabili sareak emandako ordua"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"Ordu-zona automatikoa"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"Erabili sareak emandako ordu-zona"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Ezarri ordua automatikoki"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"Ezarri ordu-zona automatikoki"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24 orduko formatua"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Erabili 24 orduko formatua"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Ordua"</string>
@@ -601,7 +599,7 @@
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Saiatu berriro"</string>
     <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Saltatu"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Ezarri pantailaren blokeo bat"</string>
-    <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Aukeratu PIN kode bat"</string>
+    <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Aukeratu PIN bat"</string>
     <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Aukeratu pasahitz bat"</string>
     <string name="current_screen_lock" msgid="637651611145979587">"Ezarrita dagoen pantailaren blokeoa"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Babestuta egoteko, ezarri eredu bat"</string>
@@ -625,7 +623,7 @@
     <string name="lock_settings_enter_pin" msgid="1669172111244633904">"Idatzi PIN kodea"</string>
     <string name="lock_settings_enter_password" msgid="2636669926649496367">"Idatzi pasahitza"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Babestuta egoteko, ezarri PIN bat"</string>
-    <string name="confirm_your_pin_header" msgid="9096581288537156102">"Idatzi berriro PIN kodea"</string>
+    <string name="confirm_your_pin_header" msgid="9096581288537156102">"Idatzi berriro PINa"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PINak lau digitu izan behar ditu gutxienez"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"PIN kodeak ez du balio: gutxienez lau digitu izan behar ditu."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"PINak ez datoz bat"</string>
@@ -644,7 +642,7 @@
     <string name="lockpassword_password_too_long" msgid="7530214940279491291">"Gehienez <xliff:g id="NUMBER">%d</xliff:g> karaktere izan behar ditu"</string>
     <string name="lockpassword_pin_too_long" msgid="62957683396974404">"Gehienez <xliff:g id="NUMBER">%d</xliff:g> digitu izan behar ditu"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"0 eta 9 arteko zenbakiak soilik izan ditzake."</string>
-    <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Gailuaren administratzaileak ez du eman beste PIN kode bat erabiltzeko baimenik"</string>
+    <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Gailuaren administratzaileak ez du eman beste PIN bat erabiltzeko baimenik"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"IKT administratzaileak blokeatu egiten ditu asmatzen errazak diren PIN kodeak. Erabili beste PIN bat."</string>
     <string name="lockpassword_illegal_character" msgid="1984970060523635618">"Ezin da erabili onartzen ez den karaktererik."</string>
     <string name="lockpassword_invalid_password" msgid="1690956113717418430">"Pasahitzak ez du balio; lau karaktere izan behar ditu gutxienez."</string>

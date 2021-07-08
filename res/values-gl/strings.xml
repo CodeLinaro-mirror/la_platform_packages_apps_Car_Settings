@@ -103,7 +103,7 @@
     <string name="wifi_security" msgid="158358046038876532">"Seguranza"</string>
     <string name="wifi_signal_strength" msgid="8507318230553042817">"Intensidade do sinal"</string>
     <string name="wifi_status" msgid="5688013206066543952">"Estado"</string>
-    <string name="wifi_speed" msgid="1650692446731850781">"Velocidade de vinculación"</string>
+    <string name="wifi_speed" msgid="1650692446731850781">"Velocidade de ligazón"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frecuencia"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"Enderezo IP"</string>
     <string name="show_password" msgid="2074628020371139240">"Mostrar contrasinal"</string>
@@ -218,7 +218,7 @@
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"Todos os idiomas"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"Teclado"</string>
     <string name="manage_keyboard" msgid="4045394766282200132">"Xestionar teclados"</string>
-    <string name="text_to_speech_settings" msgid="811985746199507343">"Saída da síntese de voz"</string>
+    <string name="text_to_speech_settings" msgid="811985746199507343">"Saída da conversión de texto a voz"</string>
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"Motor preferido"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"Motor actual"</string>
     <string name="tts_speech_rate" msgid="4512944877291943133">"Velocidade da fala"</string>
@@ -463,10 +463,8 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Agarda..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Data e hora"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Define a data, a hora, o fuso horario e os formatos"</string>
-    <string name="date_time_auto" msgid="3570339569471779767">"Data e hora automáticas"</string>
-    <string name="date_time_auto_summary" msgid="3311706425095342759">"Usa a hora indicada pola rede"</string>
-    <string name="zone_auto" msgid="3701878581920206160">"Fuso horario automático"</string>
-    <string name="zone_auto_summary" msgid="4345856882906981864">"Usa o fuso horario indicado pola rede"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Definir hora automaticamente"</string>
+    <string name="zone_auto" msgid="4174874778459184605">"Fuso horario automático"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"Formato de 24 horas"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Usar formato de 24 horas"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Hora"</string>
