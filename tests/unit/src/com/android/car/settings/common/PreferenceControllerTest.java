@@ -16,6 +16,8 @@
 
 package com.android.car.settings.common;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -41,6 +43,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @RunWith(AndroidJUnit4.class)
 public class PreferenceControllerTest {
 
@@ -51,6 +56,7 @@ public class PreferenceControllerTest {
     private static final CarUxRestrictions BASELINE_UX_RESTRICTIONS =
             new CarUxRestrictions.Builder(/* reqOpt= */ true,
                     CarUxRestrictions.UX_RESTRICTIONS_BASELINE, /* timestamp= */ 0).build();
+    private static final String PREFERENCE_KEY = "key";
 
     private LifecycleOwner mLifecycleOwner;
     private Lifecycle mLifecycle;
@@ -71,7 +77,7 @@ public class PreferenceControllerTest {
 
         MockitoAnnotations.initMocks(this);
 
-        mPreferenceController = new FakePreferenceController(mContext, /* preferenceKey= */ "key",
+        mPreferenceController = new FakePreferenceController(mContext, PREFERENCE_KEY,
                 mFragmentController, BASELINE_UX_RESTRICTIONS);
     }
 
@@ -120,6 +126,49 @@ public class PreferenceControllerTest {
     }
 
     @Test
+    public void shouldApplyUxRestrictions_baseline() {
+        boolean result = mPreferenceController.shouldApplyUxRestrictions(BASELINE_UX_RESTRICTIONS);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    public void shouldApplyUxRestrictions_isNoSetup() {
+        mPreferenceController.setUxRestrictionsIgnoredConfig(false, new HashSet<String>());
+        boolean result = mPreferenceController.shouldApplyUxRestrictions(NO_SETUP_UX_RESTRICTIONS);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void shouldApplyUxRestrictions_containsKey() {
+        Set prefsThatIgnore = new HashSet<String>();
+        prefsThatIgnore.add(PREFERENCE_KEY);
+
+        mPreferenceController.setUxRestrictionsIgnoredConfig(false, prefsThatIgnore);
+        boolean result = mPreferenceController.shouldApplyUxRestrictions(NO_SETUP_UX_RESTRICTIONS);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    public void shouldApplyUxRestrictions_not_containsKey() {
+        Set prefsThatIgnore = new HashSet<String>();
+        prefsThatIgnore.add("unknown key");
+
+        mPreferenceController.setUxRestrictionsIgnoredConfig(false, prefsThatIgnore);
+        boolean result = mPreferenceController.shouldApplyUxRestrictions(NO_SETUP_UX_RESTRICTIONS);
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    public void shouldApplyUxRestrictions_allIgnore() {
+        Set prefsThatIgnore = new HashSet<String>();
+        prefsThatIgnore.add("unknown key");
+
+        mPreferenceController.setUxRestrictionsIgnoredConfig(true, prefsThatIgnore);
+        boolean result = mPreferenceController.shouldApplyUxRestrictions(NO_SETUP_UX_RESTRICTIONS);
+        assertThat(result).isFalse();
+    }
+
+    @Test
     public void onCreate_unrestricted_disabled_preferenceUnrestricted() {
         mPreference.setEnabled(false);
         mPreferenceController.setPreference(mPreference);
@@ -132,6 +181,8 @@ public class PreferenceControllerTest {
             PreferenceController<Preference> {
 
         private int mAvailabilityStatus;
+        private boolean mAllIgnoresUxRestrictions = false;
+        private Set<String> mPreferencesIgnoringUxRestrictions = new HashSet<>();
 
         FakePreferenceController(Context context, String preferenceKey,
                 FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
@@ -151,6 +202,17 @@ public class PreferenceControllerTest {
 
         public void setAvailabilityStatus(int availabilityStatus) {
             mAvailabilityStatus = availabilityStatus;
+        }
+
+        public void setUxRestrictionsIgnoredConfig(boolean allIgnore, Set preferencesThatIgnore) {
+            mAllIgnoresUxRestrictions = allIgnore;
+            mPreferencesIgnoringUxRestrictions = preferencesThatIgnore;
+        }
+
+        @Override
+        protected boolean isUxRestrictionsIgnored(boolean allIgnores, Set prefsThatIgnore) {
+            return super.isUxRestrictionsIgnored(mAllIgnoresUxRestrictions,
+                    mPreferencesIgnoringUxRestrictions);
         }
     }
 }
