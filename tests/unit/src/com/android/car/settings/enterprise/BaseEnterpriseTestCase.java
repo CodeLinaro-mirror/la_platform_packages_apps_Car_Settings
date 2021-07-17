@@ -15,9 +15,13 @@
  */
 package com.android.car.settings.enterprise;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.app.admin.DeviceAdminInfo;
@@ -26,6 +30,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.os.UserManager;
 
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -48,6 +53,11 @@ abstract class BaseEnterpriseTestCase {
     protected final Context mRealContext = ApplicationProvider.getApplicationContext();
     protected final Context mSpiedContext = spy(mRealContext);
 
+    protected final String mPackageName = mRealContext.getPackageName();
+
+    private final PackageManager mRealPm = mRealContext.getPackageManager();
+    protected PackageManager mSpiedPm = spy(mRealPm);
+
     protected final ComponentName mDefaultAdmin =
             new ComponentName(mSpiedContext, DefaultDeviceAdminReceiver.class);
     protected final ComponentName mFancyAdmin =
@@ -60,29 +70,30 @@ abstract class BaseEnterpriseTestCase {
     private DevicePolicyManager mDpm;
 
     @Mock
-    protected PackageManager mPm;
+    private UserManager mUm;
 
     @Before
     public final void setFixtures() throws Exception {
         when(mSpiedContext.getSystemService(DevicePolicyManager.class)).thenReturn(mDpm);
-        when(mSpiedContext.getSystemService(PackageManager.class)).thenReturn(mPm);
-        when(mSpiedContext.getPackageManager()).thenReturn(mPm);
+        when(mSpiedContext.getSystemService(PackageManager.class)).thenReturn(mSpiedPm);
+        when(mSpiedContext.getPackageManager()).thenReturn(mSpiedPm);
+        when(mSpiedContext.getSystemService(UserManager.class)).thenReturn(mUm);
 
-        PackageManager pm = mRealContext.getPackageManager();
-        ActivityInfo defaultInfo = pm.getReceiverInfo(mDefaultAdmin, PackageManager.GET_META_DATA);
+        ActivityInfo defaultInfo = mRealPm.getReceiverInfo(mDefaultAdmin,
+                PackageManager.GET_META_DATA);
         mDefaultDeviceAdminInfo = new DeviceAdminInfo(mRealContext, defaultInfo);
 
-        ActivityInfo fancyInfo = pm.getReceiverInfo(mFancyAdmin, PackageManager.GET_META_DATA);
+        ActivityInfo fancyInfo = mRealPm.getReceiverInfo(mFancyAdmin, PackageManager.GET_META_DATA);
         mFancyDeviceAdminInfo = new DeviceAdminInfo(mRealContext, fancyInfo);
     }
 
     protected final void mockProfileOwner() {
-        mockIsAdminActive();
+        mockActiveAdmin();
         when(mDpm.getProfileOwner()).thenReturn(mDefaultAdmin);
     }
 
     protected final void mockDeviceOwner() {
-        mockIsAdminActive();
+        mockActiveAdmin();
         when(mDpm.getDeviceOwnerComponentOnCallingUser()).thenReturn(mDefaultAdmin);
         when(mDpm.getDeviceOwnerComponentOnAnyUser()).thenReturn(mDefaultAdmin);
     }
@@ -93,8 +104,12 @@ abstract class BaseEnterpriseTestCase {
                 .thenReturn(DevicePolicyManager.DEVICE_OWNER_TYPE_FINANCED);
     }
 
-    protected final void mockIsAdminActive() {
+    protected final void mockActiveAdmin() {
         when(mDpm.isAdminActive(mDefaultAdmin)).thenReturn(true);
+    }
+
+    protected final void mockInactiveAdmin() {
+        when(mDpm.isAdminActive(mDefaultAdmin)).thenReturn(false);
     }
 
     protected final void mockActiveAdmin(ComponentName admin) {
@@ -106,10 +121,34 @@ abstract class BaseEnterpriseTestCase {
     }
 
     protected final void mockHasDeviceAdminFeature() {
-        when(mPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN)).thenReturn(true);
+        when(mSpiedPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN)).thenReturn(true);
     }
 
     protected final void mockNoDeviceAdminFeature() {
-        when(mPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN)).thenReturn(false);
+        when(mSpiedPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN)).thenReturn(false);
+    }
+
+    protected final void verifyAdminActivated() {
+        verify(mDpm).setActiveAdmin(eq(mDefaultAdmin), anyBoolean());
+    }
+
+    protected final void verifyAdminNeverActivated() {
+        verify(mDpm, never()).setActiveAdmin(any(), anyBoolean());
+    }
+
+    protected final void verifyAdminDeactivated() {
+        verify(mDpm).removeActiveAdmin(mDefaultAdmin);
+    }
+
+    protected final void verifyAdminNeverDeactivated() {
+        verify(mDpm, never()).removeActiveAdmin(any());
+    }
+
+    protected final void mockAdminUser() {
+        when(mUm.isAdminUser()).thenReturn(true);
+    }
+
+    protected final void mockNonAdminUser() {
+        when(mUm.isAdminUser()).thenReturn(false);
     }
 }
