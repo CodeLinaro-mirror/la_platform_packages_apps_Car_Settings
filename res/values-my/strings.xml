@@ -48,7 +48,7 @@
     <string name="sim_change_data_message" msgid="4669775284395549069">"မိုဘိုင်းဒေတာအတွက် <xliff:g id="CARRIER2_0">%2$s</xliff:g> အသုံးပြုနေသည်။ <xliff:g id="CARRIER1">%1$s</xliff:g> သို့ပြောင်းလျှင် မိုဘိုင်းဒေတာအတွက် <xliff:g id="CARRIER2_1">%2$s</xliff:g> ကို အသုံးပြုတော့မည် မဟုတ်ပါ။"</string>
     <string name="sim_change_data_ok" msgid="2348804996223271081">"<xliff:g id="CARRIER">%1$s</xliff:g> သုံးရန်"</string>
     <string name="roaming_title" msgid="6218635014519017734">"ပြင်ပကွန်ရက်သို့ ချိတ်ဆက်ခြင်း"</string>
-    <string name="roaming_summary" msgid="7476127740259728901">"ပြင်ပကွန်ရက် သုံးသောအခါ ဒေတာဝန်ဆောင်မှုများနှင့် ချိတ်ဆက်သည်"</string>
+    <string name="roaming_summary" msgid="7476127740259728901">"ပြင်ပကွန်ရက်သုံးလျှင် ဒေတာဝန်ဆောင်မှုများနှင့် ချိတ်ဆက်ရန်"</string>
     <string name="roaming_alert_title" msgid="4433901635766775763">"ပြင်ပကွန်ရက် ဒေတာသုံးခွင့်ပြုမလား။"</string>
     <string name="roaming_warning" msgid="4908184914868720704">"ပြင်ပကွန်ရက်နှင့် ချိတ်ဆက်သော အသုံးပြုခများ ကျသင့်နိုင်သည်။"</string>
     <string name="data_usage_settings" msgid="7877132994777987848">"ဒေတာသုံးစွဲမှု"</string>
@@ -206,7 +206,7 @@
     <string name="bluetooth_device_picker" msgid="673238198452345475">"ဘလူးတုသ် စက်ကိရိယာကို ရွေးပါ"</string>
     <string name="language_settings" msgid="2079258598337245546">"ဘာသာစကားများ"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"ဘာသာစကားနှင့် ထည့်သွင်းမှုစနစ်"</string>
-    <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"အကြံပြုထားသော"</string>
+    <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"အကြံပြုထားသည်"</string>
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"ဘာသာစကားအားလုံး"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"လက်ကွက်"</string>
     <string name="manage_keyboard" msgid="4045394766282200132">"လက်ကွက်များ စီမံခန့်ခွဲရန်"</string>
@@ -227,6 +227,7 @@
     <string name="ringtone_title" msgid="8370531086214517972">"ဖုန်းမြည်သံ"</string>
     <string name="notification_ringtone_title" msgid="8661716239594010288">"အကြောင်းကြားချက် မူရင်းအသံ"</string>
     <string name="alarm_ringtone_title" msgid="3257364170646440908">"မူရင်းနှိုးစက်သံ"</string>
+    <string name="ringtone_picker_save_title" msgid="4388137432517227001">"သိမ်းရန်"</string>
     <string name="units_settings" msgid="402325305096925886">"ယူနစ်များ"</string>
     <string name="units_speed_title" msgid="7115143916747108160">"မြန်နှုန်း"</string>
     <string name="units_distance_title" msgid="6257691565990474635">"အကွာအဝေး"</string>
@@ -346,7 +347,7 @@
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"ပိတ်ရန်"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"မလုပ်တော့"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"ပရီမီယံ SMS သုံးခွင့်ရှိခြင်း"</string>
-    <string name="premium_sms_access_description" msgid="7119026067677052169">"ပရီမီယံ SMS သည်ငွေကြေးကုန်ကျနိုင်ပြီး သင့်ဖုန်းဝန်ဆောင်မှုပေးသူ၏ ငွေတောင်းခံလွှာသို့ ပေါင်း၍ ထည့်သွင်းပါမည်။ အက်ပ်တစ်ခုကို သင်ခွင့်ပြုလိုက်လျှင် ၎င်းအက်ပ်ကိုအသုံးပြုပြီး ပရီမီယံ SMS ပို့နိုင်မည်ဖြစ်သည်။"</string>
+    <string name="premium_sms_access_description" msgid="7119026067677052169">"ပရီမီယံ SMS သည်ငွေကြေးကုန်ကျနိုင်ပြီး သင့်ဖုန်းကုမ္ပဏီ၏ ငွေတောင်းခံလွှာသို့ ပေါင်း၍ ထည့်သွင်းပါမည်။ အက်ပ်တစ်ခုကို သင်ခွင့်ပြုလိုက်လျှင် ၎င်းအက်ပ်ကိုအသုံးပြုပြီး ပရီမီယံ SMS ပို့နိုင်မည်ဖြစ်သည်။"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"အသုံးပြုမှု ကြည့်ခြင်း"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"ဝင်ရောက်အသုံးပြုခွင့်သည် အက်ပ်တစ်ခုအား သင်အသုံးပြုနေသော အခြားအက်ပ်များနှင့် သုံးသည့် အကြိမ်ရေနှင့်တကွ သင့်ဖုန်း၏ ဝန်ဆောင်မှုဌာန၊ ဘာသာစကား ဆက်တင်နှင့် အခြားအသေးစိတ်များကို ခြေရာခံရန် ခွင့်ပြုသည်။"</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Wi-Fi ထိန်းချုပ်မှု"</string>
@@ -397,7 +398,7 @@
       <item quantity="other">သင် ဆော့ဖ်ဝဲအင်ဂျင်နီယာ ဖြစ်ရန် အဆင့် <xliff:g id="STEP_COUNT_1">%1$d</xliff:g> ဆင့် လိုပါသေးသည်။</item>
       <item quantity="one">သင် ဆော့ဖ်ဝဲအင်ဂျင်နီယာ ဖြစ်ရန် အဆင့် <xliff:g id="STEP_COUNT_0">%1$d</xliff:g> ဆင့် လိုပါသေးသည်။</item>
     </plurals>
-    <string name="show_dev_on" msgid="5339077400040834808">"သင် ဆော့ဖ်ဝဲအင်ဂျင်နီယာ ဖြစ်သွားပါပြီ။"</string>
+    <string name="show_dev_on" msgid="5339077400040834808">"သင်သည် ယခု ဆော့ဖ်ဝဲအင်ဂျင်နီယာ တစ်ဦး ဖြစ်နေပါပြီ။"</string>
     <string name="show_dev_already" msgid="1678087328973865736">"မလိုပါ၊ သင်က ဆော့ဖ်ဝဲအင်ဂျင်နီယာ ဖြစ်ပြီးသားပါ။"</string>
     <string name="developer_options_settings" msgid="1530739225109118480">"တီထွင်သူများရွေးစရာ"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"ပြင်ဆင်သတ်မှတ်ရန် ရွေးစရာများ"</string>
@@ -426,7 +427,7 @@
     <string name="master_clear_other_users_present" msgid="8383376863095743337">"ဤစက်ပစ္စည်းပေါ်တွင် အခြားအသုံးပြုသူများလည်း ရှိသည်။"</string>
     <string name="master_clear_button_text" msgid="8010754220392741160">"စက်ပစ္စည်း ပြင်ဆင်သတ်မှတ်ရန်"</string>
     <string name="master_clear_confirm_title" msgid="8646455623132887370">"ပြင်ဆင်သတ်မှတ်လိုပါသလား။"</string>
-    <string name="master_clear_confirm_desc" msgid="8920446291698038558">"သင့်ကိုယ်ရေးကိုယ်တာအချက်လက်များနှင့် ဒေါင်းလုဒ်ချထားသောအက်ပ်များ အားလုံးကို ဖျက်မည်လား။ ဤလုပ်ဆောင်ချက်ကို တစ်ဆင့် နောက်ပြန်၍ မရပါ။"</string>
+    <string name="master_clear_confirm_desc" msgid="8920446291698038558">"သင့်ပုဂ္ဂိုလ်ရေးအချက်အလက်များနှင့် ဒေါင်းလုဒ်လုပ်ထားသောအက်ပ်များကို ဖျက်မလား။ ဤလုပ်ဆောင်ချက်ကို ပြန်ပြင်၍မရပါ!"</string>
     <string name="master_clear_confirm_button_text" msgid="7981254968588121786">"အားလုံးကိုဖျက်ရန်"</string>
     <string name="master_clear_progress_title" msgid="7087480656932674774">"ဖျက်နေသည်"</string>
     <string name="master_clear_progress_text" msgid="3440789441935303176">"ခဏစောင့်ပါ..."</string>
