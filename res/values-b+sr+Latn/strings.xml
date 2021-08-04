@@ -299,6 +299,10 @@
     <string name="force_stop" msgid="2153183697014720520">"Prinudno zaustavi"</string>
     <string name="force_stop_dialog_title" msgid="3342850939200388694">"Želite li da prinudno zaustavite?"</string>
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"Ako prinudno zaustavite aplikaciju, možda će se ponašati neočekivano."</string>
+    <string name="peak_performance_dialog_title" msgid="5970933611683430870">"Želite da isključite zaštitu učinka?"</string>
+    <string name="peak_performance_dialog_text" msgid="7648337738884134499">"Ako je isključite, softver i hardver možda neće raditi tako dobro."</string>
+    <string name="peak_performance_dialog_action_on" msgid="2139033153500237350">"Ostavi uključeno"</string>
+    <string name="peak_performance_dialog_action_off" msgid="1019653666533456482">"Isključi"</string>
     <string name="disable_text" msgid="4358165448648990820">"Onemogući"</string>
     <string name="enable_text" msgid="1794971777861881238">"Omogući"</string>
     <string name="uninstall_text" msgid="277907956072833012">"Deinstaliraj"</string>
@@ -308,6 +312,7 @@
     <string name="permissions_label" msgid="2701446753515612685">"Dozvole"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Obaveštenja"</string>
     <string name="storage_application_label" msgid="5911779903670978586">"Memorijski prostor i keš"</string>
+    <string name="peak_performance_label" msgid="1592816366516845648">"Obezbedi najbolji učinak"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Verzija: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Nijedna dozvola nije odobrena"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"Nijedna dozvola nije zahtevana"</string>
@@ -319,6 +324,7 @@
     </plurals>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Ukloni dozvole i oslobodi prostor"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s u internoj memoriji"</string>
+    <string name="peak_performance_summary" msgid="2450911487290019786">"Po potrebi zatvara aplikaciju radi manjeg korišćenja resursa"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Potrošnja podataka"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Potrošnja podataka apl."</string>
     <string name="computing_size" msgid="5791407621793083965">"Izračunava se..."</string>
@@ -424,7 +430,7 @@
     <string name="status_serial_number" msgid="9158889113131907656">"Serijski broj"</string>
     <string name="hardware_revision" msgid="5713759927934872874">"Verzija hardvera"</string>
     <string name="regulatory_info_text" msgid="8890339124198005428"></string>
-    <string name="settings_license_activity_title" msgid="8499293744313077709">"Licence treće strane"</string>
+    <string name="settings_license_activity_title" msgid="8499293744313077709">"Licence trećih strana"</string>
     <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"Došlo je do problema pri učitavanju licenci."</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Učitava se…"</string>
     <plurals name="show_dev_countdown" formatted="false" msgid="2968627665608969405">
@@ -554,7 +560,7 @@
     <string name="no_accounts_added" msgid="5148163140691096055">"Nijedan nalog nije dodat"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Nalozi za korisnika <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Automatski sinhronizuj podatke"</string>
-    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Omogući aplikacijama da automatski osvežavaju podatke"</string>
+    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Omogućava aplikacijama da automatski osvežavaju podatke"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="6027487764261344033">"Uključiti autom. sinh. podataka?"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="2770233931307606956">"Sve promene koje unesete na naloge na vebu će automatski biti kopirane na uređaj.\n\nNeki nalozi mogu i automatski da kopiraju na veb sve promene koje unesete na telefonu. Tako funkcioniše Google nalog."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="1235955038330202536">"Isključiti autom. sinh. podataka?"</string>
@@ -724,4 +730,5 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Dodaj profil"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Izbriši ovaj profil"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Dodajte profil"</string>
+    <string name="power_component_disabled" msgid="7084144472096800457">"Trenutno ne možete da promenite ovo podešavanje"</string>
 </resources>

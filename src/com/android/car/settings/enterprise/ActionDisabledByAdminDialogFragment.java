@@ -48,6 +48,9 @@ import com.android.settingslib.enterprise.ActionDisabledByAdminControllerFactory
 // TODO(b/188836559): move most of this class' logic to settingslib
 public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragment {
 
+    public static final String DISABLED_BY_ADMIN_CONFIRM_DIALOG_TAG =
+            "com.android.car.settings.applications.DisabledByAdminConfirmDialog";
+
     private static final String TAG = ActionDisabledByAdminDialogFragment.class.getSimpleName();
     private static final Logger LOG = new Logger(TAG);
 
@@ -100,7 +103,8 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
         AlertDialogBuilder builder = new AlertDialogBuilder(context)
                 .setPositiveButton(R.string.okay, /* listener= */ null);
         mActionDisabledByAdminController = ActionDisabledByAdminControllerFactory
-                .createInstance(context, new DeviceAdminStringProviderImpl(context));
+                .createInstance(context, mRestriction, new DeviceAdminStringProviderImpl(context),
+                        context.getUser());
         mActionDisabledByAdminController.initialize(
                 new ActionDisabledLearnMoreButtonLauncherImpl(builder));
         if (enforcedAdmin != null) {

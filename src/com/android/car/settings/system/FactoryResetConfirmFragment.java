@@ -18,7 +18,6 @@ package com.android.car.settings.system;
 
 import android.app.ActivityManager;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -27,6 +26,7 @@ import android.provider.Settings;
 import android.service.oemlock.OemLockManager;
 import android.service.persistentdata.PersistentDataBlockManager;
 
+import androidx.annotation.VisibleForTesting;
 import androidx.preference.PreferenceManager;
 
 import com.android.car.settings.R;
@@ -43,45 +43,24 @@ import java.util.List;
 public class FactoryResetConfirmFragment extends SettingsFragment {
 
     private MenuItem mClearConfirmButton;
+    @VisibleForTesting
+    AsyncTask<Void, Void, Void> mPersistentDataWipeTask;
 
     private MenuItem.OnClickListener mFinalClickListener = i -> {
         if (ActivityManager.isUserAMonkey()) {
             return;
         }
 
-        PersistentDataBlockManager pdbManager =
-                (PersistentDataBlockManager) requireContext().getSystemService(
-                        Context.PERSISTENT_DATA_BLOCK_SERVICE);
-        OemLockManager oemLockManager = (OemLockManager) requireContext().getSystemService(
-                Context.OEM_LOCK_SERVICE);
+        PersistentDataBlockManager pdbManager = requireContext().getSystemService(
+                PersistentDataBlockManager.class);
+        OemLockManager oemLockManager = requireContext().getSystemService(OemLockManager.class);
         if (pdbManager != null && !oemLockManager.isOemUnlockAllowed()
                 && isDeviceProvisioned()) {
             // If OEM unlock is allowed, the persistent data block will be wiped during the factory
             // reset process. If disabled, it will be wiped here, unless the device is still being
             // provisioned, in which case the persistent data block will be preserved.
-            new AsyncTask<Void, Void, Void>() {
-                private ProgressDialog mProgressDialog;
-
-                @Override
-                protected Void doInBackground(Void... params) {
-                    pdbManager.wipe();
-                    return null;
-                }
-
-                @Override
-                protected void onPostExecute(Void aVoid) {
-                    mProgressDialog.hide();
-                    if (getActivity() != null) {
-                        resetEverything();
-                    }
-                }
-
-                @Override
-                protected void onPreExecute() {
-                    mProgressDialog = getProgressDialog();
-                    mProgressDialog.show();
-                }
-            }.execute();
+            mPersistentDataWipeTask = new WipePersistentDataBlockAsyncTask(pdbManager);
+            mPersistentDataWipeTask.execute();
         } else {
             resetEverything();
         }
@@ -107,18 +86,19 @@ public class FactoryResetConfirmFragment extends SettingsFragment {
                 .build();
     }
 
-    private boolean isDeviceProvisioned() {
-        return Settings.Global.getInt(requireContext().getContentResolver(),
-                Settings.Global.DEVICE_PROVISIONED, 0) != 0;
-    }
-
-    private ProgressDialog getProgressDialog() {
+    @VisibleForTesting
+    ProgressDialog getProgressDialog() {
         ProgressDialog progressDialog = new ProgressDialog(requireContext());
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
         progressDialog.setTitle(requireContext().getString(R.string.factory_reset_progress_title));
         progressDialog.setMessage(requireContext().getString(R.string.factory_reset_progress_text));
         return progressDialog;
+    }
+
+    private boolean isDeviceProvisioned() {
+        return Settings.Global.getInt(requireContext().getContentResolver(),
+                Settings.Global.DEVICE_PROVISIONED, 0) != 0;
     }
 
     private void resetEverything() {
@@ -135,5 +115,34 @@ public class FactoryResetConfirmFragment extends SettingsFragment {
                 requireContext());
         return sharedPreferences.getBoolean(
                 requireContext().getString(R.string.pk_factory_reset_reset_esim), false);
+    }
+
+    private class WipePersistentDataBlockAsyncTask extends AsyncTask<Void, Void, Void> {
+        private final PersistentDataBlockManager mPdbManager;
+        private ProgressDialog mProgressDialog;
+
+        WipePersistentDataBlockAsyncTask(PersistentDataBlockManager pdbManager) {
+            mPdbManager = pdbManager;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            mPdbManager.wipe();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            mProgressDialog.hide();
+            if (getActivity() != null) {
+                resetEverything();
+            }
+        }
+
+        @Override
+        protected void onPreExecute() {
+            mProgressDialog = getProgressDialog();
+            mProgressDialog.show();
+        }
     }
 }
