@@ -64,8 +64,8 @@ public class ChooseLockTypeFragment extends SettingsFragment {
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void onDestroy() {
+        super.onDestroy();
 
         PasswordHelper.zeroizeCredentials(mLockscreenCredential);
     }
