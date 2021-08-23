@@ -87,13 +87,6 @@ android_app {
     },
 }
 
-prebuilt_etc {
-    name: "privapp-permissions-com.android.car.settings.xml",
-    src: "privapp-permissions-com.android.car.settings.xml",
-    system_ext_specific: true,
-    sub_dir: "permissions",
-}
-
 // Duplicate of CarSettings which includes testing only resources for Robolectric
 android_app {
     name: "CarSettingsForTesting",
@@ -124,6 +117,62 @@ android_app {
     },
 
     dxflags: ["--multi-dex"],
+
+    product_variables: {
+        pdk: {
+            enabled: false,
+        },
+    },
+}
+
+android_library {
+    name: "CarSettingsForUnitTesting",
+    platform_apis: true,
+    defaults: [
+        "SettingsLibDefaults",
+        "SettingsLib-search-defaults",
+    ],
+
+    manifest: "tests/unit/AndroidManifest.xml",
+
+    srcs: ["src/**/*.java"],
+
+    libs: [
+        "android.car",
+    ],
+
+    static_libs: [
+        "androidx.lifecycle_lifecycle-common-java8",
+        "androidx.lifecycle_lifecycle-extensions",
+        "androidx.preference_preference",
+        "androidx-constraintlayout_constraintlayout",
+        "car-apps-common",
+        "car-setup-wizard-lib-utils",
+        "SettingsLib",
+        "SettingsLib-search",
+        "android.car.userlib",
+        "androidx-constraintlayout_constraintlayout-solver",
+        "jsr305",
+        "car-ui-lib-testing-support",
+    ],
+
+    // Testing only resources must be applied last so they take precedence.
+    resource_dirs: [
+        "res",
+        "tests/unit/res",
+    ],
+
+    optimize: {
+        enabled: false,
+    },
+
+    dex_preopt: {
+        enabled: false,
+    },
+
+    dxflags: ["--multi-dex"],
+
+    aaptflags: ["--extra-packages com.android.car.settings"],
 
     product_variables: {
         pdk: {
