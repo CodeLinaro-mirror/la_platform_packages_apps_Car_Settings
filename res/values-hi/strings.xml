@@ -44,7 +44,7 @@
     <string name="sim_change_data_message" msgid="4669775284395549069">"मोबाइल डेटा के लिए आप <xliff:g id="CARRIER2_0">%2$s</xliff:g> का इस्तेमाल कर रहे हैं. अगर आप <xliff:g id="CARRIER1">%1$s</xliff:g> का इस्तेमाल करते हैं, तो मोबाइल डेटा के लिए <xliff:g id="CARRIER2_1">%2$s</xliff:g> का इस्तेमाल नहीं किया जाएगा."</string>
     <string name="sim_change_data_ok" msgid="2348804996223271081">"<xliff:g id="CARRIER">%1$s</xliff:g> का इस्तेमाल करें"</string>
     <string name="roaming_title" msgid="6218635014519017734">"रोमिंग"</string>
-    <string name="roaming_summary" msgid="7476127740259728901">"रोमिंग के समय डेटा सेवाएं कनेक्ट करें"</string>
+    <string name="roaming_summary" msgid="7476127740259728901">"रोमिंग में डेटा चालू करें"</string>
     <string name="roaming_alert_title" msgid="4433901635766775763">"डेटा रोमिंग की अनुमति देना चाहते हैं?"</string>
     <string name="roaming_warning" msgid="4908184914868720704">"रोमिंग शुल्क लागू हो सकते हैं."</string>
     <string name="data_usage_settings" msgid="7877132994777987848">"डेटा खर्च"</string>
@@ -388,7 +388,7 @@
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"हाल ही में किए गए जगह के अनुरोध"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"हाल ही में जगह का कोई अनुरोध नहीं है"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"ऐप्लिकेशन-लेवल की अनुमतियां"</string>
-    <string name="location_settings_services_title" msgid="1186133632690970468">"जगह की जानकारी की सेवाएं"</string>
+    <string name="location_settings_services_title" msgid="1186133632690970468">"जगह की जानकारी से जुड़ी सेवाएं"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"जगह की जानकारी का इस्तेमाल करें"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"जगह की जानकारी देने वाली सेवा, आपके डिवाइस की मौजूदा जगह का पता लगाने के लिए, जीपीएस, वाई-फ़ाई, मोबाइल नेटवर्क, और सेंसर जैसे स्रोतों का इस्तेमाल कर सकती है."</string>
     <string name="system_setting_title" msgid="6864599341809463440">"सिस्टम"</string>

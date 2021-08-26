@@ -96,7 +96,7 @@
     <string name="wifi_connecting" msgid="1930665730621677960">"Verbinden…"</string>
     <string name="wifi_not_in_range_message" msgid="2617126307140203787">"Netwerk is niet binnen bereik"</string>
     <string name="wifi_password" msgid="5565632142720292397">"Wachtwoord"</string>
-    <string name="wifi_show_password" msgid="8423293211933521097">"Wachtwoord weergeven"</string>
+    <string name="wifi_show_password" msgid="8423293211933521097">"Wachtwoord tonen"</string>
     <string name="wifi_no_network_name" msgid="6819604337231313594">"Geef een netwerknaam op"</string>
     <string name="wifi_ssid" msgid="488604828159458741">"Netwerknaam"</string>
     <string name="wifi_ssid_hint" msgid="3170608752313710099">"Geef de SSID op"</string>
@@ -106,7 +106,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"Linksnelheid"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"Frequentie"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"IP-adres"</string>
-    <string name="show_password" msgid="2074628020371139240">"Wachtwoord weergeven"</string>
+    <string name="show_password" msgid="2074628020371139240">"Wachtwoord tonen"</string>
     <string name="default_network_name_summary" msgid="8148402439232464276">"Netwerknaam opgeven"</string>
     <string name="default_password_summary" msgid="8789594645836902982">"Wachtwoord opgeven"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
@@ -299,7 +299,7 @@
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"Als je een app gedwongen stopt, kan deze onverwacht gedrag vertonen."</string>
     <string name="peak_performance_dialog_title" msgid="5970933611683430870">"Prestatiebescherming uitzetten?"</string>
     <string name="peak_performance_dialog_text" msgid="7648337738884134499">"Als je dit doet, werken je software en hardware misschien minder goed."</string>
-    <string name="peak_performance_dialog_action_on" msgid="2139033153500237350">"Aanlaten"</string>
+    <string name="peak_performance_dialog_action_on" msgid="2139033153500237350">"Aan laten staan"</string>
     <string name="peak_performance_dialog_action_off" msgid="1019653666533456482">"Uitzetten"</string>
     <string name="disable_text" msgid="4358165448648990820">"Uitschakelen"</string>
     <string name="enable_text" msgid="1794971777861881238">"Inschakelen"</string>
