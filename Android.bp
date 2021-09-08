@@ -16,20 +16,17 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
-android_app {
-    name: "CarSettings",
-    overrides: ["Settings"],
+//CarSettings core
+android_library {
+    name: "CarSettings-core",
     platform_apis: true,
     defaults: [
         "SettingsLibDefaults",
         "SettingsLib-search-defaults",
+        "framework-wifi-vendor-hide-access-defaults",
     ],
 
     srcs: ["src/**/*.java"],
-
-    libs: [
-        "android.car",
-    ],
 
     static_libs: [
         "androidx.lifecycle_lifecycle-common-java8",
@@ -48,6 +45,25 @@ android_app {
         "car-admin-ui-lib",
     ],
 
+    libs: [
+        "android.car",
+    ],
+}
+
+platform_compat_config {
+    name: "CarSettings-platform-compat-config",
+    src: ":CarSettings-core",
+    system_ext_specific: true,
+}
+
+android_app {
+    name: "CarSettings",
+    overrides: ["Settings"],
+    platform_apis: true,
+    system_ext_specific: true,
+
+    static_libs: ["CarSettings-core"],
+
     certificate: "platform",
 
     optimize: {
@@ -60,7 +76,10 @@ android_app {
         enabled: false,
     },
 
-    required: ["allowed_privapp_com.android.car.settings"],
+    required: [
+        "allowed_privapp_com.android.car.settings",
+        "CarSettings-platform-compat-config",
+	],
 
     dxflags: ["--multi-dex"],
 
@@ -75,30 +94,10 @@ android_app {
 android_app {
     name: "CarSettingsForTesting",
     platform_apis: true,
-    defaults: [
-        "SettingsLibDefaults",
-        "SettingsLib-search-defaults",
-    ],
-
-    srcs: ["src/**/*.java"],
-
-    libs: [
-        "android.car",
-    ],
+    system_ext_specific: true,
 
     static_libs: [
-        "androidx.lifecycle_lifecycle-common-java8",
-        "androidx.lifecycle_lifecycle-extensions",
-        "androidx.preference_preference",
-        "androidx-constraintlayout_constraintlayout",
-        "androidx.test.core",
-        "car-apps-common",
-        "car-setup-wizard-lib-utils",
-        "SettingsLib",
-        "SettingsLib-search",
-        "android.car.userlib",
-        "androidx-constraintlayout_constraintlayout-solver",
-        "jsr305",
+        "CarSettings-core",
         "car-ui-lib-testing-support",
         "car-admin-ui-lib",
     ],
