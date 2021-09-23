@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"ਵਾਈ-ਫਾਈ ਕੰਟਰੋਲ ਰਾਹੀਂ ਕੋਈ ਐਪ ਵਾਈ-ਫਾਈ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰ ਸਕਦੀ ਹੈ, ਵਾਈ-ਫਾਈ ਨੈੱਟਵਰਕਾਂ ਨੂੰ ਸਕੈਨ ਅਤੇ ਉਹਨਾਂ ਨਾਲ ਕਨੈਕਟ ਕਰ ਸਕਦੀ ਹੈ, ਨੈੱਟਵਰਕਾਂ ਨੂੰ ਸ਼ਾਮਲ ਕਰ ਜਾਂ ਹਟਾ ਸਕਦੀ ਹੈ, ਜਾਂ ਸਿਰਫ਼-ਸਥਾਨਕ ਹੌਟਸਪੌਟ ਸ਼ੁਰੂ ਕਰ ਸਕਦੀ ਹੈ।"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"ਹੋਰ"</string>
     <string name="location_settings_title" msgid="901334356682423679">"ਟਿਕਾਣਾ"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"ਟਿਕਾਣਾ ਵਰਤੋ"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"ਹਾਲੀਆ ਟਿਕਾਣਾ ਬੇਨਤੀਆਂ"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"ਕੋਈ ਹਾਲੀਆ ਟਿਕਾਣਾ ਬੇਨਤੀਆਂ ਨਹੀਂ"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"ਐਪ-ਪੱਧਰ ਇਜਾਜ਼ਤਾਂ"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"ਟਿਕਾਣਾ ਸੇਵਾਵਾਂ"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"ਟਿਕਾਣਾ ਵਰਤੋ"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"ਟਿਕਾਣਾ ਸੇਵਾ ਤੁਹਾਡੇ ਡੀਵਾਈਸ ਦੇ ਟਿਕਾਣੇ ਦਾ ਅੰਦਾਜ਼ਾ ਲਗਾਉਣ ਲਈ GPS, ਵਾਈ-ਫਾਈ, ਮੋਬਾਈਲ ਨੈੱਟਵਰਕਾਂ ਅਤੇ ਸੈਂਸਰਾਂ ਵਰਗੇ ਸਰੋਤਾਂ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੀ ਹੈ।"</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"ਮਾਈਕ੍ਰੋਫ਼ੋਨ"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"ਮਾਈਕ੍ਰੋਫ਼ੋਨ ਵਰਤੋ"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"ਸਿਸਟਮ"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"ਸਿਸਟਮ ਅੱਪਡੇਟ"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"ਉੱਨਤ"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"ਨਵਾਂ ਪ੍ਰੋਫਾਈਲ ਬਣਾਇਆ ਨਹੀਂ ਜਾ ਸਕਿਆ"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"ਕੀ ਇਸ ਪ੍ਰੋਫਾਈਲ ਨੂੰ ਮਿਟਾਉਣਾ ਹੈ?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"ਇਸ ਪ੍ਰੋਫਾਈਲ ਦੀਆਂ ਸਾਰੀਆਂ ਐਪਾਂ ਅਤੇ ਡਾਟੇ ਨੂੰ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"ਪ੍ਰੋਫਾਈਲ ਮਿਟਾਇਆ ਨਹੀਂ ਜਾ ਸਕਿਆ।"</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"ਜਦੋਂ ਤੁਸੀਂ ਪ੍ਰੋਫਾਈਲ ਬਦਲਦੇ ਹੋ ਜਾਂ ਵਾਹਨ ਮੁੜ-ਸ਼ੁਰੂ ਕਰਦੇ ਹੋ ਤਾਂ ਇਹ ਪ੍ਰੋਫਾਈਲ ਮਿਟ ਜਾਵੇਗਾ।"</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"ਖਾਰਜ ਕਰੋ"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"ਮੁੜ-ਕੋਸ਼ਿਸ਼ ਕਰੋ"</string>

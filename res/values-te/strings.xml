@@ -385,12 +385,19 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"యాప్‌కు Wi-Fiను ఆన్ లేదా ఆఫ్ చేయడానికి, Wi-Fi నెట్‌వర్క్‌లను స్కాన్ చేసి, కనెక్ట్ చేయడానికి, నెట్‌వర్క్‌లను జోడించడానికి లేదా తీసివేయడానికి, స్థానికం-మాత్రమే హాట్‌స్పాట్‌ను ప్రారంభించడానికి ఈ Wi-Fi కంట్రోలర్ అనుమతిస్తుంది."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"మరిన్ని"</string>
     <string name="location_settings_title" msgid="901334356682423679">"స్థానం"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"లొకేషన్‌ను ఉపయోగించండి"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"ఇటీవలి స్థాన అభ్యర్థనలు"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"ఇటీవలి స్థాన అభ్యర్థనలు లేవు"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"యాప్‌-స్థాయి అనుమతులు"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"స్థాన సేవలు"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"లొకేషన్‌ను ఉపయోగించండి"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"మీ పరికరం లొకేషన్‌ను అంచనా వేయడంలో సహాయపడటానికి GPS, Wi-Fi, మొబైల్ నెట్‌వర్క్‌లు, సెన్సార్‌ల వంటి సోర్సులను \'లొకేషన్\' ఉపయోగించవచ్చు."</string>
+    <!-- no translation found for microphone_settings_title (7125554350537136922) -->
+    <skip />
+    <!-- no translation found for microphone_toggle_title (911586035332827275) -->
+    <skip />
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"సిస్టమ్"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"సిస్టమ్ అప్‌డేట్‌లు"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"అధునాతనం"</string>
@@ -508,7 +515,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"కొత్త ప్రొఫైల్‌ను‌ క్రియేట్ చేయలేకపోయాము"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"ఈ ప్రొఫైల్‌ను తొలగించాలా?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"ఈ ప్రొఫైల్‌లోని మొత్తం యాప్‌లు, డేటా తొలగించబడతాయి"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"ప్రొఫైల్‌ను తొలగించడం సాధ్యపడలేదు."</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"మీరు ప్రొఫైల్‌లను మార్చినప్పుడు లేదా వాహనాన్ని రీస్టార్ట్ చేసినప్పుడు ఈ ప్రొఫైల్ తొలగించబడుతుంది."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"విస్మరించు"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"మళ్లీ ప్రయత్నించు"</string>

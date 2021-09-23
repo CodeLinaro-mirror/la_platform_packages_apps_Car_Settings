@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Med Wi-Fi-kontroll kan en app slå Wi-Fi på eller av, søke etter og koble til Wi-Fi-nettverk, legge til eller fjerne nettverk eller starte en lokal Wi-Fi-sone"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Mer"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Posisjon"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"Bruk posisjon"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Nylige posisjonsforespørsler"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Ingen nylige posisjonsforespørsler"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Tillatelser på appnivå"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Posisjonstjenester"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Bruk posisjon"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Posisjonstjenestene kan bruke kilder som GPS, Wi-Fi, mobilnettverk og sensorer for å fastslå posisjonen til enheten."</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"Mikrofon"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"Bruk mikrofonen"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"System"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Systemoppdateringer"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Avansert"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"Kunne ikke opprette ny profil"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"Vil du slette denne profilen?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"Alle appene og dataene tilknyttet denne profilen blir slettet."</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"Kunne ikke slette profilen."</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"Denne profilen blir slettet når du bytter profil eller starter kjøretøyet på nytt."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"Avvis"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"Prøv på nytt"</string>

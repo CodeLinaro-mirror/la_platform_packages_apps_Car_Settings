@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"വൈഫൈ ഓണാക്കാനോ ഓഫാക്കാനോ, സ്‌കാൻ ചെയ്‌ത് വൈഫൈ നെറ്റ്‌വർക്കുകളിലേക്ക് കണക്‌റ്റ് ചെയ്യാനും നെറ്റ്‌വർക്കുകൾ ചേർക്കാനോ നീക്കം ചെയ്യാനോ, ഉപകരണം ഉള്ളിടത്ത് മാത്രം പ്രവർത്തിക്കുന്ന ഹോട്ട്‌സ്‌പോട്ട് ആരംഭിക്കാനോ വൈഫൈ നിയന്ത്രണം ആപ്പിനെ അനുവദിക്കുന്നു."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"കൂടുതൽ"</string>
     <string name="location_settings_title" msgid="901334356682423679">"ലൊക്കേഷൻ"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"ലൊക്കേഷൻ ഉപയോഗിക്കുക"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"അടുത്തിടെയുള്ള ലൊക്കേഷൻ അഭ്യർത്ഥനകൾ"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"അടുത്തിടെയുള്ള ലൊക്കേഷൻ അഭ്യർത്ഥനകളൊന്നുമില്ല"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"ആപ്പ്-തല അനുമതികൾ"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"ലൊക്കേഷൻ സേവനങ്ങൾ"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"ലൊക്കേഷൻ ഉപയോഗിക്കുക"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"നിങ്ങളുടെ ഉപകരണത്തിന്റെ ലൊക്കേഷൻ കണക്കാക്കാൻ സഹായിക്കുന്നതിന് GPS, വൈഫൈ, മൊബൈൽ നെറ്റ്‌വർക്കുകൾ, സെൻസറുകൾ പോലുള്ള ഉറവിടങ്ങൾ ലൊക്കേഷൻ ഉപയോഗിച്ചേക്കാം."</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"മൈക്രോഫോൺ"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"മൈക്രോഫോൺ ഉപയോഗിക്കുക"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"സിസ്റ്റം"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"സി‌സ്‌റ്റം അപ്‌ഡേറ്റുകൾ"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"വിപുലമായത്"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"പുതിയ പ്രൊഫെെൽ സൃഷ്‌ടിക്കാനായില്ല"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"ഈ പ്രൊഫൈൽ ഇല്ലാതാക്കണോ?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"ഈ പ്രൊഫൈലിലെ എല്ലാ ആപ്പുകളും ഡാറ്റയും ഇല്ലാതാക്കും"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"പ്രൊഫെെൽ ഇല്ലാതാക്കാനായില്ല."</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"പ്രൊഫൈലുകൾ പരസ്‌പരം മാറുമ്പോഴോ വാഹനം റീസ്റ്റാർട്ട് ചെയ്യുമ്പോഴോ ഈ പ്രൊഫൈൽ ഇല്ലാതാക്കപ്പെടും."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"ഡിസ്‌മിസ്സ് ചെയ്യുക"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"വീണ്ടും ശ്രമിക്കുക"</string>

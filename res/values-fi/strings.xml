@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Wi-Fi-hallinta antaa sovelluksen asettaa Wi-Fi päälle ja pois päältä, hakea Wi-Fi-verkkoja ja yhdistää niihin, lisätä ja poistaa verkkoja ja käynnistää paikallisen hotspotin."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Lisää"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Sijainti"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"Käytä sijaintia"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Viimeisimmät sijaintipyynnöt"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Ei viimeaikaisia sijaintipyyntöjä"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Sovellustason käyttöoikeudet"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Sijaintipalvelut"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Käytä sijaintia"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Sijainti voi käyttää esimerkiksi GPS:ää, Wi‑Fi- ja mobiiliverkkoja sekä antureita laitteesi sijainnin arvioimiseen."</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"Mikrofoni"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"Käytä mikrofonia"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"Järjestelmä"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Järjestelmäpäivitykset"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Lisäasetukset"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"Uuden profiilin luominen ei onnistunut"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"Poistetaanko tämä profiili?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"Kaikki tämän profiilin sovellukset ja data poistetaan"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"Profiilin poistaminen ei onnistunut."</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"Tämä profiili poistetaan, kun vaihdat profiilia tai käynnistät ajoneuvon uudelleen."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"Ohita"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"Yritä uudelleen"</string>

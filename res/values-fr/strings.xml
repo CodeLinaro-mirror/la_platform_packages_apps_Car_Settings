@@ -385,12 +385,16 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Le contrôle Wi-Fi permet d\'autoriser une application à activer ou à désactiver le Wi-Fi, à rechercher les réseaux Wi-Fi et à s\'y connecter, à ajouter ou supprimer des réseaux, ou à lancer un point d\'accès local."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Plus"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Position"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"Utiliser la position"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Demandes de localisation récentes"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Aucune demande de localisation récente"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Autorisations des applis"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Services de localisation"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Utiliser ma position"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Les services de localisation peuvent utiliser des sources telles que le GPS, le Wi-Fi, les réseaux mobiles et les capteurs pour estimer la position de votre appareil."</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"Micro"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"Utiliser le micro"</string>
+    <string name="microphone_manage_permissions" msgid="7280905792151988183">"Gérer les autorisations d\'accès au micro"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"Système"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Mises à jour du système"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Paramètres avancés"</string>
@@ -508,7 +512,7 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"Impossible de créer un profil"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"Supprimer ce profil ?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"Toutes les applis et données associées à ce profil seront supprimées"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"Impossible de supprimer le profil"</string>
+    <string name="delete_user_error_title" msgid="287249031795906102">"Profil non supprimé. Redémarrez et réessayez."</string>
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"Ce profil sera supprimé lorsque vous changerez de profil ou que vous redémarrerez le véhicule."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"Ignorer"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"Réessayer"</string>

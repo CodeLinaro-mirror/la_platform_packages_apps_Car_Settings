@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"向应用授予“WLAN 控制”权限后，应用就能开启或关闭 WLAN、扫描及连接到 WLAN 网络、添加或移除网络，或启动仅限本地的热点。"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"更多"</string>
     <string name="location_settings_title" msgid="901334356682423679">"位置信息"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"使用位置信息"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"最近的位置信息请求"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"最近没有任何位置信息请求"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"应用级权限"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"位置信息服务"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"使用位置信息"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"位置信息服务可能会使用 GPS、WLAN、移动网络和传感器等来源协助推测设备所在的位置。"</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"麦克风"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"使用麦克风"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"系统"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"系统更新"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"高级"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"无法创建新的个人资料"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"要删除此个人资料吗？"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"此个人资料的所有应用和数据都将被删除"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"无法删除个人资料。"</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"此个人资料将在您切换个人资料或重新发动汽车时删除。"</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"关闭"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"重试"</string>
