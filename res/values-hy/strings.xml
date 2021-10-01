@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Wi-Fi-ի կառավարը հնարավորություն է տալիս հավելվածներին միացնել և անջատել Wi-Fi-ը, գտնել Wi-Fi ցանցեր և միանալ դրանց, ավելացնել և հեռացնել ցանցեր, միացնել միայն տեղային թեժ կետ:"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Լրացուցիչ կարգավորումներ"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Տեղորոշում"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"Օգտագործել տեղորոշումը"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Տեղադրության տվյալների վերջին հարցումները"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Վերջերս տեղորոշման տվյալների հարցումներ չեն արվել"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Հավելվածների թույլտվություններ"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Տեղորոշման ծառայություններ"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Օգտագործել տեղորոշումը"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Ձեր սարքի տեղադրությունը որոշելու համար տեղորոշման ծառայությունն օգտվում է տարբեր աղբյուրներից (GPS, Wi‑Fi, բջջային ցանցեր և տվիչներ)։"</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"Խոսափող"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"Օգտագործել խոսափողը"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"Համակարգ"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Համակարգի թարմացումներ"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Լրացուցիչ կարգավորումներ"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"Չհաջողվեց ստեղծել նոր պրոֆիլ"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"Ջնջե՞լ այս պրոֆիլը"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"Այս պրոֆիլի հետ կապված բոլոր հավելվածներն ու տվյալները կջնջվեն"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"Չհաջողվեց ջնջել պրոֆիլը։"</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"Այս պրոֆիլը կջնջվի, երբ դուք անցնեք այլ պրոֆիլ կամ վերագործարկեք ավտոմեքենան։"</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"Փակել"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"Նորից փորձել"</string>

@@ -389,12 +389,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Cu controlul rețelei Wi-Fi, o aplicație poate să activeze sau să dezactiveze conexiunea Wi-Fi, să scaneze și să se conecteze la rețelele Wi-Fi, să adauge sau să elimine rețele sau să pornească un hotspot local."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Mai multe"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Locație"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"Folosiți locația"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Solicitări recente privind locația"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Nu există solicitări recente privind locația"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Permisiuni la nivel de aplicație"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Servicii de localizare"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Folosiți locația"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Locația poate folosi surse precum GPS, Wi-Fi, rețele mobile și senzori pentru a ajuta la estimarea locației dispozitivului."</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"Microfon"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"Folosiți microfonul"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"Sistem"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Actualizări de sistem"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Avansate"</string>
@@ -514,7 +519,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"Nu s-a putut crea un profil nou"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"Ștergeți profilul?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"Toate aplicațiile și datele din acest profil vor fi șterse"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"Nu s-a putut șterge profilul."</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"Profilul va fi șters când comutați între profiluri sau reporniți mașina."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"Închideți"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"Reîncercați"</string>

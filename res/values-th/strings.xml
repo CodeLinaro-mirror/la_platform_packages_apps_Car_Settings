@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"การควบคุม Wi-Fi จะอนุญาตให้แอปเปิดหรือปิด Wi-Fi, สแกนหาและเชื่อมต่อเครือข่าย Wi-Fi, เพิ่มหรือนำเครือข่ายออก หรือเริ่มฮอตสปอตในพื้นที่เท่านั้น"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"เพิ่มเติม"</string>
     <string name="location_settings_title" msgid="901334356682423679">"ตำแหน่ง"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"ใช้ตำแหน่ง"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"คำขอตำแหน่งล่าสุด"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"ไม่มีคำขอตำแหน่งล่าสุด"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"สิทธิ์ระดับแอป"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"บริการตำแหน่ง"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"ใช้ตำแหน่ง"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"ตำแหน่งอาจใช้ข้อมูลจากแหล่งที่มาต่างๆ อย่างเช่น GPS, Wi‑Fi, เครือข่ายมือถือ และเซ็นเซอร์ เพื่อช่วยระบุตำแหน่งคร่าวๆ ของอุปกรณ์"</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"ไมโครโฟน"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"ใช้ไมโครโฟน"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"ระบบ"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"การอัปเดตระบบ"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"ขั้นสูง"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"สร้างโปรไฟล์ใหม่ไม่ได้"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"ลบโปรไฟล์นี้ใช่ไหม"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"ระบบจะลบแอปและข้อมูลทั้งหมดในโปรไฟล์นี้"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"ลบโปรไฟล์ไม่ได้"</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"โปรไฟล์นี้จะถูกลบเมื่อคุณสลับโปรไฟล์หรือสตาร์ทรถอีกครั้ง"</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"ปิด"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"ลองอีกครั้ง"</string>

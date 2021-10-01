@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"کنترل Wi-Fi به برنامه‌ اجازه می‌دهد Wi-Fi را روشن یا خاموش کند، شبکه‌های Wi-Fi را اسکن کند و به آن‌ها متصل شود، شبکه‌ها را اضافه یا حذف کند یا نقطه اتصالی فقط محلی راه‌اندازی کند."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"بیشتر"</string>
     <string name="location_settings_title" msgid="901334356682423679">"مکان"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"استفاده از مکان"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"درخواست‌های اخیر مکان"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"درخواست مکان جدیدی وجود ندارد"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"اجازه‌های سطح برنامه"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"خدمات مکان"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"استفاده از مکان"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"«مکان» ممکن است برای تخمین مکان دستگاهتان از منابعی مانند GPS،‏ Wi-Fi، شبکه تلفن همراه و حسگرها استفاده کند."</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"میکروفون"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"استفاده از میکروفون"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"سیستم"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"به‌روزرسانی‌های سیستم"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"پیشرفته"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"نمایه جدید ایجاد نشد"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"این نمایه حذف شود؟"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"همه برنامه‌ها و داده‌های این نمایه حذف خواهند شد"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"نمایه حذف نشد."</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"وقتی به نمایه دیگری بروید یا خودرو را بازراه‌اندازی کنید، این نمایه حذف خواهد شد."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"نپذیرفتن"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"امتحان مجدد"</string>

@@ -385,12 +385,17 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"ৱাই-ফাই নিয়ন্ত্ৰণ সুবিধাই এটা এপক ৱাই-ফাই অন বা অফ কৰিবলৈ, স্কেন কৰিবলৈ আৰু ৱাই-ফাই নেটৱৰ্কৰ সৈতে সংযোগ কৰিবলৈ আৰু বা নেটৱৰ্ক আঁতৰাবলৈ, বা স্থানীয়-মাত্ৰ হটস্পট আৰম্ভ কৰিবলৈ অনুমতি দিয়ে।"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"অধিক"</string>
     <string name="location_settings_title" msgid="901334356682423679">"অৱস্থান"</string>
+    <string name="location_toggle_title" msgid="836779750812064601">"অৱস্থান ব্যৱহাৰ কৰক"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"শেহতীয়া অৱস্থানৰ অনুৰোধ"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"শেহতীয়াকৈ কোনো এপে অৱস্থানৰ অনুৰোধ প্ৰেৰণ কৰা নাই"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"এপ্‌-স্তৰৰ অনুমতি"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"অৱস্থান সেৱা"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"অৱস্থান ব্যৱহাৰ কৰক"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"অৱস্থান সেৱাই আপোনাৰ ডিভাইচৰ অৱস্থান অনুমান কৰাত সহায় কৰিবলৈ জিপিএছ, ৱাই-ফাই, ম’বাইল নেটৱৰ্ক আৰু ছেন্সৰৰ দৰে উৎসসমূহ ব্যৱহাৰ কৰিব পাৰে।"</string>
+    <string name="microphone_settings_title" msgid="7125554350537136922">"মাইক্ৰ’ফ’ন"</string>
+    <string name="microphone_toggle_title" msgid="911586035332827275">"মাইক্র’ফ’ন ব্যৱহাৰ কৰক"</string>
+    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
+    <skip />
     <string name="system_setting_title" msgid="6864599341809463440">"ছিষ্টেম"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"ছিষ্টেম আপডে’ট"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"উচ্চখাপৰ"</string>
@@ -508,7 +513,8 @@
     <string name="add_user_error_title" msgid="7589792057846396341">"নতুন প্ৰ\'ফাইল সৃষ্টি কৰিব পৰা নগ’ল"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"এই প্ৰ’ফাইলটো মচিবনে?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"এই প্ৰ’ফাইলটোৰ আটাইবোৰ এপ্‌ আৰু ডেটা মচা হ’ব"</string>
-    <string name="delete_user_error_title" msgid="6422249596301690254">"প্ৰ\'ফাইল মচিব পৰা নগ’ল।"</string>
+    <!-- no translation found for delete_user_error_title (287249031795906102) -->
+    <skip />
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"আপুনি প্ৰ’ফাইল সলনি কৰিলে অথবা গাড়ীখন ৰিষ্টাৰ্ট কৰিলে এই প্ৰ’ফাইলটো মচা হ’ব।"</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"অগ্ৰাহ্য কৰক"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"পুনৰায় চেষ্টা কৰক"</string>
