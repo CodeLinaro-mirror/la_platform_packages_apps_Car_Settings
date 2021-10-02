@@ -27,7 +27,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
 
 import com.android.car.settings.R;
-import com.android.car.settings.common.CarUxRestrictionsHelper;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.wifi.details.WifiDetailsFragment;
@@ -76,7 +75,7 @@ public class AccessPointListPreferenceController extends
         if (getCarWifiManager() == null) {
             return;
         }
-        mAccessPoints = CarUxRestrictionsHelper.isNoSetup(getUxRestrictions())
+        mAccessPoints = shouldApplyUxRestrictions(getUxRestrictions())
                 ? getCarWifiManager().getSavedAccessPoints()
                 : getCarWifiManager().getAllAccessPoints();
         LOG.d("showing accessPoints: " + mAccessPoints.size());

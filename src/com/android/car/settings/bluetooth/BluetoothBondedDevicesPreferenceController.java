@@ -18,6 +18,7 @@ package com.android.car.settings.bluetooth;
 
 import static android.os.UserManager.DISALLOW_CONFIG_BLUETOOTH;
 
+import android.bluetooth.BluetoothDevice;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 
@@ -29,6 +30,8 @@ import com.android.car.settings.common.FragmentController;
 import com.android.settingslib.bluetooth.BluetoothDeviceFilter;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 
+import java.util.Set;
+
 /**
  * Displays a list of bonded (paired) Bluetooth devices. Clicking on a device will attempt a
  * connection with that device. If a device is already connected, a click will prompt the user to
@@ -37,6 +40,9 @@ import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 public class BluetoothBondedDevicesPreferenceController extends
         BluetoothDevicesGroupPreferenceController {
 
+    private final BluetoothDeviceFilter.Filter mBondedDeviceTypeFilter =
+            new BondedDeviceTypeFilter();
+
     public BluetoothBondedDevicesPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
@@ -44,7 +50,7 @@ public class BluetoothBondedDevicesPreferenceController extends
 
     @Override
     protected BluetoothDeviceFilter.Filter getDeviceFilter() {
-        return BluetoothDeviceFilter.BONDED_DEVICE_FILTER;
+        return mBondedDeviceTypeFilter;
     }
 
     @Override
@@ -93,6 +99,17 @@ public class BluetoothBondedDevicesPreferenceController extends
         for (int i = 0; i < group.getPreferenceCount(); i++) {
             ((BluetoothDevicePreference) group.getPreference(i)).setSecondaryActionVisible(
                     isActionVisible);
+        }
+    }
+
+    /** Filter that matches only bonded devices with specific device types. */
+    // TODO(b/198339129): Use BluetoothDeviceFilter.BONDED_DEVICE_FILTER
+    private class BondedDeviceTypeFilter implements BluetoothDeviceFilter.Filter {
+        @Override
+        public boolean matches(BluetoothDevice device) {
+            Set<BluetoothDevice> bondedDevices = mBluetoothManager.getBluetoothAdapter()
+                    .getBondedDevices();
+            return bondedDevices != null && bondedDevices.contains(device);
         }
     }
 }
