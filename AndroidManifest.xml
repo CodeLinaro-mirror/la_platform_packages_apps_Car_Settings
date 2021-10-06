@@ -77,6 +77,19 @@
         android:directBootAware="true"
         android:supportsRtl="true">
 
+        <activity android:name=".admin.FactoryResetActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".admin.NewUserDisclaimerActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:exported="false"
+            android:launchMode="singleTask">
+        </activity>
+
         <activity
             android:name=".common.CarSettingActivities$QuickSettingActivity"
             android:launchMode="singleInstance"
@@ -910,6 +923,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".notifications.NotificationAccessConfirmationActivity"
+            android:exported="true"
+            android:taskAffinity="com.android.car.settings.notifications.NotificationAccessConfirmationActivity"
+            android:theme="@style/ActionDialogTheme"
+            />
+
         <activity android:name=".enterprise.ActionDisabledByAdminActivity"
                 android:theme="@style/ActionDialogTheme"
                 android:taskAffinity=".enterprise"
@@ -962,6 +981,19 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
+
+        <provider android:name=".qc.SettingsQCProvider"
+                  android:authorities="com.android.car.settings.qc"
+                  android:grantUriPermissions="true"
+                  android:exported="true">
+        </provider>
+
+        <!-- For security purposes, only intents created by the CarSettings application should be
+        able to call this receiver. Therefore, it should not be exported. -->
+        <receiver
+            android:name=".qc.SettingsQCBroadcastReceiver"
+            android:exported="false">
+        </receiver>
 
     </application>
 </manifest>

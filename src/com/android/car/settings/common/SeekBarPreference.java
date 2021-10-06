@@ -204,6 +204,7 @@ public class SeekBarPreference extends CarUiPreference {
         view.itemView.setOnKeyListener(mSeekBarKeyListener);
         view.itemView.setOnFocusChangeListener(mSeekBarFocusChangeListener);
         view.itemView.setOnGenericMotionListener(mSeekBarScrollListener);
+
         mSeekBar = (SeekBar) view.findViewById(R.id.seekbar);
         mSeekBarValueTextView = (TextView) view.findViewById(R.id.seekbar_value);
         if (mShowSeekBarValue) {

@@ -21,6 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
@@ -28,32 +29,38 @@ import static org.mockito.Mockito.when;
 
 import android.app.admin.DeviceAdminInfo;
 import android.app.admin.DevicePolicyManager;
-import android.car.test.mocks.AbstractExtendedMockitoTestCase;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.UserInfo;
+import android.content.pm.ResolveInfo;
 import android.os.UserManager;
 
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import com.android.dx.mockito.inline.extended.ExtendedMockito;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.MockitoSession;
+import org.mockito.quality.Strictness;
 
 import java.util.Arrays;
 
 @RunWith(AndroidJUnit4.class)
-abstract class BaseEnterpriseTestCase extends AbstractExtendedMockitoTestCase {
+public class BaseEnterpriseTestCase {
 
     protected final Context mRealContext = ApplicationProvider.getApplicationContext();
     protected final Context mSpiedContext = spy(mRealContext);
 
     protected final String mPackageName = mRealContext.getPackageName();
 
-    private final PackageManager mRealPm = mRealContext.getPackageManager();
+    protected final PackageManager mRealPm = mRealContext.getPackageManager();
     protected PackageManager mSpiedPm = spy(mRealPm);
 
     protected final ComponentName mDefaultAdmin =
@@ -61,18 +68,29 @@ abstract class BaseEnterpriseTestCase extends AbstractExtendedMockitoTestCase {
     protected final ComponentName mFancyAdmin =
             new ComponentName(mSpiedContext, FancyDeviceAdminReceiver.class);
 
+    protected ResolveInfo mDefaultResolveInfo;
+    protected ResolveInfo mFancyResolveInfo;
     protected DeviceAdminInfo mDefaultDeviceAdminInfo;
     protected DeviceAdminInfo mFancyDeviceAdminInfo;
 
     @Mock
-    private DevicePolicyManager mDpm;
+    protected DevicePolicyManager mDpm;
 
     @Mock
-    private UserManager mUm;
+    protected UserManager mUm;
+
+    private MockitoSession mSession;
 
     @Before
     public final void setFixtures() throws Exception {
         // Make sure session was properly initialized
+        MockitoAnnotations.initMocks(this);
+
+        mSession = ExtendedMockito.mockitoSession()
+                .mockStatic(UserManager.class)
+                .strictness(Strictness.LENIENT)
+                .startMocking();
+
         assertWithMessage("mDpm").that(mDpm).isNotNull();
         assertWithMessage("mUm").that(mUm).isNotNull();
 
@@ -80,13 +98,26 @@ abstract class BaseEnterpriseTestCase extends AbstractExtendedMockitoTestCase {
         when(mSpiedContext.getSystemService(PackageManager.class)).thenReturn(mSpiedPm);
         when(mSpiedContext.getPackageManager()).thenReturn(mSpiedPm);
         when(mSpiedContext.getSystemService(UserManager.class)).thenReturn(mUm);
+        when(UserManager.get(mSpiedContext)).thenReturn(mUm);
 
-        ActivityInfo defaultInfo = mRealPm.getReceiverInfo(mDefaultAdmin,
-                PackageManager.GET_META_DATA);
-        mDefaultDeviceAdminInfo = new DeviceAdminInfo(mRealContext, defaultInfo);
+        ActivityInfo defaultActivityInfo =
+                mRealPm.getReceiverInfo(mDefaultAdmin, PackageManager.GET_META_DATA);
+        mDefaultDeviceAdminInfo = new DeviceAdminInfo(mRealContext, defaultActivityInfo);
+        mDefaultResolveInfo = new ResolveInfo();
+        mDefaultResolveInfo.activityInfo = defaultActivityInfo;
 
-        ActivityInfo fancyInfo = mRealPm.getReceiverInfo(mFancyAdmin, PackageManager.GET_META_DATA);
-        mFancyDeviceAdminInfo = new DeviceAdminInfo(mRealContext, fancyInfo);
+        ActivityInfo fancyActivityInfo =
+                mRealPm.getReceiverInfo(mFancyAdmin, PackageManager.GET_META_DATA);
+        mFancyDeviceAdminInfo = new DeviceAdminInfo(mRealContext, fancyActivityInfo);
+        mFancyResolveInfo = new ResolveInfo();
+        mFancyResolveInfo.activityInfo = fancyActivityInfo;
+    }
+
+    @After
+    public void tearDown() {
+        if (mSession != null) {
+            mSession.finishMocking();
+        }
     }
 
     protected final void mockProfileOwner() {
@@ -114,12 +145,14 @@ abstract class BaseEnterpriseTestCase extends AbstractExtendedMockitoTestCase {
         when(mDpm.isAdminActive(mDefaultAdmin)).thenReturn(false);
     }
 
-    protected final void mockActiveAdmin(ComponentName admin) {
-        when(mDpm.getActiveAdmins()).thenReturn(Arrays.asList(admin));
+    protected final void mockGetActiveAdmins(ComponentName... componentNames) {
+        when(mDpm.getActiveAdmins()).thenReturn(Arrays.asList(componentNames));
     }
 
-    protected final void mockActiveAdmins(ComponentName... componentNames) {
-        when(mDpm.getActiveAdminsAsUser(anyInt())).thenReturn(Arrays.asList(componentNames));
+    protected final void mockQueryBroadcastReceivers(ResolveInfo... resolveInfoArray) {
+        // Need to use doReturn() instead of when() because mSpiedPm is a spy.
+        doReturn(Arrays.asList(resolveInfoArray))
+                .when(mSpiedPm).queryBroadcastReceivers(any(Intent.class), anyInt());
     }
 
     protected final void mockGetLongSupportMessageForUser(CharSequence message) {
@@ -156,9 +189,5 @@ abstract class BaseEnterpriseTestCase extends AbstractExtendedMockitoTestCase {
 
     protected final void mockNonAdminUser() {
         when(mUm.isAdminUser()).thenReturn(false);
-    }
-
-    protected final void mockGetProfiles(UserInfo... userProfiles) {
-        when(mUm.getProfiles(anyInt())).thenReturn(Arrays.asList(userProfiles));
     }
 }

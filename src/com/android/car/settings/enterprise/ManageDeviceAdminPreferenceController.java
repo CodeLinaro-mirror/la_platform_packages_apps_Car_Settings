@@ -18,14 +18,12 @@ package com.android.car.settings.enterprise;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.pm.UserInfo;
-import android.os.UserHandle;
 
 import androidx.preference.Preference;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
+import com.android.settingslib.utils.StringUtil;
 
 import java.util.List;
 
@@ -33,14 +31,11 @@ import java.util.List;
  * Controller for showing the device admin apps.
  */
 public final class ManageDeviceAdminPreferenceController
-        extends BaseDeviceAdminAddPreferenceController {
-
-    private final boolean mEnabled;
+        extends BaseEnterprisePreferenceController<Preference> {
 
     public ManageDeviceAdminPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
-        mEnabled = mPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN);
     }
 
     @Override
@@ -49,27 +44,19 @@ public final class ManageDeviceAdminPreferenceController
         mLogger.d("updateState(): Number of active device admin apps: " + activeAdmins);
         String summary = activeAdmins == 0
                 ? getContext().getString(R.string.number_of_device_admins_none)
-                : getContext().getResources().getQuantityString(R.plurals.number_of_device_admins,
-                        activeAdmins, activeAdmins);
+                : StringUtil.getIcuPluralsString(getContext(), activeAdmins,
+                        R.string.number_of_device_admins);
         preference.setSummary(summary);
     }
 
-    @Override
-    protected int getRealAvailabilityStatus() {
-        // TODO(b/185182679): Grayed out and disabled for now. Enable once fully implemented.
-        return mEnabled ? AVAILABLE_FOR_VIEWING : UNSUPPORTED_ON_DEVICE;
-    }
-
     private int getNumberOfAdmins() {
-        int activeAdmins = 0;
-        for (UserInfo userInfo : mUm.getProfiles(UserHandle.myUserId())) {
-            List<ComponentName> activeAdminsForUser = mDpm.getActiveAdminsAsUser(userInfo.id);
-            mLogger.d("Active admin apps: " + activeAdminsForUser + " for user: "
-                    + userInfo.toFullString());
-            if (activeAdminsForUser != null) {
-                activeAdmins += activeAdminsForUser.size();
-            }
+        // NOTE: Only considering the current user for now. Later we may need to support profiles.
+        List<ComponentName> activeAdmins = mDpm.getActiveAdmins();
+        mLogger.d("Active admin apps: " + activeAdmins
+                + " for current user: " + getContext().getUserId());
+        if (activeAdmins == null) {
+            return 0;
         }
-        return activeAdmins;
+        return activeAdmins.size();
     }
 }
