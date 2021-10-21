@@ -49,6 +49,7 @@ public class WifiTetherSecurityPreferenceController extends
     private String[] mSecurityValues;
     private boolean mSecurityCapaFetched;
     private boolean mSaeSapSupported;
+    private boolean mOweSapSupported;
     private WifiManager.SoftApCallback mSoftApCallback = new WifiManager.SoftApCallback() {
         @Override
         public void onCapabilityChanged(SoftApCapability capability) {
@@ -62,14 +63,26 @@ public class WifiTetherSecurityPreferenceController extends
             if (capability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_SAE)) {
                 mSaeSapSupported = true;
             }
-            if (mSaeSapSupported) {
+            if (capability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_OWE)) {
+                mOweSapSupported = true;
+            }
+
             // Add SAE transition security type
+            if (mSaeSapSupported) {
                 securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION));
                 securityEntries.add(mContext.getString(R.string.wifi_security_sae));
             }
+
             // Add WPA2-PSK security type
             securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_WPA2_PSK));
             securityEntries.add(mContext.getString(R.string.wifi_security_wpa2));
+
+            // Add OWE transition security type
+            if (mOweSapSupported) {
+                securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION));
+                securityEntries.add(mContext.getString(R.string.wifi_security_owe));
+            }
+
             // Add open security type
             securityValues.add(String.valueOf(SoftApConfiguration.SECURITY_TYPE_OPEN));
             securityEntries.add(mContext.getString(R.string.wifi_security_none));
@@ -88,9 +101,18 @@ public class WifiTetherSecurityPreferenceController extends
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA2_PSK;
         } else if (config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OPEN) {
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_OPEN;
+        } else if (mOweSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION;
+        } else if (mOweSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_OWE) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_OWE;
         } else if (mSaeSapSupported
                     && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION) {
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION;
+        } else if (mSaeSapSupported
+                    && config.getSecurityType() == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE) {
+            mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE;
         } else {
             mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA2_PSK;
         }
@@ -151,7 +173,15 @@ public class WifiTetherSecurityPreferenceController extends
         if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OPEN) {
             stringResId = R.string.wifi_security_none;
         } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION) {
+            // use sae to hide transition details from user
             stringResId = R.string.wifi_security_sae;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE) {
+            stringResId = R.string.wifi_security_sae;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION) {
+            // use owe to hide transition details from user
+            stringResId = R.string.wifi_security_owe;
+        } else if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OWE) {
+            stringResId = R.string.wifi_security_owe;
         }
         return getContext().getString(stringResId);
     }
