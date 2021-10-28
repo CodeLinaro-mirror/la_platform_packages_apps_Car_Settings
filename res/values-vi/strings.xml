@@ -27,10 +27,7 @@
     <string name="night_mode_tile_label" msgid="6603597795502131664">"Chế độ ban đêm"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Mạng và Internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mạng di động"</string>
-    <plurals name="mobile_network_summary_count" formatted="false" msgid="6917348330386831454">
-      <item quantity="other"><xliff:g id="COUNT_1">%1$d</xliff:g> SIM</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%1$d</xliff:g> SIM</item>
-    </plurals>
+    <string name="mobile_network_summary_count" msgid="760865625847664029">"{count,plural, =1{# SIM}other{# SIM}}"</string>
     <string name="mobile_network_active_sim" msgid="1901674954229832811">"Đang hoạt động/SIM"</string>
     <string name="mobile_network_inactive_sim" msgid="3644984830926224318">"Không hoạt động/SIM"</string>
     <string name="mobile_network_active_esim" msgid="5864100786496761032">"Đang hoạt động / Đã tải SIM xuống"</string>
@@ -38,6 +35,8 @@
     <string name="mobile_network_list_add_more" msgid="6174294462747070655">"Thêm"</string>
     <string name="mobile_network_toggle_title" msgid="3515647310810280063">"Dữ liệu di động"</string>
     <string name="mobile_network_toggle_summary" msgid="8698267487987697148">"Sử dụng dữ liệu qua mạng di động"</string>
+    <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"Mạng di động"</string>
+    <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"Dùng dữ liệu di động"</string>
     <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Tắt dữ liệu di động?"</string>
     <string name="sim_selection_required_pref" msgid="6599562910262785784">"Cần phải lựa chọn"</string>
     <string name="sim_change_data_title" msgid="6677115745127365131">"Sử dụng <xliff:g id="CARRIER">%1$s</xliff:g> cho dữ liệu di động?"</string>
@@ -53,10 +52,7 @@
     <string name="cell_data_warning" msgid="8997739664336571149">"Cảnh báo dữ liệu khi dùng đến <xliff:g id="ID_1">^1</xliff:g>"</string>
     <string name="cell_data_limit" msgid="6862164869877993009">"Hạn mức dữ liệu <xliff:g id="ID_1">^1</xliff:g>"</string>
     <string name="cell_data_warning_and_limit" msgid="5003954080814312475">"Cảnh báo dữ liệu khi dùng đến <xliff:g id="ID_1">^1</xliff:g>/Hạn mức dữ liệu là <xliff:g id="ID_2">^2</xliff:g>"</string>
-    <plurals name="billing_cycle_days_left" formatted="false" msgid="9163059632851951402">
-      <item quantity="other">Còn %d ngày</item>
-      <item quantity="one">Còn %d ngày</item>
-    </plurals>
+    <string name="billing_cycle_days_left" msgid="1810100330204239102">"{count,plural, =1{Còn # ngày}other{Còn # ngày}}"</string>
     <string name="billing_cycle_none_left" msgid="3499893148398931302">"Không còn thời gian"</string>
     <string name="billing_cycle_less_than_one_day_left" msgid="8121013296375203759">"Còn chưa đến 1 ngày"</string>
     <string name="carrier_and_update_text" msgid="4351043160977741244">"Được <xliff:g id="ID_1">^1</xliff:g> cập nhật <xliff:g id="ID_2">^2</xliff:g> trước"</string>
@@ -71,6 +67,7 @@
     <string name="cycle_reset_day_of_month_picker_positive_button" msgid="6919858010423269305">"Đặt"</string>
     <string name="data_warning_limit_title" msgid="4950868241810828601">"Hạn mức và cảnh báo dữ liệu"</string>
     <string name="app_usage_cycle" msgid="8445927080245880296">"Chu kỳ dùng dữ liệu ứng dụng"</string>
+    <string name="mobile_data_usage" msgid="8171519864391091861">"Sử dụng dữ liệu di động"</string>
     <string name="set_data_warning" msgid="6628236612886588097">"Đặt cảnh báo dữ liệu"</string>
     <string name="data_warning" msgid="116776633806885370">"Cảnh báo dữ liệu"</string>
     <string name="set_data_limit" msgid="7136539812414500084">"Đặt hạn mức dữ liệu"</string>
@@ -79,8 +76,14 @@
     <string name="data_usage_limit_dialog_mobile" msgid="3633960011913085089">"Thiết bị đầu trên phương tiện của bạn sẽ tắt dữ liệu di động khi đạt đến hạn mức mà bạn đã đặt.\n\nVì mức sử dụng dữ liệu là do thiết bị đầu tính toán và nhà mạng có thể có cách tính khác, nên hãy cân nhắc đặt hạn mức vừa phải."</string>
     <string name="data_usage_warning_editor_title" msgid="2041517150169038813">"Đặt cảnh báo cho mức sử dụng dữ liệu"</string>
     <string name="data_usage_limit_editor_title" msgid="133468242379286689">"Đặt giới hạn cho mức sử dụng dữ liệu"</string>
+    <string name="data_usage_settings_footer" msgid="681881387909678237">"Mức sử dụng dữ liệu là do thiết bị của bạn đo. Mức này có thể khác với mức dữ liệu của nhà mạng di động."</string>
     <string name="usage_bytes_threshold_picker_positive_button" msgid="4625479840977965519">"Đặt"</string>
+    <string name="data_usage_warning_save_title" msgid="2900544287239037695">"Lưu"</string>
     <string name="network_and_internet_oem_network_title" msgid="6436902713696212250">"Mạng OEM"</string>
+    <string name="network_and_internet_vehicle_internet_title" msgid="2518848595673002736">"Internet trên xe"</string>
+    <string name="network_and_internet_oem_network_dialog_description" msgid="4469178879867702066">"Việc tắt Internet trên xe có thể khiến một số tính năng hoặc ứng dụng trên xe không hoạt động được.\n\nDữ liệu quan trọng cần thiết để vận hành xe sẽ tiếp tục được chia sẻ với nhà sản xuất xe."</string>
+    <string name="network_and_internet_oem_network_dialog_confirm_label" msgid="2630033932472996255">"Vẫn tắt"</string>
+    <string name="network_and_internet_oem_network_disabled_footer" msgid="3529208167627034245">"Internet trên xe đã bị tắt. Việc này có thể khiến một số tính năng hoặc ứng dụng trên xe không hoạt động được. Dữ liệu quan trọng cần thiết để vận hành xe sẽ tiếp tục được chia sẻ với nhà sản xuất xe."</string>
     <string name="network_and_internet_data_usage_time_range_summary" msgid="1792995626433410056">"Đã dùng %1$s trong giai đoạn %2$s – %3$s"</string>
     <string name="network_and_internet_join_other_network_title" msgid="7126831320010062712">"Kết nối với mạng khác"</string>
     <string name="network_and_internet_network_preferences_title" msgid="2983548049081168876">"Lựa chọn ưu tiên về mạng"</string>
@@ -94,6 +97,7 @@
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"Thêm mạng"</string>
     <string name="wifi_setup_connect" msgid="3512399573397979101">"Kết nối"</string>
     <string name="wifi_connecting" msgid="1930665730621677960">"Đang kết nối…"</string>
+    <string name="wifi_disconnected" msgid="4485699234859368137">"Chưa kết nối"</string>
     <string name="wifi_not_in_range_message" msgid="2617126307140203787">"Không có mạng trong phạm vi"</string>
     <string name="wifi_password" msgid="5565632142720292397">"Mật khẩu"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"Hiện mật khẩu"</string>
@@ -155,6 +159,7 @@
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Chọn 1 băng tần cho điểm phát sóng Wi‑Fi:"</string>
     <string name="tether_settings_title_all" msgid="4663704772599383169">"Điểm phát sóng và chia sẻ Internet"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Điểm phát sóng"</string>
+    <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Tắt"</string>
     <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Tự động tắt điểm phát sóng"</string>
     <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Điểm phát sóng Wi-Fi sẽ tắt nếu không có thiết bị nào kết nối"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> muốn bật Wi-Fi"</string>
@@ -297,10 +302,10 @@
     <string name="force_stop" msgid="2153183697014720520">"Buộc dừng"</string>
     <string name="force_stop_dialog_title" msgid="3342850939200388694">"Buộc dừng?"</string>
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"Nếu bạn buộc dừng một ứng dụng, thì ứng dụng đó có thể hoạt động không đúng cách."</string>
-    <string name="peak_performance_dialog_title" msgid="5970933611683430870">"Tắt chế độ bảo vệ hiệu suất?"</string>
-    <string name="peak_performance_dialog_text" msgid="7648337738884134499">"Nếu bạn chọn như vậy, phần mềm và phần cứng của bạn cũng có thể sẽ không hoạt động."</string>
-    <string name="peak_performance_dialog_action_on" msgid="2139033153500237350">"Để bật"</string>
-    <string name="peak_performance_dialog_action_off" msgid="1019653666533456482">"Tắt"</string>
+    <string name="prioritize_app_performance_dialog_title" msgid="2561577032540073080">"Bật chế độ ưu tiên hiệu suất ứng dụng?"</string>
+    <string name="prioritize_app_performance_dialog_text" msgid="572525689800110355">"Việc tắt chế độ này có thể khiến hệ thống có nguy cơ bị mất ổn định hoặc tác động lâu dài đến phần cứng. Bạn có muốn tiếp tục không?"</string>
+    <string name="prioritize_app_performance_dialog_action_on" msgid="3556735049873419163">"Có"</string>
+    <string name="prioritize_app_performance_dialog_action_off" msgid="2813324718753199319">"Không, cảm ơn"</string>
     <string name="disable_text" msgid="4358165448648990820">"Tắt"</string>
     <string name="enable_text" msgid="1794971777861881238">"Bật"</string>
     <string name="uninstall_text" msgid="277907956072833012">"Gỡ cài đặt"</string>
@@ -310,25 +315,30 @@
     <string name="permissions_label" msgid="2701446753515612685">"Quyền"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Thông báo"</string>
     <string name="storage_application_label" msgid="5911779903670978586">"Bộ nhớ và bộ nhớ đệm"</string>
-    <string name="peak_performance_label" msgid="1592816366516845648">"Giữ hiệu suất cao nhất"</string>
+    <string name="prioritize_app_performance_label" msgid="7264505023347026606">"Ưu tiên hiệu suất của ứng dụng"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Phiên bản: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Chưa được cấp quyền nào"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"Không yêu cầu quyền"</string>
     <string name="unused_apps" msgid="648471933781010395">"Ứng dụng không dùng đến"</string>
-    <plurals name="unused_apps_summary" formatted="false" msgid="6410080383909014362">
-      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> ứng dụng không dùng đến</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> ứng dụng không dùng đến</item>
-    </plurals>
+    <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# ứng dụng không dùng đến}other{# ứng dụng không dùng đến}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Xóa quyền và giải phóng dung lượng"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s trong bộ nhớ trong"</string>
-    <string name="peak_performance_summary" msgid="2450911487290019786">"Nếu cần, hãy đóng ứng dụng để tránh dùng quá nhiều tài nguyên"</string>
+    <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Dùng tài nguyên của hệ thống để ưu tiên hiệu suất của ứng dụng"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Mức sử dụng dữ liệu"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Sử dụng dữ liệu ứng dụng"</string>
+    <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Mức sử dụng qua thời gian"</string>
+    <string name="data_usage_all_apps_title" msgid="5956991037518761599">"Tất cả ứng dụng"</string>
+    <string name="app_data_usage_title" msgid="6991057296054761322">"Sử dụng dữ liệu và Wi-Fi"</string>
+    <string name="app_data_usage_usage_history_title" msgid="5861801915345874959">"Mức sử dụng qua thời gian"</string>
+    <string name="app_data_usage_total_usage" msgid="6166480544992906281">"Tổng mức sử dụng"</string>
+    <string name="app_data_usage_foreground" msgid="76513424438149709">"Ở chế độ nền trước"</string>
+    <string name="app_data_usage_background" msgid="6972054078770685280">"Ở chế độ nền"</string>
+    <string name="app_data_usage_allow_data_title" msgid="2713343973040466293">"Cho phép dùng dữ liệu"</string>
+    <string name="app_data_usage_allow_data_summary" msgid="7431118326573403774">"Cho phép ứng dụng này dùng dữ liệu di động"</string>
+    <string name="app_data_usage_restrict_data_title" msgid="7080736007645963633">"Giới hạn dữ liệu"</string>
+    <string name="app_data_usage_background_data_summary" msgid="4445472217737386826">"Chỉ dùng dữ liệu di động khi ứng dụng đang ở nền trước"</string>
     <string name="computing_size" msgid="5791407621793083965">"Đang tính toán…"</string>
-    <plurals name="runtime_permissions_additional_count" formatted="false" msgid="3513360187065317613">
-      <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> quyền bổ sung</item>
-      <item quantity="one"><xliff:g id="COUNT_0">%d</xliff:g> quyền bổ sung</item>
-    </plurals>
+    <string name="runtime_permissions_additional_count" msgid="3920383880473283764">"{count,plural, =1{# quyền bổ sung}other{# quyền bổ sung}}"</string>
     <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"Lưu ý: Sau khi khởi động lại, ứng dụng này sẽ không hoạt động cho đến khi bạn mở khóa xe."</string>
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"Trợ lý và nhập bằng giọng nói"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"Ứng dụng trợ lý"</string>
@@ -386,16 +396,42 @@
     <string name="more_special_access_title" msgid="166115485446645971">"Xem thêm"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Vị trí"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Dùng thông tin vị trí"</string>
+    <!-- no translation found for location_toggle_summary (7977868708102299495) -->
+    <skip />
+    <!-- no translation found for location_toggle_off_warning (8396854289251143748) -->
+    <skip />
+    <!-- no translation found for location_driver_assistance_toggle_title (9201622805420459957) -->
+    <skip />
+    <string name="location_driver_assistance_toggle_off_title" msgid="2218532550578204718">"Thông tin vị trí của xe đang tắt"</string>
+    <!-- no translation found for location_driver_assistance_toggle_off_summary (4593257453422707898) -->
+    <skip />
+    <string name="location_driver_assistance_action_text" msgid="1887309495010247883">"Thay đổi"</string>
+    <!-- no translation found for location_driver_assistance_toggle_summary (2732591196508054649) -->
+    <skip />
+    <!-- no translation found for location_driver_assistance_toggle_off_warning (8097738968253492982) -->
+    <skip />
+    <!-- no translation found for driver_assistance_warning_confirm_label (2873799611160864931) -->
+    <skip />
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Các yêu cầu gần đây về vị trí"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Không có yêu cầu nào gần đây về vị trí"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Quyền cấp ứng dụng"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Dịch vụ vị trí"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Sử dụng vị trí"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Dịch vụ vị trí có thể sử dụng những nguồn như GPS, Wi‑Fi, mạng di động và cảm biến để giúp ước tính vị trí của thiết bị."</string>
+    <string name="driver_assistance_settings_title" msgid="4915804073177128915">"Công nghệ hỗ trợ dành cho người lái xe"</string>
+    <!-- no translation found for adas_settings_footer (7882070515956528976) -->
+    <skip />
     <string name="microphone_settings_title" msgid="7125554350537136922">"Micrô"</string>
     <string name="microphone_toggle_title" msgid="911586035332827275">"Sử dụng micrô"</string>
-    <!-- no translation found for microphone_manage_permissions (7280905792151988183) -->
-    <skip />
+    <string name="microphone_toggle_summary" msgid="2682653449849128626">"Cho phép mọi ứng dụng truy cập vào micrô"</string>
+    <string name="microphone_manage_permissions" msgid="7280905792151988183">"Quản lý quyền truy cập vào micrô"</string>
+    <string name="microphone_recently_accessed" msgid="2084292372486026607">"Mới truy cập gần đây"</string>
+    <string name="microphone_no_recent_access" msgid="6412908936060990649">"Không có ứng dụng nào mới truy cập"</string>
+    <string name="microphone_app_permission_summary_microphone_off" msgid="6139321726246115550">"0 ứng dụng có quyền truy cập"</string>
+    <string name="microphone_app_permission_summary_microphone_on" msgid="7870834777359783838">"{count,plural, =1{#/{total_count} ứng dụng có quyền truy cập}other{#/{total_count} ứng dụng có quyền truy cập}}"</string>
+    <string name="microphone_settings_recent_requests_title" msgid="8154796551134761329">"Mới truy cập gần đây"</string>
+    <string name="microphone_settings_recent_requests_view_all_title" msgid="4339820818072842872">"Xem tất cả"</string>
+    <string name="microphone_settings_loading_app_permission_stats" msgid="4357161201098081615">"Đang tải…"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"Hệ thống"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"Bản cập nhật hệ thống"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Nâng cao"</string>
@@ -434,10 +470,7 @@
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Giấy phép của bên thứ ba"</string>
     <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"Đã xảy ra sự cố khi tải giấy phép."</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Đang tải…"</string>
-    <plurals name="show_dev_countdown" formatted="false" msgid="2968627665608969405">
-      <item quantity="other">Bây giờ, bạn chỉ cần thực hiện <xliff:g id="STEP_COUNT_1">%1$d</xliff:g> bước nữa là sẽ trở thành nhà phát triển.</item>
-      <item quantity="one">Bây giờ, bạn chỉ cần thực hiện <xliff:g id="STEP_COUNT_0">%1$d</xliff:g> bước nữa là sẽ trở thành nhà phát triển.</item>
-    </plurals>
+    <string name="show_dev_countdown" msgid="7416958516942072383">"{count,plural, =1{Giờ đây, bạn chỉ còn # bước nữa là trở thành một nhà phát triển.}other{Giờ đây, bạn chỉ còn # bước nữa là trở thành một nhà phát triển.}}"</string>
     <string name="show_dev_on" msgid="5339077400040834808">"Bạn đã là nhà phát triển!"</string>
     <string name="show_dev_already" msgid="1678087328973865736">"Không cần, bạn đã là nhà phát triển."</string>
     <string name="developer_options_settings" msgid="1530739225109118480">"Tùy chọn của nhà phát triển"</string>
@@ -506,15 +539,11 @@
     <string name="user_add_user_message_setup" msgid="812616230454605159">"Sau khi bạn tạo hồ sơ cho một người mới, người đó phải tự tùy chỉnh hồ sơ của họ."</string>
     <string name="user_add_user_message_update" msgid="3836353291078729240">"Mọi hồ sơ đều có thể cập nhật ứng dụng để các hồ sơ khác sử dụng."</string>
     <string name="user_limit_reached_title" msgid="5677729355746623293">"Đã đạt số lượng hồ sơ tối đa"</string>
-    <plurals name="user_limit_reached_message" formatted="false" msgid="3310152546154693349">
-      <item quantity="other">Bạn có thể tạo tối đa <xliff:g id="COUNT">%d</xliff:g> hồ sơ.</item>
-      <item quantity="one">Chỉ có thể tạo một hồ sơ.</item>
-    </plurals>
+    <string name="user_limit_reached_message" msgid="2773441357248819721">"{count,plural, =1{Chỉ có thể tạo một hồ sơ.}other{Bạn có thể tạo tối đa # hồ sơ.}}"</string>
     <string name="add_user_error_title" msgid="7589792057846396341">"Không thể tạo hồ sơ mới"</string>
     <string name="delete_user_dialog_title" msgid="575517556232943687">"Xóa hồ sơ này?"</string>
     <string name="delete_user_dialog_message" msgid="3916865958419051299">"Tất cả ứng dụng và dữ liệu của hồ sơ này sẽ bị xóa."</string>
-    <!-- no translation found for delete_user_error_title (287249031795906102) -->
-    <skip />
+    <string name="delete_user_error_title" msgid="287249031795906102">"Chưa xóa hồ sơ. Bạn có thể khởi động lại thiết bị rồi thử lại."</string>
     <string name="delete_user_error_set_ephemeral_title" msgid="9062453678745644817">"Hồ sơ này sẽ bị xóa khi bạn chuyển sang hồ sơ khác hoặc khởi động lại xe."</string>
     <string name="delete_user_error_dismiss" msgid="429156446763738273">"Bỏ qua"</string>
     <string name="delete_user_error_retry" msgid="5116434895572670563">"Thử lại"</string>
@@ -658,30 +687,6 @@
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Quản vị viên CNTT đã chặn các mã PIN phổ biến. Hãy thử mã PIN khác."</string>
     <string name="lockpassword_illegal_character" msgid="1984970060523635618">"Mật khẩu này không được bao gồm ký tự không hợp lệ."</string>
     <string name="lockpassword_invalid_password" msgid="1690956113717418430">"Mật khẩu không hợp lệ, phải có ít nhất 4 ký tự."</string>
-    <plurals name="lockpassword_password_requires_letters" formatted="false" msgid="424616259312760303">
-      <item quantity="other">Phải chứa ít nhất <xliff:g id="COUNT">%d</xliff:g> chữ cái</item>
-      <item quantity="one">Phải chứa ít nhất 1 chữ cái</item>
-    </plurals>
-    <plurals name="lockpassword_password_requires_lowercase" formatted="false" msgid="2267487180744744833">
-      <item quantity="other">Phải chứa ít nhất <xliff:g id="COUNT">%d</xliff:g> chữ thường</item>
-      <item quantity="one">Phải chứa ít nhất 1 chữ thường</item>
-    </plurals>
-    <plurals name="lockpassword_password_requires_uppercase" formatted="false" msgid="7999264563026517898">
-      <item quantity="other">Phải chứa ít nhất <xliff:g id="COUNT">%d</xliff:g> chữ hoa</item>
-      <item quantity="one">Phải chứa ít nhất 1 chữ hoa</item>
-    </plurals>
-    <plurals name="lockpassword_password_requires_numeric" formatted="false" msgid="7935079851855168646">
-      <item quantity="other">Phải chứa ít nhất <xliff:g id="COUNT">%d</xliff:g> chữ số</item>
-      <item quantity="one">Phải chứa ít nhất 1 chữ số</item>
-    </plurals>
-    <plurals name="lockpassword_password_requires_symbols" formatted="false" msgid="3994046435150094132">
-      <item quantity="other">Phải chứa ít nhất <xliff:g id="COUNT">%d</xliff:g> ký hiệu đặc biệt</item>
-      <item quantity="one">Phải chứa ít nhất 1 ký hiệu đặc biệt</item>
-    </plurals>
-    <plurals name="lockpassword_password_requires_nonletter" formatted="false" msgid="6878486326748506524">
-      <item quantity="other">Phải chứa ít nhất <xliff:g id="COUNT">%d</xliff:g> ký tự không phải chữ cái</item>
-      <item quantity="one">Phải chứa ít nhất 1 ký tự không phải chữ cái</item>
-    </plurals>
     <string name="lockpassword_password_recently_used" msgid="8255729487108602924">"Quản trị viên thiết bị không cho phép sử dụng mật khẩu gần đây"</string>
     <string name="error_saving_password" msgid="8334882262622500658">"Lỗi khi lưu mật khẩu"</string>
     <string name="lockpassword_password_denylisted_by_admin" msgid="8611831198794524730">"Quản vị viên CNTT đã chặn các mật khẩu phổ biến. Hãy thử mật khẩu khác."</string>
@@ -724,5 +729,43 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Thêm hồ sơ"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Xóa hồ sơ này"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Thêm hồ sơ"</string>
+    <string name="qc_display_brightness" msgid="2939655289816201170">"Độ sáng của màn hình"</string>
+    <string name="device_admin_add_title" msgid="1294399588284546811">"Quản trị hệ thống thông tin giải trí"</string>
+    <string name="device_admin_activated_apps" msgid="568075063362271751">"Ứng dụng đã kích hoạt"</string>
+    <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Ứng dụng đã hủy kích hoạt"</string>
+    <string name="device_admin_apps_list_empty" msgid="2029922702964310266">"Không có ứng dụng quản trị hệ thống thông tin giải trí nào"</string>
+    <string name="device_admin_status" msgid="4041772636856135168">"Ứng dụng quản trị hệ thống thông tin giải trí này đang hoạt động và cho phép ứng dụng <xliff:g id="APP_NAME">%1$s</xliff:g> thực hiện những thao tác sau:"</string>
+    <string name="device_admin_warning" msgid="8997805999333600901">"Khi bạn kích hoạt ứng dụng hệ thống thông tin giải trí này, ứng dụng <xliff:g id="APP_NAME">%1$s</xliff:g> sẽ thực hiện được những thao tác sau:"</string>
+    <string name="add_device_admin_msg" msgid="8188888666879499482">"Kích hoạt hệ thống thông tin giải trí này?"</string>
+    <string name="add_device_admin" msgid="7674707256074840333">"Kích hoạt ứng dụng hệ thống thông tin giải trí này"</string>
+    <string name="remove_device_admin" msgid="3595343390502030723">"Hủy kích hoạt ứng dụng hệ thống thông tin giải trí này"</string>
+    <string name="admin_support_more_info" msgid="380785608579390750">"Thông tin khác"</string>
+    <string name="admin_profile_owner_message" msgid="905509940230549773">"Người quản lý đội xe của bạn có thể giám sát và quản lý các ứng dụng cũng như dữ liệu liên kết với hồ sơ này, bao gồm cả các chế độ cài đặt, quyền, quyền truy cập vào dữ liệu của công ty, hoạt động trên mạng và thông tin vị trí của xe."</string>
+    <string name="admin_profile_owner_user_message" msgid="3867350539930925070">"Người quản lý đội xe của bạn có thể giám sát và quản lý các ứng dụng cũng như dữ liệu liên kết với hồ sơ này, bao gồm cả các chế độ cài đặt, quyền, quyền truy cập vào dữ liệu của công ty, hoạt động trên mạng và thông tin vị trí của xe."</string>
+    <string name="admin_device_owner_message" msgid="8261844995284196176">"Người quản lý đội xe có thể giám sát và quản lý các ứng dụng cũng như dữ liệu liên kết với hệ thống thông tin giải trí này, bao gồm cả các chế độ cài đặt, quyền, quyền truy cập vào dữ liệu của công ty, hoạt động trên mạng và thông tin vị trí của xe."</string>
+    <string name="admin_financed_message" msgid="8530796044340607865">"Người quản lý đội xe có thể truy cập vào dữ liệu liên kết với hệ thống thông tin giải trí này, quản lý ứng dụng và thay đổi chế độ cài đặt của xe này."</string>
+    <string name="disabled_by_policy_title" msgid="5651853760118792629">"Người quản lý đội xe đã chặn"</string>
+    <string name="disabled_by_policy_title_adjust_volume" msgid="947693485036623479">"Liên hệ với quản lý đội xe để thay đổi âm lượng"</string>
+    <!-- no translation found for disabled_by_policy_title_outgoing_calls (2241478131660447002) -->
+    <skip />
+    <string name="disabled_by_policy_title_sms" msgid="4353988664398839837">"Liên hệ với quản lý đội xe để dùng tin nhắn SMS"</string>
+    <string name="disabled_by_policy_title_camera" msgid="8008769061266209577">"Liên hệ với người quản lý đội xe để dùng camera"</string>
+    <string name="disabled_by_policy_title_screen_capture" msgid="156845907165179949">"Liên hệ với quản lý đội xe để chụp màn hình"</string>
+    <string name="disabled_by_policy_title_suspend_packages" msgid="1249154592881985661">"Liên hệ với quản lý đội xe để dùng ứng dụng"</string>
+    <string name="disabled_by_policy_title_financed_device" msgid="6005343494788285981">"Tổ chức tín dụng của bạn đã chặn"</string>
+    <string name="default_admin_support_msg" msgid="1611734116715908153">"Nếu bạn có thắc mắc, hãy liên hệ với người quản lý đội xe"</string>
+    <string name="help_url_action_disabled_by_it_admin" msgid="1479392394986580260"></string>
+    <string name="manage_device_admin" msgid="7087659697154317316">"Ứng dụng quản trị xe"</string>
+    <string name="number_of_device_admins" msgid="7508826094096451485">"{count,plural, =1{# ứng dụng đã kích hoạt}other{# ứng dụng đã hủy kích hoạt}}"</string>
+    <string name="number_of_device_admins_none" msgid="5547493703413973954">"Chưa kích hoạt ứng dụng nào"</string>
+    <!-- no translation found for work_policy_privacy_settings (5263835989260149968) -->
+    <skip />
+    <string name="work_policy_privacy_settings_summary" msgid="5770881048853242635">"Chế độ cài đặt do người quản lý đội xe của bạn quản lý"</string>
+    <string name="factory_reset_parked_title" msgid="4004694559766549441">"Đặt lại hệ thống thông tin giải trí"</string>
+    <string name="factory_reset_parked_text" msgid="1446768795193651311">"Hệ thống của bạn đã nhận được một yêu cầu đặt lại về trạng thái ban đầu và xóa mọi dữ liệu. Bạn có thể đặt lại ngay hoặc đặt lại vào lần khởi động xe tiếp theo. Sau đó, bạn có thể thiết lập một hồ sơ mới."</string>
+    <string name="factory_reset_now_button" msgid="4461863686086129437">"Đặt lại ngay"</string>
+    <string name="factory_reset_later_button" msgid="2653125445148367016">"Đặt lại sau"</string>
+    <string name="factory_reset_later_text" msgid="6371031843489938419">"Hệ thống thông tin giải trí sẽ được đặt lại vào lần khởi động xe tiếp theo."</string>
+    <string name="factory_reset_driving_text" msgid="6833832382688900191">"Bạn phải đỗ xe để bắt đầu quá trình đặt lại."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Không thể thay đổi chế độ cài đặt này ngay bây giờ"</string>
 </resources>

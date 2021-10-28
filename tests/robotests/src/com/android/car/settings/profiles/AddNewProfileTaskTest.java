@@ -24,6 +24,7 @@ import static org.mockito.Mockito.when;
 import android.car.user.CarUserManager;
 import android.car.user.UserCreationResult;
 import android.car.util.concurrent.AndroidAsyncFuture;
+import android.car.util.concurrent.AndroidFuture;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
@@ -31,8 +32,6 @@ import android.os.UserManager;
 
 import androidx.annotation.Nullable;
 import androidx.test.InstrumentationRegistry;
-
-import com.android.internal.infra.AndroidFuture;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -120,7 +119,7 @@ public class AddNewProfileTaskTest {
 
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
         future.complete(new UserCreationResult(status,
-                user, /* errorMessage= */ null));
+                user.getUserHandle(), /* errorMessage= */ null));
         when(mCarUserManager.createUser(anyString(), anyInt()))
                 .thenReturn(new AndroidAsyncFuture<>(future));
     }

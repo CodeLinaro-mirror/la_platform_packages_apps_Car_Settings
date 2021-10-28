@@ -69,6 +69,12 @@
     <string name="pk_data_usage_summary" translatable="false">data_usage_summary</string>
     <string name="pk_data_warning_and_limit" translatable="false">data_warning_and_limit</string>
     <string name="pk_data_usage_cycle" translatable="false">data_usage_cycle</string>
+    <string name="pk_data_usage_edit_text" translatable="false">data_usage_edit_text</string>
+    <string name="pk_data_usage_radio_group" translatable="false">
+        data_usage_radio_group
+    </string>
+    <string name="pk_data_usage_radio_gb" translatable="false">data_usage_radio_gb</string>
+    <string name="pk_data_usage_radio_mb" translatable="false">data_usage_radio_mb</string>
     <string name="pk_data_warning_group" translatable="false">data_warning_group</string>
     <string name="pk_data_set_warning" translatable="false">data_set_warning</string>
     <string name="pk_data_warning" translatable="false">data_warning</string>
@@ -183,8 +189,8 @@
     <string name="pk_application_details_storage" translatable="false">
         application_details_storage
     </string>
-    <string name="pk_application_details_peak_performance" translatable="false">
-        pk_application_details_peak_performance
+    <string name="pk_application_details_prioritize_app_performance" translatable="false">
+        pk_application_details_prioritize_app_performance
     </string>
     <string name="pk_hibernation_switch" translatable="false">
         hibernation_switch
@@ -363,11 +369,26 @@
     <string name="pk_location_services" translatable="false">location_services</string>
     <string name="pk_location_footer" translatable="false">location_footer</string>
     <string name="pk_location_state_switch" translatable="false">location_state_switch</string>
+    <string name="pk_location_driver_assistance_state_switch" translatable="false">
+        driver_assistance_state_switch
+    </string>
+    <string name="pk_location_driver_assistance_preference_group" translatable="false">
+        driver_assistance_preference_group
+    </string>
 
     <!-- Microphone Settings -->
     <string name="pk_microphone_state_switch" translatable="false">microphone_state_switch</string>
     <string name="pk_microphone_manage_permissions" translatable="false">
         microphone_manage_permissions
+    </string>
+    <string name="pk_microphone_recent_accesses_category" translatable="false">
+        microphone_recent_accesses_category
+    </string>
+    <string name="pk_microphone_recent_accesses_view_all_entry" translatable="false">
+        microphone_recent_accesses_view_all_entry
+    </string>
+    <string name="pk_microphone_recent_requests" translatable="false">
+        microphone_recent_requests
     </string>
 
     <!-- Profiles and Accounts Settings -->
@@ -375,7 +396,8 @@
     <string name="pk_add_profile" translatable="false">add_profile</string>
     <string name="pk_choose_new_admin" translatable="false">choose_new_admin</string>
     <string name="pk_profile_details_header" translatable="false">profile_details_header</string>
-    <string name="pk_profile_details_action_buttons" translatable="false">profile_details_action_buttons
+    <string name="pk_profile_details_action_buttons" translatable="false">
+        profile_details_action_buttons
     </string>
     <string name="pk_profile_details_permissions_header" translatable="false">
         profile_details_permissions_header
@@ -492,4 +514,5 @@
     <string name="pk_device_admin_add_support" translatable="false">device_admin_add_support</string>
     <string name="pk_device_admin_add_action" translatable="false">device_admin_add_action</string>
     <string name="pk_device_admin_add_cancel" translatable="false">device_admin_add_cancel</string>
+    <string name="pk_device_admin_apps" translatable="false">device_admin_apps</string>
 </resources>

@@ -39,12 +39,14 @@
     <string name="psk_choose_lock_type" translatable="false">choose_lock_type_screen</string>
     <string name="psk_choose_new_admin" translatable="false">choose_new_admin_screen</string>
     <string name="psk_data_usage" translatable="false">data_usage_screen</string>
+    <string name="psk_data_usage_set_threshold" translatable="false">data_usage_set_threshold_screen</string>
     <string name="psk_data_warning_and_limit" translatable="false">data_warning_and_limit_screen</string>
     <string name="psk_datetime_settings" translatable="false">datetime_settings_screen</string>
     <string name="psk_default_autofill_picker" translatable="false">default_autofill_picker_screen</string>
     <string name="psk_default_voice_input_picker" translatable="false">default_voice_input_picker_screen</string>
     <string name="psk_developer_options" translatable="false">developer_options_screen</string>
     <string name="psk_device_admin_add" translatable="false">device_admin_add_screen</string>
+    <string name="psk_device_admin_apps" translatable="false">device_admin_apps_screen</string>
     <string name="psk_display_settings" translatable="false">display_settings_screen</string>
     <string name="psk_hardware_info" translatable="false">hardware_info_screen</string>
     <string name="psk_homepage" translatable="false">homepage_screen</string>
@@ -55,6 +57,8 @@
     <string name="psk_legal_information" translatable="false">legal_information_screen</string>
     <string name="psk_location_recent_requests" translatable="false">location_recent_requests_screen</string>
     <string name="psk_location_settings" translatable="false">location_settings_screen</string>
+    <string name="psk_adas_settings" translatable="false">adas_settings_screen</string>
+    <string name="psk_microphone_recent_requests" translatable="false">microphone_recent_requests_screen</string>
     <string name="psk_microphone_settings" translatable="false">microphone_settings_screen</string>
     <string name="psk_assistant_and_voice_settings" translatable="false">assistant_and_voice_settings</string>
     <string name="psk_manage_domain_urls" translatable="false">manage_domain_urls_screen</string>
