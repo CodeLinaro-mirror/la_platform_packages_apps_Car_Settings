@@ -18,8 +18,8 @@ package com.android.car.settings.enterprise;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 
 import androidx.preference.Preference;
 
@@ -40,18 +40,12 @@ public final class DeviceAdminAddHeaderPreferenceController
     protected void updateState(Preference preference) {
         CharSequence name = mDeviceAdminInfo.loadLabel(mPm);
         Drawable icon = mDeviceAdminInfo.loadIcon(mPm);
-        CharSequence description = null;
-        try {
-            description = mDeviceAdminInfo.loadDescription(mPm);
-        } catch (Resources.NotFoundException e) {
-            mLogger.v("No description for "
-                    + mDeviceAdminInfo.getComponent().flattenToShortString());
-        }
+        CharSequence description = getDescription(mDeviceAdminInfo);
 
         mLogger.d("updateState: name=" + name  + ", description=" + description);
         preference.setTitle(name);
         preference.setIcon(icon);
-        if (description != null) {
+        if (!TextUtils.isEmpty(description)) {
             preference.setSummary(description);
         }
     }
