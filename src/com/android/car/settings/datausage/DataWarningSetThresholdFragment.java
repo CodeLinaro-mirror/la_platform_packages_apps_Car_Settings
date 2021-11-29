@@ -21,6 +21,9 @@ import android.net.NetworkTemplate;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+
+import com.android.car.settings.R;
 
 /** Screen used to pick the data usage warning threshold bytes. */
 public class DataWarningSetThresholdFragment extends DataUsageSetThresholdBaseFragment {
@@ -40,5 +43,16 @@ public class DataWarningSetThresholdFragment extends DataUsageSetThresholdBaseFr
     @Override
     void onSave(long threshold) {
         mPolicyEditor.setPolicyWarningBytes(mNetworkTemplate, threshold);
+    }
+
+    @Override
+    @StringRes
+    protected int getTitleResId() {
+        return R.string.data_usage_warning_editor_title;
+    }
+
+    @Override
+    protected long getInitialBytes() {
+        return mPolicyEditor.getPolicyWarningBytes(mNetworkTemplate);
     }
 }
