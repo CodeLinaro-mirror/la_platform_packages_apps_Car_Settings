@@ -1311,7 +1311,7 @@
     <!-- Car storage settings summary. Displayed when the total memory usage is being calculated. Will be replaced with a number like "12.3 GB" when finished calculating. [CHAR LIMIT=30] -->
     <!-- Title for preference on storage usage page that opens audio file browsing. [CHAR LIMIT=50] -->
     <string name="storage_audio_files_title">Audio files</string>
-   <!-- Car storage settings summary. Displayed when the total memory usage is being calculated. Will be replaced with a number like "12.3 GB" when finished calculating. [CHAR LIMIT=30] -->
+    <!-- Car storage settings summary. Displayed when the total memory usage is being calculated. Will be replaced with a number like "12.3 GB" when finished calculating. [CHAR LIMIT=30] -->
     <string name="memory_calculating_size">Calculating\u2026</string>
     <!-- Individual application info screen, label under Storage heading. The amount of space taken up by the application itself (for example, the java compiled files) [CHAR LIMIT=35] -->
     <string name="storage_application_size_label">App size</string>
@@ -1686,8 +1686,10 @@
     <string name="device_admin_activated_apps">Activated apps</string>
     <!-- Device admin deactivated apps -->
     <string name="device_admin_deactivated_apps">Deactivated apps</string>
+    <!-- Device admin apps description -->
+    <string name="device_admin_apps_description">Apps with this permission have access to this vehicle\'s data</string>
     <!-- Device admin apps list is empty -->
-    <string name="device_admin_apps_list_empty">No infotainment system admin apps</string>
+    <string name="device_admin_apps_list_empty">No vehicle admin apps</string>
     <!-- Device admin warning message about policies an admin can use -->
     <string name="device_admin_status">This infotainment system admin app is active and allows
         the app <xliff:g id="app_name">%1$s</xliff:g> to perform the
@@ -1718,7 +1720,7 @@
     <string name="admin_financed_message">The organization manager may be able to access data
         associated with this infotainment system, manage apps, and change this vehicle\’s settings.</string>
     <!-- Title for dialog displayed when user selects on a setting locked by an admin [CHAR LIMIT=NONE] -->
-    <string name="disabled_by_policy_title">Blocked by the organization manager</string>
+    <string name="disabled_by_policy_title">That’s unavailable</string>
     <!-- Title for dialog displayed to tell user that changing volume was disallowed by an admin [CHAR LIMIT=NONE] -->
     <string name="disabled_by_policy_title_adjust_volume">Can’t change volume in this managed vehicle</string>
     <!-- Title for dialog displayed to tell user that outgoing calls were disabled by an admin [CHAR LIMIT=NONE] -->
@@ -1734,7 +1736,7 @@
     <!-- Dialog title. This dialog lets a user know that a specific setting is blocked by their credit provider. Since the user purchased the device from the credit provider, the credit provider controls what they can access. [CHAR LIMIT=50] -->
     <string name="disabled_by_policy_title_financed_device">Blocked by your credit provider</string>
     <!-- Shown when the user tries to change a settings locked by an admin [CHAR LIMIT=NONE] -->
-    <string name="default_admin_support_msg">If you have questions, contact the organization manager</string>
+    <string name="default_admin_support_msg">Access to some features is limited by the organization.\n\nIf you have questions, contact the organization manager.</string>
     <!-- url for learning more about IT admin policy disabling -->
     <string name="help_url_action_disabled_by_it_admin"></string>
     <!-- Title of preference to manage device admin apps, which are used by IT admins to manage devices. [CHAR LIMIT=40] -->
