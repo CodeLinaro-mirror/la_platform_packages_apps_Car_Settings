@@ -75,11 +75,28 @@ public class WifiTetherApBandPreferenceController extends
     }
 
 
+    /**
+     * Currently mBridgedModeOpportunisticShutdownEnabled in SoftApConfiguration.Builder() is true
+     * by default. It will shut down the idle Soft AP from dual AP to single AP if its idle time exceed
+     * config_wifiFrameworkSoftApShutDownIdleInstanceInBridgedModeTimeoutMillisecond(default:300000ms)
+     * If both APs in Dual AP mode are idle, it shuts down the AP in higher band.
+     * This behavior is not expected when enable dual AP mode. We hope Soft Ap idle shutdown
+     * behavior can only be controlled via hotspot UI flag "Turn off hotspot automatically" in both
+     * dual AP and single AP mode.
+     */
+    private void disableBridgedModeOpportunisticShutdown() {
+        SoftApConfiguration newConfig = new SoftApConfiguration.Builder(getCarSoftApConfig())
+                .setBridgedModeOpportunisticShutdownEnabled(false)
+                .build();
+        setCarSoftApConfig(newConfig);
+    }
+
     @Override
     protected void onCreateInternal() {
         super.onCreateInternal();
         updatePreferenceEntries();
         mBand = getCarSoftApBand();
+        disableBridgedModeOpportunisticShutdown();
         getPreference().setEntries(mBandSummaries);
         getPreference().setEntryValues(mBandEntries);
         getPreference().setValue(getBandEntry());
