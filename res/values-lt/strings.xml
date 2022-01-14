@@ -722,10 +722,8 @@
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Ištrinti šį profilį"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Pridėti profilį"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Ekrano šviesumas"</string>
-    <!-- no translation found for qc_bluetooth_off_devices_info (8420985279976892700) -->
-    <skip />
-    <!-- no translation found for qc_bluetooth_on_no_devices_info (7573736950041887300) -->
-    <skip />
+    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Norėdami matyti savo įrenginius, įjunkite „Bluetooth“"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Norėdami susieti įrenginį, atidarykite „Bluetooth“ nustatymus"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Informacinės pramoginės sistemos administratorius"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Suaktyvintos programos"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Išaktyvintos programos"</string>
@@ -768,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"Informacinė pramoginė sistema iš naujo bus nustatyta kitą kartą užvedus automobilį."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"Norint nustatyti iš naujo, automobilis turi stovėti."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Šiuo metu šio nustatymo pakeisti negalima"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Pritaikomumas"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Subtitrai"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"Subtitrų nuostatos"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"Išjungta"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"Įjungta"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"Ekrano skaitytuvas"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"Rodyti subtitrus"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"Teksto dydis"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"Subtitrų dydis ir stilius"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"Labai mažas"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"Mažas"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"Numatytasis"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Didelis"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Labai didelis"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"Subtitrų stilius"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Nustatyta pagal programą"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Baltas ant juodo"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Juodas ant balto"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Geltonas ant juodo"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Geltonas ant mėlyno"</string>
 </resources>

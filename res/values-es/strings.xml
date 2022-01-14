@@ -722,10 +722,8 @@
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Eliminar este perfil"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Añadir perfil"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Brillo de la pantalla"</string>
-    <!-- no translation found for qc_bluetooth_off_devices_info (8420985279976892700) -->
-    <skip />
-    <!-- no translation found for qc_bluetooth_on_no_devices_info (7573736950041887300) -->
-    <skip />
+    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Para ver tus dispositivos, activa el Bluetooth"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Para emparejar un dispositivo, abre los ajustes de Bluetooth"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administrador del sistema de infoentretenimiento"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aplicaciones activadas"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Aplicaciones desactivadas"</string>
@@ -768,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"El sistema se restablecerá cuando arranques el coche."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"El coche debe estar aparcado para restablecerlo."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"No se puede modificar este ajuste en estos momentos"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Accesibilidad"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Subtítulos"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"Preferencias de subtítulos"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"Desactivado"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"Activado"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"Lector de pantalla"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"Mostrar subtítulos"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"Tamaño del texto"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"Tamaño y estilo de los subtítulos"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"Muy pequeño"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"Pequeño"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"Predeterminado"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Grande"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Muy grande"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"Estilo de los subtítulos"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Definido por la aplicación"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Blanco sobre negro"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Negro sobre blanco"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Amarillo sobre negro"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Amarillo sobre azul"</string>
 </resources>

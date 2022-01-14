@@ -722,10 +722,8 @@
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Fshije këtë profil"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Shto profil"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Ndriçimi i ekranit"</string>
-    <!-- no translation found for qc_bluetooth_off_devices_info (8420985279976892700) -->
-    <skip />
-    <!-- no translation found for qc_bluetooth_on_no_devices_info (7573736950041887300) -->
-    <skip />
+    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Për të parë pajisjet e tua, aktivizo Bluetooth-in"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Për të çiftuar një pajisje, hap cilësimet e Bluetooth-it"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administratori i sistemit info-argëtues"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aplikacionet e aktivizuara"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Aplikacionet e çaktivizuara"</string>
@@ -768,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"Sistemi info-argëtues do të rivendoset herën tjetër që do të ndizet makina."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"Makina duhet të jetë e parkuar për të nisur rivendosjen."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Ky cilësim nuk mund të ndryshohet në këtë moment"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Qasshmëria"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Titrat"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"Preferencat e titrave"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"Joaktive"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"Aktive"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"Lexuesi i ekranit"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"Shfaq titrat"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"Madhësia e tekstit"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"Madhësia dhe stili i titrave"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"Shumë të vogla"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"Të vogla"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"Parazgjedhja"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Të mëdha"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Shumë të mëdha"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"Stili i titrave"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Caktuar nga aplikacioni"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"E bardhë mbi të zezë"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"E zezë mbi të bardhë"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"E verdhë mbi të zezë"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"E verdhë në të kaltër"</string>
 </resources>

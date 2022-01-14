@@ -60,7 +60,7 @@
     <string name="carrier_and_update_now_text" msgid="9058821833613481573">"Aggiornamento appena eseguito da <xliff:g id="ID_1">^1</xliff:g>"</string>
     <string name="no_carrier_update_now_text" msgid="5953142546373783189">"Aggiornamento appena eseguito"</string>
     <string name="launch_manage_plan_text" msgid="906657488611815787">"Visualizza piano"</string>
-    <string name="app_data_usage" msgid="3878609885080232877">"Utilizzo dati dell\'app"</string>
+    <string name="app_data_usage" msgid="3878609885080232877">"Utilizzo dati delle app"</string>
     <string name="data_usage_app_restricted" msgid="4570970078120010951">"limitato"</string>
     <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"Data reimpostazione ciclo utilizzo"</string>
     <string name="cycle_reset_day_of_month_picker_subtitle" msgid="5361061448258189846">"Data di ogni mese:"</string>
@@ -325,7 +325,7 @@
     <string name="storage_type_internal" msgid="8918688427078709570">"%s nella memoria interna"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Utilizza le risorse del sistema per dare la priorità alle prestazioni dell\'app"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Utilizzo dei dati"</string>
-    <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Utilizzo dati dell\'app"</string>
+    <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Utilizzo dati delle app"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Cronologia di utilizzo"</string>
     <string name="data_usage_all_apps_title" msgid="5956991037518761599">"Tutte le app"</string>
     <string name="app_data_usage_title" msgid="6991057296054761322">"Utilizzo dati e Wi-Fi"</string>
@@ -722,10 +722,8 @@
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Elimina questo profilo"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Aggiungi profilo"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Luminosità dello schermo"</string>
-    <!-- no translation found for qc_bluetooth_off_devices_info (8420985279976892700) -->
-    <skip />
-    <!-- no translation found for qc_bluetooth_on_no_devices_info (7573736950041887300) -->
-    <skip />
+    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Per vedere i tuoi dispositivi, attiva il Bluetooth"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Per accoppiare un dispositivo, apri le impostazioni Bluetooth"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Amministratore di sistema di infotainment"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"App attivate"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"App disattivate"</string>
@@ -768,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"Il sistema di infotainment verrà ripristinato alla successiva accensione del motore."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"Parcheggia per avviare il ripristino."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Al momento non è possibile modificare questa impostazione"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Accessibilità"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Sottotitoli"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"Preferenze sottotitoli"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"Off"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"On"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"Screen reader"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"Mostra sottotitoli"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"Dimensioni testo"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"Stile e dimensioni sottotitoli"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"Molto piccolo"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"Piccolo"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"Predefinito"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Grande"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Molto grande"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"Stile sottotitoli"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Impostato dall\'app"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Bianco su nero"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Nero su bianco"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Giallo su nero"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Giallo su blu"</string>
 </resources>

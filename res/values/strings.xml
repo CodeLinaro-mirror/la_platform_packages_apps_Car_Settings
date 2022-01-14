@@ -895,7 +895,7 @@
     <string name="location_driver_assistance_toggle_off_title">Vehicle location is off</string>
     <!-- Summary of driver assistance text toggle [CHAR LIMIT=40] -->
     <string name="location_driver_assistance_toggle_off_summary">
-        Driver Assistance features cannot access your location
+        Driver Assistance apps cannot access your location
     </string>
     <!-- -Text of driver assistance text toggle [CHAR LIMIT=40] -->
     <string name="location_driver_assistance_action_text">
@@ -935,7 +935,7 @@
     <string name="driver_assistance_settings_title">Driver assistance</string>
     <!--Driver assistance settings footer warning text [CHAR LIMIT=NONE] -->
     <string name="adas_settings_footer">
-        Location information sent to Driver Assistance features doesn’t contain information that
+        Location information sent to Driver Assistance apps doesn’t contain information that
         identifies you. It’s stored for a maximum of 2 days before being deleted.
     </string>
 
@@ -1485,6 +1485,8 @@
     <string name="error_saving_lockpattern">Error saving pattern</string>
     <!-- Message shown when in pattern unlock screen after too many incorrect attempts [CHAR LIMIT=120]-->
     <string name="lockpattern_too_many_failed_confirmation_attempts">Too many incorrect attempts. Try again in <xliff:g id="number">%d</xliff:g> seconds.</string>
+    <!-- Message shown when the lock pattern is focused  [CHAR LIMIT=40] -->
+    <string name="lockpattern_does_not_support_rotary">Pattern does not support rotary, please use touch</string>
     <!-- Label for button to confirm picker selection [CHAR_LIMIT=20] -->
     <string name="okay">OK</string>
     <!-- Title of dialog asking the user if they really want to remove the screen lock [CHAR LIMIT=30]-->
@@ -1839,4 +1841,22 @@
     <string name="captions_settings_text_style_yellow_on_black">Yellow on black</string>
     <!-- Settings option for closed captions text style to be yellow text on blue background [CHAR LIMIT=40] -->
     <string name="captions_settings_text_style_yellow_on_blue">Yellow on blue</string>
+    <!-- Header for the section of the accessibility settings that lets the user change their screen reader settings. [CHAR LIMIT=30] -->
+    <string name="accessibility_settings_screen_reader_title">Screen reader</string>
+    <!-- Settings title for the TalkBack screen reader section. [CHAR LIMIT=40] -->
+    <string name="talkback_title">TalkBack</string>
+    <!-- Subtitle for the TalkBack screen reader settings item when it is turned off [CHAR LIMIT=30] -->
+    <string name="talkback_settings_off">Off</string>
+    <!-- Subtitle for the TalkBack screen reader settings item when it is turned on [CHAR LIMIT=40] -->
+    <string name="talkback_settings_on">Speak items on screen</string>
+    <!-- Title for toggle to enable TalkBack screen reader. [CHAR LIMIT=30] -->
+    <string name="enable_talkback_toggle_title">Use TalkBack</string>
+    <!-- Header for the options section of the TalkBack screen reader settings. [CHAR LIMIT=30] -->
+    <string name="talkback_options_title">Options</string>
+    <!-- Header for the settings section of the TalkBack screen reader settings. [CHAR LIMIT=30] -->
+    <string name="talkback_settings_title">Settings</string>
+    <!-- Header for the "About TalkBack" section of the TalkBack screen reader settings which describes what it does and how it works. [CHAR LIMIT=30] -->
+    <string name="about_talkback_title">About TalkBack</string>
+    <!-- Description for the "About TalkBack" section of the TalkBack screen reader settings which describes what it does and how it works. [CHAR LIMIT=NONE] -->
+    <string name="about_talkback_description">TalkBack is not available while the vehicle is in motion.\n\nWhen TalkBack is on, it provides spoken feedback so that you can use your device without looking at the screen. TalkBack is intended for situations or people who have difficulty seeing the screen.</string>
 </resources>

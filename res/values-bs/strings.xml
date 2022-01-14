@@ -722,8 +722,8 @@
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Izbriši ovaj profil"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Dodaj profil"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Osvjetljenje ekrana"</string>
-    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Da biste vidjeli svoje uređaje, uključite Bluetooth"</string>
-    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Da biste uparili uređaj, otvorite postavke Bluetootha"</string>
+    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Da vidite svoje uređaje, uključite Bluetooth"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Da uparite uređaj, otvorite postavke Bluetootha"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administrator informativno-zabavnog sistema"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aktivirane aplikacije"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Deaktivirane aplikacije"</string>
@@ -766,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"Info-zab. sist. će se vratiti na zadano kad opet pokrenete auto."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"Da počnete vraćanje na zadano, parkirajte automobil."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Ovu postavku trenutno nije moguće promijeniti"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Pristupačnost"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Titlovi"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"Postavke titlova"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"Isključeno"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"Uključeno"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"Čitač ekrana"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"Prikaži titlove"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"Veličina teksta"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"Veličina i stil titlova"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"Veoma malo"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"Malo"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"Zadano"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Veliko"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Veoma veliko"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"Stil titlova"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Postavila aplikacija"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Bijelo na crnoj podlozi"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Crno na bijeloj podlozi"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Žuto na crnoj podlozi"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Žuto na plavoj podlozi"</string>
 </resources>
