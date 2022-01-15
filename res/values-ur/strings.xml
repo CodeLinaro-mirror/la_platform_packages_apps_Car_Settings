@@ -766,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"اگلی بار کار کے شروع ہونے پر معلوماتی انٹرٹینمنٹ سسٹم ری سیٹ ہو جائے گا۔"</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"ری سیٹ شروع کرنے کیلئے کار کا پارک ہونا ضروری ہے۔"</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"اس ترتیب کو ابھی تبدیل نہیں کیا جا سکتا"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"ایکسیسبیلٹی"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"کیپشنز"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"کیپشن کی ترجیحات"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"آف"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"آن"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"اسکرین قاری"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"کیپشنز دکھائیں"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"ٹیکسٹ کا سائز"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"کیپشن کا سائز اور طرز"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"بہت چھوٹا"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"چھوٹا"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"ڈیفالٹ"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"بڑا"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"بہت بڑا"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"کیپشن کا طرز"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"ایپ کے لحاظ سے سیٹ کریں"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"سیاہ پر سفید"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"سفید پر سیاہ"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"سیاہ پر پیلا"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"نیلے پر پیلا"</string>
 </resources>
