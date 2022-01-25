@@ -74,6 +74,8 @@
     <string name="mobile_network_mobile_network_toggle_title">Mobile network</string>
     <!-- Mobile network screen, toggle mobile network summary [CHAR LIMIT=50] -->
     <string name="mobile_network_mobile_network_toggle_summary">Use mobile data</string>
+    <!-- Subtitle for when mobile network is toggled off [CHAR LIMIT=45] -->
+    <string name="mobile_network_state_off">Off</string>
     <!-- Mobile network screen, confirmation dialog to turn off mobile data [CHAR LIMIT=50] -->
     <string name="confirm_mobile_data_disable">Turn off mobile data?</string>
     <!-- When a SIM preference hasn't been selected yet, this string is displayed as the pref summary until the user chooses a SIM subscription from the preference list. [CHAR LIMIT=50] -->
@@ -1785,6 +1787,15 @@
     </string>
     <!-- Title for the 'Your access to this device' preference category. [CHAR LIMIT=60] -->
     <string name="enterprise_privacy_device_access_category" translatable="false">Your access to this device</string>
+    <!-- Label explaining that the admin can see apps installed on the device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_installed_packages" translatable="false">List of apps on your device</string>
+    <!-- Label explaining that the number of apps is an estimation. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_apps_count_estimation_info" translatable="false">Number of apps is estimated. It may not include apps installed outside of the Play Store.</string>
+    <!-- Summary indicating the number of apps that a label (e.g. installed apps or apps granted a particular permission) refers to. The number shown is a minimum as there may be additional apps we do not know about. [CHAR LIMIT=NONE] -->
+    <plurals name="enterprise_privacy_number_packages_lower_bound">
+        <item quantity="one">Minimum <xliff:g id="count">%d</xliff:g> app</item>
+        <item quantity="other">Minimum <xliff:g id="count">%d</xliff:g> apps</item>
+    </plurals>
     <!-- Label explaining that the admin can retrieve network logs on the device. [CHAR LIMIT=NONE] -->
     <string name="enterprise_privacy_network_logs" translatable="false">Most recent network traffic log</string>
     <!-- Label explaining that the admin can request bug reports on the device. [CHAR LIMIT=NONE] -->
@@ -1836,6 +1847,7 @@
         <item quantity="one" translatable="false"><xliff:g id="count">%d</xliff:g> attempt</item>
         <item quantity="other" translatable="false"><xliff:g id="count">%d</xliff:g> attempts</item>
     </plurals>
+
     <!-- Remote request bugreport --><skip/>
     <!-- Title of dialog shown to ask for user consent for sharing a bugreport that was requested remotely by the vehicle's organization manager. [CHAR LIMIT=50] -->
     <string name="share_remote_bugreport_dialog_title">Share bug report?</string>

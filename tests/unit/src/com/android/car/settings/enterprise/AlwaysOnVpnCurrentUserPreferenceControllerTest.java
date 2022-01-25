@@ -36,7 +36,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 
 public final class AlwaysOnVpnCurrentUserPreferenceControllerTest extends
-        BasePreferenceControllerTestCase {
+        BaseEnterprisePrivacyPreferenceControllerTestCase {
     private AlwaysOnVpnCurrentUserPreferenceController mAlwaysOnVpnCurrentUserPreferenceController;
     private Preference mPreference;
 
@@ -46,6 +46,7 @@ public final class AlwaysOnVpnCurrentUserPreferenceControllerTest extends
     @Before
     public void setUp() {
         when(mSpiedContext.getSystemService(VpnManager.class)).thenReturn(mVpnManager);
+        mockHasDeviceAdminFeature();
         mPreference = new Preference(mSpiedContext);
         mAlwaysOnVpnCurrentUserPreferenceController =
                 new AlwaysOnVpnCurrentUserPreferenceController(
