@@ -69,6 +69,7 @@
     <string name="pk_data_usage_summary" translatable="false">data_usage_summary</string>
     <string name="pk_data_warning_and_limit" translatable="false">data_warning_and_limit</string>
     <string name="pk_data_usage_cycle" translatable="false">data_usage_cycle</string>
+    <string name="pk_data_usage_footer" translatable="false">data_usage_footer</string>
     <string name="pk_data_usage_edit_text" translatable="false">data_usage_edit_text</string>
     <string name="pk_data_usage_radio_group" translatable="false">
         data_usage_radio_group
@@ -83,6 +84,15 @@
     <string name="pk_data_limit" translatable="false">data_limit</string>
     <string name="pk_app_data_usage" translatable="false">app_data_usage</string>
     <string name="pk_app_data_usage_detail" translatable="false">app_data_usage_detail</string>
+    <string name="pk_data_usage_usage_history" translatable="false">data_usage_usage_history</string>
+    <string name="pk_data_usage_all_apps" translatable="false">data_usage_all_apps</string>
+    <string name="pk_app_specific_usage_title" translatable="false">app_specific_usage_title</string>
+    <string name="pk_app_specific_usage_cycle" translatable="false">app_specific_usage_cycle</string>
+    <string name="pk_app_specific_usage_total" translatable="false">app_specific_usage_total</string>
+    <string name="pk_app_specific_usage_foreground" translatable="false">app_specific_usage_foreground</string>
+    <string name="pk_app_specific_usage_background" translatable="false">app_specific_usage_background</string>
+    <string name="pk_app_specific_allow_data" translatable="false">app_specific_allow_data</string>
+    <string name="pk_app_specific_allow_background_data" translatable="false">app_specific_allow_background_data</string>
     <string name="pk_wifi_tether_settings_entry" translatable="false">wifi_tether_settings_entry
     </string>
     <string name="pk_wifi_tether_security" translatable="false">wifi_tether_security</string>
@@ -514,5 +524,15 @@
     <string name="pk_device_admin_add_support" translatable="false">device_admin_add_support</string>
     <string name="pk_device_admin_add_action" translatable="false">device_admin_add_action</string>
     <string name="pk_device_admin_add_cancel" translatable="false">device_admin_add_cancel</string>
-    <string name="pk_device_admin_apps" translatable="false">device_admin_apps</string>
+    <string name="pk_device_admin_activated_apps" translatable="false">device_admin_activated_apps</string>
+    <string name="pk_device_admin_deactivated_apps" translatable="false">device_admin_deactivated_apps</string>
+    <string name="pk_device_admin_apps_description" translatable="false">device_admin_apps_description</string>
+
+    <!-- Accessibility -->
+    <string name="pk_accessibility_settings_entry" translatable="false">accessibility_settings_entry</string>
+    <string name="pk_captions_settings_header" translatable="false">captions_settings_header</string>
+    <string name="pk_show_captions_switch" translatable="false">show_captions_switch</string>
+    <string name="pk_captions_settings_style_subheader" translatable="false">captions_settings_style_subheader</string>
+    <string name="pk_captions_size_settings_entry" translatable="false">captions_size_settings_entry</string>
+    <string name="pk_captions_style_settings_entry" translatable="false">captions_style_settings_entry</string>
 </resources>

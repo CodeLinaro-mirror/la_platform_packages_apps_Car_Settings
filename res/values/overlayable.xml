@@ -109,6 +109,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="color" name="text_color_accent_with_disable"/>
       <item type="color" name="toggle_bg"/>
       <item type="color" name="toggle_icon_tint"/>
+      <item type="color" name="top_level_accessibility_background"/>
+      <item type="color" name="top_level_accessibility_icon"/>
       <item type="color" name="top_level_applications_background"/>
       <item type="color" name="top_level_applications_icon"/>
       <item type="color" name="top_level_assistant_and_voice_background"/>
@@ -162,6 +164,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="dimen" name="ap_preference_item_icon_margin_end"/>
       <item type="dimen" name="ap_preference_item_padding_end"/>
       <item type="dimen" name="ap_preference_item_padding_start"/>
+      <item type="dimen" name="block_by_admin_icon_padding"/>
       <item type="dimen" name="bluetooth_bonded_device_border_width"/>
       <item type="dimen" name="bluetooth_bonded_device_button_radius"/>
       <item type="dimen" name="bluetooth_bonded_device_button_size"/>
@@ -272,6 +275,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="dimen" name="user_disclaimer_action_button_padding_horizontal"/>
       <item type="dimen" name="user_disclaimer_action_button_text_size"/>
       <item type="dimen" name="user_disclaimer_action_button_top_margin"/>
+      <item type="dimen" name="user_disclaimer_text_size"/>
       <item type="drawable" name="bluetooth_bonded_device_rotary_background"/>
       <item type="drawable" name="brightness_seekbar_background"/>
       <item type="drawable" name="brightness_seekbar_track"/>
@@ -284,12 +288,14 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="circle_ripple_bg"/>
       <item type="drawable" name="color_progress_bar"/>
       <item type="drawable" name="ic_add"/>
+      <item type="drawable" name="ic_apps"/>
       <item type="drawable" name="ic_arrow_back"/>
       <item type="drawable" name="ic_arrow_drop_down"/>
       <item type="drawable" name="ic_arrow_forward"/>
       <item type="drawable" name="ic_audio_navi"/>
       <item type="drawable" name="ic_backspace"/>
       <item type="drawable" name="ic_block"/>
+      <item type="drawable" name="ic_blocked_by_admin"/>
       <item type="drawable" name="ic_bluetooth_button"/>
       <item type="drawable" name="ic_bluetooth_button_unavailable"/>
       <item type="drawable" name="ic_bluetooth_media"/>
@@ -333,7 +339,9 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_profile_add"/>
       <item type="drawable" name="ic_qc_bluetooth"/>
       <item type="drawable" name="ic_qc_bluetooth_media"/>
+      <item type="drawable" name="ic_qc_bluetooth_media_unavailable"/>
       <item type="drawable" name="ic_qc_bluetooth_phone"/>
+      <item type="drawable" name="ic_qc_bluetooth_phone_unavailable"/>
       <item type="drawable" name="ic_qc_brightness"/>
       <item type="drawable" name="ic_qc_hotspot"/>
       <item type="drawable" name="ic_qc_mobile_data"/>
@@ -366,6 +374,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_sync_cancel"/>
       <item type="drawable" name="ic_sync_problem"/>
       <item type="drawable" name="ic_system_update"/>
+      <item type="drawable" name="ic_top_level_accessibility"/>
       <item type="drawable" name="ic_top_level_applications"/>
       <item type="drawable" name="ic_top_level_assistant_and_voice"/>
       <item type="drawable" name="ic_top_level_bluetooth"/>
@@ -380,6 +389,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_top_level_system"/>
       <item type="drawable" name="ic_translate"/>
       <item type="drawable" name="ic_units"/>
+      <item type="drawable" name="ic_video_settings"/>
       <item type="drawable" name="ic_warning"/>
       <item type="drawable" name="ic_wifi_signal_0"/>
       <item type="drawable" name="ic_wifi_signal_1"/>
@@ -424,7 +434,6 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="id" name="checkbox"/>
       <item type="id" name="current_profile_frame"/>
       <item type="id" name="cycle_reset_day_of_month"/>
-      <item type="id" name="data_limit_text"/>
       <item type="id" name="data_usage_edit_text"/>
       <item type="id" name="date_picker"/>
       <item type="id" name="dismiss_button"/>
@@ -486,7 +495,6 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="id" name="quick_settings_brightness_seekbar"/>
       <item type="id" name="quick_settings_list"/>
       <item type="id" name="regulatory_info"/>
-      <item type="id" name="remaining_billing_cycle_time_text"/>
       <item type="id" name="restricted_message"/>
       <item type="id" name="ringtone_picker_selected_id"/>
       <item type="id" name="settings_car_ui_focus_area"/>
@@ -494,11 +502,13 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="id" name="settings_focus_parking_view"/>
       <item type="id" name="settings_recycler_view"/>
       <item type="id" name="subtitle_text"/>
+      <item type="id" name="summary"/>
       <item type="id" name="switch_widget"/>
       <item type="id" name="text"/>
       <item type="id" name="tile_icon"/>
       <item type="id" name="tile_text"/>
       <item type="id" name="time_picker"/>
+      <item type="id" name="title"/>
       <item type="id" name="title_text"/>
       <item type="id" name="toolbar_menu_item_0"/>
       <item type="id" name="toolbar_menu_item_1"/>
@@ -567,6 +577,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="layout" name="settings_preference_fragment"/>
       <item type="layout" name="settings_recyclerview_default"/>
       <item type="layout" name="suggestion_preference"/>
+      <item type="layout" name="summary_preference"/>
       <item type="layout" name="summary_preference_widget"/>
       <item type="layout" name="switch_widget"/>
       <item type="layout" name="tile"/>
@@ -579,7 +590,12 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="about_settings"/>
       <item type="string" name="about_settings_summary"/>
       <item type="string" name="about_summary"/>
+      <item type="string" name="about_talkback_description"/>
+      <item type="string" name="about_talkback_title"/>
       <item type="string" name="access_point_tag_key"/>
+      <item type="string" name="accessibility_settings_captions_title"/>
+      <item type="string" name="accessibility_settings_screen_reader_title"/>
+      <item type="string" name="accessibility_settings_title"/>
       <item type="string" name="account_auto_sync_summary"/>
       <item type="string" name="account_auto_sync_title"/>
       <item type="string" name="account_details_title"/>
@@ -604,7 +620,6 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="admin_financed_message"/>
       <item type="string" name="admin_profile_owner_message"/>
       <item type="string" name="admin_profile_owner_user_message"/>
-      <item type="string" name="admin_support_more_info"/>
       <item type="string" name="alarm_ringtone_title"/>
       <item type="string" name="alarm_volume_title"/>
       <item type="string" name="all_applications"/>
@@ -720,6 +735,22 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="build_info_fmt"/>
       <item type="string" name="build_number"/>
       <item type="string" name="cancel"/>
+      <item type="string" name="captions_settings_off"/>
+      <item type="string" name="captions_settings_on"/>
+      <item type="string" name="captions_settings_style_header"/>
+      <item type="string" name="captions_settings_text_size_default"/>
+      <item type="string" name="captions_settings_text_size_large"/>
+      <item type="string" name="captions_settings_text_size_small"/>
+      <item type="string" name="captions_settings_text_size_very_large"/>
+      <item type="string" name="captions_settings_text_size_very_small"/>
+      <item type="string" name="captions_settings_text_style_black_on_white"/>
+      <item type="string" name="captions_settings_text_style_by_app"/>
+      <item type="string" name="captions_settings_text_style_white_on_black"/>
+      <item type="string" name="captions_settings_text_style_yellow_on_black"/>
+      <item type="string" name="captions_settings_text_style_yellow_on_blue"/>
+      <item type="string" name="captions_settings_title"/>
+      <item type="string" name="captions_text_size_title"/>
+      <item type="string" name="captions_text_style_title"/>
       <item type="string" name="carrier_and_update_now_text"/>
       <item type="string" name="carrier_and_update_text"/>
       <item type="string" name="cell_data_limit"/>
@@ -814,6 +845,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="developer_options_settings"/>
       <item type="string" name="device_admin_activated_apps"/>
       <item type="string" name="device_admin_add_title"/>
+      <item type="string" name="device_admin_apps_description"/>
       <item type="string" name="device_admin_apps_list_empty"/>
       <item type="string" name="device_admin_deactivated_apps"/>
       <item type="string" name="device_admin_status"/>
@@ -845,6 +877,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="edit_user_name_title"/>
       <item type="string" name="eight"/>
       <item type="string" name="empty_placeholder"/>
+      <item type="string" name="enable_talkback_toggle_title"/>
       <item type="string" name="enable_text"/>
       <item type="string" name="enter_key"/>
       <item type="string" name="error_saving_lockpattern"/>
@@ -889,6 +922,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="hide_system"/>
       <item type="string" name="hide_system_apps"/>
       <item type="string" name="hk_AboutSettingsActivity"/>
+      <item type="string" name="hk_AccessibilitySettingsActivity"/>
       <item type="string" name="hk_AddWifiActivity"/>
       <item type="string" name="hk_ApplicationsDetailsActivity"/>
       <item type="string" name="hk_ApplicationsSettingsActivity"/>
@@ -896,8 +930,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="hk_AssistantAndVoiceSettingsActivity"/>
       <item type="string" name="hk_BluetoothDevicePickerActivity"/>
       <item type="string" name="hk_BluetoothSettingsActivity"/>
+      <item type="string" name="hk_CaptionsSettingsActivity"/>
       <item type="string" name="hk_ChooseAccountActivity"/>
-      <item type="string" name="hk_DataUsageActivity"/>
       <item type="string" name="hk_DataWarningAndLimitActivity"/>
       <item type="string" name="hk_DatetimeSettingsActivity"/>
       <item type="string" name="hk_DefaultAutofillPickerActivity"/>
@@ -966,8 +1000,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="location_settings_title"/>
       <item type="string" name="location_state_switch_content_description"/>
       <item type="string" name="location_toggle_off_warning"/>
-      <item type="string" name="location_toggle_title"/>
       <item type="string" name="location_toggle_summary"/>
+      <item type="string" name="location_toggle_title"/>
       <item type="string" name="location_use_location_title"/>
       <item type="string" name="lock_settings_enter_password"/>
       <item type="string" name="lock_settings_enter_pattern"/>
@@ -1102,6 +1136,8 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="profiles_and_accounts_settings_title"/>
       <item type="string" name="profiles_list_title"/>
       <item type="string" name="progress_scanning"/>
+      <item type="string" name="qc_bluetooth_off_devices_info"/>
+      <item type="string" name="qc_bluetooth_on_no_devices_info"/>
       <item type="string" name="qc_display_brightness"/>
       <item type="string" name="really_remove_account_message"/>
       <item type="string" name="really_remove_account_title"/>
@@ -1147,6 +1183,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="runtime_permissions_summary_no_permissions_requested"/>
       <item type="string" name="safety_and_regulatory_info"/>
       <item type="string" name="screen_lock_options"/>
+      <item type="string" name="screen_reader_settings_title"/>
       <item type="string" name="security_lock_none"/>
       <item type="string" name="security_lock_password"/>
       <item type="string" name="security_lock_pattern"/>
@@ -1170,6 +1207,7 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="share_remote_bugreport_dialog_message_finished"/>
       <item type="string" name="share_remote_bugreport_dialog_title"/>
       <item type="string" name="sharing_remote_bugreport_dialog_message"/>
+      <item type="string" name="show_captions_toggle_title"/>
       <item type="string" name="show_dev_already"/>
       <item type="string" name="show_dev_countdown"/>
       <item type="string" name="show_dev_on"/>
@@ -1220,6 +1258,11 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="string" name="system_advanced_title"/>
       <item type="string" name="system_setting_title"/>
       <item type="string" name="system_update_settings_title"/>
+      <item type="string" name="talkback_options_title"/>
+      <item type="string" name="talkback_settings_off"/>
+      <item type="string" name="talkback_settings_on"/>
+      <item type="string" name="talkback_settings_title"/>
+      <item type="string" name="talkback_title"/>
       <item type="string" name="terms_title"/>
       <item type="string" name="tether_settings_title_all"/>
       <item type="string" name="text_to_speech_current_engine"/>
@@ -1435,11 +1478,13 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="style" name="UserDisclaimerActionButtonTextStyle"/>
       <item type="style" name="UserDisclaimerButtonStyle"/>
       <item type="xml" name="about_settings_fragment"/>
+      <item type="xml" name="accessibility_settings_fragment"/>
       <item type="xml" name="account_details_fragment"/>
       <item type="xml" name="account_sync_details_fragment"/>
       <item type="xml" name="adas_location_fragment"/>
       <item type="xml" name="add_wifi_fragment"/>
       <item type="xml" name="app_data_usage_fragment"/>
+      <item type="xml" name="app_specific_data_usage_fragment"/>
       <item type="xml" name="app_storage_settings_details_fragment"/>
       <item type="xml" name="application_details_fragment"/>
       <item type="xml" name="application_launch_settings_fragment"/>
@@ -1450,12 +1495,12 @@ REGENERATE USING packages/apps/Car/tests/tools/rro/generate-overlayable.py
       <item type="xml" name="bluetooth_device_picker_fragment"/>
       <item type="xml" name="bluetooth_pairing_selection_fragment"/>
       <item type="xml" name="bluetooth_settings_fragment"/>
+      <item type="xml" name="captions_settings_fragment"/>
       <item type="xml" name="car_volume_items"/>
       <item type="xml" name="child_locale_picker_fragment"/>
       <item type="xml" name="choose_account_fragment"/>
       <item type="xml" name="choose_lock_type_fragment"/>
       <item type="xml" name="choose_new_admin_fragment"/>
-      <item type="xml" name="data_usage_fragment"/>
       <item type="xml" name="data_usage_set_threshold_fragment"/>
       <item type="xml" name="data_warning_and_limit_fragment"/>
       <item type="xml" name="datetime_settings_fragment"/>

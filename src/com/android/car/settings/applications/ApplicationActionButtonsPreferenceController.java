@@ -54,6 +54,7 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceController;
 import com.android.car.settings.enterprise.ActionDisabledByAdminDialogFragment;
+import com.android.car.settings.enterprise.DeviceAdminAddActivity;
 import com.android.car.settings.profiles.ProfileHelper;
 import com.android.settingslib.Utils;
 import com.android.settingslib.applications.ApplicationsState;
@@ -90,6 +91,8 @@ public class ApplicationActionButtonsPreferenceController extends
             Arrays.asList(UserManager.DISALLOW_APPS_CONTROL);
     private static final List<String> UNINSTALL_RESTRICTIONS =
             Arrays.asList(UserManager.DISALLOW_UNINSTALL_APPS, UserManager.DISALLOW_APPS_CONTROL);
+    private static final List<String> DISABLE_RESTRICTIONS =
+            Arrays.asList(UserManager.DISALLOW_APPS_CONTROL);
 
     @VisibleForTesting
     static final String DISABLE_CONFIRM_DIALOG_TAG =
@@ -151,17 +154,14 @@ public class ApplicationActionButtonsPreferenceController extends
     };
 
     @VisibleForTesting
-    final ConfirmationDialogFragment.ConfirmListener mDisableConfirmListener =
-            new ConfirmationDialogFragment.ConfirmListener() {
-                @Override
-                public void onConfirm(@Nullable Bundle arguments) {
-                    mPm.setApplicationEnabledSetting(mPackageName,
-                            PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER, /* flags= */ 0);
-                    updateUninstallButtonInner(false);
-                }
-            };
+    final ConfirmationDialogFragment.ConfirmListener mDisableConfirmListener = i -> {
+        mPm.setApplicationEnabledSetting(mPackageName,
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER, /* flags= */ 0);
+        updateUninstallButtonInner(false);
+    };
 
     private final View.OnClickListener mDisableClickListener = i -> {
+        if (ignoreActionBecauseItsDisabledByAdmin(DISABLE_RESTRICTIONS)) return;
         ConfirmationDialogFragment dialogFragment =
                 new ConfirmationDialogFragment.Builder(getContext())
                         .setMessage(getContext().getString(R.string.app_disable_dialog_text))
@@ -181,10 +181,19 @@ public class ApplicationActionButtonsPreferenceController extends
     private final View.OnClickListener mUninstallClickListener = i -> {
         if (ignoreActionBecauseItsDisabledByAdmin(UNINSTALL_RESTRICTIONS)) return;
         Uri packageUri = Uri.parse("package:" + mPackageName);
-        Intent uninstallIntent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
-        uninstallIntent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
-        getFragmentController().startActivityForResult(uninstallIntent, UNINSTALL_REQUEST_CODE,
-                /* callback= */ this);
+        if (mDpm.packageHasActiveAdmins(mPackageName)) {
+            // Show Device Admin app details screen to deactivate the device admin before it can
+            // be uninstalled.
+            Intent deviceAdminIntent = new Intent(getContext(), DeviceAdminAddActivity.class)
+                    .putExtra(DeviceAdminAddActivity.EXTRA_DEVICE_ADMIN_PACKAGE_NAME, mPackageName);
+            getFragmentController().startActivityForResult(deviceAdminIntent,
+                    /* requestCode= */ 0, /* callback= */ null);
+        } else {
+            Intent uninstallIntent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
+            uninstallIntent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
+            getFragmentController().startActivityForResult(uninstallIntent, UNINSTALL_REQUEST_CODE,
+                    /* callback= */ this);
+        }
     };
 
     private final ApplicationsState.Callbacks mApplicationStateCallbacks =
@@ -403,11 +412,6 @@ public class ApplicationActionButtonsPreferenceController extends
 
         if (Utils.isSystemPackage(getContext().getResources(), mPm, mPackageInfo)) {
             LOG.d("Uninstall disabled for system package");
-            return true;
-        }
-
-        if (mDpm.packageHasActiveAdmins(mPackageName)) {
-            LOG.d("Uninstall disabled because package has active admins");
             return true;
         }
 

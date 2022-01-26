@@ -60,7 +60,7 @@
     <string name="carrier_and_update_now_text" msgid="9058821833613481573">"Aggiornamento appena eseguito da <xliff:g id="ID_1">^1</xliff:g>"</string>
     <string name="no_carrier_update_now_text" msgid="5953142546373783189">"Aggiornamento appena eseguito"</string>
     <string name="launch_manage_plan_text" msgid="906657488611815787">"Visualizza piano"</string>
-    <string name="app_data_usage" msgid="3878609885080232877">"Utilizzo dati dell\'app"</string>
+    <string name="app_data_usage" msgid="3878609885080232877">"Utilizzo dati delle app"</string>
     <string name="data_usage_app_restricted" msgid="4570970078120010951">"limitato"</string>
     <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"Data reimpostazione ciclo utilizzo"</string>
     <string name="cycle_reset_day_of_month_picker_subtitle" msgid="5361061448258189846">"Data di ogni mese:"</string>
@@ -325,7 +325,7 @@
     <string name="storage_type_internal" msgid="8918688427078709570">"%s nella memoria interna"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Utilizza le risorse del sistema per dare la priorità alle prestazioni dell\'app"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Utilizzo dei dati"</string>
-    <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Utilizzo dati dell\'app"</string>
+    <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Utilizzo dati delle app"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Cronologia di utilizzo"</string>
     <string name="data_usage_all_apps_title" msgid="5956991037518761599">"Tutte le app"</string>
     <string name="app_data_usage_title" msgid="6991057296054761322">"Utilizzo dati e Wi-Fi"</string>
@@ -396,22 +396,15 @@
     <string name="more_special_access_title" msgid="166115485446645971">"Altro"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Posizione"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Usa posizione"</string>
-    <!-- no translation found for location_toggle_summary (7977868708102299495) -->
-    <skip />
-    <!-- no translation found for location_toggle_off_warning (8396854289251143748) -->
-    <skip />
-    <!-- no translation found for location_driver_assistance_toggle_title (9201622805420459957) -->
-    <skip />
+    <string name="location_toggle_summary" msgid="7977868708102299495">"Consenti alle app specificate di accedere alla tua posizione"</string>
+    <string name="location_toggle_off_warning" msgid="8396854289251143748">"Se disattivi questa impostazione, verrà rimosso l\'accesso alla posizione per tutte le app. Le app di assistenza alla guida continueranno ad avere accesso."</string>
+    <string name="location_driver_assistance_toggle_title" msgid="9201622805420459957">"Usa posizione per assistenza alla guida"</string>
     <string name="location_driver_assistance_toggle_off_title" msgid="2218532550578204718">"Posizione del veicolo disattivata"</string>
-    <!-- no translation found for location_driver_assistance_toggle_off_summary (4593257453422707898) -->
-    <skip />
+    <string name="location_driver_assistance_toggle_off_summary" msgid="4593257453422707898">"Le funzionalità di assistenza alla guida non possono accedere alla tua posizione"</string>
     <string name="location_driver_assistance_action_text" msgid="1887309495010247883">"Modifica"</string>
-    <!-- no translation found for location_driver_assistance_toggle_summary (2732591196508054649) -->
-    <skip />
-    <!-- no translation found for location_driver_assistance_toggle_off_warning (8097738968253492982) -->
-    <skip />
-    <!-- no translation found for driver_assistance_warning_confirm_label (2873799611160864931) -->
-    <skip />
+    <string name="location_driver_assistance_toggle_summary" msgid="2732591196508054649">"Consenti alle app di assistenza alla guida di accedere alla tua posizione"</string>
+    <string name="location_driver_assistance_toggle_off_warning" msgid="8097738968253492982">"Se disattivi questa impostazione, verranno disattivate le app di assistenza alla guida che si basano sulle informazioni relative alla posizione."</string>
+    <string name="driver_assistance_warning_confirm_label" msgid="2873799611160864931">"Disattiva comunque"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Richieste di posizione recenti"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Nessuna richiesta di posizione recente"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Autorizzazioni a livello di app"</string>
@@ -419,8 +412,7 @@
     <string name="location_use_location_title" msgid="117735895374606680">"Usa posizione"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Il servizio di geolocalizzazione potrebbe usare fonti quali GPS, reti mobili, Wi-Fi e sensori per stabilire la posizione approssimativa del dispositivo."</string>
     <string name="driver_assistance_settings_title" msgid="4915804073177128915">"Assistenza alla guida"</string>
-    <!-- no translation found for adas_settings_footer (7882070515956528976) -->
-    <skip />
+    <string name="adas_settings_footer" msgid="7882070515956528976">"Le informazioni sulla posizione inviate alle funzionalità di assistenza alla guida non includono dati che ti identificano. Vengono memorizzate per massimo 2 giorni prima di essere eliminate."</string>
     <string name="microphone_settings_title" msgid="7125554350537136922">"Microfono"</string>
     <string name="microphone_toggle_title" msgid="911586035332827275">"Usa il microfono"</string>
     <string name="microphone_toggle_summary" msgid="2682653449849128626">"Consenti a tutte le app di accedere al microfono"</string>
@@ -730,37 +722,43 @@
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Elimina questo profilo"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Aggiungi profilo"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Luminosità dello schermo"</string>
+    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Per vedere i tuoi dispositivi, attiva il Bluetooth"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Per accoppiare un dispositivo, apri le impostazioni Bluetooth"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Amministratore di sistema di infotainment"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"App attivate"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"App disattivate"</string>
-    <string name="device_admin_apps_list_empty" msgid="2029922702964310266">"Nessuna app di amministrazione del sistema di infotainment"</string>
+    <string name="device_admin_apps_description" msgid="1371935499168453457">"Le app con questa autorizzazione hanno accesso ai dati di questo veicolo"</string>
+    <string name="device_admin_apps_list_empty" msgid="7634804595645191123">"Nessuna app di amministrazione del veicolo"</string>
     <string name="device_admin_status" msgid="4041772636856135168">"Questa app per amministratori di sistema di infotainment è attiva e consente all\'app <xliff:g id="APP_NAME">%1$s</xliff:g> di eseguire le seguenti operazioni:"</string>
     <string name="device_admin_warning" msgid="8997805999333600901">"Attivando questa app di sistema di infotainment, l\'app <xliff:g id="APP_NAME">%1$s</xliff:g> potrà eseguire le seguenti operazioni:"</string>
     <string name="add_device_admin_msg" msgid="8188888666879499482">"Attivare app di sistema di infotainment?"</string>
     <string name="add_device_admin" msgid="7674707256074840333">"Attiva questa app di sistema di infotainment"</string>
     <string name="remove_device_admin" msgid="3595343390502030723">"Disattiva quest\'app di sistema di infotainment"</string>
-    <string name="admin_support_more_info" msgid="380785608579390750">"Altri dettagli"</string>
-    <string name="admin_profile_owner_message" msgid="905509940230549773">"Il tuo gestore del parco risorse può monitorare e gestire le app e i dati associati a questo profilo, inclusi accesso aziendale, impostazioni, autorizzazioni, attività di rete e informazioni sulla posizione del veicolo."</string>
-    <string name="admin_profile_owner_user_message" msgid="3867350539930925070">"Il tuo gestore del parco risorse può monitorare e gestire le app e i dati associati a questo profilo, inclusi accesso aziendale, impostazioni, autorizzazioni, attività di rete e informazioni sulla posizione del dispositivo."</string>
-    <string name="admin_device_owner_message" msgid="8261844995284196176">"Il gestore del parco risorse può monitorare e gestire le app e i dati associati a questo sistema di infotainment, inclusi accesso aziendale, impostazioni, autorizzazioni, attività di rete e informazioni sulla posizione del veicolo."</string>
-    <string name="admin_financed_message" msgid="8530796044340607865">"Il gestore del parco risorse potrebbe essere in grado di accedere ai dati associati a questo sistema di infotainment, gestire app e modificare le impostazioni di questo veicolo."</string>
-    <string name="disabled_by_policy_title" msgid="5651853760118792629">"Accesso blocc. da gest. parco risorse"</string>
-    <string name="disabled_by_policy_title_adjust_volume" msgid="947693485036623479">"Contatta gestore parco risorse per reg. il volume"</string>
-    <!-- no translation found for disabled_by_policy_title_outgoing_calls (2241478131660447002) -->
-    <skip />
-    <string name="disabled_by_policy_title_sms" msgid="4353988664398839837">"Contatta gestore parco risorse per usare gli SMS"</string>
-    <string name="disabled_by_policy_title_camera" msgid="8008769061266209577">"Contatta gestore parco risorse per usare fotocamera"</string>
-    <string name="disabled_by_policy_title_screen_capture" msgid="156845907165179949">"Contatta gestore parco risorse per fare screenshot"</string>
-    <string name="disabled_by_policy_title_suspend_packages" msgid="1249154592881985661">"Contatta gestore parco risorse per usare quest\'app"</string>
+    <string name="admin_profile_owner_message" msgid="8361351256802954556">"Il gestore dell\'organizzazione può monitorare e gestire le app e i dati associati a questo profilo, inclusi accesso aziendale, impostazioni, autorizzazioni, attività di rete e informazioni sulla posizione del veicolo."</string>
+    <string name="admin_profile_owner_user_message" msgid="366072696508275753">"Il gestore dell\'organizzazione può monitorare e gestire le app e i dati associati a questo profilo, inclusi accesso aziendale, impostazioni, autorizzazioni, attività di rete e informazioni sulla posizione del dispositivo."</string>
+    <string name="admin_device_owner_message" msgid="896530502350904835">"Il gestore dell\'organizzazione può monitorare e gestire le app e i dati associati a questo sistema di infotainment, inclusi accesso aziendale, impostazioni, autorizzazioni, attività di rete e informazioni sulla posizione del veicolo."</string>
+    <string name="admin_financed_message" msgid="7357397436233684082">"Il gestore dell\'organizzazione potrebbe essere in grado di accedere ai dati associati a questo sistema di infotainment, gestire app e modificare le impostazioni di questo veicolo."</string>
+    <string name="disabled_by_policy_title" msgid="1121694702115232518">"Non disponibile"</string>
+    <string name="disabled_by_policy_title_adjust_volume" msgid="7002865820552702232">"Impossibile regolare il volume in questo veicolo gestito"</string>
+    <string name="disabled_by_policy_title_outgoing_calls" msgid="158752542663419500">"Impossibile effettuare chiamate in questo veicolo gestito"</string>
+    <string name="disabled_by_policy_title_sms" msgid="3044491214572494290">"Gli SMS non sono consentiti in questo veicolo gestito"</string>
+    <string name="disabled_by_policy_title_camera" msgid="8929782627587059121">"La videocamera non è disponibile in questo veicolo gestito"</string>
+    <string name="disabled_by_policy_title_screen_capture" msgid="4059715943558852466">"Impossibile acquisire screenshot in questo veicolo gestito"</string>
+    <string name="disabled_by_policy_title_suspend_packages" msgid="7505332012990359725">"Impossibile aprire l\'app in questo veicolo gestito"</string>
     <string name="disabled_by_policy_title_financed_device" msgid="6005343494788285981">"Impostazione bloccata dal fornitore di credito"</string>
-    <string name="default_admin_support_msg" msgid="1611734116715908153">"Se hai domande, contatta il gestore del parco risorse"</string>
+    <string name="default_admin_support_msg" msgid="2986598061733013282">"L\'accesso ad alcune funzionalità è stato limitato dall\'organizzazione.\n\nPer eventuali domande, contatta il responsabile dell\'organizzazione."</string>
     <string name="help_url_action_disabled_by_it_admin" msgid="1479392394986580260"></string>
     <string name="manage_device_admin" msgid="7087659697154317316">"App per amministratori veicolo"</string>
     <string name="number_of_device_admins" msgid="7508826094096451485">"{count,plural, =1{# app attivata}other{# app attivate}}"</string>
     <string name="number_of_device_admins_none" msgid="5547493703413973954">"Nessuna app attivata"</string>
-    <!-- no translation found for work_policy_privacy_settings (5263835989260149968) -->
-    <skip />
-    <string name="work_policy_privacy_settings_summary" msgid="5770881048853242635">"Impostazioni gestite dal tuo gestore del parco risorse"</string>
+    <string name="work_policy_privacy_settings" msgid="5263835989260149968">"Norme relative ai veicoli <xliff:g id="ORGANIZATION_NAME">%1$s</xliff:g>"</string>
+    <string name="work_policy_privacy_settings_summary" msgid="5321618399949880194">"Impostazioni gestite dal gestore dell\'organizzazione"</string>
+    <string name="share_remote_bugreport_dialog_title" msgid="7268540014481283490">"Condividere la segnalazione di bug?"</string>
+    <string name="share_remote_bugreport_dialog_message_finished" msgid="2976131666427197841">"Il gestore dell\'organizzazione del veicolo ha richiesto una segnalazione di bug per contribuire a risolvere i problemi di questo dispositivo. Potrebbero essere condivisi dati e app."</string>
+    <string name="share_remote_bugreport_dialog_message" msgid="7884771062689597395">"Il gestore dell\'organizzazione del veicolo ha richiesto una segnalazione di bug per contribuire a risolvere i problemi di questo dispositivo. Potrebbero essere condivisi dati e app e il dispositivo potrebbe rallentare temporaneamente."</string>
+    <string name="sharing_remote_bugreport_dialog_message" msgid="7018120538510110940">"La segnalazione di bug sta per essere condivisa con il gestore dell\'organizzazione del veicolo. Contatta il gestore per maggiori dettagli."</string>
+    <string name="share_remote_bugreport_action" msgid="5364819432179581532">"Condividi"</string>
+    <string name="decline_remote_bugreport_action" msgid="7287544934032744334">"Rifiuta"</string>
     <string name="factory_reset_parked_title" msgid="4004694559766549441">"Ripristina il sistema di infotainment"</string>
     <string name="factory_reset_parked_text" msgid="1446768795193651311">"Il sistema ha ricevuto una richiesta di ripristino dei dati di fabbrica e di cancellazione di tutti i dati. Puoi effettuare ora il ripristino oppure alla successiva accensione del motore. Dopodiché potrai configurare un nuovo profilo."</string>
     <string name="factory_reset_now_button" msgid="4461863686086129437">"Ripristina ora"</string>
@@ -768,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"Il sistema di infotainment verrà ripristinato alla successiva accensione del motore."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"Parcheggia per avviare il ripristino."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Al momento non è possibile modificare questa impostazione"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Accessibilità"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Sottotitoli"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"Preferenze sottotitoli"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"Off"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"On"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"Screen reader"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"Mostra sottotitoli"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"Dimensioni testo"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"Stile e dimensioni sottotitoli"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"Molto piccolo"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"Piccolo"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"Predefinito"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Grande"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Molto grande"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"Stile sottotitoli"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Impostato dall\'app"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Bianco su nero"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Nero su bianco"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Giallo su nero"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Giallo su blu"</string>
 </resources>

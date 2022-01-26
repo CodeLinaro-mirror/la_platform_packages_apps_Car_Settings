@@ -396,22 +396,15 @@
     <string name="more_special_access_title" msgid="166115485446645971">"Több"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Hely"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Hely használata"</string>
-    <!-- no translation found for location_toggle_summary (7977868708102299495) -->
-    <skip />
-    <!-- no translation found for location_toggle_off_warning (8396854289251143748) -->
-    <skip />
-    <!-- no translation found for location_driver_assistance_toggle_title (9201622805420459957) -->
-    <skip />
+    <string name="location_toggle_summary" msgid="7977868708102299495">"Megadott alkalmazásai hozzáférhetnek a helyadatokhoz"</string>
+    <string name="location_toggle_off_warning" msgid="8396854289251143748">"A beállítás kikapcsolásával megszünteti a helyadatokhoz való hozzáférést is az összes alkalmazás esetében. A sofőrtámogató alkalmazások hozzáférése viszont megmarad."</string>
+    <string name="location_driver_assistance_toggle_title" msgid="9201622805420459957">"Sofőrtámogatás helyadatokkal"</string>
     <string name="location_driver_assistance_toggle_off_title" msgid="2218532550578204718">"A jármű helyadatai ki vannak kapcsolva"</string>
-    <!-- no translation found for location_driver_assistance_toggle_off_summary (4593257453422707898) -->
-    <skip />
+    <string name="location_driver_assistance_toggle_off_summary" msgid="4593257453422707898">"A sofőrtámogatási funkciók nem férhetnek hozzá a helyadatokhoz"</string>
     <string name="location_driver_assistance_action_text" msgid="1887309495010247883">"Módosítás"</string>
-    <!-- no translation found for location_driver_assistance_toggle_summary (2732591196508054649) -->
-    <skip />
-    <!-- no translation found for location_driver_assistance_toggle_off_warning (8097738968253492982) -->
-    <skip />
-    <!-- no translation found for driver_assistance_warning_confirm_label (2873799611160864931) -->
-    <skip />
+    <string name="location_driver_assistance_toggle_summary" msgid="2732591196508054649">"A vezetést segítő alkalmazások hozzáférhetnek a helyadatokhoz"</string>
+    <string name="location_driver_assistance_toggle_off_warning" msgid="8097738968253492982">"Ha kikapcsolja ezt a beállítást, letiltja a helyadatokra támaszkodó sofőrtámogató alkalmazásokat is."</string>
+    <string name="driver_assistance_warning_confirm_label" msgid="2873799611160864931">"Kikapcsolás mindenképp"</string>
     <string name="location_settings_recent_requests_title" msgid="6345634382240930628">"Legutóbbi helylekérdezések"</string>
     <string name="location_settings_recent_requests_empty_message" msgid="7789667070033674910">"Nincsenek friss helylekérdezések"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Alkalmazásszintű engedélyek"</string>
@@ -419,8 +412,7 @@
     <string name="location_use_location_title" msgid="117735895374606680">"Helyadatok használata"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Eszköze helyének meghatározásához a Hely szolgáltatás a GPS, a Wi-Fi- és mobilhálózatok, továbbá az érzékelők adatait használhatja fel."</string>
     <string name="driver_assistance_settings_title" msgid="4915804073177128915">"Sofőrtámogatás"</string>
-    <!-- no translation found for adas_settings_footer (7882070515956528976) -->
-    <skip />
+    <string name="adas_settings_footer" msgid="7882070515956528976">"A sofőrtámogatási funkcióknak küldött helyadatok nem tartalmaznak olyan információkat, amelyek alapján Ön beazonosítható lenne. Legfeljebb két napig tároljuk ezeket az adatokat, mielőtt törölnénk őket."</string>
     <string name="microphone_settings_title" msgid="7125554350537136922">"Mikrofon"</string>
     <string name="microphone_toggle_title" msgid="911586035332827275">"Mikrofon használata"</string>
     <string name="microphone_toggle_summary" msgid="2682653449849128626">"Mikrofonhoz való hozzáférés engedélyezése az összes alkalmazás számára"</string>
@@ -730,37 +722,43 @@
     <string name="delete_this_profile_text" msgid="6035404714526922665">"A profil törlése"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Profil hozzáadása"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"A kijelző fényereje"</string>
+    <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Eszközei megtekintéséhez kapcsolja be a Bluetootht"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Eszköz párosításához nyissa meg a Bluetooth-beállításokat"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Infotainment-rendszergazda"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aktivált alkalmazások"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Deaktivált alkalmazások"</string>
-    <string name="device_admin_apps_list_empty" msgid="2029922702964310266">"Nem található rendszergazdai infotainmentapp"</string>
+    <string name="device_admin_apps_description" msgid="1371935499168453457">"Az ezzel az engedéllyel rendelkező alkalmazások hozzáférhetnek a jármű adataihoz"</string>
+    <string name="device_admin_apps_list_empty" msgid="7634804595645191123">"Nem található jármű-adminisztrátori alkalmazás"</string>
     <string name="device_admin_status" msgid="4041772636856135168">"Az infotainment-rendszergazdai alkalmazás aktív, és engedélyezi a(z) <xliff:g id="APP_NAME">%1$s</xliff:g> alkalmazás számára a következő műveletek végrehajtását:"</string>
     <string name="device_admin_warning" msgid="8997805999333600901">"Az infotainment-rendszergazdai alkalmazás aktiválása engedélyezi a(z) <xliff:g id="APP_NAME">%1$s</xliff:g> alkalmazás számára a következő műveletek végrehajtását:"</string>
     <string name="add_device_admin_msg" msgid="8188888666879499482">"Aktiválja az infotainmentrendszer-appot?"</string>
     <string name="add_device_admin" msgid="7674707256074840333">"Az infotainmentrendszer-app aktiválása"</string>
     <string name="remove_device_admin" msgid="3595343390502030723">"Az infotainmentrendszer-alkalmazás deaktiválása"</string>
-    <string name="admin_support_more_info" msgid="380785608579390750">"További részletek"</string>
-    <string name="admin_profile_owner_message" msgid="905509940230549773">"A flottakezelő figyelheti és kezelheti az ezzel a profillal társított alkalmazásokat és adatokat, beleértve a beállításokat, az engedélyeket, a vállalati hozzáférést, a hálózati tevékenységeket és a jármű helyadatait is."</string>
-    <string name="admin_profile_owner_user_message" msgid="3867350539930925070">"A flottakezelő figyelheti és kezelheti az ezzel a profillal társított alkalmazásokat és adatokat, beleértve a beállításokat, az engedélyeket, a vállalati hozzáférést, a hálózati tevékenységeket és az eszköz helyadatait is."</string>
-    <string name="admin_device_owner_message" msgid="8261844995284196176">"A flottakezelő figyelheti és kezelheti az ezzel az infotainmentrendszerrel társított alkalmazásokat és adatokat, beleértve a beállításokat, az engedélyeket, a vállalati hozzáférést, a hálózati tevékenységeket és a jármű helyadatait is."</string>
-    <string name="admin_financed_message" msgid="8530796044340607865">"A flottakezelő hozzáférhet az ehhez az infotainmentrendszerhez tartozó adatokhoz, kezelheti az alkalmazásokat, és módosíthatja a jármű beállításait."</string>
-    <string name="disabled_by_policy_title" msgid="5651853760118792629">"Flottakezelő által letiltva"</string>
-    <string name="disabled_by_policy_title_adjust_volume" msgid="947693485036623479">"Hangerő-módosításhoz forduljon a flottakezelőhöz"</string>
-    <!-- no translation found for disabled_by_policy_title_outgoing_calls (2241478131660447002) -->
-    <skip />
-    <string name="disabled_by_policy_title_sms" msgid="4353988664398839837">"SMS-ezéshez forduljon a flottakezelőhöz"</string>
-    <string name="disabled_by_policy_title_camera" msgid="8008769061266209577">"A kamera használatához forduljon a flottakezelőhöz"</string>
-    <string name="disabled_by_policy_title_screen_capture" msgid="156845907165179949">"Képernyőképért forduljon a flottakezelőhöz"</string>
-    <string name="disabled_by_policy_title_suspend_packages" msgid="1249154592881985661">"Az app használatához forduljon a flottakezelőhöz"</string>
+    <string name="admin_profile_owner_message" msgid="8361351256802954556">"A szervezetkezelő figyelheti és kezelheti az ezzel a profillal társított alkalmazásokat és adatokat, beleértve a beállításokat, az engedélyeket, a vállalati hozzáférést, a hálózati tevékenységeket és a jármű helyadatait is."</string>
+    <string name="admin_profile_owner_user_message" msgid="366072696508275753">"A szervezetkezelő figyelheti és kezelheti az ezzel a profillal társított alkalmazásokat és adatokat, beleértve a beállításokat, az engedélyeket, a vállalati hozzáférést, a hálózati tevékenységeket és az eszköz helyadatait is."</string>
+    <string name="admin_device_owner_message" msgid="896530502350904835">"A szervezetkezelő figyelheti és kezelheti az ezzel az infotainmentrendszerrel társított alkalmazásokat és adatokat, beleértve a beállításokat, az engedélyeket, a vállalati hozzáférést, a hálózati tevékenységeket és a jármű helyadatait is."</string>
+    <string name="admin_financed_message" msgid="7357397436233684082">"A szervezetkezelő hozzáférhet az ehhez az infotainmentrendszerhez tartozó adatokhoz, kezelheti az alkalmazásokat, és módosíthatja a jármű beállításait."</string>
+    <string name="disabled_by_policy_title" msgid="1121694702115232518">"Nem áll rendelkezésre"</string>
+    <string name="disabled_by_policy_title_adjust_volume" msgid="7002865820552702232">"Nem lehet szabályozni a hangerőt ebben a kezelt járműben"</string>
+    <string name="disabled_by_policy_title_outgoing_calls" msgid="158752542663419500">"Nem lehet hívást indítani ebben a kezelt járműben"</string>
+    <string name="disabled_by_policy_title_sms" msgid="3044491214572494290">"Nem lehet SMS-t küldeni ebben a kezelt járműben"</string>
+    <string name="disabled_by_policy_title_camera" msgid="8929782627587059121">"Nem áll rendelkezésre a kamera ebben a kezelt járműben"</string>
+    <string name="disabled_by_policy_title_screen_capture" msgid="4059715943558852466">"Ezen a felügyelt eszközön nem lehet képernyőképeket készíteni"</string>
+    <string name="disabled_by_policy_title_suspend_packages" msgid="7505332012990359725">"Nem lehet megnyitni ezt az alkalmazást ebben a kezelt járműben"</string>
     <string name="disabled_by_policy_title_financed_device" msgid="6005343494788285981">"Ezt tiltja a hitelszolgáltatója"</string>
-    <string name="default_admin_support_msg" msgid="1611734116715908153">"Ha kérdései vannak, forduljon a flottakezelőhöz"</string>
+    <string name="default_admin_support_msg" msgid="2986598061733013282">"A szervezet bizonyos funkciókhoz korlátozza a hozzáférést.\n\nEsetleges kérdéseivel forduljon a szervezetkezelőhöz."</string>
     <string name="help_url_action_disabled_by_it_admin" msgid="1479392394986580260"></string>
     <string name="manage_device_admin" msgid="7087659697154317316">"A jármű rendszergazdai alkalmazásai"</string>
     <string name="number_of_device_admins" msgid="7508826094096451485">"{count,plural, =1{# aktivált alkalmazás}other{# aktivált alkalmazás}}"</string>
     <string name="number_of_device_admins_none" msgid="5547493703413973954">"Nincsenek aktivált alkalmazások"</string>
-    <!-- no translation found for work_policy_privacy_settings (5263835989260149968) -->
-    <skip />
-    <string name="work_policy_privacy_settings_summary" msgid="5770881048853242635">"A flottakezelő által kezelt beállítások"</string>
+    <string name="work_policy_privacy_settings" msgid="5263835989260149968">"A(z) <xliff:g id="ORGANIZATION_NAME">%1$s</xliff:g> járművekre vonatkozó irányelvei"</string>
+    <string name="work_policy_privacy_settings_summary" msgid="5321618399949880194">"A szervezetkezelő által kezelt beállítások"</string>
+    <string name="share_remote_bugreport_dialog_title" msgid="7268540014481283490">"Megosztja a hibajelentést?"</string>
+    <string name="share_remote_bugreport_dialog_message_finished" msgid="2976131666427197841">"A jármű szervezetkezelője hibajelentést kért az eszközzel kapcsolatos probléma megoldása érdekében. Előfordulhat, hogy a rendszer megoszt alkalmazásokat és adatokat."</string>
+    <string name="share_remote_bugreport_dialog_message" msgid="7884771062689597395">"A jármű szervezetkezelője hibajelentést kért az eszközzel kapcsolatos probléma megoldása érdekében. Előfordulhat, hogy a rendszer megoszt alkalmazásokat és adatokat, továbbá eszköze átmenetileg lelassulhat."</string>
+    <string name="sharing_remote_bugreport_dialog_message" msgid="7018120538510110940">"A rendszer megosztja a hibajelentést a szervezetkezelővel, aki alá a jármű tartozik. További részletekért forduljon hozzá."</string>
+    <string name="share_remote_bugreport_action" msgid="5364819432179581532">"Megosztás"</string>
+    <string name="decline_remote_bugreport_action" msgid="7287544934032744334">"Elutasítás"</string>
     <string name="factory_reset_parked_title" msgid="4004694559766549441">"Infotainmentrendszer visszaállítása"</string>
     <string name="factory_reset_parked_text" msgid="1446768795193651311">"A rendszer a gyári beállítások visszaállítására és az összes adat törlésére vonatkozó kérést kapott. Visszaállíthatja a beállításokat most, vagy az autó következő elindításakor automatikusan megtörténik a visszaállítás. Ezt követően új profilt állíthat be."</string>
     <string name="factory_reset_now_button" msgid="4461863686086129437">"Visszaállítás most"</string>
@@ -768,4 +766,24 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"A rendszer a következő indításkor áll vissza."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"A visszaállításhoz le kell parkolni az autót."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Ez a beállítás jelenleg nem módosítható"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Kisegítő lehetőségek"</string>
+    <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Feliratok"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"Feliratbeállítások"</string>
+    <string name="captions_settings_off" msgid="7568096968016015626">"Ki"</string>
+    <string name="captions_settings_on" msgid="5374984113566914978">"Be"</string>
+    <string name="screen_reader_settings_title" msgid="4012734340987826872">"Képernyőolvasó"</string>
+    <string name="show_captions_toggle_title" msgid="710582308974826311">"Felirat megjelenítése"</string>
+    <string name="captions_text_size_title" msgid="1960814652560877963">"Szövegméret"</string>
+    <string name="captions_settings_style_header" msgid="944591388386054372">"Feliratméret és -stílus"</string>
+    <string name="captions_settings_text_size_very_small" msgid="7476485317028306502">"Nagyon kicsi"</string>
+    <string name="captions_settings_text_size_small" msgid="1481895299805450566">"Kicsi"</string>
+    <string name="captions_settings_text_size_default" msgid="2227802573224038267">"Alapértelmezett"</string>
+    <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Nagy"</string>
+    <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Nagyon nagy"</string>
+    <string name="captions_text_style_title" msgid="8547777957403577760">"Felirat stílusa"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Alkalmazás által beállítva"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Fekete alapon fehér"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Fehér alapon fekete"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Fekete alapon sárga"</string>
+    <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Kék alapon sárga"</string>
 </resources>

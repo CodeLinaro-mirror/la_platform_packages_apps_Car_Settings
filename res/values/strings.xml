@@ -181,7 +181,7 @@
     <string name="network_and_internet_oem_network_title">OEM network</string>
     <!-- Network & internet settings screen, setting option name to enable vehicle internet connectivity [CHAR LIMIT=60] -->
     <string name="network_and_internet_vehicle_internet_title">Vehicle internet</string>
-    <!-- Warning pop up when disabling OEM network connectivity [CHAR LIMIT=60] -->
+    <!-- Warning pop up when disabling OEM network connectivity [CHAR LIMIT=NONE] -->
     <string name="network_and_internet_oem_network_dialog_description">Turning off the vehicle internet may prevent some vehicle features or apps from working.\n\nCritical data required to operate your vehicle will continue to be shared with the vehicle manufacturer.</string>
     <!-- Confirm button label for disabling OEM network connectivity [CHAR LIMIT=40]-->
     <string name="network_and_internet_oem_network_dialog_confirm_label">Turn off anyway</string>
@@ -895,7 +895,7 @@
     <string name="location_driver_assistance_toggle_off_title">Vehicle location is off</string>
     <!-- Summary of driver assistance text toggle [CHAR LIMIT=40] -->
     <string name="location_driver_assistance_toggle_off_summary">
-        Driver Assistance features cannot access your location
+        Driver Assistance apps cannot access your location
     </string>
     <!-- -Text of driver assistance text toggle [CHAR LIMIT=40] -->
     <string name="location_driver_assistance_action_text">
@@ -935,7 +935,7 @@
     <string name="driver_assistance_settings_title">Driver assistance</string>
     <!--Driver assistance settings footer warning text [CHAR LIMIT=NONE] -->
     <string name="adas_settings_footer">
-        Location information sent to Driver Assistance features doesn’t contain information that
+        Location information sent to Driver Assistance apps doesn’t contain information that
         identifies you. It’s stored for a maximum of 2 days before being deleted.
     </string>
 
@@ -1311,7 +1311,7 @@
     <!-- Car storage settings summary. Displayed when the total memory usage is being calculated. Will be replaced with a number like "12.3 GB" when finished calculating. [CHAR LIMIT=30] -->
     <!-- Title for preference on storage usage page that opens audio file browsing. [CHAR LIMIT=50] -->
     <string name="storage_audio_files_title">Audio files</string>
-   <!-- Car storage settings summary. Displayed when the total memory usage is being calculated. Will be replaced with a number like "12.3 GB" when finished calculating. [CHAR LIMIT=30] -->
+    <!-- Car storage settings summary. Displayed when the total memory usage is being calculated. Will be replaced with a number like "12.3 GB" when finished calculating. [CHAR LIMIT=30] -->
     <string name="memory_calculating_size">Calculating\u2026</string>
     <!-- Individual application info screen, label under Storage heading. The amount of space taken up by the application itself (for example, the java compiled files) [CHAR LIMIT=35] -->
     <string name="storage_application_size_label">App size</string>
@@ -1485,6 +1485,8 @@
     <string name="error_saving_lockpattern">Error saving pattern</string>
     <!-- Message shown when in pattern unlock screen after too many incorrect attempts [CHAR LIMIT=120]-->
     <string name="lockpattern_too_many_failed_confirmation_attempts">Too many incorrect attempts. Try again in <xliff:g id="number">%d</xliff:g> seconds.</string>
+    <!-- Message shown when the lock pattern is focused  [CHAR LIMIT=40] -->
+    <string name="lockpattern_does_not_support_rotary">Pattern does not support rotary, please use touch</string>
     <!-- Label for button to confirm picker selection [CHAR_LIMIT=20] -->
     <string name="okay">OK</string>
     <!-- Title of dialog asking the user if they really want to remove the screen lock [CHAR LIMIT=30]-->
@@ -1678,16 +1680,22 @@
     <!-- Quick Controls --><skip/>
     <!-- Brightness quick control, control name to change display brightness [CHAR LIMIT=40] -->
     <string name="qc_display_brightness">Display brightness</string>
+    <!-- Informational text to be shown when bluetooth devices can't be shown in quick controls because bluetooth is off [CHAR LIMIT=75] -->
+    <string name="qc_bluetooth_off_devices_info">To see your devices, turn on Bluetooth</string>
+    <!-- Informational text to be shown when bluetooth devices can't be shown in quick controls because no devices are paired [CHAR LIMIT=75] -->
+    <string name="qc_bluetooth_on_no_devices_info">To pair a device, open Bluetooth settings</string>
 
     <!-- Device Policy Management --><skip/>
     <!-- Device admin add activity title -->
     <string name="device_admin_add_title">Infotainment system admin</string>
     <!-- Device admin activated apps -->
     <string name="device_admin_activated_apps">Activated apps</string>
-    <!-- Device admin activated apps -->
+    <!-- Device admin deactivated apps -->
     <string name="device_admin_deactivated_apps">Deactivated apps</string>
+    <!-- Device admin apps description -->
+    <string name="device_admin_apps_description">Apps with this permission have access to this vehicle\'s data</string>
     <!-- Device admin apps list is empty -->
-    <string name="device_admin_apps_list_empty">No infotainment system admin apps</string>
+    <string name="device_admin_apps_list_empty">No vehicle admin apps</string>
     <!-- Device admin warning message about policies an admin can use -->
     <string name="device_admin_status">This infotainment system admin app is active and allows
         the app <xliff:g id="app_name">%1$s</xliff:g> to perform the
@@ -1702,8 +1710,6 @@
     <string name="add_device_admin">Activate this infotainment system app</string>
     <!-- Label for button to remove the active device admin app [CHAR LIMIT=NONE] -->
     <string name="remove_device_admin">Deactivate this infotainment system app</string>
-<!-- Shown in dialog to allow user to see more information about the device admin [CHAR LIMIT=NONE] -->
-    <string name="admin_support_more_info">More details</string>
     <!-- Shown in admin details page to warn user about policies the admin can set in a work profile. [CHAR LIMIT=NONE] -->
     <string name="admin_profile_owner_message">The organization manager can monitor and manage apps and data
         associated with this profile, including settings, permissions, corporate access,
@@ -1720,7 +1726,7 @@
     <string name="admin_financed_message">The organization manager may be able to access data
         associated with this infotainment system, manage apps, and change this vehicle\’s settings.</string>
     <!-- Title for dialog displayed when user selects on a setting locked by an admin [CHAR LIMIT=NONE] -->
-    <string name="disabled_by_policy_title">Blocked by the organization manager</string>
+    <string name="disabled_by_policy_title">That’s unavailable</string>
     <!-- Title for dialog displayed to tell user that changing volume was disallowed by an admin [CHAR LIMIT=NONE] -->
     <string name="disabled_by_policy_title_adjust_volume">Can’t change volume in this managed vehicle</string>
     <!-- Title for dialog displayed to tell user that outgoing calls were disabled by an admin [CHAR LIMIT=NONE] -->
@@ -1730,13 +1736,13 @@
     <!-- Title for dialog displayed to tell user that the camera was disabled by an admin [CHAR LIMIT=NONE] -->
     <string name="disabled_by_policy_title_camera">Camera is unavailable in this managed vehicle</string>
     <!-- Title for dialog displayed to tell user that screenshots are disabled by an admin [CHAR LIMIT=NONE] -->
-    <string name="disabled_by_policy_title_screen_capture">>Can’t take screenshots in this managed vehicle</string>
+    <string name="disabled_by_policy_title_screen_capture">Can’t take screenshots in this managed vehicle</string>
     <!-- Title for dialog displayed to tell user that the app was suspended by an admin [CHAR LIMIT=NONE] -->
     <string name="disabled_by_policy_title_suspend_packages">Can’t open this app in this managed vehicle</string>
     <!-- Dialog title. This dialog lets a user know that a specific setting is blocked by their credit provider. Since the user purchased the device from the credit provider, the credit provider controls what they can access. [CHAR LIMIT=50] -->
     <string name="disabled_by_policy_title_financed_device">Blocked by your credit provider</string>
     <!-- Shown when the user tries to change a settings locked by an admin [CHAR LIMIT=NONE] -->
-    <string name="default_admin_support_msg">If you have questions, contact the organization manager</string>
+    <string name="default_admin_support_msg">Access to some features is limited by the organization.\n\nIf you have questions, contact the organization manager.</string>
     <!-- url for learning more about IT admin policy disabling -->
     <string name="help_url_action_disabled_by_it_admin"></string>
     <!-- Title of preference to manage device admin apps, which are used by IT admins to manage devices. [CHAR LIMIT=40] -->
@@ -1794,4 +1800,63 @@
     <!-- Power components which are disabled by the current power policy cannot be toggled in Setting. [CHAR LIMIT=80] -->
     <string name="power_component_disabled">This setting can\'t be changed right now</string>
 
+    <!-- Accessibility --><skip/>
+    <!-- Settings title to go into the accessibility section of car settings. [CHAR LIMIT=30] -->
+    <string name="accessibility_settings_title">Accessibility</string>
+    <!-- Header for the section of the accessibility settings that lets the user customize their closed captions settings. [CHAR LIMIT=30] -->
+    <string name="accessibility_settings_captions_title">Captions</string>
+    <!-- Settings title for the closed captions section of car settings. [CHAR LIMIT=40] -->
+    <string name="captions_settings_title">Caption preferences</string>
+    <!-- Subtitle for the closed caption settings item when closed captions are turned off [CHAR LIMIT=30] -->
+    <string name="captions_settings_off">Off</string>
+    <!-- Subtitle for the closed caption settings item when closed captions are turned on [CHAR LIMIT=30] -->
+    <string name="captions_settings_on">On</string>
+    <!-- Settings title to go into the screen reader settings section of car settings. [CHAR LIMIT=30] -->
+    <string name="screen_reader_settings_title">Screen reader</string>
+    <!-- Title for toggle to enable closed captions by default. [CHAR LIMIT=30] -->
+    <string name="show_captions_toggle_title">Show captions</string>
+    <!-- Settings title to select what the closed captions text size is. [CHAR LIMIT=30] -->
+    <string name="captions_text_size_title">Text size</string>
+    <!-- Header for the section of the caption settings that lets the user customize the size and style of their closed captions. [CHAR LIMIT=40] -->
+    <string name="captions_settings_style_header">Caption size and style</string>
+    <!-- Settings option for very small closed captions text size. [CHAR LIMIT=30] -->
+    <string name="captions_settings_text_size_very_small">Very small</string>
+    <!-- Settings option for small closed captions text size. [CHAR LIMIT=30] -->
+    <string name="captions_settings_text_size_small">Small</string>
+    <!-- Settings option for default closed captions text size. [CHAR LIMIT=30] -->
+    <string name="captions_settings_text_size_default">Default</string>
+    <!-- Settings option for large closed captions text size. [CHAR LIMIT=30] -->
+    <string name="captions_settings_text_size_large">Large</string>
+    <!-- Settings option for very large closed captions text size. [CHAR LIMIT=30] -->
+    <string name="captions_settings_text_size_very_large">Very large</string>
+    <!-- Settings title to select the closed captions text styling (text color, background color, etc). [CHAR LIMIT=30] -->
+    <string name="captions_text_style_title">Caption style</string>
+    <!-- Settings option for closed captions text style to default to styling of the app playing the video. [CHAR LIMIT=40] -->
+    <string name="captions_settings_text_style_by_app">Set by app</string>
+    <!-- Settings option for closed captions text style to be white text on black background [CHAR LIMIT=40] -->
+    <string name="captions_settings_text_style_white_on_black">White on black</string>
+    <!-- Settings option for closed captions text style to be black text on white background [CHAR LIMIT=40] -->
+    <string name="captions_settings_text_style_black_on_white">Black on white</string>
+    <!-- Settings option for closed captions text style to be yellow text on black background [CHAR LIMIT=40] -->
+    <string name="captions_settings_text_style_yellow_on_black">Yellow on black</string>
+    <!-- Settings option for closed captions text style to be yellow text on blue background [CHAR LIMIT=40] -->
+    <string name="captions_settings_text_style_yellow_on_blue">Yellow on blue</string>
+    <!-- Header for the section of the accessibility settings that lets the user change their screen reader settings. [CHAR LIMIT=30] -->
+    <string name="accessibility_settings_screen_reader_title">Screen reader</string>
+    <!-- Settings title for the TalkBack screen reader section. [CHAR LIMIT=40] -->
+    <string name="talkback_title">TalkBack</string>
+    <!-- Subtitle for the TalkBack screen reader settings item when it is turned off [CHAR LIMIT=30] -->
+    <string name="talkback_settings_off">Off</string>
+    <!-- Subtitle for the TalkBack screen reader settings item when it is turned on [CHAR LIMIT=40] -->
+    <string name="talkback_settings_on">Speak items on screen</string>
+    <!-- Title for toggle to enable TalkBack screen reader. [CHAR LIMIT=30] -->
+    <string name="enable_talkback_toggle_title">Use TalkBack</string>
+    <!-- Header for the options section of the TalkBack screen reader settings. [CHAR LIMIT=30] -->
+    <string name="talkback_options_title">Options</string>
+    <!-- Header for the settings section of the TalkBack screen reader settings. [CHAR LIMIT=30] -->
+    <string name="talkback_settings_title">Settings</string>
+    <!-- Header for the "About TalkBack" section of the TalkBack screen reader settings which describes what it does and how it works. [CHAR LIMIT=30] -->
+    <string name="about_talkback_title">About TalkBack</string>
+    <!-- Description for the "About TalkBack" section of the TalkBack screen reader settings which describes what it does and how it works. [CHAR LIMIT=NONE] -->
+    <string name="about_talkback_description">TalkBack is not available while the vehicle is in motion.\n\nWhen TalkBack is on, it provides spoken feedback so that you can use your device without looking at the screen. TalkBack is intended for situations or people who have difficulty seeing the screen.</string>
 </resources>

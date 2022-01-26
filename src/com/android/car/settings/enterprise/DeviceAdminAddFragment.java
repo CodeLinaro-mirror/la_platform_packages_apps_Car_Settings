@@ -16,17 +16,25 @@
 
 package com.android.car.settings.enterprise;
 
+import static android.os.Process.myUserHandle;
+
 import static com.android.car.settings.enterprise.EnterpriseUtils.getAdminWithinPackage;
 import static com.android.car.settings.enterprise.EnterpriseUtils.getDeviceAdminInfo;
 
 import android.app.Activity;
 import android.app.admin.DeviceAdminInfo;
+import android.app.admin.DeviceAdminReceiver;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.text.TextUtils;
 
 import androidx.annotation.VisibleForTesting;
+import androidx.preference.PreferenceScreen;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.Logger;
@@ -34,12 +42,18 @@ import com.android.car.settings.common.PreferenceController;
 import com.android.car.settings.common.SettingsFragment;
 import com.android.car.ui.toolbar.ToolbarController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A screen that shows details about a device administrator.
  */
 public final class DeviceAdminAddFragment extends SettingsFragment {
 
     private static final Logger LOG = new Logger(DeviceAdminAddFragment.class);
+
+    private DevicePolicyManager mDpm;
+    private CharSequence mAppName;
 
     @Override
     protected int getPreferenceScreenResId() {
@@ -56,6 +70,7 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
 
     @VisibleForTesting
     void onAttach(Context context, Activity activity) {
+        mDpm = context.getSystemService(DevicePolicyManager.class);
         Intent intent = activity.getIntent();
         if (intent == null) {
             LOG.e("no intent on " + activity);
@@ -84,8 +99,20 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
                 activity.finish();
                 return;
             }
+        } else {
+            // When activating, make sure the given component name is actually a valid device admin.
+            // No need to check this when deactivating, because it is safe to deactivate an active
+            // invalid device admin.
+            if (!isValidAdmin(context, admin)) {
+                LOG.w("Request to add invalid device admin: " + admin.flattenToShortString());
+                activity.finish();
+                return;
+            }
         }
 
+        // TODO(b/202342351): both this method and isValidAdmin() call PM to get the ActivityInfo;
+        // they should be refactored so it's called just onces; similarly, isValidAdmin()
+        // also create a DeviceAdminInfo
         DeviceAdminInfo deviceAdminInfo = getDeviceAdminInfo(context, admin);
         LOG.d("Admin: " + admin + " DeviceAdminInfo: " + deviceAdminInfo);
 
@@ -96,8 +123,43 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
             return;
         }
 
-        use(DeviceAdminAddHeaderPreferenceController.class,
-                R.string.pk_device_admin_add_header).setDeviceAdmin(deviceAdminInfo);
+        // This admin already exists, and we have two options at this point:
+        // 1. If new policy bits are set, show the user the new list.
+        // 2. If nothing has changed, simply return "OK" immediately.
+        if (isActionAddDeviceAdminActivity(activity)) {
+            boolean refreshing = false;
+            if (mDpm.isAdminActive(admin)) {
+                if (mDpm.isRemovingAdmin(admin, myUserHandle().getIdentifier())) {
+                    LOG.w("Requested admin is already being removed: " + admin);
+                    activity.finish();
+                    return;
+                }
+                ArrayList<DeviceAdminInfo.PolicyInfo> policies = deviceAdminInfo.getUsedPolicies();
+                for (int i = 0, size = policies.size(); i < size; i++) {
+                    DeviceAdminInfo.PolicyInfo pi = policies.get(i);
+                    if (!mDpm.hasGrantedPolicy(admin, pi.ident)) {
+                        refreshing = true;
+                        break;
+                    }
+                }
+                LOG.i("Try to add device admin for " + admin + ", refreshing=" + refreshing);
+                if (!refreshing) {
+                    // Nothing changed (or policies were removed) - return immediately
+                    activity.setResult(Activity.RESULT_OK);
+                    activity.finish();
+                    return;
+                }
+                // Update the active admin with the refreshed policies.
+                mDpm.setActiveAdmin(admin, refreshing);
+            }
+        }
+
+        mAppName = deviceAdminInfo.loadLabel(context.getPackageManager());
+
+        ((DeviceAdminAddHeaderPreferenceController) use(
+                DeviceAdminAddHeaderPreferenceController.class,
+                R.string.pk_device_admin_add_header).setDeviceAdmin(deviceAdminInfo))
+                        .setActivationListener((value) -> onActivation(value));
         ((DeviceAdminAddExplanationPreferenceController) use(
                 DeviceAdminAddExplanationPreferenceController.class,
                 R.string.pk_device_admin_add_explanation).setDeviceAdmin(deviceAdminInfo))
@@ -109,10 +171,32 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
                 R.string.pk_device_admin_add_policies).setDeviceAdmin(deviceAdminInfo);
         use(DeviceAdminAddSupportPreferenceController.class,
                 R.string.pk_device_admin_add_support).setDeviceAdmin(deviceAdminInfo);
-        use(DeviceAdminAddActionPreferenceController.class,
-                R.string.pk_device_admin_add_action).setDeviceAdmin(deviceAdminInfo);
-        use(DeviceAdminAddCancelPreferenceController.class,
-                R.string.pk_device_admin_add_cancel).setDeviceAdmin(deviceAdminInfo);
+    }
+
+    private void onActivation(boolean value) {
+        Activity activity = requireActivity();
+        if (!isActionAddDeviceAdminActivity(activity)) {
+            return;
+        }
+
+        int result = value ? Activity.RESULT_OK : Activity.RESULT_CANCELED;
+        LOG.d("Setting " + activity + " result to " + result);
+        activity.setResult(result);
+    }
+
+    @Override
+    public void setPreferenceScreen(PreferenceScreen preferenceScreen) {
+        super.setPreferenceScreen(preferenceScreen);
+
+        // Split for testing, to avoid calling super.setPreferenceScreen() in tests.
+        setPreferenceScreenTitle(preferenceScreen);
+    }
+
+    @VisibleForTesting
+    void setPreferenceScreenTitle(PreferenceScreen preferenceScreen) {
+        if (!TextUtils.isEmpty(mAppName)) {
+            preferenceScreen.setTitle(mAppName);
+        }
     }
 
     @Override
@@ -125,11 +209,15 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
 
     @VisibleForTesting
     void setToolbarTitle(ToolbarController toolbar) {
-        Intent intent = requireActivity().getIntent();
-        String action = intent == null ? null : intent.getAction();
-        if (DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN.equals(action)) {
+        if (isActionAddDeviceAdminActivity(requireActivity())) {
             toolbar.setTitle(R.string.add_device_admin_msg);
         }
+    }
+
+    private boolean isActionAddDeviceAdminActivity(Activity activity) {
+        Intent intent = activity.getIntent();
+        String action = intent == null ? null : intent.getAction();
+        return DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN.equals(action);
     }
 
     // Must override so it can be spied (it's the exact same signature and modifier access, but it
@@ -137,5 +225,45 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
     @Override
     protected <T extends PreferenceController> T use(Class<T> clazz, int preferenceKeyResId) {
         return super.use(clazz, preferenceKeyResId);
+    }
+
+    private boolean isValidAdmin(Context context, ComponentName who) {
+        PackageManager pm = context.getPackageManager();
+        ActivityInfo ai;
+        try {
+            ai = pm.getReceiverInfo(who, PackageManager.GET_META_DATA);
+        } catch (PackageManager.NameNotFoundException e) {
+            LOG.w("Unable to retrieve device policy " + who, e);
+            return false;
+        }
+
+        if (mDpm.isAdminActive(who)) {
+            return true;
+        }
+        List<ResolveInfo> avail = pm.queryBroadcastReceivers(
+                new Intent(DeviceAdminReceiver.ACTION_DEVICE_ADMIN_ENABLED),
+                PackageManager.GET_DISABLED_UNTIL_USED_COMPONENTS);
+        int count = avail == null ? 0 : avail.size();
+        boolean found = false;
+        for (int i = 0; i < count; i++) {
+            ResolveInfo ri = avail.get(i);
+            if (ai.packageName.equals(ri.activityInfo.packageName)
+                    && ai.name.equals(ri.activityInfo.name)) {
+                try {
+                    // We didn't retrieve the meta data for all possible matches, so
+                    // need to use the activity info of this specific one that was retrieved.
+                    ri.activityInfo = ai;
+                    new DeviceAdminInfo(context, ri);
+                    found = true;
+                } catch (Exception e) {
+                    LOG.w("Bad " + ri.activityInfo, e);
+                }
+                break;
+            }
+        }
+        if (!found) {
+            LOG.d("didn't find enabled admin receiver for " + who.flattenToShortString());
+        }
+        return found;
     }
 }

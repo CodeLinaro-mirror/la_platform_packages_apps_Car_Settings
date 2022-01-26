@@ -22,6 +22,7 @@ import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
@@ -57,10 +58,12 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
     private static final Logger LOG = new Logger(TAG);
 
     private static final String EXTRA_RESTRICTION = TAG + "_restriction";
+    private static final String EXTRA_RESTRICTED_PKG = TAG + "_pkg";
     private static final String EXTRA_ADMIN_USER_ID = TAG + "_userId";
 
     @VisibleForTesting
     String mRestriction;
+    String mRestrictedPackage;
 
     @UserIdInt
     private int mAdminUserId;
@@ -73,8 +76,17 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
      */
     public static ActionDisabledByAdminDialogFragment newInstance(String restriction,
             @UserIdInt int userId) {
+        return newInstance(restriction, null, userId);
+    }
+
+    /**
+     * Gets the dialog for the given user and restriction.
+     */
+    public static ActionDisabledByAdminDialogFragment newInstance(String restriction,
+            @Nullable String restrictedPackage, @UserIdInt int userId) {
         ActionDisabledByAdminDialogFragment instance = new ActionDisabledByAdminDialogFragment();
         instance.mRestriction = restriction;
+        instance.mRestrictedPackage = restrictedPackage;
         instance.mAdminUserId = userId;
         return instance;
     }
@@ -83,6 +95,7 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             mRestriction = savedInstanceState.getString(EXTRA_RESTRICTION);
+            mRestrictedPackage = savedInstanceState.getString(EXTRA_RESTRICTED_PKG);
             mAdminUserId = savedInstanceState.getInt(EXTRA_ADMIN_USER_ID);
         }
         return initialize(getContext()).create();
@@ -93,6 +106,7 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
         super.onSaveInstanceState(outState);
 
         outState.putString(EXTRA_RESTRICTION, mRestriction);
+        outState.putString(EXTRA_RESTRICTED_PKG, mRestrictedPackage);
         outState.putInt(EXTRA_ADMIN_USER_ID, mAdminUserId);
     }
 
@@ -110,18 +124,14 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
     }
 
     private AlertDialogBuilder initialize(Context context) {
-        EnforcedAdmin enforcedAdmin = RestrictedLockUtilsInternal
-                .checkIfRestrictionEnforced(/* dpmContext= */ context, mRestriction,
-                        /* targetUserToCheck= */ mAdminUserId);
-        if (enforcedAdmin == null) {
-            // ActionDisabledByAdminDialogFragment may also be created from
-            // ActionDisabledByAdminActivity and Device Admin ComponentName can be retrieved from
-            // Intent.
-            ComponentName admin = (ComponentName) getActivity().getIntent()
-                    .getParcelableExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN);
-            enforcedAdmin = new EnforcedAdmin(admin, mRestriction, UserHandle.of(mAdminUserId));
-            LOG.d("EnforcedAdmin created: " + enforcedAdmin);
-        }
+        Intent intent = getActivity().getIntent();
+        boolean hasValidIntent = intent != null
+                && intent.getParcelableExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN) != null;
+        EnforcedAdmin enforcedAdmin = hasValidIntent
+                    ? EnterpriseUtils.getEnforcedAdminFromIntent(context, intent)
+                    : EnterpriseUtils.getEnforcedAdmin(context, mAdminUserId,
+                            mRestriction, mRestrictedPackage);
+        LOG.i("hasValidIntent: " + hasValidIntent + " enforcedAdmin: " + enforcedAdmin);
 
         AlertDialogBuilder builder = new AlertDialogBuilder(context)
                 .setPositiveButton(R.string.okay, /* listener= */ null);
@@ -142,7 +152,6 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
     // NOTE: methods below were copied from phone Settings
     // (com.android.settings.enterprise.ActionDisabledByAdminDialogHelper), but adjusted to
     // use a AlertDialogBuilder directly, instead of an Activity hosting a dialog.
-
     private static @UserIdInt int getEnforcementAdminUserId(@Nullable EnforcedAdmin admin) {
         return admin == null || admin.user == null ? UserHandle.USER_NULL
                 : admin.user.getIdentifier();
@@ -164,7 +173,7 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
         if (isNotCurrentUserOrProfile(context, admin, userId)) {
             admin = null;
         }
-        setAdminSupportIcon(context, builder, admin, userId);
+        // NOTE: not showing icon
         setAdminSupportTitle(context, builder, mRestriction);
 
         if (enforcedAdmin != null) {
@@ -176,20 +185,6 @@ public final class ActionDisabledByAdminDialogFragment extends CarUiDialogFragme
             @UserIdInt int userId) {
         return !RestrictedLockUtilsInternal.isAdminInCurrentUserOrProfile(context, admin)
                 || !RestrictedLockUtils.isCurrentUserOrProfile(context, userId);
-    }
-
-    private void setAdminSupportIcon(Context context, AlertDialogBuilder builder,
-            ComponentName admin, @UserIdInt int userId) {
-        if (isNotCurrentUserOrProfile(context, admin, userId)) {
-            builder.setIcon(context.getDrawable(com.android.internal.R.drawable.ic_info));
-        } else {
-            Drawable badgedIcon = getBadgedIcon(
-                    IconDrawableFactory.newInstance(context),
-                    context.getPackageManager(),
-                    admin.getPackageName(),
-                    userId);
-            builder.setIcon(badgedIcon);
-        }
     }
 
     private void setAdminSupportTitle(Context context, AlertDialogBuilder builder,

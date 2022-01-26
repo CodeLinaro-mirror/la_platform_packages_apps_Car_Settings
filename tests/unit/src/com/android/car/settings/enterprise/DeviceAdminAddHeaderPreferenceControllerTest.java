@@ -15,14 +15,29 @@
  */
 package com.android.car.settings.enterprise;
 
+import androidx.preference.TwoStatePreference;
+
+import static org.mockito.ArgumentMatchers.anyBoolean;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+
+import com.android.car.settings.common.PreferenceController;
+import com.android.car.settings.enterprise.DeviceAdminAddHeaderPreferenceController.ActivationListener;
+
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
 public final class DeviceAdminAddHeaderPreferenceControllerTest extends
-        BaseDeviceAdminAddPreferenceControllerTestCase
-                <DeviceAdminAddHeaderPreferenceController> {
+        BasePreferenceControllerTestCase {
 
     private DeviceAdminAddHeaderPreferenceController mController;
+
+    @Mock
+    private TwoStatePreference mPreference;
+
+    @Mock
+    private ActivationListener mActivationListener;
 
     @Before
     public void setController() {
@@ -32,22 +47,136 @@ public final class DeviceAdminAddHeaderPreferenceControllerTest extends
     }
 
     @Test
-    public void testUpdateState_adminWithNoProperties() throws Exception {
-        mController.updateState(mPreference);
-
-        verifyPreferenceTitleSet(DefaultDeviceAdminReceiver.class.getName());
-        verifyPreferenceSummaryNeverSet();
-        verifyPreferenceIconSet();
+    public void testGetAvailabilityStatus_admin() throws Exception {
+        assertAvailability(mController.getAvailabilityStatus(),
+                PreferenceController.AVAILABLE);
     }
 
     @Test
-    public void testUpdateState_adminWithAllProperties() throws Exception {
-        mController.setDeviceAdmin(mFancyDeviceAdminInfo);
+    public void testGetAvailabilityStatus_noAdmin() throws Exception {
+        DeviceAdminAddHeaderPreferenceController controller =
+                new DeviceAdminAddHeaderPreferenceController(mSpiedContext, mPreferenceKey,
+                        mFragmentController, mUxRestrictions);
+
+        assertAvailability(controller.getAvailabilityStatus(),
+                PreferenceController.CONDITIONALLY_UNAVAILABLE);
+    }
+
+    @Test
+    public void testUpdateState_activeAdminWithNoProperties() throws Exception {
+        mockActiveAdmin(mDefaultAdmin);
 
         mController.updateState(mPreference);
 
-        verifyPreferenceTitleSet("LordOfTheSevenReceiverKingdoms");
-        verifyPreferenceSummarySet("One Receiver to Rule them All");
-        verifyPreferenceIconSet();
+        verifyPreferenceSetChecked(mPreference, true);
+        verifyPreferenceEnabled(mPreference);
+        verifyPreferenceTitleSet(mPreference, mDefaultDeviceAdminInfo.loadLabel(mRealPm));
+        verifyPreferenceSummaryNeverSet(mPreference);
+        verifyPreferenceIconSet(mPreference);
+    }
+
+    @Test
+    public void testUpdateState_activeAdminWithAllProperties() throws Exception {
+        mController.setDeviceAdmin(mFancyDeviceAdminInfo);
+        mockActiveAdmin(mFancyAdmin);
+
+        mController.updateState(mPreference);
+
+        verifyPreferenceSetChecked(mPreference, true);
+        verifyPreferenceEnabled(mPreference);
+        verifyPreferenceTitleSet(mPreference, mFancyDeviceAdminInfo.loadLabel(mRealPm));
+        verifyPreferenceSummarySet(mPreference, mFancyDeviceAdminInfo.loadDescription(mRealPm));
+        verifyPreferenceIconSet(mPreference);
+    }
+
+    @Test
+    public void testUpdateStatus_inactiveAdmin() throws Exception {
+        mockInactiveAdmin(mDefaultAdmin);
+
+        mController.updateState(mPreference);
+
+        verifyPreferenceSetChecked(mPreference, false);
+        verifyPreferenceEnabled(mPreference);
+        verifyPreferenceTitleSet(mPreference, mDefaultDeviceAdminInfo.loadLabel(mRealPm));
+    }
+
+    @Test
+    public void testUpdateStatus_deviceOwner() throws Exception {
+        mockDeviceOwner();
+
+        mController.updateState(mPreference);
+
+        verifyPreferenceSetChecked(mPreference, true);
+        verifyPreferenceDisabled(mPreference);
+        verifyPreferenceTitleSet(mPreference, mDefaultDeviceAdminInfo.loadLabel(mRealPm));
+    }
+
+    @Test
+    public void testUpdateStatus_profileOwner() throws Exception {
+        mockProfileOwner();
+
+        mController.updateState(mPreference);
+
+        verifyPreferenceSetChecked(mPreference, true);
+        verifyPreferenceDisabled(mPreference);
+        verifyPreferenceTitleSet(mPreference, mDefaultDeviceAdminInfo.loadLabel(mRealPm));
+    }
+
+    @Test
+    public void testHandlePreferenceChanged_activateAdmin_withoutListener() {
+        mockInactiveAdmin(mDefaultAdmin);
+
+        mController.handlePreferenceChanged(mPreference, true);
+
+        verifyAdminNeverDeactivated();
+        verifyAdminActivated();
+        verifyActivationListenerNotCalled();
+    }
+
+    @Test
+    public void testHandlePreferenceChanged_activateAdmin_withListener() {
+        mockInactiveAdmin(mDefaultAdmin);
+        mController.setActivationListener(mActivationListener);
+
+        mController.handlePreferenceChanged(mPreference, true);
+
+        verifyAdminNeverDeactivated();
+        verifyAdminActivated();
+        verifyActivationListenerCalled(true);
+    }
+
+    @Test
+    public void testHandlePreferenceChanged_deactivateAdmin_withoutListener() {
+        mockActiveAdmin(mDefaultAdmin);
+
+        mController.handlePreferenceChanged(mPreference, false);
+
+        verifyAdminNeverActivated();
+        verifyAdminDeactivated();
+        verifyActivationListenerNotCalled();
+    }
+
+    @Test
+    public void testHandlePreferenceChanged_deactivateAdmin_withListener() {
+        mockActiveAdmin(mDefaultAdmin);
+        mController.setActivationListener(mActivationListener);
+
+        mController.handlePreferenceChanged(mPreference, false);
+
+        verifyAdminNeverActivated();
+        verifyAdminDeactivated();
+        verifyActivationListenerCalled(false);
+    }
+
+    private void verifyPreferenceSetChecked(TwoStatePreference preference, boolean isChecked) {
+        verify(preference).setChecked(isChecked);
+    }
+
+    private void verifyActivationListenerNotCalled() {
+        verify(mActivationListener, never()).onChanged(anyBoolean());
+    }
+
+    private void verifyActivationListenerCalled(boolean active) {
+        verify(mActivationListener).onChanged(active);
     }
 }

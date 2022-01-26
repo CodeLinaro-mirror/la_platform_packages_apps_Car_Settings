@@ -13,35 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-package com.android.car.settings.enterprise;
+package com.android.car.settings.datausage;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 
-import androidx.preference.Preference;
-
 import com.android.car.settings.common.FragmentController;
+import com.android.settingslib.net.NetworkCycleDataForUid;
+
+import java.util.List;
 
 /**
- * Controller for the cancel button in the device admin details screen.
+ * Controller used to handle Data Usage cycle change for a specific app uid.
  */
-public final class DeviceAdminAddCancelPreferenceController
-        extends BaseDeviceAdminAddPreferenceController<Preference> {
+public class AppSpecificDataUsageCyclePreferenceController extends
+        DataUsageCycleBasePreferenceController<NetworkCycleDataForUid> implements
+        AppSpecificDataUsageManager.AppSpecificDataLoaderCallback {
 
-    public DeviceAdminAddCancelPreferenceController(Context context, String preferenceKey,
+    public AppSpecificDataUsageCyclePreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
     }
 
     @Override
-    protected void updateState(Preference preference) {
-        preference.setTitle(com.android.internal.R.string.cancel);
-    }
-
-    @Override
-    protected boolean handlePreferenceClicked(Preference preference) {
-        getFragmentController().goBack();
-        return true;
+    public void onDataLoaded(List<NetworkCycleDataForUid> networkCycleChartData) {
+        onLoaded(networkCycleChartData);
     }
 }

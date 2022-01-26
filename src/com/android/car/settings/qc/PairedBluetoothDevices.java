@@ -87,9 +87,19 @@ public class PairedBluetoothDevices extends SettingsQCItem {
     QCItem getQCItem() {
         if (!getContext().getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)
                 || mUserManager.hasUserRestriction(DISALLOW_BLUETOOTH)
-                || !BluetoothAdapter.getDefaultAdapter().isEnabled()
                 || mDeviceLimit == 0) {
             return null;
+        }
+
+        QCList.Builder listBuilder = new QCList.Builder();
+
+        if (!BluetoothAdapter.getDefaultAdapter().isEnabled()) {
+            listBuilder.addRow(new QCRow.Builder()
+                    .setIcon(Icon.createWithResource(getContext(),
+                            R.drawable.ic_settings_bluetooth_disabled))
+                    .setTitle(getContext().getString(R.string.qc_bluetooth_off_devices_info))
+                    .build());
+            return listBuilder.build();
         }
 
         Collection<CachedBluetoothDevice> cachedDevices =
@@ -107,7 +117,14 @@ public class PairedBluetoothDevices extends SettingsQCItem {
         }
         filteredDevices.sort(Comparator.naturalOrder());
 
-        QCList.Builder listBuilder = new QCList.Builder();
+        if (filteredDevices.isEmpty()) {
+            listBuilder.addRow(new QCRow.Builder()
+                    .setIcon(Icon.createWithResource(getContext(),
+                            R.drawable.ic_settings_bluetooth))
+                    .setTitle(getContext().getString(R.string.qc_bluetooth_on_no_devices_info))
+                    .build());
+            return listBuilder.build();
+        }
 
         int i = 0;
         int deviceLimit = mDeviceLimit >= 0 ? Math.min(mDeviceLimit, filteredDevices.size())
@@ -244,18 +261,22 @@ public class PairedBluetoothDevices extends SettingsQCItem {
     }
 
     private QCActionItem createPhoneButton(CachedBluetoothDevice device, int requestCode) {
-        BluetoothProfileToggleState phoneState = geBluetoothProfileToggleState(device,
+        BluetoothProfileToggleState phoneState = getBluetoothProfileToggleState(device,
                 BluetoothProfile.HEADSET_CLIENT);
+        int iconRes = phoneState.mIsAvailable ? R.drawable.ic_qc_bluetooth_phone
+                : R.drawable.ic_qc_bluetooth_phone_unavailable;
         return createBluetoothDeviceToggle(device, requestCode, PHONE_BUTTON,
-                Icon.createWithResource(getContext(), R.drawable.ic_qc_bluetooth_phone),
+                Icon.createWithResource(getContext(), iconRes),
                 phoneState.mIsAvailable, phoneState.mIsEnabled, phoneState.mIsChecked);
     }
 
     private QCActionItem createMediaButton(CachedBluetoothDevice device, int requestCode) {
-        BluetoothProfileToggleState mediaState = geBluetoothProfileToggleState(device,
+        BluetoothProfileToggleState mediaState = getBluetoothProfileToggleState(device,
                 BluetoothProfile.A2DP_SINK);
+        int iconRes = mediaState.mIsAvailable ? R.drawable.ic_qc_bluetooth_media
+                : R.drawable.ic_qc_bluetooth_media_unavailable;
         return createBluetoothDeviceToggle(device, requestCode, MEDIA_BUTTON,
-                Icon.createWithResource(getContext(), R.drawable.ic_qc_bluetooth_media),
+                Icon.createWithResource(getContext(), iconRes),
                 mediaState.mIsAvailable, mediaState.mIsEnabled, mediaState.mIsChecked);
     }
 
@@ -284,7 +305,7 @@ public class PairedBluetoothDevices extends SettingsQCItem {
         return null;
     }
 
-    private BluetoothProfileToggleState geBluetoothProfileToggleState(CachedBluetoothDevice device,
+    private BluetoothProfileToggleState getBluetoothProfileToggleState(CachedBluetoothDevice device,
             int profileId) {
         LocalBluetoothProfile profile = getProfile(device, profileId);
         if (!device.isConnected() || profile == null) {
