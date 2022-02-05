@@ -141,6 +141,7 @@
     <string name="wifi_settings_scanning_required_enabled" msgid="5457372118991438313">"Wi-Fi-haku on käytössä"</string>
     <string name="wifi_cellular_fallback_title" msgid="8322675436784870862">"Vaihda mobiilidataan automaattisesti"</string>
     <string name="wifi_cellular_fallback_summary" msgid="2433848528924203758">"Vaihda mobiilidataan, jos Wi-Fi-yhteyttä ei voi muodostaa. Datan käytöstä voi aiheutua maksuja."</string>
+    <string name="wifi_network_state_switch_subtitle" msgid="7462322882046013762">"Etsi Wi-Fi-verkkoja ja yhdistä niihin"</string>
     <string name="learn_more" msgid="8214605928933358604">"Lue lisää"</string>
     <string name="wifi_hotspot_name_title" msgid="8844779338692535356">"Hotspotin nimi"</string>
     <string name="wifi_hotspot_name_summary_connecting" msgid="5262510450498600038">"Käynnistetään <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>…"</string>
@@ -495,7 +496,7 @@
     <string name="factory_reset_button_text" msgid="2626666247051368256">"Poista kaikki data"</string>
     <string name="factory_reset_confirm_title" msgid="3354542161765761879">"Poistetaanko kaikki data?"</string>
     <string name="factory_reset_confirm_desc" msgid="2037199381372030510">"Kaikki tämän infotainment-järjestelmän henkilökohtainen profiilidata, tilit ja ladatut sovellukset poistetaan.\n\nToimintoa ei voi kumota."</string>
-    <string name="factory_reset_confirm_button_text" msgid="1797490544756481809">"Poista kaikki"</string>
+    <string name="factory_reset_confirm_button_text" msgid="1797490544756481809">"Tyhjennä kaikki"</string>
     <string name="factory_reset_progress_title" msgid="4580937077054738173">"Poistetaan"</string>
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Odota…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Päivämäärä ja aika"</string>
