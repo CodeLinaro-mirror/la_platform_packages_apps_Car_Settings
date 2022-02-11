@@ -40,4 +40,18 @@
         android:title="@string/wifi_password"
         settings:controller="com.android.car.settings.wifi.NetworkPasswordPreferenceController"
         settings:showChevron="false"/>
+    <ListPreference
+            android:key="@string/mark_as_metered"
+            android:title="@string/mark_as_metered"
+            android:persistent="false"
+            android:entryValues="@array/wifi_metered_values"
+            android:entries="@array/wifi_metered_choice"
+            settings:controller="com.android.car.settings.wifi.NetworkMeteredPreferenceController"/>
+    <ListPreference
+            android:key="@string/use_randomized_mac"
+            android:title="@string/use_randomized_mac"
+            android:persistent="false"
+            android:entryValues="@array/wifi_privacy_values"
+            android:entries="@array/wifi_privacy_choice"
+            settings:controller="com.android.car.settings.wifi.NetworkPrivacyPreferenceController"/>
 </PreferenceScreen>
