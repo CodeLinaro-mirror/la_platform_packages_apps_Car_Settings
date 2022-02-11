@@ -12,6 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
 package com.android.car.settings.wifi;
@@ -63,6 +67,28 @@ public class NetworkPasswordPreferenceController extends
         }
     };
 
+    @VisibleForTesting
+    final BroadcastReceiver mMeteredChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mMeteredChoice = intent.getIntExtra(
+                    NetworkMeteredPreferenceController.KEY_NETWORK_METERED,
+                    WifiEntry.METERED_CHOICE_AUTO);
+            refreshUi();
+        }
+    };
+
+    @VisibleForTesting
+    final BroadcastReceiver mPrivacyChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mPrivacyChoice = intent.getIntExtra(
+                    NetworkPrivacyPreferenceController.KEY_NETWORK_PRIVACY,
+                    WifiEntry.PRIVACY_RANDOMIZED_MAC);
+            refreshUi();
+        }
+    };
+
     private final Handler mUiHandler = new Handler(Looper.getMainLooper());
     private final WifiManager.ActionListener mConnectionListener =
             new WifiManager.ActionListener() {
@@ -82,6 +108,8 @@ public class NetworkPasswordPreferenceController extends
 
     private String mNetworkName;
     private int mSecurityType = WifiEntry.SECURITY_NONE;
+    private int mMeteredChoice = WifiEntry.METERED_CHOICE_AUTO;
+    private int mPrivacyChoice = WifiEntry.PRIVACY_RANDOMIZED_MAC;
 
     public NetworkPasswordPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
@@ -99,12 +127,18 @@ public class NetworkPasswordPreferenceController extends
                 new IntentFilter(NetworkNamePreferenceController.ACTION_NAME_CHANGE));
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mSecurityChangeReceiver,
                 new IntentFilter(NetworkSecurityPreferenceController.ACTION_SECURITY_CHANGE));
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mMeteredChangeReceiver,
+                new IntentFilter(NetworkMeteredPreferenceController.ACTION_METERED_CHANGE));
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mPrivacyChangeReceiver,
+                new IntentFilter(NetworkPrivacyPreferenceController.ACTION_PRIVACY_CHANGE));
     }
 
     @Override
     protected void onDestroyInternal() {
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mNameChangeReceiver);
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mSecurityChangeReceiver);
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mMeteredChangeReceiver);
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mPrivacyChangeReceiver);
     }
 
     @Override
@@ -122,7 +156,7 @@ public class NetworkPasswordPreferenceController extends
             NetworkNameRestrictedPasswordEditTextPreference preference, Object newValue) {
         String password = newValue.toString();
         WifiUtil.connectToWifiEntry(getContext(), mNetworkName, mSecurityType,
-                password, /* hidden= */ true, mConnectionListener);
+                password, /* hidden= */ true, mMeteredChoice, mPrivacyChoice, mConnectionListener);
         return true;
     }
 }

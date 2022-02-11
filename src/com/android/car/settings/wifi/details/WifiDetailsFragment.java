@@ -12,6 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
 package com.android.car.settings.wifi.details;
@@ -95,6 +99,10 @@ public class WifiDetailsFragment extends SettingsFragment {
                 WifiSignalStrengthPreferenceController.class, R.string.pk_wifi_signal_strength)
                 .init(mWifiEntry, mWifiInfoProvider));
         mControllers.add(use(WifiFrequencyPreferenceController.class, R.string.pk_wifi_frequency)
+                .init(mWifiEntry, mWifiInfoProvider));
+        mControllers.add(use(WifiMeteredPreferenceController.class, R.string.mark_as_metered)
+                .init(mWifiEntry, mWifiInfoProvider));
+        mControllers.add(use(WifiPrivacyPreferenceController.class, R.string.use_randomized_mac)
                 .init(mWifiEntry, mWifiInfoProvider));
         mControllers.add(use(WifiSecurityPreferenceController.class, R.string.pk_wifi_security)
                 .init(mWifiEntry, mWifiInfoProvider));
