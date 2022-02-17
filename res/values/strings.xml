@@ -74,6 +74,8 @@
     <string name="mobile_network_mobile_network_toggle_title">Mobile network</string>
     <!-- Mobile network screen, toggle mobile network summary [CHAR LIMIT=50] -->
     <string name="mobile_network_mobile_network_toggle_summary">Use mobile data</string>
+    <!-- Subtitle for when mobile network is toggled off [CHAR LIMIT=45] -->
+    <string name="mobile_network_state_off">Off</string>
     <!-- Mobile network screen, confirmation dialog to turn off mobile data [CHAR LIMIT=50] -->
     <string name="confirm_mobile_data_disable">Turn off mobile data?</string>
     <!-- When a SIM preference hasn't been selected yet, this string is displayed as the pref summary until the user chooses a SIM subscription from the preference list. [CHAR LIMIT=50] -->
@@ -298,6 +300,8 @@
     <string name="wifi_cellular_fallback_summary">Use mobile data when Wi\u2011Fi has no internet access. Data usage charges may apply.</string>
     <!-- Content description for the wifi state switch. [CHAR LIMIT=NONE] -->
     <string name="wifi_state_switch_content_description" translatable="false">Wi\u2011Fi toggle switch</string>
+    <!-- Subtitle for Wi-Fi state switch on the Network & internet page [CHAR LIMIT=45] -->
+    <string name="wifi_network_state_switch_subtitle">Find and connect to Wi\u2011Fi networks</string>
     <!-- url for the wifi scanning required dialog help page -->
     <string name="help_uri_wifi_scanning_required" translatable="false"></string>
     <!-- Button label to allow the user to view additional information [CHAR LIMIT=NONE] -->
@@ -1134,7 +1138,7 @@
     <!-- Button summary to factory data reset the entire device.  Factory reset will delete all data from the vehicle. [CHAR LIMIT=NONE]-->
     <string name="factory_reset_summary">Erase all data and profiles from the infotainment system</string>
     <!-- Message on screen after user selects factory reset. [CHAR LIMIT=NONE] -->
-    <string name="factory_reset_desc">This will erase all data from your vehicle\u2019s infotainment system, including:\n\n<li>Your Google Account</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li></string>
+    <string name="factory_reset_desc">This will erase all data from your vehicle\u2019s infotainment system, including:\n\n<li>Your accounts and profiles</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li></string>
     <!-- The list of current accounts follows this text. [CHAR LIMIT=NONE] -->
     <string name="factory_reset_accounts">You are currently signed into the following accounts:</string>
     <!-- Message on screen if other profiles are present on the device after user selects factory reset. [CHAR LIMIT=NONE] -->
@@ -1352,11 +1356,11 @@
     <!-- Switch summary to enable auto sync account [CHAR LIMIT=60] -->
     <string name="account_auto_sync_summary">Let apps refresh data automatically</string>
     <!--  Title of dialog shown when user enables global auto sync [CHAR LIMIT=50] -->
-    <string name="data_usage_auto_sync_on_dialog_title">Turn auto-sync data on?</string>
+    <string name="data_usage_auto_sync_on_dialog_title">Allow automatic data syncing?</string>
     <!--  Body of dialog shown when user enables global auto sync [CHAR LIMIT=NONE] -->
-    <string name="data_usage_auto_sync_on_dialog">Any changes you make to your accounts on the web will be automatically copied to your device.\n\nSome accounts may also automatically copy any changes you make on the phone to the web. A Google Account works this way.</string>
+    <string name="data_usage_auto_sync_on_dialog">Any changes you make to your accounts on the web will be automatically copied to your vehicle.\n\nSome accounts may also automatically copy any changes you make on the vehicle to the web.</string>
     <!--  Title of dialog shown when user disables global auto sync [CHAR LIMIT=50] -->
-    <string name="data_usage_auto_sync_off_dialog_title">Turn auto-sync data off?</string>
+    <string name="data_usage_auto_sync_off_dialog_title">Disallow automatic data syncing?</string>
     <!--  Body of dialog shown when user disables global auto sync [CHAR LIMIT=NONE] -->
     <string name="data_usage_auto_sync_off_dialog">This will conserve data, but you\u2019ll need to sync each account manually to collect recent information. And you won\u2019t receive notifications when updates occur.</string>
     <!-- Account details in Settings screen title [CHAR LIMIT=25] -->
@@ -1603,6 +1607,8 @@
     <string name="cancel">Cancel</string>
     <!-- Generic dialog allow button. [CHAR_LIMIT=20] -->
     <string name="allow">Allow</string>
+    <!-- Generic dialog don't allow button. [CHAR_LIMIT=20] -->
+    <string name="do_not_allow">Don\u2019t allow</string>
     <!-- Generic dialog deny button. [CHAR_LIMIT=20] -->
     <string name="deny">Deny</string>
 
@@ -1708,6 +1714,8 @@
     <string name="add_device_admin_msg">Activate this infotainment system app?</string>
     <!-- Label for button to set the active device admin [CHAR_LIMIT=NONE] -->
     <string name="add_device_admin">Activate this infotainment system app</string>
+    <!-- Label for button to deactivate and uninstall the active device admin app [CHAR LIMIT=NONE] -->
+    <string name="deactivate_and_uninstall_device_admin">Deactivate &amp; uninstall</string>
     <!-- Label for button to remove the active device admin app [CHAR LIMIT=NONE] -->
     <string name="remove_device_admin">Deactivate this infotainment system app</string>
     <!-- Shown in admin details page to warn user about policies the admin can set in a work profile. [CHAR LIMIT=NONE] -->
@@ -1760,6 +1768,122 @@
     <string name="work_policy_privacy_settings"><xliff:g id="organization_name">%1$s</xliff:g> vehicle policy</string>
     <!-- Summary for Enterprise Privacy settings, explaining what the user can expect to find under it [CHAR LIMIT=NONE]-->
     <string name="work_policy_privacy_settings_summary">Settings managed by the organization manager</string>
+    <!-- Footer to show help link content description. [CHAR LIMIT=NONE] -->
+    <string name="footer_learn_more_content_description">Learn more about <xliff:g id="service" example="Select to Speak">%1$s</xliff:g></string>
+
+    <!-- Enterprise Privacy --> <skip />
+    <!-- TODO(b/206022572, b/203004258): remove translatable="false" once the proper strings have been defined -->
+    <!-- Title of setting on security settings screen. This will take the user to a screen with information about admin powers and their impact on the user's privacy on a managed device. Shown on enterprise-managed devices only. Note: "Device" is singular and refers to the device (e.g. phone or tablet) that the user is holding in their hand. -->
+    <string name="enterprise_privacy_settings" translatable="false">Managed device info</string>
+    <!-- Summary for Enterprise Privacy settings, explaining what the user can expect to find under it [CHAR LIMIT=NONE]-->
+    <string name="enterprise_privacy_settings_summary_generic" translatable="false">Changes &amp; settings managed by your organization</string>
+    <!-- Enterprise Privacy settings activity header, summarizing the powers that the admin has. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_header" translatable="false">To provide access to your work data, your organization may change settings and install software on your device.\n\nFor more details, contact your organization\'s admin.</string>
+    <!-- Title for the 'Types of information your organization can see' preference category. [CHAR LIMIT=60] -->
+    <string name="enterprise_privacy_exposure_category" translatable="false">Types of information your organization can see</string>
+    <!-- Title for the 'Changes made by your organization’s admin' preference category. [CHAR LIMIT=60] -->
+    <string name="enterprise_privacy_exposure_changes_category" translatable="false">Changes made by your organization\'s admin</string>
+    <!-- Description for the information that organization can see on managed device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_exposure_desc" translatable="false">
+        <li>Data associated with your work account, such as email and calendar</li>\n
+        <li>List of apps on your device</li>\n
+        <li>Amount of time and data spent in each app</li>
+    </string>
+    <!-- Title for the 'Your access to this device' preference category. [CHAR LIMIT=60] -->
+    <string name="enterprise_privacy_device_access_category" translatable="false">Your access to this device</string>
+    <!-- Label explaining that the admin can see apps installed on the device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_installed_packages" translatable="false">List of apps on your device</string>
+    <!-- Label explaining that the number of apps is an estimation. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_apps_count_estimation_info" translatable="false">Number of apps is estimated. It may not include apps installed outside of the Play Store.</string>
+    <!-- Summary indicating the number of apps that a label (e.g. installed apps or apps granted a particular permission) refers to. The number shown is a minimum as there may be additional apps we do not know about. [CHAR LIMIT=NONE] -->
+    <plurals name="enterprise_privacy_number_packages_lower_bound">
+        <item quantity="one">Minimum <xliff:g id="count">%d</xliff:g> app</item>
+        <item quantity="other">Minimum <xliff:g id="count">%d</xliff:g> apps</item>
+    </plurals>
+    <!-- Summary indicating the number of apps that a label (e.g. installed apps or apps granted a particular permission) refers to. [CHAR LIMIT=NONE] -->
+    <plurals name="enterprise_privacy_number_packages">
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> app</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> apps</item>
+    </plurals>
+    <!-- Label explaining that the admin can retrieve network logs on the device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_network_logs" translatable="false">Most recent network traffic log</string>
+    <!-- Label explaining that the admin can request bug reports on the device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_bug_reports" translatable="false">Most recent bug report</string>
+    <!-- Label explaining that the admin can retrieve security on from the device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_security_logs" translatable="false">Most recent security log</string>
+    <!-- Label indicating that the admin never took a given action so far (e.g. did not retrieve security logs or request bug reports). -->
+    <string name="enterprise_privacy_none" translatable="false">None</string>
+    <!-- Label indicating that the admin installed one or more apps on the device. -->
+    <string name="enterprise_privacy_enterprise_installed_packages" translatable="false">Apps installed</string>
+    <!-- Label indicating that the admin granted one or more apps access to the device's location. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_location_access" translatable="false">Location permissions</string>
+    <!-- Label indicating that the admin granted one or more apps access to the microphone. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_microphone_access" translatable="false">Microphone permissions</string>
+    <!-- Label indicating that the admin granted one or more apps access to the camera. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_camera_access" translatable="false">Camera permissions</string>
+    <!-- Label indicating that the admin set one or more apps as defaults for common actions (e.g. open browser, send e-mail). [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_enterprise_set_default_apps" translatable="false">Default apps</string>
+    <!-- Label explaining that the current input method was set by the admin. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_input_method" translatable="false">Default keyboard</string>
+    <!-- Summary indicating the input method set by the admin. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_input_method_name" translatable="false">Set to <xliff:g id="app_label" example="Example Keyboard">%s</xliff:g></string>
+    <!-- Label explaining that an always-on VPN was set by the admin for the entire device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_always_on_vpn_device" translatable="false">Always-on VPN turned on</string>
+    <!-- Label explaining that a global HTTP proxy was set by the admin. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_global_http_proxy" translatable="false">Global HTTP proxy set</string>
+    <!-- Label explaining that the admin installed trusted CA certificates in personal profile. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_ca_certs_personal" translatable="false">Trusted credentials in your personal profile</string>
+    <!-- Description for device access on managed device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_device_access_desc" translatable="false">
+        <li>Admin can lock the device and reset password</li>\n
+        <li>Admin can delete all device data</li>
+    </string>
+    <!-- Label explaining that the admin configured the device to wipe itself when the password is mistyped too many times. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_failed_password_wipe_device" translatable="false">Failed password attempts before deleting all device data</string>
+    <!-- Label explaining that the admin configured the current user to wipe itself when the password is mistyped too many times. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_failed_password_wipe_current_user" translatable="false">Failed password attempts before deleting  profile data</string>
+    <!-- Label explaining that an always-on VPN was set by the admin in the personal profile. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_always_on_vpn_personal" translatable="false">Always-on VPN turned on in your personal profile</string>
+    <!-- Label explaining that the admin installed trusted CA certificates for the entire device. [CHAR LIMIT=NONE] -->
+    <string name="enterprise_privacy_ca_certs_device" translatable="false">Trusted credentials</string>
+    <!-- Summary indicating the number of trusted CA certificates installed by the admin. The number shown is a minimum as there may be additional CA certificates we do not know about. [CHAR LIMIT=NONE] -->
+    <plurals name="enterprise_privacy_number_ca_certs" translatable="false">
+        <item quantity="one">Minimum <xliff:g id="count">%d</xliff:g> CA certificate</item>
+        <item quantity="other">Minimum <xliff:g id="count">%d</xliff:g> CA certificates</item>
+    </plurals>
+    <!-- Summary indicating the number of mistyped passwords after which the device or work profile wipes itself. [CHAR LIMIT=NONE] -->
+    <plurals name="enterprise_privacy_number_failed_password_wipe">
+        <item quantity="one" translatable="false"><xliff:g id="count">%d</xliff:g> attempt</item>
+        <item quantity="other" translatable="false"><xliff:g id="count">%d</xliff:g> attempts</item>
+    </plurals>
+    <!-- Strings for displaying which applications were set as default for specific actions. -->
+    <!-- Title for the apps that have been set as default handlers of camera-related intents. [CHAR LIMIT=30] -->
+    <plurals name="default_camera_app_title">
+        <item quantity="one" translatable="false">Camera app</item>
+        <item quantity="other" translatable="false">Camera apps</item>
+    </plurals>
+    <!-- Title for the app that has been set as default handler of calendar-related intents. [CHAR LIMIT=30] -->
+    <string name="default_calendar_app_title" translatable="false">Calendar app</string>
+    <!-- Title for the app that has been set as default handler of contacts-related intents. [CHAR LIMIT=30] -->
+    <string name="default_contacts_app_title" translatable="false">Contacts app</string>
+    <!-- Title for the apps that have been set as default handlers of new email intents. [CHAR LIMIT=30] -->
+    <plurals name="default_email_app_title">
+        <item quantity="one" translatable="false">Email client app</item>
+        <item quantity="other" translatable="false">Email client apps</item>
+    </plurals>
+    <!-- Title for the app that has been set as default handler of geo-related intents. [CHAR LIMIT=30] -->
+    <string name="default_map_app_title" translatable="false">Map app</string>
+    <!-- Title for the apps that have been set as default handlers of call-related intents. [CHAR LIMIT=30] -->
+    <plurals name="default_phone_app_title">
+        <item quantity="one" translatable="false">Phone app</item>
+        <item quantity="other" translatable="false">Phone apps</item>
+    </plurals>
+    <!-- Title for Default Browser settings [CHAR LIMIT=30] -->
+    <string name="default_browser_title" translatable="false">Browser app</string>
+    <!-- Template for concatenating two app names -->
+    <string name="app_names_concatenation_template_2" translatable="false"><xliff:g id="first_app_name">%1$s</xliff:g>, <xliff:g id="second_app_name">%2$s</xliff:g></string>
+    <!-- Template for concatenating three app names -->
+    <string name="app_names_concatenation_template_3" translatable="false"><xliff:g id="first_app_name">%1$s</xliff:g>, <xliff:g id="second_app_name">%2$s</xliff:g>, <xliff:g id="third_app_name">%3$s</xliff:g></string>
 
     <!-- Remote request bugreport --><skip/>
     <!-- Title of dialog shown to ask for user consent for sharing a bugreport that was requested remotely by the vehicle's organization manager. [CHAR LIMIT=50] -->

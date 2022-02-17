@@ -28,6 +28,8 @@ import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import android.annotation.UserIdInt;
+import android.app.AppOpsManager;
 import android.app.admin.DeviceAdminInfo;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -36,6 +38,9 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.pm.UserInfo;
+import android.os.IBinder;
+import android.os.UserHandle;
 import android.os.UserManager;
 
 import androidx.test.core.app.ApplicationProvider;
@@ -54,7 +59,9 @@ import org.mockito.quality.Strictness;
 import java.util.Arrays;
 
 @RunWith(AndroidJUnit4.class)
-public class BaseEnterpriseTestCase {
+public abstract class BaseEnterpriseTestCase {
+
+    protected static final UserHandle MY_USER_ID = UserHandle.of(UserHandle.myUserId());
 
     protected final Context mRealContext = ApplicationProvider.getApplicationContext();
     protected final Context mSpiedContext = spy(mRealContext);
@@ -75,6 +82,9 @@ public class BaseEnterpriseTestCase {
     protected DeviceAdminInfo mFancyDeviceAdminInfo;
 
     @Mock
+    protected AppOpsManager mAppOpsMgr;
+
+    @Mock
     protected DevicePolicyManager mDpm;
 
     @Mock
@@ -90,7 +100,7 @@ public class BaseEnterpriseTestCase {
         }
         mSession = ExtendedMockito.mockitoSession()
                 .initMocks(this)
-                .mockStatic(UserManager.class)
+                .spyStatic(UserManager.class)
                 .mockStatic(RestrictedLockUtilsInternal.class)
                 .strictness(Strictness.LENIENT)
                 .startMocking();
@@ -98,6 +108,7 @@ public class BaseEnterpriseTestCase {
         assertWithMessage("mDpm").that(mDpm).isNotNull();
         assertWithMessage("mUm").that(mUm).isNotNull();
 
+        when(mSpiedContext.getSystemService(AppOpsManager.class)).thenReturn(mAppOpsMgr);
         when(mSpiedContext.getSystemService(DevicePolicyManager.class)).thenReturn(mDpm);
         when(mSpiedContext.getSystemService(PackageManager.class)).thenReturn(mSpiedPm);
         when(mSpiedContext.getPackageManager()).thenReturn(mSpiedPm);
@@ -130,10 +141,35 @@ public class BaseEnterpriseTestCase {
         when(mDpm.getProfileOwner()).thenReturn(mDefaultAdmin);
     }
 
+    protected final void mockProfileOwnerAsUser() {
+        when(mDpm.getProfileOwnerAsUser(MY_USER_ID)).thenReturn(mDefaultAdmin);
+        when(mDpm.getProfileOwnerAsUser(MY_USER_ID.getIdentifier())).thenReturn(mDefaultAdmin);
+    }
+
+    protected final void mockNoProfileOwnerAsUser() {
+        when(mDpm.getProfileOwnerAsUser(MY_USER_ID)).thenReturn(null);
+        when(mDpm.getProfileOwnerAsUser(MY_USER_ID.getIdentifier())).thenReturn(null);
+    }
+
     protected final void mockDeviceOwner() {
+        when(mDpm.isDeviceManaged()).thenReturn(true);
         mockActiveAdmin(mDefaultAdmin);
+        when(mDpm.isDeviceManaged()).thenReturn(true);
         when(mDpm.getDeviceOwnerComponentOnCallingUser()).thenReturn(mDefaultAdmin);
         when(mDpm.getDeviceOwnerComponentOnAnyUser()).thenReturn(mDefaultAdmin);
+    }
+
+    protected final void mockNoDeviceOwner() {
+        when(mDpm.getDeviceOwnerComponentOnCallingUser()).thenReturn(null);
+        when(mDpm.getDeviceOwnerComponentOnAnyUser()).thenReturn(null);
+    }
+
+    protected final void mockNotManaged() {
+        when(mDpm.isDeviceManaged()).thenReturn(false);
+    }
+
+    protected final void mockOrganizationName(String orgName) {
+        when(mDpm.getDeviceOwnerOrganizationName()).thenReturn(orgName);
     }
 
     protected final void mockFinancialDevice() {
@@ -182,6 +218,46 @@ public class BaseEnterpriseTestCase {
         when(mSpiedPm.hasSystemFeature(PackageManager.FEATURE_DEVICE_ADMIN)).thenReturn(false);
     }
 
+    protected final void mockSystemUser() {
+        when(mUm.isSystemUser()).thenReturn(true);
+    }
+
+    protected final void mockNonSystemUser() {
+        when(mUm.isSystemUser()).thenReturn(false);
+    }
+
+    protected final void mockNullEnforcedAdmin(String restriction, int userId) {
+        when(RestrictedLockUtilsInternal
+                .checkIfRestrictionEnforced(mSpiedContext, restriction, userId)).thenReturn(null);
+    }
+
+    protected final void mockGetLastBugreportTime(long time) {
+        when(mDpm.getLastBugReportRequestTime()).thenReturn(time);
+    }
+
+    protected final void mockCompMode() {
+        mockDeviceOwner();
+        UserInfo userInfo = new UserInfo(10, "UserAbc", null, 0,
+                UserManager.USER_TYPE_PROFILE_MANAGED);
+        when(mUm.getProfiles(anyInt())).thenReturn(Arrays.asList(userInfo));
+    }
+
+    protected final void mockGetLastNetworkLogRetrievalTime(long time) {
+        when(mDpm.getLastNetworkLogRetrievalTime()).thenReturn(time);
+    }
+
+    protected final void mockGetLastSecurityLogRetrievalTime(long time) {
+        when(mDpm.getLastSecurityLogRetrievalTime()).thenReturn(time);
+    }
+
+    protected final void mockIsCurrentInputMethodSetByOwner(boolean value) {
+        when(mDpm.isCurrentInputMethodSetByOwner()).thenReturn(value);
+    }
+
+    protected final void mockGetMaximumFailedPasswordsForWipe(@UserIdInt int userId, int max) {
+        when(mDpm.getMaximumFailedPasswordsForWipe(mDefaultAdmin, userId)).thenReturn(max);
+    }
+
     protected final void verifyAdminActivated() {
         verify(mDpm).setActiveAdmin(eq(mDefaultAdmin), anyBoolean());
     }
@@ -198,16 +274,7 @@ public class BaseEnterpriseTestCase {
         verify(mDpm, never()).removeActiveAdmin(any());
     }
 
-    protected final void mockAdminUser() {
-        when(mUm.isAdminUser()).thenReturn(true);
-    }
-
-    protected final void mockNonAdminUser() {
-        when(mUm.isAdminUser()).thenReturn(false);
-    }
-
-    protected final void mockNullEnforcedAdmin(String restriction, int userId) {
-        when(RestrictedLockUtilsInternal
-                .checkIfRestrictionEnforced(mSpiedContext, restriction, userId)).thenReturn(null);
+    protected final void verifyAppOpsMgrSetUserRestriction(int code, boolean restricted) {
+        verify(mAppOpsMgr).setUserRestriction(eq(code), eq(restricted), any(IBinder.class));
     }
 }
