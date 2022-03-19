@@ -43,11 +43,15 @@ android_library {
         "jsr305",
         "car-ui-lib",
         "car-admin-ui-lib",
+        "car-qc-lib",
     ],
 
     libs: [
         "android.car",
     ],
+
+    manifest: "AndroidManifest.xml",
+    resource_dirs: ["res"],
 }
 
 platform_compat_config {
@@ -100,6 +104,7 @@ android_app {
         "CarSettings-core",
         "car-ui-lib-testing-support",
         "car-admin-ui-lib",
+        "car-qc-lib",
     ],
 
     // Testing only resources must be applied last so they take precedence.
@@ -159,6 +164,7 @@ android_library {
         "jsr305",
         "car-ui-lib-testing-support",
         "car-admin-ui-lib",
+        "car-qc-lib",
     ],
 
     // Testing only resources must be applied last so they take precedence.
