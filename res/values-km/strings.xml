@@ -148,6 +148,10 @@
     <string name="wifi_hotspot_name_summary_connected" msgid="7421325340822195506">"ឧបករណ៍​ផ្សេងទៀត​អាចភ្ជាប់​ជាមួយ <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>"</string>
     <string name="wifi_hotspot_password_title" msgid="4103948315849351988">"ពាក្យសម្ងាត់​ហតស្ប៉ត"</string>
     <string name="wifi_hotspot_security_title" msgid="2299925790743587725">"សុវត្ថិភាព"</string>
+    <!-- no translation found for wifi_hotspot_wpa3_sae (4752416911592950174) -->
+    <skip />
+    <!-- no translation found for wifi_security_psk_sae (8738371461215752280) -->
+    <skip />
     <string name="wifi_hotspot_wpa2_personal" msgid="7135181212837798318">"WPA2 ផ្ទាល់ខ្លួន"</string>
     <string name="wifi_hotspot_security_none" msgid="2514844105085054386">"គ្មាន"</string>
     <string name="wifi_hotspot_ap_band_title" msgid="7685279281668988593">"កម្រិតបញ្ជូន AP"</string>
@@ -612,6 +616,8 @@
     <string name="privacy_settings_title" msgid="3150145262029229572">"ឯកជនភាព"</string>
     <string name="privacy_vehicle_data_title" msgid="6385777370742595651">"ទិន្នន័យប្រព័ន្ធព័ត៌មាន និងកម្សាន្ត"</string>
     <string name="privacy_location_summary" msgid="7019817848470566242">"គ្រប់គ្រង​សិទ្ធិចូលប្រើទីតាំង​របស់អ្នក​ពីកម្មវិធី"</string>
+    <string name="mute_camera_title" msgid="215494079895460172">"កាមេរ៉ា"</string>
+    <string name="mute_camera_summary" msgid="1237452064757403042">"គ្រប់គ្រងសិទ្ធិចូលប្រើកាមេរ៉ារបស់អ្នកពីកម្មវិធី"</string>
     <string name="mute_mic_title" msgid="2813215197799569553">"មីក្រូហ្វូន"</string>
     <string name="mute_mic_summary" msgid="5426953935775303904">"គ្រប់គ្រង​សិទ្ធិចូលប្រើមីក្រូហ្វូន​ពីកម្មវិធី"</string>
     <string name="vehicle_data_title" msgid="935933215161763721">"ទិន្នន័យប្រព័ន្ធព័ត៌មាន និងកម្សាន្ត"</string>
@@ -673,10 +679,6 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"បោះបង់"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"បញ្ជាក់"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"ត្រូវ​មាន​យ៉ាងហោចណាស់ 4 តួ"</string>
-    <string name="lockpassword_password_too_short" msgid="6681218025001328405">"ត្រូវ​​មាន​យ៉ាង​ហោច​ណាស់ <xliff:g id="COUNT">%d</xliff:g> តួ"</string>
-    <string name="lockpassword_pin_too_short" msgid="6363004004424904218">"កូដ PIN ​ត្រូវ​មានយ៉ាងតិច <xliff:g id="COUNT">%d</xliff:g> ខ្ទង់"</string>
-    <string name="lockpassword_password_too_long" msgid="7530214940279491291">"ត្រូវមានតិចជាង <xliff:g id="NUMBER">%d</xliff:g> តួ"</string>
-    <string name="lockpassword_pin_too_long" msgid="62957683396974404">"ត្រូវមានលេខតិចជាង <xliff:g id="NUMBER">%d</xliff:g> ខ្ទង់"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"ត្រូវមាន​លេខពី 0-9 តែ​ប៉ុណ្ណោះ។"</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"អ្នក​គ្រប់គ្រង​ឧបករណ៍​មិន​អនុញ្ញាត​ឱ្យ​ប្រើ​កូដ PIN ​ទើបប្រើ​ហើយ​ទេ"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"កូដ PIN លក្ខណៈ​សាមញ្ញ​ត្រូវ​បាន​ទប់ស្កាត់​ដោយ​អ្នក​គ្រប់គ្រងផ្នែក​ព័ត៌មាន​វិទ្យា​របស់អ្នក។ សូមសាកល្បង​ប្រើ​កូដ PIN ផ្សេង​ពីនេះ។"</string>
@@ -685,7 +687,21 @@
     <string name="lockpassword_password_recently_used" msgid="8255729487108602924">"អ្នក​គ្រប់គ្រង​ឧបករណ៍​មិន​អនុញ្ញាត​ឱ្យ​ប្រើ​ពាក្យ​សម្ងាត់​​ដែលទើបប្រើ​ហើយ​ទេ"</string>
     <string name="error_saving_password" msgid="8334882262622500658">"មាន​បញ្ហា​ក្នុងការ​រក្សាទុក​ពាក្យ​សម្ងាត់"</string>
     <string name="lockpassword_password_denylisted_by_admin" msgid="8611831198794524730">"ពាក្យសម្ងាត់​លក្ខណៈ​សាមញ្ញ​ត្រូវបាន​ទប់ស្កាត់​ដោយ​អ្នក​គ្រប់គ្រង​ផ្នែកព័ត៌មាន​វិទ្យា​របស់អ្នក។ សូមសាកល្បង​ប្រើ​ពាក្យសម្ងាត់​ផ្សេងពីនេះ។"</string>
-    <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"មិន​អនុញ្ញាត​ឱ្យ​មាន​លេខ​លំដាប់​ឡើង ចុះ ឬ​ដដែលៗ​ទេ។"</string>
+    <string name="lockpassword_password_requires_alpha" msgid="713641878535268163">"ត្រូវមានអក្សរយ៉ាងហោចណាស់មួយតួ"</string>
+    <string name="lockpassword_password_requires_digit" msgid="8120467503175627546">"ត្រូវមានលេខយ៉ាងហោចណាស់មួយតួ"</string>
+    <string name="lockpassword_password_requires_symbol" msgid="6294855131052831204">"ត្រូវមានសញ្ញាយ៉ាងហោចណាស់មួយ"</string>
+    <string name="lockpassword_password_requires_letters" msgid="324864645474528299">"{count,plural, =1{ត្រូវមានអក្សរយ៉ាងហោចណាស់ # តួ}other{ត្រូវមានអក្សរយ៉ាងហោចណាស់ # តួ}}"</string>
+    <string name="lockpassword_password_requires_lowercase" msgid="5373735547134824114">"{count,plural, =1{ត្រូវមានអក្សរតូចយ៉ាងហោចណាស់ # តួ}other{ត្រូវមានអក្សរតូចយ៉ាងហោចណាស់ # តួ}}"</string>
+    <string name="lockpassword_password_requires_uppercase" msgid="2002482631049525313">"{count,plural, =1{ត្រូវមានអក្សរធំយ៉ាងហោចណាស់ # តួ}other{ត្រូវមានអក្សរធំយ៉ាងហោចណាស់ # តួ}}"</string>
+    <string name="lockpassword_password_requires_numeric" msgid="5694949801691947801">"{count,plural, =1{ត្រូវមានលេខយ៉ាងហោចណាស់ # ខ្ទង់}other{ត្រូវមានលេខយ៉ាងហោចណាស់ # ខ្ទង់}}"</string>
+    <string name="lockpassword_password_requires_symbols" msgid="1789501049908004075">"{count,plural, =1{ត្រូវមានសញ្ញាពិសេសយ៉ាងហោចណាស់ #}other{ត្រូវមានសញ្ញាពិសេសយ៉ាងហោចណាស់ #}}"</string>
+    <string name="lockpassword_password_requires_nonletter" msgid="3089186186422638926">"{count,plural, =1{ត្រូវមានតួដែលមិនមែនជាអក្សរយ៉ាងហោចណាស់ #}other{ត្រូវមានតួដែលមិនមែនជាអក្សរយ៉ាងហោចណាស់ #}}"</string>
+    <string name="lockpassword_password_requires_nonnumerical" msgid="1677123573552379526">"{count,plural, =1{ត្រូវតែមាន​តួដែលមិនមែន​ជាលេខ​យ៉ាងហោចណាស់ #}other{ត្រូវតែមាន​តួដែលមិនមែន​ជាលេខ​យ៉ាងហោចណាស់ #}}"</string>
+    <string name="lockpassword_password_too_short" msgid="3898753131694105832">"{count,plural, =1{ត្រូវតែ​មាន​យ៉ាងហោចណាស់ # តួ}other{ត្រូវតែ​មាន​យ៉ាងហោចណាស់ # តួ}}"</string>
+    <string name="lockpassword_pin_too_short" msgid="3671037384464545169">"{count,plural, =1{ត្រូវតែមានយ៉ាងហោចណាស់ # ខ្ទង់}other{ត្រូវតែមានយ៉ាងហោចណាស់ # ខ្ទង់}}"</string>
+    <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{ត្រូវតែ​តិចជាង # តួ}other{ត្រូវតែ​តិចជាង # តួ}}"</string>
+    <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{ត្រូវតែ​តិចជាង # ខ្ទង់}other{ត្រូវតែ​តិចជាង # ខ្ទង់}}"</string>
+    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"មិន​អនុញ្ញាត​ឱ្យ​មាន​លេខ​លំដាប់ឡើង ចុះ ឬដដែលៗទេ"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"ជម្រើស​ការចាក់សោអេក្រង់"</string>
     <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\nថ្ងៃ <xliff:g id="DATE">%2$s</xliff:g>៖ <xliff:g id="NUM_DAYS">%3$s</xliff:g> ថ្ងៃមុន"</string>
     <string name="credentials_reset" msgid="873900550885788639">"សម្អាត​ព័ត៌មានផ្ទៀងផ្ទាត់"</string>
@@ -817,12 +833,20 @@
     <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"ពណ៌លឿង​​លើ​​ពណ៌​ខ្មៅ"</string>
     <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"ពណ៌លឿង​លើ​ពណ៌ខៀវ"</string>
     <string name="accessibility_settings_screen_reader_title" msgid="5113265553157624836">"កម្មវិធី​អាន​អេក្រង់"</string>
-    <string name="talkback_title" msgid="6529000326454628289">"TalkBack"</string>
-    <string name="talkback_settings_off" msgid="1486849504005704390">"បិទ"</string>
-    <string name="talkback_settings_on" msgid="796292072895957042">"អានធាតុនៅលើអេក្រង់"</string>
-    <string name="enable_talkback_toggle_title" msgid="3027666779214128091">"ប្រើមុខងារ TalkBack"</string>
-    <string name="talkback_options_title" msgid="7366357383004455638">"ជម្រើស"</string>
-    <string name="talkback_settings_title" msgid="631275474070654027">"ការកំណត់"</string>
-    <string name="about_talkback_title" msgid="6048639389606001298">"អំពីមុខងារ TalkBack"</string>
-    <string name="about_talkback_description" msgid="5438077447169311605">"មិនអាចប្រើមុខងារ TalkBack បានទេ នៅពេលយានជំនិះកំពុងមានចលនា។\n\nនៅពេលបើកមុខងារ TalkBack វាផ្ដល់ការអានអេក្រង់ ដើម្បីអាចឱ្យអ្នកប្រើឧបករណ៍របស់អ្នកដោយមិនចាំបាច់មើលអេក្រង់។ មុខងារ TalkBack ត្រូវបានបង្កើតឡើង​សម្រាប់ស្ថានភាព ឬមនុស្សដែលមានការពិបាក​ក្នុងការមើលអេក្រង់។"</string>
+    <string name="screen_reader_settings_off" msgid="6081562047935689764">"បិទ"</string>
+    <string name="screen_reader_settings_on" msgid="2168217218643349459">"អានធាតុនៅលើអេក្រង់"</string>
+    <string name="enable_screen_reader_toggle_title" msgid="7641307781194619254">"ប្រើ <xliff:g id="ACCESSIBILITY_APP_NAME">%1$s</xliff:g>"</string>
+    <string name="screen_reader_options_title" msgid="1073640098442831819">"ជម្រើស"</string>
+    <string name="screen_reader_description_title" msgid="8766666406552388012">"ការកំណត់"</string>
+    <string name="camera_settings_title" msgid="2837785830355288903">"កាមេរ៉ា"</string>
+    <string name="camera_toggle_title" msgid="1990732328673068456">"ប្រើ​កាមេរ៉ា"</string>
+    <string name="camera_toggle_summary" msgid="5751159996822627567">"អនុញ្ញាតឱ្យកម្មវិធីទាំងអស់​ចូលប្រើ​កាមេរ៉ា​របស់អ្នក"</string>
+    <string name="camera_manage_permissions" msgid="9005596413781984368">"គ្រប់គ្រង​ការអនុញ្ញាត​កាមេរ៉ា"</string>
+    <string name="camera_recently_accessed" msgid="8084100710444691977">"បានចូលប្រើ​កាលពីថ្មីៗនេះ"</string>
+    <string name="camera_no_recent_access" msgid="965105023454777859">"គ្មាន​កម្មវិធី​ថ្មីៗ"</string>
+    <string name="camera_app_permission_summary_camera_off" msgid="1437200903113016549">"កម្មវិធី 0 មានសិទ្ធិចូលប្រើ"</string>
+    <string name="camera_app_permission_summary_camera_on" msgid="7260565911222013361">"{count,plural, =1{កម្មវិធី # នៃ {total_count} មានសិទ្ធិចូលប្រើ}other{កម្មវិធី # នៃ {total_count} មានសិទ្ធិចូលប្រើ}}"</string>
+    <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"បានចូលប្រើ​កាលពីថ្មីៗនេះ"</string>
+    <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"មើលទាំងអស់"</string>
+    <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"កំពុងផ្ទុក…"</string>
 </resources>

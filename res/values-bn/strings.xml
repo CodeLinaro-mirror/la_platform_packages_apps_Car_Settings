@@ -148,6 +148,10 @@
     <string name="wifi_hotspot_name_summary_connected" msgid="7421325340822195506">"<xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>-এর সাথে অন্য ডিভাইস কানেক্ট করা যেতে পারে"</string>
     <string name="wifi_hotspot_password_title" msgid="4103948315849351988">"হটস্পটের পাসওয়ার্ড"</string>
     <string name="wifi_hotspot_security_title" msgid="2299925790743587725">"নিরাপত্তা"</string>
+    <!-- no translation found for wifi_hotspot_wpa3_sae (4752416911592950174) -->
+    <skip />
+    <!-- no translation found for wifi_security_psk_sae (8738371461215752280) -->
+    <skip />
     <string name="wifi_hotspot_wpa2_personal" msgid="7135181212837798318">"WPA2-Personal"</string>
     <string name="wifi_hotspot_security_none" msgid="2514844105085054386">"কোনওটিই নয়"</string>
     <string name="wifi_hotspot_ap_band_title" msgid="7685279281668988593">"AP ব্যান্ড"</string>
@@ -612,6 +616,8 @@
     <string name="privacy_settings_title" msgid="3150145262029229572">"গোপনীয়তা"</string>
     <string name="privacy_vehicle_data_title" msgid="6385777370742595651">"ইনফোটেইনমেন্ট সিস্টেম ডেটা"</string>
     <string name="privacy_location_summary" msgid="7019817848470566242">"আপনার লোকেশনে অ্যাপের অ্যাক্সেস কন্ট্রোল করুন"</string>
+    <string name="mute_camera_title" msgid="215494079895460172">"ক্যামেরা"</string>
+    <string name="mute_camera_summary" msgid="1237452064757403042">"আপনার ক্যামেরায় অ্যাপের অ্যাক্সেস কন্ট্রোল করুন"</string>
     <string name="mute_mic_title" msgid="2813215197799569553">"মাইক্রোফোন"</string>
     <string name="mute_mic_summary" msgid="5426953935775303904">"মাইক্রোফোনে অ্যাপের অ্যাক্সেস কন্ট্রোল করুন"</string>
     <string name="vehicle_data_title" msgid="935933215161763721">"ইনফোটেইনমেন্ট সিস্টেম ডেটা"</string>
@@ -673,10 +679,6 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"বাতিল করুন"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"নিশ্চিত করুন"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"কমপক্ষে ৪টি অক্ষর থাকা আবশ্যক"</string>
-    <string name="lockpassword_password_too_short" msgid="6681218025001328405">"কমপক্ষে <xliff:g id="COUNT">%d</xliff:g>টি অক্ষর থাকতে হবে"</string>
-    <string name="lockpassword_pin_too_short" msgid="6363004004424904218">"পিন কমপক্ষে <xliff:g id="COUNT">%d</xliff:g>টি সংখ্যার হতে হবে"</string>
-    <string name="lockpassword_password_too_long" msgid="7530214940279491291">"<xliff:g id="NUMBER">%d</xliff:g>টি অক্ষরের থেকে কম হওয়া আবশ্যক"</string>
-    <string name="lockpassword_pin_too_long" msgid="62957683396974404">"<xliff:g id="NUMBER">%d</xliff:g>টি সংখ্যার চেয়ে কম হতে হবে"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"শুধুমাত্র ০-৯ এর মতো সংখ্যা থাকতে পারে।"</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"ডিভাইস অ্যাডমিন একটি সাম্প্রতিক পিন ব্যবহার করতে দেয় না"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"আপনার আইটি অ্যাডমিন একই ধরনের পিন ব্লক করে দেয়। অন্য একটি পিন ব্যবহার করে চেষ্টা করুন।"</string>
@@ -685,7 +687,21 @@
     <string name="lockpassword_password_recently_used" msgid="8255729487108602924">"ডিভাইস অ্যাডমিন একটি সাম্প্রতিক পাসওয়ার্ড ব্যবহার করতে দেয় না"</string>
     <string name="error_saving_password" msgid="8334882262622500658">"পাসওয়ার্ড সেভ করার সময় সমস্যা"</string>
     <string name="lockpassword_password_denylisted_by_admin" msgid="8611831198794524730">"আপনার আইটি অ্যাডমিন একই ধরনের পাসওয়ার্ড ব্লক করে দেয়। অন্য একটি পাসওয়ার্ড ব্যবহার করে চেষ্টা করুন।"</string>
-    <string name="lockpassword_pin_no_sequential_digits" msgid="38813552228809240">"ছোট থেকে বড়, বড় থেকে ছোট সংখ্যা অথবা নির্দিষ্ট কয়েকটি সংখ্যা বার বার লেখা যাবে না।"</string>
+    <string name="lockpassword_password_requires_alpha" msgid="713641878535268163">"কমপক্ষে একটি অক্ষর লিখতে হবে"</string>
+    <string name="lockpassword_password_requires_digit" msgid="8120467503175627546">"কমপক্ষে একটি সংখ্যা লিখতে হবে"</string>
+    <string name="lockpassword_password_requires_symbol" msgid="6294855131052831204">"কমপক্ষে একটি চিহ্ন থাকতে হবে"</string>
+    <string name="lockpassword_password_requires_letters" msgid="324864645474528299">"{count,plural, =1{অন্তত #টি অক্ষর লিখতে হবে}one{অন্তত #টি অক্ষর লিখতে হবে}other{অন্তত #টি অক্ষর লিখতে হবে}}"</string>
+    <string name="lockpassword_password_requires_lowercase" msgid="5373735547134824114">"{count,plural, =1{অন্তত #টি ছোটহাতের অক্ষর লিখতে হবে}one{অন্তত #টি ছোটহাতের অক্ষর লিখতে হবে}other{অন্তত #টি ছোটহাতের অক্ষর লিখতে হবে}}"</string>
+    <string name="lockpassword_password_requires_uppercase" msgid="2002482631049525313">"{count,plural, =1{অন্তত #টি বড়হাতের অক্ষর লিখতে হবে}one{অন্তত #টি বড়হাতের অক্ষর লিখতে হবে}other{অন্তত #টি বড়হাতের অক্ষর লিখতে হবে}}"</string>
+    <string name="lockpassword_password_requires_numeric" msgid="5694949801691947801">"{count,plural, =1{অন্তত #টি সংখ্যা লিখতে হবে}one{অন্তত #টি সংখ্যা লিখতে হবে}other{অন্তত #টি সংখ্যা লিখতে হবে}}"</string>
+    <string name="lockpassword_password_requires_symbols" msgid="1789501049908004075">"{count,plural, =1{অন্তত #টি বিশেষ চিহ্ন লিখতে হবে}one{অন্তত #টি বিশেষ চিহ্ন লিখতে হবে}other{অন্তত #টি বিশেষ চিহ্ন লিখতে হবে}}"</string>
+    <string name="lockpassword_password_requires_nonletter" msgid="3089186186422638926">"{count,plural, =1{অন্তত #টি বর্ণ নয় এমন অক্ষর লিখতে হবে}one{অন্তত #টি বর্ণ নয় এমন অক্ষর লিখতে হবে}other{অন্তত #টি বর্ণ নয় এমন অক্ষর লিখতে হবে}}"</string>
+    <string name="lockpassword_password_requires_nonnumerical" msgid="1677123573552379526">"{count,plural, =1{অন্তত #টি সংখ্যা নয় এমন অক্ষর লিখতে হবে}one{অন্তত #টি সংখ্যা নয় এমন অক্ষর লিখতে হবে}other{অন্তত #টি সংখ্যা নয় এমন অক্ষর লিখতে হবে}}"</string>
+    <string name="lockpassword_password_too_short" msgid="3898753131694105832">"{count,plural, =1{অন্তত #টি অক্ষর লিখতে হবে}one{অন্তত #টি অক্ষর লিখতে হবে}other{অন্তত #টি অক্ষর লিখতে হবে}}"</string>
+    <string name="lockpassword_pin_too_short" msgid="3671037384464545169">"{count,plural, =1{অন্তত #টি সংখ্যা লিখতে হবে}one{অন্তত #টি সংখ্যা লিখতে হবে}other{অন্তত #টি সংখ্যা লিখতে হবে}}"</string>
+    <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{অবশ্যই #টি অক্ষরের কম হতে হবে}one{অবশ্যই #টি অক্ষরের কম হতে হবে}other{অবশ্যই #টি অক্ষরের কম হতে হবে}}"</string>
+    <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{অবশ্যই #টি সংখ্যার কম হতে হবে}one{অবশ্যই #টি সংখ্যার কম হতে হবে}other{অবশ্যই #টি সংখ্যার কম হতে হবে}}"</string>
+    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"সংখ্যাগুলি ছোট থেকে বড় ক্রমে, বড় থেকে ছোট ক্রমে বা একই সংখ্যাকে বার বার লেখা যাবে না"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"স্ক্রিন লকের বিকল্প"</string>
     <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> দিন আগে"</string>
     <string name="credentials_reset" msgid="873900550885788639">"ক্রেডেনশিয়াল মুছে ফেলুন"</string>
@@ -817,12 +833,20 @@
     <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"কালোর উপর হলুদ"</string>
     <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"নীলের উপর হলুদ"</string>
     <string name="accessibility_settings_screen_reader_title" msgid="5113265553157624836">"স্ক্রিন রিডার"</string>
-    <string name="talkback_title" msgid="6529000326454628289">"টকব্যাক"</string>
-    <string name="talkback_settings_off" msgid="1486849504005704390">"বন্ধ আছে"</string>
-    <string name="talkback_settings_on" msgid="796292072895957042">"স্ক্রিনের আইটেমগুলি শুনতে চাই"</string>
-    <string name="enable_talkback_toggle_title" msgid="3027666779214128091">"টকব্যাক ব্যবহার করুন"</string>
-    <string name="talkback_options_title" msgid="7366357383004455638">"বিকল্প"</string>
-    <string name="talkback_settings_title" msgid="631275474070654027">"সেটিংস"</string>
-    <string name="about_talkback_title" msgid="6048639389606001298">"টকব্যাকের বিষয়ে"</string>
-    <string name="about_talkback_description" msgid="5438077447169311605">"গাড়ি চলাকালীন টকব্যাক ফিচার উপলভ্য নয়।\n\nযখন টকব্যাক চালু থাকে, তখন এটিতে পড়ে শোনানোর সুবিধা রয়েছে যার জন্য স্ক্রিনের দিকে না তাকিয়েই আপনি ডিভাইস অ্যাক্সেস করতে পারবেন। আপনার বা যাদের স্ক্রিন দেখতে অসুবিধা হয় তাদের জন্য টকব্যাক তৈরি করা হয়েছে।"</string>
+    <string name="screen_reader_settings_off" msgid="6081562047935689764">"বন্ধ আছে"</string>
+    <string name="screen_reader_settings_on" msgid="2168217218643349459">"স্ক্রিনে থাকা আইটেমগুলি শুনতে চাই"</string>
+    <string name="enable_screen_reader_toggle_title" msgid="7641307781194619254">"<xliff:g id="ACCESSIBILITY_APP_NAME">%1$s</xliff:g> ব্যবহার করুন"</string>
+    <string name="screen_reader_options_title" msgid="1073640098442831819">"বিকল্প"</string>
+    <string name="screen_reader_description_title" msgid="8766666406552388012">"সেটিংস"</string>
+    <string name="camera_settings_title" msgid="2837785830355288903">"ক্যামেরা"</string>
+    <string name="camera_toggle_title" msgid="1990732328673068456">"ক্যামেরা ব্যবহার করুন"</string>
+    <string name="camera_toggle_summary" msgid="5751159996822627567">"সব অ্যাপকে আপনার ক্যামেরা অ্যাক্সেস করার অনুমতি দিন"</string>
+    <string name="camera_manage_permissions" msgid="9005596413781984368">"ক্যামেরা অ্যাক্সেস করার অনুমতি ম্যানেজ করুন"</string>
+    <string name="camera_recently_accessed" msgid="8084100710444691977">"সম্প্রতি অ্যাক্সেস করা হয়েছে"</string>
+    <string name="camera_no_recent_access" msgid="965105023454777859">"কোনও সাম্প্রতিক অ্যাপ নেই"</string>
+    <string name="camera_app_permission_summary_camera_off" msgid="1437200903113016549">"কোনও অ্যাপের অ্যাক্সেস নেই"</string>
+    <string name="camera_app_permission_summary_camera_on" msgid="7260565911222013361">"{count,plural, =1{{total_count}টি অ্যাপের মধ্যে #টিতে অ্যাক্সেস আছে}one{{total_count}টি অ্যাপের মধ্যে #টিতে অ্যাক্সেস আছে}other{{total_count}টি অ্যাপের মধ্যে #টিতে অ্যাক্সেস আছে}}"</string>
+    <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"সম্প্রতি অ্যাক্সেস করা হয়েছে"</string>
+    <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"সব দেখুন"</string>
+    <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"লোড হচ্ছে…"</string>
 </resources>
