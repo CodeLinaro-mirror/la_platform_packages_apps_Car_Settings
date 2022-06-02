@@ -208,7 +208,7 @@
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s er koblet til"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s er frakoblet"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Forespørsel om Bluetooth-tilkobling"</string>
-    <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Koble sammen og koble til"</string>
+    <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Koble sammen"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Bluetooth-tilkoblingskode"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"PIN-koden inneholder bokstaver eller symboler"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"Skriv inn sammenkoblingskoden, og trykk på Retur eller Enter"</string>
@@ -587,7 +587,7 @@
     <string name="data_usage_auto_sync_on_dialog_title" msgid="8068513213445588532">"Vil du tillate automatisk datasynkronisering?"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="8683935973719807821">"Alle endringene du gjør i kontoene dine på nettet, kopieres auto­matisk til kjøretøyet ditt.\n\nNoen kontoer kan også auto­matisk kopiere endringer du gjør i kjøretøyet, til nettet."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="6683011954002351091">"Vil du ikke tillate automatisk datasynkronisering?"</string>
-    <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"Dette gir lavere databruk, men du må synkronisere hver konto manuelt for å samle inn ny informasjon. Og du mottar ikke varsler ved oppdateringer."</string>
+    <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"Dette gir lavere databruk, men du må synkronisere hver konto manuelt for å samle inn ny informasjon. Og du får ikke varsler om oppdateringer."</string>
     <string name="account_details_title" msgid="7529571432258448573">"Kontoinformasjon"</string>
     <string name="add_account_title" msgid="5988746086885210040">"Legg til konto"</string>
     <string name="add_an_account" msgid="1072285034300995091">"Legg til en konto"</string>

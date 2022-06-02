@@ -161,7 +161,7 @@
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Odaberite barem jedan frekvencijski pojas za WiFi pristupnu tačku:"</string>
-    <string name="tether_settings_title_all" msgid="4663704772599383169">"Pristupna tačka i povezivanje putem mobitela"</string>
+    <string name="tether_settings_title_all" msgid="4663704772599383169">"Pristupna tačka i dijeljenje internetske veze"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Pristupna tačka"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Isključeno"</string>
     <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Automatski isključi pristupnu tačku"</string>
@@ -503,7 +503,7 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Pričekajte..."</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Datum i vrijeme"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Postavi datum, vrijeme, vremensku zonu i formate"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"Postavi vrijeme automatski"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Automatski postavi vrijeme"</string>
     <string name="zone_auto" msgid="4174874778459184605">"Automatski postavi vremensku zonu"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24-satni format"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Koristi 24-satni format"</string>
@@ -573,7 +573,7 @@
     <string name="storage_total_size_label" msgid="3892138268243791912">"Ukupno"</string>
     <string name="storage_clear_user_data_text" msgid="8787615136779130680">"Obriši pohranu"</string>
     <string name="storage_clear_cache_btn_text" msgid="8449547925966775612">"Obriši keš memoriju"</string>
-    <string name="storage_clear_data_dlg_title" msgid="5863775997588969879">"Izbrisati podatke aplikacija?"</string>
+    <string name="storage_clear_data_dlg_title" msgid="5863775997588969879">"Izbrisati podatke aplikacije?"</string>
     <string name="storage_clear_data_dlg_text" msgid="795055288575727801">"Svi podaci ove aplikacije će biti trajno izbrisani. To uključuje sve fajlove, postavke, račune, baze podataka itd."</string>
     <string name="storage_clear_failed_dlg_text" msgid="6710485971686866306">"Pohrana za aplikaciju nije obrisana."</string>
     <string name="storage_unmount_success" msgid="1553591517580407021">"<xliff:g id="NAME">%1$s</xliff:g> je sigurno izbačena"</string>
