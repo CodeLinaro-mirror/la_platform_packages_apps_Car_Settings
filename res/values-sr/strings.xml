@@ -38,7 +38,7 @@
     <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"Мобилна мрежа"</string>
     <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"Користи мобилне податке"</string>
     <string name="mobile_network_state_off" msgid="471795861420831748">"Искључено"</string>
-    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Желите ли да искључите мобилне податке?"</string>
+    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Желите да искључите мобилне податке?"</string>
     <string name="sim_selection_required_pref" msgid="6599562910262785784">"Треба да изаберете нешто"</string>
     <string name="sim_change_data_title" msgid="6677115745127365131">"Користити <xliff:g id="CARRIER">%1$s</xliff:g> за моб. податке?"</string>
     <string name="sim_change_data_message" msgid="4669775284395549069">"Користите <xliff:g id="CARRIER2_0">%2$s</xliff:g> за мобилне податке. Ако пређете на <xliff:g id="CARRIER1">%1$s</xliff:g>, <xliff:g id="CARRIER2_1">%2$s</xliff:g> се више неће користити за мобилне податке."</string>
@@ -862,7 +862,7 @@
     <string name="accessibility_settings_screen_reader_title" msgid="5113265553157624836">"Читач екрана"</string>
     <string name="screen_reader_settings_off" msgid="6081562047935689764">"Искључено"</string>
     <string name="screen_reader_settings_on" msgid="2168217218643349459">"Изговара ставке на екрану"</string>
-    <string name="enable_screen_reader_toggle_title" msgid="7641307781194619254">"Користи апликацију <xliff:g id="ACCESSIBILITY_APP_NAME">%1$s</xliff:g>"</string>
+    <string name="enable_screen_reader_toggle_title" msgid="7641307781194619254">"Користи: <xliff:g id="ACCESSIBILITY_APP_NAME">%1$s</xliff:g>"</string>
     <string name="screen_reader_options_title" msgid="1073640098442831819">"Опције"</string>
     <string name="screen_reader_description_title" msgid="8766666406552388012">"Подешавања"</string>
     <string name="camera_settings_title" msgid="2837785830355288903">"Камера"</string>
