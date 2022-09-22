@@ -177,6 +177,7 @@
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"அனைத்தையும் காட்டு"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"தேடுகிறது"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"புளூடூத்"</string>
+    <string name="bluetooth_toggle_title" msgid="1431803611346881088">"புளூடூத்தைப் பயன்படுத்துதல்"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"பெயரிடப்படாத சாதனம்"</string>
     <string name="bluetooth_paired_devices" msgid="6463199569164652410">"இணைக்கப்பட்ட சாதனங்கள்"</string>
     <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"புதிய சாதனத்தை இணை"</string>
@@ -401,29 +402,27 @@
     <string name="location_settings_title" msgid="901334356682423679">"இடம்"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"இருப்பிடத்தைப் பயன்படுத்துதல்"</string>
     <string name="location_toggle_summary" msgid="7977868708102299495">"இடத்தை அணுக நீங்கள் குறிப்பிடும் ஆப்ஸை அனுமதிக்கும்"</string>
-    <string name="location_toggle_off_warning" msgid="8396854289251143748">"இதை முடக்கினால் அனைத்து ஆப்ஸுக்கான இருப்பிட அணுகலும் அகற்றப்படும். ஓட்டுநர் உதவி ஆப்ஸுக்கு இன்னும் அணுகல் உள்ளது."</string>
-    <string name="location_driver_assistance_toggle_title" msgid="9201622805420459957">"ஓட்டுநர் உதவிக்கு இடத்தைப் பயன்படுத்து"</string>
+    <string name="location_toggle_off_warning" msgid="5959449346865136081">"இதை முடக்கினால், ஓட்டுநர் உதவி அம்சத்திற்குத் தேவையான ஆப்ஸைத் தவிர, மற்ற ஆப்ஸ் அனைத்துக்கும் இருப்பிட அணுகல் அகற்றப்படும்."</string>
+    <string name="location_driver_assistance_toggle_title" msgid="3780157378527924932">"ஓட்டுநர் உதவி ஆப்ஸுக்கு இருப்பிட அணுகலை வழங்குதல்"</string>
     <string name="location_driver_assistance_toggle_off_title" msgid="2218532550578204718">"வாகன இருப்பிடத்தை முடக்குதல்"</string>
-    <string name="location_driver_assistance_toggle_off_summary" msgid="1516786816178866919">"ஓட்டுநர் உதவிக்கு இருப்பிட அணுகல் இல்லை"</string>
+    <string name="location_driver_assistance_toggle_off_summary" msgid="6040822988891113026">"ஓட்டுநர் உதவி ஆப்ஸுக்கு இருப்பிட அணுகலை வழங்காதே"</string>
     <string name="location_driver_assistance_action_text" msgid="1887309495010247883">"மாற்று"</string>
     <string name="location_driver_assistance_toggle_summary" msgid="2732591196508054649">"வாகனம் ஓட்ட உதவும் ஆப்ஸை இருப்பிடத்தை அணுக அனுமதிக்கவும்"</string>
-    <string name="location_driver_assistance_toggle_off_warning" msgid="8097738968253492982">"இதை முடக்கினால் இருப்பிடத் தகவல்களைச் சார்ந்துள்ள ஓட்டுநர் உதவி ஆப்ஸ் முடக்கப்படும்."</string>
+    <string name="location_driver_assistance_toggle_off_warning" msgid="2733124752598498356">"இதை முடக்கினால், இருப்பிடத் தகவல்களைச் சார்ந்துள்ள ஓட்டுநர் உதவி ஆப்ஸ் முடக்கப்படும்"</string>
     <string name="driver_assistance_warning_confirm_label" msgid="2873799611160864931">"பரவாயில்லை, முடக்கு"</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"சமீபத்தில் அணுகியவை"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"சமீபத்தில் அணுகியவை"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"அனைத்தையும் காட்டுதல்"</string>
     <string name="location_no_recent_access" msgid="2859914321242257931">"சமீபத்திய ஆப்ஸ் எதுவுமில்லை"</string>
-    <string name="driver_assistance_label" msgid="2737647848529375121">"<xliff:g id="TIME">%1$s</xliff:g> • ஓட்டுநர் உதவி"</string>
-    <!-- no translation found for location_driver_assistance_privacy_policy_header_content (5379878649789479100) -->
-    <skip />
-    <!-- no translation found for location_driver_assistance_privacy_policy_button_text (669921557502414704) -->
-    <skip />
+    <string name="driver_assistance_label" msgid="9217315205754658940">"<xliff:g id="TIME">%1$s</xliff:g> • ஓட்டுநர் உதவி"</string>
+    <string name="location_driver_assistance_privacy_policy_header_content" msgid="8118086439003674350">"ஓட்டுநர் உதவி அம்சங்களை வழங்குவதற்காக, இந்த வாகனத்தின் இருப்பிடத்தை அணுகுவதற்கான அனுமதியுள்ள ஆப்ஸ்"</string>
+    <string name="location_driver_assistance_privacy_policy_button_text" msgid="669921557502414704">"தனியுரிமைக் கொள்கை"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"ஆப்ஸ் நிலை அனுமதிகள்"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"இருப்பிடச் சேவைகள்"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"இருப்பிடத்தைப் பயன்படுத்து"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"உங்கள் சாதனத்தின் இருப்பிடத்தைக் கணிக்க உதவுவதற்கு GPS, வைஃபை, மொபைல் நெட்வொர்க்குகள், சென்சார்கள் போன்றவற்றை இருப்பிட அமைப்புகள் பயன்படுத்தக்கூடும்."</string>
     <string name="driver_assistance_settings_title" msgid="4915804073177128915">"ஓட்டுநர் உதவி"</string>
-    <string name="adas_settings_footer" msgid="5128483877858058534">"ஓட்டுநர் உதவி ஆப்ஸுக்கு அனுப்பப்படும் இருப்பிடம் குறித்த தகவல்களில் உங்களை அடையாளம் காணும் தகவல்கள் இருக்காது. நீக்கப்படுவதற்கு முன் அதிகபட்சமாக 2 நாட்கள் வரை இது சேமிக்கப்பட்டிருக்கும்."</string>
+    <string name="adas_settings_footer" msgid="6697021691244459156">"ஓட்டுநர் உதவி ஆப்ஸுக்கு அனுப்பப்படும் இருப்பிடம் குறித்த தகவல்களில் உங்களை அடையாளம் காணும் தகவல்கள் இருக்காது. அதிகபட்சம் 2 நாட்கள் மட்டுமே இவை சேமிக்கப்பட்டிருக்கும், அதன் பிறகு நீக்கப்படும்."</string>
     <string name="microphone_settings_title" msgid="7125554350537136922">"மைக்ரோஃபோன்"</string>
     <string name="microphone_toggle_title" msgid="911586035332827275">"மைக்ரோஃபோனைப் பயன்படுத்துதல்"</string>
     <string name="microphone_toggle_summary" msgid="2682653449849128626">"மைக்ரோஃபோனை அனைத்து ஆப்ஸும் அணுகுவதற்கு அனுமதிக்கும்"</string>
@@ -439,6 +438,9 @@
     <string name="system_update_settings_title" msgid="8448588267784138855">"சிஸ்டம் புதுப்பிப்புகள்"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"மேம்பட்டவை"</string>
     <string name="system_advanced_summary" msgid="5833643795981791953">"சாதனம் குறித்த தகவல், சட்டப்பூர்வத் தகவல், மீட்டமைத்தல் மற்றும் பல"</string>
+    <string name="restart_infotainment_system_title" msgid="5174129167446756511">"இன்ஃபோடெயின்மென்ட் சிஸ்டத்தை மீண்டும் தொடங்குதல்"</string>
+    <string name="restart_infotainment_system_dialog_text" msgid="3561747384941962284">"உங்கள் காரின் இன்ஃபோடெயின்மென்ட் சிஸ்டத்தை மீண்டும் தொடங்க சில நிமிடங்கள் வரை ஆகலாம். தொடர விரும்புகிறீர்களா?"</string>
+    <string name="continue_confirmation" msgid="1598892163951467191">"தொடர்க"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Android பதிப்பு"</string>
     <string name="security_patch" msgid="4794276590178386903">"Android பாதுகாப்பின் பேட்ச் நிலை"</string>
     <string name="hardware_info" msgid="3973165746261507658">"மாடல் &amp; வன்பொருள்"</string>
