@@ -22,7 +22,6 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="animator" name="trans_right_out"/>
       <item type="anim" name="trans_fade_in"/>
       <item type="anim" name="trans_fade_out"/>
-      <item type="array" name="bytes_picker_sizes"/>
       <item type="array" name="config_ignore_ux_restrictions"/>
       <item type="array" name="config_ringtone_audio_attribute_usages_map_key"/>
       <item type="array" name="config_ringtone_uri_map_value"/>
@@ -355,6 +354,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_qc_wifi_level_2"/>
       <item type="drawable" name="ic_qc_wifi_level_3"/>
       <item type="drawable" name="ic_qc_wifi_level_4"/>
+      <item type="drawable" name="ic_reboot"/>
       <item type="drawable" name="ic_remove_circle"/>
       <item type="drawable" name="ic_restore"/>
       <item type="drawable" name="ic_screen_reader_settings"/>
@@ -526,6 +526,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="integer" name="button_max_ems"/>
       <item type="integer" name="clear_content_timeout_ms"/>
       <item type="integer" name="config_networkAvoidBadWifi"/>
+      <item type="integer" name="config_preference_onclick_debounce_ms"/>
       <item type="integer" name="config_qc_bluetooth_device_limit"/>
       <item type="integer" name="config_top_level_icon_shape"/>
       <item type="integer" name="content_weight"/>
@@ -542,6 +543,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="integer" name="recent_apps_days_threshold"/>
       <item type="integer" name="recent_apps_max_count"/>
       <item type="integer" name="recent_camera_access_apps_list_count"/>
+      <item type="integer" name="recent_location_access_apps_list_count"/>
       <item type="integer" name="recent_microphone_access_apps_list_count"/>
       <item type="integer" name="recent_notifications_apps_list_count"/>
       <item type="integer" name="recent_notifications_days_threshold"/>
@@ -739,6 +741,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="bluetooth_settings_title"/>
       <item type="string" name="bluetooth_state_switch_content_description"/>
       <item type="string" name="bluetooth_state_switch_summary"/>
+      <item type="string" name="bluetooth_toggle_title"/>
       <item type="string" name="bluetooth_turning_off"/>
       <item type="string" name="bluetooth_turning_on"/>
       <item type="string" name="bluetooth_vehicle_mac_address"/>
@@ -801,6 +804,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="confirm_your_pin_header"/>
       <item type="string" name="connect"/>
       <item type="string" name="continue_button_text"/>
+      <item type="string" name="continue_confirmation"/>
       <item type="string" name="contributors_title"/>
       <item type="string" name="copyright_title"/>
       <item type="string" name="create_user_permission_title"/>
@@ -902,8 +906,11 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="domain_urls_summary_none"/>
       <item type="string" name="domain_urls_summary_one"/>
       <item type="string" name="domain_urls_summary_some"/>
+      <item type="string" name="driver_assistance_label"/>
       <item type="string" name="driver_assistance_settings_title"/>
       <item type="string" name="driver_assistance_warning_confirm_label"/>
+      <item type="string" name="location_driver_assistance_privacy_policy_header_content"/>
+      <item type="string" name="location_driver_assistance_privacy_policy_button_text"/>
       <item type="string" name="edit_user_name_title"/>
       <item type="string" name="eight"/>
       <item type="string" name="empty_placeholder"/>
@@ -1051,10 +1058,12 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="location_driver_assistance_toggle_off_warning"/>
       <item type="string" name="location_driver_assistance_toggle_summary"/>
       <item type="string" name="location_driver_assistance_toggle_title"/>
+      <item type="string" name="location_no_recent_access"/>
+      <item type="string" name="location_recently_accessed"/>
       <item type="string" name="location_settings_app_permissions_title"/>
       <item type="string" name="location_settings_footer"/>
-      <item type="string" name="location_settings_recent_requests_empty_message"/>
-      <item type="string" name="location_settings_recent_requests_title"/>
+      <item type="string" name="location_settings_recently_accessed_title"/>
+      <item type="string" name="location_settings_recently_accessed_view_all_title"/>
       <item type="string" name="location_settings_services_title"/>
       <item type="string" name="location_settings_title"/>
       <item type="string" name="location_state_switch_content_description"/>
@@ -1246,6 +1255,8 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="reset_network_title"/>
       <item type="string" name="reset_options_summary"/>
       <item type="string" name="reset_options_title"/>
+      <item type="string" name="restart_infotainment_system_dialog_text"/>
+      <item type="string" name="restart_infotainment_system_title"/>
       <item type="string" name="restricted_while_driving"/>
       <item type="string" name="ring_volume_title"/>
       <item type="string" name="ringtone_picker_save_title"/>
@@ -1604,7 +1615,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="xml" name="language_picker_fragment"/>
       <item type="xml" name="languages_and_input_fragment"/>
       <item type="xml" name="legal_information_fragment"/>
-      <item type="xml" name="location_recent_requests_fragment"/>
+      <item type="xml" name="location_recent_accessed_view_all_fragment"/>
       <item type="xml" name="location_settings_fragment"/>
       <item type="xml" name="manage_domain_urls_fragment"/>
       <item type="xml" name="microphone_recent_requests_view_all_fragment"/>

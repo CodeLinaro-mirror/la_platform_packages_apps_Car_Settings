@@ -173,10 +173,6 @@
     <string name="data_usage_settings_footer">Data usage is measured by your device. It may vary from your mobile carrier\u2019s data.</string>
     <!-- Positive button title for data usage bytes threshold picker, confirming that changes should be saved. [CHAR LIMIT=32] -->
     <string name="usage_bytes_threshold_picker_positive_button">Set</string>
-    <string-array name="bytes_picker_sizes" translatable="false">
-        <item>@*android:string/megabyteShort</item>
-        <item>@*android:string/gigabyteShort</item>
-    </string-array>
     <!-- Data warning threshold save button [CHAR LIMIT=48] -->
     <string name="data_usage_warning_save_title">Save</string>
     <!-- Network & internet settings screen, setting option name to enable OEM network connectivity [CHAR LIMIT=60] -->
@@ -379,6 +375,8 @@
     <!-- Bluetooth settings --><skip/>
     <!-- Title of Bluetooth settings pages. [CHAR LIMIT=30] -->
     <string name="bluetooth_settings_title">Bluetooth</string>
+    <!-- Title of Bluetooth toggle. [CHAR LIMIT=40] -->
+    <string name="bluetooth_toggle_title">Use Bluetooth</string>
     <!--Bluetooth settings screen, text for Bluetooth device with no name. [CHAR LIMIT=40] -->
     <string name="bluetooth_device">Unnamed device</string>
     <!-- Category title for paired Bluetooth devices. [CHAR LIMIT=40] -->
@@ -922,10 +920,22 @@
     <string name="driver_assistance_warning_confirm_label">
         Turn off anyway
     </string>
-    <!-- Title of Recent Location Requests setting [CHAR LIMIT=60] -->
-    <string name="location_settings_recent_requests_title">Recent Location Requests</string>
-    <!-- Message indicating that no apps have requested location recently [CHAR LIMIT=60] -->
-    <string name="location_settings_recent_requests_empty_message">No recent location requests</string>
+    <!-- Title of Recent Location Accesses category [CHAR LIMIT=60] -->
+    <string name="location_recently_accessed">Recently accessed</string>
+    <!-- Title of Location Recently Accessed setting [CHAR LIMIT=60] -->
+    <string name="location_settings_recently_accessed_title">Recently accessed</string>
+    <!-- Title of preference name to view all apps that recently accessed location [CHAR LIMIT=60] -->
+    <string name="location_settings_recently_accessed_view_all_title">View all</string>
+    <!-- Message indicating that no apps have accessed location recently [CHAR LIMIT=60] -->
+    <string name="location_no_recent_access">No recent apps</string>
+    <!-- Label for driver assistance apps that recently accessed location [CHAR LIMIT=60] -->
+    <string name="driver_assistance_label"><xliff:g id="time" example="1 min. ago">%1$s</xliff:g> \u2022 Driver Assistance</string>
+    <!-- Content description for privacy policy header [CHAR LIMIT=40] -->
+    <string name="location_driver_assistance_privacy_policy_header_content">
+        Apps with location permission to access to this vehicle’s location for driver assistance features.
+    </string>
+    <!-- Text policy button of driver assistance app [CHAR LIMIT=40] -->
+    <string name="location_driver_assistance_privacy_policy_button_text">Privacy policy</string>
     <!-- Title of Location App-level Permissions setting [CHAR LIMIT=60] -->
     <string name="location_settings_app_permissions_title">App-level permissions</string>
     <!-- Title of Location Services category [CHAR LIMIT=60] -->
@@ -978,7 +988,7 @@
     </string>
     <!-- Title of Recent Microphone Requests setting [CHAR LIMIT=60] -->
     <string name="microphone_settings_recent_requests_title">Recently accessed</string>
-    <!-- Title of Recent Microphone Requests setting [CHAR LIMIT=60] -->
+    <!-- Title of preference name to view all apps that recently accessed microphone [CHAR LIMIT=60] -->
     <string name="microphone_settings_recent_requests_view_all_title">View all</string>
     <!-- Microphone settings, loading the number of apps which have microphone permission [CHAR LIMIT=30] -->
     <string name="microphone_settings_loading_app_permission_stats">Loading\u2026</string>
@@ -992,6 +1002,13 @@
     <string name="system_advanced_title">Advanced</string>
     <!-- System settings screen, setting option description of advanced system settings [CHAR LIMIT=100] -->
     <string name="system_advanced_summary">About, legal info, reset, and more</string>
+
+    <!-- Restart infotainment title. Opens ConfirmationDialogue for restarting infotainment system. [CHAR LIMIT=60] -->
+    <string name="restart_infotainment_system_title">Restart infotainment system</string>
+    <!-- Restart infotainment title dialog. [CHAR LIMIT=NONE] -->
+    <string name="restart_infotainment_system_dialog_text">Restarting your car\'s infotainment system can take up to a few minutes. Do you want to continue?</string>
+    <!-- Continue confirmation string used by ConfirmationDialogue. [CHAR LIMIT=40] -->
+    <string name="continue_confirmation">Continue</string>
 
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
     <string name="firmware_version">Android version</string>
