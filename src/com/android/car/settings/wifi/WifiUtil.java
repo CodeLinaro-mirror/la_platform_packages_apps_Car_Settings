@@ -12,6 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License
+ *
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ *
+ * Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 package com.android.car.settings.wifi;
 
@@ -236,6 +241,22 @@ public class WifiUtil {
         WifiConfiguration wifiConfig = getWifiConfig(ssid, security, password,
                                                      hidden, metered, privacy);
         wifiManager.connect(wifiConfig, listener);
+    }
+
+    /**
+     * Attempts to connect to a specified enterprise Wi-Fi entry.
+     * @param listener for callbacks on success or failure of connection attempt (can be null)
+     */
+    public static void connectToEAPWifiEntry(Context context, String ssid, int security,
+            WifiConfiguration config, boolean hidden, int metered, int privacy,
+            @Nullable WifiManager.ActionListener listener) {
+        WifiManager wifiManager = context.getSystemService(WifiManager.class);
+        config.SSID = String.format("\"%s\"", ssid);
+        config.hiddenSSID = hidden;
+        config.meteredOverride = metered;
+        config.macRandomizationSetting = privacy == WifiEntry.PRIVACY_RANDOMIZED_MAC
+                ? WifiConfiguration.RANDOMIZATION_AUTO : WifiConfiguration.RANDOMIZATION_NONE;
+        wifiManager.connect(config, listener);
     }
 
     private static WifiConfiguration getWifiConfig(String ssid, int security,
