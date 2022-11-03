@@ -90,7 +90,7 @@ public class BluetoothUnbondedDevicesPreferenceController extends
                     .getResources()
                     .getIntArray(R.array.config_unbonded_device_filter_allowlist);
             //TODO(b/198339129): change to use device bond status
-            Set<BluetoothDevice> bondedDevices = mBluetoothAdapter.getBondedDevices();
+            Set<BluetoothDevice> bondedDevices = mLocalBluetoothAdapter.getBondedDevices();
             boolean matches = bondedDevices == null || !bondedDevices.contains(device);
             if (matches && unbondedMajorClassFilter.length > 0) {
                 matches = device.getBluetoothClass() != null

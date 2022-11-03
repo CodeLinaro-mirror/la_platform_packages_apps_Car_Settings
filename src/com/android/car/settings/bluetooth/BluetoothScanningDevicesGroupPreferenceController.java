@@ -32,6 +32,8 @@ import androidx.preference.PreferenceGroup;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
+import com.android.settingslib.bluetooth.LocalBluetoothAdapter;
+import com.android.settingslib.bluetooth.LocalBluetoothManager;
 
 /**
  * Controller which sets the Bluetooth adapter to discovery mode and begins scanning for
@@ -47,6 +49,8 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
             BluetoothScanningDevicesGroupPreferenceController.class);
 
     protected final BluetoothAdapter mBluetoothAdapter;
+    protected final LocalBluetoothAdapter mLocalBluetoothAdapter;
+    protected final LocalBluetoothManager mLocalBluetoothManager;
     private final AlwaysDiscoverable mAlwaysDiscoverable;
     private boolean mIsScanningEnabled;
 
@@ -55,6 +59,9 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mBluetoothAdapter = getContext().getSystemService(BluetoothManager.class).getAdapter();
         mAlwaysDiscoverable = new AlwaysDiscoverable(context, mBluetoothAdapter);
+        mLocalBluetoothManager = LocalBluetoothManager.getInstance(
+                context, /* onInitCallback= */ null);
+        mLocalBluetoothAdapter = mLocalBluetoothManager.getBluetoothAdapter();
     }
 
     @Override

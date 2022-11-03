@@ -166,7 +166,8 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
             case BluetoothDevice.ACCESS_REJECTED:
                 return false;
             default:
-                if (mDevice.getBluetoothClass().getDeviceClass()
+                if (mBluetoothManager.getCachedDeviceManager()
+                        .getBluetoothClass(mDevice).getDeviceClass()
                         == BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE) {
                     return true;
                 }
