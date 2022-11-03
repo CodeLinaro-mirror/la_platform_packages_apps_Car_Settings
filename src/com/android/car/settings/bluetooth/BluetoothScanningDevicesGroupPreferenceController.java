@@ -12,6 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear.
  */
 
 package com.android.car.settings.bluetooth;
@@ -35,6 +40,8 @@ import androidx.preference.PreferenceGroup;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
+import com.android.settingslib.bluetooth.LocalBluetoothAdapter;
+import com.android.settingslib.bluetooth.LocalBluetoothManager;
 
 /**
  * Controller which sets the Bluetooth adapter to discovery mode and begins scanning for
@@ -50,6 +57,8 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
             BluetoothScanningDevicesGroupPreferenceController.class);
 
     protected final BluetoothAdapter mBluetoothAdapter;
+    protected final LocalBluetoothAdapter mLocalBluetoothAdapter;
+    protected final LocalBluetoothManager mLocalBluetoothManager;
     private final AlwaysDiscoverable mAlwaysDiscoverable;
     private final String mCallingAppPackageName;
 
@@ -61,6 +70,9 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
         mBluetoothAdapter = getContext().getSystemService(BluetoothManager.class).getAdapter();
         mAlwaysDiscoverable = new AlwaysDiscoverable(context, mBluetoothAdapter);
         mCallingAppPackageName = getCallingAppPackageName(getContext().getActivityToken());
+        mLocalBluetoothManager = LocalBluetoothManager.getInstance(
+                context, /* onInitCallback= */ null);
+        mLocalBluetoothAdapter = mLocalBluetoothManager.getBluetoothAdapter();
     }
 
     @Override
