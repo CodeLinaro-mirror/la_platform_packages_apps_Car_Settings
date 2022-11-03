@@ -231,7 +231,7 @@ public class BluetoothPairingDialogFragment extends CarUiDialogFragment implemen
         EditText pairingView = (EditText) view.findViewById(R.id.text);
 
         contactSharing.setVisibility(mPairingController.isProfileReady()
-                ? View.GONE : View.VISIBLE);
+                ? View.VISIBLE : View.GONE);
         contactSharing.setOnCheckedChangeListener(mPairingController);
         contactSharing.setChecked(mPairingController.getContactSharingState());
 
@@ -329,7 +329,7 @@ public class BluetoothPairingDialogFragment extends CarUiDialogFragment implemen
         contactSharingText.setText(getString(R.string.bluetooth_pairing_shares_phonebook,
                 mPairingController.getDeviceName()));
         contactSharingContainer.setVisibility(
-                mPairingController.isProfileReady() ? View.GONE : View.VISIBLE);
+                mPairingController.isProfileReady() ? View.VISIBLE : View.GONE);
         contactSharing.setChecked(mPairingController.getContactSharingState());
         contactSharing.setOnCheckedChangeListener(mPairingController);
 
