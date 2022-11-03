@@ -12,6 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear.
  */
 
 package com.android.car.settings.bluetooth;
@@ -20,6 +25,7 @@ import static android.os.UserManager.DISALLOW_CONFIG_BLUETOOTH;
 
 import android.app.ActivityManager;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothAdapterUtil;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.car.drivingstate.CarUxRestrictions;
@@ -29,12 +35,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 import android.os.RemoteException;
+import android.os.SystemProperties;
 
 import androidx.preference.PreferenceGroup;
 
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
+import com.android.settingslib.bluetooth.LocalBluetoothAdapter;
+import com.android.settingslib.bluetooth.LocalBluetoothManager;
 
 /**
  * Controller which sets the Bluetooth adapter to discovery mode and begins scanning for
@@ -49,7 +58,14 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
     private static final Logger LOG = new Logger(
             BluetoothScanningDevicesGroupPreferenceController.class);
 
+    private static final boolean sDualBluetooth =
+            SystemProperties.getBoolean("persist.bluetooth.dual_bt", false);
+
     protected final BluetoothAdapter mBluetoothAdapter;
+    /** 2nd adapter instance; {@code null} when dual-BT is not enabled. */
+    protected final BluetoothAdapter mBluetoothAdapterExt;
+    protected final LocalBluetoothAdapter mLocalBluetoothAdapter;
+    protected final LocalBluetoothManager mLocalBluetoothManager;
     private final AlwaysDiscoverable mAlwaysDiscoverable;
     private final String mCallingAppPackageName;
 
@@ -59,8 +75,12 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mBluetoothAdapter = getContext().getSystemService(BluetoothManager.class).getAdapter();
+        mBluetoothAdapterExt = sDualBluetooth ? BluetoothAdapterUtil.getNewAdapter() : null;
         mAlwaysDiscoverable = new AlwaysDiscoverable(context, mBluetoothAdapter);
         mCallingAppPackageName = getCallingAppPackageName(getContext().getActivityToken());
+        mLocalBluetoothManager = LocalBluetoothManager.getInstance(
+                context, /* onInitCallback= */ null);
+        mLocalBluetoothAdapter = mLocalBluetoothManager.getBluetoothAdapter();
     }
 
     @Override
@@ -133,6 +153,9 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
         if (!mBluetoothAdapter.isDiscovering()) {
             mBluetoothAdapter.startDiscovery();
         }
+        if (mBluetoothAdapterExt != null && !mBluetoothAdapterExt.isDiscovering()) {
+            mBluetoothAdapterExt.startDiscovery();
+        }
 
         if (BluetoothUtils.shouldEnableBTScanning(getContext(), mCallingAppPackageName)) {
             mAlwaysDiscoverable.start();
@@ -150,6 +173,9 @@ public abstract class BluetoothScanningDevicesGroupPreferenceController extends
         mAlwaysDiscoverable.stop();
         if (mBluetoothAdapter.isDiscovering()) {
             mBluetoothAdapter.cancelDiscovery();
+        }
+        if (mBluetoothAdapterExt != null && mBluetoothAdapterExt.isDiscovering()) {
+            mBluetoothAdapterExt.cancelDiscovery();
         }
     }
 
