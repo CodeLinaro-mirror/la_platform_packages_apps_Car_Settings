@@ -177,6 +177,7 @@
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Mostra tutte"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Ricerca"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
+    <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Usa il Bluetooth"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"Dispositivo senza nome"</string>
     <string name="bluetooth_paired_devices" msgid="6463199569164652410">"Dispositivi accoppiati"</string>
     <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"Accoppia nuovo dispositivo"</string>
@@ -401,29 +402,27 @@
     <string name="location_settings_title" msgid="901334356682423679">"Posizione"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Usa posizione"</string>
     <string name="location_toggle_summary" msgid="7977868708102299495">"Consenti alle app specificate di accedere alla tua posizione"</string>
-    <string name="location_toggle_off_warning" msgid="8396854289251143748">"Se disattivi questa impostazione, verrà rimosso l\'accesso alla posizione per tutte le app. Le app di assistenza alla guida continueranno ad avere accesso."</string>
-    <string name="location_driver_assistance_toggle_title" msgid="9201622805420459957">"Usa posizione per assistenza alla guida"</string>
+    <string name="location_toggle_off_warning" msgid="5959449346865136081">"Se disattivi questa impostazione, verrà rimosso l\'accesso alla posizione per tutte le app ad eccezione di quelle che lo richiedono per l\'assistenza alla guida"</string>
+    <string name="location_driver_assistance_toggle_title" msgid="3780157378527924932">"Usa posizione per assistenza alla guida"</string>
     <string name="location_driver_assistance_toggle_off_title" msgid="2218532550578204718">"Posizione del veicolo disattivata"</string>
-    <string name="location_driver_assistance_toggle_off_summary" msgid="1516786816178866919">"Le app di assistenza alla guida non possono accedere alla tua posizione"</string>
+    <string name="location_driver_assistance_toggle_off_summary" msgid="6040822988891113026">"Le app di assistenza alla guida non possono accedere alla posizione"</string>
     <string name="location_driver_assistance_action_text" msgid="1887309495010247883">"Modifica"</string>
     <string name="location_driver_assistance_toggle_summary" msgid="2732591196508054649">"Consenti alle app di assistenza alla guida di accedere alla tua posizione"</string>
-    <string name="location_driver_assistance_toggle_off_warning" msgid="8097738968253492982">"Se disattivi questa impostazione, verranno disattivate le app di assistenza alla guida che si basano sulle informazioni relative alla posizione."</string>
+    <string name="location_driver_assistance_toggle_off_warning" msgid="2733124752598498356">"Se disattivi questa impostazione, verranno disattivate le app di assistenza alla guida che si basano sulle informazioni relative alla posizione"</string>
     <string name="driver_assistance_warning_confirm_label" msgid="2873799611160864931">"Disattiva comunque"</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"Usi recenti"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"Usi recenti"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"Mostra tutte"</string>
     <string name="location_no_recent_access" msgid="2859914321242257931">"Nessuna app recente"</string>
-    <string name="driver_assistance_label" msgid="2737647848529375121">"<xliff:g id="TIME">%1$s</xliff:g> • Assistenza alla guida"</string>
-    <!-- no translation found for location_driver_assistance_privacy_policy_header_content (5379878649789479100) -->
-    <skip />
-    <!-- no translation found for location_driver_assistance_privacy_policy_button_text (669921557502414704) -->
-    <skip />
+    <string name="driver_assistance_label" msgid="9217315205754658940">"<xliff:g id="TIME">%1$s</xliff:g> • Assistenza alla guida"</string>
+    <string name="location_driver_assistance_privacy_policy_header_content" msgid="8118086439003674350">"Le app con autorizzazione di accesso alla posizione di questo veicolo per le funzionalità di assistenza alla guida"</string>
+    <string name="location_driver_assistance_privacy_policy_button_text" msgid="669921557502414704">"Norme sulla privacy"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Autorizzazioni a livello di app"</string>
     <string name="location_settings_services_title" msgid="1186133632690970468">"Servizi di geolocalizzazione"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Usa posizione"</string>
     <string name="location_settings_footer" msgid="296892848338100051">"Il servizio di geolocalizzazione potrebbe usare fonti quali GPS, reti mobili, Wi-Fi e sensori per stabilire la posizione approssimativa del dispositivo."</string>
     <string name="driver_assistance_settings_title" msgid="4915804073177128915">"Assistenza alla guida"</string>
-    <string name="adas_settings_footer" msgid="5128483877858058534">"Le informazioni sulla posizione inviate alle app di assistenza alla guida non includono dati che ti identificano. Vengono memorizzate per massimo 2 giorni prima di essere eliminate."</string>
+    <string name="adas_settings_footer" msgid="6697021691244459156">"Le informazioni sulla posizione inviate alle app di assistenza alla guida non includono dati che ti identificano. Vengono memorizzate per massimo 2 giorni prima di essere eliminate."</string>
     <string name="microphone_settings_title" msgid="7125554350537136922">"Microfono"</string>
     <string name="microphone_toggle_title" msgid="911586035332827275">"Usa il microfono"</string>
     <string name="microphone_toggle_summary" msgid="2682653449849128626">"Consenti a tutte le app di accedere al microfono"</string>
@@ -439,6 +438,9 @@
     <string name="system_update_settings_title" msgid="8448588267784138855">"Aggiornamenti di sistema"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Avanzate"</string>
     <string name="system_advanced_summary" msgid="5833643795981791953">"Informazioni, informazioni legali, reimpostazione e altre impostazioni"</string>
+    <string name="restart_infotainment_system_title" msgid="5174129167446756511">"Riavvia il sistema di infotainment"</string>
+    <string name="restart_infotainment_system_dialog_text" msgid="3561747384941962284">"Il riavvio del sistema di infotainment dell\'auto può richiedere alcuni minuti. Vuoi continuare?"</string>
+    <string name="continue_confirmation" msgid="1598892163951467191">"Continua"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Versione Android"</string>
     <string name="security_patch" msgid="4794276590178386903">"Livello patch di sicurezza Android"</string>
     <string name="hardware_info" msgid="3973165746261507658">"Modello e hardware"</string>
