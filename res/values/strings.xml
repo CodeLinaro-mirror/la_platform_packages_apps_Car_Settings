@@ -13,6 +13,11 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+    Changes from Qualcomm Innovation Center are provided under the following license:
+
+    Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+    SPDX-License-Identifier: BSD-3-Clause-Clear
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -241,14 +246,72 @@
     <string name="wifi_frequency">Frequency</string>
     <!-- Label for the IP address of the connection -->
     <string name="wifi_ip_address">IP address</string>
+    <!-- Text for wifi privacy -->
+    <string name="wifi_privacy_setting">Randomized mac</string>
     <!-- Text for show password ListItem -->
     <string name="show_password">Show password</string>
+    <!-- Text for eap method list -->
+    <string name="eap_method">EAP method</string>
+    <!-- Text for phase 2 authentication -->
+    <string name="phase2_authentication">Phase 2 authentication</string>
+    <!-- Text for ca certificate load -->
+    <string name="ca_certificate">CA certificate</string>
+    <!-- Text for identity -->
+    <string name="wifi_eap_identity">Identity</string>
+    <!-- Text for default identity -->
+    <string name="default_identity_summary">identity</string>
+    <!-- Text for anonymous identity -->
+    <string name="wifi_eap_anonymous">Anonymous identity</string>
+    <!-- Text for anonymous identity -->
+    <string name="default_anonymous">Anonymous</string>
+    <!-- Text for password -->
+    <string name="enter_eap_password">Password</string>
+    <!-- Text for wifi_eap_method_spinner -->
+    <string name="wifi_eap_method">EAP method</string>
+    <!-- Text for wifi_eap_method_ttls -->
+    <string name="wifi_eap_method_ttls">TTLS</string>
+    <!-- Text for wifi_eap_method_tls -->
+    <string name="wifi_eap_method_tls">TLS</string>
+    <!-- Text for please select phase2 -->
+    <string name="please_select_phase2">Phase 2 authentication</string>
+    <!-- Text for Phase2 authentication PAP -->
+    <string name="wifi_phase2_pap">PAP</string>
+    <!-- Text for Phase2 authentication MSCHAP -->
+    <string name="wifi_phase2_mschap">MSCHAP</string>
+    <!-- Text for Phase2 authentication MSCHAPV2 -->
+    <string name="wifi_phase2_mschapv2">MSCHAPV2</string>
+    <!-- Text for Phase2 authentication GTC -->
+    <string name="wifi_phase2_gtc">GTC</string>
+    <!-- Text for wifi_eap_ca_cert -->
+    <string name="wifi_eap_ca_cert">CA certificate</string>
+    <!-- Label for the domain name that the EAP CA certificate(s) can be used to validate. -->
+    <string name="wifi_eap_domain">Domain</string>
+    <!-- The default domain warning. -->
+    <string name="default_domain_warning">Please input the domain of ca certificate</string>
+    <!-- Label for the EAP user certificate of the network -->
+    <string name="wifi_eap_user_cert">User certificate</string>
+    <!-- Hint for unspecified fields -->
+    <string name="wifi_unspecified">Please select</string>
+    <!-- Hint for multiple certificates being added to the configuration -->
+    <string name="wifi_multiple_cert_added">(Multiple certificates added)</string>
+    <!-- Menu option for using trusted system CA certificates to validate EAP servers -->
+    <string name="wifi_use_system_certs">Use system certificates</string>
+    <!-- Preference title for option to install certificates -->
+    <string name="wifi_install_credentials">Install certificates</string>
+    <!-- Menu option for not providing an EAP user certificate -->
+    <string name="wifi_do_not_provide_eap_user_cert">Do not provide</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
     <!-- Summary for wifi network name. [CHAR LIMIT=40] -->
     <string name="default_network_name_summary">Enter network name</string>
     <!-- Summary for wifi password dialog. [CHAR LIMIT=40] -->
     <string name="default_password_summary">Enter password</string>
     <!-- Key for the tag to store UI info for access point -->
     <string name="access_point_tag_key">access_point_tag_key</string>
+    <!-- Text for randomized mac -->
+    <string name="use_randomized_mac">Privacy</string>
+    <!-- Text for set as metered -->
+    <string name="mark_as_metered">Network usage</string>
     <!-- Match this with drawable.wifi_signal. --><skip/>
     <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
     <string-array name="wifi_signals">
@@ -331,6 +394,8 @@
     <string name="wifi_ap_choose_2G">2.4 GHz Band</string>
     <!-- Label for the radio button to only choose wifi ap 5GHz band [CHAR LIMIT=25]-->
     <string name="wifi_ap_choose_5G">5.0 GHz Band</string>
+    <!-- Label for the radio button to choose both wifi ap band (2.4GHz + 5GHz) -->
+    <string name="wifi_ap_choose_both">Both (2.4+5.0 GHz)</string>
     <!-- Label for the radio button to prefer 5GHz wifi ap band  [CHAR LIMIT=80]-->
     <string name="wifi_ap_prefer_5G">5.0 GHz Band preferred</string>
     <!-- Label for adding to the list of selected bands when 2.4 GHz is selected [CHAR LIMIT=15]-->
