@@ -30,13 +30,16 @@ import java.util.List;
  */
 public class AccessPointSecurity {
     public static final int SECURITY_NONE_POSITION = 0;
+    public static final int SECURITY_OWE_POSITION = 4;
     private final int mSecurityType;
     private final Context mContext;
     private static final List<Integer> SECURITY_TYPES = Arrays.asList(
             AccessPoint.SECURITY_NONE,
             AccessPoint.SECURITY_WEP,
             AccessPoint.SECURITY_PSK,
-            AccessPoint.SECURITY_EAP);
+            AccessPoint.SECURITY_EAP,
+            AccessPoint.SECURITY_OWE,
+            AccessPoint.SECURITY_SAE);
 
     public static List<AccessPointSecurity> getSecurityTypes(Context context) {
         List<AccessPointSecurity> securities = new ArrayList<>();
@@ -58,6 +61,10 @@ public class AccessPointSecurity {
     @Override
     public String toString() {
         switch(mSecurityType) {
+            case AccessPoint.SECURITY_SAE:
+                return mContext.getString(R.string.wifi_security_sae);
+            case AccessPoint.SECURITY_OWE:
+                return mContext.getString(R.string.wifi_security_owe);
             case AccessPoint.SECURITY_EAP:
                 return mContext.getString(R.string.wifi_security_eap);
             case AccessPoint.SECURITY_PSK:
