@@ -38,6 +38,7 @@ public abstract class ProfileDetailsBasePreferenceController<V extends Preferenc
         PreferenceController<V> {
 
     private UserInfo mUserInfo;
+    private boolean mNeedToRefreshUserInfo = false;
 
     private final BroadcastReceiver mProfileUpdateReceiver = new BroadcastReceiver() {
         @Override
@@ -76,16 +77,23 @@ public abstract class ProfileDetailsBasePreferenceController<V extends Preferenc
 
     /** Registers a listener which updates the displayed profile name when a profile is modified. */
     @Override
-    protected void onCreateInternal() {
+    protected void onStartInternal() {
         registerForProfileEvents();
+
+        /* refresh UserInfo and UI only when restarting */
+        if (mNeedToRefreshUserInfo) {
+            refreshUserInfo();
+            refreshUi();
+        }
     }
 
     /**
      * Unregisters a listener which updates the displayed profile name when a profile is modified.
      */
     @Override
-    protected void onDestroyInternal() {
+    protected void onStopInternal() {
         unregisterForProfileEvents();
+        mNeedToRefreshUserInfo = true;
     }
 
     private void registerForProfileEvents() {
