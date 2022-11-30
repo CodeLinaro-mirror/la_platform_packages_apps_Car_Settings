@@ -130,7 +130,7 @@ public class WifiTetherPasswordPreferenceController extends
     }
 
     private String getSyncedPassword() {
-        if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OPEN) {
+        if (isOpenOweHotspot(mSecurityType)) {
             return null;
         }
 
@@ -158,16 +158,19 @@ public class WifiTetherPasswordPreferenceController extends
      */
     private void updateApSecurity(String password) {
         String passwordOrNullIfOpen;
-        if (mSecurityType == SoftApConfiguration.SECURITY_TYPE_OPEN) {
+        if (isOpenOweHotspot(mSecurityType)) {
             passwordOrNullIfOpen = null;
             Log.w(TAG, "Setting password on an open network!");
         } else {
             passwordOrNullIfOpen = password;
         }
-        SoftApConfiguration config = new SoftApConfiguration.Builder(getCarSoftApConfig())
-                .setPassphrase(passwordOrNullIfOpen, mSecurityType)
-                .build();
-        setCarSoftApConfig(config);
+        SoftApConfiguration.Builder configBuilder =
+                new SoftApConfiguration.Builder(getCarSoftApConfig())
+                .setPassphrase(passwordOrNullIfOpen, mSecurityType);
+        if (isOpenOweHotspot(mSecurityType)) {
+            configBuilder.setBridgedModeOpportunisticShutdownEnabled(false);
+        }
+        setCarSoftApConfig(configBuilder.build());
 
         if (!TextUtils.isEmpty(password)) {
             mSharedPreferences.edit().putString(KEY_SAVED_PASSWORD, password).commit();
@@ -176,8 +179,13 @@ public class WifiTetherPasswordPreferenceController extends
 
     private void updatePasswordDisplay() {
         getPreference().setText(mPassword);
-        getPreference().setVisible(mSecurityType != SoftApConfiguration.SECURITY_TYPE_OPEN);
+        getPreference().setVisible(!isOpenOweHotspot(mSecurityType));
         getPreference().setSummary(getSummary());
     }
 
+    private boolean isOpenOweHotspot(int security) {
+       return security == SoftApConfiguration.SECURITY_TYPE_OPEN
+             || security == SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION
+             || security == SoftApConfiguration.SECURITY_TYPE_OWE;
+    }
 }

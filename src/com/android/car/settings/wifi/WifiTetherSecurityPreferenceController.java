@@ -47,6 +47,7 @@ public class WifiTetherSecurityPreferenceController extends
     private int mSecurityType;
 
     private boolean mIsWpa3Supported = true;
+    private boolean mOweSapSupported = true;
 
     private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(
             WifiTetherPasswordPreferenceController.SHARED_PREFERENCE_PATH,
@@ -80,9 +81,17 @@ public class WifiTetherSecurityPreferenceController extends
     }
 
     private void updatePreferenceOptions() {
+        if (!mOweSapSupported) {
+            mSecurityMap.keySet()
+                    .remove(SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION);
+            mSecurityMap.keySet()
+                    .remove(SoftApConfiguration.SECURITY_TYPE_OWE);
+        }
         if (!mIsWpa3Supported) {
             mSecurityMap.keySet()
-                    .removeIf(key -> key > SoftApConfiguration.SECURITY_TYPE_WPA2_PSK);
+                    .remove(SoftApConfiguration.SECURITY_TYPE_WPA3_SAE_TRANSITION);
+            mSecurityMap.keySet()
+                    .remove(SoftApConfiguration.SECURITY_TYPE_WPA3_SAE);
         }
 
         getPreference().setEntries(mSecurityMap.values().toArray(new CharSequence[0]));
@@ -134,11 +143,17 @@ public class WifiTetherSecurityPreferenceController extends
     public void onCapabilityChanged(@NonNull SoftApCapability softApCapability) {
         boolean isWpa3Supported =
                 softApCapability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_SAE);
+        boolean isOweSupported =
+                softApCapability.areFeaturesSupported(SoftApCapability.SOFTAP_FEATURE_WPA3_OWE);
         if (!isWpa3Supported) {
             LOG.i("WPA3 SAE is not supported on this device");
         }
-        if (mIsWpa3Supported != isWpa3Supported) {
+        if (!isOweSupported) {
+            LOG.i("WPA3 OWE is not supported on this device");
+        }
+        if (mIsWpa3Supported != isWpa3Supported || mOweSapSupported != isOweSupported) {
             mIsWpa3Supported = isWpa3Supported;
+            mOweSapSupported = isOweSupported;
             updatePreferenceOptions();
         }
         getCarWifiManager().unregisterSoftApCallback(this);
