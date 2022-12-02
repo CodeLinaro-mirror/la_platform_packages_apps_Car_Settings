@@ -12,6 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear.
  */
 
 package com.android.car.settings.bluetooth;
@@ -25,6 +30,7 @@ import android.bluetooth.BluetoothProfile;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.os.UserManager;
+import android.os.SystemProperties;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.preference.PreferenceGroup;
@@ -87,6 +93,9 @@ public class BluetoothBondedDevicesPreferenceController extends
             new BondedDeviceTypeFilter();
     private boolean mShowDeviceDetails = true;
     private boolean mHasUxRestriction;
+
+    private static boolean sDualBluetooth =
+            SystemProperties.getBoolean("persist.bluetooth.dual_bt", false);
 
     public BluetoothBondedDevicesPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
@@ -197,9 +206,12 @@ public class BluetoothBondedDevicesPreferenceController extends
         LocalBluetoothProfile phoneProfile = null;
         LocalBluetoothProfile mediaProfile = null;
         for (LocalBluetoothProfile profile : cachedDevice.getProfiles()) {
-            if (profile.getProfileId() == BluetoothProfile.HEADSET_CLIENT) {
+            int profileId = profile.getProfileId();
+            if (profileId == BluetoothProfile.HEADSET_CLIENT
+                || profileId == BluetoothProfile.HEADSET) {
                 phoneProfile = profile;
-            } else if (profile.getProfileId() == BluetoothProfile.A2DP_SINK) {
+            } else if (profileId == BluetoothProfile.A2DP_SINK
+                       || profileId == BluetoothProfile.A2DP) {
                 mediaProfile = profile;
             }
         }
@@ -227,7 +239,7 @@ public class BluetoothBondedDevicesPreferenceController extends
                     toggleBluetoothConnectivity(isChecked, cachedDevice);
                 });
 
-        if (isA2dpDevice(cachedDevice)) {
+        if (isA2dpDevice(cachedDevice) && !sDualBluetooth) {
             return;
         }
 
