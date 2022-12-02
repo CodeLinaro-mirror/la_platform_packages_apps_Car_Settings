@@ -180,9 +180,10 @@ public class BluetoothBondedDevicesPreferenceController extends
         LocalBluetoothProfile phoneProfile = null;
         LocalBluetoothProfile mediaProfile = null;
         for (LocalBluetoothProfile profile : cachedDevice.getProfiles()) {
-            if (profile.getProfileId() == BluetoothProfile.HEADSET_CLIENT) {
+            int profileId = profile.getProfileId();
+            if (profileId == BluetoothProfile.HEADSET_CLIENT || profileId == BluetoothProfile.HEADSET) {
                 phoneProfile = profile;
-            } else if (profile.getProfileId() == BluetoothProfile.A2DP_SINK) {
+            } else if (profileId == BluetoothProfile.A2DP_SINK || profileId == BluetoothProfile.A2DP) {
                 mediaProfile = profile;
             }
         }
