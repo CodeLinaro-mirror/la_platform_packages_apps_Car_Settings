@@ -44,10 +44,16 @@ public class WifiTetherSecurityPreferenceController extends
 
     private static final Logger LOG = new Logger(WifiTetherSecurityPreferenceController.class);
 
+    private static final int SHARED_AP_BAND_UNSET = -1;
+
+    private static final int BAND_6GHZ = SoftApConfiguration.BAND_6GHZ | SoftApConfiguration.BAND_2GHZ;
+
     private int mSecurityType;
 
     private boolean mIsWpa3Supported = true;
     private boolean mOweSapSupported = true;
+
+    private static boolean mWasApBand6GHzSelectedManually = false;
 
     private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(
             WifiTetherPasswordPreferenceController.SHARED_PREFERENCE_PATH,
@@ -58,13 +64,6 @@ public class WifiTetherSecurityPreferenceController extends
     public WifiTetherSecurityPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
-        String[] securityNames = getContext().getResources().getStringArray(
-                R.array.wifi_tether_security);
-        String[] securityValues = getContext().getResources().getStringArray(
-                R.array.wifi_tether_security_values);
-        for (int i = 0; i < securityNames.length; i++) {
-            mSecurityMap.put(Integer.parseInt(securityValues[i]), securityNames[i]);
-        }
     }
 
     @Override
@@ -80,7 +79,51 @@ public class WifiTetherSecurityPreferenceController extends
         updatePreferenceOptions();
     }
 
+    @Override
+    protected void onStartInternal() {
+        int mApBand = mSharedPreferences.getInt(
+                WifiTetherApBandPreferenceController.KEY_AP_BAND,
+                /* defaultValue= */ SHARED_AP_BAND_UNSET);
+        if (mApBand == BAND_6GHZ && (mWasApBand6GHzSelectedManually == false)) {
+            mWasApBand6GHzSelectedManually = true;
+            updatePreferenceOptions();
+        } else if (mApBand != BAND_6GHZ && (mWasApBand6GHzSelectedManually == true)) {
+            mWasApBand6GHzSelectedManually = false;
+            updatePreferenceOptions();
+        }
+    }
+
     private void updatePreferenceOptions() {
+
+        final SoftApConfiguration config = getCarSoftApConfig();
+
+        String[] securityNames = getContext().getResources().getStringArray(
+                R.array.wifi_tether_security);
+        String[] securityValues = getContext().getResources().getStringArray(
+                R.array.wifi_tether_security_values);
+        //make sure security types follow same order after few time of removing
+        //and recovery due to set 6GHz band AP/non-6GHz band AP
+        mSecurityMap.clear();
+        for (int i = 0; i < securityNames.length; i++) {
+            mSecurityMap.put(Integer.parseInt(securityValues[i]), securityNames[i]);
+        }
+
+        if (config.getBand() == BAND_6GHZ
+                && mSecurityMap.keySet().removeIf(
+                key -> key < SoftApConfiguration.SECURITY_TYPE_WPA3_SAE)) {
+             //SECURITY_TYPE_OWE: 5 (allowed for 6GHz AP, but not added in hotspot security option)
+             //SECURITY_TYPE_OWE_TRANSITION: 4
+             //SECURITY_TYPE_WPA3_SAE: 3 (allowed for 6GHz AP, default security type for 6GHz band AP)
+             //SECURITY_TYPE_WPA3_SAE_TRANSITION: 2
+             //SECURITY_TYPE_WPA2_PSK: 1
+             //SECURITY_TYPE_OPEN: 0
+             mSecurityMap.keySet().remove(SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION);
+             getPreference().setEntries(mSecurityMap.values().stream().toArray(CharSequence[]::new));
+             getPreference().setEntryValues(mSecurityMap.keySet().stream().map(i -> Integer.toString(i))
+                     .toArray(CharSequence[]::new));
+             mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE;
+        }
+
         if (!mOweSapSupported) {
             mSecurityMap.keySet()
                     .remove(SoftApConfiguration.SECURITY_TYPE_OWE_TRANSITION);

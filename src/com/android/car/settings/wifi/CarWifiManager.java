@@ -202,6 +202,13 @@ public class CarWifiManager implements WifiPickerTracker.WifiPickerTrackerCallba
     }
 
     /**
+     * Checks if the chipset supports 6GHz frequency band.
+     */
+    public boolean is6GhzBandSupported() {
+        return mWifiManager.is6GHzBandSupported();
+    }
+
+    /**
      * Checks if the chipset supports dual band AP.
      */
     public boolean isDualApSupported() {

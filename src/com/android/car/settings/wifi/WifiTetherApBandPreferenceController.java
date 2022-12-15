@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.net.wifi.SoftApConfiguration;
 import android.util.Log;
+import android.content.SharedPreferences;
 
 import androidx.preference.ListPreference;
 
@@ -40,6 +41,15 @@ public class WifiTetherApBandPreferenceController extends
     // bit 0-7 band 1 ... bit 8-15 band 2
     private static final int SOFTAP_CONCURRENT_BAND_2GHZ_AND_5GHZ =
          SoftApConfiguration.BAND_2GHZ | (SoftApConfiguration.BAND_5GHZ << 8);
+
+    protected static final String KEY_AP_BAND =
+         "com.android.car.settings.wifi.AP_BAND";
+
+    private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(
+                    WifiTetherPasswordPreferenceController.SHARED_PREFERENCE_PATH,
+                    Context.MODE_PRIVATE);
+
+    private static final int BAND_6GHZ = SoftApConfiguration.BAND_6GHZ | SoftApConfiguration.BAND_2GHZ;
 
     private String[] mBandEntries;
     private String[] mBandSummaries;
@@ -107,7 +117,7 @@ public class WifiTetherApBandPreferenceController extends
         super.updateState(preference);
         updateApBand(); // updating AP band because mBandIndex may have been assigned a new value.
 
-        if (!is5GhzBandSupported()) {
+        if (!is5GhzBandSupported() && !is6GhzBandSupported()) {
             preference.setEnabled(false);
             preference.setSummary(R.string.wifi_ap_choose_2G);
         } else {
@@ -118,7 +128,7 @@ public class WifiTetherApBandPreferenceController extends
 
     @Override
     protected String getSummary() {
-        if (!is5GhzBandSupported()) {
+        if (!is5GhzBandSupported() && !is6GhzBandSupported()) {
             return getContext().getString(R.string.wifi_ap_choose_2G);
         }
         switch (mBand) {
@@ -129,9 +139,8 @@ public class WifiTetherApBandPreferenceController extends
             case SoftApConfiguration.BAND_5GHZ:
                 return mBandSummaries[1];
             case SOFTAP_CONCURRENT_BAND_2GHZ_AND_5GHZ:
-                if (isDualApSupported()) {
-                    return mBandSummaries[2];
-                }
+            case BAND_6GHZ:
+                return mBandSummaries[getPreference().findIndexOfValue(String.valueOf(mBand))];
                 // fall through
             default:
                 Log.e(TAG, "Unknown band: " + mBand);
@@ -147,6 +156,7 @@ public class WifiTetherApBandPreferenceController extends
     @Override
     public boolean handlePreferenceChanged(ListPreference preference, Object newValue) {
         mBand = validateSelection(Integer.parseInt((String) newValue));
+        Log.d(TAG, "Band preference changed, updating band index to " + mBand);
         refreshUi();
         return true;
     }
@@ -156,6 +166,10 @@ public class WifiTetherApBandPreferenceController extends
         // 1: BAND_5GHZ only - include 2GHZ since some of countries doesn't support 5G hotspot
         if (SoftApConfiguration.BAND_5GHZ == band) {
             if (!is5GhzBandSupported()) {
+                return SoftApConfiguration.BAND_2GHZ;
+            }
+        } else if (BAND_6GHZ == band) {
+            if (!is6GhzBandSupported()) {
                 return SoftApConfiguration.BAND_2GHZ;
             }
         }
@@ -180,6 +194,19 @@ public class WifiTetherApBandPreferenceController extends
             mBandSummaries = Arrays.copyOf(mBandSummaries, length + 1);
             mBandSummaries[length] = getContext().getString(R.string.wifi_ap_choose_both);
         }
+
+        if (is6GhzBandSupported()) {
+            int length = 0;
+
+            length = mBandEntries.length;
+            mBandEntries = Arrays.copyOf(mBandEntries, length + 1);
+            mBandEntries[length] = Integer.toString(BAND_6GHZ);
+
+            length = mBandSummaries.length;
+            mBandSummaries = Arrays.copyOf(mBandSummaries, length + 1);
+            mBandSummaries[length] = getContext().getString(R.string.wifi_ap_choose_6G);
+        }
+
     }
 
     private void updateApBand() {
@@ -198,6 +225,15 @@ public class WifiTetherApBandPreferenceController extends
                 .build();
 
         setCarSoftApConfig(config);
+
+        mSharedPreferences.edit().putInt(KEY_AP_BAND, mBand).commit();
+
+        //6GHz AP only support WPA3 security type : SAE or OWE. Here force SAE
+        //since UI does not have WPA3 OWE option(enhance open optin means OWE transition mode)
+        if (mBand == BAND_6GHZ)
+            mSharedPreferences.edit().putInt(WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
+               SoftApConfiguration.SECURITY_TYPE_WPA3_SAE).commit();
+
     }
 
     private String getBandEntry() {
@@ -208,9 +244,8 @@ public class WifiTetherApBandPreferenceController extends
             case SoftApConfiguration.BAND_5GHZ:
                 return mBandEntries[1];
             case SOFTAP_CONCURRENT_BAND_2GHZ_AND_5GHZ:
-                if (isDualApSupported()) {
-                    return mBandEntries[2];
-                }
+            case BAND_6GHZ:
+                return mBandEntries[getPreference().findIndexOfValue(String.valueOf(mBand))];
                 // fall through
             default:
                 Log.e(TAG, "Unknown band: " + mBand + ", defaulting to 2GHz");
@@ -221,6 +256,11 @@ public class WifiTetherApBandPreferenceController extends
     private boolean is5GhzBandSupported() {
         String countryCode = getCarWifiManager().getCountryCode();
         return getCarWifiManager().is5GhzBandSupported() && countryCode != null;
+    }
+
+    private boolean is6GhzBandSupported() {
+        String countryCode = getCarWifiManager().getCountryCode();
+        return getCarWifiManager().is6GhzBandSupported() && countryCode != null;
     }
 
     private boolean isDualApConfigured(SparseIntArray channels) {
