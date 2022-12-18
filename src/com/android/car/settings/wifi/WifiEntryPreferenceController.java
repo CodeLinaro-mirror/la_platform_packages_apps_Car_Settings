@@ -57,8 +57,6 @@ public class WifiEntryPreferenceController extends
     @Override
     protected void onStartInternal() {
         mCarWifiManager.addListener(this);
-
-        mCarWifiManager.start();
         getPreference().setSecondaryActionChecked(mCarWifiManager.isWifiEnabled());
 
     }
