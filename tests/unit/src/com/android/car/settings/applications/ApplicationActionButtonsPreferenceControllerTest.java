@@ -60,6 +60,7 @@ import android.os.UserHandle;
 import android.os.UserManager;
 
 import androidx.lifecycle.LifecycleOwner;
+import androidx.test.annotation.UiThreadTest;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -481,7 +482,8 @@ public class ApplicationActionButtonsPreferenceControllerTest {
 
         verify(mContext).sendOrderedBroadcastAsUser(any(Intent.class),
                 eq(UserHandle.CURRENT),
-                /* receiverPermission= */ isNull(),
+                /* receiverPermission= */
+                eq(android.Manifest.permission.HANDLE_QUERY_PACKAGE_RESTART),
                 any(BroadcastReceiver.class),
                 /* scheduler= */ isNull(),
                 eq(Activity.RESULT_CANCELED),
@@ -580,6 +582,7 @@ public class ApplicationActionButtonsPreferenceControllerTest {
     }
 
     @Test
+    @UiThreadTest
     public void forceStopDialogConfirmed_forceStopsPackage() {
         setupAndAssignPreference();
         setApplicationInfo(/* stopped= */ false, /* enabled= */ true, /* system= */ false);

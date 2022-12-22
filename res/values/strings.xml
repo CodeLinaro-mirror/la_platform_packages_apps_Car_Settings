@@ -32,8 +32,6 @@
     <string name="keywords_display_brightness_level" translatable="false">dim screen, touchscreen, battery</string>
     <string name="keywords_display_auto_brightness" translatable="false">dim screen, touchscreen, battery</string>
     <string name="keywords_display_night_display" translatable="false">dim screen, night, tint</string>
-    <!-- Label for night mode toggle tile in quick setting [CHAR LIMIT=20] -->
-    <string name="night_mode_tile_label">Night mode</string>
     <!-- Empty placeholder string to be used while waiting for a string to be loaded asynchronously. [CHAR LIMIT=NONE] -->
     <string name="empty_placeholder" translatable="false">&#160;</string>
 
@@ -666,6 +664,8 @@
     <string name="all_applications">Show all apps</string>
     <!-- Default app settings title, which allows user to select defaults for certain application types. [CHAR LIMIT=40] -->
     <string name="default_applications">Default apps</string>
+    <!-- Performance-impacting app settings title, which allows users to view CarWatchdog disabled apps. [CHAR LIMIT=40] -->
+    <string name="performance_impacting_apps">Performance-impacting apps</string>
     <!-- Label for list that shows all permissions [CHAR LIMIT=40] -->
     <string name="app_permissions">App permissions</string>
     <!-- Summary of permissions currently granted to apps [CHAR LIMIT=60] -->
@@ -673,15 +673,19 @@
     <!-- Applications settings title. If clicked, the user is taken to the list of installed applications. [CHAR LIMIT=40] -->
     <string name="applications_settings">App info</string>
     <!-- Manage applications, text label for button to kill / force stop an application. [CHAR LIMIT=30] -->
-    <string name="force_stop">Force stop</string>
+    <string name="force_stop">Stop app</string>
     <!-- Manage applications, title for dialog when killing persistent apps. [CHAR LIMIT=40] -->
-    <string name="force_stop_dialog_title">Force stop?</string>
+    <string name="force_stop_dialog_title">Stop app?</string>
     <!-- Manage applications, text for dialog when killing persistent apps. [CHAR LIMIT=200] -->
     <string name="force_stop_dialog_text">If you force stop an app, it may misbehave.</string>
+    <!-- Manage applications, text for dialog when killing persistent apps. [CHAR LIMIT=200] -->
+    <string name="force_stop_success_toast_text">
+        <xliff:g id="app_name" example="Radio">%1$s</xliff:g> has been stopped.
+    </string>
     <!-- Manage applications, title for dialog when turning on prioritize app performance setting. [CHAR LIMIT=40] -->
-    <string name="prioritize_app_performance_dialog_title">Turn on prioritize app performance?</string>
+    <string name="prioritize_app_performance_dialog_title">Prioritize app performance?</string>
     <!-- Manage applications, text for dialog when turning on prioritize app performance setting. [CHAR LIMIT=200] -->
-    <string name="prioritize_app_performance_dialog_text">Turning it on can cause potential system instability or long-term hardware impact. Do you want to continue?</string>
+    <string name="prioritize_app_performance_dialog_text">This can cause potential system instability or long-term hardware impact. Do you want to continue?</string>
     <!-- Manage applications, text for dialog button when turning on prioritize app performance setting. [CHAR LIMIT=200] -->
     <string name="prioritize_app_performance_dialog_action_on">Yes</string>
     <!-- Manage applications, text for dialog button when turning on prioritize app performance setting. [CHAR LIMIT=200] -->
@@ -839,6 +843,13 @@
     <string name="apps_permission_manager_summary">Control app access to your data</string>
     <!-- Apps settings screen, setting option description of default apps [CHAR LIMIT=100] -->
     <string name="apps_default_apps_summary">For Assistant and more</string>
+    <!-- Apps settings screen, setting option description of performance-impacting apps [CHAR LIMIT=100] -->
+    <string name="performance_impacting_apps_summary">
+        {count, plural,
+            =1    {# app impacting performance}
+            other {# apps impacting performance}
+        }
+    </string>
     <!-- Apps settings screen, setting option description of special app access [CHAR LIMIT=100] -->
     <string name="apps_special_app_access_summary">To system and other settings</string>
 
@@ -866,6 +877,10 @@
     <string name="notification_listener_revoke_warning_confirm">Turn off</string>
     <!-- Negative button for a dialog warning message about revoking notification listener access. [CHAR_LIMIT=30] -->
     <string name="notification_listener_revoke_warning_cancel">Cancel</string>
+    <!-- Description of Performance-impacting app settings. [CHAR_LIMIT=NONE] -->
+    <string name="performance_impacting_apps_description">These apps negatively impact system performance and have been prevented from running in the background.\nPrioritize app to allow background usage and remove it from this list.</string>
+    <!-- Button label for prioritizing an app in the Performance-impacting app settings. [CHAR_LIMIT=20] -->
+    <string name="performance_impacting_apps_button_label">Prioritize app</string>
     <!-- Title for screen controlling which apps have access to send premium sms messages. [CHAR_LIMIT=60] -->
     <string name="premium_sms_access_title">Premium SMS access</string>
     <!-- Message shown for option to enable Premium SMS for an app. [CHAR_LIMIT=NONE] -->
@@ -1005,7 +1020,7 @@
     <!-- Restart infotainment title. Opens ConfirmationDialogue for restarting infotainment system. [CHAR LIMIT=60] -->
     <string name="restart_infotainment_system_title">Restart infotainment system</string>
     <!-- Restart infotainment title dialog. [CHAR LIMIT=NONE] -->
-    <string name="restart_infotainment_system_dialog_text">Restarting your car\'s infotainment system can take up to a few minutes. Do you want to continue?</string>
+    <string name="restart_infotainment_system_dialog_text">Restarting your car\'s infotainment system can take a few minutes. Do you want to continue?</string>
     <!-- Continue confirmation string used by ConfirmationDialogue. [CHAR LIMIT=40] -->
     <string name="continue_confirmation">Continue</string>
 
@@ -1111,15 +1126,15 @@
 
     <!-- Reset Network --><skip/>
     <!-- Button title to reset Wi-Fi settings, mobile data settings, and Bluetooth settings. [CHAR LIMIT=40] -->
-    <string name="reset_network_title">Reset network</string>
+    <string name="reset_network_title">Reset Wi\u2011Fi and Bluetooth</string>
     <!-- Message on screen after user selects reset network settings. [CHAR LIMIT=NONE] -->
-    <string name="reset_network_desc">This will reset all network settings, including:</string>
+    <string name="reset_network_desc">This will reset Wi\u2011Fi and Bluetooth settings, removing memory of previously connected:</string>
     <!-- List item for Wi-Fi on screen after user selects reset network settings. [CHAR LIMIT=NONE] -->
-    <string name="reset_network_item_wifi"><li>Wi\u2011Fi</li></string>
+    <string name="reset_network_item_wifi"><li>Wi\u2011Fi networks and passwords</li></string>
     <!-- List item for Mobile data on screen after user selects reset network settings. [CHAR LIMIT=NONE] -->
     <string name="reset_network_item_mobile"><li>Mobile data</li></string>
     <!-- List item for Bluetooth on screen after user selects reset network settings. [CHAR LIMIT=NONE] -->
-    <string name="reset_network_item_bluetooth"><li>Bluetooth</li></string>
+    <string name="reset_network_item_bluetooth"><li>Phones and other Bluetooth devices</li></string>
     <!-- Title for option to reset all eSIMs for the vehicle. [CHAR LIMIT=50] -->
     <string name="reset_esim_title">Erase all vehicle eSIMs</string>
     <!-- Description text for option to reset all eSIMs for the vehicle. [CHAR LIMIT=NONE] -->
@@ -1348,7 +1363,7 @@
     <!-- Individual application screen, confirmation dialog title. Displays when user selects to "Clear data". [CHAR LIMIT=45] -->
     <string name="storage_clear_data_dlg_title">Delete app data?</string>
     <!-- Individual application screen, confirmation dialog message. Displays when user selects to "Clear data". It warns the user of the consequences of clearing the data for an app. [CHAR LIMIT=200] -->
-    <string name="storage_clear_data_dlg_text">All this app\u2019s data will be deleted permanently. This includes all files, settings, accounts, databases, etc.</string>
+    <string name="storage_clear_data_dlg_text">This app\u2019s data will be permanently deleted. This includes files, settings, databases, and other app data.</string>
     <!-- Text for dialog if clear data fails. [CHAR LIMIT=55] -->
     <string name="storage_clear_failed_dlg_text">Couldn\u2019t clear storage for app.</string>
     <!-- Toast informing that storage unmount operation was successful. [CHAR LIMIT=80]-->
@@ -1684,10 +1699,6 @@
     <!-- Label for button in screen lock settings, allowing users to choose other types of screen locks. [CHAR LIMIT=40] -->
     <string name="setup_lock_settings_options_button_label">Screen lock options</string>
 
-    <!-- Format of the message displayed at the bottom of the quick settings page, that shows build information in
-         user-debug and eng builds. -->
-    <string name="build_info_fmt"><xliff:g example="google/gcar_emu_x86/..." id="fingerprint">%1$s</xliff:g>\n<xliff:g example="Thu Aug 30" id="date">%2$s</xliff:g> : <xliff:g example="4" id="num_days">%3$s</xliff:g> days ago</string>
-
     <!-- security credentials --><skip/>
     <!-- Title of preference to reset credential storage. [CHAR LIMIT=40] -->
     <string name="credentials_reset">Clear credentials</string>
@@ -1874,6 +1885,8 @@
     <string name="number_of_device_admins_none">No activated apps</string>
     <!-- Title of setting on privacy settings screen that will show vehicle policy info. [CHAR LIMIT=NONE] -->
     <string name="work_policy_privacy_settings"><xliff:g id="organization_name">%1$s</xliff:g> vehicle policy</string>
+    <!-- Search result title of the work policy page. Does not display company name. [CHAR LIMIT=NONE] -->
+    <string name="work_policy_privacy_settings_no_org_name">Vehicle policy</string>
     <!-- Summary for Enterprise Privacy settings, explaining what the user can expect to find under it [CHAR LIMIT=NONE]-->
     <string name="work_policy_privacy_settings_summary">Settings managed by the organization manager</string>
     <!-- Footer to show help link content description. [CHAR LIMIT=NONE] -->

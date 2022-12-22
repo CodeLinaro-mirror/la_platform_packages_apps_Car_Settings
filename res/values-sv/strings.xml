@@ -24,7 +24,6 @@
     <string name="auto_brightness_title" msgid="9124647862844666581">"Anpassad ljusstyrka"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Justera skärmens ljusstyrka efter omgivningen"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Nattljus är aktiverat"</string>
-    <string name="night_mode_tile_label" msgid="6603597795502131664">"Nattläge"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Nätverk och internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mobilnätverk"</string>
     <string name="mobile_network_summary_count" msgid="760865625847664029">"{count,plural, =1{# SIM-kort}other{# SIM-kort}}"</string>
@@ -301,14 +300,22 @@
     <string name="apps_and_notifications_settings" msgid="8704585874333781975">"Appar och aviseringar"</string>
     <string name="all_applications" msgid="7798210477486822168">"Visa alla appar"</string>
     <string name="default_applications" msgid="1558183275638697087">"Standardappar"</string>
+    <!-- no translation found for performance_impacting_apps (3439260699394720569) -->
+    <skip />
     <string name="app_permissions" msgid="32799922508313948">"Appbehörigheter"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"Styr appåtkomst till din data"</string>
     <string name="applications_settings" msgid="794261395191035632">"Appinformation"</string>
-    <string name="force_stop" msgid="2153183697014720520">"Tvinga att avsluta"</string>
-    <string name="force_stop_dialog_title" msgid="3342850939200388694">"Vill du tvinga appen att avsluta?"</string>
+    <!-- no translation found for force_stop (1616958676171167028) -->
+    <skip />
+    <!-- no translation found for force_stop_dialog_title (4481858344628934971) -->
+    <skip />
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"Om du tvingar appen att avsluta kanske den inte fungerar som den ska."</string>
-    <string name="prioritize_app_performance_dialog_title" msgid="2561577032540073080">"Aktivera Prioritera appars prestanda?"</string>
-    <string name="prioritize_app_performance_dialog_text" msgid="572525689800110355">"Om du aktiverar detta kan systemet bli instabilt, och det kan påverka maskinvaran långsiktigt. Vill du fortsätta?"</string>
+    <!-- no translation found for force_stop_success_toast_text (2986272849275894254) -->
+    <skip />
+    <!-- no translation found for prioritize_app_performance_dialog_title (3205297520523665568) -->
+    <skip />
+    <!-- no translation found for prioritize_app_performance_dialog_text (4321564728229192878) -->
+    <skip />
     <string name="prioritize_app_performance_dialog_action_on" msgid="3556735049873419163">"Ja"</string>
     <string name="prioritize_app_performance_dialog_action_off" msgid="2813324718753199319">"Nej tack"</string>
     <string name="disable_text" msgid="4358165448648990820">"Inaktivera"</string>
@@ -352,7 +359,7 @@
     <string name="assist_access_screenshot_title" msgid="2855956879971465044">"Använda skärmbild"</string>
     <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"Tillåt att assistentappen får åtkomst till en bild på skärmen"</string>
     <string name="voice_input_settings_title" msgid="3238707827815647526">"Röstinmatning"</string>
-    <string name="autofill_settings_title" msgid="1188754272680049972">"Tjänsten Autofyll"</string>
+    <string name="autofill_settings_title" msgid="1188754272680049972">"Autofylltjänst"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"Ingen"</string>
     <string name="default_app_selected_app" msgid="5289396663745484773">"Vald"</string>
     <string name="assistant_security_warning" msgid="1844807956967428012">"Assistenten kan läsa information om appar som används i systemet, inklusive information som visas på skärmen eller är åtkomlig i apparna."</string>
@@ -379,6 +386,8 @@
     <string name="apps_permission_manager_title" msgid="8776335943862484131">"Behörighetshantering"</string>
     <string name="apps_permission_manager_summary" msgid="4180424218228141274">"Styr appåtkomst till din data"</string>
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"För assistenten med mera"</string>
+    <!-- no translation found for performance_impacting_apps_summary (7762122057244111162) -->
+    <skip />
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"Till systeminställningar och andra inställningar"</string>
     <string name="special_access" msgid="5730278220917123811">"Särskild appåtkomst"</string>
     <string name="show_system" msgid="4401355756969485287">"Visa systemet"</string>
@@ -392,6 +401,10 @@
     <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"Om du inaktiverar åtkomst till aviseringar för <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> kan även åtkomsten till Stör ej inaktiveras."</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Inaktivera"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Avbryt"</string>
+    <!-- no translation found for performance_impacting_apps_description (7361464904617808444) -->
+    <skip />
+    <!-- no translation found for performance_impacting_apps_button_label (8277507326717608783) -->
+    <skip />
     <string name="premium_sms_access_title" msgid="1409118461646148686">"Åtkomst till premium-sms"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Det kan hända att premium-sms kostar pengar och läggs till på dina fakturor från operatören. Om du ger en app åtkomst kan du skicka premium-sms med den appen."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Åtkomst till användningsdata"</string>
@@ -481,11 +494,15 @@
     <string name="developer_options_settings" msgid="1530739225109118480">"Utvecklaralternativ"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"Återställningsalternativ"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Nätverk, appar eller ehetsåterställning"</string>
-    <string name="reset_network_title" msgid="1284233059990797263">"Återställ nätverk"</string>
-    <string name="reset_network_desc" msgid="602381374544634925">"Om du gör detta återställs alla nätverksinställningar, inklusive:"</string>
-    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"Wi‑Fi"</li></string>
+    <!-- no translation found for reset_network_title (3077846909739832734) -->
+    <skip />
+    <!-- no translation found for reset_network_desc (3332203703135823033) -->
+    <skip />
+    <!-- no translation found for reset_network_item_wifi (2876370861806060314) -->
+    <skip />
     <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"Mobildata"</li></string>
-    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"Bluetooth"</li></string>
+    <!-- no translation found for reset_network_item_bluetooth (7475279871421815601) -->
+    <skip />
     <string name="reset_esim_title" msgid="8132107637911831211">"Rensa alla eSIM för fordonet"</string>
     <string name="reset_esim_desc" msgid="1437276625485586740">"Serviceavtalet fortsätter att gälla."</string>
     <string name="reset_esim_error_title" msgid="7245109418130525492">"Det gick inte att återställa eSIM-korten"</string>
@@ -583,7 +600,7 @@
     <string name="storage_clear_user_data_text" msgid="8787615136779130680">"Rensa lagringsutrymme"</string>
     <string name="storage_clear_cache_btn_text" msgid="8449547925966775612">"Rensa cacheminne"</string>
     <string name="storage_clear_data_dlg_title" msgid="5863775997588969879">"Vill du ta bort appdata?"</string>
-    <string name="storage_clear_data_dlg_text" msgid="795055288575727801">"All appdata tas bort permanent. Det inkluderar bland annat alla filer, inställningar, konton och databaser."</string>
+    <string name="storage_clear_data_dlg_text" msgid="3255314337644212283">"Appens data raderas permanent. Detta omfattar filer, inställningar, databaser och annan appdata."</string>
     <string name="storage_clear_failed_dlg_text" msgid="6710485971686866306">"Det gick inte att rensa appens lagringsutrymme."</string>
     <string name="storage_unmount_success" msgid="1553591517580407021">"<xliff:g id="NAME">%1$s</xliff:g> har matats ut på ett säkert sätt"</string>
     <string name="storage_unmount_failure" msgid="4591934911541762883">"Det gick inte att mata ut <xliff:g id="NAME">%1$s</xliff:g> på ett säkert sätt"</string>
@@ -708,7 +725,6 @@
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{Lösenordet får inte innehålla fler än # siffra}other{Lösenordet får inte innehålla fler än # siffror}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"En stigande, fallande eller upprepad siffersekvens är inte tillåten"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Alternativ för skärmlås"</string>
-    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g>: <xliff:g id="NUM_DAYS">%3$s</xliff:g> dagar sedan"</string>
     <string name="credentials_reset" msgid="873900550885788639">"Rensa användaruppgifter"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"Ta bort alla certifikat"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"Vill du ta bort allt innehåll?"</string>
@@ -778,6 +794,7 @@
     <string name="number_of_device_admins" msgid="7508826094096451485">"{count,plural, =1{# aktiverad app}other{# aktiverade appar}}"</string>
     <string name="number_of_device_admins_none" msgid="5547493703413973954">"Inga aktiverade appar"</string>
     <string name="work_policy_privacy_settings" msgid="5263835989260149968">"Fordonspolicy för <xliff:g id="ORGANIZATION_NAME">%1$s</xliff:g>"</string>
+    <string name="work_policy_privacy_settings_no_org_name" msgid="8011687012493940230">"Fordonspolicy"</string>
     <string name="work_policy_privacy_settings_summary" msgid="5321618399949880194">"Inställningar som hanteras av organisationsansvarig"</string>
     <string name="footer_learn_more_content_description" msgid="7749452309729272078">"Läs mer om <xliff:g id="SERVICE">%1$s</xliff:g>"</string>
     <string name="enterprise_privacy_settings" msgid="6496900796150572727">"Information om hanterat fordon"</string>

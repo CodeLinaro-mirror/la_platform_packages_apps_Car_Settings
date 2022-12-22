@@ -24,7 +24,6 @@
     <string name="auto_brightness_title" msgid="9124647862844666581">"ਅਨੁਕੂਲ ਚਮਕ"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"ਵਾਤਾਵਰਨ ਮੁਤਾਬਕ ਸਕ੍ਰੀਨ ਦੀ ਚਮਕ ਨੂੰ ਵਿਵਸਥਿਤ ਕਰੋ"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"\'ਰਾਤ ਦੀ ਰੋਸ਼ਨੀ\' ਮੋਡ ਚਾਲੂ ਹੈ"</string>
-    <string name="night_mode_tile_label" msgid="6603597795502131664">"ਰਾਤ ਵਾਲਾ ਮੋਡ"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"ਨੈੱਟਵਰਕ ਅਤੇ ਇੰਟਰਨੈੱਟ"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ"</string>
     <string name="mobile_network_summary_count" msgid="760865625847664029">"{count,plural, =1{# ਸਿਮ}one{# ਸਿਮ}other{# ਸਿਮ}}"</string>
@@ -301,14 +300,22 @@
     <string name="apps_and_notifications_settings" msgid="8704585874333781975">"ਐਪਾਂ ਅਤੇ ਸੂਚਨਾਵਾਂ"</string>
     <string name="all_applications" msgid="7798210477486822168">"ਸਾਰੀਆਂ ਐਪਾਂ ਦਿਖਾਓ"</string>
     <string name="default_applications" msgid="1558183275638697087">"ਪੂਰਵ-ਨਿਰਧਾਰਤ ਐਪਾਂ"</string>
+    <!-- no translation found for performance_impacting_apps (3439260699394720569) -->
+    <skip />
     <string name="app_permissions" msgid="32799922508313948">"ਐਪ ਇਜਾਜ਼ਤਾਂ"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"ਐਪ ਦੀ ਤੁਹਾਡੇ ਡਾਟੇ ਤੱਕ ਪਹੁੰਚ ਕੰਟਰੋਲ ਕਰੋ"</string>
     <string name="applications_settings" msgid="794261395191035632">"ਐਪ ਜਾਣਕਾਰੀ"</string>
-    <string name="force_stop" msgid="2153183697014720520">"ਜ਼ਬਰਦਸਤੀ ਬੰਦ ਕਰੋ"</string>
-    <string name="force_stop_dialog_title" msgid="3342850939200388694">"ਕੀ ਜ਼ਬਰਦਸਤੀ ਬੰਦ ਕਰਨਾ ਹੈ?"</string>
+    <!-- no translation found for force_stop (1616958676171167028) -->
+    <skip />
+    <!-- no translation found for force_stop_dialog_title (4481858344628934971) -->
+    <skip />
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"ਜੇ ਤੁਸੀਂ ਕਿਸੇ ਐਪ ਨੂੰ ਜ਼ਬਰਦਸਤੀ ਬੰਦ ਕਰਦੇ ਹੋ, ਤਾਂ ਹੋ ਸਕਦਾ ਹੈ ਇਹ ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਨਾ ਕਰੇ।"</string>
-    <string name="prioritize_app_performance_dialog_title" msgid="2561577032540073080">"ਕੀ ਐਪ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ ਨੂੰ ਤਰਜੀਹ ਦੇਣਾ ਚਾਲੂ ਕਰਨਾ ਹੈ?"</string>
-    <string name="prioritize_app_performance_dialog_text" msgid="572525689800110355">"ਇਸਨੂੰ ਚਾਲੂ ਕਰਨ ਨਾਲ ਸੰਭਾਵੀ ਸਿਸਟਮ ਅਸਥਿਰਤਾ ਜਾਂ ਲੰਬੇ-ਸਮੇਂ ਦਾ ਹਾਰਡਵੇਅਰ ਪ੍ਰਭਾਵ ਹੋ ਸਕਦਾ ਹੈ। ਕੀ ਤੁਸੀਂ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"</string>
+    <!-- no translation found for force_stop_success_toast_text (2986272849275894254) -->
+    <skip />
+    <!-- no translation found for prioritize_app_performance_dialog_title (3205297520523665568) -->
+    <skip />
+    <!-- no translation found for prioritize_app_performance_dialog_text (4321564728229192878) -->
+    <skip />
     <string name="prioritize_app_performance_dialog_action_on" msgid="3556735049873419163">"ਹਾਂ"</string>
     <string name="prioritize_app_performance_dialog_action_off" msgid="2813324718753199319">"ਨਹੀਂ, ਧੰਨਵਾਦ"</string>
     <string name="disable_text" msgid="4358165448648990820">"ਬੰਦ ਕਰੋ"</string>
@@ -379,6 +386,8 @@
     <string name="apps_permission_manager_title" msgid="8776335943862484131">"ਇਜਾਜ਼ਤ ਪ੍ਰਬੰਧਕ"</string>
     <string name="apps_permission_manager_summary" msgid="4180424218228141274">"ਐਪ ਦੀ ਤੁਹਾਡੇ ਡਾਟੇ ਤੱਕ ਪਹੁੰਚ ਕੰਟਰੋਲ ਕਰੋ"</string>
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Assistant ਅਤੇ ਹੋਰ ਬਹੁਤ ਕੁਝ ਲਈ"</string>
+    <!-- no translation found for performance_impacting_apps_summary (7762122057244111162) -->
+    <skip />
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"ਸਿਸਟਮ ਅਤੇ ਹੋਰ ਸੈਟਿੰਗਾਂ ਲਈ"</string>
     <string name="special_access" msgid="5730278220917123811">"ਵਿਸ਼ੇਸ਼ ਐਪ ਪਹੁੰਚ"</string>
     <string name="show_system" msgid="4401355756969485287">"ਸਿਸਟਮ ਦਿਖਾਓ"</string>
@@ -392,6 +401,10 @@
     <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"ਜੇ ਤੁਸੀਂ <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> ਲਈ ਸੂਚਨਾ ਪਹੁੰਚ ਨੂੰ ਬੰਦ ਕਰਦੇ ਹੋ, ਤਾਂ \'ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ\' ਪਹੁੰਚ ਵੀ ਬੰਦ ਹੋ ਸਕਦੀ ਹੈ।"</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"ਬੰਦ ਕਰੋ"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"ਰੱਦ ਕਰੋ"</string>
+    <!-- no translation found for performance_impacting_apps_description (7361464904617808444) -->
+    <skip />
+    <!-- no translation found for performance_impacting_apps_button_label (8277507326717608783) -->
+    <skip />
     <string name="premium_sms_access_title" msgid="1409118461646148686">"ਪ੍ਰੀਮੀਅਮ SMS ਤੱਕ ਪਹੁੰਚ"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"ਪ੍ਰੀਮੀਅਮ SMS ਦਾ ਤੁਹਾਡੇ ਤੋਂ ਖਰਚਾ ਲਿਆ ਜਾ ਸਕਦਾ ਹੈ ਅਤੇ ਇਸ ਨਾਲ ਤੁਹਾਡੇ ਕੈਰੀਅਰ ਬਿੱਲਾਂ ਵਿੱਚ ਵਾਧਾ ਹੋ ਜਾਵੇਗਾ। ਜੇ ਤੁਸੀਂ ਕਿਸੇ ਐਪ ਨੂੰ ਇਜਾਜ਼ਤ ਦਿੰਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ ਉਸ ਐਪ ਦੀ ਵਰਤੋਂ ਨਾਲ ਪ੍ਰੀਮੀਅਮ SMS ਭੇਜਣ ਦੇ ਯੋਗ ਹੋ ਜਾਵੋਗੇ।"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"ਵਰਤੋਂ ਪਹੁੰਚ"</string>
@@ -481,11 +494,15 @@
     <string name="developer_options_settings" msgid="1530739225109118480">"ਵਿਕਾਸਕਾਰ ਚੋਣਾਂ"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"ਰੀਸੈੱਟ ਵਿਕਲਪ"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"ਨੈੱਟਵਰਕ, ਐਪਾਂ ਜਾਂ ਡੀਵਾਈਸ ਰੀਸੈੱਟ"</string>
-    <string name="reset_network_title" msgid="1284233059990797263">"ਨੈੱਟਵਰਕ ਰੀਸੈੱਟ ਕਰੋ"</string>
-    <string name="reset_network_desc" msgid="602381374544634925">"ਇਹ  ਸਾਰੀਆਂ ਨੈੱਟਵਰਕ ਸੈਟਿੰਗਾਂ ਰੀਸੈੱਟ ਕਰ ਦੇਵੇਗਾ, ਜਿਸ ਵਿੱਚ ਇਹ ਵੀ ਸ਼ਾਮਲ ਹਨ:"</string>
-    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"ਵਾਈ-ਫਾਈ"</li></string>
+    <!-- no translation found for reset_network_title (3077846909739832734) -->
+    <skip />
+    <!-- no translation found for reset_network_desc (3332203703135823033) -->
+    <skip />
+    <!-- no translation found for reset_network_item_wifi (2876370861806060314) -->
+    <skip />
     <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"ਮੋਬਾਈਲ ਡਾਟਾ"</li></string>
-    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"ਬਲੂਟੁੱਥ"</li></string>
+    <!-- no translation found for reset_network_item_bluetooth (7475279871421815601) -->
+    <skip />
     <string name="reset_esim_title" msgid="8132107637911831211">"ਸਾਰੇ ਵਾਹਨ ਈ-ਸਿਮਾਂ ਨੂੰ ਮਿਟਾਓ"</string>
     <string name="reset_esim_desc" msgid="1437276625485586740">"ਇਸ ਨਾਲ ਤੁਹਾਡਾ ਸੇਵਾ ਪਲਾਨ ਰੱਦ ਨਹੀਂ ਹੋਵੇਗਾ।"</string>
     <string name="reset_esim_error_title" msgid="7245109418130525492">"ਈ-ਸਿਮ ਰੀਸੈੱਟ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕਦੇ"</string>
@@ -583,7 +600,7 @@
     <string name="storage_clear_user_data_text" msgid="8787615136779130680">"ਸਟੋਰੇਜ ਕਲੀਅਰ ਕਰੋ"</string>
     <string name="storage_clear_cache_btn_text" msgid="8449547925966775612">"ਕੈਸ਼ੇ ਕਲੀਅਰ ਕਰੋ"</string>
     <string name="storage_clear_data_dlg_title" msgid="5863775997588969879">"ਕੀ ਐਪ ਡਾਟਾ ਮਿਟਾਉਣਾ ਹੈ?"</string>
-    <string name="storage_clear_data_dlg_text" msgid="795055288575727801">"ਇਸ ਐਪ ਦਾ ਸਾਰਾ ਡਾਟਾ ਸਥਾਈ ਤੌਰ ਤੇ ਮਿਟਾਇਆ ਜਾਏਗਾ। ਇਸ ਵਿੱਚ ਸਾਰੀਆਂ ਫ਼ਾਈਲਾਂ, ਸੈਟਿੰਗਾਂ, ਖਾਤੇ, ਡਾਟਾਬੇਸ ਆਦਿ ਸ਼ਾਮਲ ਹਨ।"</string>
+    <string name="storage_clear_data_dlg_text" msgid="3255314337644212283">"ਇਸ ਐਪ ਦਾ ਡਾਟਾ ਪੱਕੇ ਤੌਰ \'ਤੇ ਮਿਟਾ ਦਿੱਤਾ ਜਾਵੇਗਾ। ਇਸ ਵਿੱਚ ਫ਼ਾਈਲਾਂ, ਸੈਟਿੰਗਾਂ, ਡਾਟਾਬੇਸ ਅਤੇ ਹੋਰ ਐਪ ਡਾਟਾ ਸ਼ਾਮਲ ਹੈ।"</string>
     <string name="storage_clear_failed_dlg_text" msgid="6710485971686866306">"ਐਪ ਦੀ ਸਟੋਰੇਜ ਕਲੀਅਰ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।"</string>
     <string name="storage_unmount_success" msgid="1553591517580407021">"<xliff:g id="NAME">%1$s</xliff:g> ਸੁਰੱਖਿਅਤ ਰੂਪ ਨਾਲ ਕੱਢੀ ਗਈ ਹੈ"</string>
     <string name="storage_unmount_failure" msgid="4591934911541762883">"<xliff:g id="NAME">%1$s</xliff:g> ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੂਪ ਨਾਲ ਨਹੀਂ ਕੱਢ ਸਕਿਆ"</string>
@@ -708,7 +725,6 @@
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{# ਅੰਕ ਤੋਂ ਘੱਟ ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ}one{# ਅੰਕ ਤੋਂ ਘੱਟ ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ}other{# ਅੰਕਾਂ ਤੋਂ ਘੱਟ ਹੋਣੇ ਲਾਜ਼ਮੀ ਹਨ}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"ਅੰਕਾਂ ਦਾ ਵਧਦਾ ਕ੍ਰਮ, ਘਟਦਾ ਕ੍ਰਮ ਜਾਂ ਦੁਹਰਾਈ ਗਈ ਲੜੀ ਦੀ ਇਜਾਜ਼ਤ ਨਹੀਂ ਹੈ"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"ਸਕ੍ਰੀਨ ਲਾਕ ਦੇ ਵਿਕਲਪ"</string>
-    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> ਦਿਨ ਪਹਿਲਾਂ"</string>
     <string name="credentials_reset" msgid="873900550885788639">"ਕ੍ਰੀਡੈਂਸ਼ੀਅਲ ਕਲੀਅਰ ਕਰੋ"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"ਸਾਰੇ ਪ੍ਰਮਾਣ-ਪੱਤਰ ਹਟਾਓ"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"ਕੀ ਸਾਰੀਆਂ ਸਮੱਗਰੀਆਂ ਹਟਾਉਣੀਆਂ ਹਨ?"</string>
@@ -778,6 +794,7 @@
     <string name="number_of_device_admins" msgid="7508826094096451485">"{count,plural, =1{# ਕਿਰਿਆਸ਼ੀਲ ਕੀਤੀ ਐਪ}one{# ਕਿਰਿਆਸ਼ੀਲ ਕੀਤੀ ਐਪ}other{# ਕਿਰਿਆਸ਼ੀਲ ਕੀਤੀਆਂ ਐਪਾਂ}}"</string>
     <string name="number_of_device_admins_none" msgid="5547493703413973954">"ਕੋਈ ਕਿਰਿਆਸ਼ੀਲ ਕੀਤੀ ਐਪ ਨਹੀਂ"</string>
     <string name="work_policy_privacy_settings" msgid="5263835989260149968">"<xliff:g id="ORGANIZATION_NAME">%1$s</xliff:g> ਵਾਹਨ ਨੀਤੀ"</string>
+    <string name="work_policy_privacy_settings_no_org_name" msgid="8011687012493940230">"ਵਾਹਨ ਨੀਤੀ"</string>
     <string name="work_policy_privacy_settings_summary" msgid="5321618399949880194">"ਸੰਸਥਾ ਪ੍ਰਬੰਧਕ ਵੱਲੋਂ ਸੈਟਿੰਗਾਂ ਦਾ ਪ੍ਰਬੰਧਨ ਕੀਤਾ ਜਾਂਦਾ ਹੈ"</string>
     <string name="footer_learn_more_content_description" msgid="7749452309729272078">"<xliff:g id="SERVICE">%1$s</xliff:g> ਬਾਰੇ ਹੋਰ ਜਾਣੋ"</string>
     <string name="enterprise_privacy_settings" msgid="6496900796150572727">"ਪ੍ਰਬੰਧਿਤ ਵਾਹਨ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ"</string>

@@ -24,7 +24,6 @@
     <string name="auto_brightness_title" msgid="9124647862844666581">"ተለዋዋጭ ብሩህነት"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"የማያ ገጽ ብሩህነትን ከድባብ ጋር ያስተካክሉ"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"የምሽት ብርሃን በርቷል"</string>
-    <string name="night_mode_tile_label" msgid="6603597795502131664">"የሌሊት ሁነታ"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"አውታረ መረብ እና በይነመረብ"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"የተንቀሳቃሽ ስልክ አውታረ መረብ"</string>
     <string name="mobile_network_summary_count" msgid="760865625847664029">"{count,plural, =1{# ሲም}one{# ሲሞች}other{# ሲሞች}}"</string>
@@ -234,17 +233,17 @@
     <string name="tts_speech_rate" msgid="4512944877291943133">"የንግግር ፍጥነት"</string>
     <string name="tts_pitch" msgid="2389171233852604923">"የድምጽ ውፍረት"</string>
     <string name="tts_reset" msgid="6289481549801844709">"ዳግም አስጀምር"</string>
-    <string name="sound_settings" msgid="3072423952331872246">"ድምጽ"</string>
+    <string name="sound_settings" msgid="3072423952331872246">"ድምፅ"</string>
     <string name="ring_volume_title" msgid="3135241004980719442">"የጥሪ የድምጽ መጠን"</string>
-    <string name="navi_volume_title" msgid="946292066759195165">"የአሰሳ ድምጽ መጠን"</string>
+    <string name="navi_volume_title" msgid="946292066759195165">"የአሰሳ ድምፅ መጠን"</string>
     <string name="incoming_call_volume_title" msgid="6972117872424656876">"የደውል ቅላጼ"</string>
     <string name="notification_volume_title" msgid="6749411263197157876">"ማሳወቂያ"</string>
     <string name="media_volume_title" msgid="6697416686272606865">"ማህደረ መረጃ"</string>
     <string name="media_volume_summary" msgid="2961762827637127239">"ለሙዚቃ እና ቪዲዮዎች የድምፅ መጠን ያቀናብሩ"</string>
     <string name="alarm_volume_title" msgid="840384014895796587">"ማንቂያ"</string>
     <string name="ringtone_title" msgid="8370531086214517972">"የስልክ ጥሪ ቅላጼ"</string>
-    <string name="notification_ringtone_title" msgid="8661716239594010288">"ነባሪ የማሳወቂያ ድምጽ"</string>
-    <string name="alarm_ringtone_title" msgid="3257364170646440908">"ነባሪ የማንቂያ ድምጽ"</string>
+    <string name="notification_ringtone_title" msgid="8661716239594010288">"ነባሪ የማሳወቂያ ድምፅ"</string>
+    <string name="alarm_ringtone_title" msgid="3257364170646440908">"ነባሪ የማንቂያ ድምፅ"</string>
     <string name="ringtone_picker_save_title" msgid="4388137432517227001">"አስቀምጥ"</string>
     <string name="sound_alert_sounds" msgid="6838044721739163867">"የማንቂያ ድምፆች"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"የጥሪ ቅላጼ፣ ማሳወቂያዎች፣ ማንቂያ"</string>
@@ -301,14 +300,22 @@
     <string name="apps_and_notifications_settings" msgid="8704585874333781975">"መተግበሪያዎች እና ማሳወቂያዎች"</string>
     <string name="all_applications" msgid="7798210477486822168">"ሁሉንም መተግበሪያዎች አሳይ"</string>
     <string name="default_applications" msgid="1558183275638697087">"ነባሪ መተግበሪያዎች"</string>
+    <!-- no translation found for performance_impacting_apps (3439260699394720569) -->
+    <skip />
     <string name="app_permissions" msgid="32799922508313948">"የመተግበሪያ ፈቃዶች"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"መተግበሪያ ያለው የውሂብዎ መዳረሻን ይቆጣጠሩ"</string>
     <string name="applications_settings" msgid="794261395191035632">"የመተግበሪያ መረጃ"</string>
-    <string name="force_stop" msgid="2153183697014720520">"በኃይል አቁም"</string>
-    <string name="force_stop_dialog_title" msgid="3342850939200388694">"በኃይል አቁም?"</string>
-    <string name="force_stop_dialog_text" msgid="4354954014318432599">"መተግበሪያን በጉልበት እንዲቆም ካደረጉት ከአደብ ውጪ ሊሆን ይችላል።"</string>
-    <string name="prioritize_app_performance_dialog_title" msgid="2561577032540073080">"ለመተግበሪያ አፈጻጸም ቅድሚያ መስጠት ይብራ?"</string>
-    <string name="prioritize_app_performance_dialog_text" msgid="572525689800110355">"እሱን ማብራት ሊከሰት የሚችል የስርዓት አለመረጋጋትን ወይም የረጅም ጊዜ የሃርድዌር ተፅእኖን ሊያስከትል ይችላል። መቀጠል ይፈልጋሉ?"</string>
+    <!-- no translation found for force_stop (1616958676171167028) -->
+    <skip />
+    <!-- no translation found for force_stop_dialog_title (4481858344628934971) -->
+    <skip />
+    <string name="force_stop_dialog_text" msgid="4354954014318432599">"መተግበሪያን በጉልበት እንዲቆም ካደረጉት ከአደብ ውጭ ሊሆን ይችላል።"</string>
+    <!-- no translation found for force_stop_success_toast_text (2986272849275894254) -->
+    <skip />
+    <!-- no translation found for prioritize_app_performance_dialog_title (3205297520523665568) -->
+    <skip />
+    <!-- no translation found for prioritize_app_performance_dialog_text (4321564728229192878) -->
+    <skip />
     <string name="prioritize_app_performance_dialog_action_on" msgid="3556735049873419163">"አዎ"</string>
     <string name="prioritize_app_performance_dialog_action_off" msgid="2813324718753199319">"አይ፣ አመሰግናለሁ"</string>
     <string name="disable_text" msgid="4358165448648990820">"አሰናክል"</string>
@@ -379,6 +386,8 @@
     <string name="apps_permission_manager_title" msgid="8776335943862484131">"የፈቃድ አስተዳዳሪ"</string>
     <string name="apps_permission_manager_summary" msgid="4180424218228141274">"መተግበሪያ ያለው የውሂብዎ መዳረሻን ይቆጣጠሩ"</string>
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"ለረዳት እና ለሌሎች"</string>
+    <!-- no translation found for performance_impacting_apps_summary (7762122057244111162) -->
+    <skip />
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"ለስርዓት እና ሌሎች ቅንብሮች"</string>
     <string name="special_access" msgid="5730278220917123811">"ልዩ የመተግበሪያ መዳረሻ"</string>
     <string name="show_system" msgid="4401355756969485287">"ሥርዓት አሳይ"</string>
@@ -392,6 +401,10 @@
     <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"የ<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> ማሳወቂያ መዳረሻን ካጠፉ የአትረብሽ መዳረሻ እንዲሁም ሊጠፋ ይችላል።"</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"አጥፋ"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"ተወው"</string>
+    <!-- no translation found for performance_impacting_apps_description (7361464904617808444) -->
+    <skip />
+    <!-- no translation found for performance_impacting_apps_button_label (8277507326717608783) -->
+    <skip />
     <string name="premium_sms_access_title" msgid="1409118461646148686">"የፕሪሚየም ኤስኤምኤስ መዳረሻ"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"ፕሪሚየም ኤስኤምኤስ ውድ ገንዘብ ሊያስወጣዎት ይችላል፣ እና በአገልግሎት አቅራቢ ክፍያዎ ላይ ሒሳብ ያስጨምርብዎታል። ለመተግበሪያ ፈቃድን ካነቁ ያንን መተግበሪያ በመጠቀም ፕሪሚየም ኤስኤምኤስ መላክ ይችላሉ።"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"የአጠቃቀም መዳረሻ"</string>
@@ -481,11 +494,15 @@
     <string name="developer_options_settings" msgid="1530739225109118480">"የገንቢ አማራጮች"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"የዳግም ማስጀመሪያ አማራጮች"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"አውታረ መረብ፣ መተግበሪያዎች ወይም የመሣሪያ ዳግም ቅንብር"</string>
-    <string name="reset_network_title" msgid="1284233059990797263">"አውታረ መረብ ዳግም ያቀናብሩ"</string>
-    <string name="reset_network_desc" msgid="602381374544634925">"ይህ የሚከተሉትን ጨምሮ ሁሉንም የአውታረ መረብ ቅንብሮች ዳግም ያስጀምራቸዋል፦"</string>
-    <string name="reset_network_item_wifi" msgid="7569481589699982698"><li>"Wi‑Fi"</li></string>
+    <!-- no translation found for reset_network_title (3077846909739832734) -->
+    <skip />
+    <!-- no translation found for reset_network_desc (3332203703135823033) -->
+    <skip />
+    <!-- no translation found for reset_network_item_wifi (2876370861806060314) -->
+    <skip />
     <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"የሞባይል ውሂብ"</li></string>
-    <string name="reset_network_item_bluetooth" msgid="6035019931106921284"><li>"ብሉቱዝ"</li></string>
+    <!-- no translation found for reset_network_item_bluetooth (7475279871421815601) -->
+    <skip />
     <string name="reset_esim_title" msgid="8132107637911831211">"ሁሉንም የመኪና eSIMs ደምስስ"</string>
     <string name="reset_esim_desc" msgid="1437276625485586740">"ይሄ የእርስዎን የአገልግሎት ዕቅድ አይሰርዘውም።"</string>
     <string name="reset_esim_error_title" msgid="7245109418130525492">"eSIMsን ማቀናበር አይቻልም"</string>
@@ -583,7 +600,7 @@
     <string name="storage_clear_user_data_text" msgid="8787615136779130680">"ማከማቻን አጽዳ"</string>
     <string name="storage_clear_cache_btn_text" msgid="8449547925966775612">"መሸጎጫ አጽዳ"</string>
     <string name="storage_clear_data_dlg_title" msgid="5863775997588969879">"የመተግበሪያ ውሂብ ይሰረዝ?"</string>
-    <string name="storage_clear_data_dlg_text" msgid="795055288575727801">"የዚህ መተግበሪያ ውሂቦች ሁሉ በቋሚነት ይሰረዛሉ።እነዚህም ፋይሎችን፣ ቅንብሮችን፣ መለያዎችን፣ የውሂብ ጎታዎች እና የመሳሰሉትን ያካትታሉ።"</string>
+    <string name="storage_clear_data_dlg_text" msgid="3255314337644212283">"የዚህ መተግበሪያ ውሂብ እስከመጨረሻው ይሰረዛል። ይህ ፋይሎችን፣ ቅንብሮችን፣ የውሂብ ጎታዎችን እና ሌላ የመተግበሪያ ውሂብን ያካትታል።"</string>
     <string name="storage_clear_failed_dlg_text" msgid="6710485971686866306">"ለመተግበሪያው ማከማቻን ማጽዳት አልተቻለም"</string>
     <string name="storage_unmount_success" msgid="1553591517580407021">"<xliff:g id="NAME">%1$s</xliff:g> ደህንነቱ ተጠብቆ ወጥቷል"</string>
     <string name="storage_unmount_failure" msgid="4591934911541762883">"ደህንነቱ እንደተጠበቀ <xliff:g id="NAME">%1$s</xliff:g>ን ማስወጣት አልተቻልም"</string>
@@ -708,7 +725,6 @@
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{ከ# አሃዝ ያነሰ መሆን አለበት}one{ከ# አሃዞች ያነሰ መሆን አለበት}other{ከ# አሃዞች ያነሰ መሆን አለበት}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"እየጨመሩ የሚሄዱ፣ እየቀነሱ የሚሄዱ ወይም ተደጋጋሚ የአኃዞች ተከታታይ አይፈቀድም"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"የማያ ገጽ መቆለፊያ አማራጮች"</string>
-    <string name="build_info_fmt" msgid="5592554123908086426">"<xliff:g id="FINGERPRINT">%1$s</xliff:g>\n<xliff:g id="DATE">%2$s</xliff:g> : <xliff:g id="NUM_DAYS">%3$s</xliff:g> ቀኖች በፊት"</string>
     <string name="credentials_reset" msgid="873900550885788639">"መረጃዎችን አጽዳ"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"ሁሉንም ምስክሮች አስወግድ"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"ሁሉም ይዘቶች ይወገድ?"</string>
@@ -778,6 +794,7 @@
     <string name="number_of_device_admins" msgid="7508826094096451485">"{count,plural, =1{# የገበረ መተግበሪያ}one{# የገበሩ መተግበሪያዎች}other{# የገበሩ መተግበሪያዎች}}"</string>
     <string name="number_of_device_admins_none" msgid="5547493703413973954">"ምንም የገበሩ መተግበሪያዎች የሉም"</string>
     <string name="work_policy_privacy_settings" msgid="5263835989260149968">"የ<xliff:g id="ORGANIZATION_NAME">%1$s</xliff:g> ተሽከርካሪ መመሪያ"</string>
+    <string name="work_policy_privacy_settings_no_org_name" msgid="8011687012493940230">"የተሽከርካሪ መመሪያ"</string>
     <string name="work_policy_privacy_settings_summary" msgid="5321618399949880194">"በድርጅቱ አስተዳዳሪ የሚተዳደሩ ቅንብሮች"</string>
     <string name="footer_learn_more_content_description" msgid="7749452309729272078">"ስለ<xliff:g id="SERVICE">%1$s</xliff:g> የበለጠ ይወቁ"</string>
     <string name="enterprise_privacy_settings" msgid="6496900796150572727">"የሚተዳደር የተሽከርካሪ መረጃ"</string>
