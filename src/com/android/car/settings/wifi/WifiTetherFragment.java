@@ -87,6 +87,11 @@ public class WifiTetherFragment extends SettingsFragment {
                     }
                 })
                 .build();
+        getContext().registerReceiver(mReceiver,
+                new IntentFilter(WifiManager.WIFI_AP_STATE_CHANGED_ACTION));
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mRestartReceiver,
+                new IntentFilter(
+                        WifiTetherBasePreferenceController.ACTION_RESTART_WIFI_TETHERING));
     }
 
     @Override
@@ -106,11 +111,6 @@ public class WifiTetherFragment extends SettingsFragment {
     @Override
     public void onStart() {
         super.onStart();
-        getContext().registerReceiver(mReceiver,
-                new IntentFilter(WifiManager.WIFI_AP_STATE_CHANGED_ACTION));
-        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mRestartReceiver,
-                new IntentFilter(
-                        WifiTetherBasePreferenceController.ACTION_RESTART_WIFI_TETHERING));
         mCarWifiManager.start();
     }
 
@@ -118,13 +118,13 @@ public class WifiTetherFragment extends SettingsFragment {
     public void onStop() {
         super.onStop();
         mCarWifiManager.stop();
-        getContext().unregisterReceiver(mReceiver);
-        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mRestartReceiver);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+        getContext().unregisterReceiver(mReceiver);
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mRestartReceiver);
         mCarWifiManager.destroy();
     }
 

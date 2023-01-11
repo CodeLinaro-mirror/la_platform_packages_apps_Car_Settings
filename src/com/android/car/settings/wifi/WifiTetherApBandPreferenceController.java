@@ -46,6 +46,7 @@ public class WifiTetherApBandPreferenceController extends
     private String[] mBandEntries;
     private String[] mBandSummaries;
     private int mBand;
+    private int mLastBand;
 
     public WifiTetherApBandPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
@@ -82,6 +83,7 @@ public class WifiTetherApBandPreferenceController extends
         super.onCreateInternal();
         updatePreferenceEntries();
         mBand = getCarSoftApBand();
+        mLastBand = mBand;
         getPreference().setEntries(mBandSummaries);
         getPreference().setEntryValues(mBandEntries);
         getPreference().setValue(getBandEntry());
@@ -168,6 +170,10 @@ public class WifiTetherApBandPreferenceController extends
     }
 
     private void updateApBand() {
+        if (mBand == mLastBand) {
+            return;
+        }
+        mLastBand = mBand;
         List<Integer> bands = new ArrayList<>();
         if (isDualApSupported() && mBand == SOFTAP_CONCURRENT_BAND_2GHZ_AND_5GHZ) {
             bands.add(SoftApConfiguration.BAND_2GHZ);
