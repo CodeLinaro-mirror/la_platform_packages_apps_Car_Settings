@@ -122,6 +122,9 @@ public class HotspotRow extends SettingsQCItem {
     }
 
     private String getSubtitle() {
+        if (!HotspotQCUtils.isHotspotEnabled(mWifiManager)) {
+            return getContext().getString(R.string.wifi_hotspot_state_off);
+        }
         return WifiTetherUtil.getHotspotSubtitle(getContext(),
                 mWifiManager.getSoftApConfiguration(),
                 HotspotQCUtils.isHotspotEnabled(mWifiManager), mConnectedDevicesCount);
