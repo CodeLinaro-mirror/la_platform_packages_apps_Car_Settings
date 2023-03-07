@@ -82,34 +82,22 @@ public class AddAccountActivity extends Activity {
                 LOG.v("Account manager future is not done.");
                 finish();
             }
-            boolean done = true;
             try {
                 Bundle result = future.getResult();
                 Intent intent = result.getParcelable(AccountManager.KEY_INTENT);
-                if (intent != null) {
-                    done = false;
-                    Bundle addAccountOptions = new Bundle();
-                    addAccountOptions.putBoolean(EXTRA_HAS_MULTIPLE_USERS,
-                            hasMultipleUsers(AddAccountActivity.this));
-                    addAccountOptions.putParcelable(EXTRA_USER, mUserHandle);
-                    intent.putExtras(addAccountOptions);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivityForResultAsUser(
-                            intent, ADD_ACCOUNT_REQUEST, mUserHandle);
-                } else {
-                    setResult(RESULT_OK);
-                    if (mPendingIntent != null) {
-                        mPendingIntent.cancel();
-                        mPendingIntent = null;
-                    }
-                }
+                Bundle addAccountOptions = new Bundle();
+                addAccountOptions.putBoolean(EXTRA_HAS_MULTIPLE_USERS,
+                        hasMultipleUsers(AddAccountActivity.this));
+                addAccountOptions.putParcelable(EXTRA_USER, mUserHandle);
+                intent.putExtras(addAccountOptions);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivityForResultAsUser(
+                        new Intent(intent), ADD_ACCOUNT_REQUEST, mUserHandle);
                 LOG.v("account added: " + result);
             } catch (OperationCanceledException | IOException | AuthenticatorException e) {
                 LOG.v("addAccount error: " + e);
             } finally {
-                if (done) {
-                    finish();
-                }
+                finish();
             }
         }
     };
