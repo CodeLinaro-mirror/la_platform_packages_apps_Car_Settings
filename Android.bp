@@ -46,6 +46,10 @@ android_library {
 
     libs: [
         "android.car",
+        "telephony-common",
+        "ims-common",
+        "telephony-ext",
+        "extphonelib",
     ],
 
     manifest: "AndroidManifest.xml",
