@@ -151,8 +151,7 @@ public class FallbackHome extends Activity {
     };
 
     private void maybeFinish() {
-        UserManager userManager = getSystemService(UserManager.class);
-        if (userManager.isUserUnlocked()) {
+        if (getSystemService(UserManager.class).isUserUnlocked()) {
             final Intent homeIntent = new Intent(Intent.ACTION_MAIN)
                     .addCategory(Intent.CATEGORY_HOME);
             final ResolveInfo homeInfo = getPackageManager().resolveActivity(homeIntent, 0);
@@ -162,9 +161,7 @@ public class FallbackHome extends Activity {
                 mHandler.sendEmptyMessageDelayed(0, 500);
             } else {
                 String homePackageName = homeInfo.activityInfo.packageName;
-                boolean isMultiUserNoDriver =
-                        userManager.isVisibleBackgroundUsersOnDefaultDisplaySupported();
-                if (UserHelperLite.isHeadlessSystemUser(getUserId()) && !isMultiUserNoDriver) {
+                if (UserHelperLite.isHeadlessSystemUser(getUserId())) {
                     // This is the transient state in HeadlessSystemMode to boot for user 10+.
                     LOG.d("User 0 unlocked, but will not launch real home: " + homePackageName);
                     return;
