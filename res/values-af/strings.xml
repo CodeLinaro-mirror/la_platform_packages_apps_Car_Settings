@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Saambindversoek"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Tik om met <xliff:g id="DEVICE_NAME">%1$s</xliff:g> saam te bind."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Kies Bluetooth-toestel"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Foon"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Media"</string>
     <string name="language_settings" msgid="2079258598337245546">"Tale"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Tale en invoer"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Voorgestel"</string>
@@ -596,7 +599,7 @@
     <string name="no_accounts_added" msgid="5148163140691096055">"Geen rekeninge is bygevoeg nie"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Rekeninge van <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Sinkroniseer data outomaties"</string>
-    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Laat programme data outomaties herlaai"</string>
+    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Laat apps data outomaties herlaai"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="8068513213445588532">"Laat outomatiese datasinkronisering toe?"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="8683935973719807821">"Enige veranderinge wat jy op die web aan jou rekeninge maak, sal outomaties na jou voertuig gekopieer word.\n\nSommige rekeninge kan ook outomaties enige veranderinge wat jy op die voertuig maak, na die web kopieer."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="6683011954002351091">"Moenie outomatiese datasinkronisering toelaat nie?"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Kanselleer"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Bevestig"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Moet minstens 4 karakters lank wees"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Hierdie slotsoort is nie beskikbaar nie."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Mag net syfers 0-9 bevat."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Toesteladministrateur laat nie toe dat \'n onlangse PIN gebruik word nie"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Jou IT-administrateur blokkeer algemene PIN\'e. Probeer \'n ander PIN."</string>

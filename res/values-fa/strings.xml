@@ -221,6 +221,12 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"درخواست مرتبط‌سازی"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"برای مرتبط‌سازی با <xliff:g id="DEVICE_NAME">%1$s</xliff:g> ضربه بزنید."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"انتخاب دستگاه بلوتوث"</string>
+    <!-- no translation found for bluetooth_bonded_bluetooth_toggle_content_description (6800772154405846597) -->
+    <skip />
+    <!-- no translation found for bluetooth_bonded_phone_toggle_content_description (8152794643249938377) -->
+    <skip />
+    <!-- no translation found for bluetooth_bonded_media_toggle_content_description (7803420585378155404) -->
+    <skip />
     <string name="language_settings" msgid="2079258598337245546">"زبان‌ها"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"زبان‌ها و ورودی"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"پیشنهادی"</string>
@@ -688,6 +694,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"لغو"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"تأیید"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"باید حداقل ۴ نویسه داشته باشد"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"این نوع قفل دردسترس نیست."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"فقط می‌تواند اعداد ۰ تا ۹ داشته باشد."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"سرپرست دستگاه اجازه استفاده از پین اخیر را نمی‌دهد"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"«پین‌های رایج» توسط سرپرست فناوری اطلاعات مسدود شده‌اند. پین دیکری را امتحان کنید."</string>

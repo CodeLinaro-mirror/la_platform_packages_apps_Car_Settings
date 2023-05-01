@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"配对请求"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"点按即可与 <xliff:g id="DEVICE_NAME">%1$s</xliff:g> 配对。"</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"选择蓝牙设备"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"蓝牙"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"手机"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"媒体"</string>
     <string name="language_settings" msgid="2079258598337245546">"语言"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"语言和输入法"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"建议"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"取消"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"确认"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"必须至少包含 4 个字符"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"不支持这个锁定类型。"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"只能包含 0-9 的数字。"</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"设备管理员不允许使用最近用过的 PIN 码"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"您的 IT 管理员已禁止使用常用 PIN 码。请尝试使用其他 PIN 码。"</string>

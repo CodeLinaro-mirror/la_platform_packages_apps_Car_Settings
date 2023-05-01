@@ -221,6 +221,12 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Yêu cầu ghép nối"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Nhấn để ghép nối với <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Chọn thiết bị Bluetooth"</string>
+    <!-- no translation found for bluetooth_bonded_bluetooth_toggle_content_description (6800772154405846597) -->
+    <skip />
+    <!-- no translation found for bluetooth_bonded_phone_toggle_content_description (8152794643249938377) -->
+    <skip />
+    <!-- no translation found for bluetooth_bonded_media_toggle_content_description (7803420585378155404) -->
+    <skip />
     <string name="language_settings" msgid="2079258598337245546">"Ngôn ngữ"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Ngôn ngữ và nhập liệu"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Đề xuất"</string>
@@ -688,6 +694,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Hủy"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Xác nhận"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Mật khẩu phải chứa ít nhất 4 ký tự"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Không có loại khoá này."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Chỉ được chứa các chữ số từ 0 đến 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Quản trị viên thiết bị không cho phép dùng mã PIN gần đây"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Quản vị viên CNTT đã chặn các mã PIN phổ biến. Hãy thử mã PIN khác."</string>

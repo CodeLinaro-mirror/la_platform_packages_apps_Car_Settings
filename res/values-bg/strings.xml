@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Заявка за сдвояване"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Докоснете за сдвояване с(ъс) <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Изберете устройство с Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Телефон"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Мултимедия"</string>
     <string name="language_settings" msgid="2079258598337245546">"Езици"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Езици и въвеждане"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Предложени"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Отказ"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Потвърждаване"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Трябва да съдържа поне 4 знака"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Този тип заключване не е налице"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Трябва да съдържа само цифри от 0 до 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Администраторът на устройството не разрешава ползването на скорошен ПИН"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Често срещаните ПИН кодове се блокират от системния ви администратор. Опитайте с друг ПИН код."</string>

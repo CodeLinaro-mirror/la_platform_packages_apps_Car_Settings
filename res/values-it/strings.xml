@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Richiesta accoppiamento"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Tocca per l\'accoppiamento con <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Scegli il dispositivo Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Telefono"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Contenuti multimediali"</string>
     <string name="language_settings" msgid="2079258598337245546">"Lingue"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Lingue e immissione"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Suggerite"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Annulla"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Conferma"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Deve contenere almeno 4 caratteri"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Questo tipo di blocco non è disponibile."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Deve contenere solo cifre da 0 a 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"L\'amministratore del dispositivo non consente l\'utilizzo di un PIN recente"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"I PIN comuni sono stati bloccati dall\'amministratore IT. Prova a usare un altro PIN."</string>

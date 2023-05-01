@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Zahteva za seznanitev"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Dotaknite se, če želite opraviti seznanitev z napravo <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Izbira naprave Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Telefon"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Predstavnost"</string>
     <string name="language_settings" msgid="2079258598337245546">"Jeziki"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Jeziki in vnos"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Predlagano"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Prekliči"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Potrdi"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Geslo mora vsebovati najmanj 4 znake"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Ta vrsta zaklepanja ni na voljo."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Vsebovati sme samo števke od 0 do 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Skrbnik naprave ne dovoli uporabe nedavne kode PIN."</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Skrbnik za IT je blokiral pogoste kode PIN. Poskusite z drugo kodo PIN."</string>
