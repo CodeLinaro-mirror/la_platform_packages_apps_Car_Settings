@@ -113,9 +113,13 @@ public class WifiTetherApBandPreferenceController extends
     }
 
     @Override
+    protected void onStartInternal() {
+        updateApBand(); // updating AP band because mBandIndex may have been assigned a new value.
+    }
+
+    @Override
     public void updateState(ListPreference preference) {
         super.updateState(preference);
-        updateApBand(); // updating AP band because mBandIndex may have been assigned a new value.
 
         if (!is5GhzBandSupported() && !is6GhzBandSupported()) {
             preference.setEnabled(false);
