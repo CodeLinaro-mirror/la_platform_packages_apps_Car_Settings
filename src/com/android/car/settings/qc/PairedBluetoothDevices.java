@@ -127,7 +127,7 @@ public class PairedBluetoothDevices extends SettingsQCItem {
         if (filteredDevices.isEmpty()) {
             listBuilder.addRow(new QCRow.Builder()
                     .setIcon(Icon.createWithResource(getContext(),
-                            R.drawable.ic_settings_bluetooth))
+                            R.drawable.ic_add))
                     .setTitle(getContext().getString(R.string.qc_bluetooth_on_no_devices_info))
                     .build());
             return listBuilder.build();
@@ -289,14 +289,18 @@ public class PairedBluetoothDevices extends SettingsQCItem {
         extras.putString(EXTRA_DEVICE_KEY, device.getAddress());
         PendingIntent action = getBroadcastIntent(extras, requestCode);
 
+        boolean isReadOnlyForZone = isReadOnlyForZone();
+        PendingIntent disabledPendingIntent = isReadOnlyForZone
+                ? QCUtils.getDisabledToastBroadcastIntent(getContext())
+                : getActionDisabledDialogIntent(getContext(), DISALLOW_CONFIG_BLUETOOTH);
+
         return new QCActionItem.Builder(QC_TYPE_ACTION_TOGGLE)
                 .setAvailable(available)
                 .setChecked(checked)
                 .setEnabled(enabled && isWritableForZone())
-                .setClickableWhileDisabled(clickableWhileDisabled)
+                .setClickableWhileDisabled(clickableWhileDisabled | isReadOnlyForZone)
                 .setAction(action)
-                .setDisabledClickAction(getActionDisabledDialogIntent(getContext(),
-                        DISALLOW_CONFIG_BLUETOOTH))
+                .setDisabledClickAction(disabledPendingIntent)
                 .setIcon(icon)
                 .build();
     }
