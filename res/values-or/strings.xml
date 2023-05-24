@@ -145,7 +145,7 @@
     <string name="wifi_hotspot_name_title" msgid="8844779338692535356">"ହଟ୍‌ସ୍ପଟ୍ ନାମ"</string>
     <string name="wifi_hotspot_name_summary_connecting" msgid="5262510450498600038">"<xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g> ଚାଲୁ ହେଉଛି..."</string>
     <string name="wifi_hotspot_name_summary_connected" msgid="7421325340822195506">"<xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g> ସହ ଅନ୍ୟ ଡିଭାଇସ୍‌ଗୁଡ଼ିକ ସଂଯୁକ୍ତ ହୋଇପାରିବ"</string>
-    <string name="wifi_hotspot_password_title" msgid="4103948315849351988">"ହଟସ୍ପଟ୍ ପାସ୍‌ୱାର୍ଡ"</string>
+    <string name="wifi_hotspot_password_title" msgid="4103948315849351988">"ହଟସ୍ପଟ ପାସୱାର୍ଡ"</string>
     <string name="wifi_hotspot_security_title" msgid="2299925790743587725">"ସୁରକ୍ଷା"</string>
     <string name="wifi_hotspot_wpa3_sae" msgid="4752416911592950174">"WPA3-Personal"</string>
     <string name="wifi_security_psk_sae" msgid="8738371461215752280">"WPA2/WPA3-Personal"</string>
@@ -247,7 +247,7 @@
     <string name="ringtone_title" msgid="8370531086214517972">"ଫୋନ ରିଂଟୋନ"</string>
     <string name="notification_ringtone_title" msgid="8661716239594010288">"ଡିଫଲ୍ଟ ବିଜ୍ଞପ୍ତି ସାଉଣ୍ଡ"</string>
     <string name="alarm_ringtone_title" msgid="3257364170646440908">"ଡିଫଲ୍ଟ ଆଲାରାମ ସାଉଣ୍ଡ"</string>
-    <string name="ringtone_picker_save_title" msgid="4388137432517227001">"ସେଭ୍ କରନ୍ତୁ"</string>
+    <string name="ringtone_picker_save_title" msgid="4388137432517227001">"ସେଭ କରନ୍ତୁ"</string>
     <string name="sound_alert_sounds" msgid="6838044721739163867">"ଆଲର୍ଟ ସାଉଣ୍ଡ"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"ରିଂଟୋନ୍, ବିଜ୍ଞପ୍ତି, ଆଲାରାମ୍"</string>
     <string name="display_brightness" msgid="5718970880488110840">"ଉଜ୍ଜ୍ୱଳତା"</string>
@@ -678,7 +678,7 @@
     <string name="lock_settings_enter_password" msgid="2636669926649496367">"ନିଜ ପାସ୍‌ୱର୍ଡ ଲେଖନ୍ତୁ"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"ସୁରକ୍ଷା ପାଇଁ, ଏକ PIN ସେଟ୍‌ କରନ୍ତୁ"</string>
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"ନିଜ PIN ପୁଣି ପ୍ରବେଶ କରନ୍ତୁ"</string>
-    <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PINରେ ଅତିକମ୍‌ରେ 4ଟିଅଙ୍କ ରହିବା ଦରକାର"</string>
+    <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PIN ଅତିକମରେ 4 ଅଙ୍କ ବିଶିଷ୍ଟ ହେବା ଜରୁରୀ"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"Pin ଅମାନ୍ୟ ଅଟେ, ଅତିକମରେ 4ଟି ସଂଖ୍ୟା ରହିବା ଆବଶ୍ୟକ।"</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"PINଗୁଡ଼ିକ ମେଳ ହେଉନାହିଁ"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"PIN ସେଭ୍‌ କରିବାରେ ତ୍ରୁଟି"</string>
@@ -690,7 +690,7 @@
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"ଖାଲି କରନ୍ତୁ"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"ବାତିଲ କରନ୍ତୁ"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"ନିଶ୍ଚିତ"</string>
-    <string name="choose_lock_password_hints" msgid="3903696950202491593">"ଅତିକମ୍‌ରେ 4 ଅକ୍ଷର ରହିବା ଦରକାର"</string>
+    <string name="choose_lock_password_hints" msgid="3903696950202491593">"ଅତିକମରେ 4ଟି କେରେକ୍ଟର ହେବା ଜରୁରୀ"</string>
     <string name="locktype_unavailable" msgid="2678317466336249126">"ଏହି ଲକ ପ୍ରକାର ଉପଲବ୍ଧ ନାହିଁ।"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"କେବଳ 0-9 ପର୍ଯ୍ୟନ୍ତ ସଂଖ୍ୟା ରହିବା ଦରକାର"</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"ଏକ ସାମ୍ପ୍ରତିକ ପିନ୍‌ର ବ୍ୟବହାରକୁ ଡିଭାଇସ୍‌ ଆଡ୍‌ମିନ୍‌ ଅନୁମତି ଦେବନାହିଁ"</string>
