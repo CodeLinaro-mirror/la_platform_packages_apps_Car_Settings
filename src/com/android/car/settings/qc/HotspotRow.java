@@ -122,6 +122,7 @@ public class HotspotRow extends SettingsQCItem {
     }
 
     private String getSubtitle() {
+        // Early exit in case Wi-Fi is not ready, otherwise it may cause an ANR.
         if (!HotspotQCUtils.isHotspotEnabled(mWifiManager)) {
             return getContext().getString(R.string.wifi_hotspot_state_off);
         }
