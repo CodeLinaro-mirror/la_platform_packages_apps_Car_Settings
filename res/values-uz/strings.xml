@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Juftlash talabi"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> qurilmasiga ulanish uchun bosing."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Bluetooth qurilmani tanlang"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Telefon"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Media"</string>
     <string name="language_settings" msgid="2079258598337245546">"Tillar"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Tillar va matn kiritish"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Taklif qilingan"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Bekor qilish"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Tasdiqlash"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Kamida 4 ta belgi kiriting"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Bu qulf turi mavjud emas."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"PIN kod faqat 0-9 raqamlaridan iborat bo‘lishi lozim."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Qurilma administratori oxirgi PIN koddan yana foydalanishga ruxsat bermaydi"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Oddiy PIN kodlar AT admini tomonidan bloklangan. Murakkabroq PIN kod tanlang."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Demodan chiqish"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"YOPISH"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"Avtomobilda harakatlanayotganda bu funksiya ishlamaydi"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"Bu sozlamani oʻzgartirishni haydovchidan soʻrang"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"Bu amalni bajara olmaysiz"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Avtomobilda harakatlanayotganda profil kiritilmaydi"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Qidiruv"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistent va ovoz"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Profil kiritish"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Bu profilni oʻchirish"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Profil kiritish"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Haydovchi hozirda ushbu profildan foydalanmoqda. U profildan chiqqanida yana urinib koʻring."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Ekran yorqinligi"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Qurilmalaringizni koʻrish uchun Bluetoothni yoqing"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Qurilmani ulash uchun Bluetooth sozlamalarini oching"</string>
@@ -846,7 +853,7 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"Axborot-hordiq tizimi avtomobil yonganda tiklanadi"</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"Asliga qaytarish uchun avtomobilni toʻxtating."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Bu sozlamani hozirda oʻzgartirish imkonsiz"</string>
-    <string name="accessibility_settings_title" msgid="2615042088419230347">"Maxsus imkoniyatlar"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"Qulayliklar"</string>
     <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"Taglavhalar"</string>
     <string name="captions_settings_title" msgid="5738067618097295831">"Taglavha sozlamalari"</string>
     <string name="captions_settings_off" msgid="7568096968016015626">"Oʻchiq"</string>

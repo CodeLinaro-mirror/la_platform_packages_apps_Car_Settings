@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Demande d\'association"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Touchez pour associer à <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Sélectionner un appareil Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Téléphone"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Contenu multimédia"</string>
     <string name="language_settings" msgid="2079258598337245546">"Langues"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Langues et modes d\'entrée"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Suggérées"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Annuler"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Confirmer"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Doit comprendre au moins quatre caractères"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Ce type de verrouillage n\'est pas offert."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Doit contenir uniquement des chiffres contenus entre 0 et 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"L\'administrateur de l\'appareil ne permet pas l\'utilisation d\'un NIP récent"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Les NIP communs sont bloqués par votre administrateur informatique. Essayez un NIP différent."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Quitter le mode démo"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"IGNORER"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"Cette fonctionnalité n\'est pas accessible durant la conduite"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"Demandez au conducteur de modifier le paramètre"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"Vous ne pouvez pas effectuer cette action"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Impossible d\'ajouter un profil durant la conduite"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Recherche"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistant et voix"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Ajouter un profil"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Supprimer ce profil"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Ajouter un profil"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Ce profil est actuellement connecté en tant que conducteur. Réessayez lorsque le profil n\'a pas ce rôle."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Luminosité de l\'écran"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Pour afficher vos appareils, activez le Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Pour associer un appareil, ouvrez les paramètres Bluetooth"</string>

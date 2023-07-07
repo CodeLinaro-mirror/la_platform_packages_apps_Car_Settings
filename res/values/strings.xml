@@ -468,6 +468,14 @@
     <!-- Title for page which supports selecting a Bluetooth device from other applications. [CHAR_LIMIT=40]-->
     <string name="bluetooth_device_picker">Choose Bluetooth device</string>
 
+    <!-- Bluetooth paired/bonded device action items - toggle switches --><skip/>
+    <!-- Content description for bluetooth toggle switch for a paired/bonded bluetooth device. [CHAR LIMIT=NONE] -->
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description">Bluetooth</string>
+    <!-- Content description for phone toggle switch for a paired/bonded bluetooth device. [CHAR LIMIT=NONE] -->
+    <string name="bluetooth_bonded_phone_toggle_content_description">Phone</string>
+    <!-- Content description for media toggle switch for a paired/bonded bluetooth device. [CHAR LIMIT=NONE] -->
+    <string name="bluetooth_bonded_media_toggle_content_description">Media</string>
+
     <!-- Language settings screen heading. [CHAR LIMIT=30] -->
     <string name="language_settings">Languages</string>
     <!-- Title of Languages & input settings screen. [CHAR LIMIT=30] -->
@@ -1767,6 +1775,10 @@
 
     <!-- Warn user that the action they are trying to perform is blocked while the car is in motion [CHAR LIMIT=60] -->
     <string name="restricted_while_driving">Feature not available while driving</string>
+    <!-- Warn user that the action they are trying to perform is blocked and only available for the driver user [CHAR LIMIT=60] -->
+    <string name="restricted_for_passenger">Request driver to change setting</string>
+    <!-- Warn user that the action they are trying to perform is blocked and unavailable [CHAR LIMIT=60] -->
+    <string name="restricted_for_driver">You can\'t perform this action</string>
     <!-- Warn user that adding a profile is blocked while the car is in motion [CHAR LIMIT=60] -->
     <string name="add_user_restricted_while_driving">Can\'t add profile while driving</string>
 
@@ -1804,6 +1816,8 @@
     <string name="delete_this_profile_text">Delete this profile</string>
     <!-- Profile settings add profile menu [CHAR LIMIT=35] -->
     <string name="add_profile_text">Add profile</string>
+    <!-- Error message when a profile cannot be deleted because it is currently in use by the driver [CHAR LIMIT=105] -->
+    <string name="cannot_remove_driver_profile">This profile is currently signed in as driver. Try again when the profile is not in use as the driver.</string>
 
     <!-- Quick Controls --><skip/>
     <!-- Brightness quick control, control name to change display brightness [CHAR LIMIT=40] -->

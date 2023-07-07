@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"페어링 요청"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g>에 페어링하려면 탭하세요."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"블루투스 기기 선택"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"블루투스"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"전화"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"미디어"</string>
     <string name="language_settings" msgid="2079258598337245546">"언어"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"언어 및 입력"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"추천"</string>
@@ -323,7 +326,7 @@
     <string name="storage_application_label" msgid="5911779903670978586">"저장용량 및 캐시"</string>
     <string name="prioritize_app_performance_label" msgid="7264505023347026606">"앱 성능 우선순위 지정"</string>
     <string name="application_version_label" msgid="8556889839783311649">"버전: %1$s"</string>
-    <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"부여된 권한이 없습니다."</string>
+    <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"부여된 권한 없음"</string>
     <string name="runtime_permissions_summary_no_permissions_requested" msgid="4074220596273432442">"요청한 권한이 없습니다."</string>
     <string name="unused_apps" msgid="648471933781010395">"사용하지 않는 앱"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{사용하지 않는 앱 #개}other{사용하지 않는 앱 #개}}"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"취소"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"확인"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"4자 이상이어야 합니다."</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"사용할 수 없는 잠금 유형입니다."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"숫자 0~9만 포함해야 합니다."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"기기 관리자가 최근 PIN 사용을 허용하지 않습니다."</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"IT 관리자가 일반적으로 사용되는 PIN을 차단했습니다. 다른 PIN을 시도해 보세요."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"데모 종료"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"닫기"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"운전 중에 사용할 수 없는 기능입니다."</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"운전자에게 설정 변경을 요청하세요."</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"이 작업을 실행할 수 없습니다."</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"운전 중에는 프로필을 추가할 수 없습니다."</string>
     <string name="default_search_query" msgid="3137420627428857068">"검색"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"어시스턴트 및 음성"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"프로필 추가"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"이 프로필 삭제"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"프로필 추가"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"이 프로필은 운전자로 로그인된 상태입니다. 운전자가 프로필을 사용하지 않을 때 다시 시도해 보세요."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"디스플레이 밝기"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"기기를 표시하려면 블루투스를 사용 설정하세요."</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"기기를 페어링하려면 블루투스 설정을 여세요."</string>

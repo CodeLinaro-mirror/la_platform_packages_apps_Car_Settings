@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Solicitare de conectare"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Atinge pentru a asocia cu <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Alege dispozitivul Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Telefon"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Media"</string>
     <string name="language_settings" msgid="2079258598337245546">"Limbi"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Limbi și introducere de text"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Sugerate"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Anulează"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Confirmați"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Trebuie să conțină minimum 4 caractere"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Acest tip de blocare este indisponibil."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Trebuie să conțină numai cifre de la 0 la 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Administratorul dispozitivului nu permite folosirea unui PIN recent"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Codurile PIN obișnuite sunt blocate de administratorul IT. Încercați alt cod PIN."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Închide demonstrația"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"RESPINGE"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"Funcția nu este disponibilă când conduci"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"Solicită ca șoferul să schimbe setarea"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"Nu poți realiza această acțiune"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Nu poți adăuga un profil în timp ce conduci"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Căutați"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Asistent și voce"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Adaugă un profil"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Șterge profilul"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Adaugă un profil"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Profilul este conectat momentan ca șofer. Încearcă din nou când profilul nu este în uz ca șofer."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Luminozitatea ecranului"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Pentru a vedea dispozitivele, activează Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Pentru a asocia un dispozitiv, deschide setările Bluetooth"</string>

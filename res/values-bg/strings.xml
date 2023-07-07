@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Заявка за сдвояване"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Докоснете за сдвояване с(ъс) <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Изберете устройство с Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Телефон"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Мултимедия"</string>
     <string name="language_settings" msgid="2079258598337245546">"Езици"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Езици и въвеждане"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Предложени"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Отказ"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Потвърждаване"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Трябва да съдържа поне 4 знака"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Този тип заключване не е налице"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Трябва да съдържа само цифри от 0 до 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Администраторът на устройството не разрешава ползването на скорошен ПИН"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Често срещаните ПИН кодове се блокират от системния ви администратор. Опитайте с друг ПИН код."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Демонстр. режим: Изход"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"ОТХВЪРЛЯНЕ"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"Функцията не е налице по време на шофиране"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"Поискайте от шофьора да промени настройката"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"Не можете да извършите това действие"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Потр. профил не може да се добави по време на шофиране"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Търсете"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Асистент и Voice"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Добавяне на потребителски профил"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Изтриване на този потр. профил"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Добавяне на потребителски профил"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Понастоящем този потребителски профил се използва от шофьор. Опитайте отново, когато не се използва така."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Яркост на екрана"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"За да видите устройствата си, включете Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"За да сдвоите устройство, отворете настройките за Bluetooth"</string>

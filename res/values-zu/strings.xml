@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Isicelo sokubhangqa"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Thepha ukuze ubhanqe ne-<xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Khetha idivayisi ye-Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"I-Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Ifoni"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Imidiya"</string>
     <string name="language_settings" msgid="2079258598337245546">"Izilimi"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Izilimi nokokufaka"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Okuphakanyisiwe"</string>
@@ -299,7 +302,7 @@
     <string name="units_unit_name_liter_per_hundred_kilometers" msgid="4867647387452453552">"Amalitha ngamakhilomitha ayikhulu"</string>
     <string name="apps_and_notifications_settings" msgid="8704585874333781975">"Izinhlelo zokusebenza nezaziso"</string>
     <string name="all_applications" msgid="7798210477486822168">"Bonisa zonke izinhlelo zokusebenza"</string>
-    <string name="default_applications" msgid="1558183275638697087">"Izinhlelo zokusebenza ezizenzakalelayo"</string>
+    <string name="default_applications" msgid="1558183275638697087">"Ama-app azenzekelayo"</string>
     <string name="performance_impacting_apps" msgid="3439260699394720569">"Ama-app anomthelela ekusebenzeni"</string>
     <string name="app_permissions" msgid="32799922508313948">"Izimvume zohlelo lokusebenza"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"Lawula ukufinyelela kwi-app kudatha yakho"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Khansela"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Qinisekisa"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Kumele okungenani ibe izinhlamvu ezingu-4"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Lolu hlobo lwesikhiya alutholakali."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Kumele iqukathe amadijithi angu-0-9 kuphela."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Umlawuli wedivayisi akavumeli ukusebenzisa iphinikhodi yakamuva"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Ama-PIN avamile avinjelwe umlawuli wakho we-IT. Zama i-PIN ehlukile."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Phuma kudemo"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"CASHISA"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"Isici asitholakali ngenkathi ushayela"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"Cela umshayeli ukuthi ashintshe amasethingi"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"Awukwazi ukwenza lesi senzo"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Ayikwazi ukungeza iphrofayela elisha ngenkathi ushayela"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Sesha"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Umsizi nezwi"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Engeza iphrofayela"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Susa le phrofayela"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Engeza iphrofayela"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Le phrofayela okwamanje ingene ngemvume njengomshayeli. Zama futhi uma iphrofayili ingasasetshenziswa njengomshayeli."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Bonisa ukukhanya"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Ukuze ubone amadivayisi akho, vula i-Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Ukuze ubhanqe idivayisi, vula amasethingi e-Bluetooth"</string>

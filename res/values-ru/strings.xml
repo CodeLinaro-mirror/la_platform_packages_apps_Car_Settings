@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Запрос на подключение"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Нажмите, чтобы подключить устройство \"<xliff:g id="DEVICE_NAME">%1$s</xliff:g>\"."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Выбор устройства Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Телефон"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Мультимедиа"</string>
     <string name="language_settings" msgid="2079258598337245546">"Языки"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Язык и ввод"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Рекомендуемые"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Отмена"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Подтвердить"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Не менее 4 символов"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Этот способ блокировки недоступен."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"PIN-код должен содержать только цифры."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Использовать недавний PIN-код запрещено"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Системный администратор заблокировал простые PIN-коды. Выберите более сложную комбинацию."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Выйти из деморежима"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"ЗАКРЫТЬ"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"Эта функция недоступна во время вождения."</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"Попросите у водителя изменить параметр"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"Это действие вам недоступно"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Невозможно добавить профиль во время вождения."</string>
     <string name="default_search_query" msgid="3137420627428857068">"Поиск"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Ассистент и голосовое управление"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Добавить профиль"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Удалить этот профиль"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Добавить профиль"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Сейчас этот профиль использует водитель. Повторите попытку, когда он выйдет из него."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Яркость экрана"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Чтобы посмотреть список своих устройств, включите Bluetooth."</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Чтобы подключить устройство, откройте настройки Bluetooth."</string>

@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Koppelingsverzoek"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Tik om te koppelen met <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Bluetooth-apparaat kiezen"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Telefoon"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Media"</string>
     <string name="language_settings" msgid="2079258598337245546">"Talen"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"Talen en invoer"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Voorgesteld"</string>
@@ -659,7 +662,7 @@
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"Teken een ontgrendelingspatroon"</string>
     <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"Laat het scherm los als je klaar bent"</string>
     <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"Patroon opgenomen"</string>
-    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Teken patroon nogmaals ter bevestiging"</string>
+    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Teken patroon nog eens ter bevestiging"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"Verbind minstens 4 punten. Opnieuw."</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"Onjuist patroon"</string>
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Ontgrendelingspatroon tekenen"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Annuleren"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Bevestigen"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"Moet ten minste vier tekens zijn"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"Dit vergrendelingstype is niet beschikbaar."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Mag alleen de cijfers 0-9 bevatten."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Apparaatbeheer staat het gebruik van een recente pincode niet toe"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"Veelvoorkomende pincodes worden geblokkeerd door je IT-beheerder. Probeer een andere pincode."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"Demo afsluiten"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"SLUITEN"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"Functie niet beschikbaar tijdens het rijden"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"Vraag de bestuurder om de instelling te wijzigen"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"Je kunt deze actie niet uitvoeren"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Kan geen profiel toevoegen tijdens het rijden"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Zoeken"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistent en stem"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"Profiel toevoegen"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Dit profiel verwijderen"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Profiel toevoegen"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Dit profiel is nu ingelogd als bestuurder. Probeer het opnieuw als dit profiel is uitgelogd."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Helderheid van het scherm"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Zet bluetooth aan als je je apparaten wilt zien"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Open de bluetooth-instellingen om een apparaat te koppelen"</string>

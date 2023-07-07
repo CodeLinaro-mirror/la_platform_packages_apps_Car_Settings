@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"جوڑا بنانے کی درخواست"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"‫<xliff:g id="DEVICE_NAME">%1$s</xliff:g> کے ساتھ جوڑا بنانے کیلئے تھپتھپائیں۔"</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"بلوٹوتھ آلہ منتخب کریں"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"بلوٹوتھ"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"فون"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"میڈیا"</string>
     <string name="language_settings" msgid="2079258598337245546">"زبانیں"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"زبانیں اور ان پٹ"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"تجویز کردہ"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"منسوخ کریں"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"تصدیق کریں"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"کم از کم 4 حروف ہونا ضروری ہے"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"لاک کی یہ قسم دستیاب نہیں ہے۔"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"صرف ‎0-9 ہندسے شامل ہونے چاہئیں۔"</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"آلہ کا منتظم ایک حالیہ PIN استعمال کرنے کی اجازت نہیں دیتا ہے"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"آپ کے IT منتظم نے عمومی PINs کو مسدود کر دیا ہے۔ کوئی دوسرا PIN آزمائیں۔"</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"ڈیمو سے باہر نکلیں"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"برخاست کریں"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"ڈرائیونگ کے دوران یہ خصوصیت دستیاب نہیں ہے"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"ڈرائیور سے ترتیب تبدیل کرنے کی درخواست کریں"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"آپ اس کارروائی کو انجام نہیں دے سکتے"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"ڈرائیونگ کے دوران پروفائل کو شامل نہیں کیا جا سکتا"</string>
     <string name="default_search_query" msgid="3137420627428857068">"تلاش کریں"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"اسسٹنٹ اور آواز"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"ایک پروفائل شامل کریں"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"اس پروفائل کو حذف کریں"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"پروفائل شامل کریں"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"یہ پروفائل فی الحال بطور ڈرائیور سائن ان ہے۔ جب پروفائل بطور ڈرائیور استعمال میں نہ ہو تو دوبارہ کوشش کریں۔"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"ڈسپلے کی چمک"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"اپنے آلات دیکھنے کے لیے بلوٹوتھ آن کریں"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"آلے کا جوڑا بنانے کے لیے بلوٹوتھ کی ترتیبات کھولیں"</string>

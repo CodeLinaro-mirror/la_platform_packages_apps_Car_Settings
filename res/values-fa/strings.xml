@@ -221,6 +221,9 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"درخواست مرتبط‌سازی"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"برای مرتبط‌سازی با <xliff:g id="DEVICE_NAME">%1$s</xliff:g> ضربه بزنید."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"انتخاب دستگاه بلوتوث"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"بلوتوث"</string>
+    <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"تلفن"</string>
+    <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"رسانه"</string>
     <string name="language_settings" msgid="2079258598337245546">"زبان‌ها"</string>
     <string name="languages_and_input_settings" msgid="3672322610529408248">"زبان‌ها و ورودی"</string>
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"پیشنهادی"</string>
@@ -688,6 +691,7 @@
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"لغو"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"تأیید"</string>
     <string name="choose_lock_password_hints" msgid="3903696950202491593">"باید حداقل ۴ نویسه داشته باشد"</string>
+    <string name="locktype_unavailable" msgid="2678317466336249126">"این نوع قفل دردسترس نیست."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"فقط می‌تواند اعداد ۰ تا ۹ داشته باشد."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"سرپرست دستگاه اجازه استفاده از پین اخیر را نمی‌دهد"</string>
     <string name="lockpassword_pin_denylisted_by_admin" msgid="3752574009492336468">"«پین‌های رایج» توسط سرپرست فناوری اطلاعات مسدود شده‌اند. پین دیکری را امتحان کنید."</string>
@@ -734,6 +738,8 @@
     <string name="exit_retail_mode_dialog_confirmation_button_text" msgid="3147249675355968649">"خروج از حالت نمایشی"</string>
     <string name="suggestion_dismiss_button" msgid="4539412646977050641">"رد کردن"</string>
     <string name="restricted_while_driving" msgid="6587569249519274524">"این ویژگی هنگام رانندگی در دسترس نیست"</string>
+    <string name="restricted_for_passenger" msgid="7240117443887727753">"از راننده بخواهید تنظیم را تغییر دهد"</string>
+    <string name="restricted_for_driver" msgid="3364388937671526800">"نمی‌توانید این کنش را انجام دهید"</string>
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"نمی‌توان هنگام رانندگی نمایه اضافه کرد"</string>
     <string name="default_search_query" msgid="3137420627428857068">"جستجو"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"«دستیار» و صدا"</string>
@@ -749,6 +755,7 @@
     <string name="add_a_profile_button_text" msgid="8027395095117925114">"افزودن یک نمایه"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"حذف کردن این نمایه"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"افزودن نمایه"</string>
+    <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"فعلاً این نمایه به‌عنوان راننده وارد شده است. وقتی از نمایه به‌عنوان راننده استفاده نمی‌شود امتحان کنید."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"روشنایی نمایشگر"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"برای دیدن دستگاه‌ها، بلوتوث را روشن کنید"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"برای مرتبط کردن دستگاه، تنظیمات بلوتوث را باز کنید"</string>

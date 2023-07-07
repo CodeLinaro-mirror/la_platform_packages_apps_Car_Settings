@@ -101,6 +101,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="color" name="brightness_thumb_outer_ring_color"/>
       <item type="color" name="car_grey_400_with_disable"/>
       <item type="color" name="config_progress_background_tint"/>
+      <item type="color" name="ic_launcher_settings_background"/>
       <item type="color" name="icon_color_default"/>
       <item type="color" name="qc_default_icon_color"/>
       <item type="color" name="text_color_accent_with_disable"/>
@@ -319,6 +320,8 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_keyboard_arrow_down"/>
       <item type="drawable" name="ic_keyboard_arrow_up"/>
       <item type="drawable" name="ic_language"/>
+      <item type="drawable" name="ic_launcher_settings"/>
+      <item type="drawable" name="ic_launcher_settings_foreground"/>
       <item type="drawable" name="ic_lock"/>
       <item type="drawable" name="ic_media_stream"/>
       <item type="drawable" name="ic_ota_update_current"/>
@@ -686,6 +689,9 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="bluetooth_ask_enablement_and_discovery_no_name"/>
       <item type="string" name="bluetooth_ask_enablement_no_name"/>
       <item type="string" name="bluetooth_available_devices"/>
+      <item type="string" name="bluetooth_bonded_bluetooth_toggle_content_description"/>
+      <item type="string" name="bluetooth_bonded_media_toggle_content_description"/>
+      <item type="string" name="bluetooth_bonded_phone_toggle_content_description"/>
       <item type="string" name="bluetooth_device"/>
       <item type="string" name="bluetooth_device_connected_toast"/>
       <item type="string" name="bluetooth_device_context_pair_connect"/>
@@ -739,6 +745,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="camera_toggle_summary"/>
       <item type="string" name="camera_toggle_title"/>
       <item type="string" name="cancel"/>
+      <item type="string" name="cannot_remove_driver_profile"/>
       <item type="string" name="captions_settings_off"/>
       <item type="string" name="captions_settings_on"/>
       <item type="string" name="captions_settings_style_header"/>
@@ -1241,6 +1248,8 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="reset_options_title"/>
       <item type="string" name="restart_infotainment_system_dialog_text"/>
       <item type="string" name="restart_infotainment_system_title"/>
+      <item type="string" name="restricted_for_driver"/>
+      <item type="string" name="restricted_for_passenger"/>
       <item type="string" name="restricted_while_driving"/>
       <item type="string" name="ring_volume_title"/>
       <item type="string" name="ringtone_picker_save_title"/>
@@ -1534,11 +1543,11 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="zone_list_menu_sort_by_timezone"/>
       <item type="style" name="ActionDialogTheme"/>
       <item type="style" name="CarSettingTheme"/>
+      <item type="style" name="CarSettingsActivityDividerStyle"/>
       <item type="style" name="CarSettingsFragmentContainerStyle"/>
       <item type="style" name="CarSettingsPreferenceFragment"/>
       <item type="style" name="CarSettingsPreferenceTheme"/>
       <item type="style" name="ColoredAccentPreferenceStyle"/>
-      <item type="style" name="ColoredSwitchPreferenceDefaultColorStyle"/>
       <item type="style" name="ColoredSwitchPreferenceStyle"/>
       <item type="style" name="DataUsageSummaryCarrierInfoTextAppearance"/>
       <item type="style" name="DataUsageSummaryCarrierInfoWarningTextAppearance"/>
