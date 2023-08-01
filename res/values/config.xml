@@ -165,4 +165,9 @@
         Delay in milliseconds between preference onclick calls
     -->
     <integer name="config_preference_onclick_debounce_ms">200</integer>
+
+    <!-- Packages (other than settings and systemui) allowed to enable bluetooth scanning. -->
+    <string-array name="config_allowed_bluetooth_scanning_packages">
+        <item>com.android.car.carlauncher</item>
+    </string-array>
 </resources>
