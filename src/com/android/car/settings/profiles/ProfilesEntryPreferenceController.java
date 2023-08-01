@@ -21,6 +21,7 @@ import static com.android.car.settings.common.TopLevelMenuFragment.FRAGMENT_MENU
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 
 import androidx.fragment.app.Fragment;
@@ -38,6 +39,8 @@ public class ProfilesEntryPreferenceController extends PreferenceController<Pref
 
     private static final Logger LOG = new Logger(ProfilesEntryPreferenceController.class);
 
+    private static boolean sIsBike = SystemProperties.getBoolean("ro.hw.vehicle.isbike", false);
+
     public ProfilesEntryPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
@@ -46,6 +49,14 @@ public class ProfilesEntryPreferenceController extends PreferenceController<Pref
     @Override
     protected Class<Preference> getPreferenceType() {
         return Preference.class;
+    }
+
+    @Override
+    protected int getAvailabilityStatus() {
+        if (sIsBike) {
+            return UNSUPPORTED_ON_DEVICE;
+        }
+        return super.getAvailabilityStatus();
     }
 
     @Override
