@@ -14,7 +14,11 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
+<!--
+Changes from Qualcomm Innovation Center are provided under the following license:
+Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause-Clear
+-->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Application name -->
     <string name="settings_label">Settings</string>
@@ -492,6 +496,21 @@
     <string name="tts_pitch">Pitch</string>
     <!-- Name for button that resets speech rate and pitch for synthesized voice to default values in the text to speech settings. [CHAR LIMIT=30] -->
     <string name="tts_reset">Reset</string>
+
+    <!-- Battery settings-->
+    <string name="battery_settings">Battery</string>
+    <string name="battery_profile_title">Current battery profile</string>
+    <string name="battery_enable_saver_title">Auto Enable Battery Saver</string>
+    <string name="battery_saver_title">Battery Saver</string>
+    <string name="battery_profile_normal">Normal(default)</string>
+    <string name="battery_profile_invalid">Invalid State</string>
+    <string name="battery_profile_low">Low</string>
+    <string name="battery_saver_profile_critical">Critical</string>
+    <string name="battery_saver_never">Never</string>
+    <string name="battery_saver_profile_low">Low</string>
+    <string name="battery_saver_on_summary">On</string>
+    <string name="battery_saver_off_summary">Off</string>
+    <string name="battery_profile_critical">Critical</string>
 
     <!-- sound settings --><skip/>
     <!-- Sound settings screen heading -->

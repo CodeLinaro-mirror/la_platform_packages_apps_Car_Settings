@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause-Clear
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/battery_settings"
+    android:key="@string/psk_battery_settings">
+    <com.android.car.ui.preference.CarUiPreference
+        android:key="@string/pk_current_battery_profile"
+        android:title="@string/battery_profile_title"
+        settings:controller="com.android.car.settings.battery.BatteryProfilePreferenceController"/>
+    <ListPreference
+        android:key="@string/pk_enable_saver_on_battery_profile"
+        android:title="@string/battery_enable_saver_title"
+        settings:controller="com.android.car.settings.battery.BatterySaverProfileListController"/>
+    <com.android.car.ui.preference.CarUiPreference
+        android:key="@string/pk_battery_saver"
+        android:title="@string/battery_saver_title"
+        settings:controller="com.android.car.settings.battery.BatterySaverModePreferenceController"/>
+</PreferenceScreen>

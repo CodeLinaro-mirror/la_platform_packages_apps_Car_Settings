@@ -14,7 +14,11 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-
+<!--
+Changes from Qualcomm Innovation Center are provided under the following license:
+Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause-Clear
+-->
 <!--
     Identifiers for preferences. Namespaced with "pk" (Preference Key) to avoid conflicts.
     Key values should be unique.
@@ -23,6 +27,7 @@
     <!-- Homepage -->
     <string name="pk_suggestions" translatable="false">suggestions</string>
     <string name="pk_display_settings_entry" translatable="false">display_settings_entry</string>
+    <string name="pk_battery_settings_entry" translatable="false">battery_settings_entry</string>
     <string name="pk_sound_settings_entry" translatable="false">sound_settings_entry</string>
     <string name="pk_network_and_internet_entry" translatable="false">network_and_internet_entry
     </string>
@@ -349,6 +354,11 @@
     </string>
     <string name="pk_use_24hour_switch" translatable="false">use_24hour_switch</string>
     <string name="pk_timezone_picker_screen" translatable="false">timezone_picker_screen</string>
+
+    <!-- Battery Settings-->
+    <string name="pk_current_battery_profile" translatable="false">current_battery_profile</string>
+    <string name="pk_enable_saver_on_battery_profile" translatable="false">enable_saver_on_battery_profile</string>
+    <string name="pk_battery_saver" translatable="false">battery_saver</string>
 
     <!-- Sound Settings -->
     <string name="pk_volume_settings" translatable="false">volume_settings</string>

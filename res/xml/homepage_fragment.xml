@@ -69,6 +69,12 @@
         android:title="@string/profiles_and_accounts_settings_title"
         settings:controller="com.android.car.settings.profiles.ProfilesEntryPreferenceController"/>
     <com.android.car.settings.common.TopLevelPreference
+        android:fragment="com.android.car.settings.battery.BatterySettingsFragment"
+        android:icon="@drawable/ic_top_level_battery"
+        android:key="@string/pk_battery_settings_entry"
+        android:title="@string/battery_settings"
+        settings:controller="com.android.car.settings.common.DefaultRestrictionsPreferenceController"/>
+    <com.android.car.settings.common.TopLevelPreference
         android:fragment="com.android.car.settings.location.LocationSettingsFragment"
         android:icon="@drawable/ic_top_level_location"
         android:key="@string/pk_location_settings_entry"
