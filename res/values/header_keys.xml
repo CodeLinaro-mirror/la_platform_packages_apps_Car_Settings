@@ -13,7 +13,11 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
+<!--
+Changes from Qualcomm Innovation Center are provided under the following license:
+Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause-Clear
+-->
 <!--
     Mapping of activities to top level header keys. Namespaced with "hk" (Header Key) to avoid
     conflicts.
@@ -63,5 +67,6 @@
     <string name="hk_BluetoothDevicePickerActivity">@string/pk_bluetooth_settings_entry</string>
     <string name="hk_DataWarningAndLimitActivity">pk_network_and_internet_entry</string>
     <string name="hk_AccessibilitySettingsActivity">@string/pk_accessibility_settings_entry</string>
-    <string name="hk_CaptionsSettingsActivity">@string/pk_accessibility_settings_entry</string>
+    <string name="hk_BatterySettingsActivity">@string/pk_battery_settings_entry</string>
+    <string name="hk_CaptionsSettingsActivity">@string/pk_captions_settings_header</string>
 </resources>
