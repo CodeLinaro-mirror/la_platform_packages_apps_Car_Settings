@@ -31,6 +31,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.UserManager;
 import android.widget.Toast;
+import android.provider.Settings;
 
 import androidx.annotation.VisibleForTesting;
 
@@ -77,7 +78,50 @@ public class BluetoothStateSwitchPreferenceController extends
                 isPowerOn -> {
                     mIsPowerOn = isPowerOn;
                     enableSwitchPreference(getPreference(), /* enabled= */ mIsPowerOn);
+
+                    if (mIsPowerOn) {
+                        if (isBluetoothPersistedOn()) {
+                            enableBluetooth();
+                        }
+                    } else {
+                        // we'll turn off Bluetooth to disconnect devices and better the "off"
+                        // illusion
+                        disableBluetooth();
+                    }
                 });
+    }
+
+    /**
+     * Get the persisted Bluetooth state from Settings
+     *
+     * @return True if the persisted Bluetooth state is on, false otherwise
+     */
+    private boolean isBluetoothPersistedOn() {
+        return (Settings.Global.getInt(
+                mContext.getContentResolver(), Settings.Global.BLUETOOTH_ON, -1) != 0);
+    }
+
+    /**
+     * Turn on the Bluetooth Adapter.
+     */
+    private void enableBluetooth() {
+        if (mBluetoothAdapter == null) {
+            return;
+        }
+        mBluetoothAdapter.enable();
+    }
+
+     /**
+     * Turn off the Bluetooth Adapter.
+     *
+     * Tells BluetoothAdapter to shut down _without_ persisting the off state as the desired state
+     * of the Bluetooth adapter for next start up.
+     */
+    private void disableBluetooth() {
+        if (mBluetoothAdapter == null) {
+            return;
+        }
+        mBluetoothAdapter.disable(false);
     }
 
     @Override
@@ -193,8 +237,13 @@ public class BluetoothStateSwitchPreferenceController extends
                 break;
             case BluetoothAdapter.STATE_OFF:
             default:
-                enableSwitchPreference(getPreference(), /* enabled= */ !isUserRestricted());
-                updateSwitchPreference(false);
+                if (!mIsPowerOn) {
+                    enableSwitchPreference(getPreference(), /* enabled= */false);
+                    updateSwitchPreference(false);
+                } else {
+                    enableSwitchPreference(getPreference(), /* enabled= */ !isUserRestricted());
+                    updateSwitchPreference(false);
+                }
         }
         mUpdating = false;
     }
