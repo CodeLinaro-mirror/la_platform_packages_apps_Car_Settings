@@ -35,6 +35,7 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceController;
 import com.android.car.ui.preference.CarUiTwoActionSwitchPreference;
 import com.android.settingslib.utils.StringUtil;
+import com.android.settingslib.WirelessUtils;
 
 import java.util.List;
 
@@ -48,6 +49,8 @@ public class MobileNetworkEntryPreferenceController extends
     private final SubscriptionManager mSubscriptionManager;
     private final TelephonyManager mTelephonyManager;
     private final int mSubscriptionId;
+    private Context mContext;
+
     private final ContentObserver mMobileDataChangeObserver = new ContentObserver(
             new Handler(Looper.getMainLooper())) {
         @Override
@@ -60,6 +63,7 @@ public class MobileNetworkEntryPreferenceController extends
     public MobileNetworkEntryPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
+        mContext = context;
         mUserManager = UserManager.get(context);
         mChangeListener = new SubscriptionsChangeListener(context, /* action= */ this);
         mSubscriptionManager = context.getSystemService(SubscriptionManager.class);
@@ -84,9 +88,13 @@ public class MobileNetworkEntryPreferenceController extends
     protected void updateState(CarUiTwoActionSwitchPreference preference) {
         List<SubscriptionInfo> subs = SubscriptionUtils.getAvailableSubscriptions(
                 mSubscriptionManager, mTelephonyManager);
-        preference.setEnabled(!subs.isEmpty() && getAvailabilityStatus() == AVAILABLE);
         preference.setSummary(getSummary(subs));
         getPreference().setSecondaryActionChecked(mTelephonyManager.isDataEnabled());
+        // Enable Mobile Network if Airplane mode is OFF
+        preference.setEnabled(!subs.isEmpty()  && (getAvailabilityStatus() == AVAILABLE)
+                && !WirelessUtils.isAirplaneModeOn(mContext));
+        preference.setSecondaryActionChecked(mTelephonyManager.isDataEnabled() &&
+            !WirelessUtils.isAirplaneModeOn(mContext));
     }
 
     @Override

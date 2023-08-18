@@ -107,6 +107,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
     <string name="pk_wifi_tether_name" translatable="false">wifi_tether_name</string>
     <string name="pk_wifi_tether_state_switch" translatable="false">wifi_tether_state_switch
     </string>
+    <string name="pk_airplane_mode_title" translatable="false">airplane_mode_title</string>
 
     <!-- WIFI -->
     <string name="pk_wifi_settings_entry" translatable="false">wifi_settings_entry</string>

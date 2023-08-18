@@ -13,29 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/*
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ *
+ * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
+ */
 
-package com.android.settings;
+package com.android.car.settings;
 
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Looper;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.telephony.PhoneStateListener;
 import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import androidx.annotation.VisibleForTesting;
 
-import com.android.settings.network.GlobalSettingsChangeListener;
-import com.android.settings.network.ProxySubscriptionManager;
-import com.android.settings.overlay.FeatureFactory;
+import com.android.car.settings.network.GlobalSettingsChangeListener;
 import com.android.settingslib.WirelessUtils;
-import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -47,7 +52,6 @@ public class AirplaneModeEnabler extends GlobalSettingsChangeListener {
     private static final boolean DEBUG = false;
 
     private final Context mContext;
-    private final MetricsFeatureProvider mMetricsFeatureProvider;
 
     private OnAirplaneModeChangedListener mOnAirplaneModeChangedListener;
 
@@ -68,7 +72,6 @@ public class AirplaneModeEnabler extends GlobalSettingsChangeListener {
         super(context, Settings.Global.AIRPLANE_MODE_ON);
 
         mContext = context;
-        mMetricsFeatureProvider = FeatureFactory.getFactory(context).getMetricsFeatureProvider();
         mOnAirplaneModeChangedListener = listener;
 
         mTelephonyManager = context.getSystemService(TelephonyManager.class);
@@ -129,20 +132,11 @@ public class AirplaneModeEnabler extends GlobalSettingsChangeListener {
 
     /**
      * Called when we've received confirmation that the airplane mode was set.
-     * TODO: We update the checkbox summary when we get notified
-     * that mobile radio is powered up/down. We should not have dependency
-     * on one radio alone. We need to do the following:
-     * - handle the case of wifi/bluetooth failures
-     * - mobile does not send failure notification, fail on timeout.
      */
     private void onAirplaneModeChanged() {
         if (mOnAirplaneModeChangedListener != null) {
             mOnAirplaneModeChangedListener.onAirplaneModeChanged(isAirplaneModeOn());
         }
-    }
-
-    public boolean isInScbm() {
-        return SystemProperties.getBoolean("ril.inscbm", false);
     }
 
     /**
@@ -154,8 +148,11 @@ public class AirplaneModeEnabler extends GlobalSettingsChangeListener {
         if (mTelephonyManager.getEmergencyCallbackMode()) {
             return true;
         }
+        SubscriptionManager subscriptionManager =
+                mContext.getSystemService(SubscriptionManager.class);
+
         final List<SubscriptionInfo> subInfoList =
-                ProxySubscriptionManager.getInstance(mContext).getActiveSubscriptionsInfo();
+                getActiveSubscriptions(subscriptionManager);
         if (subInfoList == null) {
             return false;
         }
@@ -171,13 +168,23 @@ public class AirplaneModeEnabler extends GlobalSettingsChangeListener {
         return false;
     }
 
+    public static List<SubscriptionInfo> getActiveSubscriptions(SubscriptionManager manager) {
+        if (manager == null) {
+            return Collections.emptyList();
+        }
+        final List<SubscriptionInfo> subscriptions = manager.getActiveSubscriptionInfoList();
+        if (subscriptions == null) {
+            return new ArrayList<>();
+        }
+        return subscriptions;
+    }
+
+
     public void setAirplaneMode(boolean isAirplaneModeOn) {
-        if (isInEcmMode() || isInScbm()) {
+        if (isInEcmMode()) {
             // In Emergency mode, do not update database at this point
             Log.d(LOG_TAG, "Emergency mode airplane mode=" + isAirplaneModeOn);
         } else {
-            mMetricsFeatureProvider.action(mContext, SettingsEnums.ACTION_AIRPLANE_TOGGLE,
-                    isAirplaneModeOn);
             setAirplaneModeOn(isAirplaneModeOn);
         }
     }
