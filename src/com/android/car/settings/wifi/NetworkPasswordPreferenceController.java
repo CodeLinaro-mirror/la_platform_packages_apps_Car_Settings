@@ -176,7 +176,8 @@ public class NetworkPasswordPreferenceController extends
             getPreference().setDialogTitle(mNetworkName);
         }
 
-        if (mSecurityType != WifiEntry.SECURITY_NONE) {
+        if (mSecurityType != WifiEntry.SECURITY_NONE &&
+            mSecurityType != WifiEntry.SECURITY_EAP_SUITE_B) {
             if (mSecurityType == WifiEntry.SECURITY_EAP) {
                 if (mEapMethod == NetworkEapMethodPreferenceController.WIFI_EAP_METHOD_TTLS) {
                     preference.setVisible(true);
