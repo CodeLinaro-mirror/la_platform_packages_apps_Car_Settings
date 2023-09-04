@@ -136,10 +136,7 @@ public class HotspotRow extends SettingsQCItem {
     }
 
     private String getSubtitle() {
-<<<<<<< HEAD   (10dcd6 Merge commit '250ef7bc2827cb64b4fc984cd5e741636168d437' into)
         // Early exit in case Wi-Fi is not ready, otherwise it may cause an ANR.
-=======
->>>>>>> CHANGE (f2a473 wifi: check hotspot status first before getSoftApConfig)
         if (!HotspotQCUtils.isHotspotEnabled(mWifiManager)) {
             return getContext().getString(R.string.wifi_hotspot_state_off);
         }
