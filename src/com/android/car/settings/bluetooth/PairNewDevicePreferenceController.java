@@ -122,6 +122,7 @@ public class PairNewDevicePreferenceController extends PreferenceController<Pref
 
     @Override
     protected void updateState(Preference preference) {
+        preference.setEnabled(BluetoothAdapter.getDefaultAdapter().isEnabled());
         preference.setSummary(
                 BluetoothAdapter.getDefaultAdapter().isEnabled() ? "" : getContext().getString(
                         R.string.bluetooth_pair_new_device_summary));
