@@ -386,7 +386,7 @@ SPDX-License-Identifier: BSD-3-Clause-Clear
     <!-- Title for option to pair a new Bluetooth device. [CHAR LIMIT=40] -->
     <string name="bluetooth_pair_new_device">Pair new device</string>
     <!-- Summary for option to pair a new Bluetooth device; alerts user that selecting the option enables Bluetooth. [CHAR LIMIT=NONE]-->
-    <string name="bluetooth_pair_new_device_summary">Bluetooth will turn on to pair</string>
+    <string name="bluetooth_pair_new_device_summary">Turn ON Bluetooth to Pair</string>
     <!-- Dialog title to confirm disconnecting from all profiles of a Bluetooth device. [CHAR LIMIT=40] -->
     <string name="bluetooth_disconnect_title">Disconnect device?</string>
     <!-- Message for disconnecting a vehicle from all profiles of a Bluetooth device. [CHAR LIMIT=NONE] -->
