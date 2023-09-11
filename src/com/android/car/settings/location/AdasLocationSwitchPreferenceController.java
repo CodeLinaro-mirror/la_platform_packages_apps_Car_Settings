@@ -29,6 +29,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.location.LocationManager;
+import android.widget.Toast;
 
 import androidx.annotation.VisibleForTesting;
 
@@ -47,6 +48,7 @@ public class AdasLocationSwitchPreferenceController extends
         PreferenceController<CarUiTwoActionSwitchPreference> {
     private final Context mContext;
     private final LocationManager mLocationManager;
+    private boolean mIsPowerPolicyOn = true;
 
     private final BroadcastReceiver mAdasReceiver = new BroadcastReceiver() {
         @Override
@@ -82,7 +84,9 @@ public class AdasLocationSwitchPreferenceController extends
         mLocationManager = context.getSystemService(LocationManager.class);
         mPowerPolicyListener = new PowerPolicyListener(context, LOCATION,
                 isOn -> {
+                    mIsPowerPolicyOn = isOn;
                     handlePowerPolicyChange(getPreference(), isOn);
+                    refreshUi();
                 });
     }
 
@@ -94,7 +98,7 @@ public class AdasLocationSwitchPreferenceController extends
     @Override
     protected int getDefaultAvailabilityStatus() {
         if (hasUserRestrictionByDpm(getContext(), DISALLOW_CONFIG_LOCATION)
-                || hasUserRestrictionByDpm(getContext(), DISALLOW_SHARE_LOCATION)) {
+                || hasUserRestrictionByDpm(getContext(), DISALLOW_SHARE_LOCATION) || !mIsPowerPolicyOn) {
             return AVAILABLE_FOR_VIEWING;
         }
         return AVAILABLE;
@@ -116,7 +120,15 @@ public class AdasLocationSwitchPreferenceController extends
                 mLocationManager.setAdasGnssLocationEnabled(true);
             }
         });
+        
         setClickableWhileDisabled(getPreference(), /* clickable= */ true, p -> {
+            // All the cases here should coincide with the ones in getAvailabilityStatus()
+            if (!mIsPowerPolicyOn) {
+                Toast.makeText(getContext(),
+                        getContext().getString(R.string.power_component_disabled),
+                        Toast.LENGTH_LONG).show();
+                return;
+            }
             if (hasUserRestrictionByDpm(getContext(), DISALLOW_SHARE_LOCATION)) {
                 showActionDisabledByAdminDialog(DISALLOW_SHARE_LOCATION);
                 return;
