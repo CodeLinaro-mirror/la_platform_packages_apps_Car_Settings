@@ -170,7 +170,7 @@ public class LocationStateSwitchPreferenceController extends
     private void updateSwitchPreference(ColoredSwitchPreference preference,
             boolean enabled) {
         preference.setChecked(enabled
-                && !hasUserRestrictionByDpm(getContext(), DISALLOW_SHARE_LOCATION));
+                && !hasUserRestrictionByDpm(getContext(), DISALLOW_SHARE_LOCATION) && mIsPowerPolicyOn);
     }
 
     private ConfirmationDialogFragment getConfirmationDialog() {
