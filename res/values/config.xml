@@ -151,4 +151,7 @@
          exists. If it is left blank then no screen reader will show up in settings.
     -->
     <string name="config_default_screen_reader" translatable="false"></string>
+
+    <!-- Whether toggle_airplane is available or not. -->
+    <bool name="config_show_toggle_airplane">true</bool>
 </resources>
