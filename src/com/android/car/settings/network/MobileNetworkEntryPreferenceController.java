@@ -16,6 +16,8 @@
 
 package com.android.car.settings.network;
 
+import static android.car.hardware.power.PowerComponent.CELLULAR;
+
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.database.ContentObserver;
@@ -27,6 +29,7 @@ import android.provider.Settings;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
 import androidx.annotation.CallSuper;
 
@@ -35,6 +38,7 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceController;
 import com.android.car.ui.preference.CarUiTwoActionSwitchPreference;
 import com.android.settingslib.utils.StringUtil;
+import com.android.car.settings.common.PowerPolicyListener;
 
 import java.util.List;
 
@@ -43,11 +47,14 @@ public class MobileNetworkEntryPreferenceController extends
         PreferenceController<CarUiTwoActionSwitchPreference> implements
         SubscriptionsChangeListener.SubscriptionsChangeAction {
 
+    private static final String TAG = "MobileNetworkEntryPreferenceController";
     private final UserManager mUserManager;
     private final SubscriptionsChangeListener mChangeListener;
     private final SubscriptionManager mSubscriptionManager;
     private final TelephonyManager mTelephonyManager;
     private final int mSubscriptionId;
+    final PowerPolicyListener mPowerPolicyListener;
+    private boolean mIsPowerPolicyOn = true;
     private final ContentObserver mMobileDataChangeObserver = new ContentObserver(
             new Handler(Looper.getMainLooper())) {
         @Override
@@ -65,6 +72,12 @@ public class MobileNetworkEntryPreferenceController extends
         mSubscriptionManager = context.getSystemService(SubscriptionManager.class);
         mTelephonyManager = context.getSystemService(TelephonyManager.class);
         mSubscriptionId = SubscriptionManager.getDefaultDataSubscriptionId();
+        mPowerPolicyListener = new PowerPolicyListener(context, CELLULAR, isOn -> {
+            // refresh power state
+            Log.d(TAG, "powerpolicy-change: cellular component is now: " + isOn);
+            mIsPowerPolicyOn = isOn;
+            refreshUi();
+        });
     }
 
     @Override
@@ -87,6 +100,11 @@ public class MobileNetworkEntryPreferenceController extends
         preference.setEnabled(!subs.isEmpty());
         preference.setSummary(getSummary(subs));
         getPreference().setSecondaryActionChecked(mTelephonyManager.isDataEnabled());
+        if (!mIsPowerPolicyOn) {
+            preference.setEnabled(false);
+            preference.setSecondaryActionChecked(false);
+        }
+
     }
 
     @Override
@@ -96,6 +114,16 @@ public class MobileNetworkEntryPreferenceController extends
             getContext().getContentResolver().registerContentObserver(getObservableUri(
                     mSubscriptionId), /* notifyForDescendants= */ false, mMobileDataChangeObserver);
         }
+    }
+
+    @Override
+    protected void onResumeInternal() {
+        mPowerPolicyListener.handleCurrentPolicy();
+    }
+
+    @Override
+    protected void onDestroyInternal() {
+        mPowerPolicyListener.release();
     }
 
     @Override
