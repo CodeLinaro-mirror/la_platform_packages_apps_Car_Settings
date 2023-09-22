@@ -22,8 +22,11 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.Spinner;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,6 +41,9 @@ public class WifiPasswordDialog extends CarUiDialogFragment {
     private final WifiEntry mWifiEntry;
     private final WifiDialogListener mListener;
     private EditText mEditText;
+    private String[] mMeteredChoices;
+    private int mMetered = WifiEntry.METERED_CHOICE_AUTO;
+    private int mPrivacy = WifiEntry.PRIVACY_RANDOMIZED_MAC;
 
     /**
      * Host UI component of WifiDialog can receive callbacks by this interface.
@@ -60,9 +66,11 @@ public class WifiPasswordDialog extends CarUiDialogFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mDialogTitle = mWifiEntry.getSsid();
-        mDialogLayoutRes = R.layout.preference_dialog_password_edittext;
+        mDialogLayoutRes = R.layout.preference_dialog_secure_network;
         mPositiveButtonText = getContext().getString(R.string.okay);
         mNegativeButtonText = getContext().getString(R.string.cancel);
+        mMeteredChoices = getContext().getResources()
+                            .getStringArray(R.array.wifi_metered_spinner_choice);
     }
 
     @Override
@@ -83,6 +91,34 @@ public class WifiPasswordDialog extends CarUiDialogFragment {
                 }
                 // Place cursor at the end
                 mEditText.setSelection(mEditText.getText().length());
+            }
+        });
+
+        Spinner meteredSpinner = view.findViewById(R.id.meterspinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
+                             R.layout.wifi_meter_spinner, mMeteredChoices);
+        adapter.setDropDownViewResource(R.layout.wifi_meter_spinner_dropdown);
+        meteredSpinner.setAdapter(adapter);
+        meteredSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                mMetered = position;
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                /* Do nothing */
+            }
+        });
+
+        CheckBox privacyCheckbox = view.findViewById(R.id.privacybox);
+        privacyCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    mPrivacy = WifiEntry.PRIVACY_RANDOMIZED_MAC;
+                } else {
+                    mPrivacy = WifiEntry.PRIVACY_DEVICE_MAC;
+                }
             }
         });
     }
@@ -108,6 +144,7 @@ public class WifiPasswordDialog extends CarUiDialogFragment {
      * @return {@link WifiConfiguration} from mWifiEntry and UI edit result
      */
     public WifiConfiguration getConfig() {
-        return WifiUtil.getWifiConfig(mWifiEntry, mEditText.getText().toString());
+        return WifiUtil.getWifiConfig(mWifiEntry, mEditText.getText().toString(),
+                                      mMetered, mPrivacy);
     }
 }
