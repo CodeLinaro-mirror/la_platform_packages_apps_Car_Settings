@@ -160,12 +160,14 @@
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2.4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 GHz"</string>
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"ஒன்றைத் தேர்வுசெய்யவும்:"</string>
-    <string name="tether_settings_title_all" msgid="4663704772599383169">"ஹாட்ஸ்பாட்டும் இணைப்பு முறையும்"</string>
+    <string name="tether_settings_title_all" msgid="6076625733772210734">"வைஃபை ஹாட்ஸ்பாட்"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"ஹாட்ஸ்பாட்"</string>
+    <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"வைஃபை ஹாட்ஸ்பாட்டைப் பயன்படுத்துதல்"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"ஆஃப்"</string>
     <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"ஹாட்ஸ்பாட்டைத் தானாக ஆஃப் செய்"</string>
     <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"சாதனங்கள் எவையும் இணைக்கப்படவில்லை எனில் வைஃபை ஹாட்ஸ்பாட் ஆஃப் செய்யப்படும்"</string>
-    <string name="wifi_hotspot_qr_code_text" msgid="8366512548024600385">"இணைவதற்கு, இந்த QR குறியீட்டை ஸ்கேன் செய்யுங்கள்"</string>
+    <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\"%s\" இல் இணைவதற்கு இந்த QR குறியீட்டை ஸ்கேன் செய்க"</string>
+    <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"ஹாட்ஸ்பாட் கடவுச்சொல்: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"வைஃபையை ஆன் செய்ய <xliff:g id="REQUESTER">%s</xliff:g> ஆப்ஸ் விரும்புகிறது"</string>
     <string name="wifi_ask_disable" msgid="2949290055916181553">"வைஃபையை ஆஃப் செய்ய <xliff:g id="REQUESTER">%s</xliff:g> ஆப்ஸ் விரும்புகிறது"</string>
     <string name="wifi_error" msgid="3105105447117289410">"பிழை"</string>
@@ -189,7 +191,7 @@
     <string name="bluetooth_name" msgid="2609869978821094114">"வாகனத்தின் பெயர்"</string>
     <string name="bluetooth_rename_vehicle" msgid="5769424875066563154">"வாகனத்திற்கு மறுபெயரிடுதல்"</string>
     <string name="bluetooth_rename_device" msgid="8406868875363878712">"சாதனத்திற்கு மறுபெயரிடுதல்"</string>
-    <string name="bluetooth_rename_button" msgid="2397892174725986383">"மறுபெயரிடு"</string>
+    <string name="bluetooth_rename_button" msgid="2397892174725986383">"பெயர் மாற்று"</string>
     <string name="bluetooth_available_devices" msgid="1854446368146061448">"இணைப்பிற்குக் கிடைக்கும் சாதனங்கள்"</string>
     <string name="bluetooth_profiles" msgid="5580372290862835951">"புளூடூத் சுயவிவரங்கள்"</string>
     <string name="bluetooth_error_title" msgid="2341600997536511742"></string>
