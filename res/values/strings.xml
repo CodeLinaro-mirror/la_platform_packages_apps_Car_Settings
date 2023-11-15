@@ -237,6 +237,8 @@
     <string name="wifi_frequency">Frequency</string>
     <!-- Label for the IP address of the connection -->
     <string name="wifi_ip_address">IP address</string>
+    <!-- Text for wifi privacy -->
+    <string name="wifi_privacy_setting">Randomized mac</string>
     <!-- Text for show password ListItem -->
     <string name="show_password">Show password</string>
     <!-- Summary for wifi network name. [CHAR LIMIT=40] -->
@@ -245,6 +247,10 @@
     <string name="default_password_summary">Enter password</string>
     <!-- Key for the tag to store UI info for access point -->
     <string name="access_point_tag_key">access_point_tag_key</string>
+    <!-- Text for randomized mac -->
+    <string name="use_randomized_mac">Privacy</string>
+    <!-- Text for set as metered -->
+    <string name="mark_as_metered">Network usage</string>
     <!-- Match this with drawable.wifi_signal. --><skip/>
     <!-- Wi-Fi settings. The signal strength a Wi-Fi network has. -->
     <string-array name="wifi_signals">
@@ -311,6 +317,8 @@
     <string name="wifi_hotspot_password_title">Hotspot password</string>
     <!-- Label for Wifi security type title [CHAR LIMIT=15]-->
     <string name="wifi_hotspot_security_title">Security</string>
+    <!-- Label for Wifi security type OWE Transition [CHAR LIMIT=25]-->
+    <string name="wifi_hotspot_owe_transition">Enhanced Open</string>
     <!-- Label for Wifi security type WPA3-Personal [CHAR LIMIT=25]-->
     <string name="wifi_hotspot_wpa3_sae">WPA3-Personal</string>
     <!-- Label for Wifi security type WPA2/WPA3 Transition [CHAR LIMIT=25]-->
@@ -329,6 +337,10 @@
     <string name="wifi_ap_choose_2G">2.4 GHz Band</string>
     <!-- Label for the radio button to only choose wifi ap 5GHz band [CHAR LIMIT=25]-->
     <string name="wifi_ap_choose_5G">5.0 GHz Band</string>
+    <!-- Label for the radio button to choose both wifi ap band (2.4GHz + 5GHz) -->
+    <string name="wifi_ap_choose_both">Both (2.4+5.0 GHz)</string>
+    <!-- Label for the radio button to choose wifi ap 6GHz band  [CHAR LIMIT=80]-->
+    <string name="wifi_ap_choose_6G">6.0 GHz Band</string>
     <!-- Label for the radio button to prefer 5GHz wifi ap band  [CHAR LIMIT=80]-->
     <string name="wifi_ap_prefer_5G">5.0 GHz Band preferred</string>
     <!-- Label for adding to the list of selected bands when 2.4 GHz is selected [CHAR LIMIT=15]-->
