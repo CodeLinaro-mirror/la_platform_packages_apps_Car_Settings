@@ -57,6 +57,7 @@ import com.android.settingslib.core.lifecycle.HideNonSystemOverlayMixin;
 
 import java.util.Collections;
 import java.util.List;
+import android.view.KeyEvent;
 
 /**
  * Base activity class for car settings, provides a action bar with a back button that goes to
@@ -187,6 +188,15 @@ public abstract class BaseCarSettingsActivity extends FragmentActivity implement
         if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
             finish();
         }
+    }
+
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        // intercept menu key to resove a WindowLeaked error in monkey-test.
+        if (event.getKeyCode() == KeyEvent.KEYCODE_MENU) {
+            return true;
+        }
+        return super.dispatchKeyEvent(event);
     }
 
     @Override

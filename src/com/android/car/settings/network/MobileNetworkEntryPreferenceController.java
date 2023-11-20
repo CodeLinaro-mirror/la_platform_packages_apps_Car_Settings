@@ -76,6 +76,13 @@ public class MobileNetworkEntryPreferenceController extends
         mSubscriptionManager = context.getSystemService(SubscriptionManager.class);
         mTelephonyManager = context.getSystemService(TelephonyManager.class);
         mSubscriptionId = SubscriptionManager.getDefaultDataSubscriptionId();
+
+        if (!NetworkUtils.hasSim(mTelephonyManager)) {
+            Log.e(TAG, "Sim not inserted");
+            mPowerPolicyListener = null;
+            return;
+        }
+
         mPowerPolicyListener = new PowerPolicyListener(context, CELLULAR, isOn -> {
             // refresh power state
             Log.d(TAG, "powerpolicy-change: cellular component is now: " + isOn);
@@ -124,12 +131,16 @@ public class MobileNetworkEntryPreferenceController extends
 
     @Override
     protected void onResumeInternal() {
-        mPowerPolicyListener.handleCurrentPolicy();
+        if (mPowerPolicyListener != null) {
+            mPowerPolicyListener.handleCurrentPolicy();
+        }
     }
 
     @Override
     protected void onDestroyInternal() {
-        mPowerPolicyListener.release();
+        if (mPowerPolicyListener != null) {
+            mPowerPolicyListener.release();
+        }
     }
 
     @Override

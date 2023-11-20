@@ -22,6 +22,7 @@ import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.net.wifi.WifiManager;
 import android.widget.Toast;
+import android.util.Log;
 
 import androidx.annotation.VisibleForTesting;
 
@@ -39,6 +40,8 @@ public class WifiStateSwitchPreferenceController extends
     @VisibleForTesting
     final PowerPolicyListener mPowerPolicyListener;
 
+    private static final String TAG = "WifiStateSwitchPreferenceController";
+
     private boolean mIsPowerPolicyOn = true;
     private boolean mIsWifiEnabled;
 
@@ -46,6 +49,13 @@ public class WifiStateSwitchPreferenceController extends
             FragmentController fragmentController,
             CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
+
+        if (WifiUtil.getAvailabilityStatus(getContext()) == UNSUPPORTED_ON_DEVICE) {
+            Log.e(TAG, "Wifi feature not available");
+            mPowerPolicyListener = null;
+            return;
+        }
+
         mPowerPolicyListener = new PowerPolicyListener(context, WIFI, isOn -> {
             // refresh power state
             mIsPowerPolicyOn = isOn;
@@ -97,12 +107,16 @@ public class WifiStateSwitchPreferenceController extends
 
     @Override
     protected void onResumeInternal() {
-        mPowerPolicyListener.handleCurrentPolicy();
+        if (mPowerPolicyListener != null) {
+            mPowerPolicyListener.handleCurrentPolicy();
+        }
     }
 
     @Override
     protected void onDestroyInternal() {
-        mPowerPolicyListener.release();
+        if (mPowerPolicyListener != null) {
+            mPowerPolicyListener.release();
+        }
     }
 
     @Override
