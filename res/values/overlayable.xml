@@ -8,7 +8,13 @@ Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
-limitations under the License.-->
+limitations under the License.
+
+Changes from Qualcomm Innovation Center are provided under the following license:
+
+Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
+SPDX-License-Identifier: BSD-3-Clause-Clear.
+-->
 <!--
 THIS FILE WAS AUTO GENERATED, DO NOT EDIT MANUALLY.
 REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
@@ -81,6 +87,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="attr" name="wifiSignalColor"/>
       <item type="bool" name="config_always_ignore_ux_restrictions"/>
       <item type="bool" name="config_automatic_brightness_available"/>
+      <item type="bool" name="config_bluetooth_a2dp_start_media_player"/>
       <item type="bool" name="config_enable_home_settings_icon"/>
       <item type="bool" name="config_enable_quick_settings_icon"/>
       <item type="bool" name="config_global_force_single_pane"/>
@@ -736,6 +743,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="bluetooth_pin_values_hint_16_digits"/>
       <item type="string" name="bluetooth_previously_connected"/>
       <item type="string" name="bluetooth_profiles"/>
+      <item type="string" name="bluetooth_a2dp_set_media_player_request"/>
       <item type="string" name="bluetooth_rename_button"/>
       <item type="string" name="bluetooth_rename_device"/>
       <item type="string" name="bluetooth_rename_vehicle"/>
