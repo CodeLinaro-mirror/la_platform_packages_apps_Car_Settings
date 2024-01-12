@@ -56,7 +56,8 @@ import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowProcess;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowUserManager.class, ShadowUserIconProvider.class})
+@Config(shadows = {ShadowActivityManager.class, ShadowUserManager.class,
+        ShadowUserIconProvider.class})
 public class ProfileHelperTest {
 
     private static final String DEFAULT_ADMIN_NAME = "default_admin";
@@ -415,7 +416,7 @@ public class ProfileHelperTest {
     @Test
     public void testGetMaxSupportedRealUsers_isHeadless() {
         ShadowUserManager.setIsHeadlessSystemUserMode(true);
-        when(mMockUserManager.getMaxSupportedUsers()).thenReturn(7);
+        ShadowUserManager.setMaxSupportedUsers(7);
 
         // Create System user, two managed profiles, and two normal users.
         UserInfo user0 = createAdminUser(0);
@@ -433,7 +434,7 @@ public class ProfileHelperTest {
     @Test
     public void testGetMaxSupportedRealUsers_isNotHeadless() {
         ShadowUserManager.setIsHeadlessSystemUserMode(false);
-        when(mMockUserManager.getMaxSupportedUsers()).thenReturn(7);
+        ShadowUserManager.setMaxSupportedUsers(7);
 
         // Create System user, two managed profiles, and two normal users.
         UserInfo user0 = createAdminUser(0);
