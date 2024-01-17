@@ -178,8 +178,7 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Der blev oprettet forbindelse"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Vis alle"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Søger"</string>
-    <!-- no translation found for connected_settings_title (8868738903280658151) -->
-    <skip />
+    <string name="connected_settings_title" msgid="8868738903280658151">"Forbundne enheder"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Brug Bluetooth"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"Enhed uden navn"</string>
@@ -327,6 +326,7 @@
     <string name="app_disable_dialog_positive" msgid="4448684722791563349">"Deaktiver appen"</string>
     <string name="not_installed" msgid="4163454337822508007">"Ikke installeret for denne profil"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Tilladelser"</string>
+    <string name="app_info_all_services_label" msgid="6495363975322723452">"Alle tjenester"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Notifikationer"</string>
     <string name="storage_application_label" msgid="5911779903670978586">"Lagerplads og cache"</string>
     <string name="prioritize_app_performance_label" msgid="7264505023347026606">"Prioriter app-ydeevne"</string>
@@ -412,7 +412,6 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Wi-Fi-styring giver en app tilladelse til at aktivere og deaktivere Wi-Fi, søge efter og oprette forbindelse til Wi-Fi-netværk, tilføje og fjerne netværk eller starte et lokalt hotspot."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Mere"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Lokation"</string>
-    <string name="location_settings_footer" msgid="296892848338100051">"Lokation kan anvende kilder som f.eks. GPS, Wi‑Fi, mobilnetværk og sensorer til at anslå din enheds lokation."</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Anvend lokation"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Brug bilens lokation med en hvilken som helst app, du har valgt."</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Hvis du deaktiverer dette, fjernes lokationstilladelse for alle apps, bortset fra de apps, der er nødvendige for at bruge førerassistance"</string>
@@ -819,7 +818,7 @@
     <string name="enterprise_privacy_security_logs" msgid="7375479062062113231">"Den seneste sikkerhedslogfil"</string>
     <string name="enterprise_privacy_none" msgid="2566653655908700748">"Ingen"</string>
     <string name="enterprise_privacy_enterprise_installed_packages" msgid="7798942534994638670">"Installerede apps"</string>
-    <string name="enterprise_privacy_location_access" msgid="3132799413005627076">"Adgangstilladelser til lokation"</string>
+    <string name="enterprise_privacy_location_access" msgid="3132799413005627076">"Lokationstilladelser"</string>
     <string name="enterprise_privacy_microphone_access" msgid="4094467062253345379">"Adgangstilladelser til mikrofon"</string>
     <string name="enterprise_privacy_camera_access" msgid="8895281017339143744">"Adgangstilladelser til kamera"</string>
     <string name="enterprise_privacy_enterprise_set_default_apps" msgid="3386806357685549519">"Standardapps"</string>

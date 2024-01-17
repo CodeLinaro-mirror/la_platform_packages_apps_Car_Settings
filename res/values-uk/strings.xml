@@ -178,10 +178,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Підключено"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Показати всі"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Пошук"</string>
-    <!-- no translation found for connected_settings_title (8868738903280658151) -->
-    <skip />
+    <string name="connected_settings_title" msgid="8868738903280658151">"Підключені пристрої"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
-    <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Використовувати Bluetooth"</string>
+    <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Увімкнути Bluetooth"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"Пристрій без назви"</string>
     <string name="bluetooth_paired_devices" msgid="6463199569164652410">"Пристрої, з якими створено пару"</string>
     <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"Створити пару з новим пристроєм"</string>
@@ -327,6 +326,7 @@
     <string name="app_disable_dialog_positive" msgid="4448684722791563349">"Вимкнути додаток"</string>
     <string name="not_installed" msgid="4163454337822508007">"Не встановлено для цього профілю"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Дозволи"</string>
+    <string name="app_info_all_services_label" msgid="6495363975322723452">"Усі сервіси"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Сповіщення"</string>
     <string name="storage_application_label" msgid="5911779903670978586">"Сховище й кеш"</string>
     <string name="prioritize_app_performance_label" msgid="7264505023347026606">"Пріоритезувати продуктивність додатка"</string>
@@ -412,7 +412,6 @@
     <string name="wifi_control_description" msgid="6021926850423169261">"Додаток із дозволом на керування Wi-Fi може вмикати й вимикати Wi-Fi, шукати, додавати й вилучати мережі, підключатися до них, а також запускати локальну точку доступу."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"Більше"</string>
     <string name="location_settings_title" msgid="901334356682423679">"Геодані"</string>
-    <string name="location_settings_footer" msgid="296892848338100051">"Для визначення місцезнаходження вашого пристрою можуть використовуватися дані GPS, Wi-Fi, мобільних мереж і датчиків."</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Використовувати геодані"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Усі вказані вами додатки матимуть доступ до геоданих автомобіля."</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Якщо вимкнути цю опцію, доступ до геоданих буде скасовано для всіх додатків, крім потрібних для допомоги водію"</string>
