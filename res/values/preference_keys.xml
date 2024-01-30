@@ -107,6 +107,7 @@
     <string name="pk_wifi_tether_ap_band" translatable="false">wifi_tether_ap_band</string>
     <string name="pk_wifi_tether_keep_on" translatable="false">wifi_tether_keep_on</string>
     <string name="pk_wifi_tether_password" translatable="false">wifi_tether_password</string>
+    <string name="pk_wifi_tether_enable_mlo" translatable="false">wifi_tether_enable_mlo</string>
     <string name="pk_wifi_tether_name" translatable="false">wifi_tether_name</string>
     <string name="pk_wifi_tether_state_switch" translatable="false">wifi_tether_state_switch
     </string>

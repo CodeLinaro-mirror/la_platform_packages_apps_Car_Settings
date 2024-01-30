@@ -13,6 +13,10 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+    Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+    Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+    SPDX-License-Identifier: BSD-3-Clause-Clear
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
@@ -419,6 +423,10 @@
     <string name="wifi_hotspot_keep_on_title">Use hotspot for all drives</string>
     <!-- Summary for the toggle to turn off hotspot automatically [CHAR LIMIT=100]-->
     <string name="wifi_hotspot_keep_on_summary">Make hotspot available whenever car is on</string>
+    <!-- Title for the toggle to enable 80211be [CHAR LIMIT=50]-->
+    <string name="wifi_hotspot_enable_mlo">Enable Multi Link Operation</string>
+    <!-- Summary for the toggle to enable 80211be [CHAR LIMIT=100]-->
+    <string name="wifi_hotspot_enable_mlo_summary">Wi\u2011Fi hotspot to enable Multi Link Operation if turn on in every band mode.</string>
     <!-- Content description for the hotspot state switch. [CHAR LIMIT=NONE] -->
     <string name="wifi_hotspot_state_switch_content_description" translatable="false">Hotspot toggle switch</string>
     <!-- Text for the hotspot QR code related information. [CHAR LIMIT=50] -->
