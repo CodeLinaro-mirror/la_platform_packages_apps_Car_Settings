@@ -77,6 +77,11 @@ public class BatterySaverModePreferenceController extends PreferenceController<P
         unregisterContentObserver();
     }
 
+    @Override
+    protected int getDefaultAvailabilityStatus() {
+        return AVAILABLE_FOR_VIEWING;
+    }
+
     private CharSequence getSummary(boolean isSaverOn) {
 
         String summary = isSaverOn ? getContext().getString(R.string.battery_saver_on_summary) :

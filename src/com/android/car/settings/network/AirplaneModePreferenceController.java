@@ -13,70 +13,55 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.network;
+ /*
+ * Changes from Qualcomm Innovation Center are provided under the following license:
+ *
+ * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
+ */
+package com.android.car.settings.network;
 
 import static android.provider.SettingsSlicesContract.KEY_AIRPLANE_MODE;
+
+import android.car.drivingstate.CarUxRestrictions;
+import com.android.car.ui.preference.CarUiTwoActionSwitchPreference;
 
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.ContentObserver;
 import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.provider.SettingsSlicesContract;
-import android.provider.Settings;
 import android.telephony.TelephonyManager;
 
 import androidx.annotation.VisibleForTesting;
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
 
-import com.android.settings.AirplaneModeEnabler;
-import com.android.settings.R;
-import com.android.settings.core.TogglePreferenceController;
-import com.android.settings.slices.SliceBackgroundWorker;
-import com.android.settingslib.core.lifecycle.LifecycleObserver;
-import com.android.settingslib.core.lifecycle.events.OnDestroy;
-import com.android.settingslib.core.lifecycle.events.OnStart;
-import com.android.settingslib.core.lifecycle.events.OnStop;
+import com.android.car.settings.R;
+import com.android.car.settings.AirplaneModeEnabler;
+import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.PreferenceController;
 
-import com.qti.extphone.ExtTelephonyManager;
-
-import java.io.IOException;
-
-public class AirplaneModePreferenceController extends TogglePreferenceController
-        implements LifecycleObserver, OnStart, OnStop, OnDestroy,
-        AirplaneModeEnabler.OnAirplaneModeChangedListener {
+public class AirplaneModePreferenceController extends
+        PreferenceController<CarUiTwoActionSwitchPreference>
+        implements AirplaneModeEnabler.OnAirplaneModeChangedListener {
 
     public static final int REQUEST_CODE_EXIT_ECM = 1;
-    public static final int REQUEST_CODE_EXIT_SCBM = 2;
-
-    /**
-     * Uri for Airplane mode Slice.
-     */
-    public static final Uri SLICE_URI = new Uri.Builder()
-            .scheme(ContentResolver.SCHEME_CONTENT)
-            .authority(SettingsSlicesContract.AUTHORITY)
-            .appendPath(SettingsSlicesContract.PATH_SETTING_ACTION)
-            .appendPath(SettingsSlicesContract.KEY_AIRPLANE_MODE)
-            .build();
-    private static final String EXIT_ECM_RESULT = "exit_ecm_result";
-
     private Fragment mFragment;
+    private Context mContext;
     private AirplaneModeEnabler mAirplaneModeEnabler;
-    private SwitchPreference mAirplaneModePreference;
 
-    public AirplaneModePreferenceController(Context context, String key) {
-        super(context, key);
+    public AirplaneModePreferenceController(Context context, String preferenceKey,
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
+        super(context, preferenceKey, fragmentController, uxRestrictions);
+        mContext = context;
+        mAirplaneModeEnabler = new AirplaneModeEnabler(mContext, this);
+    }
 
-        if (isAvailable(mContext)) {
-            mAirplaneModeEnabler = new AirplaneModeEnabler(mContext, this);
-        }
+    @Override
+    protected Class<CarUiTwoActionSwitchPreference> getPreferenceType() {
+        return CarUiTwoActionSwitchPreference.class;
     }
 
     public void setFragment(Fragment hostFragment) {
@@ -89,38 +74,20 @@ public class AirplaneModePreferenceController extends TogglePreferenceController
     }
 
     @Override
-    public boolean handlePreferenceTreeClick(Preference preference) {
-        if (KEY_AIRPLANE_MODE.equals(preference.getKey())) {
-            if(mAirplaneModeEnabler.isInEcmMode()) {
-                // In ECM mode launch ECM app dialog
-                if (mFragment != null) {
-                    mFragment.startActivityForResult(
-                            new Intent(TelephonyManager.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS, null),
-                            REQUEST_CODE_EXIT_ECM);
-                }
-                return true;
-            } else if(mAirplaneModeEnabler.isInScbm()) {
-                // In SCBM mode launch SCBM app dialog
-                if (mFragment != null) {
-                    mFragment.startActivityForResult(
-                            new Intent(ExtTelephonyManager.ACTION_SHOW_NOTICE_SCM_BLOCK_OTHERS,
-                            null), REQUEST_CODE_EXIT_SCBM);
-                }
-                return true;
+    public boolean handlePreferenceClicked(CarUiTwoActionSwitchPreference preference) {
+        if (KEY_AIRPLANE_MODE.equals(preference.getKey()) && mAirplaneModeEnabler.isInEcmMode()) {
+            // In ECM mode launch ECM app dialog
+            if (mFragment != null) {
+                mFragment.startActivityForResult(
+                        new Intent(TelephonyManager.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS, null),
+                        REQUEST_CODE_EXIT_ECM);
             }
+            return true;
+        } else {
+            // Click on left or right side element should change airplane mode state.
+            setChecked(!getPreference().isSecondaryActionChecked());
         }
         return false;
-    }
-
-    @Override
-    public Uri getSliceUri() {
-        return SLICE_URI;
-    }
-
-    @Override
-    public void displayPreference(PreferenceScreen screen) {
-        super.displayPreference(screen);
-        mAirplaneModePreference = screen.findPreference(getPreferenceKey());
     }
 
     public static boolean isAvailable(Context context) {
@@ -129,61 +96,48 @@ public class AirplaneModePreferenceController extends TogglePreferenceController
     }
 
     @Override
-    public boolean isPublicSlice() {
-        return true;
-    }
-
-    @Override
-    @AvailabilityStatus
-    public int getAvailabilityStatus() {
+    public int getDefaultAvailabilityStatus() {
         return isAvailable(mContext) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
     @Override
-    public int getSliceHighlightMenuRes() {
-        return R.string.menu_key_network;
+    protected void onCreateInternal() {
+        super.onCreateInternal();
+        // First time initialization
+        getPreference().setSecondaryActionChecked(mAirplaneModeEnabler.isAirplaneModeOn());
+        getPreference().setOnSecondaryActionClickListener(isChecked -> {
+            setChecked(isChecked);
+        });
     }
 
     @Override
-    public void onStart() {
-        if (isAvailable()) {
-            mAirplaneModeEnabler.start();
-        }
+    protected void onStartInternal() {
+        mAirplaneModeEnabler.start();
     }
 
     @Override
-    public void onStop() {
-        if (isAvailable()) {
-            mAirplaneModeEnabler.stop();
-        }
+    protected void onStopInternal() {
+        mAirplaneModeEnabler.stop();
     }
 
     @Override
-    public void onDestroy() {
+    protected void onDestroyInternal() {
         mAirplaneModeEnabler.close();
     }
 
-
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE_EXIT_ECM) {
-            final boolean isChoiceYes = data.getBooleanExtra(EXIT_ECM_RESULT, false);
+            final boolean isChoiceYes = (resultCode == Activity.RESULT_OK);
             // Set Airplane mode based on the return value and checkbox state
             mAirplaneModeEnabler.setAirplaneModeInEmergencyMode(isChoiceYes,
-                    mAirplaneModePreference.isChecked());
-        } else if (requestCode == REQUEST_CODE_EXIT_SCBM) {
-            final boolean isChoiceYes = resultCode == Activity.RESULT_OK;
-            // Set Airplane mode based on the return value and checkbox state
-            mAirplaneModeEnabler.setAirplaneModeInEmergencyMode(isChoiceYes,
-                    mAirplaneModePreference.isChecked());
+                    getPreference().isSecondaryActionChecked());
         }
     }
 
-    @Override
     public boolean isChecked() {
         return mAirplaneModeEnabler.isAirplaneModeOn();
     }
 
-    @Override
     public boolean setChecked(boolean isChecked) {
         if (isChecked() == isChecked) {
             return false;
@@ -194,76 +148,6 @@ public class AirplaneModePreferenceController extends TogglePreferenceController
 
     @Override
     public void onAirplaneModeChanged(boolean isAirplaneModeOn) {
-        if (mAirplaneModePreference != null) {
-            mAirplaneModePreference.setChecked(isAirplaneModeOn);
-        }
-    }
-
-    /**
-     * According to slice framework, need override this function and provide background
-     * worker class to support slice's dynamic update.
-     */
-    @Override
-    public Class<? extends SliceBackgroundWorker> getBackgroundWorkerClass() {
-        return AirplaneModeSliceWorker.class;
-    }
-
-    /**
-     * Register content observer for URI Settings.Global.AIRPLANE_MODE_ON.
-     * If changed, notify airplane mode slice do rebind.
-     */
-    public static class AirplaneModeSliceWorker extends SliceBackgroundWorker<Void> {
-        private AirplaneModeContentObserver mContentObserver;
-
-        public AirplaneModeSliceWorker(Context context, Uri uri) {
-            super(context, uri);
-            final Handler handler = new Handler(Looper.getMainLooper());
-            mContentObserver = new AirplaneModeContentObserver(handler, this);
-        }
-
-        @Override
-        protected void onSlicePinned() {
-            mContentObserver.register(getContext());
-        }
-
-        @Override
-        protected void onSliceUnpinned() {
-            mContentObserver.unRegister(getContext());
-        }
-
-        @Override
-        public void close() throws IOException {
-            mContentObserver = null;
-        }
-
-        public void updateSlice() {
-            notifySliceChange();
-        }
-
-        public class AirplaneModeContentObserver extends ContentObserver {
-            private final AirplaneModeSliceWorker mSliceBackgroundWorker;
-
-            public AirplaneModeContentObserver(Handler handler,
-                                               AirplaneModeSliceWorker backgroundWorker) {
-                super(handler);
-                mSliceBackgroundWorker = backgroundWorker;
-            }
-
-            @Override
-            public void onChange(boolean selfChange) {
-                mSliceBackgroundWorker.updateSlice();
-            }
-
-            public void register(Context context) {
-                final Uri airplaneModeUri = Settings.Global.getUriFor(
-                        Settings.Global.AIRPLANE_MODE_ON);
-                context.getContentResolver().registerContentObserver(airplaneModeUri,
-                        false, this);
-            }
-
-            public void unRegister(Context context) {
-                context.getContentResolver().unregisterContentObserver(this);
-            }
-        }
+        getPreference().setSecondaryActionChecked(isAirplaneModeOn);
     }
 }

@@ -87,6 +87,11 @@ public class BatteryProfilePreferenceController extends PreferenceController<Pre
         unregisterContentObserver();
     }
 
+    @Override
+    protected int getDefaultAvailabilityStatus() {
+        return AVAILABLE_FOR_VIEWING;
+    }
+
     private CharSequence getSummary(int currentProfile) {
         if (currentProfile >= mProfileTitles.length && currentProfile < 0) {
             return mProfileTitles[0];
