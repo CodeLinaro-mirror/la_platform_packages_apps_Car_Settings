@@ -13,10 +13,6 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
-  ~ Changes from Qualcomm Innovation Center are provided under the following license:
-  ~
-  ~ Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-  ~ SPDX-License-Identifier: BSD-3-Clause-Clear.
   -->
 
 <resources>
@@ -57,7 +53,6 @@
     <color name="bluetooth_disabled_device_background_color">@android:color/black</color>
     <color name="bluetooth_disabled_device_icon_color">#75FFFFFF</color>
     <color name="bluetooth_device_icon_color">@android:color/white</color>
-    <color name="bluetooth_a2dp_media_player_background_color">#80C8C4</color>
 
     <!-- Quick Controls -->
     <!--

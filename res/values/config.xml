@@ -13,16 +13,9 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-    Changes from Qualcomm Innovation Center are provided under the following license:
-
-    Copyright (c) 2022 Qualcomm Innovation Center, Inc. All rights reserved.
-    SPDX-License-Identifier: BSD-3-Clause-Clear.
 -->
 
 <resources>
-    <!-- Whether to start media player after bluetooth a2dp set the player or not. -->
-    <bool name="config_bluetooth_a2dp_start_media_player">true</bool>
     <!-- Whether all activities should be single pane views or not. -->
     <bool name="config_global_force_single_pane">true</bool>
     <!-- Fully qualified class name for the homepage fragment. -->
