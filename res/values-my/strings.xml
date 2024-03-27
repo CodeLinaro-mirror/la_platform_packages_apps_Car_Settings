@@ -651,14 +651,8 @@
     <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"ကင်မရာကို သင်အသုံးပြုခွင့်ပေးထားသော မည်သည့်အက်ပ်မဆို"</string>
     <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"အက်ပ်မရှိပါ"</string>
     <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"မည်သည့်အက်ပ်ကိုမျှ"</string>
-    <string name="camera_access_radio_helpful_apps_title" msgid="2798745588985580019">"ကားမောင်းရာတွင် ကူညီသော အက်ပ်များ"</string>
-    <string name="camera_access_radio_helpful_apps_summary" msgid="2152605965038188293">"ယာဉ်ရပ်နားသည့်အခါ ပတ်ဝန်းကျင်ကို ပြခြင်း စသည်တို့အတွက် ကူညီသောအက်ပ်များ"</string>
     <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"လိုအပ်သော အက်ပ်များသာ"</string>
     <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"သင့်ကားထုတ်လုပ်သူက သတ်မှတ်ထားသော အက်ပ်များသာ"</string>
-    <string name="camera_access_radio_helpful_required_apps_title" msgid="631591123648468495">"ကားမောင်းရာတွင် ကူညီသော အက်ပ်များ"</string>
-    <string name="camera_access_radio_helpful_required_apps_summary" msgid="1388997613007479738">"ကားရပ်သည့်အခါ ပတ်ဝန်းကျင်ကို ပြခြင်း စသည်တို့အတွက် ကူညီသောအက်ပ်များနှင့် လိုအပ်သောအက်ပ်များ"</string>
-    <string name="camera_helpful_apps_list_title" msgid="3384154135315115240">"ကားမောင်းရာတွင် ကူညီသော အက်ပ်များ"</string>
-    <string name="camera_helpful_apps_list_summary" msgid="4070939811052295258">"ဤအက်ပ်များသည် ယာဉ်မောင်းရာတွင် ကူညီရန် သင့်ကင်မရာကို သုံးနိုင်သည်"</string>
     <string name="camera_required_apps_list_title" msgid="4751978669779838763">"လိုအပ်သော အက်ပ်များ"</string>
     <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"ဤအက်ပ်များသည် သင့်ကား ဘေးကင်းစွာ မောင်းနှင်နိုင်ရန် လိုအပ်သည်"</string>
     <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"မူဝါဒ"</string>
@@ -770,7 +764,7 @@
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"ကားမောင်းနေစဉ် ပရိုဖိုင်ကို ထည့်၍မရပါ"</string>
     <string name="default_search_query" msgid="3137420627428857068">"ရှာရန်"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistant နှင့် Voice"</string>
-    <string name="assistant_and_voice_assistant_app_title" msgid="5981647244625171285">"ဒစ်ဂျစ်တယ် Assistant အက်ပ်"</string>
+    <string name="assistant_and_voice_assistant_app_title" msgid="5981647244625171285">"ဒစ်ဂျစ်တယ်အထောက်အကူ အက်ပ်"</string>
     <string name="assistant_and_voice_use_text_from_screen_title" msgid="5851460943413795599">"ဖန်သားပြင်မှ စာသားကိုသုံးရန်"</string>
     <string name="assistant_and_voice_use_text_from_screen_summary" msgid="4161751708121301541">"ဖန်သားပြင်အကြောင်းအရာများ သုံးရန် assistant ကို ခွင့်ပြုပါ"</string>
     <string name="assistant_and_voice_use_screenshot_title" msgid="1930735578425470046">"ဖန်သားပြင်ဓာတ်ပုံ သုံးရန်"</string>
