@@ -15,12 +15,17 @@ import androidx.preference.TwoStatePreference;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceController;
 
+import android.util.Log;
+
+import java.lang.reflect.Method;
+
 /**
  * Controls wifi tethering enable 11be configuration
  */
 public class WifiTetherEnableMloPreferenceController extends
         PreferenceController<TwoStatePreference> {
 
+    private final String TAG = "WifiTetherEnableMloPreferenceController";
     private final WifiManager mWifiManager;
 
     public WifiTetherEnableMloPreferenceController(Context context, String preferenceKey,
@@ -40,8 +45,13 @@ public class WifiTetherEnableMloPreferenceController extends
             return;
         }
         SoftApConfiguration softApConfiguration = mWifiManager.getSoftApConfiguration();
-        boolean enableMlo = softApConfiguration.isIeee80211beEnabled();
-        preference.setChecked(enableMlo);
+        try {
+            Method methodIsMloEnabled = softApConfiguration.getClass().getMethod("isMultiLinkOperationEnabled");
+            boolean enableMlo = (boolean) methodIsMloEnabled.invoke(softApConfiguration);
+            preference.setChecked(enableMlo);
+        } catch (Exception e) {
+            Log.e(TAG, "Can't find isMultiLinkOperationEnabled function in SoftApConfiguration");
+        }
     }
 
     @Override
@@ -52,6 +62,12 @@ public class WifiTetherEnableMloPreferenceController extends
                 new SoftApConfiguration.Builder(softApConfiguration)
                         .setIeee80211beEnabled(enableMlo)
                         .build();
+        try {
+            Method methodSetMloEnable = softApConfiguration.getClass().getMethod("setMultiLinkOperationEnabled");
+            methodSetMloEnable.invoke(softApConfiguration, enableMlo);
+        } catch (Exception e) {
+            Log.e(TAG, "Can't find setMultiLinkOperationEnabled function in SoftApConfiguration");
+        }
         return mWifiManager.setSoftApConfiguration(newSoftApConfiguration);
     }
 }
