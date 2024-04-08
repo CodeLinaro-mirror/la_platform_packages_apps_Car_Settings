@@ -473,7 +473,7 @@
     <string name="legal_information" msgid="1838443759229784762">"Thông tin pháp lý"</string>
     <string name="contributors_title" msgid="7698463793409916113">"Người đóng góp"</string>
     <string name="manual" msgid="4819839169843240804">"Hướng dẫn sử dụng"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"Nhãn theo quy định"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"Nhãn thông tin quy định"</string>
     <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Hướng dẫn về an toàn và quy định"</string>
     <string name="copyright_title" msgid="4220237202917417876">"Bản quyền"</string>
     <string name="license_title" msgid="936705938435249965">"Giấy phép"</string>
@@ -643,6 +643,20 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Xóa hồ sơ của bạn"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Xóa hồ sơ và tài khoản của bạn khỏi hệ thống thông tin giải trí này"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Bạn không thực hiện được thao tác này cho hồ sơ của mình"</string>
+    <string name="camera_access_settings_title" msgid="1841809323727456945">"Quyền truy cập vào camera"</string>
+    <string name="camera_access_settings_summary" msgid="8820488359585532496">"Chọn xem các ứng dụng có thể truy cập vào camera của ô tô hay không"</string>
+    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"Sử dụng camera của ô tô cùng:"</string>
+    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"Ứng dụng bất kỳ"</string>
+    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"Ứng dụng bất kỳ mà bạn cho phép truy cập vào dữ liệu camera"</string>
+    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"Không ứng dụng nào"</string>
+    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"Không ứng dụng nào của bạn"</string>
+    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"Chỉ những ứng dụng cần thiết"</string>
+    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"Chỉ những ứng dụng mà nhà sản xuất ô tô yêu cầu"</string>
+    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"Ứng dụng cần thiết"</string>
+    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"Những ứng dụng này là cần thiết để giúp ô tô của bạn hoạt động an toàn"</string>
+    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Chính sách"</string>
+    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"Có thể nhà sản xuất ô tô vẫn có quyền truy cập vào camera của ô tô. Bạn có thể tham khảo các chính sách của họ để biết thêm thông tin."</string>
+    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Tìm hiểu thêm về cách từng ứng dụng sử dụng camera bằng cách tham khảo chính sách quyền riêng tư của ứng dụng đó."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Bảo mật"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Phương thức khóa màn hình"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Không"</string>
