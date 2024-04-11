@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Izinga lokukhanya"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Ukukhanya okuguqukayo"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Lungisa ukukhanya kwesikrini sakho ngokwendawo ezungezile"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Itimu"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Ukukhanya kwasebusuku kuvuliwe"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Inethiwekhi ne-inthanethi"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Inethiwekhi yeselula"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"I-Hotspot"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Sebenzisa i-hotspot ye-Wi-Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Valiwe"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Vala ama-hotspot ngokuzenzakalela"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"I-Wi-Fi hotspot izovaleka uma kungekho amadivayisi axhunyiwe"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Sebenzisa i-hotspot kuwo wonke amadrayivu"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Yenza i-hotspot itholakale noma nini uma imoto ivuliwe"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Skena le khodi ye-QR ukuze ujoyine i-\"%s\""</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Iphasiwedi ye-hotspot: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"I-<xliff:g id="REQUESTER">%s</xliff:g> ifuna ukuvula i-Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Kuxhunywe ngaphambilini"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"I-%1$s ixhunyiwe"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"I-%1$s inqanyuliwe"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Uxhumano lwedivayisi nemoto yakho"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"I-Ultra‑WideBand (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Isiza imoto yakho ibone indawo yamadivayisi e-UWB"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Isicelo sokubhanqa i-Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Pheya futhi uxhume"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Ikhodi yokumatanisa ye-Bluetooth"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Imisindo yezexwayiso"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Ithoni yokukhala, izaziso, i-alamu"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Dlala imidiya kokuthi"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"Ukugqama"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Lungisa isikrini mayelana nokukhanya okuphansi"</string>
     <string name="units_settings" msgid="402325305096925886">"Amayunithi"</string>

@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Tingkat kecerahan"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Kecerahan adaptif"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Menyesuaikan kecerahan layar dengan lingkungan"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Tema"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Mode Cahaya Malam aktif"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Jaringan &amp; internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Jaringan seluler"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Gunakan hotspot Wi-Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Nonaktif"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Otomatis nonaktifkan hotspot"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Hotspot Wi-Fi akan dinonaktifkan jika tidak ada perangkat yang terhubung"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Gunakan hotspot setiap kali berkendara"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Sediakan hotspot setiap kali mobil dinyalakan"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Pindai kode QR ini untuk bergabung \"%s\""</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Sandi hotspot: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> ingin mengaktifkan Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Perangkat yang terhubung sebelumnya"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s terhubung"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s terputus"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Koneksi perangkat dengan mobil Anda"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ultra-Wideband (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Bantu mobil Anda mengidentifikasi posisi perangkat UWB"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Permintaan penyambungan Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Sambungkan &amp; hubungkan"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Kode penyambungan Bluetooth"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Suara notifikasi"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Nada dering, notifikasi, alarm"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Putar media di"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"Kecerahan"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Menyesuaikan layar untuk cahaya redup"</string>
     <string name="units_settings" msgid="402325305096925886">"Unit"</string>
@@ -354,7 +360,7 @@
     <string name="app_data_usage_background_data_summary" msgid="4445472217737386826">"Hanya gunakan data seluler saat aplikasi berada di latar depan"</string>
     <string name="computing_size" msgid="5791407621793083965">"Menghitung..."</string>
     <string name="runtime_permissions_additional_count" msgid="3920383880473283764">"{count,plural, =1{# izin tambahan}other{# izin tambahan}}"</string>
-    <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"Catatan: Setelah reboot, aplikasi ini tidak dapat dimulai hingga kunci kendaraan dibuka."</string>
+    <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"Catatan: Setelah perangkat dimulai ulang, aplikasi ini tidak dapat mulai berjalan hingga kunci kendaraan dibuka"</string>
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"Bantuan &amp; masukan suara"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"Aplikasi bantuan"</string>
     <string name="assist_access_context_title" msgid="8034851731390785301">"Gunakan teks dari layar"</string>
@@ -889,7 +895,7 @@
     <string name="captions_settings_text_size_large" msgid="5198207220911360512">"Besar"</string>
     <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Sangat besar"</string>
     <string name="captions_text_style_title" msgid="8547777957403577760">"Gaya teks"</string>
-    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Disetel oleh aplikasi"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Ikut setelan aplikasi"</string>
     <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Putih berlatar hitam"</string>
     <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Hitam berlatar putih"</string>
     <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Kuning berlatar hitam"</string>

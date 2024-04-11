@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Επίπεδο φωτεινότητας"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Προσαρμοστική φωτεινότητα"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Προσαρμογή φωτεινότητας οθόνης στο περιβάλλον"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Θέμα"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Νυχτερινός φωτισμός ενεργός"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Δίκτυο και διαδίκτυο"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Δίκτυο κινητής τηλεφωνίας"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Σημείο πρόσβασης Wi-Fi"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Χρήση σημείου πρόσβασης Wi-Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Ανενεργό"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Αυτόματη απενεργοποίηση σημείου πρόσβασης Wi-Fi"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Το σημείο πρόσβασης Wi‑Fi θα απενεργοποιηθεί εάν δεν υπάρχουν συνδεδεμένες συσκευές"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Χρήση σημ. πρόσβασης Wi-Fi σε όλες τις διαδρομές"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Να είναι διαθέσιμο το σημείο πρόσβασης Wi-Fi κάθε φορά που είναι αναμμένη η μηχανή του αυτοκινήτου"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Σαρώστε αυτόν τον κωδικό QR για σύνδεση στο \"%s\""</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Κωδικός πρόσβασης του σημείου πρόσβασης Wi-Fi: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"Η εφαρμογή <xliff:g id="REQUESTER">%s</xliff:g> θέλει να ενεργοποιήσει το Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Συνδέθηκαν στο παρελθόν"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"Η συσκευή %1$s συνδέθηκε"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"Η συσκευή %1$s αποσυνδέθηκε"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Συνδέσεις συσκευών με το αυτοκίνητό σας"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Υπερευρεία ζώνη (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Βοηθάει το αυτοκίνητό σας να προσδιορίσει τη θέση των συσκευών UWB"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Αίτημα σύζευξης Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Σύζευξη και σύνδεση"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Κωδικός σύζευξης Bluetooth"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Ήχοι ειδοποιήσεων"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Ήχος κλήσης, ειδοποιήσεις, ξυπνητήρια"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Αναπαραγωγή μέσων σε"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"Φωτεινότητα"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Προσαρμογή οθόνης για χαμηλό φωτισμό"</string>
     <string name="units_settings" msgid="402325305096925886">"Μονάδες"</string>
