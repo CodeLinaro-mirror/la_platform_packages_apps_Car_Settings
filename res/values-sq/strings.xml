@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Niveli i ndriçimit"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Ndriçimi me përshtatje"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Rregullo ndriçimin e ekranit sipas ambientit"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Tema"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"\"Drita e natës\" është aktive"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Rrjeti dhe interneti"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Rrjeti celular"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Zona e qasjes për internet"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Përdor zonën e qasjes për internet me Wi‑Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Joaktiv"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Çaktivizo automatikisht zonën e qasjes për internet"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Zona e qasjes për internet e Wi‑Fi do të çaktivizohet nëse nuk është lidhur asnjë pajisje"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Përdor zonën e qasjes për internet për çdo udhëtim"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Bëje zonën e qasjes për internet të disponueshme sa herë që makina është e ndezur"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Skano këtë kod QR për t\'iu bashkuar \"%s\""</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Fjalëkalimi i zonës së qasjes për internet: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> kërkon të aktivizojë Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Të lidhura më parë"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s u lidh"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s u shkëput"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Lidhjet e pajisjes me makinën tënde"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Brezi ultra i gjerë (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"E ndihmon makinën tënde të identifikojë pozicionin e pajisjeve UWB"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Kërkesë çiftimi me Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Ҫifto dhe lidh"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Kodi i çiftimit të Bluetooth-it"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Tingujt e sinjalizimeve"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Toni i ziles, njoftimet, alarmi"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Luaj media në"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"Ndriçimi"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Rregullo ekranin për nivelin e ulët të dritës"</string>
     <string name="units_settings" msgid="402325305096925886">"Njësitë"</string>
