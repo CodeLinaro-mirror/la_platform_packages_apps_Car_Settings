@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"កម្រិត​ពន្លឺ"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"កម្រិតពន្លឺបត់បែន"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"កែតម្រូវ​ពន្លឺអេក្រង់​ទៅតាមមជ្ឈដ្ឋាន"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"ទម្រង់រចនា"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"ពន្លឺពេលយប់​បានបើក"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"បណ្តាញ និង​អ៊ីនធឺណិត"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"បណ្ដាញទូរសព្ទចល័ត"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"ហតស្ប៉ត"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"ប្រើហតស្ប៉ត Wi-Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"បិទ"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"បិទ​ហតស្ប៉ត​ដោយ​ស្វ័យប្រវត្តិ"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"ហតស៉្បត Wi-Fi នឹង​បិទ ​ប្រសិនបើ​​ឧបករណ៍​មិនត្រូវបានភ្ជាប់"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"ប្រើហតស្ប៉តសម្រាប់រាល់ការបើកបរ"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"បើកហតស្ប៉តប្រើ រាល់ពេលបញ្ឆេះរថយន្ត"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"ស្កេនកូដ QR នេះ ដើម្បីចូលរួម \"%s\""</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"ពាក្យ​សម្ងាត់ហតស្ប៉ត៖ %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> ចង់បើក Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"បាន​ភ្ជាប់​ពីមុន​"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"បានភ្ជាប់ %1$s"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"បានផ្ដាច់ %1$s"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"ការតភ្ជាប់ឧបករណ៍ជាមួយរថយន្តរបស់អ្នក"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"កម្រិតបញ្ជូនខ្ពស់ខ្លាំង (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"ជួយរថយន្តរបស់អ្នកកំណត់ទីតាំងឧបករណ៍ UWB"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"សំណើ​ផ្គូផ្គង​តាម​ប៊្លូធូស"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"ផ្គូផ្គង និងភ្ជាប់"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"លេខកូដផ្គូផ្គងប៊្លូធូស"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"សំឡេង​ជូនដំណឹង"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"សំឡេង​រោទ៍ ការជូនដំណឹង ម៉ោងរោទ៍"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"ចាក់មេឌៀនៅលើ"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"ពន្លឺ"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"កែតម្រូវ​អេក្រង់​សម្រាប់ពន្លឺតិច"</string>
     <string name="units_settings" msgid="402325305096925886">"ខ្នាត"</string>
@@ -458,7 +464,7 @@
     <string name="security_patch" msgid="4794276590178386903">"កម្រិតបំណះសុវត្ថិភាព Android"</string>
     <string name="hardware_info" msgid="3973165746261507658">"ម៉ូដែល និង​ហាតវែរ"</string>
     <string name="hardware_info_summary" msgid="8262576443254075921">"ម៉ូដែល៖ <xliff:g id="MODEL">%1$s</xliff:g>"</string>
-    <string name="baseband_version" msgid="2370088062235041897">"កំណែ​មូលដ្ឋាន"</string>
+    <string name="baseband_version" msgid="2370088062235041897">"កំណែបេសប៊េន"</string>
     <string name="kernel_version" msgid="7327212934187011508">"កំណែ​ខឺណែល"</string>
     <string name="build_number" msgid="3997326631001009102">"លេខ​កំណែបង្កើត"</string>
     <string name="bluetooth_mac_address" msgid="7641425947941688072">"អាសយដ្ឋាន​ប៊្លូធូស"</string>

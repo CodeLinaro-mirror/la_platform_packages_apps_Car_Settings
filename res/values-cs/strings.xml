@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Úroveň jasu"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Adaptivní jas"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Přizpůsobit jas obrazovky okolí"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Motiv"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Noční režim je aktivní"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Síť a internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mobilní síť"</string>
@@ -43,7 +44,7 @@
     <string name="sim_change_data_message" msgid="4669775284395549069">"Pro mobilní data používáte <xliff:g id="CARRIER2_0">%2$s</xliff:g>. Pokud přepnete na operátora <xliff:g id="CARRIER1">%1$s</xliff:g>, <xliff:g id="CARRIER2_1">%2$s</xliff:g> už se používat nebude."</string>
     <string name="sim_change_data_ok" msgid="2348804996223271081">"Použít <xliff:g id="CARRIER">%1$s</xliff:g>"</string>
     <string name="roaming_title" msgid="6218635014519017734">"Roaming"</string>
-    <string name="roaming_summary" msgid="7476127740259728901">"Používat datové služby při roamingu"</string>
+    <string name="roaming_summary" msgid="7476127740259728901">"Při roamingu používat datové služby"</string>
     <string name="roaming_alert_title" msgid="4433901635766775763">"Povolit datový roaming?"</string>
     <string name="roaming_warning" msgid="4908184914868720704">"Mohou vám být účtovány poplatky za roaming."</string>
     <string name="data_usage_settings" msgid="7877132994777987848">"Využití dat"</string>
@@ -124,7 +125,7 @@
     <string name="link_speed" msgid="7868861844075624445">"%1$d Mb/s"</string>
     <string name="wifi_band_24ghz" msgid="8972492390639295220">"2,4 GHz"</string>
     <string name="wifi_band_5ghz" msgid="2023762623523105080">"5 GHz"</string>
-    <string name="wifi_network_detail" msgid="9070182553555487360">"Podrobnosti sítě"</string>
+    <string name="wifi_network_detail" msgid="9070182553555487360">"Podrobnosti o síti"</string>
     <string name="wifi_mac_address" msgid="1466178247802349180">"Adresa MAC"</string>
     <string name="wifi_ip_address_title" msgid="300539799594024884">"IP adresa"</string>
     <string name="wifi_subnet_mask" msgid="6238171812379380608">"Maska podsítě"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Použít hotspot sítě Wi‑Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Vypnuto"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Automatické vypnutí hotspotu"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Pokud nebudou připojena žádná zařízení, hotspot Wi-Fi se vypne"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Používat hotspot pro všechny jízdy"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Aktivovat hotspot, když je auto nastartované"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Připojte se k síti %s naskenováním QR kódu"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Heslo hotspotu: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"Aplikace <xliff:g id="REQUESTER">%s</xliff:g> chce zapnout Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Dříve připojeno"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"Zařízení %1$s je připojeno"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"Zařízení %1$s je odpojeno"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Připojení zařízení k autu"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ultra-wideband (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Pomáhá autu rozpoznat umístění zařízení UWB"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Požadavek na párování zařízení Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Párovat a připojit"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Párovací kód Bluetooth"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Zvuky upozornění"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Vyzvánění, oznámení, budík"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Přehrávat média na"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"Jas"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Přizpůsobit obrazovku slabému světlu"</string>
     <string name="units_settings" msgid="402325305096925886">"Jednotky"</string>

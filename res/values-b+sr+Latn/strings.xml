@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Nivo osvetljenosti"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Prilagodljiva osvetljenost"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Prilagodite osvetljenje ekrana okruženju"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Tema"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Noćno svetlo je uključeno"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Mreža i internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mobilna mreža"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Koristi WiFi hotspot"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Isključeno"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Automatski isključi hotspot"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Wi‑Fi hotspot će se isključiti ako nijedan uređaj nije povezan"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Koristite hotspot tokom svake vožnje"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Neka hotspot bude dostupan kad god se uključi automobil"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Skenirajte QR kôd i pridružite se hotspotu „%s“"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Lozinka za hotspot: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> želi da uključi WiFi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Prethodno povezano"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"Povezano: %1$s"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"Prekinuta je veza: %1$s"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Povezivanje uređaja sa automobilom"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ultra-široki pojas (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Pomaže automobilu da identifikuje položaj UWB uređaja"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Zahtev za Bluetooth uparivanje"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Upari i poveži"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Kôd za uparivanje sa Bluetooth uređajem"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Zvukovi obaveštenja"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Melodija zvona, obaveštenja, alarm"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Pusti medije na"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"Osvetljenost"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Prilagodite ekran slabom osvetljenju"</string>
     <string name="units_settings" msgid="402325305096925886">"Jedinice"</string>
@@ -658,7 +664,7 @@
     <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"Proizvođač automobila može i dalje da ima pristup kameri automobila. Pregledajte njegove smernice da biste videli više informacija."</string>
     <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Pregledajte politiku privatnosti aplikacije da biste saznali više o tome kako ona koristi kameru."</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Bezbednost"</string>
-    <string name="security_settings_subtitle" msgid="2244635550239273229">"Zaključavanje ekrana"</string>
+    <string name="security_settings_subtitle" msgid="2244635550239273229">"Otključavanje ekrana"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Nema"</string>
     <string name="security_lock_pattern" msgid="1174352995619563104">"Šablon"</string>
     <string name="security_lock_pin" msgid="4891899974369503200">"PIN"</string>
@@ -674,7 +680,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"Podesite otključavanje ekrana"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Odaberite PIN"</string>
     <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Odaberite lozinku"</string>
-    <string name="current_screen_lock" msgid="637651611145979587">"Trenutno zaključavanje ekrana"</string>
+    <string name="current_screen_lock" msgid="637651611145979587">"Trenutno otključavanje ekrana"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"Podesite šablon iz bezbednosnih razloga"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"Obriši"</string>
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"Otkaži"</string>
@@ -690,7 +696,7 @@
     <string name="lockpattern_too_many_failed_confirmation_attempts" msgid="4636307830951251013">"Previše netačnih pokušaja. Probajte ponovo za <xliff:g id="NUMBER">%d</xliff:g> sek."</string>
     <string name="lockpattern_does_not_support_rotary" msgid="7356367113555659428">"Umesto rotirajućeg unosa koristite dodir"</string>
     <string name="okay" msgid="4589873324439764349">"Potvrdi"</string>
-    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Uklonićete zaključavanje ekrana?"</string>
+    <string name="remove_screen_lock_title" msgid="1234382338764193387">"Uklonićete otključavanje ekrana?"</string>
     <string name="remove_screen_lock_message" msgid="6675850371585564965">"Tada će svako moći da pristupi vašem nalogu"</string>
     <string name="security_profile_lock_title" msgid="3082523481292617350">"Zaključavanje profila"</string>
     <string name="security_unlock_profile_summary" msgid="6742592419759865631">"Podesite automatsko otključavanje"</string>

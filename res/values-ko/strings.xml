@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"밝기 수준"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"밝기 자동 조절"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"화면 밝기를 환경에 맞게 조정"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"테마"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"야간 조명 켜짐"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"네트워크 및 인터넷"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"모바일 네트워크"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"핫스팟"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Wi‑Fi 핫스팟 사용"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"사용 안함"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"자동으로 핫스팟 사용 중지"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"연결된 기기가 없으면 Wi‑Fi 핫스팟이 사용 중지됩니다."</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"모든 주행에 핫스팟 사용"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"자동차가 사용 설정되어 있을 때 핫스팟을 사용 설정합니다."</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\'%s\'에 연결하려면 이 QR 코드를 스캔하세요."</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"핫스팟 비밀번호: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g>에서 Wi-Fi를 사용 설정하려고 합니다."</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"이전에 연결됨"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s 연결됨"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s 연결 해제됨"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"자동차와 기기 연결"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"초광대역(UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"자동차에서 초광대역 기기의 위치를 파악하도록 돕습니다."</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"블루투스 페어링 요청"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"페어링 및 연결"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"블루투스 페어링 코드"</string>
@@ -255,6 +259,8 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"경고음"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"벨소리, 알림, 알람"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"다음에서 미디어 재생"</string>
+    <!-- no translation found for audio_route_selector_toast (7326795415616469871) -->
+    <skip />
     <string name="display_brightness" msgid="5718970880488110840">"밝기"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"어두운 곳에 맞게 화면 조정"</string>
     <string name="units_settings" msgid="402325305096925886">"단위"</string>
