@@ -86,7 +86,6 @@ public class AddAccountActivity extends Activity {
             try {
                 Bundle result = future.getResult();
                 Intent intent = result.getParcelable(AccountManager.KEY_INTENT);
-<<<<<<< HEAD   (9c1edc Merge cherrypicks of [16577927] into rvc-platform-release.)
                 if (intent != null) {
                     done = false;
                     Bundle addAccountOptions = new Bundle();
@@ -104,16 +103,6 @@ public class AddAccountActivity extends Activity {
                         mPendingIntent = null;
                     }
                 }
-=======
-                Bundle addAccountOptions = new Bundle();
-                addAccountOptions.putBoolean(EXTRA_HAS_MULTIPLE_USERS,
-                        hasMultipleUsers(AddAccountActivity.this));
-                addAccountOptions.putParcelable(EXTRA_USER, mUserHandle);
-                intent.putExtras(addAccountOptions);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivityForResultAsUser(
-                        new Intent(intent), ADD_ACCOUNT_REQUEST, mUserHandle);
->>>>>>> CHANGE (3195c5 Convert argument to Intent in car settings AddAccountActivit)
                 LOG.v("account added: " + result);
             } catch (OperationCanceledException | IOException | AuthenticatorException e) {
                 LOG.v("addAccount error: " + e);
