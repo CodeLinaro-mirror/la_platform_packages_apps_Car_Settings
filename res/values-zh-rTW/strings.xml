@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"亮度"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"自動調整亮度"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"根據環境調整螢幕亮度"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"主題"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"夜燈模式已開啟"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"網路與網際網路"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"行動網路"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"無線基地台"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"使用 Wi‑Fi 無線基地台"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"關閉"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"自動關閉無線基地台"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Wi‑Fi 無線基地台會在沒有任何裝置連線時關閉"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"開車時一律使用無線基地台"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"在車輛發動時啟用無線基地台"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"掃描這個 QR code 即可加入「%s」"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"無線基地台密碼：%s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"「<xliff:g id="REQUESTER">%s</xliff:g>」要求開啟 Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"先前連線的裝置"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"已連線到「%1$s」"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"已中斷與「%1$s」的連線"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"車輛與裝置間的連結"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"超寬頻 (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"協助車輛判斷 UWB 裝置的位置"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"藍牙配對要求"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"配對並連線"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"藍牙配對碼"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"警示音效"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"鈴聲、通知和鬧鐘"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"選擇媒體輸出裝置"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"正在將媒體切換到「%1$s」"</string>
     <string name="display_brightness" msgid="5718970880488110840">"亮度"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"將螢幕調整為適合在低光源環境中查看的亮度"</string>
     <string name="units_settings" msgid="402325305096925886">"單位"</string>
@@ -373,7 +378,7 @@
     <string name="domain_urls_summary_none" msgid="3077803215088293183">"不要開啟支援的連結"</string>
     <string name="domain_urls_summary_one" msgid="5072257421806034237">"開啟 <xliff:g id="DOMAIN">%s</xliff:g>"</string>
     <string name="domain_urls_summary_some" msgid="5523153458016701725">"開啟 <xliff:g id="DOMAIN">%s</xliff:g> 和其他網址"</string>
-    <string name="app_launch_title" msgid="3442601467010363057">"預設為開啟"</string>
+    <string name="app_launch_title" msgid="3442601467010363057">"預設開啟"</string>
     <string name="app_launch_other_defaults_title" msgid="5734827759507953180">"其他預設值"</string>
     <string name="auto_launch_disable_text" msgid="3595315315092716391">"沒有預設值。"</string>
     <string name="auto_launch_enable_text" msgid="7230832269574106901">"你已預設在執行某些動作時啟動這個應用程式。"</string>
@@ -407,10 +412,10 @@
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"將應用程式設為優先"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"付費簡訊存取權"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"傳送付費簡訊必須另外付費，相關費用會併入電信費帳單。如果你為某個應用程式啟用權限，即可利用該應用程式傳送付費簡訊。"</string>
-    <string name="usage_access_title" msgid="7153427122072303254">"使用情況存取權"</string>
-    <string name="usage_access_description" msgid="2413168719257435422">"取得「使用情況存取權」權限後，應用程式就能追蹤你使用的其他應用程式與頻率，以及你的電信業者、語言設定和其他詳細資料。"</string>
+    <string name="usage_access_title" msgid="7153427122072303254">"使用存取權"</string>
+    <string name="usage_access_description" msgid="2413168719257435422">"具有使用存取權的應用程式可以追蹤你使用的其他應用程式與頻率，以及你的電信業者、語言設定等詳情。"</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Wi-Fi 控制"</string>
-    <string name="wifi_control_description" msgid="6021926850423169261">"取得「Wi-Fi 控制」權限後，應用程式就能開啟或關閉 Wi-Fi、掃描及連上 Wi-Fi 網路、新增或移除網路，或者啟動僅限本機的無線基地台。"</string>
+    <string name="wifi_control_description" msgid="6021926850423169261">"取得「Wi-Fi 控制」權限後，應用程式就能開啟或關閉 Wi-Fi、掃描及連上 Wi-Fi 網路、新增或移除網路，或啟動僅限區域網路的無線基地台。"</string>
     <string name="more_special_access_title" msgid="166115485446645971">"更多"</string>
     <string name="location_settings_title" msgid="901334356682423679">"定位"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"使用位置資訊"</string>
@@ -475,7 +480,7 @@
     <string name="manual" msgid="4819839169843240804">"手動"</string>
     <string name="regulatory_labels" msgid="3165587388499646779">"法規標籤"</string>
     <string name="safety_and_regulatory_info" msgid="1204127697132067734">"安全性和法規手冊"</string>
-    <string name="copyright_title" msgid="4220237202917417876">"版權"</string>
+    <string name="copyright_title" msgid="4220237202917417876">"著作權"</string>
     <string name="license_title" msgid="936705938435249965">"授權"</string>
     <string name="terms_title" msgid="5201471373602628765">"條款及細則"</string>
     <string name="webview_license_title" msgid="6442372337052056463">"System WebView 授權"</string>
@@ -509,7 +514,7 @@
     <string name="reset_network_confirm_button_text" msgid="5246859685069024851">"重設設定"</string>
     <string name="reset_network_complete_toast" msgid="3804108209431416865">"已重設網路設定"</string>
     <string name="reset_app_pref_title" msgid="5855420038951743992">"重設應用程式偏好設定"</string>
-    <string name="reset_app_pref_desc" msgid="579392665146962149">"這麼做會重設下列項目的所有偏好設定：\n\n"<li>"已停用的應用程式"</li>\n<li>"已停用的應用程式通知"</li>\n<li>"執行動作的預設應用程式"</li>\n<li>"應用程式背景資料限制"</li>\n<li>"任何權限限制"</li>\n\n"你不會遺失任何應用程式資料。"</string>
+    <string name="reset_app_pref_desc" msgid="579392665146962149">"這項操作會重設下列項目的所有偏好設定：\n\n"<li>"已停用的應用程式"</li>\n<li>"已停用的應用程式通知"</li>\n<li>"執行動作的預設應用程式"</li>\n<li>"應用程式背景資料限制"</li>\n<li>"任何權限限制"</li>\n\n"你不會遺失任何應用程式資料。"</string>
     <string name="reset_app_pref_button_text" msgid="6270820447321231609">"重設應用程式"</string>
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"已重設應用程式偏好設定"</string>
     <string name="factory_reset_title" msgid="4019066569214122052">"清除所有資料 (恢復原廠設定)"</string>
@@ -609,7 +614,7 @@
     <string name="data_usage_auto_sync_on_dialog_title" msgid="8068513213445588532">"要允許自動同步資料嗎？"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="8683935973719807821">"連上網路時，你對帳戶所做的變更全都會自動複製到你的車輛。\n\n有些帳戶還可能會自動複製你在車輛上所做的每一項變更。"</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="6683011954002351091">"不允許自動同步資料嗎？"</string>
-    <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"這樣可以節省數據用量，但你必須手動同步處理每個帳戶才能收集最新資訊。此外，系統進行更新時不會通知你。"</string>
+    <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"這樣可以節省數據用量，但你必須手動同步處理每個帳戶才能收集最新資訊。此外，你也不會收到最新動態的通知。"</string>
     <string name="account_details_title" msgid="7529571432258448573">"帳戶資訊"</string>
     <string name="add_account_title" msgid="5988746086885210040">"新增帳戶"</string>
     <string name="add_an_account" msgid="1072285034300995091">"新增帳戶"</string>

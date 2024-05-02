@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"مستوى السطوع"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"السطوع التكيُّفي"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"ضبط سطوع الشاشة بناءً على الظروف المحيطة"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"المظهر"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"تم تفعيل الإضاءة الليلية."</string>
     <string name="network_and_internet" msgid="4229023630498537530">"الشبكة والإنترنت"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"شبكة الجوّال"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"نقطة الاتصال"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"استخدام نقطة اتصال Wi-Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"غير مفعّلة"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"إيقاف نقطة الاتصال تلقائيًا"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"سيتم إيقاف نقطة اتصال Wi‑Fi في حال عدم اتصال أي أجهزة."</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"استخدم نقطة الاتصال لجميع برامج التشغيل"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"جعل نقطة الاتصال متاحة عند تشغيل السيارة"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"امسح رمز الاستجابة السريعة هذا للانضمام إلى \"%s\"."</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"كلمة مرور نقطة الاتصال: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"هناك رغبة من <xliff:g id="REQUESTER">%s</xliff:g> في تفعيل شبكة Wi-Fi."</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"الأجهزة المتصلة سابقًا"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"تم ربط ‎%1$s."</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"تم قطع الاتصال عن ‎%1$s."</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"اتصالات الأجهزة بسيارتك"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"النطاق الفائق العرض (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"يساعد هذا الخيار سيارتك في التعرّف على موقع أجهزة النطاق الفائق العرض (UWB)"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"طلب إقران البلوتوث"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"الإقران والاتصال"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"رمز إقران البلوتوث"</string>
@@ -234,7 +238,7 @@
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"جميع اللغات"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"لوحة المفاتيح"</string>
     <string name="manage_keyboard" msgid="4045394766282200132">"إدارة لوحات المفاتيح"</string>
-    <string name="text_to_speech_settings" msgid="811985746199507343">"إخراج النص إلى كلام"</string>
+    <string name="text_to_speech_settings" msgid="811985746199507343">"الصوت عند تحويل النص إلى كلام"</string>
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"المحرّك المُفضَّل"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"المحرّك الحالي"</string>
     <string name="tts_speech_rate" msgid="4512944877291943133">"معدل سرعة الكلام"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"أصوات المنبه"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"نغمة الرنين والإشعارات والمنبّه"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"تشغيل الوسائط على"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"تبديل مسار الوسائط إلى %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"السطوع"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"ضبط الشاشة على وضع \"الإضاءة المنخفضة\""</string>
     <string name="units_settings" msgid="402325305096925886">"وحدات العرض"</string>
@@ -586,7 +591,7 @@
     <string name="storage_other_apps" msgid="945509804756782640">"تطبيقات أخرى"</string>
     <string name="storage_files" msgid="6382081694781340364">"الملفات"</string>
     <string name="storage_system" msgid="1271345630248014010">"النظام"</string>
-    <string name="storage_detail_dialog_system" msgid="796365720531622361">"يتضمّن النظام الملفات المستخدمة لتشغيل إصدار Android <xliff:g id="VERSION">%s</xliff:g>."</string>
+    <string name="storage_detail_dialog_system" msgid="796365720531622361">"يتضمّن النظام الملفات المستخدمة لتشغيل إصدار Android‏ <xliff:g id="VERSION">%s</xliff:g>"</string>
     <string name="storage_audio_files_title" msgid="5183170457027181700">"الملفات الصوتية"</string>
     <string name="memory_calculating_size" msgid="1672238502950390033">"جارٍ الحساب…"</string>
     <string name="storage_application_size_label" msgid="1146156683170661354">"حجم التطبيق"</string>
@@ -621,7 +626,7 @@
     <string name="account_sync_title" msgid="6541844336300236915">"مزامنة الحساب"</string>
     <string name="account_sync_summary_some_on" msgid="4525960296068027182">"تمّ تفعيل المزامنة لـ <xliff:g id="ID_1">%1$d</xliff:g> من إجمالي <xliff:g id="ID_2">%2$d</xliff:g> عنصر."</string>
     <string name="account_sync_summary_all_on" msgid="3652264471870312725">"تم تفعيل المزامنة لكل العناصر."</string>
-    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"المزامنة متوقفة لكل العناصر."</string>
+    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"المزامنة متوقفة لكل العناصر"</string>
     <string name="sync_disabled" msgid="393531064334628258">"المزامنة متوقفة."</string>
     <string name="sync_error" msgid="6698021343089247914">"خطأ في المزامنة"</string>
     <string name="last_synced" msgid="4745124489150101529">"تاريخ آخر مزامنة: <xliff:g id="LAST_SYNC_TIME">%1$s</xliff:g>"</string>

@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Ниво на осветленост"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Адаптивна осветленост"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Приспособи ја осветленоста на екранот на средината"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Тема"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Ноќното светло е вклучено"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Мрежа и интернет"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Мобилна мрежа"</string>
@@ -135,7 +136,7 @@
     <string name="wifi_wakeup" msgid="7451825226044542000">"Вклучувај Wi‑Fi автоматски"</string>
     <string name="wifi_wakeup_summary" msgid="7237521683331291414">"Wi‑Fi ќе се вклучува на зачувани мрежи со висок квалитет во близина, како на пр., домашната мрежа"</string>
     <string name="wifi_wakeup_summary_no_location" msgid="2821576525488435259">"Недостапно, локацијата е исклучена. Вклучете ја "<annotation id="link">"локацијата"</annotation>"."</string>
-    <string name="wifi_settings_scanning_required_title" msgid="2726782203331704928">"Да се вклучи скенирањето Wi-Fi?"</string>
+    <string name="wifi_settings_scanning_required_title" msgid="2726782203331704928">"Да се вклучи скенирање за Wi-Fi?"</string>
     <string name="wifi_settings_scanning_required_turn_on" msgid="4464931023377210050">"Вклучи"</string>
     <string name="wifi_settings_scanning_required_enabled" msgid="5457372118991438313">"Скенирањето Wi‑Fi е вклучено"</string>
     <string name="wifi_cellular_fallback_title" msgid="8322675436784870862">"Автоматски префрли се на мобилен интернет"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Точка на пристап"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Користи „Точка на пристап за Wi-Fi“"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Исклучен"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Автоматско исклучување на точката на пристап"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Точката на пристап преку Wi‑Fi ќе се исклучи ако нема поврзани уреди"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Користете точка на пристап за сите типови возење"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Направете точката на пристап да биде достапна секогаш кога е вклучен автомобилот"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Скенирајте го QR-кодов за да се придружите на „%s“"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Лозинка на точката за пристап: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> сака да вклучи Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Претходно поврзани"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"Уредот %1$s е поврзан"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"Уредот %1$s не е поврзан"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Поврзувања на уредот со вашиот автомобил"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ултраширок појас (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Му помага на вашиот автомобил да ја идентификува положбата на уредите со UWB"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Барање за спарување преку Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Спари и поврзи"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Код за спарување преку Bluetooth"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Звуци на предупредување"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Мелодија, известувања, аларм"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Пуштајте аудиовизуелни содржини на"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"Се префрлаат аудиовизуелните содржини на %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Осветленост"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Приспособи го екранот за слаба светлина"</string>
     <string name="units_settings" msgid="402325305096925886">"Мерни единици"</string>
@@ -407,7 +412,7 @@
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Дајте предност на апликацијата"</string>
     <string name="premium_sms_access_title" msgid="1409118461646148686">"Пристап до премиум SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Премиум SMS може да ве чини пари, а сумата ќе се додаде на сметките од операторот. Ако овозможите дозвола за апликацијата, ќе може да испраќате премиум SMS со неа."</string>
-    <string name="usage_access_title" msgid="7153427122072303254">"Пристап до употреба"</string>
+    <string name="usage_access_title" msgid="7153427122072303254">"Пристап до податоци за користењето"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Пристапот до податоци за користењето овозможува апликацијата да следи кои други апликации ги користите и колку често, како и операторот, поставките за јазик и други детали."</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Контрола на Wi-Fi"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"Контролата на Wi-Fi дозволува апликацијава да вклучува или исклучува Wi-Fi, да скенира и да се поврзува на Wi-Fi мрежи, да додава или отстранува мрежи или да стартува локална точка на пристап."</string>

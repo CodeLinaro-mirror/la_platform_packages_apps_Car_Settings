@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"တောက်ပမှု"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"အလိုက်သင့် တောက်ပမှု"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"ဖန်သားပြင်တောက်ပမှုကို ပတ်ဝန်းကျင်နှင့် ချိန်ညှိနိုင်သည်"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"အပြင်အဆင်"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"\'ညအလင်းရောင်\' ကို ဖွင့်ထားသည်"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"ကွန်ရက်နှင့် အင်တာနက်"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"မိုဘိုင်းကွန်ရက်"</string>
@@ -162,10 +163,10 @@
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Wi‑Fi ဟော့စပေါ့ လိုင်း-"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-Fi ဟော့စပေါ့"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"ဟော့စပေါ့"</string>
-    <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Wi‑Fi ဟော့စပေါ့ သုံးခြင်း"</string>
+    <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Wi‑Fi ဟော့စပေါ့ သုံးရန်"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"ပိတ်"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"ဟော့စပေါ့ကို အလိုအလျောက် ပိတ်ခြင်း"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"မည်သည့် စက်ပစ္စည်းကိုမျှ ချိတ်ဆက်ထားခြင်း မရှိလျှင် Wi‑Fi ဟော့စပေါ့ ပိတ်သွားပါမည်"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"မောင်းနှင်မုဒ်အားလုံးအတွက် ဟော့စပေါ့သုံးရန်"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"ကားစက်နှိုးထားချိန်တိုင်း ဟော့စပေါ့ရရှိအောင် ပြုလုပ်နိုင်သည်"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\"%s\" သို့ ချိတ်ဆက်ရန် ဤ QR ကုဒ်ကို စကင်ဖတ်ပါ"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"ဟော့စပေါ့စကားဝှက်- %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> က Wi-Fi ဖွင့်လိုသည်"</string>
@@ -211,11 +212,14 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"ယခင်က ချိတ်ဆက်ထားသည်များ"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s ကို ချိတ်ဆက်ထားသည်"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s ကို ချိတ်ဆက်မထားပါ"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"ကားနှင့် စက်ပစ္စည်း ချိတ်ဆက်မှုများ"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ultra‑Wideband (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"သင့်ကားကို UWB စက်ပစ္စည်းများ၏ တည်နေရာ ရှာဖွေသတ်မှတ်ရာတွင် ကူညီပေးသည်"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"ဘလူးတုသ်တွဲချိတ်ရန် တောင်းဆိုချက်"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"တွဲချိတ်ပြီးနောက် ချိတ်ဆက်ရန်"</string>
-    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ဘလူးတုသ် တွဲချိတ်ခြင်းကုဒ်"</string>
+    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ဘလူးတုသ် တွဲချိတ်ကုဒ်"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"ပင်နံပါတ်တွင် စာလုံး သို့မဟုတ် သင်္ကေတများပါဝင်သည်"</string>
-    <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"တွဲချိတ်ရန်ကုဒ်ကို ထည့်ပြီး Return သို့မဟုတ် Enter ကို နှိပ်ပါ"</string>
+    <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"တွဲချိတ်ကုဒ်ကို ရိုက်ထည့်ပြီး Return ခလုတ် (သို့) Enter ခလုတ်ကို နှိပ်ပါ"</string>
     <string name="bluetooth_pairing_request" msgid="4769675459526556801">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> နှင့် တွဲချိတ်လိုပါသလား။"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"သင်၏ အဆက်အသွယ်များနှင့် ခေါ်ဆိုမှုမှတ်တမ်းကို <xliff:g id="DEVICE_NAME">%1$s</xliff:g> အား ကြည့်ခွင့်ပြုသည်"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"ဤပင်နံပါတ်ကို အခြား စက်ပစ္စည်းတွင်လည်း ထည့်သွင်းရန် လိုအပ်နိုင်သည်။"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"သတိပေးချက် အသံများ"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"ဖုန်းမြည်သံ၊ အကြောင်းကြားချက်များ၊ နှိုးစက်"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"မီဒီယာကို ဖွင့်ထားရန်"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"မီဒီယာကို %1$s သို့ ပြောင်းနေသည်"</string>
     <string name="display_brightness" msgid="5718970880488110840">"တောက်ပမှု"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"အလင်းရောင်နည်းချိန်အတွက် ဖန်သားပြင်ကို ချိန်ညှိနိုင်သည်"</string>
     <string name="units_settings" msgid="402325305096925886">"ယူနစ်များ"</string>
@@ -357,7 +362,7 @@
     <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"မှတ်ချက်- ပြန်လည်စတင်ပြီးနောက် သင့်ယာဉ်ကို လော့ခ်မဖွင့်မချင်း ဤအက်ပ်ကို အသုံးပြု၍မရပါ။"</string>
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"အကူနှင့် အသံဖြင့်စာရိုက်ခြင်း"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"အကူအညီ အက်ပ်"</string>
-    <string name="assist_access_context_title" msgid="8034851731390785301">"ဖန်သားပြင်မှ စာသားကိုသုံးခြင်း"</string>
+    <string name="assist_access_context_title" msgid="8034851731390785301">"ဖန်သားပြင်မှ စာသားကိုသုံးရန်"</string>
     <string name="assist_access_context_summary" msgid="2374281280599443774">"ဖန်သားပြင်မှအကြောင်းအရာများကို စာသားအဖြစ်ရယူရန် အကူအညီအက်ပ်ကို ခွင့်ပြုသည်"</string>
     <string name="assist_access_screenshot_title" msgid="2855956879971465044">"ဖန်သားပြင်ဓာတ်ပုံ သုံးခြင်း"</string>
     <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"ဖန်သားပြင်၏ပုံ အသုံးပြုရန် အကူအညီအက်ပ်ကို ခွင့်ပြုသည်"</string>
@@ -392,7 +397,7 @@
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Assistant နှင့် အခြားအရာများအတွက်"</string>
     <string name="performance_impacting_apps_summary" msgid="7762122057244111162">"{count,plural, =1{စွမ်းဆောင်ရည်ပေါ် သက်ရောက်သော အက်ပ် # ခု}other{စွမ်းဆောင်ရည်ပေါ် သက်ရောက်သော အက်ပ် # ခု}}"</string>
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"စနစ်နှင့် အခြားဆက်တင်များသို့"</string>
-    <string name="special_access" msgid="5730278220917123811">"အထူးအက်ပ်များ သုံးခွင့်ရှိသည်"</string>
+    <string name="special_access" msgid="5730278220917123811">"အက်ပ် အထူးအသုံးပြုခွင့်"</string>
     <string name="show_system" msgid="4401355756969485287">"စနစ်ကိုပြသရန်"</string>
     <string name="hide_system" msgid="8845453295584638040">"စနစ်ကို ဖျောက်ရန်"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"စနစ်အက်ပ်များ ဖျောက်ထားရန်"</string>
@@ -738,7 +743,7 @@
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"ငယ်စဉ်ကြီးလိုက်၊ ကြီးစဉ်ငယ်လိုက် သို့မဟုတ် ထပ်နေသည့် နံပါတ်စဉ်များကို ခွင့်မပြုပါ"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"မျက်နှာပြင်လော့ခ်ချခြင်း ရွေးချယ်စရာများ"</string>
     <string name="credentials_reset" msgid="873900550885788639">"အထောက်အထားများကို ရှင်းလင်းခြင်း"</string>
-    <string name="credentials_reset_summary" msgid="6067911547500459637">"အသိအမှတ်ပြုလက်မှတ်အားလုံးကို ဖယ်ရှားရန်"</string>
+    <string name="credentials_reset_summary" msgid="6067911547500459637">"အသိအမှတ်ပြုလက်မှတ်အားလုံးကို ဖယ်ရှားသည်"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"အကြောင်းအရာအားလုံးကို ဖယ်ရှားမလား။"</string>
     <string name="credentials_erased" msgid="2515915439705550379">"ယုံကြည်စိတ်ချရသောသိုလှောင်ရာနေရာအား ဖျက်လိုက်ပါပြီ။"</string>
     <string name="credentials_not_erased" msgid="6118567459076742720">"သိုလှောင်ရာနေရာအား ဖျက်၍မရပါ။"</string>
@@ -890,7 +895,7 @@
     <string name="captions_settings_text_size_large" msgid="5198207220911360512">"ကြီး"</string>
     <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"အလွန်ကြီး"</string>
     <string name="captions_text_style_title" msgid="8547777957403577760">"စာတန်းပုံစံ"</string>
-    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"အက်ပ်က သတ်မှတ်ထားသည်"</string>
+    <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"အက်ပ်သတ်မှတ်ချက်"</string>
     <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"အမည်းပေါ်အဖြူ"</string>
     <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"အဖြူပေါ်အမည်း"</string>
     <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"အမည်းပေါ်အဝါ"</string>

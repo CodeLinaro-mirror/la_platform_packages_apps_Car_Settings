@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Hali ya mwangaza"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Ung\'aavu unaojirekebisha"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Rekebisha mwangaza wa skrini kulingana na mazingira"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Mandhari"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Mwanga wa Usiku umewashwa"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Mtandao na intaneti"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mtandao wa simu"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Mtandaopepe"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Tumia mtandao pepe wa Wi-Fi"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Imezimwa"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Zima mtandaopepe kiotomatiki"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Mtandaopepe wa Wi-Fi utazimwa ikiwa hakuna vifaa vilivyounganishwa"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Tumia mtandao pepe katika hali zote za uendeshaji"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Fanya mtandao pepe upatikane wakati wowote gari likiwa limewashwa"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Changanua msimbo huu wa QR ili ujiunge kwenye \"%s\""</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Nenosiri la mtandao pepe: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> inataka kuwasha Wi-Fi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Vilivyounganishwa awali"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s imeunganishwa"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s imetenganishwa"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Miunganisho ya vifaa kwenye gari lako"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Bendi Pana Zaidi (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Husaidia gari lako litambue mahali vifaa vya Bendi Pana Zaidi (UWB) vilipo"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Ombi la kuoanisha Bluetooth"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Oanisha kisha uunganishe"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Msimbo wa kuoanisha Bluetooth"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Sauti za arifa"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Mlio, arifa, kengele"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Cheza maudhui kwenye"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"Inabadilisha njia ya sauti kuwa %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Ung\'aavu"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Rekebisha skrini iwe na mwangaza wa chini"</string>
     <string name="units_settings" msgid="402325305096925886">"Vizio"</string>

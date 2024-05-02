@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"ଉଜ୍ଜ୍ୱଳତା ସ୍ତର"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"ଅନୁକୂଳ ଉଜ୍ଜ୍ୱଳତା"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"ପରିବେଶ ଅନୁଯାୟୀ ସ୍କ୍ରିନ୍ ଉଜ୍ଜ୍ୱଳତା ଆଡଜଷ୍ଟ କରନ୍ତୁ"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"ଥିମ"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"ରାତି ଆଲୋକ ଅନ୍ ହୋଇଛି"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"ନେଟ୍‌ୱର୍କ ଓ ଇର୍ଣ୍ଟନେଟ୍"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"ମୋବାଇଲ୍‌ ନେଟ୍‌ୱର୍କ"</string>
@@ -132,7 +133,7 @@
     <string name="wifi_details_ipv6_address_header" msgid="4707181386646531890">"IPv6 ଠିକଣା"</string>
     <string name="wifi_gateway" msgid="4975799192860431013">"ଗେଟ୍‌ୱେ"</string>
     <string name="wifi_preferences_title" msgid="772788844257225510">"ୱାଇ-ଫାଇ ଅଗ୍ରାଧିକାରଗୁଡ଼ିକ"</string>
-    <string name="wifi_wakeup" msgid="7451825226044542000">"ୱାଇ-ଫାଇ ସ୍ୱଚାଳିତ ଭାବେ ଚାଲୁ କରନ୍ତୁ"</string>
+    <string name="wifi_wakeup" msgid="7451825226044542000">"ୱାଇ-ଫାଇ ସ୍ୱତଃ ଚାଲୁ କରନ୍ତୁ"</string>
     <string name="wifi_wakeup_summary" msgid="7237521683331291414">"ୱାଇ-ଫାଇ ଆପଣଙ୍କର ହୋମ ନେଟୱାର୍କ ପରି ଉଚ୍ଚ ଗୁଣବତ୍ତାର ସେଭ୍ ହୋଇଥିବା ନେଟୱାର୍କରେ ଫେରିଆସିବ"</string>
     <string name="wifi_wakeup_summary_no_location" msgid="2821576525488435259">"ଲୋକେସନ୍ ବନ୍ଦ ଥିବା କାରଣରୁ ଉପଲବ୍ଧ ନାହିଁ। "<annotation id="link">"ଲୋକେସନ୍"</annotation>" ଚାଲୁ କରନ୍ତୁ।"</string>
     <string name="wifi_settings_scanning_required_title" msgid="2726782203331704928">"ୱାଇ-ଫାଇ ସ୍କାନିଂକୁ ଚାଲୁ କରିବେ?"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"ହଟସ୍ପଟ"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"ୱାଇ-ଫାଇ ହଟସ୍ପଟ ବ୍ୟବହାର କରନ୍ତୁ"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"ବନ୍ଦ ଅଛି"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"ସ୍ୱଚାଳିତ ଭାବେ ହଟ୍‌ସ୍ପଟ୍ ବନ୍ଦ କରନ୍ତୁ"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"ଯଦି କୌଣସି ଡିଭାଇସ୍ ସଂଯୋଗ ନଥାଏ, ତେବେ ୱାଇ-ଫାଇ ହଟ୍‌ସ୍ପଟ୍ ବନ୍ଦ ହୋଇଯିବ"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"ସମସ୍ତ ଡ୍ରାଇଭ ପାଇଁ ହଟସ୍ପଟ ବ୍ୟବହାର କରନ୍ତୁ"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"କାର ଚାଲୁ ହେଲେ ହଟସ୍ପଟ ଉପଲବ୍ଧ କରାନ୍ତୁ"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\"%s\"ରେ ଯୋଗ ଦେବା ପାଇଁ ଏହି QR କୋଡ ସ୍କାନ କରନ୍ତୁ"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"ହଟସ୍ପଟ ପାସୱାର୍ଡ: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> ୱାଇ-ଫାଇ ଚାଲୁ କରିବାକୁ ଚାହୁଁଛନ୍ତି"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"ପୂର୍ବରୁ ସଂଯୋଗ ହୋ‍ଇଛି"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s ସଂଯୋଗ କରାଯାଇଛି"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s ବିଚ୍ଛିନ୍ନ କରାଯାଇଛି"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"ଆପଣଙ୍କ କାର ସହ ଡିଭାଇସ କନେକ୍ସନଗୁଡ଼ିକ"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"ଅଲ୍ଟ୍ରା-ୱାଇଡବେଣ୍ଡ (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"ଏହା ଆପଣଙ୍କ କାରକୁ UWB ଡିଭାଇସଗୁଡ଼ିକର ଅବସ୍ଥିତି ଚିହ୍ନଟ କରିବାରେ ସାହାଯ୍ୟ କରେ"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"ବ୍ଲୁଟୂଥ୍‍ ପେୟାର୍ କରିବା ପାଇଁ ଅନୁରୋଧ"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"ପେୟାର୍‌ ଓ ସଂଯୋଗ"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ବ୍ଲୁଟୁଥ ପେୟାରିଂ କୋଡ୍"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"ଆଲର୍ଟ ସାଉଣ୍ଡ"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"ରିଂଟୋନ୍, ବିଜ୍ଞପ୍ତି, ଆଲାରାମ୍"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"ଏହି ଡିଭାଇସରେ ମିଡିଆ ଚଲାନ୍ତୁ"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"%1$sକୁ ମିଡିଆ ସୁଇଚ କରାଯାଉଛି"</string>
     <string name="display_brightness" msgid="5718970880488110840">"ଉଜ୍ଜ୍ୱଳତା"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"କମ୍ ଆଲୋକ ପାଇଁ ସ୍କ୍ରିନ୍ ଆଡଜଷ୍ଟ କରନ୍ତୁ"</string>
     <string name="units_settings" msgid="402325305096925886">"ୟୁନିଟ୍"</string>
@@ -329,7 +334,7 @@
     <string name="permissions_label" msgid="2701446753515612685">"ଅନୁମତିଗୁଡ଼ିକ"</string>
     <string name="app_info_all_services_label" msgid="6495363975322723452">"ସମସ୍ତ ସେବା"</string>
     <string name="notifications_label" msgid="6586089149665170731">"ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ"</string>
-    <string name="storage_application_label" msgid="5911779903670978586">"ଷ୍ଟୋରେଜ୍ &amp; କେଚ୍"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"ଷ୍ଟୋରେଜ ଏବଂ କେଶ"</string>
     <string name="prioritize_app_performance_label" msgid="7264505023347026606">"ଆପ ପରଫରମାନ୍ସକୁ ପ୍ରାଥମିକତା ଦିଅନ୍ତୁ"</string>
     <string name="application_version_label" msgid="8556889839783311649">"ଭର୍ସନ୍‌: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"କୌଣସି ଅନୁମତି ଦିଆଯାଇ ନାହିଁ"</string>
@@ -517,7 +522,7 @@
     <string name="factory_reset_desc" msgid="2774024747279286354">"ଏହା, ନିମ୍ନୋକ୍ତ ସମେତ ଆପଣଙ୍କ ଗାଡ଼ିର ଇନଫୋଟେନମେଣ୍ଟ ସିଷ୍ଟମର ସମସ୍ତ ଡାଟା ଖାଲି କରିଦେବ:\n\n"<li>"ଆପଣଙ୍କ ଆକାଉଣ୍ଟ ଏବଂ ପ୍ରୋଫାଇଲଗୁଡ଼ିକ"</li>\n<li>"ସିଷ୍ଟମ ଏବଂ ଆପ ଡାଟା ଓ ସେଟିଂସ"</li>\n<li>"ଡାଉନଲୋଡ କରାଯାଇଥିବା ଆପଗୁଡ଼ିକ"</li></string>
     <string name="factory_reset_accounts" msgid="5523956654938834209">"ଆପଣ ବର୍ତ୍ତମାନ ନିମ୍ନୋକ୍ତ ଆକାଉଣ୍ଟଗୁଡ଼ିକରେ ସାଇନ୍ ଇନ୍ କରିଛନ୍ତି:"</string>
     <string name="factory_reset_other_users_present" msgid="3852324375352090570">"ଏହି ଗାଡ଼ି ପାଇଁ ଅନ୍ୟ ପ୍ରୋଫାଇଲଗୁଡ଼ିକୁ ସେଟ୍ ଅପ୍ କରାଯାଇଛି।"</string>
-    <string name="factory_reset_button_text" msgid="2626666247051368256">"ସମସ୍ତ ଡାଟା ଖାଲି କରନ୍ତୁ"</string>
+    <string name="factory_reset_button_text" msgid="2626666247051368256">"ସମସ୍ତ ଡାଟା ଇରେଜ କରନ୍ତୁ"</string>
     <string name="factory_reset_confirm_title" msgid="3354542161765761879">"ସମସ୍ତ ଡାଟା ଖାଲି କରିବେ?"</string>
     <string name="factory_reset_confirm_desc" msgid="2037199381372030510">"ଏହା ଆପଣଙ୍କର ସମସ୍ତ ବ୍ୟକ୍ତିଗତ ପ୍ରୋଫାଇଲ୍ ଡାଟା, ଆକାଉଣ୍ଟ ଏବଂ ଏହି ଇନଫୋଟେନମେଣ୍ଟ ସିଷ୍ଟମରେ ଡାଉନଲୋଡ୍ କରାଯାଇଥିବା ଆପକୁ ଡିଲିଟ୍ କରିବ।\n\nଆପଣ ଏହି କାର୍ଯ୍ୟକୁ ପୂର୍ବବତ୍ କରିପାରିବେ ନାହିଁ।"</string>
     <string name="factory_reset_confirm_button_text" msgid="1797490544756481809">"ସବୁକିଛି ଖାଲି କରନ୍ତୁ"</string>

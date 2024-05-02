@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Ljusstyrka"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Anpassad ljusstyrka"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Justera skärmens ljusstyrka efter omgivningen"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Tema"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Nattljus är aktiverat"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Nätverk och internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mobilnätverk"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Surfzon"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Använd wifi-surfzon"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Av"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Inaktivera surfzon automatiskt"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Wifi-surfzonen inaktiveras om inga enheter är anslutna"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Använd en surfzon vid alla bilturer"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Aktivera en surfzon när bilen är på"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Skanna den här QR-koden för att ansluta till %s"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Lösenord för surfzon: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> vill aktivera wifi"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Tidigare anslutna enheter"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s är ansluten"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s är frånkopplad"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Enhetsanslutningar till bilen"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ultrabredband (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Hjälper bilen att identifiera UWB-enheters position"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Begäran om Bluetooth-koppling"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Parkoppla och anslut"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Kopplingskod för Bluetooth"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Varningsljud"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Ringsignal, aviseringar, alarm"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Spela upp media på"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"Byter media till %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Ljusstyrka"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Justera skärmen efter svag belysning"</string>
     <string name="units_settings" msgid="402325305096925886">"Enheter"</string>

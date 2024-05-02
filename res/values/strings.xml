@@ -548,6 +548,8 @@
     <string name="sound_alert_sounds_summary">Ringtone, notifications, alarm</string>
     <!-- Title for the audio routes selector. [CHAR LIMIT=40] -->
     <string name="audio_route_selector_title">Play media on</string>
+    <!-- Toast informing the audio route is being changed. [CHAR LIMIT=80] -->
+    <string name="audio_route_selector_toast">Switching media to %1$s</string>
 
     <!-- Display settings --><skip/>
     <!-- Display settings screen, setting option name to manage display brightness [CHAR LIMIT=60] -->
@@ -889,6 +891,8 @@
     <string name="hide_system">Hide system</string>
     <!-- Text for toggle switch to control whether system processes are hidden in app lists. [CHAR_LIMIT=40] -->
     <string name="hide_system_apps">Hide system apps</string>
+    <!-- Title for alarm and reminders. [CHAR_LIMIT=40] -->
+    <string name="alarms_and_reminders_title">Alarms &amp; reminders</string>
     <!-- Title for managing apps which can modify system settings. [CHAR_LIMIT=40] -->
     <string name="modify_system_settings_title">Modify system settings</string>
     <!-- Description of modifying system settings. [CHAR_LIMIT=NONE] -->

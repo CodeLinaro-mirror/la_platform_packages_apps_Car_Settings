@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Šviesumo lygis"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Prisitaikantis šviesumas"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Koreguokite ekrano šviesumą pagal aplinką"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Tema"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Nakties šviesa įjungta"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Tinklas ir internetas"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mobiliojo ryšio tinklas"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Viešosios interneto prieigos taškas"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Naudoti „Wi‑Fi“ vieš. intern. prieigos tašką"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Išjungta"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Išjungti viešosios interneto prieigos tašką autom."</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"„Wi‑Fi“ viešosios interneto prieigos taškas bus išjungtas, jei nebus prijungta jokių įrenginių"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Naudoti vieš. int. pr. tašką visiems važiavimams"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Nustatykite, kad viešosios interneto prieigos taškas būtų pasiekiamas, kai automobilis užvestas"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Nuskaitykite šį QR kodą ir prisijunkite prie „%s“"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Viešosios interneto prieigos taško slaptažodis: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> nori įjungti „Wi-Fi“"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Anksčiau susieti"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"„%1$s“ įrenginys prijungtas"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"„%1$s“ įrenginys atjungtas"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Įrenginio prisijungimai prie automobilio"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ultraplačiajuostė ryšio techn. (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Padeda automobiliui nustatyti UWB įrenginių padėtį"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"„Bluetooth“ susiejimo užklausa"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Susieti ir jungti"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"„Bluetooth“ susiejimo kodas"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Įspėjimų garsai"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Skambėjimo tonas, pranešimai, signalas"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"„Leisti mediją“ įjungtas"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"Medija perjungiama į %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Šviesumas"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Koreguokite ekrano šviesumą esant prastam apšvietimui"</string>
     <string name="units_settings" msgid="402325305096925886">"Vienetai"</string>

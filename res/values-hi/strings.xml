@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"स्क्रीन की रोशनी का लेवल"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"आस-पास की रोशनी के हिसाब से स्क्रीन की चमक"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"आस-पास की रोशनी के हिसाब से स्क्रीन की चमक में बदलाव करें"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"थीम"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"नाइट लाइट चालू है"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"नेटवर्क और इंटरनेट"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"मोबाइल नेटवर्क"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"हॉटस्पॉट"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"वाई-फ़ाई हॉटस्पॉट का इस्तेमाल करें"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"बंद है"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"हॉटस्पॉट अपने-आप बंद हो जाए"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"कोई डिवाइस कनेक्ट नहीं होने पर वाई-फ़ाई हॉटस्पॉट बंद हो जाएगा"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"सभी ड्राइव के लिए हॉटस्पॉट का इस्तेमाल करें"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"जब भी आपकी कार चालू हो, तो आपका हॉटस्पॉट अपने-आप चालू हो जाए"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\"%s\" से जुड़ने के लिए इस क्यूआर कोड को स्कैन करें"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"हॉटस्पॉट का पासवर्ड: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> को वाई-फ़ाई चालू करने की अनुमति चाहिए"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"पहले कनेक्ट किए गए डिवाइस"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s कनेक्ट किया गया"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s डिसकनेक्ट किया गया"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"आपकी कार से कनेक्ट डिवाइस"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"अल्ट्रा-वाइडबैंड (यूडब्ल्यूबी)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"इससे आपकी कार को यूडब्ल्यूबी डिवाइसों की जगह की जानकारी पता लगाने में मदद मिलती है"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"ब्लूटूथ के ज़रिए जोड़ने का अनुरोध किया गया"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"दूसरे डिवाइस से जोड़ें और कनेक्‍ट करें"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ब्‍लूटूथ के ज़रिए जोड़ने वाला कोड"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"सूचना की आवाज़ें"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"रिंगटोन, सूचनाएं, अलार्म"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"मीडिया को इस डिवाइस पर चलाएं"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"मीडिया को %1$s पर स्विच करना"</string>
     <string name="display_brightness" msgid="5718970880488110840">"स्क्रीन की रोशनी"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"कम रोशनी के हिसाब से स्क्रीन की चमक में बदलाव करें"</string>
     <string name="units_settings" msgid="402325305096925886">"इकाइयां"</string>
@@ -473,12 +478,12 @@
     <string name="legal_information" msgid="1838443759229784762">"कानूनी जानकारी"</string>
     <string name="contributors_title" msgid="7698463793409916113">"योगदान करने वाले लोग"</string>
     <string name="manual" msgid="4819839169843240804">"गाइड"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"नियमों के लेबल"</string>
-    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"सुरक्षा और नियम से जुड़ी गाइड"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"नियमों के पालन की जानकारी"</string>
+    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"सुरक्षा और नियमों से जुड़ी गाइड"</string>
     <string name="copyright_title" msgid="4220237202917417876">"कॉपीराइट"</string>
     <string name="license_title" msgid="936705938435249965">"लाइसेंस"</string>
     <string name="terms_title" msgid="5201471373602628765">"नियम और शर्तें"</string>
-    <string name="webview_license_title" msgid="6442372337052056463">"सिस्‍टम वेबव्यू लाइसेंस"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"सिस्‍टम वेबव्यू के लाइसेंस"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"वॉलपेपर"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"सैटेलाइट के ज़रिए इमेज उपलब्ध कराने वाली संस्थाएं:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="model_info" msgid="4966408071657934452">"मॉडल"</string>

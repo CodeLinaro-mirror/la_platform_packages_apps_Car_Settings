@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Parlaklık düzeyi"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Uyarlanabilir parlaklık"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Ekran parlaklığını ortama göre ayarla"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Tema"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Gece Işığı açık"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Ağ ve internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Mobil ağ"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Kablosuz hotspot\'u kullan"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Kapalı"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Hotspot\'u otomatik olarak kapat"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Herhangi bir cihaz bağlanmazsa Kablosuz hotspot kapatılır"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Hotspot\'u tüm sürüşlerde kullan"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Araba çalışırken hotspot\'u her zaman etkinleştirin"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\"%s\" ağına katılmak için bu QR kodunu tarayın"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Hotspot şifresi: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g>, Kablosuz özelliğini açmak istiyor"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Daha önce bağlanılmış cihazlar"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s bağlandı"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s bağlantısı kesildi"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Arabanıza bağlı cihazlar"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Ultra geniş bant (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Arabanızın ultra geniş banda sahip cihazların konumlarını belirlemesine yardımcı olur"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Bluetooth eşleme isteği"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Eşleştir ve bağlan"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Bluetooth eşleme kodu"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Uyarı sesleri"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Zil sesi, bildirimler, alarm"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Medyayı şurada oynat:"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"Medya %1$s öğesine geçiriliyor"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Parlaklık"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Ekranı loş ışığa göre ayarla"</string>
     <string name="units_settings" msgid="402325305096925886">"Birimler"</string>

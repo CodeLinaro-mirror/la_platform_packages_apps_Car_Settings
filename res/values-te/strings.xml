@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"ప్రకాశం స్థాయి"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"పరిసర అనుకూల ప్రకాశం"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"స్క్రీన్ ప్రకాశాన్ని పరిసరాలకు అనుగుణంగా సర్దుబాటు చేయండి"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"థీమ్"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"రాత్రి కాంతి ఆన్‌లో ఉంది"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"నెట్‌వర్క్ &amp; ఇంటర్నెట్"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"మొబైల్ నెట్‌వర్క్"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"హాట్‌స్పాట్"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Wi‑Fi హాట్‌స్పాట్‌ను ఉపయోగించండి"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"ఆఫ్‌లో ఉంది"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"హాట్‌స్పాట్‌ని ఆటోమేటిక్‌గా ఆఫ్ చేయండి"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"పరికరాలు ఏవీ కనెక్ట్ కాకపోతే Wi‑Fi హాట్‌స్పాట్‌ ఆఫ్ అవుతుంది"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"డ్రైవ్‌లన్నింటికీ హాట్‌స్పాట్‌ను ఉపయోగించండి"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"కారు ప్రారంభమైనప్పుడు హాట్‌స్పాట్ అందుబాటులో ఉండేలా చూసుకోండి"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\"%s\"లో చేరడానికి ఈ QR కోడ్‌ను స్కాన్ చేయండి"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"హాట్‌స్పాట్ పాస్‌వర్డ్: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> Wi-Fiని ఆన్ చేయాలనుకుంటుంది"</string>
@@ -183,7 +184,7 @@
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"బ్లూటూత్‌ను ఉపయోగించండి"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"పేరులేని పరికరం"</string>
     <string name="bluetooth_paired_devices" msgid="6463199569164652410">"జత చేయబడిన పరికరాలు"</string>
-    <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"కొత్త పరికరాన్ని జత చేయి"</string>
+    <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"కొత్త పరికరాన్ని పెయిర్ చేయండి"</string>
     <string name="bluetooth_pair_new_device_summary" msgid="2497221247690369031">"పెయిర్ చేయడం కోసం బ్లూటూత్ ఆన్ చేయబడుతుంది"</string>
     <string name="bluetooth_disconnect_title" msgid="7675271355910637528">"పరికరాన్ని డిస్‌కనెక్ట్ చేయాలా?"</string>
     <string name="bluetooth_disconnect_all_profiles" msgid="2017519733701757244">"మీ వాహనం <xliff:g id="DEVICE_NAME">%1$s</xliff:g> నుండి డిస్‌కనెక్ట్ అవుతుంది."</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"గతంలో కనెక్ట్ చేయబడినవి"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s కనెక్ట్ చేయబడింది"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s డిస్‌కనెక్ట్ చేయబడింది"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"మీ కారుతో పరికర కనెక్షన్‌లు"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"అల్ట్రా-వైడ్ బ్యాండ్ (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"UWB పరికరాల స్థానాలను గుర్తించడంలో మీ కారుకు సహాయపడుతుంది"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"బ్లూటూత్ జత చేయడానికి రిక్వెస్ట్‌"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"జత చేసి, కనెక్ట్ చేయి"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"బ్లూటూత్ పెయిరింగ్ కోడ్"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"అలర్ట్ సౌండ్‌లు"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"రింగ్‌టోన్, నోటిఫికేషన్, అలారం"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"ఇందులో మీడియా ప్లే చేయండి"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"మీడియా %1$sకు మారుతోంది"</string>
     <string name="display_brightness" msgid="5718970880488110840">"ప్రకాశం"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"స్క్రీన్‌ను తక్కువ కాంతికి సర్దుబాటు చేయండి"</string>
     <string name="units_settings" msgid="402325305096925886">"యూనిట్‌లు"</string>
@@ -324,7 +329,7 @@
     <string name="enable_text" msgid="1794971777861881238">"ప్రారంభించండి"</string>
     <string name="uninstall_text" msgid="277907956072833012">"అన్ఇన్‌స్టాల్ చేయండి"</string>
     <string name="app_disable_dialog_text" msgid="7731155411006654025">"మీరు ఈ యాప్‌ను నిలిపివేస్తే, Android మరియు ఇతర యాప్‌లు ఇకపై ఉద్దేశించిన రీతిలో పని చేయకపోవచ్చు."</string>
-    <string name="app_disable_dialog_positive" msgid="4448684722791563349">"యాప్‌ను నిలిపివేయి"</string>
+    <string name="app_disable_dialog_positive" msgid="4448684722791563349">"యాప్‌ను డిజేబుల్‌ చేయండి"</string>
     <string name="not_installed" msgid="4163454337822508007">"ఈ ప్రొఫైల్‌లో ఇన్‌స్టాల్ చేయబడలేదు"</string>
     <string name="permissions_label" msgid="2701446753515612685">"అనుమతులు"</string>
     <string name="app_info_all_services_label" msgid="6495363975322723452">"అన్ని సర్వీస్‌లు"</string>
@@ -473,8 +478,8 @@
     <string name="legal_information" msgid="1838443759229784762">"చట్టబద్ధమైన సమాచారం"</string>
     <string name="contributors_title" msgid="7698463793409916113">"సహకారులు"</string>
     <string name="manual" msgid="4819839169843240804">"మాన్యువల్"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"నియంత్రణ లేబుళ్లు"</string>
-    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"భద్రత &amp; amp; నియంత్రణ మాన్యువల్"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"రెగ్యులేటరీ లేబుళ్లు"</string>
+    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"భద్రత &amp; నియంత్రణా చట్టాల మాన్యువల్"</string>
     <string name="copyright_title" msgid="4220237202917417876">"కాపీరైట్"</string>
     <string name="license_title" msgid="936705938435249965">"లైసెన్స్"</string>
     <string name="terms_title" msgid="5201471373602628765">"నిబంధనలు మరియు షరతులు"</string>
@@ -743,7 +748,7 @@
     <string name="credentials_not_erased" msgid="6118567459076742720">"ఆధారాల నిల్వను తొలగించడం సాధ్యపడలేదు."</string>
     <string name="forget" msgid="3971143908183848527">"విస్మరించు"</string>
     <string name="connect" msgid="5861699594602380150">"కనెక్ట్ చేయండి"</string>
-    <string name="disconnect" msgid="6140789953324820336">"డిస్‌కనెక్ట్ చేయి"</string>
+    <string name="disconnect" msgid="6140789953324820336">"డిస్‌కనెక్ట్ చేయండి"</string>
     <string name="delete_button" msgid="5840500432614610850">"తొలగించండి"</string>
     <string name="remove_button" msgid="6664656962868194178">"తీసివేయండి"</string>
     <string name="cancel" msgid="750286395700355455">"రద్దు చేయండి"</string>

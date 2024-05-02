@@ -23,6 +23,7 @@
     <string name="brightness" msgid="2919605130898772866">"Жарык деңгээли"</string>
     <string name="auto_brightness_title" msgid="9124647862844666581">"Ыңгайлашуучу жарык"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Экрандын жарыктыгын айлана-чөйрөгө жараша тууралоо"</string>
+    <string name="theme_toggle_title" msgid="7091393596274709558">"Тема"</string>
     <string name="condition_night_display_title" msgid="3777509730126972675">"Түнкү режим күйүк"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Тармак жана Интернет"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Мобилдик тармак"</string>
@@ -164,8 +165,8 @@
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Байланыш түйүнү"</string>
     <string name="wifi_hotspot_switch_title" msgid="5011183846278097937">"Wi‑Fi байланыш түйүнүн колдонуу"</string>
     <string name="wifi_hotspot_state_off" msgid="6096709579204322798">"Өчүк"</string>
-    <string name="wifi_hotspot_auto_off_title" msgid="7871858619924599922">"Байланыш түйүнү автоматтык түрдө өчөт"</string>
-    <string name="wifi_hotspot_auto_off_summary" msgid="4830341947541735136">"Бир дагы түзмөк туташпаса, Wi‑Fi байланыш түйүнү автоматтык түрдө өчүп калат"</string>
+    <string name="wifi_hotspot_keep_on_title" msgid="2920327805105370804">"Унаа айдаганда хотспот ар дайым колдонулсун"</string>
+    <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Унаа от алып турганда хотспот жеткиликтүү болсун"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"\"%s\" түйүнүнө кошулуу үчүн бул QR кодун скандаңыз"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Байланыш түйүнүнүн сырсөзү: %s"</string>
     <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> WiFi\'ды күйгүзгөнү жатат"</string>
@@ -211,6 +212,9 @@
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"Буга чейин туташкан түзмөктөр"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s туташты"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s ажыратылды"</string>
+    <string name="device_connections_category_title" msgid="1753729363581927505">"Түзмөктүн унааңыз менен туташуулары"</string>
+    <string name="uwb_toggle_title" msgid="8831695790040626922">"Өтө кең тилке (UWB)"</string>
+    <string name="uwb_toggle_summary" msgid="2206513296288659105">"Унааңызга UWB түзмөктөрүн аныктоого жардам берет"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"Bluetooth жупташтыруу өтүнүчү"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"Байланыштыруу жана туташтыруу"</string>
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Bluetooth аркылуу байланыштыруу коду"</string>
@@ -255,6 +259,7 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"Эскертүүлөрдүн үндөрү"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"Рингтон, билдирмелер, ойготкуч"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"Медианы төмөнкүдө ойнотуу:"</string>
+    <string name="audio_route_selector_toast" msgid="338103814096108292">"Медиа төмөнкүгө которулууда: %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Жарыктыгы"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Экрандын жарыктыгын күңүрт жерге жараша тууралоо"</string>
     <string name="units_settings" msgid="402325305096925886">"Бирдиктер"</string>
@@ -310,7 +315,7 @@
     <string name="default_applications" msgid="1558183275638697087">"Демейки колдонмолор"</string>
     <string name="performance_impacting_apps" msgid="3439260699394720569">"Майнаптуулукка таасирин тийгизген колдонмолор"</string>
     <string name="app_permissions" msgid="32799922508313948">"Колдонмонун уруксаттары"</string>
-    <string name="app_permissions_summary" msgid="5402214755935368418">"Колдонмолорго маалыматыңыздын жеткиликтүүлүгүн көзөмөлдөйсүз"</string>
+    <string name="app_permissions_summary" msgid="5402214755935368418">"Колдонмолорго маалыматтарыңызды жеткиликтүү кыласыз"</string>
     <string name="applications_settings" msgid="794261395191035632">"Колдонмо тууралуу маалымат"</string>
     <string name="force_stop" msgid="1616958676171167028">"Колдонмону токтотуу"</string>
     <string name="force_stop_dialog_title" msgid="4481858344628934971">"Колдонмону токтотосузбу?"</string>
@@ -387,7 +392,7 @@
     <string name="apps_recently_opened" msgid="5320377037971195984">"Жакында ачылган колдонмолор"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Бардык %1$d колдонмону көрүү"</string>
     <string name="apps_permission_manager_title" msgid="8776335943862484131">"Уруксаттарды башкаргыч"</string>
-    <string name="apps_permission_manager_summary" msgid="4180424218228141274">"Колдонмолорго маалыматыңыздын жеткиликтүүлүгүн көзөмөлдөйсүз"</string>
+    <string name="apps_permission_manager_summary" msgid="4180424218228141274">"Колдонмолорго маалыматтарыңызды жеткиликтүү кыласыз"</string>
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Жардамчы жана башкалар үчүн"</string>
     <string name="performance_impacting_apps_summary" msgid="7762122057244111162">"{count,plural, =1{# колдонмо майнаптуулукка таасирин тийгизип жатат}other{# колдонмо майнаптуулукка таасирин тийгизип жатат}}"</string>
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"Система жана башка параметрлерге"</string>
@@ -871,7 +876,7 @@
     <string name="factory_reset_parked_text" msgid="1446768795193651311">"Система баштапкы абалга кайтаруу жана бардык маалыматты өчүрүү сурамын алды. Аны азыр аткарсаңыз болот же унаа кийинки жолу от алганда тутум башкапкы абалга кайтарылат. Андан кийин жаңы профилди жөндөп алсаңыз болот."</string>
     <string name="factory_reset_now_button" msgid="4461863686086129437">"Азыр баштапкы абалга келтирүү"</string>
     <string name="factory_reset_later_button" msgid="2653125445148367016">"Кийинчерээк баштапкы абалга келтирүү"</string>
-    <string name="factory_reset_later_text" msgid="6371031843489938419">"Инфозоок тутуму унаа кайра от алганда баштапкы абалга келтирилет."</string>
+    <string name="factory_reset_later_text" msgid="6371031843489938419">"Инфозоок тутуму унаа кайра от алганда баштапкы абалга келет."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"Баштапкы абалга келтирүү үчүн унааны токтотуңуз."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"Бул параметрди азыр өзгөртүүгө болбойт"</string>
     <string name="accessibility_settings_title" msgid="2615042088419230347">"Атайын мүмкүнчүлүктөр"</string>
