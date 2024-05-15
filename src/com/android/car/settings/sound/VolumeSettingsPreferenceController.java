@@ -18,6 +18,7 @@ package com.android.car.settings.sound;
 
 import static android.car.media.CarAudioManager.AUDIO_FEATURE_DYNAMIC_ROUTING;
 import static android.car.media.CarAudioManager.AUDIO_FEATURE_VOLUME_GROUP_MUTING;
+import static android.car.media.CarAudioManager.PRIMARY_AUDIO_ZONE;
 import static android.os.UserManager.DISALLOW_ADJUST_VOLUME;
 
 import static com.android.car.settings.enterprise.ActionDisabledByAdminDialogFragment.DISABLED_BY_ADMIN_CONFIRM_DIALOG_TAG;
@@ -32,6 +33,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemProperties;
 import android.util.SparseArray;
 import android.widget.Toast;
 
@@ -69,6 +71,7 @@ public class VolumeSettingsPreferenceController extends PreferenceController<Pre
     private final VolumeSettingsRingtoneManager mRingtoneManager;
 
     private final Handler mUiHandler;
+    private static boolean sIsBike = SystemProperties.getBoolean("ro.hw.vehicle.isbike", false);
 
     @VisibleForTesting
     final CarAudioManager.CarVolumeCallback mVolumeChangeCallback =
@@ -287,8 +290,14 @@ public class VolumeSettingsPreferenceController extends PreferenceController<Pre
     }
 
     private int getMyAudioZoneId() {
-        return ((CarSettingsApplication) getContext().getApplicationContext())
-                .getMyAudioZoneId();
+        // Removing Car zone id, since bike doesn't support it
+        // Settings zone id as PRIMARY_AUDIO_ZONE
+        if (sIsBike) {
+            return PRIMARY_AUDIO_ZONE;
+        } else {
+            return ((CarSettingsApplication) getContext().getApplicationContext())
+                    .getMyAudioZoneId();
+       }
     }
 
     private CarAudioManager getCarAudioManager() {
