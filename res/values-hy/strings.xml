@@ -651,15 +651,18 @@
     <string name="action_unavailable" msgid="7087119418684417249">"Այս գործողությունը հասանելի չէ ձեր պրոֆիլի համար"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Տեսախցիկի հասանելիություն"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Ընտրեք՝ արդյոք հավելվածներին հասանելի լինեն ձեր մեքենայի տեսակցիկները"</string>
-    <string name="camera_required_apps_group_title" msgid="3902768358955524404">"Պահանջվող հավելվածներ"</string>
-    <string name="camera_required_apps_group_summary" msgid="3308062892315253384">"Ձեր մեքենայի արտադրողի կողմից պահանջվող հավելվածները"</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Գաղտնիություն"</string>
-    <string name="camera_access_disclaimer_summary" msgid="901846859668942836">"Մեքենայի արտադրողին նախկինի պես կարող է հասանելի լինել ձեր մեքենայի տեսախցիկը։\n\nԾանոթացեք արտադրողի գաղտնիության քաղաքականությանը՝ իմանալու ավելին, թե ինչպես է յուրաքանչյուր հավելված օգտագործում ձեր տեսախցիկը։"</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"Պահանջվող հավելվածներ"</string>
+    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
+    <skip />
+    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
+    <skip />
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Մեքենայի արտադրողին նախկինի պես կարող է հասանելի լինել ձեր մեքենայի տեսախցիկը"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Տեղեկատվաժամանցային հավելվածներ"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Թույլատրել տեղեկատվաժամանցային հավելվածներին լուսանկարներ և տեսագրումներ անել"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"Թույլատրված"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"Միշտ"</string>
-    <string name="permission_grant_never" msgid="5725479525867480567">"Երբեք"</string>
-    <string name="permission_grant_in_use" msgid="7442315008206758926">"Օգտագործման ժամանակ"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"Արգելված"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"Միայն հավելվածն օգտագործելու ժամանակ"</string>
     <string name="permission_grant_ask" msgid="1613256400438907973">"Ամեն անգամ հարցնել"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Անվտանգություն"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Էկրանի կողպում"</string>
@@ -909,10 +912,13 @@
     <string name="camera_toggle_summary" msgid="5751159996822627567">"Հասանելի դարձնել տեսախցիկը բոլոր հավելվածներին"</string>
     <string name="camera_manage_permissions" msgid="9005596413781984368">"Կառավարել տեսախցիկի թույլտվությունները"</string>
     <string name="camera_recently_accessed" msgid="8084100710444691977">"Տեսախցիկի օգտագործման վերջին հարցումները"</string>
-    <string name="camera_no_recent_access" msgid="965105023454777859">"Տեսախցիկը ոչ մի հավելվածի կողմից վերջերս չի օգտագործել"</string>
+    <string name="camera_no_recent_access" msgid="965105023454777859">"Տեսախցիկը վերջերս օգտագործած հավելվածներ չկան"</string>
     <string name="camera_app_permission_summary_camera_off" msgid="1437200903113016549">"Հասանելի չէ որևէ հավելվածի"</string>
     <string name="camera_app_permission_summary_camera_on" msgid="7260565911222013361">"{count,plural, =1{Հասանելի է {total_count} հավելվածից #-ին}one{Հասանելի է {total_count} հավելվածից #-ին}other{Հասանելի է {total_count} հավելվածից #-ին}}"</string>
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"Տեսախցիկի օգտագործման վերջին հարցումները"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"Դիտել բոլորը"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"Բեռնում…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"Դիտել պլանները"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Ինտերնետի ձեր սակագնային պլանների ժամկետը սպառվել է"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Դիտել պլանները"</string>
 </resources>
