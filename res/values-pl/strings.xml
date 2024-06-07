@@ -411,7 +411,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Anuluj"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Te aplikacje negatywnie wpływają na wydajność systemu, dlatego ich działanie w tle zostało zablokowane.\nJeśli chcesz zezwolić na działanie danej aplikacji w tle i usunąć ją z tej listy, nadaj jej priorytet."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Nadaj priorytet aplikacji"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Dostęp do SMS-ów specjalnych"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"SMS-y specjalne"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Za SMS-y specjalne może być pobierana dodatkowa, wyższa opłata, która pojawi się na Twoim rachunku telefonicznym. Po włączeniu tego uprawnienia możliwe będzie wysyłanie SMS-ów specjalnych z wybranej aplikacji."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Dostęp do danych o użyciu"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Dostęp do danych o użyciu umożliwia aplikacji śledzenie tego, jakich innych aplikacji używasz i jak często, oraz odczytywanie m.in. informacji o operatorze i ustawień językowych."</string>
@@ -421,12 +421,16 @@
     <string name="location_settings_title" msgid="901334356682423679">"Lokalizacja"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Włącz lokalizację"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Korzystaj z lokalizacji samochodu w dowolnej wybranej przez siebie aplikacji."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Aplikacje informacyjno-rozrywkowe"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Zezwalaj aplikacjom na dostęp do Twojej lokalizacji"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Jeśli to wyłączysz, dostęp do lokalizacji stracą wszystkie aplikacje oprócz tych, które są potrzebne do wspomagania kierowcy"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Jeśli to wyłączysz, aplikacje wspomagania kierowcy korzystające z informacji o lokalizacji również zostaną wyłączone"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Wyłącz mimo to"</string>
     <string name="adas_location_toggle_popup_summary" msgid="4918613528063160563">"Tego ustawienia nie można zmienić. Zostało ono wyłączone przez producenta samochodu."</string>
     <string name="adas_location_toggle_title" msgid="6131739109988811006">"Funkcje ułatwiające prowadzenie pojazdu"</string>
     <string name="adas_location_toggle_summary" msgid="7055141074159770928">"Zezwól wbudowanym funkcjom zatwierdzonym przez producenta samochodu na dostęp do lokalizacji samochodu."</string>
+    <string name="location_required_apps_group_title" msgid="5672632286858280618">"Wymagane aplikacje"</string>
+    <string name="location_required_apps_group_summary" msgid="5760731893677945737">"Aplikacje wymagane przez producenta samochodu, które pomagają podczas jazdy."</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"Ostatnie użycie"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"Ostatnie użycie"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"Wyświetl wszystko"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Usuń swój profil"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Usuń swoje profile i konta z systemu multimedialno-rozrywkowego"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"W Twoim profilu nie można wykonać tego działania"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Dostęp do mikrofonu"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Zdecyduj, czy aplikacje mogą mieć dostęp mikrofonów w samochodzie"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Aplikacje informacyjno-rozrywkowe"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Zezwalaj aplikacjom informacyjno-rozrywkowym na nagrywanie dźwięku"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Dostęp do kamer"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Zdecyduj, czy aplikacje mogą mieć dostęp kamer samochodu"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Wymagane aplikacje"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplikacje wymagane przez producenta samochodu, które pomagają podczas jazdy"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Polityka prywatności"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Producent samochodu może nadal mieć dostęp do kamery w pojeździe"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplikacje informacyjno-rozrywkowe"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Zezwalaj aplikacjom informacyjno-rozrywkowym na robienie zdjęć i nagrywanie filmów"</string>
