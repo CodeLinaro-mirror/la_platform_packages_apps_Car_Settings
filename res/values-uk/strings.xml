@@ -411,7 +411,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Скасувати"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Ці додатки негативно впливають на продуктивність системи, тому їх роботу у фоновому режимі заблоковано.\nНадайте додатку пріоритет, щоб дозволити його використання у фоновому режимі й вилучити з цього списку."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Надати пріоритет"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Доступ до платних SMS"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Платні SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Кошти за платні SMS стягує оператор. Ви зможете надсилати платні SMS у додатку, якому надасте такий дозвіл."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Доступ до історії використання"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Завдяки доступу до історії використання додаток може відстежувати, які інші додатки ви використовуєте і як часто, а також визначати назву вашого оператора, налаштування мови й інші відомості."</string>
@@ -421,12 +421,16 @@
     <string name="location_settings_title" msgid="901334356682423679">"Геодані"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Використовувати геодані"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Усі вказані вами додатки матимуть доступ до геоданих автомобіля."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Інформаційно-розважальні додатки"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Дозволити додаткам доступ до ваших геоданих"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Якщо вимкнути цю опцію, доступ до геоданих буде скасовано для всіх додатків, крім потрібних для допомоги водію"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Якщо вимкнути цю опцію, додатки для допомоги водію, які використовують геодані, буде вимкнено"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Вимкнути"</string>
     <string name="adas_location_toggle_popup_summary" msgid="4918613528063160563">"Це налаштування не можна змінити. Його вимкнув виробник вашого автомобіля."</string>
     <string name="adas_location_toggle_title" msgid="6131739109988811006">"Функції допомоги водію"</string>
     <string name="adas_location_toggle_summary" msgid="7055141074159770928">"Вбудовані функції, які схвалив виробник автомобіля, матимуть доступ до його геоданих."</string>
+    <string name="location_required_apps_group_title" msgid="5672632286858280618">"Обов’язкові додатки"</string>
+    <string name="location_required_apps_group_summary" msgid="5760731893677945737">"Обов’язкові додатки згідно з вимогами виробника автомобіля, щоб допомагати вам під час керування."</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"Нещодавно використовувалися"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"Нещодавно використовувалися"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"Показати всі"</string>
@@ -649,6 +653,10 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Видалити профіль"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Видалити всі дані з профілю та облікові записи з інформаційно-розважальної системи"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Ця дія недоступна для вашого профілю"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Доступ до мікрофонів"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Укажіть, чи можуть додатки отримувати доступ до мікрофонів автомобіля"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Інформаційно-розважальні додатки"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Дозволити додаткам інформаційно-розважальної системи записувати аудіо"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Доступ до камери"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Укажіть, чи можуть додатки отримувати доступ до камер автомобіля"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Обов’язкові додатки"</string>
@@ -657,7 +665,7 @@
     <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
     <skip />
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Виробник вашого автомобіля може й надалі мати доступ до його камери"</string>
-    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Додатки інформаційно-розважальн. системи"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Інформаційно-розважальні додатки"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Дозволити додаткам інформаційно-розважальної системи робити фото й записувати відео"</string>
     <string name="permission_grant_allowed" msgid="4844649705788049638">"Дозволено"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"Завжди"</string>
