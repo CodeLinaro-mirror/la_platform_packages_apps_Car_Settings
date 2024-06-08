@@ -411,7 +411,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Zrušit"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Tyto aplikace negativně ovlivňují výkon systému a byl u nich zablokován běh na pozadí.\nPokud je chcete z tohoto seznamu odstranit a povolit jejich běh na pozadí, nastavte je jako přednostní."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Upřednostnit"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Přístup k prémiovým SMS"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Prémiová SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Prémiové SMS mohou být zpoplatněny a jejich cena se přičte k fakturaci operátora. Pokud aplikaci udělíte příslušné oprávnění, budete pomocí této aplikace moci odesílat prémiové SMS."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Přístup k údajům o využití"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Přístup k údajům o využití umožňuje aplikaci sledovat, které ostatní aplikace používáte, jak často je používáte, jakého máte operátora, nastavení jazyka a další podrobnosti."</string>
@@ -421,12 +421,16 @@
     <string name="location_settings_title" msgid="901334356682423679">"Poloha"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Používat polohu"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Poloha auta se bude používat pro vybrané aplikace."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Informační a zábavní aplikace"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Povolit aplikacím přístup k vaší poloze"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Pokud tuto možnost vypnete, o přístup k poloze přijdou všechny aplikace (kromě aplikací nezbytných k asistenci pro řidiče)"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Pokud tuto možnost vypnete, budou deaktivovány funkce asistence pro řidiče, které vyžadují údaje o poloze."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Přesto vypnout"</string>
     <string name="adas_location_toggle_popup_summary" msgid="4918613528063160563">"Toto nastavení nelze změnit, deaktivoval jej výrobce auta."</string>
     <string name="adas_location_toggle_title" msgid="6131739109988811006">"Funkce, které vám usnadňují řízení"</string>
     <string name="adas_location_toggle_summary" msgid="7055141074159770928">"Povolte vestavěným funkcím (schváleným výrobcem auta) přístup k poloze auta."</string>
+    <string name="location_required_apps_group_title" msgid="5672632286858280618">"Povinné aplikace"</string>
+    <string name="location_required_apps_group_summary" msgid="5760731893677945737">"Aplikace pro asistenci s řízením vyžadované výrobcem auta."</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"Nedávno používáno"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"Nedávno používáno"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"Zobrazit vše"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Vymazat profil"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Vymazat profil a účty z informačního a zábavního systému"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Tato akce ve vašem profilu není dostupná"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Přístup k mikrofonu"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Určete, zda budou mít aplikace přístup k mikrofonům auta"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Informační a zábavní aplikace"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Povolit informačním a zábavním aplikacím nahrávat zvuk"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Přístup ke kamerám"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Určete, zda mají aplikace přístup ke kamerám auta"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Povinné aplikace"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplikace k asistenci při řízení vyžadované výrobcem auta"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Zásady"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Výrobce auta může mít k jeho kameře přístup i nadále"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Informační a zábavní aplikace"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Povolit informačním a zábavním aplikacím fotit a nahrávat videa?"</string>
