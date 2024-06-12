@@ -429,8 +429,6 @@
     <string name="adas_location_toggle_popup_summary" msgid="4918613528063160563">"මෙම සැකසීම වෙනස් කළ නොහැකි අතර ඔබේ මෝටර් රථ නිෂ්පාදකයා විසින් අබල කර ඇත."</string>
     <string name="adas_location_toggle_title" msgid="6131739109988811006">"ඔබට ධාවනය කිරීමට උදවු වන විශේෂාංග"</string>
     <string name="adas_location_toggle_summary" msgid="7055141074159770928">"ඔබේ මෝටර් රථයේ ස්ථානයට ප්‍රවේශ වීමට, ඔබේ මෝටර් රථයේ නිෂ්පාදකයා විසින් අනුමත කරන ලද, එක්ව තැනූ විශේෂාංගවලට ඉඩ දෙන්න."</string>
-    <string name="location_required_apps_group_title" msgid="5672632286858280618">"අවශ්‍ය යෙදුම්"</string>
-    <string name="location_required_apps_group_summary" msgid="5760731893677945737">"රිය පැදවීමට සහාය වීමට ඔබේ මෝටර් රථයේ නිෂ්පාදකයාට අවශ්‍ය යෙදුම්."</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"මෑතක දී ප්‍රවේශ වූ"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"මෑතක දී ප්‍රවේශ වූ"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"සියල්ල බලන්න"</string>
@@ -660,10 +658,8 @@
     <string name="camera_access_settings_title" msgid="1841809323727456945">"කැමරා ප්‍රවේශය"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"යෙදුම් හට ඔබේ මෝටර් රථයේ කැමරා වෙත ප්‍රවේශ විය හැකි ද යන්න තෝරා ගන්න"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"අවශ්‍ය යෙදුම්"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"ඔබට ධාවනය කිරීමට උදවු කිරීමට ඔබේ මෝටර් රථයේ නිෂ්පාදකයාට අවශ්‍ය යෙදුම්"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"ප්‍රතිපත්තිය"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"ඔබේ මෝටර් රථ නිෂ්පාදකයාට තවමත් ඔබේ මෝටර් රථයේ කැමරාවට ප්‍රවේශය තිබිය හැක"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"තොරතුරු විනෝදාස්වාද යෙදුම්"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"ඡායාරූප ගැනීමට සහ වීඩියෝ පටිගත කිරීමට තොරතුරු රසාස්වාදය යෙදුම්වලට ඉඩ දෙන්න"</string>
