@@ -429,8 +429,6 @@
     <string name="adas_location_toggle_popup_summary" msgid="4918613528063160563">"ഈ ക്രമീകരണം മാറ്റാനാകില്ല, മാത്രമല്ല അത് നിങ്ങളുടെ കാർ നിർമ്മാതാവ് പ്രവർത്തനരഹിതമാക്കിയിരിക്കുകയാണ്."</string>
     <string name="adas_location_toggle_title" msgid="6131739109988811006">"ഡ്രെെവ് ചെയ്യാൻ സഹായിക്കുന്ന ഫീച്ചറുകൾ"</string>
     <string name="adas_location_toggle_summary" msgid="7055141074159770928">"കാറിന്റെ ലൊക്കേഷൻ ആക്‌സസ് ചെയ്യുന്നതിന്, നിങ്ങളുടെ കാർ നിർമ്മാതാവ് അംഗീകരിച്ച ബിൽറ്റ് ഇൻ ഫീച്ചറുകൾ അനുവദിക്കുക."</string>
-    <string name="location_required_apps_group_title" msgid="5672632286858280618">"ആവശ്യമായ ആപ്പുകൾ"</string>
-    <string name="location_required_apps_group_summary" msgid="5760731893677945737">"ഡ്രൈവിംഗിനെ സഹായിക്കാൻ കാറിന്റെ നിർമ്മാതാവ് ആവശ്യപ്പെടുന്ന ആപ്പുകൾ."</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"അടുത്തിടെ ആക്‌സസ് ചെയ്‌തവ"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"അടുത്തിടെ ആക്‌സസ് ചെയ്‌തവ"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"എല്ലാം കാണുക"</string>
@@ -660,10 +658,8 @@
     <string name="camera_access_settings_title" msgid="1841809323727456945">"ക്യാമറ ആക്‌സസ്"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"ആപ്പുകൾക്ക് നിങ്ങളുടെ കാറിന്റെ ക്യാമറകൾ ആക്‌സസ് ചെയ്യാനാകുമോ എന്ന് തിരഞ്ഞെടുക്കുക"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"ആവശ്യമായ ആപ്പുകൾ"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"ഡ്രൈവ് ചെയ്യാൻ നിങ്ങളെ സഹായിക്കുന്നതിനായി നിങ്ങൾക്ക് വേണമെന്ന് കാർ നിർമ്മാതാവ് ആവശ്യപ്പെടുന്ന ആപ്പുകൾ"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"നയം"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"കാർ നിർമ്മാതാവിന് നിങ്ങളുടെ കാറിന്റെ ക്യാമറയിലേക്ക് തുടർന്നും ആക്‌സസ് ലഭിച്ചേക്കാം"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"ഇൻഫോറ്റേയിൻമെന്റ് ആപ്പുകൾ"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"ചിത്രങ്ങളെടുക്കാനും വീഡിയോ റെക്കോർഡ് ചെയ്യാനും ഇൻഫോറ്റേയിൻമെന്റ് ആപ്പുകളെ അനുവദിക്കുക"</string>
