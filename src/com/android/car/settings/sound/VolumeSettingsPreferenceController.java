@@ -248,7 +248,12 @@ public class VolumeSettingsPreferenceController extends PreferenceController<Pre
 
         CarAudioManager carAudioManager = getCarAudioManager();
         if (carAudioManager != null) {
-            updateVolumePreference(carAudioManager.getVolumeGroupInfo(zoneId, groupId), eventTypes);
+            CarVolumeGroupInfo groupInfo = carAudioManager.getVolumeGroupInfo(zoneId, groupId);
+            if (groupInfo != null) {
+                updateVolumePreference(groupInfo, eventTypes);
+            } else {
+                updateVolumePreference(carAudioManager, groupId);
+            }
         }
     }
 
@@ -352,6 +357,10 @@ public class VolumeSettingsPreferenceController extends PreferenceController<Pre
     }
 
     private void updateVolumePreference(CarVolumeGroupInfo groupInfo, int eventTypes) {
+        if (groupInfo == null) {
+            LOG.v("update volume preference CarVolumeGroupInfo NULL");
+            return;
+        }
         int groupId = groupInfo.getId();
         for (VolumeSeekBarPreference volumePreference : mVolumePreferences) {
             Bundle extras = volumePreference.getExtras();
@@ -370,6 +379,30 @@ public class VolumeSettingsPreferenceController extends PreferenceController<Pre
                         volumePreference.setMax(groupInfo.getMaxVolumeGainIndex());
                     }
                 });
+                break;
+            }
+        }
+    }
+
+    private void updateVolumePreference(CarAudioManager carAudioManager, int groupId) {
+        if (carAudioManager == null) {
+            LOG.v("update volume preference CarAudioManager NULL");
+            return;
+        }
+
+        boolean isMuted = isGroupMuted(carAudioManager, groupId);
+        int value = carAudioManager.getGroupVolume(getMyAudioZoneId(), groupId);
+
+        for (VolumeSeekBarPreference volumePreference : mVolumePreferences) {
+            Bundle extras = volumePreference.getExtras();
+            if (extras.getInt(VOLUME_GROUP_KEY) == groupId) {
+                if (volumePreference.isMuted() != isMuted
+                        || value != volumePreference.getValue()) {
+                    mUiHandler.post(() -> {
+                        volumePreference.setIsMuted(isMuted);
+                        volumePreference.setValue(value);
+                    });
+                }
                 break;
             }
         }
