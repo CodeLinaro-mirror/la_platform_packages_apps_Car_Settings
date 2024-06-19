@@ -167,4 +167,7 @@
 
     <!-- Whether toggle_airplane is available or not. -->
     <bool name="config_show_toggle_airplane">true</bool>
+
+    <!-- Whether to allow the ADAS Location Switch to be clickable. -->
+    <bool name="config_allow_adas_location_switch_clickable">true</bool>
 </resources>

@@ -314,7 +314,7 @@ public abstract class SettingsFragment extends PreferenceFragment implements
 
     @Override
     public void showProgressBar(boolean visible) {
-        if (getToolbar() != null) {
+        if (getToolbar() != null && getToolbar().getProgressBar() != null) {
             getToolbar().getProgressBar().setVisible(visible);
         }
     }
