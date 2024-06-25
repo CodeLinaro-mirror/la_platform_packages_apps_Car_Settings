@@ -38,7 +38,7 @@
     <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"मोबाइल नेटवर्क"</string>
     <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"मोबाइल डेटा प्रयोग गर्नुहोस्"</string>
     <string name="mobile_network_state_off" msgid="471795861420831748">"अफ छ"</string>
-    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"मोबाइल डेटा निष्क्रिय पार्ने हो?"</string>
+    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"मोबाइल डेटा अफ गर्ने हो?"</string>
     <string name="sim_selection_required_pref" msgid="6599562910262785784">"चयन गर्न आवश्यक छ"</string>
     <string name="sim_change_data_title" msgid="6677115745127365131">"मोबाइल डेटाका लागि <xliff:g id="CARRIER">%1$s</xliff:g> प्रयोग गर्ने हो?"</string>
     <string name="sim_change_data_message" msgid="4669775284395549069">"तपाईं मोबाइल डेटाका लागि <xliff:g id="CARRIER2_0">%2$s</xliff:g> प्रयोग गर्दै हुनुहुन्छ। तपाईं <xliff:g id="CARRIER1">%1$s</xliff:g> मा जानुभयो भने मोबाइल डेटाका लागि अब उप्रान्त <xliff:g id="CARRIER2_1">%2$s</xliff:g> को प्रयोग गरिने छैन।"</string>
@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"५.० GHz ब्यान्ड भए राम्रो"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"२.४ GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"५.० GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Wi‑Fi हटस्पटका लागि कम्तीमा एक ब्यान्ड छनौट गर्नुहोस्:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-Fi हटस्पट"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"हटस्पट"</string>
@@ -925,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"योजनाहरू हेर्नुहोस्"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"तपाईंको इन्टरनेट योजनाको म्याद सकिएको छ"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"योजनाहरू हेर्नुहोस्"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>
