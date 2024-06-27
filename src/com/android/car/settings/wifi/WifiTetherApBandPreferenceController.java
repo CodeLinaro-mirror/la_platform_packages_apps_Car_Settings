@@ -77,7 +77,6 @@ public class WifiTetherApBandPreferenceController extends
             SoftApConfiguration newConfig = new SoftApConfiguration.Builder(config)
                     .setBand(SoftApConfiguration.BAND_2GHZ)
                     .build();
-            setCarSoftApConfig(newConfig);
             return newConfig.getBand();
         }
 
@@ -139,7 +138,6 @@ public class WifiTetherApBandPreferenceController extends
     @Override
     public boolean handlePreferenceChanged(ListPreference preference, Object newValue) {
         mBand = validateSelection(Integer.parseInt((String) newValue));
-        refreshUi();
         return true;
     }
 
@@ -197,7 +195,8 @@ public class WifiTetherApBandPreferenceController extends
 
         if (isDualApSupported() && mBand == SOFTAP_CONCURRENT_BAND_2GHZ_AND_5GHZ) {
             dual_bands = new int[] {
-                SoftApConfiguration.BAND_2GHZ, SoftApConfiguration.BAND_5GHZ};
+                SoftApConfiguration.BAND_2GHZ,
+                SoftApConfiguration.BAND_2GHZ | SoftApConfiguration.BAND_5GHZ};
         } else {
             dual_bands = new int[0];
         }
