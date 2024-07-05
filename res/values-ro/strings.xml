@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Se preferă banda de 5,0 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Alege cel puțin o bandă pentru hotspot Wi-Fi:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Hotspot Wi-Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
@@ -238,7 +240,7 @@
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"Toate limbile"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"Tastatură"</string>
     <string name="manage_keyboard" msgid="4045394766282200132">"Gestionează tastaturile"</string>
-    <string name="text_to_speech_settings" msgid="811985746199507343">"Rezultatul redării vocale a textului"</string>
+    <string name="text_to_speech_settings" msgid="811985746199507343">"Setări pentru redarea vocală a textului"</string>
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"Motor preferat"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"Motor actual"</string>
     <string name="tts_speech_rate" msgid="4512944877291943133">"Ritmul vorbirii"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Anulează"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Aceste aplicații afectează negativ performanța sistemului și nu s-a permis rularea lor în fundal.\nPrioritizează aplicația pentru a permite folosirea în fundal și elimin-o din listă."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prioritizează aplicația"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Acces la SMS-uri premium"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"SMS premium"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"SMS-urile premium pot genera costuri care se vor adăuga la factura operatorului. Dacă activezi permisiunea pentru o aplicație, vei putea trimite SMS-uri premium folosind acea aplicație."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Acces la datele de utilizare"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Cu accesul la datele de utilizare, o aplicație poate să înregistreze ce alte aplicații folosești și cât de des le folosești, precum și operatorul, setările de limbă și alte detalii."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Locație"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Folosește locația"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Folosește locația mașinii pentru toate aplicațiile selectate."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Aplicațiile de infotainment"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Permite-le aplicațiilor acces la locația ta"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Dacă dezactivezi opțiunea, permisiunea de acces la locație va fi eliminată pentru toate aplicațiile, cu excepția celor necesare în asistența pentru șofer."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Dacă dezactivezi opțiunea, aplicațiile de asistență pentru șofer care se bazează pe informațiile despre locație se vor dezactiva"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Dezactivează oricum"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Șterge profilul"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Șterge profilul și conturile de pe sistemul de infotainment"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Acțiunea nu este disponibilă pentru profilul tău"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Acces la microfon"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Alege dacă aplicațiile pot accesa microfoanele mașinii"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Aplicații de infotainment"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Permite ca aplicațiile de infotainment să înregistreze conținut audio"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Acces la camere"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Alege dacă aplicațiile pot accesa camerele mașinii"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Aplicațiile necesare"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplicații cerute de producătorul mașinii ca să te ajute să conduci"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Politica"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Producătorul mașinii poate avea în continuare acces la camera mașinii"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplicațiile de infotainment"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Permite ca aplicațiile de infotainment să facă fotografii și să înregistreze conținut video"</string>
@@ -927,4 +933,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Vezi planurile"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Planurile tale de internet au expirat"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Vezi planurile"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

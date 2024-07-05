@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Претпочитан опсег: 5,0 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Избери барем еден појас:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Точка на пристап за Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Точка на пристап"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Откажи"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Апликацииве негативно влијаат на изведбата на системот и спречени се да се извршуваат во заднина.\nДајте предност на апликација за да дозволите користење во заднина и отстранете ја од списоков."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Дајте предност на апликацијата"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Пристап до премиум SMS"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Премиум SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Премиум SMS може да ве чини пари, а сумата ќе се додаде на сметките од операторот. Ако овозможите дозвола за апликацијата, ќе може да испраќате премиум SMS со неа."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Пристап до податоци за користењето"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Пристапот до податоци за користењето овозможува апликацијата да следи кои други апликации ги користите и колку често, како и операторот, поставките за јазик и други детали."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Локација"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Користи ја локацијата"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Користете ја локацијата на вашиот автомобил со секоја апликација што сте ја навеле."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Апликации за информации и забава"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Дозволете апликациите да имаат пристап до вашата локација"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Ако го исклучите ова, ќе се отстрани пристапот до локацијата за сите апликации, освен за оние што се потребни за помош за возачи"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Ако го исклучите ова, апликациите за помош за возачи што зависат од податоците за локација ќе бидат оневозможени"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Сепак исклучи"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Избришете го профилот"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Избришете го вашиот профил и сметките од системот за информации и забава"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Дејствово е недостапно за вашиот профил"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Пристап до микрофонот"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Изберете дали да може апликациите да пристапуваат до микрофоните на вашиот автомобил"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Апликации за информации и забава"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Дозволете им на апликациите за информации и забава да снимаат аудио"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Пристап до камерата"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Изберете дали апликациите може да пристапуваат до камерите на вашиот автомобил"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Задолжителни апликации"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Апликации што ги бара производителот на вашиот автомобил за да ви помагаат при возење"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Политика"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Производителот на вашиот автомобил можеби сѐ уште има пристап до камерата на автомобилот"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Апликации за информации и забава"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Дозволи апликациите за информации и забава да фотографираат и снимаат видео"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Погледнете ги пакетите"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Вашите интернет-пакети се истечени"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Погледнете ги пакетите"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

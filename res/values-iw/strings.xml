@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"עדיפות לתדר של ‎5.0 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"‎2.4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"‎5.0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"יש לבחור תדר אחד לפחות לנקודת Wi‑Fi לשיתוף אינטרנט:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"נקודת Wi‑Fi לשיתוף אינטרנט"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"נקודת אינטרנט"</string>
@@ -316,7 +318,7 @@
     <string name="performance_impacting_apps" msgid="3439260699394720569">"אפליקציות שמשפיעות על הביצועים"</string>
     <string name="app_permissions" msgid="32799922508313948">"הרשאות הניתנות לאפליקציה"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"שליטה בגישת האפליקציה לנתונים שלך"</string>
-    <string name="applications_settings" msgid="794261395191035632">"פרטי אפליקציה"</string>
+    <string name="applications_settings" msgid="794261395191035632">"פרטי האפליקציה"</string>
     <string name="force_stop" msgid="1616958676171167028">"עצירת האפליקציה"</string>
     <string name="force_stop_dialog_title" msgid="4481858344628934971">"לעצור את האפליקציה?"</string>
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"אם סוגרים אפליקציה ידנית, ייתכן שהיא לא תפעל כהלכה."</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"ביטול"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"האפליקציות האלה משפיעות לרעה על ביצועי המערכת ולכן הן נחסמו להפעלה ברקע.\nכדי לאפשר לאפליקציה לפעול ברקע יש לקבוע לה עדיפות ולהסיר אותה מהרשימה הזו."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"עדיפות לאפליקציה"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"שליחת הודעות SMS בתשלום"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"‫SMS פרימיום"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"החיובים תמורת שליחה של הודעות SMS בתשלום, אם יהיו, יצורפו לחשבונות הספק שלך. לאחר שמפעילים את ההרשאה לאפליקציה כלשהי, ניתן לשלוח באמצעותה הודעות SMS בתשלום."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"גישה לנתוני השימוש"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"גישה לנתוני השימוש מאפשרת לאפליקציה לעקוב אחר האפליקציות האחרות שנעשה בהן שימוש ואחר תדירות השימוש בהן. המידע כולל גם את זהות הספק, הגדרות השפה ופרטים אחרים."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"מיקום"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"שימוש במיקום"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"האפליקציות שציינת יכולות להשתמש במיקום הרכב."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"אפליקציות מידע ובידור"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"ההגדרה הזו מעניקה לאפליקציות גישה למיקום שלך"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"אם משביתים את האפשרות הזו, מסירים את הגישה למיקום עבור כל האפליקציות מלבד אלה שדרושות לעזרה לנהג"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"אם משביתים את האפשרות הזו, משביתים את אפליקציות העזרה לנהג שמתבססות על פרטי המיקום"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"השבתה בכל זאת"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"מחיקת הפרופיל שלך"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"מחיקת כל הפרופילים והחשבונות ממערכת המידע והבידור"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"הפעולה הזו לא זמינה לפרופיל שלך"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"גישה למיקרופון"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"אפשר לבחור אם לאפליקציות תהיה גישה למיקרופונים של הרכב"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"אפליקציות מידע ובידור"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"מתן הרשאה לאפליקציות מידע ובידור להקליט אודיו"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"גישה למצלמה"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"אפשר לבחור אם לאפליקציות תהיה גישה למצלמות של הרכב"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"אפליקציות נדרשות"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"האפליקציות שנדרשות על ידי יצרן הרכב שלך לעזרה בנהיגה"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"מדיניות"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"יכול להיות שליצרן הרכב עדיין יש גישה למצלמה של הרכב"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"אפליקציות מידע ובידור"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"לאפשר לאפליקציות מידע ובידור לצלם תמונות ולהקליט סרטונים"</string>
@@ -927,4 +933,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"להצגת חבילות הגלישה"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"התוקף של חבילות הגלישה שלך פג"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"להצגת חבילות הגלישה"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

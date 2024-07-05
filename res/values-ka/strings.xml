@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"სასურველია 5 გჰც დიაპაზონი"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 გჰც"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 გჰც"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"აირჩიეთ 1 დიაპ. Wi‑Fi ქსელისთვის:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi‑Fi უსადენო ქსელი"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"უსადენო ქსელი"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"გაუქმება"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"ეს აპები უარყოფითად აისახება სისტემის მუშაობაზე და აკრძალულია ფონში გაშვება.\nმიანიჭეთ აპს პრიორიტეტი, რათა დაუშვათ ფონური გამოყენება და ამოშალოთ იგი ამ სიიდან."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"აპის პრიორიტეტიზაცია"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"პრემიუმ SMS შეტყობინებების გაგზავნაზე წვდომა"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"პრემიუმ SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"პრემიუმ SMS შეტყობინებებისთვის შეიძლება დამატებითი საფასურის გადახდა მოგიწიოთ. აპისთვის ამ ნებართვის მიცემის შემთხვევაში, თქვენ მისი მეშვეობით პრემიუმ SMS შეტყობინებების გაგზავნას შეძლებთ."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"გამოყენებაზე წვდომა"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"გამოყენებაზე წვდომა საშუალებას აძლევს აპს, თვალყური ადევნოს, სხვა რომელ აპებს იყენებთ და რამდენად ხშირად, ასევე თქვენს ოპერატორს, ენის პარამეტრებსა და სხვა დეტალებს."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"მდებარეობა"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"მდებარეობის გამოყენება"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"გამოიყენეთ თქვენი მანქანის მდებარეობა თქვენ მიერ მითითებულ ნებისმიერ აპთან."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"საინფორმაციო-გასართობი აპები"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"ნება დართეთ აპებს, თქვენს მდებარეობაზე ჰქონდეთ წვდომა"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"თუ ამას გამორთავთ, ის მოუხსნის მდებარეობაზე წვდომას ყველა აპისთვის, გარდა მძღოლის დახმარებისთვის"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"თუ ამას გამორთავთ, მძღოლის დახმარების აპები, რომლებიც მდებარეობის ინფორმაციას ეყრდნობა, გაითიშება"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"მაინც გამორთვა"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"თქვენი პროფილის წაშლა"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"გართობის/საინფორმაციო სისტემიდან თქვენი პროფილისა და ანგარიშების ამოშლა"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"ეს მოქმედება თქვენი პროფილისთვის მიუწვდომელია"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"მიკროფონზე წვდომა"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"აირჩიეთ, ექნებათ თუ არა აპებს თქვენი მანქანის მიკროფონებზე წვდომა"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"საინფორმაციო-გასართობი აპები"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"საინფორმაციო-გასართობი აპებებისთვის აუდიოს ჩაწერის დაშვება"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"კამერაზე წვდომა"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"აირჩიეთ, ექნებათ თუ არა აპებს თქვენი მანქანის კამერებზე წვდომა"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"სავალდებულო აპები"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"თქვენი მანქანის მწარმოებლის მიერ მოთხოვნილი მართვაში დასახმარებელი აპები."</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"წესები"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"თქვენი მანქანის მწარმოებელს შესაძლოა კვლავაც ჰქონდეს წვდომა თქვენი მანქანის კამერაზე."</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"საინფორმაციო-გასართობი აპები"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"მიეცით გართობის/საინფორმაციო აპებს სურათების გადაღებისა და ვიდეოს ჩაწერის ნებართვა"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"გეგმების ნახვა"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"თქვენი ინტერნეტის გეგმებს ვადა გაუვიდა"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"გეგმების ნახვა"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

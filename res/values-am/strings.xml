@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5.0 ጊኸዝ ባንድ ይመረጣል"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2.4 ጊኸ"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 ጊኸ"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"ለWi-Fi መገናኛ ነጥብ ቢያንስ አንድ ሞገድ ይምረጡ፦"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"የWi‑Fi መገናኛ ነጥብ"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"መገናኛ ነጥብ"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"ተወው"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"እነዚህ መተግበሪያዎች በሥርዓት አፈጻጸም ላይ አሉታዊ ተጽዕኖ ያደርጋሉ እና በዳራ ከመሄድ የተከለከሉ ናቸው።\n የዳራ አጠቃቀምን ለመፍቀድ እና ከዚህ ዝርዝር እሱን ለማስወገድ ለመተግበሪያው ቅድሚያ ይስጡ።"</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"ለመተግበሪያ ቅድሚያ ስጥ"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"የፕሪሚየም ኤስኤምኤስ መዳረሻ"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"ፕሪሚየም ኤስኤምኤስ"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"ፕሪሚየም ኤስኤምኤስ ውድ ገንዘብ ሊያስወጣዎት ይችላል፣ እና በአገልግሎት አቅራቢ ክፍያዎ ላይ ሒሳብ ያስጨምርብዎታል። ለመተግበሪያ ፈቃድን ካነቁ ያንን መተግበሪያ በመጠቀም ፕሪሚየም ኤስኤምኤስ መላክ ይችላሉ።"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"የአጠቃቀም መዳረሻ"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"የአጠቃቀም መዳረሻ አንድ መተግበሪያ የሚጠቀሟቸውን ሌሎች መተግበሪያዎች እና ምን ያህል ጊዜ እንደሚጠቀሙባቸው፣ እንዲሁም የአገልግሎት አቅራቢዎን፣ የቋንቋ ቅንብሮችዎን እና ሌሎች ዝርዝሮችዎን እንዲከታተል ያስችለዋል።"</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"አካባቢ"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"አካባቢን ተጠቀም"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"የመኪናዎን አካባቢ በጠቀሱት ማንኛውም መተግበሪያ ይጠቀሙ።"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"የኢንፎቴይንመንት መተግበሪያዎች"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"መተግበሪያዎች የአካባቢዎ መዳረሻ እንዲኖራቸው ይፍቀዱ"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"ይህን ካጠፉት ለአሽከርካሪ ረዳት ከሚያስፈልጉት በስተቀር ለሁሉም መተግበሪያዎች የአካባቢ መዳረሻን ያስወግዳል"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"ይህን ካጠፉት በአካባቢ መረጃ ላይ የሚተማመኑ የአሽከርካሪ ረዳት መተግበሪያዎች ይሰናከላሉ"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"ለማንኛውም አጥፋ"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"መገለጫዎን ይሰርዙት"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"የእርስዎን መገለጫ እና መለያዎች ከኢንፎቴይንመንት ስርዓቱ ይደምስሱ"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"ይህ እርምጃ ለመገለጫዎ አይገኝም"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"የማይክሮፎን መዳረሻ"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"መተግበሪያዎች የመኪናዎን ማይክሮፎኖች መድረስ የሚችሉ ከሆነ ይምረጡ"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"የኢንፎቴይንመንት መተግበሪያዎች"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"ኦዲዮን ለመቅረጽ የኢንፎቴይንመንት መተግበሪያዎችን ይፍቀዱ"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"የካሜራ መዳረሻ"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"መተግበሪያዎች የመኪናዎን ካሜራዎች መድረስ የሚችሉ ከሆነ ይምረጡ"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"የሚፈለጉ መተግበሪያዎች"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"እርስዎ እንዲነዱ ለማገዝ በመኪናዎ አምራች የሚጠየቁ መተግበሪያዎች"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"መመሪያ"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"የእርስዎ መኪና አምራች አሁንም የመኪናዎ ካሜራ መዳረሻ ሊኖረው ይችላል"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"የኢንፎቴይንመንት መተግበሪያዎች"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"የኢንፎቴይንመንት መተግበሪያዎች ፎቶዎችን እንዲያነሱ እና ቪድዮ እንዲቀርጹ ይፍቀዱ"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"ዕቅዶችን ይመልከቱ"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"የእርስዎ በይነመረብ ዕቅዶች ጊዜያቸው አልፎባቸዋል"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"ዕቅዶችን ይመልከቱ"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

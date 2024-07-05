@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Прыярытэтны дыяпазон 5,0 ГГц"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 ГГц"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 ГГц"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Выберыце дыяпазон Wi‑Fi:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Хот-спот Wi-Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Хот-спот"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Скасаваць"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Гэтыя праграмы зніжаюць прадукцыйнасць сістэмы, і ім забаронена выконвацца ў фонавым рэжыме.\nЗрабіце праграму прыярытэтнай, каб дазволіць ёй выконвацца ў фонавым рэжыме і выдаліць з гэтага спіса."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Зрабіць прыярытэтнай"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Доступ да платных SMS"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Платнае SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"За доступ да платных SMS з вас можа спаганяцца аплата. Гэта павялічыць вашы рахункі за паслугі аператара. Калі вы ўключыце дазвол для праграмы, вы атрымаеце магчымасць адпраўляць з яе платныя SMS."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Доступ да даных выкарыстання"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Доступ да даных аб выкарыстанні дазваляе праграме адсочваць, якія яшчэ праграмы вы выкарыстоўваеце і як часта, а таксама атрымліваць даныя пра вашага аператара, моўныя налады і іншую інфармацыю."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Месцазнаходжанне"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Выкарыстоўваць месцазнаходжанне"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Выкарыстоўваць даныя пра месцазнаходжанне аўтамабіля ў выбраных праграмах."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Праграмы інфармац.-забаўляльнай сістэмы"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Дазваляць праграмам доступ да геаданых"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Калі выключыць гэту наладу, доступ да геаданых будзе выдалены для ўсіх праграм, акрамя тых, якія патрабуюцца для дапамогі вадзіцелю"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Калі выключыць гэту наладу, праграмы дапамогі вадзіцелю, для работы якіх патрабуецца інфармацыя аб месцазнаходжанні, будуць выключаны"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Усё роўна выключыць"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Выдаліць профіль"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Выдаліць ваш профіль і ўліковыя запісы з інфармацыйна-забаўляльнай сістэмы"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Гэта дзеянне для вашага профілю недаступнае"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Доступ да мікрафона"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Наладзьце доступ праграм да мікрафонаў аўтамабіля"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Праграмы інфармац.-забаўляльнай сістэмы"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Дазволіць праграмам інфармацыйна-забаўляльнай сістэмы запісваць аўдыя"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Доступ да камер"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Наладзьце доступ праграм да камер аўтамабіля"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Абавязковыя праграмы"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Праграмы для дапамогі падчас язды, выкарыстання якіх патрабуе вытворца аўтамабіля"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Палітыка"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"У вытворцы ўсё роўна можа быць доступ да камеры аўтамабіля"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Праграмы інфармац.-забаўляльнай сістэмы"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Дазволіць праграмам інфармацыйна-забаўляльнай сістэмы здымаць фота і відэа"</string>
@@ -933,4 +939,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Паглядзець планы"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Вашы інтэрнэт-планы пратэрмінаваны"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Паглядзець планы"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

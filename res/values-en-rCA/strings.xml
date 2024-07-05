@@ -160,6 +160,7 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5.0 GHz Band preferred"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2.4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 GHz"</string>
+    <string name="wifi_ap_2G_5G" msgid="5526758464441623079">"2.4 and 5.0 GHz"</string>
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Choose at least one band for Wi‑Fi hotspot:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi‑Fi hotspot"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
@@ -411,7 +412,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Cancel"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"These apps negatively impact system performance and have been prevented from running in the background.\nPrioritize app to allow background usage and remove it from this list."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prioritize app"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Premium SMS access"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Premium SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Premium SMS may cost you money and will add up to your carrier bills. If you enable permission for an app, you will be able to send premium SMS using that app."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Usage access"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Usage access allows an app to track what other apps you’re using and how often, as well as your carrier, language settings, and other details."</string>
@@ -421,6 +422,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Location"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Use location"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Use your car’s location with any app you’ve specified."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Infotainment apps"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Allow apps to have access to your location"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"If you turn this off, it will remove location access for all apps except those needed for driver assistance"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"If you turn this off, driver assistance apps that rely on location information will be disabled"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Turn off anyway"</string>
@@ -649,6 +652,10 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Delete your profile"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Erase your profile and accounts from the infotainment system"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"This action is unavailable for your profile"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Microphone access"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Choose if apps can access your car’s microphones"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Infotainment apps"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Allow infotainment apps to record audio"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Camera access"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Choose if apps can access your car’s cameras"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Required apps"</string>
@@ -919,4 +926,5 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"See plans"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Your internet plans expired"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"See plans"</string>
+    <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Done"</string>
 </resources>

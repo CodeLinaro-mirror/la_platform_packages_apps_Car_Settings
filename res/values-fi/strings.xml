@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5,0 GHz:n taajuus ensisijainen"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Valitse väh. yksi kaista Wi‑Fi-hotspotille:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi‑Fi-hotspot"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Peru"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Nämä sovellukset vaikuttavat järjestelmän suorituskykyyn negatiivisesti ja niiden toiminta taustalla on estetty.\nPriorisoi sovellusta salliaksesi sen toiminnan taustalla ja poista se listalta."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Priorisoi sovellusta"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Premium-tekstiviestien käyttö"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Maksullinen tekstiviesti"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Premium-tekstiviestien käyttö saattaa olla maksullista, ja kulut lisätään operaattorisi laskuun. Jos annat sovellukselle käyttöoikeuden, voit lähettää premium-tekstiviestejä kyseisellä sovelluksella."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Käyttöoikeus"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Tämä käyttöoikeus antaa sovellukselle luvan seurata, mitä muita sovelluksia käytät ja kuinka usein, sekä nähdä operaattorisi, kieliasetuksesi ja muita tietoja."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Sijainti"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Käytä sijaintia"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Käytä autosi sijaintia millä tahansa haluamallasi sovelluksella."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Infotainment-sovellukset"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Salli sovelluksille pääsy sijaintiisi"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Jos laitat sijainnin pois päältä, pääsy siihen poistetaan kaikilta sovelluksilta, jotka eivät tarvitse sijaintia ajoavustimeen"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Jos laitat tämän pois päältä, sijaintia käyttävät ajoavustinsovellukset poistetaan käytöstä"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Laita pois päältä"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Poista profiili"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Poista profiilisi ja tilisi infotainment-järjestelmästä"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Tämä toiminto ei ole mahdollinen profiilillasi"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Pääsy mikrofoniin"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Valitse, onko sovelluksilla pääsy autosi mikrofoneihin"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Infotainment-sovellukset"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Salli, että infotainment-sovellukset tallentavat audiota"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Pääsy kameraan"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Valitse, onko sovelluksilla pääsy autosi kameraan"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Tarvittavat sovellukset"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Auton valmistajan edellyttämät sovellukset, jotka auttavat ajamaan"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Käytäntö"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Autosi valmistajalla saattaa yhä olla pääsy autosi kameraan"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Infotainment-sovellukset"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Salli, että infotainment-sovellukset ottavat kuvia ja kuvaavat videoita"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Katso liittymät"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Internetliittymäsi ovat vanhentuneet"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Katso liittymät"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

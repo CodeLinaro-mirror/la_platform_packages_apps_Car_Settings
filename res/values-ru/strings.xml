@@ -38,7 +38,7 @@
     <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"Мобильная сеть"</string>
     <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"Использовать мобильный интернет"</string>
     <string name="mobile_network_state_off" msgid="471795861420831748">"Отключено"</string>
-    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Отключить мобильный Интернет?"</string>
+    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Отключить мобильный интернет?"</string>
     <string name="sim_selection_required_pref" msgid="6599562910262785784">"Выберите SIM-карту"</string>
     <string name="sim_change_data_title" msgid="6677115745127365131">"Переключиться на оператора \"<xliff:g id="CARRIER">%1$s</xliff:g>\"?"</string>
     <string name="sim_change_data_message" msgid="4669775284395549069">"Вы пользуетесь мобильным Интернетом в сети оператора \"<xliff:g id="CARRIER2_0">%2$s</xliff:g>\". После переключения на SIM-карту \"<xliff:g id="CARRIER1">%1$s</xliff:g>\" вы не сможете использовать мобильный Интернет оператора \"<xliff:g id="CARRIER2_1">%2$s</xliff:g>\"."</string>
@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5,0 ГГц (рекомендуется)"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 ГГц"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 ГГц"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Диапазон частот для точек доступа Wi-Fi."</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Точка доступа Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Точка доступа"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Отмена"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Эти приложения снижают производительность системы. Им запрещено работать в фоновом режиме.\nПриоритизируйте приложение, чтобы разрешить ему работать в фоновом режиме и удалить из этого списка."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Приоритизировать"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Доступ к платным SMS"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Платные SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Обратите внимание, что такие SMS могут оплачиваться дополнительно. Предоставив разрешение приложению, вы сможете отправлять платные SMS с его помощью."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Доступ к истории использования"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Эта настройка разрешает отслеживать данные об использовании других приложений, сведения об операторе связи, языковые настройки и другую информацию."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Геолокация"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Использовать данные о местоположении"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Использовать данные о местоположении автомобиля в указанных приложениях"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Информационно-развлекательные приложения"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Разрешить приложениям доступ к данным о местоположении"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Если вы отключите этот параметр, данные о местоположении будут доступны только приложениям для помощи водителю."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Если вы отключите этот параметр, приложения для помощи водителю, которым необходимы данные о местоположении, работать не будут."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Отключить"</string>
@@ -649,15 +653,17 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Удалить профиль"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Удалить все профили и аккаунты из информационно-развлекательной системы"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Это действие недоступно для вашего профиля."</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Доступ к микрофону"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Настройте доступ приложений к микрофонам автомобиля"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Информационно-развлекательные приложения"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Разрешить информационно-развлекательным приложениям записывать аудио"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Доступ к камере"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Настройте доступ приложений к камерам автомобиля"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Необходимые приложения"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Приложения для водителей, наличия которых требует производитель вашего автомобиля"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Политика конфиденциальности"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"У производителя автомобиля все ещё может быть доступ к камере вашего автомобиля."</string>
-    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Информационно-развлекательные приложения"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Информационно-\\nразвлекательная система"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Разрешить информационно-развлекательным приложениям снимать фото и видео"</string>
     <string name="permission_grant_allowed" msgid="4844649705788049638">"Разрешено"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"Всегда"</string>
@@ -933,4 +939,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Посмотреть тарифы"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Ваши тарифные планы на интернет больше не действуют"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Посмотреть тарифы"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

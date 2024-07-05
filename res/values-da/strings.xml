@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5,0 GHz-bånd foretrækkes"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Vælg mindst ét bånd til Wi‑Fi-hotspottet:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-Fi-hotspot"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Hotspot"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Annuller"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Disse apps påvirker systemets ydeevne negativt og forhindres derfor i at køre i baggrunden.\nPrioriter appen for at tillade brug i baggrunden og fjerne appen fra denne liste."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prioriter app"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Adgang til overtakseret sms"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Overtakseret sms"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Overtakseret sms kan koste dig penge, som opkræves via din mobilregning. Hvis du aktiverer tilladelsen for en app, kan du sende overtakserede sms-beskeder ved hjælp af denne app."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Adgang til brugsdata"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Med adgang til telefonbrug kan en app aflæse, hvilke andre apps du anvender og hvor ofte, samt dit mobilselskab, dine sprogindstillinger og andre oplysninger."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Lokation"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Anvend lokation"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Brug bilens lokation med en hvilken som helst app, du har valgt."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Infotainmentapps"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Giv apps adgang til din lokation"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Hvis du deaktiverer dette, fjernes lokationstilladelse for alle apps, bortset fra de apps, der er nødvendige for at bruge førerassistance"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Hvis du deaktiverer dette, deaktiveres apps til førerassistance, som kræver lokationsoplysninger"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Deaktiver alligevel"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Slet din profil"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Ryd din profil og dine konti fra infotainmentsystemet"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Denne handling kan ikke udføres for din profil"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Mikrofonadgang"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Vælg, om apps kan tilgå bilens mikrofoner"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Infotainmentapps"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Giv infotainmentapps tilladelse til at optage lyd"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Kameraadgang"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Vælg, om apps kan tilgå bilens kameraer"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Påkrævede apps"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Apps, som producenten af din bil påkræver til kørselshjælp"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Politik"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Bilproducenten har muligvis stadig adgang til bilens kamera"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Infotainmentapps"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Tillad, at infotainmentapps kan tage billeder og optage video"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Se abonnementer"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Dine internetabonnementer er udløbet"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Se abonnementer"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

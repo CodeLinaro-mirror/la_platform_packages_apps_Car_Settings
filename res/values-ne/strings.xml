@@ -38,7 +38,7 @@
     <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"मोबाइल नेटवर्क"</string>
     <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"मोबाइल डेटा प्रयोग गर्नुहोस्"</string>
     <string name="mobile_network_state_off" msgid="471795861420831748">"अफ छ"</string>
-    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"मोबाइल डेटा निष्क्रिय पार्ने हो?"</string>
+    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"मोबाइल डेटा अफ गर्ने हो?"</string>
     <string name="sim_selection_required_pref" msgid="6599562910262785784">"चयन गर्न आवश्यक छ"</string>
     <string name="sim_change_data_title" msgid="6677115745127365131">"मोबाइल डेटाका लागि <xliff:g id="CARRIER">%1$s</xliff:g> प्रयोग गर्ने हो?"</string>
     <string name="sim_change_data_message" msgid="4669775284395549069">"तपाईं मोबाइल डेटाका लागि <xliff:g id="CARRIER2_0">%2$s</xliff:g> प्रयोग गर्दै हुनुहुन्छ। तपाईं <xliff:g id="CARRIER1">%1$s</xliff:g> मा जानुभयो भने मोबाइल डेटाका लागि अब उप्रान्त <xliff:g id="CARRIER2_1">%2$s</xliff:g> को प्रयोग गरिने छैन।"</string>
@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"५.० GHz ब्यान्ड भए राम्रो"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"२.४ GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"५.० GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Wi‑Fi हटस्पटका लागि कम्तीमा एक ब्यान्ड छनौट गर्नुहोस्:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-Fi हटस्पट"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"हटस्पट"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"रद्द गर्नुहोस्"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"यी एपहरूले सिस्टमको पर्फर्मेन्समा नकरात्मक प्रभाव पार्छन् र यी एपहरूलाई ब्याकग्राउन्डमा चल्ने अनुमति दिइएको छैन।\nतपाईं एपलाई ब्याकग्राउन्डमा चल्ने अनुमति दिन चाहनुहुन्छ भने यसलाई प्राथमिकता दिनुहोस् र सूचीबाट हटाउनुहोस्।"</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"एपलाई प्राथमिकता दिनुहोस्"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"प्रिमियम SMS सुविधामाथिको पहुँच"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"प्रिमियम SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"प्रिमियम SMS सुविधा सक्रिय गर्नाले तपाईंलाई पैसा लाग्न सक्छ र उक्त लागत तपाईंको सेवा प्रदायकलाई तिर्नु पर्ने बिलमा जोडिने छ। तपाईंले एपका लागि अनुमति सक्षम पार्नुभएका खण्डमा तपाईं त्यस एपको प्रयोग गरेर प्रिमियम SMS पठाउन सक्नु हुने छ।"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"प्रयोग गर्ने अनुमति"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"प्रयोगको पहुँचले एपलाई तपाईंले आफ्नो सेवा प्रदायक, भाषासम्बन्धी सेटिङ र अन्य विवरणहरूसहित अन्य कुन कुन एपहरू गरिरहनुभएको छ र कत्तिको प्रयोग गर्नुहुन्छ भन्ने कुरा ट्र्याक गर्न दिन्छ।"</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"स्थान"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"लोकेसन प्रयोग गर्नुहोस्"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"तपाईंले तोकेको जुनसुकै एपका सहायताले आफ्नो कारको लोकेसन प्रयोग गर्नुहोस्।"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"इन्फोटेनमेन्ट एपहरू"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"एपहरूलाई तपाईंको लोकेसन एक्सेस गर्ने अनुमति दिनुहोस्"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"तपाईंले लोकेसन अफ गर्नुभयो भने चालकलाई अझ सुरक्षित पार्ने प्रविधिका निम्ति आवश्यक पर्ने एपबाहेक अन्य कुनै पनि एपले लोकेसन प्रयोग गर्न पाउने छैन"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"तपाईंले यो प्रविधि अफ गर्नुभयो भने लोकेसनसम्बन्धी जानकारीमा निर्भर हुने चालकलाई अझ सुरक्षित पार्ने प्रविधिसँग सम्बन्धित एपहरू अफ गरिने छन्"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"जे भए पनि अफ गर्नुहोस्"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"आफ्नो प्रोफाइल मेटाउनुहोस्"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"इन्फोटेनमेन्ट प्रणालीबाट आफ्नो प्रोफाइल तथा खाताहरू मेटाउनुहोस्"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"तपाईंको प्रोफाइलमा यो कारबाही गर्न मिल्दैन"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"माइक्रोफोनको एक्सेस"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"एपहरूलाई तपाईंको कारको माइक्रोफोन एक्सेस गर्न दिने कि नदिने भन्ने कुरा छनौट गर्नुहोस्"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"इन्फोटेनमेन्ट एपहरू"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"इन्फोटेनमेन्ट एपहरूलाई अडियो रेकर्ड गर्ने अनुमति दिनुहोस्"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"क्यामेरा एक्सेस"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"एपहरूलाई तपाईंको कारको क्यामेरा एक्सेस गर्न दिने कि नदिने भन्ने कुरा छनौट गर्नुहोस्"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"अनिवार्य रूपमा इन्स्टल गर्नु पर्ने एपहरू"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"तपाईंको कार उत्पादकका अनुसार तपाईंलाई गाडी चलाउन मद्दत गर्ने आवश्यक एपहरू"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"नीति"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"तपाईंको कारको उत्पादकसँग अझै पनि तपाईंको कारको क्यामेराको एक्सेस हुन सक्छ"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"इन्फोटेनमेन्ट एपहरू"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"इन्फोटेनमेन्ट एपहरूलाई फोटो खिच्ने र भिडियो रेकर्ड गर्ने अनुमति दिनुहोस्"</string>
@@ -741,7 +747,7 @@
     <string name="lockpassword_pin_too_short" msgid="3671037384464545169">"{count,plural, =1{अनिवार्य रूपमा कम्तीमा पनि # अङ्क समावेश हुनु पर्छ}other{अनिवार्य रूपमा कम्तीमा पनि # वटा अङ्क समावेश हुनु पर्छ}}"</string>
     <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{अनिवार्य रूपमा # भन्दा कम वर्ण हुनु पर्छ}other{अनिवार्य रूपमा # भन्दा कम वर्ण हुनु पर्छ}}"</string>
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{अनिवार्य रूपमा # भन्दा कम अङ्क हुनु पर्छ}other{अनिवार्य रूपमा # भन्दा कम अङ्क हुनु पर्छ}}"</string>
-    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"बढ्दो, घट्दो वा दोहोरिएका अङ्कहरूको अनुक्रमलाई निषेध गरिएको छ"</string>
+    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"बढ्दो, घट्दो क्रममा वा दोहोरिएका अङ्क हाल्न मिल्दैन"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"स्क्रिन लकका विकल्पहरू"</string>
     <string name="credentials_reset" msgid="873900550885788639">"प्रमाणहरू मेट्नुहोस्"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"सबै प्रमाणहरू हटाउनुहोस्"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"योजनाहरू हेर्नुहोस्"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"तपाईंको इन्टरनेट योजनाको म्याद सकिएको छ"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"योजनाहरू हेर्नुहोस्"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

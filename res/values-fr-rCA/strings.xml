@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Préférer la bande de 5,0 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Choisir au moins une bande de PA Wi-Fi :"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Point d\'accès Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Point d\'accès sans fil"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Annuler"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Ces applications altèrent la performance du système, et leur exécution en arrière-plan a été bloquée.\nPriorisez l\'application pour permettre l\'utilisation en arrière-plan et retirez-là de cette liste."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prioriser l\'appli"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Accès aux messages texte payants"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Message texte payant"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Les messages texte de cette catégorie peuvent être payants et s\'ajouter aux factures mensuelles de votre fournisseur de services. Si vous activez l\'autorisation pour une application, vous serez en mesure d\'envoyer des messages texte payants à l\'aide de cette dernière."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Accès aux données utilisation"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"L\'accès aux données d\'utilisation permet à une application d\'effectuer le suivi des applications que vous utilisez, de la fréquence d\'utilisation, du fournisseur de services, des paramètres de langue et d\'autres détails."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Lieu"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Utiliser ma position"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Utilisez la localisation de votre voiture avec n\'importe quelle application que vous avez spécifiée."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Applis d\'infodivertissement"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Autorisez les applis à accéder à votre position"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Si vous désactivez ce paramètre, vous retirerez l\'accès de toutes les applications à votre position, à l\'exception de celles requises pour l\'assistance au conducteur"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Si vous désactivez cette option, les applications d\'assistance au conducteur qui dépendent des données de localisation seront désactivées"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Désactiver quand même"</string>
@@ -649,16 +653,18 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Supprimer votre profil"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Effacez votre profil et vos comptes du système d\'infodivertissement"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Cette action n\'est pas proposée pour votre profil"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Accès au microphone"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Choisissez si les applis peuvent accéder aux microphones de votre voiture"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Applis d\'infodivertissement"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Permettez aux applis d\'infodivertissement d\'enregistrer du contenu audio"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Accès aux caméras"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Choisissez si les applis peuvent accéder aux caméras de votre voiture"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Applications requises"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
-    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Il se peut que le constructeur de votre automobile ait encore accès à la caméra de votre voiture"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Les applis requises par votre constructeur automobile pour vous aider à conduire"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Politique"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Il se peut que le constructeur de votre automobile ait encore accès à la caméra de celle-ci"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Applis d\'infodivertissement"</string>
-    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Autoriser les applis d\'infodivertissement à prendre des photos et à enregistrer des vidéos"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Autorisez les applis d\'infodivertissement à prendre des photos et à enregistrer des vidéos"</string>
     <string name="permission_grant_allowed" msgid="4844649705788049638">"Autorisées"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"En tout temps"</string>
     <string name="permission_grant_never" msgid="1357441946890127898">"Non autorisées"</string>
@@ -770,7 +776,7 @@
     <string name="add_user_restricted_while_driving" msgid="1037301074725362944">"Impossible d\'ajouter un profil durant la conduite"</string>
     <string name="default_search_query" msgid="3137420627428857068">"Recherche"</string>
     <string name="assistant_and_voice_setting_title" msgid="737733881661819853">"Assistant et voix"</string>
-    <string name="assistant_and_voice_assistant_app_title" msgid="5981647244625171285">"Application d\'assistant numérique"</string>
+    <string name="assistant_and_voice_assistant_app_title" msgid="5981647244625171285">"Appli d\'assistant numérique"</string>
     <string name="assistant_and_voice_use_text_from_screen_title" msgid="5851460943413795599">"Utiliser le texte affiché à l\'écran"</string>
     <string name="assistant_and_voice_use_text_from_screen_summary" msgid="4161751708121301541">"Autorisez l\'assistant à accéder au contenu de l\'écran"</string>
     <string name="assistant_and_voice_use_screenshot_title" msgid="1930735578425470046">"Utiliser la capture d\'écran"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Voir les forfaits"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Vos forfaits Internet ont expiré"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Voir les forfaits"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

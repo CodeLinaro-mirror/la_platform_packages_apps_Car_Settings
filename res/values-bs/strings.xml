@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Preferira se opseg od 5,0 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Odaberite barem jedan frekvencijski pojas za WiFi pristupnu tačku:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"WiFi pristupna tačka"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Pristupna tačka"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Otkaži"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Ove aplikacije negativno utiču na performanse sistema i njihov rad u pozadini je spriječen.\nDajte prioritet aplikaciji da dozvolite korištenje u pozadini i uklonite je s ovog spiska."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Daj prioritet aplik."</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Pristup premium SMS-ovima"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Premijum SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Moguće je da se usluga slanja premium SMS-ova dodatno plaća, a trošak će se dodati na račun operatera. Ako aplikaciji date odobrenje, moći ćete slati premium SMS-ove putem te aplikacije."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Pristup korištenju"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Pristup korištenju omogućava aplikaciji da prati koje druge aplikacije koristite i koliko često, kao i da vidi vašeg mobilnog operatera, postavke jezika i druge detalje."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Lokacija"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Koristi lokaciju"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Koristite lokaciju automobila s bilo kojom aplikacijom koju navedete."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Informativno-zabavne aplikacije"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Dozvolite aplikacijama da imaju pristup lokaciji"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Ako isključite ovu funkciju, uklonit će se pristup lokaciji za sve aplikacije, osim onih koje su potrebne za pomoć za vozače"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Ako isključite ovu funkciju, onemogućit će se aplikacije pomoći za vozače koje se oslanjaju na podatke o lokaciji"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Svejedno isključi"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Izbriši profil"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Izbrišite profile i račune s informativno-zabavnog sistema"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Ova radnja nije dostupna za vaš profil"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Pristup mikrofonu"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Odaberite mogu li aplikacije pristupati mikrofonima u automobilu"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Informativno-zabavne aplikacije"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Dozvolite informativno-zabavnim aplikacijama da snimaju zvuk"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Pristup kameri"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Odaberite mogu li aplikacije pristupati kamerama automobila"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Potrebne aplikacije"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplikacije za pomoć prilikom vožnje koje zahtijeva proizvođač automobila"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Pravila"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Proizvođač automobila i dalje može imati pristup kameri automobila"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Informativno-zabavne aplikacije"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Dozvolite informativno-zabavnim aplikacijama da snimaju slike i videozapise"</string>
@@ -927,4 +933,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Pogledajte pakete"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Internetski paketi su istekli"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Pogledajte pakete"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

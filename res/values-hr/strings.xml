@@ -38,7 +38,7 @@
     <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"Mobilna mreža"</string>
     <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"Koristi mobilne podatke"</string>
     <string name="mobile_network_state_off" msgid="471795861420831748">"Isključeno"</string>
-    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Isključiti mobilne podatke?"</string>
+    <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Želite li isključiti mobilne podatke?"</string>
     <string name="sim_selection_required_pref" msgid="6599562910262785784">"Odabir je obvezan"</string>
     <string name="sim_change_data_title" msgid="6677115745127365131">"Koristiti <xliff:g id="CARRIER">%1$s</xliff:g> za mobilne podatke?"</string>
     <string name="sim_change_data_message" msgid="4669775284395549069">"Koristite usluge mobilnog operatera <xliff:g id="CARRIER2_0">%2$s</xliff:g> za mobilne podatke. Ako prijeđete na mobilnog operatera <xliff:g id="CARRIER1">%1$s</xliff:g>, operater<xliff:g id="CARRIER2_1">%2$s</xliff:g> više se neće koristiti za mobilne podatke."</string>
@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Prednost se daje pojasu od 5,0 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Odaberite barem jedan pojas za žarišnu točku Wi‑Fija:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi‑Fi žarišna točka"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Žarišna točka"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Odustani"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Ove aplikacije negativno utječu na izvedbu sustava i onemogućeno im je izvođenje u pozadini.\nDajte aplikaciji prednost da biste omogućili njezinu upotrebu u pozadini i uklonili je s ovog popisa."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prednost aplikaciji"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Pristup SMS-ovima s dodatnom naplatom"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"SMS-ovi s dodatnom naplatom"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"SMS-ovi s dodatnom naplatom mogu se dodatno naplaćivati i povećat će vaš račun. Ako nekoj aplikaciji date to dopuštenje, moći ćete slati SMS-ove s dodatnom naplatom pomoću te aplikacije."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Pristup upotrebi"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Pristup podacima o upotrebi omogućuje aplikaciji praćenje drugih aplikacija koje upotrebljavate i učestalosti njihove upotrebe, kao i praćenje mobilnog operatera, postavki jezika i ostalih pojedinosti."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Lokacija"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Upotreba lokacije"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Lokacija automobila upotrebljava se sa svim aplikacijama koje ste naveli."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Aplikacije sustava za informiranje i zabavu"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Omogući aplikacijama da pristupaju mojoj lokaciji"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Ako isključite tu postavku, uklonit će se pristup lokaciji za sve aplikacije, osim za one koje su potrebne za pomoć u vožnji"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Ako isključite tu postavku, onemogućit će se aplikacije za pomoć u vožnji koje se oslanjaju na lokacijske podatke"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Ipak isključi"</string>
@@ -649,16 +653,18 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Izbrišite svoj profil"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Brisanje profila i računa iz sustava za informiranje i zabavu"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Ta radnja nije dostupna za vaš profil"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Pristup mikrofonu"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Odaberite mogu li aplikacije pristupati mikrofonima automobila"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Aplikacije za informiranje i zabavu"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Dopustite aplikacijama za informiranje i zabavu da snimaju zvuk"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Pristup kameri"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Odaberite mogu li aplikacije pristupati kamerama automobila"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Obavezne aplikacije"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplikacije koje zahtijeva proizvođač vašeg automobila i koje vam pomažu prilikom vožnje"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Pravila"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Vaš proizvođač automobila možda i dalje ima pristup kameri automobila"</string>
-    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplikacije sustava za inform. i zabavu"</string>
-    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Dopustite aplikacijama sustava za informiranje i zabavu da snimaju fotografije i videozapise"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplikacije za informiranje i zabavu"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Dopustite aplikacijama za informiranje i zabavu da snimaju fotografije i videozapise"</string>
     <string name="permission_grant_allowed" msgid="4844649705788049638">"Dopušteno"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"Cijelo vrijeme"</string>
     <string name="permission_grant_never" msgid="1357441946890127898">"Nije dopušteno"</string>
@@ -741,7 +747,7 @@
     <string name="lockpassword_pin_too_short" msgid="3671037384464545169">"{count,plural, =1{Mora sadržavati najmanje # znamenku}one{Mora sadržavati najmanje # znamenku}few{Mora sadržavati najmanje # znamenke}other{Mora sadržavati najmanje # znamenki}}"</string>
     <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{Mora sadržavati manje od # znaka}one{Mora sadržavati manje od # znaka}few{Mora sadržavati manje od # znaka}other{Mora sadržavati manje od # znakova}}"</string>
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{Mora sadržavati manje od # znamenke}one{Mora sadržavati manje od # znamenke}few{Mora sadržavati manje od # znamenke}other{Mora sadržavati manje od # znamenki}}"</string>
-    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"Uzastopno rastući ili padajući slijed brojeva ili ponavljanje brojeva nije dopušteno"</string>
+    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"Rastući, padajući ili ponavljajući slijed brojeva nije dopušten"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Opcije zaključavanja zaslona"</string>
     <string name="credentials_reset" msgid="873900550885788639">"Izbriši vjerodajnice"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"Ukloni sve certifikate"</string>
@@ -927,4 +933,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Prikaži pakete"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Vaši su internetski paketi istekli"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Prikaži pakete"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

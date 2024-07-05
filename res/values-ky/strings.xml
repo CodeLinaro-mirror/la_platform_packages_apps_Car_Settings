@@ -34,7 +34,7 @@
     <string name="mobile_network_inactive_esim" msgid="7273712403773327964">"Активдүү эмес/eSIM-карта"</string>
     <string name="mobile_network_list_add_more" msgid="6174294462747070655">"Дагы кошуу"</string>
     <string name="mobile_network_toggle_title" msgid="3515647310810280063">"Мобилдик Интернет"</string>
-    <string name="mobile_network_toggle_summary" msgid="8698267487987697148">"Интернетке мобилдик тармак аркылуу чыгуу"</string>
+    <string name="mobile_network_toggle_summary" msgid="8698267487987697148">"Интернетке мобилдик тармак аркылуу чыгасыз"</string>
     <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"Мобилдик тармак"</string>
     <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"Мобилдик трафикти колдонуу"</string>
     <string name="mobile_network_state_off" msgid="471795861420831748">"Өчүк"</string>
@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5.0 ГГц жыштыгы сунушталат"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2.4 ГГц"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 ГГц"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Wi‑Fi байланыш түйүнүн иштетүү үчүн кеминде бир жыштыкты тандаңыз:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi‑Fi байланыш түйүнү"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Байланыш түйүнү"</string>
@@ -404,14 +406,14 @@
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Системанын параметрлерин өзгөртүү"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Колдонмо системанын параметрлерин өзгөртө алат."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Билдирмелерди угуу"</string>
-    <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"<xliff:g id="SERVICE">%1$s</xliff:g> кызматына билдирмелерди угууга уруксат берилсинби?"</string>
+    <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"<xliff:g id="SERVICE">%1$s</xliff:g> кызматына билдирмелерди угууга уруксат бересизби?"</string>
     <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> колдонмосу эскертмелердин баарын, ошону менен катар байланыштардын аты-жөнү жана кабыл алынган билдирүүлөр сыяктуу жеке маалыматты окуй алат. Мындан тышкары, ал билдирмелерди жок кылып же алардагы баскычтарды баса алат.\n\nУшуну менен колдонмо \"Тынчымды алба\" режимин иштетүү же өчүрүү, ошондой эле анын параметрлерин өзгөртүү мүмкүнчүлүгүнө ээ болот."</string>
     <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"Эгер <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> үчүн билдирмени угуу уруксатын өчүрсөңүз, анын \"Тынчымды алба\" режимине да уруксаты жок болуп калышы мүмкүн."</string>
     <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Өчүрүү"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Жок"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Бул колдонмолор системанын майнаптуулугуна терс таасирин тийгизгендиктен, фондо иштетилбей калышты.\nКолдонмону фондо иштетүү үчүн ага арткычылык берип, бул тизмеден өчүрүңүз."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Колдонмого артыкчылык берүү"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Акы алынуучу SMS жөнөтүүгө уруксат"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Акы алынуучу SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Акы алынуучу SMS үчүн сизден акы алынып, ал операторуңуздун эсептерине кошулушу мүмкүн. Эгер кайсы бир колдонмого уруксат берсеңиз, ошол колдонмо аркылуу акы алынуучу SMS жөнөтө аласыз."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Колдонуу таржымалын көрүү"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Колдонуу таржымалы аркылуу кайсы колдонмолор канчалык көп колдонула турганын, ошондой эле байланыш операторуңузду, тил параметрлерин жана башка параметрлерди көрө аласыз."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Жайгашкан жер"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Жайгашкан жерди колдонуу"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Сиз көрсөткөн колдонмолор унааңыздын жүргөн жерин аныктай алат."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Инфозоок колдонмолору"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Колдонмолорго жүргөн жериңизди көрүүгө уруксат бериңиз"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Бул функцияны өчүрсөңүз, айдоочуларга арналган колдонмолор гана жүргөн жерди аныктай алышат"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Эгер өчүрсөңүз, кайда жүргөнүңүздү аныктаган айдоочулардын колдонмолору өчүрүлөт"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Баары бир өчүрүү"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Профилди жок кылуу"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Инфозоок тутумундагы бардык профилдерди жана аккаунттарды өчүрүү"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Бул аракет профилиңизде жеткиликсиз"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Микрофонду колдонуу"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Колдонмолор унааңыздын микрофондорун колдонуп же колдонбой турганын тандаңыз"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Инфозоок колдонмолору"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Инфозоок колдонмолоруна аудиону жаздырууга уруксат берүү"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Камераны колдонуу"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Колдонмолор унааңыздын жүргөн жерин көрүп же көрбөй турганын тууралаңыз"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Талап кылынган колдонмолор"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Унаа айдоого жардам берүүчү унааны өндүрүүчү тарабынан талап кылынган колдонмолор"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Эрежелер"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Өндүрүүчү унааңыздын камерасын колдоно бериши мүмкүн"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Инфозоок колдонмолору"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Инфозоок колдонмолоруна сүрөттөр менен видеолорду тартканга уруксат бериңиз"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Тарифтик пландарды көрүү"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Интернет үчүн тарифтик пландарыңыздын мөөнөтү бүттү"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Тарифтик пландарды көрүү"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

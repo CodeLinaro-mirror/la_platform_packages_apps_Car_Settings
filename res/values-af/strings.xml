@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5,0 GHz-band verkies"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Kies 1+ band vir warmkol:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-fi-warmkol"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Warmkol"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Kanselleer"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Hierdie apps het stelselwerkverrigting negatief beïnvloed en is verhoed om op die agtergrond te loop.\nPrioritiseer app om agtergrondgebruik toe te laat en verwyder dit van hierdie lys."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prioritiseer app"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Toegang tot premium-SMS\'e"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Premium-SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Premium-SMS\'e kan jou geld kos en die koste sal by jou diensverskafferfakture gevoeg word. As jy toestemming vir \'n program aktiveer, sal jy premium-SMS\'e met daardie program kan stuur."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Gebruiktoegang"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Gebruiktoegang laat \'n app toe om na te spoor watter ander apps jy gebruik en hoe gereeld, asook jou diensverskaffer, taalinstellings en ander besonderhede."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Ligging"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Gebruik ligging"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Gebruik jou motor se ligging met enige app wat jy gespesifiseer het."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Inligtingvermaakapps"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Laat apps toe om toegang tot jou ligging te kry"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"As jy dit afskakel, sal liggingtoegang vir alle apps, behalwe dié wat vir bestuurderbysrand benodig word, afgeskakel word."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"As jy dit afskakel, sal bestuurderbystandkenmerke wat op ligginginligting staatmaak, gedeaktiveer word."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Skakel in elk geval af"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Vee jou profiel uit"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Vee jou profiel en rekeninge van die inligtingvermaakstelsel af uit"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Hierdie handeling is nie vir jou profiel beskikbaar nie"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Mikrofoontoegang"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Kies of apps toegang tot jou motor se mikrofone kan kry"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Inligtingvermaakapps"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Laat inligtingvermaakapps toe om oudio op te neem"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Kameratoegang"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Kies of apps toegang tot jou motor se kameras kan kry"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Benodigde apps"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Apps wat deur jou motor se vervaardiger vereis word om jou te help bestuur"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Beleid"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Jou motorvervaardiger het dalk steeds toegang tot jou motor se kamera"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Inligtingvermaakapps"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Laat inligtingvermaakapps toe om foto\'s en video te neem"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Sien pakkette"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Jou internetpakkette het verval"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Sien pakkette"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

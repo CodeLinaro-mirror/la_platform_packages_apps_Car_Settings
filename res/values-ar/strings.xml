@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"يفضّل نطاق بتردد 5.0 غيغاهرتز"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"٢٫٤ غيغاهرتز"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 غيغاهرتز"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"اختر نطاقًا واحدًا على الأقل لنقطة اتصال Wi‑Fi:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"نقطة اتصال Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"نقطة الاتصال"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"إلغاء"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"تؤثر هذه التطبيقات سلبًا في أداء النظام وقد تم منع استخدامها في الخلفية.\nعليك منح الأولوية للتطبيق للسماح باستخدامه في الخلفية وإزالته من هذه القائمة."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"منح أولوية للتطبيق"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"إمكانية إرسال رسائل قصيرة SMS مميزة"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"الرسائل القصيرة برسوم إضافية"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"يمكن أن تكلفك الرسائل القصيرة SMS المميزة بعض الرسوم، وستتم إضافة هذه الرسوم إلى فواتير مشغِّل شبكة الجوّال. وفي حال تفعيل الإذن لأحد التطبيقات، ستتمكن من إرسال رسائل قصيرة SMS مميزة باستخدام هذا التطبيق."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"الوصول إلى بيانات الاستخدام"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"يتيح الدخول إلى بيانات الاستخدام للتطبيق إمكانية تتبُّع التطبيقات الأخرى التي تستخدمها ومدى تكرار استخدامها ومشغّل شبكة الجوّال وإعدادات اللغة وغيرها من التفاصيل."</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"الموقع الجغرافي"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"استخدام الموقع الجغرافي"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"استخدِم الموقع الجغرافي لسيارتك مع أي تطبيق حددته."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"تطبيقات نظام الترفيه والمعلومات"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"السماح للتطبيقات بالوصول إلى موقعك الجغرافي"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"إذا أوقفت هذا الإعداد، سيؤدي ذلك إلى إزالة إمكانية وصول كل التطبيقات إلى الموقع الجغرافي باستثناء تلك اللازمة لتطبيقات \"مساعد السائق\"."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"إذا تم إيقاف ميزة \"مساعدة السائق\" هذه، سيتم إيقاف تطبيقات \"مساعدة السائق\" التي تعتمد على معلومات الموقع الجغرافي."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"إيقاف على أي حال"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"حذف ملفك الشخصي"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"محو ملفك الشخصي وحساباتك من \"نظام الترفيه والمعلومات\"."</string>
     <string name="action_unavailable" msgid="7087119418684417249">"هذا الإجراء غير متاح لملفك الشخصي."</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"الوصول إلى الميكروفون"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"اختَر ما إذا كان يمكن للتطبيقات الوصول إلى ميكروفونات سيارتك"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"تطبيقات نظام الترفيه والمعلومات"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"السماح لتطبيقات المعلومات والترفيه بتسجيل الصوت"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"الوصول إلى الكاميرا"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"اختَر ما إذا كان يمكن للتطبيقات الوصول إلى كاميرا سيارتك"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"التطبيقات المطلوبة"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"التطبيقات التي تطلبها الشركة المصنّعة لسيارتك من أجل مساعدتك في القيادة"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"السياسة"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"قد تظل الشركة المصنِّعة لسيارتك قادرة على الوصول إلى كاميرا سيارتك"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"تطبيقات نظام الترفيه والمعلومات"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"السماح لتطبيقات نظام الترفيه والمعلومات بالتقاط الصور وتسجيل الفيديوهات"</string>
@@ -945,4 +951,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"الاطّلاع على الخطط"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"انتهت صلاحية خطط الإنترنت الخاصة بك"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"الاطّلاع على الخطط"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

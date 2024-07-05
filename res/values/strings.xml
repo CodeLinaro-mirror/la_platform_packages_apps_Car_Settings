@@ -337,6 +337,8 @@
     <string name="wifi_ap_2G">2.4 GHz</string>
     <!-- Label for adding to the list of selected bands when 5.0 GHz is selected [CHAR LIMIT=15]-->
     <string name="wifi_ap_5G">5.0 GHz</string>
+    <!-- Label for adding to the list of selected bands when 2.4 and 5.0 GHz is selected [CHAR LIMIT=15]-->
+    <string name="wifi_ap_2G_5G">2.4 and 5.0 GHz</string>
     <!-- Label that is shown as a dialog summary informing users they must pick at LEAST one band for their hotspot [CHAR LIMIT=25]-->
     <string name="wifi_ap_band_select_one">Choose at least one band for Wi\u2011Fi hotspot:</string>
     <!-- Tethering controls, item title to go into the tethering settings when USB, Bluetooth and Wifi tethering are available [CHAR LIMIT=60]-->
@@ -937,6 +939,12 @@
     <string name="location_toggle_summary">
         Use your car\u2019s location with any app you\u2019ve specified.
     </string>
+    <!-- Title of infotainment apps accessing location [CHAR LIMIT=40] -->
+    <string name="location_infotainment_apps_toggle_title">Infotainment apps</string>
+    <!--  Summary of infotainment apps accessing location [CHAR LIMIT=NONE] -->
+    <string name="location_infotainment_apps_toggle_summary">
+        Allow apps to have access to your location
+    </string>
     <!-- Warning message when users try to toggle location off [CHAR LIMIT=NONE] -->
     <string name="location_toggle_off_warning">
         If you turn this off, it will remove location access for all apps except those needed for driver assistance
@@ -1499,6 +1507,14 @@
     <string name="vehicle_data_delete_user_summary">Erase your profile and accounts from the infotainment system</string>
     <!-- Privacy settings screen, text that shows when a user tries to take an action that is unavailable to the current user. [CHAR LIMIT=60] -->
     <string name="action_unavailable">This action is unavailable for your profile</string>
+    <!-- Title of microphone access page [CHAR LIMIT=40]-->
+    <string name="microphone_access_settings_title">Microphone access</string>
+    <!-- Summary of microphone access page [CHAR LIMIT=NONE]-->
+    <string name="microphone_access_settings_summary">Choose if apps can access your car\u2019s microphones</string>
+    <!-- Title of infotainment apps accessing microphone [CHAR LIMIT=40]-->
+    <string name="microphone_infotainment_apps_toggle_title">Infotainment apps</string>
+    <!-- Summary of infotainment apps accessing microphone [CHAR LIMIT=NONE]-->
+    <string name="microphone_infotainment_apps_toggle_summary">Allow infotainment apps to record audio</string>
     <!-- Title of camera access page [CHAR LIMIT=40]-->
     <string name="camera_access_settings_title">Camera access</string>
     <!-- Summary of camera access page [CHAR LIMIT=NONE]-->
@@ -2221,4 +2237,6 @@
     <string name="data_subscription_explore_options">See plans</string>
     <string name="connectivity_inactive_prompt">Your internet plans expired</string>
     <string name="connectivity_inactive_action_text">See plans</string>
+
+    <string name="audio_route_dialog_neutral_button_text">Done</string>
 </resources>

@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5.0 GHz 帯を優先"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2.4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Wi-Fi アクセス ポイントの帯域幅を 1 つ以上選択:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-Fi アクセス ポイント"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"アクセス ポイント"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"キャンセル"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"これらのアプリはシステムのパフォーマンス低下の要因となっていますが、バックグラウンドでの実行が許可されていません。\nアプリをバックグラウンドで使用できるようにし、このリストから除外するには、優先アプリとして指定してください。"</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"優先アプリとして指定する"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"プレミアム SMS へのアクセス"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"プレミアム SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"プレミアム SMS で料金が発生した場合は、携帯通信会社の請求に加算されます。アプリで権限を有効にすると、そのアプリを使用してプレミアム SMS を送信できるようになります。"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"使用状況へのアクセス"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"「使用状況へのアクセス」により、アプリは他のアプリの使用状況、使用頻度、携帯通信会社、言語設定などの情報を追跡できるようになります。"</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"位置情報"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"位置情報の使用"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"指定したアプリで車の位置情報を使用します。"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"インフォテインメント アプリ"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"位置情報へのアクセスをアプリに許可"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"この設定を OFF にすると、すべてのアプリで位置情報へのアクセス権限が削除されます。ただし、ドライバー サポートに位置情報を必要とするアプリは除きます。"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"この設定を OFF にすると、位置情報を使用するドライバー サポート アプリは無効になります"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"OFF にする"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"プロファイルを削除"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"インフォテインメント システムからプロファイルとアカウントを消去します"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"このプロファイルではこの操作は行えません"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"マイクへのアクセス"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"アプリが車のマイクにアクセスできる場合は選択します"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"インフォテインメント アプリ"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"インフォテインメント アプリに録音を許可します"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"カメラへのアクセス"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"アプリが車のカメラにアクセスできる場合は選択します"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"必須アプリ"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"運転をサポートするために車のメーカーが必要とするアプリ"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"ポリシー"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"車のメーカーが引き続き車のカメラにアクセスできる場合があります"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"インフォテインメント アプリ"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"インフォテインメント アプリによる写真と動画の撮影を許可する"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"プランを見る"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"インターネット プランの期限が切れています"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"プランを見る"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

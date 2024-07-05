@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"‎5.0 GHz بینڈ کو ترجیح دی جاتی ہے"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"‎2.4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"‎5.0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Wi‑Fi ہاٹ اسپاٹ کیلئے کم از کم ایک بینڈ چنیں:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi‑Fi ہاٹ اسپاٹ"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"ہاٹ اسپاٹ"</string>
@@ -411,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"منسوخ کریں"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"یہ ایپس سسٹم کی کارکردگی پر منفی اثر ڈالتی ہیں اور انہیں پس منظر میں چلنے سے روک دیا گیا ہے۔\nپس منظر کے استعمال کی اجازت دینے کے لیے ایپ کو ترجیح دیں اور اسے اس فہرست سے ہٹائیں۔"</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"ایپ کو ترجیح دیں"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"پریمیم SMS رسائی"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"پریمیم SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"ہو سکتا ہے آپ کو پریمیم SMS کے پیسے ادا کرنا پڑیں اور یہ آپ کے کیرئیر بلز میں شامل ہو جائیں گے۔ اگر آپ ایک ایپ کیلئے اجازت فعال کرتے ہیں تو آپ اس ایپ کو استعمال کرکے آپ پریمیم SMS بھیج پائیں گے۔"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"استعمال تک رسائی"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"استعمال تک رسائی کسی ایپ کو آپ کا کیریئر، زبان کی ترتیبات اور دیگر تفصیلات سمیت یہ ٹریک کرنے کی اجازت دیتی ہے کہ آپ کن دیگر ایپس کو اور کتنی بار استعمال کر رہے ہیں۔"</string>
@@ -421,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"مقام"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"مقام استعمال کریں"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"آپ کی بتائی ہوئی کسی بھی ایپ کے ساتھ اپنی کار کا مقام استعمال کریں۔"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"انٹرٹینمنٹ ایپس"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"اپنے مقام تک ایپس کو رسائی کی اجازت دیں"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"اگر آپ اسے آف کر دیتے ہیں تو یہ ڈرائیور کی مدد کے لیے درکار ایپس کے علاوہ تمام ایپس کے لیے مقام تک رسائی کو ہٹا دے گا"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"اگر آپ اسے آف کرتے ہیں تو مقام کی معلومات پر مبنی ڈرائیور کی مدد کی ایپس غیر فعال ہو جائیں گی"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"بہر حال آف کریں"</string>
@@ -649,13 +653,15 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"اپنی پروفائل حذف کریں"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"معلوماتی انٹرٹینمنٹ سسٹم سے اپنی پروفائل اور اکاؤنٹس مٹائیں"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"یہ کاروائی آپ کی پروفائل کے لیے دستیاب نہیں ہے"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"مائیکروفون تک رسائی"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"منتخب کریں کہ آیا ایپس آپ کی کار کے مائیکروفونز تک رسائی حاصل کر سکتی ہیں"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"انٹرٹینمنٹ ایپس"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"انٹرٹینمنٹ ایپس کو آڈیو ریکارڈ کرنے کی اجازت دیں"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"کیمرا تک رسائی"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"منتخب کریں کہ آیا ایپس آپ کی کار کے کیمروں تک رسائی حاصل کر سکتی ہیں"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"مطلوبہ ایپس"</string>
-    <!-- no translation found for required_apps_group_summary (5026442309718220831) -->
-    <skip />
-    <!-- no translation found for required_apps_privacy_policy_button_text (960364076891996263) -->
-    <skip />
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"وہ ایپس جو آپ کی کار کے مینوفیکچرر کو گاڑی چلانے میں آپ کی مدد کرنے کے لیے درکار ہوتی ہیں"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"پالیسی"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"آپ کی کار کے مینوفیکچرر کو اب بھی آپ کی کار کے کیمرے تک رسائی حاصل ہو سکتی ہے"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"انٹرٹینمنٹ ایپس"</string>
     <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"انٹرٹینمنٹ ایپس کو تصاویر لینے اور ویڈیو ریکارڈ کرنے کی اجازت دیں"</string>
@@ -921,4 +927,6 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"پلانز دیکھیں"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"آپ کے انٹرنیٹ پلانز کی میعاد ختم ہو گئی ہے"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"پلانز دیکھیں"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>
