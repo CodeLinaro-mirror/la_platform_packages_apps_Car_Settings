@@ -103,10 +103,6 @@ public abstract class WifiTetherBasePreferenceController<V extends Preference> e
         }
     }
 
-    protected boolean isDualApSupported() {
-        return mCarWifiManager.isDualApSupported();
-    }
-
     protected CarWifiManager getCarWifiManager() {
         return mCarWifiManager;
     }

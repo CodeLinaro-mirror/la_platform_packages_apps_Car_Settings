@@ -199,13 +199,6 @@ public class CarWifiManager implements WifiPickerTracker.WifiPickerTrackerCallba
         return mWifiManager.is5GHzBandSupported();
     }
 
-    /**
-     * Checks if the chipset supports dual band AP.
-     */
-    public boolean isDualApSupported() {
-        return mWifiManager.isBridgedApConcurrencySupported();
-    }
-
     /** Gets the wifi state from {@link WifiManager}. */
     public int getWifiState() {
         return mWifiManager.getWifiState();
