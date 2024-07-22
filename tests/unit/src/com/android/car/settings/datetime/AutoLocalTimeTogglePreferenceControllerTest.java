@@ -43,6 +43,7 @@ import android.app.time.TimeZoneConfiguration;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.UserManager;
 import android.widget.Toast;
 
@@ -52,6 +53,7 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.ConfirmationDialogFragment;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestUtil;
 import com.android.car.settings.enterprise.ActionDisabledByAdminDialogFragment;
@@ -88,6 +90,8 @@ public class AutoLocalTimeTogglePreferenceControllerTest {
     @Mock
     private Toast mMockToast;
     @Mock
+    private LocationManager mLocationManager;
+    @Mock
     private TimeManager mTimeManager;
     @Mock
     private TimeCapabilities mTimeCapabilities;
@@ -118,6 +122,7 @@ public class AutoLocalTimeTogglePreferenceControllerTest {
 
         CarUxRestrictions carUxRestrictions = new CarUxRestrictions.Builder(/* reqOpt= */ true,
                 CarUxRestrictions.UX_RESTRICTIONS_BASELINE, /* timestamp= */ 0).build();
+        when(mContext.getSystemService(LocationManager.class)).thenReturn(mLocationManager);
         when(mContext.getSystemService(TimeManager.class)).thenReturn(mTimeManager);
         when(mTimeManager.getTimeCapabilitiesAndConfig()).thenReturn(mTimeCapabilitiesAndConfig);
         when(mTimeManager.getTimeZoneCapabilitiesAndConfig())
@@ -158,6 +163,7 @@ public class AutoLocalTimeTogglePreferenceControllerTest {
     @Test
     public void testOnPreferenceChange_autoTimeZoneSet_shouldSendIntentIfCapabilitiesPossessed() {
         mockAutoTimeAndTimeZoneCapabilities(true);
+        when(mLocationManager.isLocationEnabled()).thenReturn(true);
 
         mPreference.setChecked(true);
         mController.handlePreferenceChanged(mPreference, true);
@@ -168,6 +174,30 @@ public class AutoLocalTimeTogglePreferenceControllerTest {
         assertThat(intentsFired.size()).isEqualTo(1);
         Intent intentFired = intentsFired.get(0);
         assertThat(intentFired.getAction()).isEqualTo(Intent.ACTION_TIME_CHANGED);
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
+        assertThat(mPreference.getSummary().toString()).isEqualTo("");
+    }
+
+    @Test
+    public void testOnPreferenceChange_autoTimeZoneSet_shouldShowDialogIfLocationDisabled() {
+        mockAutoTimeAndTimeZoneCapabilities(true);
+        when(mLocationManager.isLocationEnabled()).thenReturn(false);
+
+        mPreference.setChecked(true);
+        mController.handlePreferenceChanged(mPreference, true);
+
+        ArgumentCaptor<Intent> captor = ArgumentCaptor.forClass(Intent.class);
+        verify(mContext, times(1)).sendBroadcast(captor.capture());
+        List<Intent> intentsFired = captor.getAllValues();
+        assertThat(intentsFired.size()).isEqualTo(1);
+        Intent intentFired = intentsFired.get(0);
+        assertThat(intentFired.getAction()).isEqualTo(Intent.ACTION_TIME_CHANGED);
+        verify(mFragmentController)
+                .showDialog(any(ConfirmationDialogFragment.class),
+                        eq(ConfirmationDialogFragment.TAG));
+        assertThat(mPreference.getSummary().toString()).isEqualTo(
+                mContext.getString(R.string.auto_local_time_toggle_summary));
     }
 
     @Test
@@ -183,6 +213,9 @@ public class AutoLocalTimeTogglePreferenceControllerTest {
         assertThat(intentsFired.size()).isEqualTo(1);
         Intent intentFired = intentsFired.get(0);
         assertThat(intentFired.getAction()).isEqualTo(Intent.ACTION_TIME_CHANGED);
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
+        assertThat(mPreference.getSummary().toString()).isEqualTo("");
     }
 
     @Test
@@ -194,6 +227,8 @@ public class AutoLocalTimeTogglePreferenceControllerTest {
 
         ArgumentCaptor<Intent> captor = ArgumentCaptor.forClass(Intent.class);
         verify(mContext, never()).sendBroadcast(captor.capture());
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
     }
 
     @Test
@@ -205,6 +240,8 @@ public class AutoLocalTimeTogglePreferenceControllerTest {
 
         ArgumentCaptor<Intent> captor = ArgumentCaptor.forClass(Intent.class);
         verify(mContext, never()).sendBroadcast(captor.capture());
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
     }
 
     @Test
