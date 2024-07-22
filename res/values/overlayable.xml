@@ -1684,6 +1684,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="xml" name="data_usage_set_threshold_fragment"/>
       <item type="xml" name="data_warning_and_limit_fragment"/>
       <item type="xml" name="datetime_settings_fragment"/>
+      <item type="xml" name="datetime_settings_fragment_v2"/>
       <item type="xml" name="default_autofill_picker_fragment"/>
       <item type="xml" name="default_voice_input_picker_fragment"/>
       <item type="xml" name="developer_options_fragment"/>

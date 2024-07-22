@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2024 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,12 @@
 
 package com.android.car.settings.datetime;
 
+import android.app.time.TimeConfiguration;
+import android.app.time.TimeManager;
+import android.app.time.TimeZoneConfiguration;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
-import android.provider.Settings;
 
 import androidx.preference.SwitchPreference;
 
@@ -27,15 +29,16 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceController;
 
 /**
- * Business logic for the toggle which chooses to use the network provided time zone.
+ * Business logic which controls the auto local time toggle.
  */
-// TODO(b/346412366): Remove once Flags.FLAG_UPDATE_DATE_AND_TIME_PAGE fully rolls out.
-public class AutoTimeZoneTogglePreferenceController extends
+public class AutoLocalTimeTogglePreferenceController extends
         PreferenceController<SwitchPreference> {
+    private final TimeManager mTimeManager;
 
-    public AutoTimeZoneTogglePreferenceController(Context context, String preferenceKey,
+    public AutoLocalTimeTogglePreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
+        mTimeManager = context.getSystemService(TimeManager.class);
     }
 
     @Override
@@ -45,33 +48,33 @@ public class AutoTimeZoneTogglePreferenceController extends
 
     @Override
     protected void onCreateInternal() {
-        super.onCreateInternal();
         setClickableWhileDisabled(getPreference(), /* clickable= */ true, p ->
                 DatetimeUtils.runClickableWhileDisabled(getContext(), getFragmentController()));
     }
 
     @Override
-    protected boolean handlePreferenceChanged(SwitchPreference preference, Object newValue) {
-        boolean isAutoTimezoneEnabled = (boolean) newValue;
-        Settings.Global.putInt(getContext().getContentResolver(), Settings.Global.AUTO_TIME_ZONE,
-                isAutoTimezoneEnabled ? 1 : 0);
+    protected void updateState(SwitchPreference preference) {
+        preference.setChecked(DatetimeUtils.isAutoLocalTimeDetectionEnabled(mTimeManager));
+    }
 
+    @Override
+    protected boolean handlePreferenceChanged(SwitchPreference preference, Object newValue) {
+        if (!DatetimeUtils.isAutoTimeDetectionCapabilityPossessed(mTimeManager)
+                || !DatetimeUtils.isAutoTimeZoneDetectionCapabilityPossessed(mTimeManager)) {
+            return false;
+        }
+
+        boolean isAutoLocalTimeEnabled = (boolean) newValue;
+        mTimeManager.updateTimeConfiguration(new TimeConfiguration.Builder()
+                .setAutoDetectionEnabled(isAutoLocalTimeEnabled).build());
+        mTimeManager.updateTimeZoneConfiguration(new TimeZoneConfiguration.Builder()
+                .setAutoDetectionEnabled(isAutoLocalTimeEnabled).build());
         getContext().sendBroadcast(new Intent(Intent.ACTION_TIME_CHANGED));
         return true;
     }
 
     @Override
-    protected void updateState(SwitchPreference preference) {
-        preference.setChecked(isEnabled());
-    }
-
-    @Override
     public int getDefaultAvailabilityStatus() {
         return DatetimeUtils.getAvailabilityStatus(getContext());
-    }
-
-    private boolean isEnabled() {
-        return Settings.Global.getInt(getContext().getContentResolver(),
-                Settings.Global.AUTO_TIME_ZONE, 0) > 0;
     }
 }
