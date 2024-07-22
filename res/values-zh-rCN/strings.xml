@@ -659,8 +659,8 @@
     <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"允许信息娱乐应用录音"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"摄像头使用权限"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"选择应用能否使用您汽车的摄像头"</string>
-    <string name="required_apps_group_title" msgid="8607608579973985786">"要求的应用"</string>
-    <string name="required_apps_group_summary" msgid="5026442309718220831">"您的汽车制造商要求的驾驶辅助应用"</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"必需的应用"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"汽车制造商提供驾驶辅助所需的应用"</string>
     <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"政策"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"您汽车的制造商或许仍可访问汽车摄像头"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"信息娱乐应用"</string>

@@ -663,8 +663,8 @@
     <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplikasi yang diperlukan produsen mobil Anda untuk membantu Anda saat mengemudi"</string>
     <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Kebijakan"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Produsen mobil Anda mungkin masih memiliki akses ke kamera mobil Anda"</string>
-    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplikasi infotainmen"</string>
-    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Izinkan aplikasi infotainmen mengambil gambar dan merekam video"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplikasi infotainment"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Izinkan aplikasi infotainment mengambil gambar dan merekam video"</string>
     <string name="permission_grant_allowed" msgid="4844649705788049638">"Diizinkan"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"Sepanjang waktu"</string>
     <string name="permission_grant_never" msgid="1357441946890127898">"Tidak diizinkan"</string>
