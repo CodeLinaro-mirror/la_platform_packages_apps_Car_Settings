@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 The Android Open Source Project
+ * Copyright (C) 2024 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package com.android.car.settings.datetime;
 
 import static com.android.car.settings.common.PreferenceController.AVAILABLE;
 import static com.android.car.settings.common.PreferenceController.AVAILABLE_FOR_VIEWING;
-import static com.android.car.settings.common.PreferenceController.CONDITIONALLY_UNAVAILABLE;
 import static com.android.car.settings.enterprise.ActionDisabledByAdminDialogFragment.DISABLED_BY_ADMIN_CONFIRM_DIALOG_TAG;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -27,16 +26,25 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import android.app.time.Capabilities;
+import android.app.time.TimeCapabilities;
+import android.app.time.TimeCapabilitiesAndConfig;
+import android.app.time.TimeConfiguration;
+import android.app.time.TimeManager;
+import android.app.time.TimeZoneCapabilities;
+import android.app.time.TimeZoneCapabilitiesAndConfig;
+import android.app.time.TimeZoneConfiguration;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.UserManager;
-import android.provider.Settings;
 import android.widget.Toast;
 
 import androidx.lifecycle.LifecycleOwner;
@@ -45,6 +53,7 @@ import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.ConfirmationDialogFragment;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestUtil;
 import com.android.car.settings.enterprise.ActionDisabledByAdminDialogFragment;
@@ -64,15 +73,14 @@ import org.mockito.quality.Strictness;
 import java.util.List;
 
 @RunWith(AndroidJUnit4.class)
-public class AutoTimeZoneTogglePreferenceControllerTest {
-    private static final String TEST_RESTRICTION =
-            android.os.UserManager.DISALLOW_CONFIG_DATE_TIME;
+public class AutoLocalTimeTogglePreferenceControllerTest {
+    private static final String TEST_RESTRICTION = UserManager.DISALLOW_CONFIG_DATE_TIME;
 
     private final LifecycleOwner mLifecycleOwner = new TestLifecycleOwner();
     private final Context mContext = spy(ApplicationProvider.getApplicationContext());
 
     private CarUiSwitchPreference mPreference;
-    private AutoTimeZoneTogglePreferenceController mController;
+    private AutoLocalTimeTogglePreferenceController mController;
     private MockitoSession mSession;
 
     @Mock
@@ -81,6 +89,22 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
     private UserManager mMockUserManager;
     @Mock
     private Toast mMockToast;
+    @Mock
+    private LocationManager mLocationManager;
+    @Mock
+    private TimeManager mTimeManager;
+    @Mock
+    private TimeCapabilities mTimeCapabilities;
+    @Mock
+    private TimeCapabilitiesAndConfig mTimeCapabilitiesAndConfig;
+    @Mock
+    private TimeConfiguration mTimeConfiguration;
+    @Mock
+    private TimeZoneCapabilities mTimeZoneCapabilities;
+    @Mock
+    private TimeZoneCapabilitiesAndConfig mTimeZoneCapabilitiesAndConfig;
+    @Mock
+    private TimeZoneConfiguration mTimeZoneConfiguration;
 
     @Before
     @UiThreadTest
@@ -98,7 +122,16 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
 
         CarUxRestrictions carUxRestrictions = new CarUxRestrictions.Builder(/* reqOpt= */ true,
                 CarUxRestrictions.UX_RESTRICTIONS_BASELINE, /* timestamp= */ 0).build();
-        mController = new AutoTimeZoneTogglePreferenceController(mContext,
+        when(mContext.getSystemService(LocationManager.class)).thenReturn(mLocationManager);
+        when(mContext.getSystemService(TimeManager.class)).thenReturn(mTimeManager);
+        when(mTimeManager.getTimeCapabilitiesAndConfig()).thenReturn(mTimeCapabilitiesAndConfig);
+        when(mTimeManager.getTimeZoneCapabilitiesAndConfig())
+                .thenReturn(mTimeZoneCapabilitiesAndConfig);
+        when(mTimeCapabilitiesAndConfig.getCapabilities()).thenReturn(mTimeCapabilities);
+        when(mTimeCapabilitiesAndConfig.getConfiguration()).thenReturn(mTimeConfiguration);
+        when(mTimeZoneCapabilitiesAndConfig.getCapabilities()).thenReturn(mTimeZoneCapabilities);
+        when(mTimeZoneCapabilitiesAndConfig.getConfiguration()).thenReturn(mTimeZoneConfiguration);
+        mController = new AutoLocalTimeTogglePreferenceController(mContext,
                 /* preferenceKey= */ "key", mFragmentController, carUxRestrictions);
         PreferenceControllerTestUtil.assignPreference(mController, mPreference);
 
@@ -114,21 +147,24 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
     }
 
     @Test
-    public void testRefreshUi_autoTimeZoneSupported_unchecked() {
-        Settings.Global.putInt(mContext.getContentResolver(), Settings.Global.AUTO_TIME_ZONE, 0);
+    public void testRefreshUi_autoLocalTimeSupported_unchecked() {
+        mockIsAutoTimeAndTimeZoneDetectionEnabled(false);
         mController.refreshUi();
         assertThat(mPreference.isChecked()).isFalse();
     }
 
     @Test
-    public void testRefreshUi_autoTimeZoneSupported_checked() {
-        Settings.Global.putInt(mContext.getContentResolver(), Settings.Global.AUTO_TIME_ZONE, 1);
+    public void testRefreshUi_autoLocalTimeSupported_checked() {
+        mockIsAutoTimeAndTimeZoneDetectionEnabled(true);
         mController.refreshUi();
         assertThat(mPreference.isChecked()).isTrue();
     }
 
     @Test
-    public void testOnPreferenceChange_autoTimeZoneSet_shouldSendIntent() {
+    public void testOnPreferenceChange_autoTimeZoneSet_shouldSendIntentIfCapabilitiesPossessed() {
+        mockAutoTimeAndTimeZoneCapabilities(true);
+        when(mLocationManager.isLocationEnabled()).thenReturn(true);
+
         mPreference.setChecked(true);
         mController.handlePreferenceChanged(mPreference, true);
 
@@ -138,10 +174,36 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
         assertThat(intentsFired.size()).isEqualTo(1);
         Intent intentFired = intentsFired.get(0);
         assertThat(intentFired.getAction()).isEqualTo(Intent.ACTION_TIME_CHANGED);
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
+        assertThat(mPreference.getSummary().toString()).isEqualTo("");
     }
 
     @Test
-    public void testOnPreferenceChange_autoTimeZoneUnset_shouldSendIntent() {
+    public void testOnPreferenceChange_autoTimeZoneSet_shouldShowDialogIfLocationDisabled() {
+        mockAutoTimeAndTimeZoneCapabilities(true);
+        when(mLocationManager.isLocationEnabled()).thenReturn(false);
+
+        mPreference.setChecked(true);
+        mController.handlePreferenceChanged(mPreference, true);
+
+        ArgumentCaptor<Intent> captor = ArgumentCaptor.forClass(Intent.class);
+        verify(mContext, times(1)).sendBroadcast(captor.capture());
+        List<Intent> intentsFired = captor.getAllValues();
+        assertThat(intentsFired.size()).isEqualTo(1);
+        Intent intentFired = intentsFired.get(0);
+        assertThat(intentFired.getAction()).isEqualTo(Intent.ACTION_TIME_CHANGED);
+        verify(mFragmentController)
+                .showDialog(any(ConfirmationDialogFragment.class),
+                        eq(ConfirmationDialogFragment.TAG));
+        assertThat(mPreference.getSummary().toString()).isEqualTo(
+                mContext.getString(R.string.auto_local_time_toggle_summary));
+    }
+
+    @Test
+    public void testOnPreferenceChange_autoTimeZoneUnset_shouldSendIntentIfCapabilitiesPossessed() {
+        mockAutoTimeAndTimeZoneCapabilities(true);
+
         mPreference.setChecked(false);
         mController.handlePreferenceChanged(mPreference, false);
 
@@ -151,6 +213,35 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
         assertThat(intentsFired.size()).isEqualTo(1);
         Intent intentFired = intentsFired.get(0);
         assertThat(intentFired.getAction()).isEqualTo(Intent.ACTION_TIME_CHANGED);
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
+        assertThat(mPreference.getSummary().toString()).isEqualTo("");
+    }
+
+    @Test
+    public void testOnPreferenceChange_autoTimeZoneSet_shouldNotSendIntentIfNoCapabilities() {
+        mockAutoTimeAndTimeZoneCapabilities(false);
+
+        mPreference.setChecked(true);
+        mController.handlePreferenceChanged(mPreference, true);
+
+        ArgumentCaptor<Intent> captor = ArgumentCaptor.forClass(Intent.class);
+        verify(mContext, never()).sendBroadcast(captor.capture());
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
+    }
+
+    @Test
+    public void testOnPreferenceChange_autoTimeZoneUnset_shouldSendNotIntentIfNoCapabilities() {
+        mockAutoTimeAndTimeZoneCapabilities(false);
+
+        mPreference.setChecked(false);
+        mController.handlePreferenceChanged(mPreference, false);
+
+        ArgumentCaptor<Intent> captor = ArgumentCaptor.forClass(Intent.class);
+        verify(mContext, never()).sendBroadcast(captor.capture());
+        verify(mFragmentController, never())
+                .showDialog(any(ConfirmationDialogFragment.class), any());
     }
 
     @Test
@@ -164,41 +255,6 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
     }
 
     @Test
-    public void testGetAvailabilityStatus_restricted_availableForViewing_zoneWrite() {
-        when(mMockUserManager.hasUserRestriction(TEST_RESTRICTION)).thenReturn(true);
-
-        mController.setAvailabilityStatusForZone("write");
-        mController.onCreate(mLifecycleOwner);
-
-        PreferenceControllerTestUtil.assertAvailability(mController.getAvailabilityStatus(),
-                AVAILABLE_FOR_VIEWING);
-        assertThat(mPreference.isEnabled()).isFalse();
-    }
-
-    @Test
-    public void testGetAvailabilityStatus_restricted_availableForViewing_zoneRead() {
-        when(mMockUserManager.hasUserRestriction(TEST_RESTRICTION)).thenReturn(true);
-
-        mController.setAvailabilityStatusForZone("read");
-        mController.onCreate(mLifecycleOwner);
-
-        PreferenceControllerTestUtil.assertAvailability(mController.getAvailabilityStatus(),
-                AVAILABLE_FOR_VIEWING);
-        assertThat(mPreference.isEnabled()).isFalse();
-    }
-
-    @Test
-    public void testGetAvailabilityStatus_restricted_availableForViewing_zoneHidden() {
-        when(mMockUserManager.hasUserRestriction(TEST_RESTRICTION)).thenReturn(true);
-
-        mController.setAvailabilityStatusForZone("hidden");
-        mController.onCreate(mLifecycleOwner);
-
-        PreferenceControllerTestUtil.assertAvailability(mController.getAvailabilityStatus(),
-                CONDITIONALLY_UNAVAILABLE);
-    }
-
-    @Test
     public void testGetAvailabilityStatus_notRestricted_available() {
         when(mMockUserManager.hasUserRestriction(TEST_RESTRICTION)).thenReturn(false);
 
@@ -206,41 +262,6 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
 
         assertThat(mController.getAvailabilityStatus()).isEqualTo(AVAILABLE);
         assertThat(mPreference.isEnabled()).isTrue();
-    }
-
-    @Test
-    public void testGetAvailabilityStatus_notRestricted_available_zoneWrite() {
-        when(mMockUserManager.hasUserRestriction(TEST_RESTRICTION)).thenReturn(false);
-
-        mController.setAvailabilityStatusForZone("write");
-        mController.onCreate(mLifecycleOwner);
-
-        PreferenceControllerTestUtil.assertAvailability(mController.getAvailabilityStatus(),
-                AVAILABLE);
-        assertThat(mPreference.isEnabled()).isTrue();
-    }
-
-    @Test
-    public void testGetAvailabilityStatus_notRestricted_available_zoneRead() {
-        when(mMockUserManager.hasUserRestriction(TEST_RESTRICTION)).thenReturn(false);
-
-        mController.setAvailabilityStatusForZone("read");
-        mController.onCreate(mLifecycleOwner);
-
-        PreferenceControllerTestUtil.assertAvailability(mController.getAvailabilityStatus(),
-                AVAILABLE_FOR_VIEWING);
-        assertThat(mPreference.isEnabled()).isFalse();
-    }
-
-    @Test
-    public void testGetAvailabilityStatus_notRestricted_available_zoneHidden() {
-        when(mMockUserManager.hasUserRestriction(TEST_RESTRICTION)).thenReturn(false);
-
-        mController.setAvailabilityStatusForZone("hidden");
-        mController.onCreate(mLifecycleOwner);
-
-        PreferenceControllerTestUtil.assertAvailability(mController.getAvailabilityStatus(),
-                CONDITIONALLY_UNAVAILABLE);
     }
 
     @Test
@@ -268,7 +289,7 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
 
     private void mockUserRestrictionSetByUm(boolean restricted) {
         when(mMockUserManager.hasBaseUserRestriction(eq(TEST_RESTRICTION), any()))
-            .thenReturn(restricted);
+                .thenReturn(restricted);
     }
 
     private void mockUserRestrictionSetByDpm(boolean restricted) {
@@ -286,5 +307,20 @@ public class AutoTimeZoneTogglePreferenceControllerTest {
     private void assertShowingDisabledByAdminDialog() {
         verify(mFragmentController).showDialog(any(ActionDisabledByAdminDialogFragment.class),
                 eq(DISABLED_BY_ADMIN_CONFIRM_DIALOG_TAG));
+    }
+
+    private void mockAutoTimeAndTimeZoneCapabilities(boolean isEnabled) {
+        when(mTimeCapabilities.getConfigureAutoDetectionEnabledCapability())
+                .thenReturn(isEnabled ? Capabilities.CAPABILITY_POSSESSED
+                        : Capabilities.CAPABILITY_NOT_SUPPORTED);
+        when(mTimeZoneCapabilities.getConfigureAutoDetectionEnabledCapability())
+                .thenReturn(isEnabled ? Capabilities.CAPABILITY_POSSESSED
+                        : Capabilities.CAPABILITY_NOT_SUPPORTED);
+    }
+
+    private void mockIsAutoTimeAndTimeZoneDetectionEnabled(boolean isEnabled) {
+        mockAutoTimeAndTimeZoneCapabilities(isEnabled);
+        when(mTimeConfiguration.isAutoDetectionEnabled()).thenReturn(isEnabled);
+        when(mTimeZoneConfiguration.isAutoDetectionEnabled()).thenReturn(isEnabled);
     }
 }

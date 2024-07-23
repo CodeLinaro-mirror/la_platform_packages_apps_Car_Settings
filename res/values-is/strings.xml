@@ -660,7 +660,7 @@
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Aðgangur að myndavél"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Veldu hvort forrit hafi aðgang að myndavélum bílsins"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Áskilin forrit"</string>
-    <string name="required_apps_group_summary" msgid="5026442309718220831">"Akstursaðstoðarforrit sem framleiðandi bílsins áskilur"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Akstursaðstoðarforrit sem framleiðandi bílsins krefst"</string>
     <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Reglur"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Framleiðandi bílsins hefur hugsanlega enn aðgang að myndavél bílsins"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Upplýsinga- og afþreyingarkerfisforrit"</string>

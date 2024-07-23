@@ -659,7 +659,7 @@
     <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"इन्फोटेनमेन्ट एपहरूलाई अडियो रेकर्ड गर्ने अनुमति दिनुहोस्"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"क्यामेरा एक्सेस"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"एपहरूलाई तपाईंको कारको क्यामेरा एक्सेस गर्न दिने कि नदिने भन्ने कुरा छनौट गर्नुहोस्"</string>
-    <string name="required_apps_group_title" msgid="8607608579973985786">"अनिवार्य रूपमा इन्स्टल गर्नु पर्ने एपहरू"</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"आवश्यक एपहरू"</string>
     <string name="required_apps_group_summary" msgid="5026442309718220831">"तपाईंको कार उत्पादकका अनुसार तपाईंलाई गाडी चलाउन मद्दत गर्ने आवश्यक एपहरू"</string>
     <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"नीति"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"तपाईंको कारको उत्पादकसँग अझै पनि तपाईंको कारको क्यामेराको एक्सेस हुन सक्छ"</string>

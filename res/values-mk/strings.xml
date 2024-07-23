@@ -440,7 +440,7 @@
     <string name="location_driver_assistance_privacy_policy_button_text" msgid="1092702462617222722">"Правило"</string>
     <string name="location_settings_app_permissions_title" msgid="6446735313354321564">"Дозволи на ниво на апликација"</string>
     <string name="location_settings_app_permissions_summary" msgid="87851720569447224">"Управувајте со поединечните дозволи за апликациите"</string>
-    <string name="location_settings_services_title" msgid="1186133632690970468">"Услуги според локација"</string>
+    <string name="location_settings_services_title" msgid="1186133632690970468">"Локациски услуги"</string>
     <string name="location_use_location_title" msgid="117735895374606680">"Користи ја локацијата"</string>
     <string name="location_access_settings_title" msgid="2378398106582207440">"Пристап до локацијата"</string>
     <string name="location_access_settings_summary" msgid="7676354917209152932">"Одредете дали апликациите може да пристапуваат до локацијата на вашиот автомобил"</string>
@@ -664,7 +664,7 @@
     <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Политика"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Производителот на вашиот автомобил можеби сѐ уште има пристап до камерата на автомобилот"</string>
     <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Апликации за информации и забава"</string>
-    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Дозволи апликациите за информации и забава да фотографираат и снимаат видео"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Дозволете им на апликациите за информации и забава да снимаат фотографии и видеа"</string>
     <string name="permission_grant_allowed" msgid="4844649705788049638">"Дозволено"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"Цело време"</string>
     <string name="permission_grant_never" msgid="1357441946890127898">"Не е дозволено"</string>
