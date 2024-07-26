@@ -160,8 +160,7 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Banda de 5,0 GHz preferida"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
-    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
-    <skip />
+    <string name="wifi_ap_2G_5G" msgid="5526758464441623079">"2,4 e 5,0 GHz"</string>
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Escolle mínimo unha banda para a zona wifi:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Zona wifi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Zona wifi"</string>
@@ -540,7 +539,8 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"Formato de 24 horas"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Usar formato de 24 horas"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Hora"</string>
-    <string name="date_time_set_time" msgid="6449555153906058248">"Definir hora"</string>
+    <!-- no translation found for date_time_set_time (3684135432529445165) -->
+    <skip />
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"Fuso horario"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"Seleccionar fuso horario"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"Data"</string>
@@ -549,6 +549,16 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"Ordenar por fuso horario"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"Data"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"Hora"</string>
+    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
+    <skip />
+    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
+    <skip />
+    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
+    <skip />
+    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
+    <skip />
+    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
+    <skip />
     <string name="user_admin" msgid="1535484812908584809">"Administrador"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Iniciouse sesión como administrador"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"Queres conceder permisos de administración?"</string>
@@ -927,6 +937,5 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"Ver plans"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Os teus plans de Internet caducaron"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Ver plans"</string>
-    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
-    <skip />
+    <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Feito"</string>
 </resources>
