@@ -12,6 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License
+ *
+ * Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 package com.android.car.settings.wifi;
 
@@ -229,24 +233,42 @@ public class WifiUtil {
      * @param listener for callbacks on success or failure of connection attempt (can be null)
      */
     public static void connectToWifiEntry(Context context, String ssid, int security,
-            String password, boolean hidden, @Nullable WifiManager.ActionListener listener) {
+            String password, boolean hidden, int metered, int privacy,
+            @Nullable WifiManager.ActionListener listener) {
         WifiManager wifiManager = context.getSystemService(WifiManager.class);
-        WifiConfiguration wifiConfig = getWifiConfig(ssid, security, password, hidden);
+        WifiConfiguration wifiConfig = getWifiConfig(ssid, security, password,
+                                                     hidden, metered, privacy);
         wifiManager.connect(wifiConfig, listener);
     }
 
+    /**
+     * Attempts to connect to a specified enterprise Wi-Fi entry.
+     * @param listener for callbacks on success or failure of connection attempt (can be null)
+     */
+    public static void connectToEAPWifiEntry(Context context, String ssid, int security,
+            WifiConfiguration config, boolean hidden, int metered, int privacy,
+            @Nullable WifiManager.ActionListener listener) {
+        WifiManager wifiManager = context.getSystemService(WifiManager.class);
+        config.SSID = String.format("\"%s\"", ssid);
+        config.hiddenSSID = hidden;
+        config.meteredOverride = metered;
+        config.macRandomizationSetting = privacy == WifiEntry.PRIVACY_RANDOMIZED_MAC
+                ? WifiConfiguration.RANDOMIZATION_AUTO : WifiConfiguration.RANDOMIZATION_NONE;
+        wifiManager.connect(config, listener);
+    }
+
     private static WifiConfiguration getWifiConfig(String ssid, int security,
-            String password, boolean hidden) {
+            String password, boolean hidden, int metered, int privacy) {
         WifiConfiguration wifiConfig = new WifiConfiguration();
         wifiConfig.SSID = String.format("\"%s\"", ssid);
         wifiConfig.hiddenSSID = hidden;
 
-        return finishWifiConfig(wifiConfig, security, password);
+        return finishWifiConfig(wifiConfig, security, password, metered, privacy);
     }
 
     /** Similar to above, but uses WifiEntry to get additional relevant information. */
     public static WifiConfiguration getWifiConfig(@NonNull WifiEntry wifiEntry,
-            String password) {
+            String password, int metered, int privacy) {
         WifiConfiguration wifiConfig = new WifiConfiguration();
         if (wifiEntry.getWifiConfiguration() == null) {
             wifiConfig.SSID = "\"" + wifiEntry.getSsid() + "\"";
@@ -255,11 +277,12 @@ public class WifiUtil {
             wifiConfig.hiddenSSID = wifiEntry.getWifiConfiguration().hiddenSSID;
         }
 
-        return finishWifiConfig(wifiConfig, wifiEntry.getSecurity(), password);
+        return finishWifiConfig(wifiConfig, wifiEntry.getSecurity(), password,
+                                metered, privacy);
     }
 
     private static WifiConfiguration finishWifiConfig(WifiConfiguration wifiConfig, int security,
-            String password) {
+            String password, int metered, int privacy) {
         switch (security) {
             case WifiEntry.SECURITY_NONE:
                 wifiConfig.setSecurityParams(WifiConfiguration.SECURITY_TYPE_OPEN);
@@ -288,13 +311,16 @@ public class WifiUtil {
                 }
                 break;
             case WifiEntry.SECURITY_EAP:
+            case WifiEntry.SECURITY_EAP_WPA3_ENTERPRISE:
             case WifiEntry.SECURITY_EAP_SUITE_B:
                 if (security == WifiEntry.SECURITY_EAP_SUITE_B) {
                     // allowedSuiteBCiphers will be set according to certificate type
                     wifiConfig.setSecurityParams(WifiConfiguration.SECURITY_TYPE_EAP_SUITE_B);
-                } else {
+                } else if (security == WifiEntry.SECURITY_EAP) {
                     wifiConfig.setSecurityParams(WifiConfiguration.SECURITY_TYPE_EAP);
-                }
+                } else {
+                    wifiConfig.setSecurityParams(WifiConfiguration.SECURITY_TYPE_EAP_WPA3_ENTERPRISE);
+		}
                 if (!TextUtils.isEmpty(password)) {
                     wifiConfig.enterpriseConfig.setPassword(password);
                 }
@@ -311,6 +337,9 @@ public class WifiUtil {
             default:
                 throw new IllegalArgumentException("unknown security type " + security);
         }
+        wifiConfig.meteredOverride = metered;
+        wifiConfig.macRandomizationSetting = privacy == WifiEntry.PRIVACY_RANDOMIZED_MAC
+                ? WifiConfiguration.RANDOMIZATION_AUTO : WifiConfiguration.RANDOMIZATION_NONE;
         return wifiConfig;
     }
 
@@ -358,6 +387,8 @@ public class WifiUtil {
             return WifiEntry.SECURITY_EAP_SUITE_B;
         } else if (result.capabilities.contains("EAP")) {
             return WifiEntry.SECURITY_EAP;
+        } else if (result.capabilities.contains("EAP_WPA3_ENTERPRISE")) {
+            return WifiEntry.SECURITY_EAP_WPA3_ENTERPRISE;
         } else if (result.capabilities.contains("OWE")) {
             return WifiEntry.SECURITY_OWE;
         }
