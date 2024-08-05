@@ -539,8 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"२४ घन्टे ढाँचा"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"२४-घन्टे ढाँचा प्रयोग गर्नुहोस्"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"समय"</string>
-    <!-- no translation found for date_time_set_time (3684135432529445165) -->
-    <skip />
+    <string name="date_time_set_time" msgid="3684135432529445165">"घडी मिलाउनुहोस्"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"प्रामाणिक समय"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"प्रामाणिक समय चयन गर्नुहोस्"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"मिति"</string>
@@ -549,16 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"प्रामाणिक समयका आधारमा क्रमबद्ध गर्नुहोस्"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"मिति"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"समय"</string>
-    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
-    <skip />
-    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
-    <skip />
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"मिति र समय स्वतः पत्ता लगाउने सुविधाले मिति, समय र प्रामाणिक समय निर्धारण गर्न लोकेसन र मोबाइल नेटवर्क जस्ता स्रोतहरू प्रयोग गर्न सक्छ।"</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"मिति र समय स्वतः मि‌लाउन आफ्नो कारको लोकेसन प्रयोग गर्नुहोस्। लोकेसन अन छ भने मात्र यो सुविधाले काम गर्छ।"</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"जारी राख्नुहोस्"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"सेटिङमा गई परिवर्तन गर्नुहोस्"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"तपाईंको लोकेसन अफ छ। समय स्वतः पत्ता लगाउने सुविधाले काम नगर्न सक्छ।"</string>
     <string name="user_admin" msgid="1535484812908584809">"प्रशासक"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"प्रशासकका रूपमा साइन इन गरियो"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"एड्मिनसँग सम्बन्धित अनुमतिहरू दिने हो?"</string>

@@ -539,8 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"ទម្រង់ 24 ម៉ោង"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"ប្រើ​ទម្រង់ 24 ម៉ោង"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"ម៉ោង"</string>
-    <!-- no translation found for date_time_set_time (3684135432529445165) -->
-    <skip />
+    <string name="date_time_set_time" msgid="3684135432529445165">"កំណត់នាឡិកា"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"ល្វែងម៉ោង"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"ជ្រើសរើស​ល្វែង​ម៉ោង"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"កាលបរិច្ឆេទ"</string>
@@ -549,16 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"តម្រៀប​តាម​ល្វែងម៉ោង"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"កាលបរិច្ឆេទ"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"ម៉ោង"</string>
-    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
-    <skip />
-    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
-    <skip />
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"ម៉ោង និងកាលបរិច្ឆេទស្វ័យប្រវត្តិអាចនឹងប្រើប្រភពដូចជា ទីតាំង និងបណ្ដាញ​ទូរសព្ទ​ចល័តជាដើម ដើម្បីកំណត់កាលបរិច្ឆេទ ម៉ោង និងល្វែងម៉ោង។"</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"ប្រើទីតាំងរបស់រថយន្តអ្នក ដើម្បីកំណត់កាលបរិច្ឆេទ និងម៉ោងដោយស្វ័យប្រវត្តិ។ ដំណើរការ លុះត្រាតែទីតាំងត្រូវបានបើក។"</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"បន្ត"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"ការផ្លាស់ប្ដូរក្នុងការកំណត់"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"ទីតាំងរបស់អ្នកត្រូវបានបិទ។ ម៉ោងស្វ័យប្រវត្តិអាចនឹងមិនដំណើរការទេ។"</string>
     <string name="user_admin" msgid="1535484812908584809">"អ្នកគ្រប់គ្រង"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"បាន​ចូលជា​អ្នក​គ្រប់គ្រង"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"ផ្តល់​ការអនុញ្ញាតជាលក្ខណៈអ្នកគ្រប់គ្រងឬ?"</string>

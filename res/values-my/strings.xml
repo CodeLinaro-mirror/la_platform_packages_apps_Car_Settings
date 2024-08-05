@@ -540,8 +540,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"၂၄-နာရီ စနစ်"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"၂၄-နာရီ စနစ်ကို သုံးရန်"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"အချိန်"</string>
-    <!-- no translation found for date_time_set_time (3684135432529445165) -->
-    <skip />
+    <string name="date_time_set_time" msgid="3684135432529445165">"နာရီ သတ်မှတ်ခြင်း"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"စံတော်ချိန်"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"စံတော်ချိန်အားသတ်မှတ်ရန်"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"ရက်စွဲ"</string>
@@ -550,16 +549,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"စံတော်ချိန်အလိုက် စီရန်"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"ရက်စွဲ"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"အချိန်"</string>
-    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
-    <skip />
-    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
-    <skip />
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"အလိုအလျောက် ရက်စွဲနှင့်အချိန်သည် ရက်စွဲ၊ အချိန်နှင့် ဒေသစံတော်ချိန်တို့ကို ဆုံးဖြတ်ရန် တည်နေရာနှင့် မိုဘိုင်းကွန်ရက်များကဲ့သို့ ရင်းမြစ်များကို သုံးနိုင်သည်။"</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"ရက်စွဲနှင့်အချိန်ကို အလိုအလျောက်သတ်မှတ်ရန် သင့်ကား၏တည်နေရာကို သုံးပါ။ တည်နေရာကို ဖွင့်ထားမှသာ အလုပ်လုပ်သည်။"</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"ရှေ့ဆက်ရန်"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"ဆက်တင်များတွင် ပြောင်းရန်"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"သင့်တည်နေရာကို ပိတ်ထားသည်။ အလိုအလျောက်အချိန် အလုပ်မလုပ်နိုင်ပါ။"</string>
     <string name="user_admin" msgid="1535484812908584809">"စီမံခန့်ခွဲသူ"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"စီမံခန့်ခွဲသူအဖြစ် ဝင်ထားသည်"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"စီမံခန့်ခွဲသူ ခွင့်ပြုချက်များ ပေးမလား။"</string>

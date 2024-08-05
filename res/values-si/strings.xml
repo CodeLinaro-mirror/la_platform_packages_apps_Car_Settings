@@ -539,8 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"පැය 24 ආකෘතිය"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"පැය 24 ආකෘතිය භාවිතා කරන්න"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"වේලාව"</string>
-    <!-- no translation found for date_time_set_time (3684135432529445165) -->
-    <skip />
+    <string name="date_time_set_time" msgid="3684135432529445165">"ඔරලෝසුව සකසන්න"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"වේලා කලාපය"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"වේලා කලාපය තෝරන්න"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"දිනය"</string>
@@ -549,16 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"වේලා කලාපය අනුව පෙළගස්වන්න"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"දිනය"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"වේලාව"</string>
-    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
-    <skip />
-    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
-    <skip />
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"ස්වයංක්‍රීය දිනය සහ වේලාව දිනය, වේලාව සහ වේලා කලාපය තීරණය කිරීමට ස්ථානය සහ ජංගම ජාල වැනි මූලාශ්‍ර භාවිත කළ හැක."</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"ස්වයංක්‍රීයව දිනය සහ වේලාව සැකසීමට ඔබේ මෝටර් රථයේ ස්ථානය භාවිත කරන්න. ස්ථානය ක්‍රියාත්මක නම් පමණක් ක්‍රියා කරයි."</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"ඉදිරියට යන්න"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"සැකසීම් තුළ වෙනස් කරන්න"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"ඔබේ ස්ථානය ක්‍රියාවිරහිතයි. ස්වයංක්‍රීය කාලය ක්‍රියා නොකරනු ඇත."</string>
     <string name="user_admin" msgid="1535484812908584809">"පරිපාලක"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"පරිපාලක ලෙස පුරනය වී ඇත"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"පරිපාලක අවසර ලබා දෙන්නද?"</string>
