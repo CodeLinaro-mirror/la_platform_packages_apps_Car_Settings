@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5.0 ԳՀց (նախընտրելի)"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2.4 ԳՀց"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 ԳՀց"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Ընտրեք առնվազն մեկ դիապազոն թեժ կետի համար՝"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-Fi թեժ կետ"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Թեժ կետ"</string>
@@ -223,7 +225,7 @@
     <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Զուգակցե՞լ <xliff:g id="DEVICE_NAME">%1$s</xliff:g>-ի հետ"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"Թույլ տալ <xliff:g id="DEVICE_NAME">%1$s</xliff:g>-ին օգտագործել ձեր կոնտակտներն ու զանգերի պատմությունը"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"Հնարավոր է՝ այս PIN-ը պետք լինի մուտքագրել մյուս սարքում:"</string>
-    <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"Հնարավոր է՝ այս անցաբառը պետք լինի մուտքագրել մյուս սարքում:"</string>
+    <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"Հնարավոր է՝ այս մուտքի բանալին պետք լինի մուտքագրել մյուս սարքում:"</string>
     <string name="bluetooth_pin_values_hint_16_digits" msgid="418776900816984778">"Պետք է պարունակի 16 թվանշան"</string>
     <string name="bluetooth_pin_values_hint" msgid="1561325817559141687">"Սովորաբար 0000 կամ 1234"</string>
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Զուգակցման հարցում"</string>
@@ -400,6 +402,7 @@
     <string name="show_system" msgid="4401355756969485287">"Ցույց տալ համակ. գործընթացները"</string>
     <string name="hide_system" msgid="8845453295584638040">"Թաքցնել համակ. գործընթացները"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Թաքցնել համակարգային հավելվածները"</string>
+    <string name="alarms_and_reminders_title" msgid="5201073616071479075">"Զարթուցիչներ և հիշեցումներ"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Համակ. կարգավորումների փոփոխում"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Այս թույլտվությունը հնարավորություն է տալիս հավելվածներին փոփոխել համակարգի կարգավորումները:"</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Ծանուցումների հասանելիություն"</string>
@@ -410,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Չեղարկել"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Այս հավելվածները բացասաբար են անդրադառնում համակարգի արտադրողականության վրա, ուստի դրանց աշխատանքը ֆոնային ռեժիմում արգելափակվել է։\nԱռաջնահերթություն տվեք հավելվածին, որպեսզի թույլատրվի ֆոնային օգտագործումը, և հեռացրեք հավելվածն այս ցանկից։"</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Դարձնել առաջնահերթ"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Վճարովի SMS-ների հասանելիություն"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Վճարովի SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Վճարովի SMS-ները կարող են լրացուցիչ գանձումներ առաջացնել: Հավելվածին թույլտվություն տալու դեպքում կկարողանաք դրա միջոցով վճարովի SMS-ներ ուղարկել։"</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Օգտագ. տվյալների հասանելիութ."</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Օգտագործման մասին տվյալների հասանելիությունը հնարավորություն է տալիս հավելվածներին հավաքել տարբեր տեղեկություններ, օրինակ, այն մասին, թե ուրիշ ինչ հավելվածներ եք օգտագործում և ինչ հաճախականությամբ, որ օպերատորից եք օգտվում, լեզվի ինչ կարգավորումներ եք սահմանել և այլն:"</string>
@@ -420,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Տեղորոշում"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Օգտագործել տեղորոշումը"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Օգտագործեք մեքենայի տեղադրության տվյալները ձեր նշած ցանկացած հավելվածի հետ։"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Տեղեկատվաժամանցային հավելվածներ"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Թույլատրեք հավելվածներին օգտագործել ձեր տեղադրության տվյալները"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Եթե անջատեք այս կարգավորումը, տեղադրության հասանելիությունը կչեղարկվի բոլոր հավելվածների համար՝ բացառությամբ այն հավելվածների, որոնք անհրաժեշտ են վարորդին օգնելու համար"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Եթե անջատեք կարգավորումը, վարորդին օգնող հավելվածները, որոնք օգտագործում են տեղադրության տվյալները, չեն աշխատի"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Միևնույն է անջատել"</string>
@@ -648,20 +653,23 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Ջնջել պրոֆիլը"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Ջնջել ձեր պրոֆիլն ու հաշիվները տեղեկատվաժամանցային համակարգից"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Այս գործողությունը հասանելի չէ ձեր պրոֆիլի համար"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Խոսափողի հասանելիություն"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Ընտրեք՝ արդյոք հավելվածներին հասանելի լինեն ձեր մեքենայի խոսափողները"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Տեղեկատվաժամանցային հավելվածներ"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Թույլատրել տեղեկատվաժամանցային հավելվածներին ձայնագրել"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Տեսախցիկի հասանելիություն"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Ընտրեք՝ արդյոք հավելվածներին հասանելի լինեն ձեր մեքենայի տեսակցիկները"</string>
-    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"Ընտրեք հավելվածները, որոնց պետք է հասանելի լինեն ձեր մեքենայի տեսախցիկները"</string>
-    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"Ցանկացած հավելված"</string>
-    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"Ցանկացած հավելված, որին դուք հասանելի եք դարձրել ձեր տեսախցիկը"</string>
-    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"Ոչ մի հավելված"</string>
-    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"Ձեր հավելվածներից ոչ մեկը"</string>
-    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"Միայն պահանջվող հավելվածները"</string>
-    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"Միայն ձեր մեքենայի արտադրողի կողմից պահանջվող հավելվածները"</string>
-    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"Պահանջվող հավելվածներ"</string>
-    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"Այս հավելվածներն անհրաժեշտ են ձեր մեքենայի անվտանգ աշխատանքի համար"</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Գաղտնիություն"</string>
-    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"Մեքենայի արտադրողին նախկինի պես կարող է հասանելի լինել ձեր մեքենայի տեսախցիկը։ Լրացուցիչ տեղեկությունների համար ծանոթացեք արտադրողի կանոններին։"</string>
-    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Ծանոթացեք առանձին հավելվածների Գաղտնիության քաղաքականությանը և իմացեք ավելին, թե ինչպես են դրանք օգտագործում ձեր տեսախցիկը։"</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"Պահանջվող հավելվածներ"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Հավելվածներ, որոնք, ըստ մեքենան արտադրողի պահանջների, հարկավոր է օգտագործել վարման ընթացքում"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Գաղտնիություն"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Մեքենայի արտադրողին նախկինի պես կարող է հասանելի լինել ձեր մեքենայի տեսախցիկը"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Տեղեկատվաժամանցային հավելվածներ"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Թույլատրել տեղեկատվաժամանցային հավելվածներին լուսանկարներ և տեսագրումներ անել"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"Թույլատրված"</string>
+    <string name="permission_grant_always" msgid="8851460274973784076">"Միշտ"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"Արգելված"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"Միայն հավելվածն օգտագործելու ժամանակ"</string>
+    <string name="permission_grant_ask" msgid="1613256400438907973">"Ամեն անգամ հարցնել"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Անվտանգություն"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Էկրանի կողպում"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Ոչ մեկը"</string>
@@ -910,10 +918,15 @@
     <string name="camera_toggle_summary" msgid="5751159996822627567">"Հասանելի դարձնել տեսախցիկը բոլոր հավելվածներին"</string>
     <string name="camera_manage_permissions" msgid="9005596413781984368">"Կառավարել տեսախցիկի թույլտվությունները"</string>
     <string name="camera_recently_accessed" msgid="8084100710444691977">"Տեսախցիկի օգտագործման վերջին հարցումները"</string>
-    <string name="camera_no_recent_access" msgid="965105023454777859">"Տեսախցիկը ոչ մի հավելվածի կողմից վերջերս չի օգտագործել"</string>
+    <string name="camera_no_recent_access" msgid="965105023454777859">"Տեսախցիկը վերջերս օգտագործած հավելվածներ չկան"</string>
     <string name="camera_app_permission_summary_camera_off" msgid="1437200903113016549">"Հասանելի չէ որևէ հավելվածի"</string>
     <string name="camera_app_permission_summary_camera_on" msgid="7260565911222013361">"{count,plural, =1{Հասանելի է {total_count} հավելվածից #-ին}one{Հասանելի է {total_count} հավելվածից #-ին}other{Հասանելի է {total_count} հավելվածից #-ին}}"</string>
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"Տեսախցիկի օգտագործման վերջին հարցումները"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"Դիտել բոլորը"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"Բեռնում…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"Դիտել պլանները"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Ինտերնետի ձեր սակագնային պլանների ժամկետը սպառվել է"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Դիտել պլանները"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

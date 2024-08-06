@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Претпочитан опсег: 5,0 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Избери барем еден појас:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Точка на пристап за Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Точка на пристап"</string>
@@ -400,6 +402,7 @@
     <string name="show_system" msgid="4401355756969485287">"Прикажи го системот"</string>
     <string name="hide_system" msgid="8845453295584638040">"Скриј го системот"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Скриј ги системските апликации"</string>
+    <string name="alarms_and_reminders_title" msgid="5201073616071479075">"Аларми и потсетници"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Менување системски поставки"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Оваа дозвола ѝ овозможува на апликацијата да менува системски поставки."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Пристап до известувања"</string>
@@ -410,9 +413,9 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Откажи"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Апликацииве негативно влијаат на изведбата на системот и спречени се да се извршуваат во заднина.\nДајте предност на апликација за да дозволите користење во заднина и отстранете ја од списоков."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Дајте предност на апликацијата"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Пристап до премиум SMS"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Премиум SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Премиум SMS може да ве чини пари, а сумата ќе се додаде на сметките од операторот. Ако овозможите дозвола за апликацијата, ќе може да испраќате премиум SMS со неа."</string>
-    <string name="usage_access_title" msgid="7153427122072303254">"Пристап до употреба"</string>
+    <string name="usage_access_title" msgid="7153427122072303254">"Пристап до податоци за користењето"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Пристапот до податоци за користењето овозможува апликацијата да следи кои други апликации ги користите и колку често, како и операторот, поставките за јазик и други детали."</string>
     <string name="wifi_control_title" msgid="5660436566907731929">"Контрола на Wi-Fi"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"Контролата на Wi-Fi дозволува апликацијава да вклучува или исклучува Wi-Fi, да скенира и да се поврзува на Wi-Fi мрежи, да додава или отстранува мрежи или да стартува локална точка на пристап."</string>
@@ -420,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Локација"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Користи ја локацијата"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Користете ја локацијата на вашиот автомобил со секоја апликација што сте ја навеле."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Апликации за информации и забава"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Дозволете апликациите да имаат пристап до вашата локација"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Ако го исклучите ова, ќе се отстрани пристапот до локацијата за сите апликации, освен за оние што се потребни за помош за возачи"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Ако го исклучите ова, апликациите за помош за возачи што зависат од податоците за локација ќе бидат оневозможени"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Сепак исклучи"</string>
@@ -648,20 +653,23 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Избришете го профилот"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Избришете го вашиот профил и сметките од системот за информации и забава"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Дејствово е недостапно за вашиот профил"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Пристап до микрофонот"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Изберете дали да може апликациите да пристапуваат до микрофоните на вашиот автомобил"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Апликации за информации и забава"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Дозволете им на апликациите за информации и забава да снимаат аудио"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Пристап до камерата"</string>
-    <string name="camera_access_settings_summary" msgid="8820488359585532496">"Изберете дали апликациите да може да пристапуваат до камерите на вашиот автомобил"</string>
-    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"Користете ги камерите на вашиот автомобил со:"</string>
-    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"Која било апликација"</string>
-    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"Секоја апликација што сте дозволиле да пристапува до камерата"</string>
-    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"Нема апликации"</string>
-    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"Ниту една од апликациите"</string>
-    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"Само задолжителни апликации"</string>
-    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"Само апликации што ги бара производителот на вашиот автомобил"</string>
-    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"Задолжителни апликации"</string>
-    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"Апликацииве се потребни за да му помагаат на вашиот автомобил да функционира безбедно"</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Правило"</string>
-    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"Производителот на вашиот автомобил можеби сѐ уште има пристап до камерата на автомобилот. За повеќе информации, може да ги прегледате неговите правила."</string>
-    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Дознајте повеќе за тоа како секоја апликација ја користи вашата камера со прегледување на нејзината „Политика за приватност“."</string>
+    <string name="camera_access_settings_summary" msgid="8820488359585532496">"Изберете дали апликациите може да пристапуваат до камерите на вашиот автомобил"</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"Задолжителни апликации"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Апликации што ги бара производителот на вашиот автомобил за да ви помагаат при возење"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Политика"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Производителот на вашиот автомобил можеби сѐ уште има пристап до камерата на автомобилот"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Апликации за информации и забава"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Дозволи апликациите за информации и забава да фотографираат и снимаат видео"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"Дозволено"</string>
+    <string name="permission_grant_always" msgid="8851460274973784076">"Цело време"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"Не е дозволено"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"Само додека се користи апликацијата"</string>
+    <string name="permission_grant_ask" msgid="1613256400438907973">"Секогаш прашувај"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Безбедност"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Заклучување екран"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Нема"</string>
@@ -916,4 +924,9 @@
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"Неодамна пристапени"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"Прикажи ги сите"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"Се вчитува…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"Погледнете ги пакетите"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Вашите интернет-пакети се истечени"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Погледнете ги пакетите"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

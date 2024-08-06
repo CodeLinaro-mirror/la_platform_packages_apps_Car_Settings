@@ -269,6 +269,13 @@
     </string>
 
     <!-- Special App Access Settings -->
+    <string name="pk_alarms_and_reminders_entry" translatable="false">
+        alarms_and_reminders_entry
+    </string>
+    <string name="pk_alarms_and_reminders" translatable="false">alarms_and_reminders</string>
+    <string name="pk_alarms_and_reminders_description" translatable="false">
+        pk_alarms_and_reminders_description
+    </string>
     <string name="pk_modify_system_settings_entry" translatable="false">
         modify_system_settings_entry
     </string>
@@ -328,34 +335,39 @@
     <string name="pk_mute_mic_switch" translatable="false">privacy_mute_mic</string>
     <string name="pk_vehicle_data" translatable="false">vehicle_data</string>
     <string name="pk_vehicle_data_delete_profile" translatable="false">vehicle_data_delete_profile</string>
+    <string name="pk_microphone_access" translatable="false">microphone_access</string>
+    <string name="pk_microphone_access_fragment" translatable="false">microphone_access_fragment</string>
+    <string name="pk_microphone_infotainment_apps_switch" translatable="false">
+        microphone_infotainment_apps_switch
+    </string>
+    <string name="pk_microphone_infotainment_apps_list" translatable="false">
+        microphone_infotainment_apps_list
+    </string>
     <string name="pk_camera_access" translatable="false">camera_access</string>
     <string name="pk_camera_access_fragment" translatable="false">camera_access_fragment</string>
-    <string name="pk_camera_access_radio_any_app" translatable="false">
-        camera_access_radio_any_app
-    </string>
-    <string name="pk_camera_access_radio_no_apps" translatable="false">
-        camera_access_radio_no_apps
-    </string>
-    <string name="pk_camera_access_radio_required_apps" translatable="false">
-        camera_access_radio_required_apps
-    </string>
-    <string name="pk_camera_access_radio_group" translatable="false">
-        camera_access_radio_group
-    </string>
     <string name="pk_camera_required_apps_list" translatable="false">
         camera_required_apps_list
     </string>
     <string name="pk_camera_required_apps_group" translatable="false">
         camera_required_apps_group
     </string>
-    <string name="pk_camera_required_apps_policy" translatable="false">
-        camera_required_apps_policy
-    </string>
     <string name="pk_camera_access_disclaimer" translatable="false">
         camera_access_disclaimer
     </string>
-    <string name="pk_camera_privacy_policy_info" translatable="false">
-        camera_privacy_policy_info
+    <string name="pk_camera_infotainment_apps_group" translatable="false">
+        camera_infotainment_apps_group
+    </string>
+    <string name="pk_camera_infotainment_apps_switch" translatable="false">
+        camera_infotainment_apps_switch
+    </string>
+    <string name="pk_camera_infotainment_apps_list" translatable="false">
+        camera_infotainment_apps_list
+    </string>
+    <string name="pk_camera_required_apps_switch" translatable="false">
+        camera_required_apps_switch
+    </string>
+    <string name="pk_camera_required_apps_header" translatable="false">
+        camera_required_apps_header
     </string>
 
     <!-- Storage -->
@@ -456,6 +468,12 @@
     <string name="pk_location_adas_app_info" translatable="false">location_adas_app_info</string>
     <string name="pk_location_access_disclaimer" translatable="false">
         location_access_disclaimer
+    </string>
+    <string name="pk_location_required_apps_group" translatable="false">
+        location_required_apps_group
+    </string>
+    <string name="pk_location_infotainment_apps_group" translatable="false">
+        location_infotainment_apps_group
     </string>
 
     <!-- Microphone Settings -->

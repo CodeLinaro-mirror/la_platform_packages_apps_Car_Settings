@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"يفضّل نطاق بتردد 5.0 غيغاهرتز"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"٢٫٤ غيغاهرتز"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5.0 غيغاهرتز"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"اختر نطاقًا واحدًا على الأقل لنقطة اتصال Wi‑Fi:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"نقطة اتصال Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"نقطة الاتصال"</string>
@@ -238,7 +240,7 @@
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"جميع اللغات"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"لوحة المفاتيح"</string>
     <string name="manage_keyboard" msgid="4045394766282200132">"إدارة لوحات المفاتيح"</string>
-    <string name="text_to_speech_settings" msgid="811985746199507343">"الصوت عند تحويل النص إلى كلام"</string>
+    <string name="text_to_speech_settings" msgid="811985746199507343">"الرد الصوتي"</string>
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"المحرّك المُفضَّل"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"المحرّك الحالي"</string>
     <string name="tts_speech_rate" msgid="4512944877291943133">"معدل سرعة الكلام"</string>
@@ -400,6 +402,7 @@
     <string name="show_system" msgid="4401355756969485287">"إظهار تطبيقات النظام"</string>
     <string name="hide_system" msgid="8845453295584638040">"إخفاء عمليات النظام"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"إخفاء تطبيقات النظام"</string>
+    <string name="alarms_and_reminders_title" msgid="5201073616071479075">"المنبّهات والتذكيرات"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"تعديل إعدادات النظام"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"يتيح هذا الإذن للتطبيق إمكانية تعديل إعدادات النظام."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"الوصول إلى الإشعارات"</string>
@@ -410,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"إلغاء"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"تؤثر هذه التطبيقات سلبًا في أداء النظام وقد تم منع استخدامها في الخلفية.\nعليك منح الأولوية للتطبيق للسماح باستخدامه في الخلفية وإزالته من هذه القائمة."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"منح أولوية للتطبيق"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"إمكانية إرسال رسائل قصيرة SMS مميزة"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"الرسائل القصيرة برسوم إضافية"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"يمكن أن تكلفك الرسائل القصيرة SMS المميزة بعض الرسوم، وستتم إضافة هذه الرسوم إلى فواتير مشغِّل شبكة الجوّال. وفي حال تفعيل الإذن لأحد التطبيقات، ستتمكن من إرسال رسائل قصيرة SMS مميزة باستخدام هذا التطبيق."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"الوصول إلى بيانات الاستخدام"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"يتيح الدخول إلى بيانات الاستخدام للتطبيق إمكانية تتبُّع التطبيقات الأخرى التي تستخدمها ومدى تكرار استخدامها ومشغّل شبكة الجوّال وإعدادات اللغة وغيرها من التفاصيل."</string>
@@ -420,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"الموقع الجغرافي"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"استخدام الموقع الجغرافي"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"استخدِم الموقع الجغرافي لسيارتك مع أي تطبيق حددته."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"تطبيقات نظام الترفيه والمعلومات"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"السماح للتطبيقات بالوصول إلى موقعك الجغرافي"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"إذا أوقفت هذا الإعداد، سيؤدي ذلك إلى إزالة إمكانية وصول كل التطبيقات إلى الموقع الجغرافي باستثناء تلك اللازمة لتطبيقات \"مساعد السائق\"."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"إذا تم إيقاف ميزة \"مساعدة السائق\" هذه، سيتم إيقاف تطبيقات \"مساعدة السائق\" التي تعتمد على معلومات الموقع الجغرافي."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"إيقاف على أي حال"</string>
@@ -648,20 +653,23 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"حذف ملفك الشخصي"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"محو ملفك الشخصي وحساباتك من \"نظام الترفيه والمعلومات\"."</string>
     <string name="action_unavailable" msgid="7087119418684417249">"هذا الإجراء غير متاح لملفك الشخصي."</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"الوصول إلى الميكروفون"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"اختَر ما إذا كان يمكن للتطبيقات الوصول إلى ميكروفونات سيارتك"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"تطبيقات نظام الترفيه والمعلومات"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"السماح لتطبيقات المعلومات والترفيه بتسجيل الصوت"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"الوصول إلى الكاميرا"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"اختَر ما إذا كان يمكن للتطبيقات الوصول إلى كاميرا سيارتك"</string>
-    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"استخدام كاميرا سيارتك من خلال التطبيقات التالية:"</string>
-    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"أي تطبيق"</string>
-    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"أي تطبيق سمحت له بالوصول إلى الكاميرا"</string>
-    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"عدم وصول أي تطبيقات"</string>
-    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"عدم وصول أي من تطبيقاتك"</string>
-    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"التطبيقات المطلوبة فقط"</string>
-    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"التطبيقات المطلوبة بواسطة الشركة المصنّعة لسيارتك فقط"</string>
-    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"التطبيقات المطلوبة"</string>
-    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"هذه التطبيقات ضرورية لمساعدة سيارتك على العمل بأمان"</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"السياسة"</string>
-    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"قد تظل الشركة المصنّعة لسيارتك قادرة على الوصول إلى كاميرا سيارتك. يمكنك مراجعة سياساتها لمزيد من المعلومات."</string>
-    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"تعرَّف على مزيد من المعلومات عن كيفية استخدام كل تطبيق للكاميرا من خلال مراجعة سياسة الخصوصية الخاصة به."</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"التطبيقات المطلوبة"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"التطبيقات التي تطلبها الشركة المصنّعة لسيارتك من أجل مساعدتك في القيادة"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"السياسة"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"قد تظل الشركة المصنِّعة لسيارتك قادرة على الوصول إلى كاميرا سيارتك"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"تطبيقات نظام الترفيه والمعلومات"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"السماح لتطبيقات نظام الترفيه والمعلومات بالتقاط الصور وتسجيل الفيديوهات"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"التطبيقات المسموح لها"</string>
+    <string name="permission_grant_always" msgid="8851460274973784076">"طوال الوقت"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"التطبيقات غير المسموح لها"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"أثناء استخدام التطبيق فقط"</string>
+    <string name="permission_grant_ask" msgid="1613256400438907973">"السؤال في كل مرّة"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"الأمان"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"قفل الشاشة"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"بدون"</string>
@@ -936,8 +944,13 @@
     <string name="camera_recently_accessed" msgid="8084100710444691977">"تطبيقات حصلت مؤخرًا على إذن بالوصول إلى الكاميرا"</string>
     <string name="camera_no_recent_access" msgid="965105023454777859">"لم يحصل أي تطبيق مؤخرًا على إذن بالوصول إلى الكاميرا."</string>
     <string name="camera_app_permission_summary_camera_off" msgid="1437200903113016549">"ما مِن تطبيقات لديها إذن بالوصول إلى الكاميرا."</string>
-    <string name="camera_app_permission_summary_camera_on" msgid="7260565911222013361">"{count,plural, =1{لدى تطبيق واحد من إجمالي {total_count} تطبيق إذن بالوصول إلى الكاميرا.}zero{لدى # تطبيق من إجمالي {total_count} تطبيق إذن بالوصول إلى الكاميرا.}two{لدى تطبيقين من إجمالي {total_count} تطبيق إذن بالوصول إلى الكاميرا.}few{لدى # تطبيقات من إجمالي {total_count} تطبيق إذن بالوصول إلى الكاميرا.}many{لدى # تطبيقًا من إجمالي {total_count} تطبيق إذن بالوصول إلى الكاميرا.}other{لدى # تطبيق من إجمالي {total_count} تطبيق إذن بالوصول إلى الكاميرا.}}"</string>
+    <string name="camera_app_permission_summary_camera_on" msgid="7260565911222013361">"{count,plural, =1{عدد التطبيقات التي لديها إذن بالوصول إلى الكاميرا: 1 من إجمالي {total_count}.}zero{عدد التطبيقات التي لديها إذن بالوصول إلى الكاميرا: # من إجمالي {total_count}.}two{عدد التطبيقات التي لديها إذن بالوصول إلى الكاميرا: 2 من إجمالي {total_count}.}few{عدد التطبيقات التي لديها إذن بالوصول إلى الكاميرا: # من إجمالي {total_count}.}many{عدد التطبيقات التي لديها إذن بالوصول إلى الكاميرا: # من إجمالي {total_count}.}other{عدد التطبيقات التي لديها إذن بالوصول إلى الكاميرا: # من إجمالي {total_count}.}}"</string>
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"تطبيقات حصلت مؤخرًا على إذن بالوصول إلى الكاميرا"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"عرض الكل"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"جارٍ التحميل…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"الاطّلاع على الخطط"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"انتهت صلاحية خطط الإنترنت الخاصة بك"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"الاطّلاع على الخطط"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

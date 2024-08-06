@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Ieteicama 5,0 GHz josla"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Izvēlieties vismaz 1 joslu Wi‑Fi tīklājam:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi-Fi tīklājs"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Tīklājs"</string>
@@ -400,6 +402,7 @@
     <string name="show_system" msgid="4401355756969485287">"Rādīt sistēmas lietotnes"</string>
     <string name="hide_system" msgid="8845453295584638040">"Slēpt sistēmas lietotnes"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Slēpt sistēmas lietotnes"</string>
+    <string name="alarms_and_reminders_title" msgid="5201073616071479075">"Signāli un atgādinājumi"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Sistēmas iestatījumu pārveide"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Ar šo atļauju lietotne var pārveidot sistēmas iestatījumus."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Piekļuve paziņojumiem"</string>
@@ -410,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Atcelt"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Šīs lietotnes negatīvi ietekmē sistēmas veiktspēju, un tika pārtraukta to darbība fonā.\nPiešķiriet kādai lietotnei prioritāti, lai atļautu tās darbību fonā un noņemtu to no šī saraksta."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Piešķirt prioritāti"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Piekļuve maksas īsziņām"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Maksas īsziņas"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Par maksas īsziņām no jums var tikt iekasēta samaksa, kas tiks pievienota jūsu mobilo sakaru operatora rēķinam. Ja kādai lietotnei iespējosiet piekļuves atļauju, varēsiet sūtīt maksas īsziņas, izmantojot šo lietotni."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Piekļuve lietojuma datiem"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Piekļuve lietojuma datiem ļauj lietotnei izsekot, kādas lietotnes un cik bieži izmantojat, kā arī iegūt informāciju par jūsu mobilo sakaru operatoru, valodas iestatījumiem u.c."</string>
@@ -420,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Atrašanās vieta"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Izmantot atrašanās vietu"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Atļaujiet visām jūsu norādītajām vietnēm izmantot jūsu automašīnas atrašanās vietas datus."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Inform. izklaidējošās sistēmas lietotnes"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Atļaujiet lietotnēm piekļūt jūsu atrašanās vietas informācijai."</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Ja izslēgsiet šo iestatījumu, piekļuve atrašanās vietai tiks noņemta visām lietotnēm, izņemot lietotnes, kas nepieciešamas autovadītāja palīdzības nodrošināšanai."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Ja izslēgsiet šo iestatījumu, tiks atspējotas autovadītāja palīdzības lietotnes, kuru pamatā ir atrašanās vietas informācija."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Tomēr izslēgt"</string>
@@ -648,20 +653,23 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Dzēst jūsu profilu"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Dzēst jūsu profilu un kontus no informatīvi izklaidējošās sistēmas"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Šī darbība nav pieejama jūsu profilam."</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Piekļuve mikrofonam"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Izvēlieties, vai lietotnes var piekļūt jūsu automašīnas mikrofoniem."</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Inform. izklaidējošās sistēmas lietotnes"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Atļaujiet informatīvi izklaidējošās sistēmas lietotnēm ierakstīt audio."</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Piekļuve kamerām"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Izvēlieties, vai lietotnes var piekļūt jūsu automašīnas kamerām."</string>
-    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"Kur izmantot automašīnas kameras"</string>
-    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"Jebkurā lietotnē"</string>
-    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"Jebkurā lietotnē, kam esat atļāvis piekļūt kamerai"</string>
-    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"Nevienā lietotnē"</string>
-    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"Nevienā no jūsu lietotnēm"</string>
-    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"Tikai nepieciešamajās lietotnēs"</string>
-    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"Tikai lietotnēs, ko automašīnas ražotājs ir noteicis kā nepieciešamas"</string>
-    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"Nepieciešamajās lietotnēs"</string>
-    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"Šīs lietotnes ir nepieciešamas, lai automašīna darbotos droši."</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Politika"</string>
-    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"Automašīnas ražotājam joprojām var būt piekļuve jūsu automašīnas kamerai. Lai uzzinātu vairāk, varat skatīt ražotāja politikas."</string>
-    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Lai uzzinātu vairāk par to, kā lietotnēs tiek izmantota jūsu kamera, skatiet katras lietotnes konfidencialitātes politiku."</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"Obligātās lietotnes"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Autovadīšanas palīdzības lietotnes, ko jūsu automašīnas ražotājs ir noteicis kā obligātas."</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Politika"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Automašīnas ražotājam joprojām var būt piekļuve jūsu automašīnas kamerai."</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Inform. izklaidējošās sistēmas lietotnes"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Atļaut informatīvi izklaidējošās sistēmas lietotnēm uzņemt attēlus un ierakstīt videoklipus"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"Atļauja piešķirta"</string>
+    <string name="permission_grant_always" msgid="8851460274973784076">"Vienmēr"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"Atļauja nav piešķirta"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"Tikai lietotnes izmantošanas laikā"</string>
+    <string name="permission_grant_ask" msgid="1613256400438907973">"Vaicāt katru reizi"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Drošība"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Ekrāna bloķēšana"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Nav"</string>
@@ -922,4 +930,9 @@
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"Nesen piekļuva"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"Skatīt visu"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"Notiek ielāde…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"Skatīt plānus"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Beidzies jūsu interneta plānu derīguma termiņš"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Skatīt plānus"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

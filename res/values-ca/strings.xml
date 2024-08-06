@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Banda de 5,0 GHz preferida"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Tria almenys una banda per al punt d\'accés Wi-Fi:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Punt d\'accés Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Punt d\'accés Wi‑Fi"</string>
@@ -400,6 +402,7 @@
     <string name="show_system" msgid="4401355756969485287">"Mostra el sistema"</string>
     <string name="hide_system" msgid="8845453295584638040">"Amaga el sistema"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Amaga les aplicacions del sistema"</string>
+    <string name="alarms_and_reminders_title" msgid="5201073616071479075">"Alarmes i recordatoris"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Modificar configuració sistema"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Aquest permís permet que una aplicació modifiqui la configuració del sistema."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Accés a les notificacions"</string>
@@ -410,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Cancel·la"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Aquestes aplicacions tenen un impacte negatiu en el rendiment del sistema i no es poden executar en segon pla.\nPrioritza l\'aplicació per permetre\'n l\'ús en segon pla i suprimir-la d\'aquesta llista."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prioritza l\'aplicació"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Accés a SMS prèmium"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"SMS prèmium"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Els SMS prèmium et poden costar diners, i aquest import s\'afegirà a la facturació de l\'operador. Si actives el permís en una aplicació, podràs enviar SMS prèmium utilitzant-la."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Accés d\'ús"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"L\'accés a dades d\'ús permet que una aplicació pugui fer un seguiment de les altres aplicacions que utilitzes i la freqüència amb què ho fas, així com del teu operador de telefonia mòbil i de la configuració d\'idioma, entre d\'altres."</string>
@@ -420,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Ubicació"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Utilitza la ubicació"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Utilitza la ubicació del cotxe amb qualsevol aplicació que hagis especificat."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Aplicacions d\'informació i entreteniment"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Permet que les aplicacions tinguin accés a la teva ubicació"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Si desactives aquesta opció, se suprimirà l\'accés a la ubicació per a totes les aplicacions excepte les que es necessitin per a l\'assistència al conductor"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Si desactives aquesta opció, les aplicacions d\'assistència al conductor que depenen de la informació d\'ubicació es desactivaran"</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Desactiva igualment"</string>
@@ -648,20 +653,23 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Suprimeix el perfil"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Esborra el perfil i els comptes del sistema d\'informació i entreteniment"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Aquesta acció no està disponible per al teu perfil"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Accés al micròfon"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Tria si les aplicacions poden accedir als micròfons del cotxe"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Aplicacions d\'informació i entreteniment"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Permet que les aplicacions d\'informació i entreteniment gravin àudio"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Accés a la càmera"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Tria si les aplicacions poden accedir a les càmeres del cotxe"</string>
-    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"Utilitza les càmeres del cotxe amb:"</string>
-    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"Qualsevol aplicació"</string>
-    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"Qualsevol aplicació que hagis permès que accedeixi a la càmera"</string>
-    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"Cap aplicació"</string>
-    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"Cap de les teves aplicacions"</string>
-    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"Només les aplicacions requerides"</string>
-    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"Només les aplicacions requerides pel fabricant del cotxe"</string>
-    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"Aplicacions requerides"</string>
-    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"Aquestes aplicacions són necessàries perquè el cotxe funcioni de manera segura"</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Política"</string>
-    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"És possible que el fabricant del cotxe encara tingui accés a la càmera del cotxe. Pots revisar les seves polítiques per a més informació."</string>
-    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Obtén més informació sobre com les aplicacions utilitzen la càmera revisant la seva política de privadesa."</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"Aplicacions requerides"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplicacions requerides pel fabricant del cotxe per ajudar-te a conduir"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Política"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"És possible que el fabricant del cotxe encara tingui accés a la càmera del cotxe"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplicacions d\'informació i entreteniment"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Permet que les aplicacions d\'informació i entreteniment facin fotos i gravin vídeos"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"Amb permís"</string>
+    <string name="permission_grant_always" msgid="8851460274973784076">"En tot moment"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"Sense permís"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"Només mentre s\'utilitza l\'aplicació"</string>
+    <string name="permission_grant_ask" msgid="1613256400438907973">"Pregunta sempre"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Seguretat"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Bloqueig de pantalla"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Cap"</string>
@@ -739,7 +747,7 @@
     <string name="lockpassword_pin_too_short" msgid="3671037384464545169">"{count,plural, =1{Ha de tenir com a mínim # dígit}other{Ha de tenir com a mínim # dígits}}"</string>
     <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{Ha de tenir menys d’# caràcter}other{Ha de tenir menys de # caràcters}}"</string>
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{Ha de tenir menys d’# dígit}other{Ha de tenir menys de # dígits}}"</string>
-    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"No es permet cap seqüència de dígits ascendents, descendents ni repetits"</string>
+    <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"No es permeten les seqüències de dígits ascendents, descendents o repetits"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Opcions de bloqueig de pantalla"</string>
     <string name="credentials_reset" msgid="873900550885788639">"Esborrar les credencials"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"Suprimeix tots els certificats"</string>
@@ -771,7 +779,7 @@
     <string name="assistant_and_voice_assistant_app_title" msgid="5981647244625171285">"Aplicació d\'assistent digital"</string>
     <string name="assistant_and_voice_use_text_from_screen_title" msgid="5851460943413795599">"Ús del text de la pantalla"</string>
     <string name="assistant_and_voice_use_text_from_screen_summary" msgid="4161751708121301541">"Permet que l\'Assistent accedeixi al contingut de la pantalla"</string>
-    <string name="assistant_and_voice_use_screenshot_title" msgid="1930735578425470046">"Ús de captures de pantalla"</string>
+    <string name="assistant_and_voice_use_screenshot_title" msgid="1930735578425470046">"Utilitza una captura de pantalla"</string>
     <string name="assistant_and_voice_use_screenshot_summary" msgid="3738474919393817950">"Permet que l\'Assistent accedeixi a la imatge de la pantalla"</string>
     <string name="notifications_recently_sent" msgid="9051696542615302799">"Enviades fa poc"</string>
     <string name="notifications_all_apps" msgid="3557079551048958846">"Totes les aplicacions"</string>
@@ -916,4 +924,9 @@
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"S\'hi ha accedit fa poc"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"Mostra-ho tot"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"S\'està carregant…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"Mostra els plans"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Els teus plans d\'Internet han caducat"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Mostra els plans"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

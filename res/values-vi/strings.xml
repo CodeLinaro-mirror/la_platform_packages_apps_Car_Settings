@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"Ưu tiên băng tần 5 GHz"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 GHz"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5 GHz"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Chọn 1 băng tần cho điểm phát sóng Wi‑Fi:"</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Điểm phát sóng Wi‑Fi"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Điểm phát sóng"</string>
@@ -400,6 +402,7 @@
     <string name="show_system" msgid="4401355756969485287">"Hiển thị hệ thống"</string>
     <string name="hide_system" msgid="8845453295584638040">"Ẩn hệ thống"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Ẩn các ứng dụng hệ thống"</string>
+    <string name="alarms_and_reminders_title" msgid="5201073616071479075">"Chuông báo và lời nhắc"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Sửa đổi các chế độ cài đặt hệ thống"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Quyền này cho phép ứng dụng sửa đổi các chế độ cài đặt hệ thống."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Quyền truy cập thông báo"</string>
@@ -410,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Hủy"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Những ứng dụng này ảnh hưởng tiêu cực đến hiệu suất của hệ thống và đã bị ngăn chạy ở chế độ nền.\nHãy thiết lập chế độ ưu tiên cho ứng dụng để cho phép sử dụng chế độ nền và xoá ứng dụng đó khỏi danh sách này."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Ưu tiên ứng dụng"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Quyền truy cập vào Tin nhắn dịch vụ"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Tin nhắn dịch vụ"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Tin nhắn dịch vụ có thể làm bạn mất tiền và sẽ cộng thêm vào hóa đơn nhà mạng của bạn. Nếu cấp quyền cho một ứng dụng, thì bạn có thể gửi Tin nhắn dịch vụ bằng ứng dụng đó."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Quyền truy cập dữ liệu sử dụng"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Quyền truy cập vào dữ liệu sử dụng cho phép một ứng dụng theo dõi các ứng dụng khác mà bạn đang dùng và tần suất sử dụng, cũng như thông tin nhà mạng, các tùy chọn cài đặt ngôn ngữ và thông tin chi tiết khác."</string>
@@ -420,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Vị trí"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Dùng thông tin vị trí"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Cho ứng dụng mà bạn chỉ định được phép sử dụng thông tin vị trí của ô tô"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Ứng dụng thông tin giải trí"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Cho phép ứng dụng truy cập vào thông tin vị trí của bạn"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Thao tác tắt tính năng này sẽ xoá quyền truy cập thông tin vị trí của mọi ứng dụng, ngoại trừ các ứng dụng cần thiết để hỗ trợ người lái xe."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Thao tác tắt chế độ này cũng sẽ vô hiệu hoá các ứng dụng hỗ trợ người lái xe cần đến thông tin vị trí."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Vẫn tắt"</string>
@@ -639,7 +644,7 @@
     <string name="privacy_settings_title" msgid="3150145262029229572">"Quyền riêng tư"</string>
     <string name="privacy_vehicle_data_title" msgid="6385777370742595651">"Dữ liệu của hệ thống thông tin giải trí"</string>
     <string name="privacy_location_summary" msgid="7019817848470566242">"Kiểm soát quyền truy cập của ứng dụng vào thông tin vị trí của bạn"</string>
-    <string name="mute_camera_title" msgid="215494079895460172">"Máy ảnh"</string>
+    <string name="mute_camera_title" msgid="215494079895460172">"Camera"</string>
     <string name="mute_camera_summary" msgid="1237452064757403042">"Kiểm soát quyền truy cập của ứng dụng vào dữ liệu máy ảnh"</string>
     <string name="mute_mic_title" msgid="2813215197799569553">"Micrô"</string>
     <string name="mute_mic_summary" msgid="5426953935775303904">"Kiểm soát quyền truy cập của ứng dụng vào micrô"</string>
@@ -648,20 +653,23 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Xóa hồ sơ của bạn"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Xóa hồ sơ và tài khoản của bạn khỏi hệ thống thông tin giải trí này"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Bạn không thực hiện được thao tác này cho hồ sơ của mình"</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Quyền truy cập micrô"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Chọn xem các ứng dụng có thể truy cập vào micrô của ô tô hay không"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Ứng dụng thông tin giải trí"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Cho phép ứng dụng thông tin giải trí ghi âm"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Quyền truy cập vào camera"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Chọn xem các ứng dụng có thể truy cập vào camera của ô tô hay không"</string>
-    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"Sử dụng camera của ô tô cùng:"</string>
-    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"Ứng dụng bất kỳ"</string>
-    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"Ứng dụng bất kỳ mà bạn cho phép truy cập vào dữ liệu camera"</string>
-    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"Không ứng dụng nào"</string>
-    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"Không ứng dụng nào của bạn"</string>
-    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"Chỉ những ứng dụng cần thiết"</string>
-    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"Chỉ những ứng dụng mà nhà sản xuất ô tô yêu cầu"</string>
-    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"Ứng dụng cần thiết"</string>
-    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"Những ứng dụng này là cần thiết để giúp ô tô của bạn hoạt động an toàn"</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Chính sách"</string>
-    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"Có thể nhà sản xuất ô tô vẫn có quyền truy cập vào camera của ô tô. Bạn có thể tham khảo các chính sách của họ để biết thêm thông tin."</string>
-    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Tìm hiểu thêm về cách từng ứng dụng sử dụng camera bằng cách tham khảo chính sách quyền riêng tư của ứng dụng đó."</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"Ứng dụng cần thiết"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Ứng dụng do nhà sản xuất ô tô yêu cầu để hỗ trợ bạn lái xe"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Chính sách"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Có thể nhà sản xuất ô tô vẫn có quyền truy cập vào camera ô tô của bạn"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Ứng dụng thông tin giải trí"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Cho phép ứng dụng thông tin giải trí chụp ảnh và quay video"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"Được phép"</string>
+    <string name="permission_grant_always" msgid="8851460274973784076">"Mọi lúc"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"Không được phép"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"Chỉ khi dùng ứng dụng"</string>
+    <string name="permission_grant_ask" msgid="1613256400438907973">"Luôn hỏi"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Bảo mật"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Phương thức khóa màn hình"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Không"</string>
@@ -905,10 +913,10 @@
     <string name="enable_screen_reader_toggle_title" msgid="7641307781194619254">"Sử dụng <xliff:g id="ACCESSIBILITY_APP_NAME">%1$s</xliff:g>"</string>
     <string name="screen_reader_options_title" msgid="1073640098442831819">"Tuỳ chọn"</string>
     <string name="screen_reader_description_title" msgid="8766666406552388012">"Cài đặt"</string>
-    <string name="camera_settings_title" msgid="2837785830355288903">"Máy ảnh"</string>
+    <string name="camera_settings_title" msgid="2837785830355288903">"Camera"</string>
     <string name="camera_toggle_title" msgid="1990732328673068456">"Sử dụng camera"</string>
     <string name="camera_toggle_summary" msgid="5751159996822627567">"Cho phép tất cả ứng dụng truy cập vào dữ liệu máy ảnh"</string>
-    <string name="camera_manage_permissions" msgid="9005596413781984368">"Quản lý quyền truy cập vào dữ liệu máy ảnh"</string>
+    <string name="camera_manage_permissions" msgid="9005596413781984368">"Quản lý quyền truy cập vào camera"</string>
     <string name="camera_recently_accessed" msgid="8084100710444691977">"Mới truy cập gần đây"</string>
     <string name="camera_no_recent_access" msgid="965105023454777859">"Không có ứng dụng nào mới truy cập"</string>
     <string name="camera_app_permission_summary_camera_off" msgid="1437200903113016549">"0 ứng dụng có quyền truy cập"</string>
@@ -916,4 +924,9 @@
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"Mới truy cập gần đây"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"Xem tất cả"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"Đang tải…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"Xem các gói"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Các gói Internet của bạn đã hết hạn"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Xem các gói"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

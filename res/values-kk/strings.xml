@@ -160,6 +160,8 @@
     <string name="wifi_ap_prefer_5G" msgid="8252845223773871750">"5,0 ГГц диапазоны таңдалды"</string>
     <string name="wifi_ap_2G" msgid="5364135697314262014">"2,4 ГГц"</string>
     <string name="wifi_ap_5G" msgid="4945574428537860279">"5,0 ГГц"</string>
+    <!-- no translation found for wifi_ap_2G_5G (5526758464441623079) -->
+    <skip />
     <string name="wifi_ap_band_select_one" msgid="615578175244067396">"Wi‑Fi хотспоты үшін кемінде бір диапазон таңдаңыз."</string>
     <string name="tether_settings_title_all" msgid="6076625733772210734">"Wi‑Fi хотспоты"</string>
     <string name="hotspot_settings_title" msgid="8220814387592756713">"Хотспот"</string>
@@ -400,6 +402,7 @@
     <string name="show_system" msgid="4401355756969485287">"Жүйені көрсету"</string>
     <string name="hide_system" msgid="8845453295584638040">"Жүйені жасыру"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Жүйелік қолданбаларды жасыру"</string>
+    <string name="alarms_and_reminders_title" msgid="5201073616071479075">"Оятқыштар мен еске салғыштар"</string>
     <string name="modify_system_settings_title" msgid="4596320571562433972">"Жүйе параметрлерін өзгерту"</string>
     <string name="modify_system_settings_description" msgid="5295023124419592452">"Бұл рұқсат қолданбаға жүйе параметрлерін өзгертуге мүмкіндік береді."</string>
     <string name="notification_access_title" msgid="1467340098885813473">"Хабарландыруларды пайдалану"</string>
@@ -410,7 +413,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Бас тарту"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Бұл қолданбалар жүйенің өнімділігіне кері әсер етеді, сондықтан олардың фондық режимде жұмыс істеуіне тыйым салынды.\nҚолданбаның фондық режимде пайдаланылуына рұқсат беру үшін оны басым етіңіз және осы тізімнен жойыңыз."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Қолданбаны басым ету"</string>
-    <string name="premium_sms_access_title" msgid="1409118461646148686">"Ақылы SMS жіберу"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Ақылы SMS"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Ақылы SMS жіберу үшін оператор тарифтеріне сәйкес ақы алынады. Егер қолданбаға рұқсат берсеңіз, сол қолданба арқылы ақылы SMS жібере аласыз."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Пайдалану мәліметін көру"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"Пайдалану мәліметін көру рұқсаты қолданбаға сіз пайдаланатын басқа қолданбаларды және қаншалықты жиі пайдаланатыңыз туралы ақпаратты, сондай-ақ операторды, тіл параметрлерін және басқа мәліметтерді бақылауға мүмкіндік береді."</string>
@@ -420,6 +423,8 @@
     <string name="location_settings_title" msgid="901334356682423679">"Локация"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Локацияны пайдалану"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Көрсетілген кез келген қолданбаның көмегімен көлігіңіздің локациясын пайдаланыңыз."</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Ақпараттық ойын-сауық қолданбалары"</string>
+    <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Қолданбаларға локацияңызды пайдалану рұқсатын беріңіз."</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Мұны өшірсеңіз, жүргізушіге көмек қолданбаларынан басқа барлық қолданбаның локацияны қолдану рұқсаты жойылады."</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Мұны өшірсеңіз, локация мәліметіне сүйенетін жүргізушіге көмек қолданбалары өшіріледі."</string>
     <string name="adas_location_toggle_confirm_label" msgid="7500504328355834995">"Бәрібір өшіру"</string>
@@ -648,20 +653,23 @@
     <string name="vehicle_data_delete_user_title" msgid="9132472153739085346">"Профильді жою"</string>
     <string name="vehicle_data_delete_user_summary" msgid="5900205773710111394">"Ақпарат және ойын-сауық жүйесінен профильді және аккаунттарды өшіру"</string>
     <string name="action_unavailable" msgid="7087119418684417249">"Профиліңізде бұл әрекетті жасай алмайсыз."</string>
+    <string name="microphone_access_settings_title" msgid="6748613084403267254">"Микрофонды пайдалану"</string>
+    <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Қолданбалар үшін көлік микрофондарын пайдалануды таңдаңыз."</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Ақпараттық ойын-сауық қолданбалары"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Ақпараттық ойын-сауық қолданбаларына аудио жазуға рұқсат беру"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Камераны пайдалану"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Қолданбалар көлігіңіздің камераларын пайдалана ала ма жоқ па, соны таңдаңыз."</string>
-    <string name="camera_access_radio_group_title" msgid="4208620766356391501">"Көліктің камераларын келесі қолданбалармен бірге пайдаланыңыз:"</string>
-    <string name="camera_access_radio_any_app_title" msgid="8324331670738824005">"Кез келген қолданба"</string>
-    <string name="camera_access_radio_any_app_summary" msgid="8542924833172200812">"Камераны пайдалануға рұқсат берілген кез келген қолданба"</string>
-    <string name="camera_access_radio_no_apps_title" msgid="3619351327217493913">"Ешқандай қолданба жоқ"</string>
-    <string name="camera_access_radio_no_apps_summary" msgid="6249258388767284908">"Қолданбалардың ешқайсысы"</string>
-    <string name="camera_access_radio_required_apps_title" msgid="6742441427451523208">"Қажетті қолданбалар ғана"</string>
-    <string name="camera_access_radio_required_apps_summary" msgid="6514325511542932602">"Көлік өндірушісі талап ететін қолданбалар ғана"</string>
-    <string name="camera_required_apps_list_title" msgid="4751978669779838763">"Қажетті қолданбалар"</string>
-    <string name="camera_required_apps_list_summary" msgid="7445661688832040704">"Бұл қолданбалар көлігіңіздің қауіпсіз жұмыс істеуі үшін қажет:"</string>
-    <string name="camera_privacy_policy_button_text" msgid="6845099817069101132">"Саясат"</string>
-    <string name="camera_access_disclaimer_summary" msgid="6648007542393315155">"Көлік өндірушісі көлігіңіздің камерасын әлі де пайдалануы мүмкін. Толық ақпарат алу үшін оның саясаттарымен таныса аласыз."</string>
-    <string name="camera_privacy_policy_info_summary" msgid="5036268531646886906">"Құпиялық саясатын қарап шығып, әрбір қолданба камераңызды қалай пайдаланатыны туралы толық ақпарат алыңыз."</string>
+    <string name="required_apps_group_title" msgid="8607608579973985786">"Қажетті қолданбалар"</string>
+    <string name="required_apps_group_summary" msgid="5026442309718220831">"Көлік жүргізуді жеңілдету үшін көлік өндірушісі талап ететін қолданбалар"</string>
+    <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Саясат"</string>
+    <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"Көлік өндірушісі көлігіңіздің камерасын әлі де пайдалануы мүмкін."</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Ақпараттық ойын-сауық қолданбалары"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Ақпараттық ойын-сауық қолданбаларына суретке түсіруге және бейне жазуға рұқсат беру"</string>
+    <string name="permission_grant_allowed" msgid="4844649705788049638">"Рұқсат етілген"</string>
+    <string name="permission_grant_always" msgid="8851460274973784076">"Әрдайым"</string>
+    <string name="permission_grant_never" msgid="1357441946890127898">"Рұқсат етілмеген"</string>
+    <string name="permission_grant_in_use" msgid="2314262542396732455">"Тек қолданбаны пайдаланған кезде"</string>
+    <string name="permission_grant_ask" msgid="1613256400438907973">"Әрдайым сұрау"</string>
     <string name="security_settings_title" msgid="6955331714774709746">"Қауіпсіздік"</string>
     <string name="security_settings_subtitle" msgid="2244635550239273229">"Экранды құлыптау"</string>
     <string name="security_lock_none" msgid="1054645093754839638">"Жоқ"</string>
@@ -916,4 +924,9 @@
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"Жақында пайдаланылған"</string>
     <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"Барлығын көру"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"Жүктеліп жатыр…"</string>
+    <string name="data_subscription_explore_options" msgid="4089747156447849054">"Жоспарларды көру"</string>
+    <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Интернет тарифтік жоспарыңыздың мерзімі аяқталды"</string>
+    <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Жоспарларды көру"</string>
+    <!-- no translation found for audio_route_dialog_neutral_button_text (3303313405283478327) -->
+    <skip />
 </resources>

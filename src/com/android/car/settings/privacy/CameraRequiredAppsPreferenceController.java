@@ -16,6 +16,7 @@
 
 package com.android.car.settings.privacy;
 
+import android.Manifest;
 import android.annotation.FlaggedApi;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
@@ -25,6 +26,7 @@ import android.os.Process;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
+import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.LogicalPreferenceGroup;
 import com.android.car.settings.common.PreferenceController;
 import com.android.car.ui.preference.CarUiTwoActionTextPreference;
@@ -41,29 +43,21 @@ import java.util.List;
 public final class CameraRequiredAppsPreferenceController
         extends PreferenceController<LogicalPreferenceGroup> {
 
+    private static final Logger LOG = new Logger(CameraRequiredAppsPreferenceController.class);
+    private static final String PRIVACY_POLICY_KEY = "privacy_policy";
     private final PackageManager mPackageManager;
     private final SensorPrivacyManager mSensorPrivacyManager;
     private List<String> mCameraPrivacyAllowlist;
 
-    public CameraRequiredAppsPreferenceController(
-            Context context,
-            String preferenceKey,
-            FragmentController fragmentController,
-            CarUxRestrictions uxRestrictions) {
-        this(
-                context,
-                preferenceKey,
-                fragmentController,
-                uxRestrictions,
+    public CameraRequiredAppsPreferenceController(Context context, String preferenceKey,
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
+        this(context, preferenceKey, fragmentController, uxRestrictions,
                 context.getPackageManager(), SensorPrivacyManager.getInstance(context));
     }
 
     @VisibleForTesting
-    CameraRequiredAppsPreferenceController(
-            Context context,
-            String preferenceKey,
-            FragmentController fragmentController,
-            CarUxRestrictions uxRestrictions,
+    CameraRequiredAppsPreferenceController(Context context, String preferenceKey,
+            FragmentController fragmentController, CarUxRestrictions uxRestrictions,
             PackageManager packageManager, SensorPrivacyManager sensorPrivacyManager) {
         super(context, preferenceKey, fragmentController, uxRestrictions);
         mPackageManager = packageManager;
@@ -90,12 +84,13 @@ public final class CameraRequiredAppsPreferenceController
 
     private void loadCameraRequiredAppsWithCameraPermission() {
         LogicalPreferenceGroup requiredappsPref = getPreference().findPreference(getContext()
-                .getString(R.string.pk_camera_required_apps_policy));
+                .getString(R.string.pk_camera_required_apps_list));
 
         for (String app : mCameraPrivacyAllowlist) {
             CarUiTwoActionTextPreference preference =
-                    CameraPrivacyPolicyUtil.createPrivacyPolicyPreference(
-                            getContext(), mPackageManager, app, Process.myUserHandle());
+                    RequiredInfotainmentAppsUtils.createRequiredAppPreference(
+                            getContext(), mPackageManager, app, Process.myUserHandle(),
+                            Manifest.permission_group.CAMERA, /* showSummary= */ true);
             if (preference != null) {
                 requiredappsPref.addPreference(preference);
             }
