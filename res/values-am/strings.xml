@@ -539,8 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"የ24‑ሰዓት ቅርጸት"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"የ24-ሰዓት ቅርጸት ተጠቀም"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"ሰዓት"</string>
-    <!-- no translation found for date_time_set_time (3684135432529445165) -->
-    <skip />
+    <string name="date_time_set_time" msgid="3684135432529445165">"ሰዓትን ያቀናብሩ"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"የሰዓት ሰቅ"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"የሰዓት ሰቅ"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"ቀን"</string>
@@ -549,16 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"በሰዓት ሰቅ ደርድር"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"ቀን"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"ሰዓት"</string>
-    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
-    <skip />
-    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
-    <skip />
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"የራስ-ሰር ቀን፤ ጊዜ እና የሰዓት ሰቅን ለመወሰን እንደ አካባቢ እና የተንቀሳቃሽ ስልክ አውታረ መረብ ያሉ ምንጮችን ሊጠቀም ይችላል።"</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"በራስ-ሰር ቀን እና ጊዜን ለማቀናበር የመኪናዎን አካባቢ ይጠቀሙ። አካባቢ ከበራ ብቻ ይሰራል።"</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"ቀጥል"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"ቅንብሮች ውስጥ ይለውጡ"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"አካባቢዎ ጠፍቷል። የራስ-ሰር ጊዜ ላይሰራ ይችላል።"</string>
     <string name="user_admin" msgid="1535484812908584809">"አስተዳዳሪ"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"እንደ አስተዳዳሪ በመለያ ይግቡ"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"የአስተዳዳሪ ፈቃዶች ይሰጡ?"</string>

@@ -539,8 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24‑saat formatı"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"24 saat formatından istifadə edin"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Vaxt"</string>
-    <!-- no translation found for date_time_set_time (3684135432529445165) -->
-    <skip />
+    <string name="date_time_set_time" msgid="3684135432529445165">"Saat təyin edin"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"Saat qurşağı"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"Saat qurşağını seçin"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"Tarix"</string>
@@ -549,16 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"Vaxt zonasına görə sıralayın"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"Tarix"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"Vaxt"</string>
-    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
-    <skip />
-    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
-    <skip />
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"Avtomatik tarix və vaxt tarixi, vaxtı və saat qurşağını müəyyən etmək üçün məkan və mobil şəbəkələr kimi mənbələrdən istifadə edə bilər."</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"Tarix və vaxtı avtomatik təyin etmək üçün avtomobilin məkanından istifadə edin. Yalnız məkan yanılı olduğu halda işləyir."</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"Davam edin"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"Ayarlarda dəyişin"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"Məkan sönülüdür. Avtomatik vaxt işləməyə bilər."</string>
     <string name="user_admin" msgid="1535484812908584809">"Admin"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"İnzibatçı kimi daxil olunub"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"Admin icazələri verilsin?"</string>

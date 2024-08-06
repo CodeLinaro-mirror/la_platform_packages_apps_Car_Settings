@@ -539,8 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24‑ਘੰਟੇ ਵੰਨਗੀ"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"24-ਘੰਟੇ ਵਾਲਾ ਫਾਰਮੈਟ ਵਰਤੋ"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"ਸਮਾਂ"</string>
-    <!-- no translation found for date_time_set_time (3684135432529445165) -->
-    <skip />
+    <string name="date_time_set_time" msgid="3684135432529445165">"ਘੜੀ ਨੂੰ ਸੈੱਟ ਕਰੋ"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"ਸਮਾਂ ਖੇਤਰ"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"ਸਮਾਂ ਖੇਤਰ ਚੁਣੋ"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"ਤਾਰੀਖ"</string>
@@ -549,16 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"ਸਮਾਂ ਖੇਤਰ ਮੁਤਾਬਕ ਕ੍ਰਮ-ਬੱਧ ਕਰੋ"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"ਤਾਰੀਖ"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"ਸਮਾਂ"</string>
-    <!-- no translation found for auto_local_time_disclaimer_summary (5965459676137313463) -->
-    <skip />
-    <!-- no translation found for auto_local_time_toggle_summary (6617503441738434427) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_negative_button_text (6594888186816335207) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_positive_button_text (4078408719499933410) -->
-    <skip />
-    <!-- no translation found for auto_local_time_dialog_msg (1692514715620573896) -->
-    <skip />
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"ਤਾਰੀਖ, ਸਮੇਂ ਅਤੇ ਸਮਾਂ ਖੇਤਰ ਨੂੰ ਨਿਰਧਾਰਿਤ ਕਰਨ ਲਈ, ਸਵੈਚਲਿਤ ਤਾਰੀਖ ਅਤੇ ਸਮਾਂ ਟਿਕਾਣੇ ਅਤੇ ਮੋਬਾਈਲ ਨੈੱਟਵਰਕਾਂ ਵਰਗੇ ਸਰੋਤਾਂ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦਾ ਹੈ।"</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"ਤਾਰੀਖ ਅਤੇ ਸਮੇਂ ਨੂੰ ਸਵੈਚਲਿਤ ਤੌਰ \'ਤੇ ਸੈੱਟ ਕਰਨ ਲਈ, ਆਪਣੀ ਕਾਰ ਦੇ ਟਿਕਾਣੇ ਨੂੰ ਵਰਤੋ। ਇਹ ਸੁਵਿਧਾ ਸਿਰਫ਼ ਟਿਕਾਣੇ ਦੇ ਚਾਲੂ ਹੋਣ \'ਤੇ ਹੀ ਕੰਮ ਕਰਦੀ ਹੈ।"</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"ਜਾਰੀ ਰੱਖੋ"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜਾ ਕੇ ਬਦਲੋ"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"ਤੁਹਾਡੀ ਟਿਕਾਣਾ ਜਾਣਕਾਰੀ ਬੰਦ ਹੈ। ਸਵੈਚਲਿਤ ਸਮਾਂ ਸ਼ਾਇਦ ਕੰਮ ਨਾ ਕਰੇ।"</string>
     <string name="user_admin" msgid="1535484812908584809">"ਪ੍ਰਸ਼ਾਸਕ"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"ਪ੍ਰਸ਼ਾਸਕ ਵਜੋਂ ਸਾਈਨ ਇਨ ਕੀਤਾ ਗਿਆ"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"ਕੀ ਪ੍ਰਸ਼ਾਸਕ ਇਜਾਜ਼ਤਾਂ ਦੇਣੀਆਂ ਹਨ?"</string>
