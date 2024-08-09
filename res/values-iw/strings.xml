@@ -548,7 +548,7 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"מיון לפי אזור זמן"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"תאריך"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"שעה"</string>
-    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"הזיהוי האוטומטי של אזור הזמן משתמש במקורות מידע כמו נתוני המיקום ורשתות סלולריות כדי לקבוע את התאריך, השעה ואזור הזמן."</string>
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"הזיהוי האוטומטי של אזור הזמן מתבסס על מקורות מידע כמו נתוני המיקום ורשתות סלולריות כדי לקבוע את התאריך, השעה ואזור הזמן."</string>
     <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"אפשר להשתמש במיקום של הרכב כדי להגדיר אוטומטית את התאריך והשעה. הפעולה הזו עובדת רק אם שירות המיקום מופעל."</string>
     <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"המשך"</string>
     <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"לשינוי ב\'הגדרות\'"</string>

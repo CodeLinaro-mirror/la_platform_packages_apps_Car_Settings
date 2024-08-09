@@ -552,7 +552,7 @@
     <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"Каб аўтаматычна наладзіць дату і час, выкарыстоўвайце месцазнаходжанне аўтамабіля. Працуе, толькі калі вызначэнне месцазнаходжання ўключана."</string>
     <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"Працягнуць"</string>
     <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"Змяніць у наладах"</string>
-    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"Месцазнаходжанне выключана. Функцыя аўтаматычнага выяўлення часу можа не працаваць."</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"Вызначэнне месцазнаходжання выключана. Функцыя аўтаматычнага выяўлення часу можа не працаваць."</string>
     <string name="user_admin" msgid="1535484812908584809">"Адміністратар"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Вы ўвайшлі як адміністратар"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"Даць дазволы адміністратара?"</string>
