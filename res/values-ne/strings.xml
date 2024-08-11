@@ -210,7 +210,7 @@
     <string name="bluetooth_ask_enablement_and_discovery_no_name" msgid="907153034209916282">"एउटा एप ब्लुटुथ सक्रिय गर्न र <xliff:g id="TIMEOUT">%1$d</xliff:g> सेकेन्डसम्म अन्य यन्त्रहरूले तपाईंको हेडयुनिट देख्न सक्ने बनाउन चाहन्छ।"</string>
     <string name="bluetooth_state_switch_summary" msgid="171929910916432266">"अन्य यन्त्रमा %1$s का रूपमा देखिन्छ"</string>
     <string name="bluetooth_my_devices" msgid="6352010339607939612">"मेरा यन्त्रहरू"</string>
-    <string name="bluetooth_previously_connected" msgid="5206229557831180323">"यसअघि कनेक्ट गरिएका यन्त्रहरू"</string>
+    <string name="bluetooth_previously_connected" msgid="5206229557831180323">"यसअघि कनेक्ट गरिएका डिभाइसहरू"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s कनेक्ट गरिएको छ"</string>
     <string name="bluetooth_device_disconnected_toast" msgid="8889122688851623920">"%1$s डिस्कनेक्ट गरिएको छ"</string>
     <string name="device_connections_category_title" msgid="1753729363581927505">"तपाईंको कारमा उपलब्ध डिभाइस कनेक्सनहरू"</string>
