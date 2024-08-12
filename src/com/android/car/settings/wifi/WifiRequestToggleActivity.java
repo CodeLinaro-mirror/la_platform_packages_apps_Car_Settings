@@ -101,7 +101,7 @@ public class WifiRequestToggleActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         getLifecycle().addObserver(new HideNonSystemOverlayMixin(this));
 
-        mCarWifiManager = new CarWifiManager(getApplicationContext(), getLifecycle());
+        mCarWifiManager = new CarWifiManager(getApplicationContext(), getLifecycle(), true);
 
         setResult(Activity.RESULT_CANCELED);
 
