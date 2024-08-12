@@ -197,7 +197,8 @@ public class WifiTetherApBandPreferenceController extends
 
         if (isDualApSupported() && mBand == SOFTAP_CONCURRENT_BAND_2GHZ_AND_5GHZ) {
             dual_bands = new int[] {
-                SoftApConfiguration.BAND_2GHZ, SoftApConfiguration.BAND_5GHZ};
+                SoftApConfiguration.BAND_2GHZ,
+                SoftApConfiguration.BAND_2GHZ | SoftApConfiguration.BAND_5GHZ};
         } else {
             dual_bands = new int[0];
         }
