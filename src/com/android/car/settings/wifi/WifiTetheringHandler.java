@@ -68,7 +68,7 @@ public class WifiTetheringHandler {
 
     public WifiTetheringHandler(Context context, Lifecycle lifecycle,
             WifiTetheringAvailabilityListener wifiTetherAvailabilityListener) {
-        this(context, new CarWifiManager(context, lifecycle),
+        this(context, new CarWifiManager(context, lifecycle, false),
                 context.getSystemService(TetheringManager.class), wifiTetherAvailabilityListener);
     }
 
