@@ -891,7 +891,7 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"அடுத்தமுறை காரை இயக்கத் தொடங்கும்போது இன்ஃபோடெயின்மென்ட் சிஸ்டம் மீட்டமைக்கப்படும்."</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"மீட்டமைத்தலைத் தொடங்க காரை நிறுத்த வேண்டும்."</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"இந்த அமைப்பை இப்போது மாற்ற முடியாது"</string>
-    <string name="accessibility_settings_title" msgid="2615042088419230347">"அணுகல்தன்மை"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"மாற்றுத்திறன் வசதி"</string>
     <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"வசனங்கள்"</string>
     <string name="captions_settings_title" msgid="5738067618097295831">"வசன விருப்பத்தேர்வுகள்"</string>
     <string name="captions_settings_off" msgid="7568096968016015626">"ஆஃப்"</string>
