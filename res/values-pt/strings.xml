@@ -482,7 +482,7 @@
     <string name="legal_information" msgid="1838443759229784762">"Informações legais"</string>
     <string name="contributors_title" msgid="7698463793409916113">"Colaboradores"</string>
     <string name="manual" msgid="4819839169843240804">"Manual"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"Informações regulatórias"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"Selos de conformidade"</string>
     <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Manual de segurança e regulamentação"</string>
     <string name="copyright_title" msgid="4220237202917417876">"Direitos autorais"</string>
     <string name="license_title" msgid="936705938435249965">"Licença"</string>
@@ -539,7 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"Formato de 24 horas"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Usar formato de 24 horas"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Hora"</string>
-    <string name="date_time_set_time" msgid="6449555153906058248">"Definir hora"</string>
+    <string name="date_time_set_time" msgid="3684135432529445165">"Configurar relógio"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"Fuso horário"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"Selecionar fuso horário"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"Data"</string>
@@ -548,6 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"Ordenar por fuso horário"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"Data"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"Hora"</string>
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"A detecção automática pode usar fontes como localização e redes móveis para determinar automaticamente a data, hora e fuso horário."</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"Use o local do carro para definir automaticamente a data e hora. Isso só funciona se a localização estiver ativada."</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"Continuar"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"Mudar nas configurações"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"Sua localização está desativada. A detecção automática de fuso horário pode não funcionar."</string>
     <string name="user_admin" msgid="1535484812908584809">"Administrador"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Conectado como administrador"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"Conceder permissões de administrador?"</string>

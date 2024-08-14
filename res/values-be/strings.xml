@@ -539,7 +539,7 @@
     <string name="date_time_24hour_title" msgid="3025576547136168692">"24‑гадзінны фармат"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Выкарыстоўваць 24-гадзінны фармат"</string>
     <string name="date_time_set_time_title" msgid="5884883050656937853">"Час"</string>
-    <string name="date_time_set_time" msgid="6449555153906058248">"Задаць час"</string>
+    <string name="date_time_set_time" msgid="3684135432529445165">"Наладзіць гадзіннік"</string>
     <string name="date_time_set_timezone_title" msgid="3001779256157093425">"Часавы пояс"</string>
     <string name="date_time_set_timezone" msgid="4759353576185916944">"Выберыце часавы пояс"</string>
     <string name="date_time_set_date_title" msgid="6834785820357051138">"Дата"</string>
@@ -548,6 +548,11 @@
     <string name="zone_list_menu_sort_by_timezone" msgid="4944880536057914136">"Сартаваць па часавым поясе"</string>
     <string name="date_picker_title" msgid="1533614225273770178">"Дата"</string>
     <string name="time_picker_title" msgid="7436045944320504639">"Час"</string>
+    <string name="auto_local_time_disclaimer_summary" msgid="5965459676137313463">"Функцыя \"Аўтаматычная дата і час\" можа выкарыстоўваць пэўныя крыніцы, у прыватнасці геаданыя і мабільныя сеткі, для выяўлення даты, часу і часавага пояса."</string>
+    <string name="auto_local_time_toggle_summary" msgid="6617503441738434427">"Каб аўтаматычна наладзіць дату і час, выкарыстоўвайце месцазнаходжанне аўтамабіля. Працуе, толькі калі вызначэнне месцазнаходжання ўключана."</string>
+    <string name="auto_local_time_dialog_negative_button_text" msgid="6594888186816335207">"Працягнуць"</string>
+    <string name="auto_local_time_dialog_positive_button_text" msgid="4078408719499933410">"Змяніць у наладах"</string>
+    <string name="auto_local_time_dialog_msg" msgid="1692514715620573896">"Вызначэнне месцазнаходжання выключана. Функцыя аўтаматычнага выяўлення часу можа не працаваць."</string>
     <string name="user_admin" msgid="1535484812908584809">"Адміністратар"</string>
     <string name="signed_in_admin_user" msgid="1267225622818673274">"Вы ўвайшлі як адміністратар"</string>
     <string name="grant_admin_permissions_title" msgid="4496239754512028468">"Даць дазволы адміністратара?"</string>
