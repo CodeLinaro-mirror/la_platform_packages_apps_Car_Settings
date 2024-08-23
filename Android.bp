@@ -115,6 +115,7 @@ android_app {
 
     libs: [
         "android.car",
+        "car-ui-lib-oem-apis",
     ],
 
     static_libs: [
