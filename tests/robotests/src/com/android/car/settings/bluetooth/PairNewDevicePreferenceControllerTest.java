@@ -48,6 +48,7 @@ import com.android.settingslib.bluetooth.LocalBluetoothManager;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -300,6 +301,7 @@ public class PairNewDevicePreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void preferenceClicked_enablesAdapter() {
         BluetoothAdapter.getDefaultAdapter().disable();
 

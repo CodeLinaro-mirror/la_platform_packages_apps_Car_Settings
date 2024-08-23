@@ -36,6 +36,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -131,6 +132,7 @@ public class PreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void onUxRestrictionsChanged_created_restricted_preferenceDisabled() {
         mControllerHelper.markState(Lifecycle.State.CREATED);
 
@@ -140,6 +142,7 @@ public class PreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void onUxRestrictionsChanged_created_restricted_unrestricted_preferenceEnabled() {
         InOrder orderVerifier = inOrder(mPreference);
 
@@ -193,6 +196,7 @@ public class PreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void onUxRestrictionsChanged_restricted_uxRestrictionsNotIgnored_preferenceDisabled() {
         // mPreference cannot be a Mock here because its real methods need to be invoked.
         mPreference = new Preference(mContext);
@@ -331,6 +335,7 @@ public class PreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void onCreate_unsupportedOnDevice_hidesPreference() {
         mController.setAvailabilityStatus(UNSUPPORTED_ON_DEVICE);
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_CREATE);

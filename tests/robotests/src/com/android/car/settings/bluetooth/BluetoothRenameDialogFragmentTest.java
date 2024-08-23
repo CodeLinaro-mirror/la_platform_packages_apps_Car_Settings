@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -29,6 +30,7 @@ import androidx.annotation.StringRes;
 
 import com.android.car.settings.R;
 import com.android.car.settings.testutils.BaseTestActivity;
+import com.android.car.ui.CarUiLayoutInflaterFactory;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -48,6 +50,9 @@ public class BluetoothRenameDialogFragmentTest {
 
     @Before
     public void setUp() {
+        LayoutInflater.from(RuntimeEnvironment.application)
+                .setFactory2(new CarUiLayoutInflaterFactory());
+
         BaseTestActivity activity = Robolectric.setupActivity(BaseTestActivity.class);
         mFragment = new TestBluetoothRenameDialogFragment();
         mFragment.show(activity.getSupportFragmentManager(), /* tag= */ null);
@@ -64,8 +69,9 @@ public class BluetoothRenameDialogFragmentTest {
     @Test
     public void softInputShown() {
         InputMethodManager imm =
-                (InputMethodManager) RuntimeEnvironment.application.getSystemService(
-                        Context.INPUT_METHOD_SERVICE);
+                (InputMethodManager)
+                        RuntimeEnvironment.application.getSystemService(
+                                Context.INPUT_METHOD_SERVICE);
         assertThat(Shadows.shadowOf(imm).isSoftInputVisible()).isTrue();
     }
 
