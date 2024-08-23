@@ -205,6 +205,10 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="dimen" name="choose_pin_title_text_margin_bottom"/>
       <item type="dimen" name="choose_title_text_margin_bottom"/>
       <item type="dimen" name="circle_ripple_bg_radius"/>
+      <item type="dimen" name="colored_two_action_switch_preference_divider_vertical_padding"/>
+      <item type="dimen" name="colored_two_action_switch_preference_margin_end"/>
+      <item type="dimen" name="colored_two_action_switch_preference_vertical_margin"/>
+      <item type="dimen" name="colored_two_action_switch_preference_vertical_padding"/>
       <item type="dimen" name="confirm_lock_message_vertical_spacing"/>
       <item type="dimen" name="confirm_pattern_dimension"/>
       <item type="dimen" name="data_usage_summary_preference_button_height"/>
