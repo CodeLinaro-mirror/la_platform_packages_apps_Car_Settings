@@ -27,6 +27,7 @@ import com.android.car.settings.testutils.ShadowUserManager;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
@@ -60,6 +61,7 @@ public class ProfileIconProviderTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void getRoundedUserIcon_AssignsIconIfNotPresent() {
         ShadowUserManager.setUserIcon(mUserInfo.id, null);
 

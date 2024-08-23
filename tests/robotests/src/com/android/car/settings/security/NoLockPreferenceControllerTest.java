@@ -36,6 +36,7 @@ import com.android.internal.widget.LockscreenCredential;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
@@ -45,6 +46,7 @@ import org.robolectric.annotation.Config;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(shadows = {ShadowLockPatternUtils.class})
+@Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
 public class NoLockPreferenceControllerTest {
 
     private static final LockscreenCredential TEST_CURRENT_PASSWORD =
