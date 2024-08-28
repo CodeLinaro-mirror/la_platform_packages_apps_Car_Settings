@@ -160,12 +160,6 @@ public class WifiTetherApBandPreferenceController extends
             mHotspotBandMap.keySet().remove(BAND_2GHZ_5GHZ);
         }
 
-        // If dual band is supported then there is no need to allow users to select
-        // between 2.4 GHz and 5 GHz since both bands will be available to connect to.
-        if (isDualBandSupported()) {
-            mHotspotBandMap.keySet().removeIf(key -> key < BAND_2GHZ_5GHZ);
-        }
-
         getPreference().setEntries(mHotspotBandMap.values().toArray(CharSequence[]::new));
         getPreference().setEntryValues(
                 mHotspotBandMap.keySet().stream().map(Object::toString).toArray(
