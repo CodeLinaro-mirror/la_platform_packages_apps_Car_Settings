@@ -225,6 +225,6 @@ public class WifiTetherApBandPreferenceController extends
     }
 
     private boolean isDualBandSupported() {
-        return Flags.hotspotUiSpeedUpdate() && getCarWifiManager().isDualBandSupported();
+        return getCarWifiManager().isDualBandSupported();
     }
 }
