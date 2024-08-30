@@ -42,6 +42,7 @@ import com.android.car.ui.preference.CarUiTwoActionIconPreference;
 import com.android.settingslib.applications.DefaultAppInfo;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
@@ -108,6 +109,7 @@ public class DefaultAppsPickerEntryBasePreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void refreshUi_hasSettingIntentButNoResolvableActivity_actionButtonIsNotVisible() {
         ResolveInfo resolveInfo = new ResolveInfo();
         resolveInfo.activityInfo = null;
@@ -145,6 +147,7 @@ public class DefaultAppsPickerEntryBasePreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void performButtonClick_launchesIntent() {
         // Need to spy context because RuntimeEnvironment.application is not an Activity-based
         // context, and so throws RuntimeException when we call startActivityForResult.

@@ -28,6 +28,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.preference.ListPreference;
 
 import com.android.car.settings.R;
+import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
 import com.android.car.settings.testutils.ShadowCarWifiManager;
 
@@ -45,22 +46,26 @@ public class WifiTetherApBandPreferenceControllerTest {
 
     private Context mContext;
     private ListPreference mPreference;
-    private PreferenceControllerTestHelper<WifiTetherApBandPreferenceController>
-            mControllerHelper;
+    private PreferenceControllerTestHelper<WifiTetherApBandPreferenceController> mControllerHelper;
     private CarWifiManager mCarWifiManager;
     private WifiTetherApBandPreferenceController mController;
 
     @Before
     public void setup() {
         mContext = RuntimeEnvironment.application;
-        mCarWifiManager = new CarWifiManager(mContext, mock(Lifecycle.class));
+        Lifecycle mockLifecycle = mock(Lifecycle.class);
+        FragmentController mockFragmentController = mock(FragmentController.class);
+        when(mockFragmentController.getSettingsLifecycle()).thenReturn(mockLifecycle);
+
+        mCarWifiManager = new CarWifiManager(mContext, mockLifecycle);
         mPreference = new ListPreference(mContext);
         mControllerHelper =
-                new PreferenceControllerTestHelper<WifiTetherApBandPreferenceController>(mContext,
-                        WifiTetherApBandPreferenceController.class, mPreference);
+                new PreferenceControllerTestHelper<WifiTetherApBandPreferenceController>(
+                        mContext,
+                        WifiTetherApBandPreferenceController.class,
+                        mPreference,
+                        mockFragmentController);
         mController = mControllerHelper.getController();
-        when(mControllerHelper.getMockFragmentController().getSettingsLifecycle())
-                .thenReturn(mock(Lifecycle.class));
     }
 
     @After
@@ -96,9 +101,8 @@ public class WifiTetherApBandPreferenceControllerTest {
     @Test
     public void onStart_wifiConfigApBandSetTo2Ghz_valueIsSetTo2Ghz() {
         ShadowCarWifiManager.setIs5GhzBandSupported(true);
-        SoftApConfiguration config = new SoftApConfiguration.Builder()
-                .setBand(SoftApConfiguration.BAND_2GHZ)
-                .build();
+        SoftApConfiguration config =
+                new SoftApConfiguration.Builder().setBand(SoftApConfiguration.BAND_2GHZ).build();
         mCarWifiManager.setSoftApConfig(config);
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
 
@@ -109,9 +113,8 @@ public class WifiTetherApBandPreferenceControllerTest {
     @Test
     public void onStart_wifiConfigApBandSetTo5Ghz_valueIsSetTo5Ghz() {
         ShadowCarWifiManager.setIs5GhzBandSupported(true);
-        SoftApConfiguration config = new SoftApConfiguration.Builder()
-                .setBand(SoftApConfiguration.BAND_5GHZ)
-                .build();
+        SoftApConfiguration config =
+                new SoftApConfiguration.Builder().setBand(SoftApConfiguration.BAND_5GHZ).build();
         mCarWifiManager.setSoftApConfig(config);
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
 
@@ -122,13 +125,12 @@ public class WifiTetherApBandPreferenceControllerTest {
     @Test
     public void onPreferenceChangedTo5Ghz_updatesApBandConfigTo5Ghz() {
         ShadowCarWifiManager.setIs5GhzBandSupported(true);
-        SoftApConfiguration config = new SoftApConfiguration.Builder()
-                .setBand(SoftApConfiguration.BAND_2GHZ)
-                .build();
+        SoftApConfiguration config =
+                new SoftApConfiguration.Builder().setBand(SoftApConfiguration.BAND_2GHZ).build();
         mCarWifiManager.setSoftApConfig(config);
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        mController.handlePreferenceChanged(mPreference,
-                Integer.toString(SoftApConfiguration.BAND_5GHZ));
+        mController.handlePreferenceChanged(
+                mPreference, Integer.toString(SoftApConfiguration.BAND_5GHZ));
 
         assertThat(mCarWifiManager.getSoftApConfig().getBand())
                 .isEqualTo(SoftApConfiguration.BAND_2GHZ | SoftApConfiguration.BAND_5GHZ);
@@ -137,13 +139,12 @@ public class WifiTetherApBandPreferenceControllerTest {
     @Test
     public void onPreferenceChangedTo2Ghz_updatesApBandConfigTo2Ghz() {
         ShadowCarWifiManager.setIs5GhzBandSupported(true);
-        SoftApConfiguration config = new SoftApConfiguration.Builder()
-                .setBand(SoftApConfiguration.BAND_5GHZ)
-                .build();
+        SoftApConfiguration config =
+                new SoftApConfiguration.Builder().setBand(SoftApConfiguration.BAND_5GHZ).build();
         mCarWifiManager.setSoftApConfig(config);
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        mController.handlePreferenceChanged(mPreference,
-                Integer.toString(SoftApConfiguration.BAND_2GHZ));
+        mController.handlePreferenceChanged(
+                mPreference, Integer.toString(SoftApConfiguration.BAND_2GHZ));
 
         assertThat(mCarWifiManager.getSoftApConfig().getBand())
                 .isEqualTo(SoftApConfiguration.BAND_2GHZ);
@@ -152,28 +153,25 @@ public class WifiTetherApBandPreferenceControllerTest {
     @Test
     public void onStart_summarySetToPrefer5Ghz() {
         ShadowCarWifiManager.setIs5GhzBandSupported(true);
-        SoftApConfiguration config = new SoftApConfiguration.Builder()
-                .setBand(SoftApConfiguration.BAND_5GHZ)
-                .build();
+        SoftApConfiguration config =
+                new SoftApConfiguration.Builder().setBand(SoftApConfiguration.BAND_5GHZ).build();
         mCarWifiManager.setSoftApConfig(config);
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        assertThat(mPreference.getSummary()).isEqualTo(
-                mContext.getString(R.string.wifi_ap_prefer_5G));
+        assertThat(mPreference.getSummary().toString())
+                .isEqualTo(mContext.getString(R.string.wifi_ap_prefer_5G));
     }
 
     @Test
     public void onPreferenceChangedTo5Ghz_defaultToApBandAny() {
         ShadowCarWifiManager.setIs5GhzBandSupported(true);
-        SoftApConfiguration config = new SoftApConfiguration.Builder()
-                .setBand(SoftApConfiguration.BAND_2GHZ)
-                .build();
+        SoftApConfiguration config =
+                new SoftApConfiguration.Builder().setBand(SoftApConfiguration.BAND_2GHZ).build();
         mCarWifiManager.setSoftApConfig(config);
         mControllerHelper.sendLifecycleEvent(Lifecycle.Event.ON_START);
-        mController.handlePreferenceChanged(mPreference,
-                Integer.toString(SoftApConfiguration.BAND_5GHZ));
+        mController.handlePreferenceChanged(
+                mPreference, Integer.toString(SoftApConfiguration.BAND_5GHZ));
 
         assertThat(mCarWifiManager.getSoftApConfig().getBand())
                 .isEqualTo(SoftApConfiguration.BAND_2GHZ | SoftApConfiguration.BAND_5GHZ);
     }
-
 }

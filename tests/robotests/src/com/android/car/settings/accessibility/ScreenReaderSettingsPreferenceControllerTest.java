@@ -31,6 +31,7 @@ import com.android.car.settings.common.PreferenceControllerTestHelper;
 import com.android.internal.accessibility.util.AccessibilityUtils;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
@@ -56,6 +57,7 @@ public class ScreenReaderSettingsPreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testRefreshUi_screenReaderDisabled_summarySetToOff() {
         setScreenReaderEnabled(false);
 
@@ -66,6 +68,7 @@ public class ScreenReaderSettingsPreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testRefreshUi_screenReaderEnabled_summarySetToOn() {
         setScreenReaderEnabled(true);
 

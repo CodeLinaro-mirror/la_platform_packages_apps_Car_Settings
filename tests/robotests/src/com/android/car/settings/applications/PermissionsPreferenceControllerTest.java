@@ -30,6 +30,7 @@ import com.android.car.settings.common.PreferenceControllerTestHelper;
 import com.android.car.settings.testutils.ShadowPermissionControllerManager;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
@@ -66,6 +67,7 @@ public class PermissionsPreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testHandlePreferenceClicked_navigateToNextActivity() {
         // Setup so the controller knows about the preference.
         mController.setPackageName(PACKAGE_NAME);

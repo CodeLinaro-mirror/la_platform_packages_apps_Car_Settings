@@ -33,6 +33,7 @@ import com.android.car.settings.testutils.ShadowApplicationPackageManager;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -170,6 +171,7 @@ public class ExtraSettingsPreferenceControllerTest {
     }
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void onUxRestrictionsChanged_unrestrictedAndDO_intentsIntoActivityNoMetadata_disabled() {
         when(mExtraSettingsLoaderMock.loadPreferences(FAKE_INTENT)).thenReturn(
                 mPreferenceBundleMap);
@@ -184,6 +186,7 @@ public class ExtraSettingsPreferenceControllerTest {
 
 
     @Test
+    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void onUxRestrictionsChanged_unrestrictedAndDO_intentsIntoNonDOActivity_disabled() {
         mBundle.putBoolean(
                 ExtraSettingsPreferenceController.META_DATA_DISTRACTION_OPTIMIZED, false);

@@ -22,6 +22,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -30,6 +31,7 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.car.settings.R;
 import com.android.car.settings.testutils.BaseTestActivity;
+import com.android.car.ui.CarUiLayoutInflaterFactory;
 import com.android.car.ui.preference.EditTextPreferenceDialogFragment;
 
 import org.junit.Before;
@@ -56,6 +58,8 @@ public class ValidatedEditTextPreferenceDialogFragmentTest {
     @Before
     public void setUp() {
         mContext = RuntimeEnvironment.application;
+        LayoutInflater.from(mContext).setFactory2(new CarUiLayoutInflaterFactory());
+
         Robolectric.getForegroundThreadScheduler().pause();
         mTestActivityController = ActivityController.of(new BaseTestActivity());
         mTestActivity = mTestActivityController.get();
@@ -69,8 +73,7 @@ public class ValidatedEditTextPreferenceDialogFragmentTest {
         Robolectric.getForegroundThreadScheduler().unPause();
         targetFragment.getPreferenceScreen().addPreference(mPreference);
 
-        mFragment = ValidatedEditTextPreferenceDialogFragment
-                .newInstance(mPreference.getKey());
+        mFragment = ValidatedEditTextPreferenceDialogFragment.newInstance(mPreference.getKey());
         mFragment.setTargetFragment(targetFragment, /* requestCode= */ 0);
     }
 
@@ -78,34 +81,36 @@ public class ValidatedEditTextPreferenceDialogFragmentTest {
     public void noValidatorSet_shouldEnablePositiveButton_and_allowEnterToSubmit() {
         mFragment.show(mTestActivity.getSupportFragmentManager(), /* tag= */ null);
 
-        Button positiveButton = ShadowAlertDialog.getLatestAlertDialog().getButton(
-                DialogInterface.BUTTON_POSITIVE);
-        EditText editText = ShadowAlertDialog.getLatestAlertDialog().findViewById(
-                android.R.id.edit);
+        Button positiveButton =
+                ShadowAlertDialog.getLatestAlertDialog().getButton(DialogInterface.BUTTON_POSITIVE);
+        EditText editText =
+                ShadowAlertDialog.getLatestAlertDialog().findViewById(android.R.id.edit);
 
         assertThat(positiveButton.isEnabled()).isTrue();
         assertThat(mFragment.getAllowEnterToSubmit()).isTrue();
 
         editText.setText("any text");
+
         assertThat(positiveButton.isEnabled()).isTrue();
         assertThat(mFragment.getAllowEnterToSubmit()).isTrue();
     }
 
     @Test
     public void onInvalidInput_shouldDisablePositiveButton_and_disallowEnterToSubmit() {
-        ((ValidatedEditTextPreference) mPreference).setValidator(
-                new ValidatedEditTextPreference.Validator() {
-                    @Override
-                    public boolean isTextValid(String value) {
-                        return value.length() > 100;
-                    }
-                });
+        ((ValidatedEditTextPreference) mPreference)
+                .setValidator(
+                        new ValidatedEditTextPreference.Validator() {
+                            @Override
+                            public boolean isTextValid(String value) {
+                                return value.length() > 100;
+                            }
+                        });
         mFragment.show(mTestActivity.getSupportFragmentManager(), /* tag= */ null);
 
-        Button positiveButton = ShadowAlertDialog.getLatestAlertDialog().getButton(
-                DialogInterface.BUTTON_POSITIVE);
-        EditText editText = ShadowAlertDialog.getLatestAlertDialog().findViewById(
-                android.R.id.edit);
+        Button positiveButton =
+                ShadowAlertDialog.getLatestAlertDialog().getButton(DialogInterface.BUTTON_POSITIVE);
+        EditText editText =
+                ShadowAlertDialog.getLatestAlertDialog().findViewById(android.R.id.edit);
         editText.setText("shorter than 100");
 
         assertThat(positiveButton.isEnabled()).isFalse();
@@ -114,19 +119,20 @@ public class ValidatedEditTextPreferenceDialogFragmentTest {
 
     @Test
     public void onValidInput_shouldEnablePositiveButton_and_allowEnterToSubmit() {
-        ((ValidatedEditTextPreference) mPreference).setValidator(
-                new ValidatedEditTextPreference.Validator() {
-                    @Override
-                    public boolean isTextValid(String value) {
-                        return value.length() > 1;
-                    }
-                });
+        ((ValidatedEditTextPreference) mPreference)
+                .setValidator(
+                        new ValidatedEditTextPreference.Validator() {
+                            @Override
+                            public boolean isTextValid(String value) {
+                                return value.length() > 1;
+                            }
+                        });
         mFragment.show(mTestActivity.getSupportFragmentManager(), /* tag= */ null);
 
-        Button positiveButton = ShadowAlertDialog.getLatestAlertDialog().getButton(
-                DialogInterface.BUTTON_POSITIVE);
-        EditText editText = ShadowAlertDialog.getLatestAlertDialog().findViewById(
-                android.R.id.edit);
+        Button positiveButton =
+                ShadowAlertDialog.getLatestAlertDialog().getButton(DialogInterface.BUTTON_POSITIVE);
+        EditText editText =
+                ShadowAlertDialog.getLatestAlertDialog().findViewById(android.R.id.edit);
         editText.setText("longer than 1");
 
         assertThat(positiveButton.isEnabled()).isTrue();

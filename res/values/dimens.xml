@@ -222,4 +222,8 @@
 
     <dimen name="rounded_corner_radius">16dp</dimen>
 
+    <dimen name="colored_two_action_switch_preference_vertical_padding">24dp</dimen>
+    <dimen name="colored_two_action_switch_preference_margin_end">32dp</dimen>
+    <dimen name="colored_two_action_switch_preference_vertical_margin">16dp</dimen>
+    <dimen name="colored_two_action_switch_preference_divider_vertical_padding">27dp</dimen>
 </resources>

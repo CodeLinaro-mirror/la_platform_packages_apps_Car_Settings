@@ -22,6 +22,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -31,7 +32,7 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.car.settings.R;
 import com.android.car.settings.testutils.BaseTestActivity;
-import com.android.car.ui.preference.EditTextPreferenceDialogFragment;
+import com.android.car.ui.CarUiLayoutInflaterFactory;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -55,6 +56,8 @@ public class PasswordEditTextPreferenceDialogFragmentTest {
     @Before
     public void setUp() {
         mContext = RuntimeEnvironment.application;
+        LayoutInflater.from(mContext).setFactory2(new CarUiLayoutInflaterFactory());
+
         Robolectric.getForegroundThreadScheduler().pause();
         mTestActivityController = ActivityController.of(new BaseTestActivity());
         mTestActivity = mTestActivityController.get();
@@ -92,8 +95,9 @@ public class PasswordEditTextPreferenceDialogFragmentTest {
         editText.setText(testPassword);
         checkBox.performClick();
 
-        assertThat(editText.getInputType()).isEqualTo(InputType.TYPE_CLASS_TEXT
-                | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        assertThat(editText.getInputType())
+                .isEqualTo(
+                        InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
         assertThat(editText.getText().toString()).isEqualTo(testPassword);
     }
 
@@ -109,8 +113,8 @@ public class PasswordEditTextPreferenceDialogFragmentTest {
         checkBox.performClick();
         checkBox.performClick();
 
-        assertThat(editText.getInputType()).isEqualTo((InputType.TYPE_CLASS_TEXT
-                | InputType.TYPE_TEXT_VARIATION_PASSWORD));
+        assertThat(editText.getInputType())
+                .isEqualTo((InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD));
         assertThat(editText.getText().toString()).isEqualTo(testPassword);
     }
 

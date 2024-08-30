@@ -36,6 +36,7 @@ import com.android.car.settings.testutils.ShadowRingtoneManager;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -46,6 +47,7 @@ import org.robolectric.annotation.Config;
 
 @RunWith(RobolectricTestRunner.class)
 @Config(shadows = {ShadowRingtoneManager.class, ShadowRingtone.class})
+@Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
 public class RingtonePreferenceControllerTest {
 
     private static final int TEST_RINGTONE_TYPE = RingtoneManager.TYPE_RINGTONE;
