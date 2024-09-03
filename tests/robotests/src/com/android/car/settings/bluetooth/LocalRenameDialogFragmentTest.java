@@ -28,6 +28,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.widget.EditText;
 
+import androidx.test.runner.AndroidJUnit4;
+
 import com.android.car.settings.R;
 import com.android.car.settings.testutils.BaseTestActivity;
 import com.android.car.settings.testutils.ShadowBluetoothAdapter;
@@ -38,15 +40,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadow.api.Shadow;
 import org.robolectric.shadows.ShadowDialog;
 
 /** Unit test for {@link LocalRenameDialogFragment}. */
-@RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowBluetoothAdapter.class})
+@RunWith(AndroidJUnit4.class)
 public class LocalRenameDialogFragmentTest {
 
     private static final String NAME = "name";
