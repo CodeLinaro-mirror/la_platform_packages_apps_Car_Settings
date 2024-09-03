@@ -37,6 +37,7 @@ import android.car.util.concurrent.AndroidFuture;
 import android.content.Context;
 import android.content.pm.UserInfo;
 import android.content.res.Resources;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 
@@ -57,6 +58,7 @@ import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowProcess;
 
 @RunWith(RobolectricTestRunner.class)
+// TODO: b/353761286 - TechDebt: Remove/cleanup testuitls `ShadowUserManager`.
 @Config(shadows = {ShadowUserManager.class, ShadowUserIconProvider.class})
 public class ProfileHelperTest {
 
@@ -66,19 +68,21 @@ public class ProfileHelperTest {
     private Context mContext;
     private ProfileHelper mProfileHelper;
 
-    @Mock
-    private UserManager mMockUserManager;
-    @Mock
-    private Resources mMockResources;
-    @Mock
-    private CarUserManager mMockCarUserManager;
+    @Mock private UserManager mMockUserManager;
+    @Mock private Resources mMockResources;
+    @Mock private CarUserManager mMockCarUserManager;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         mContext = RuntimeEnvironment.application;
-        mProfileHelper = new ProfileHelper(mMockUserManager, mMockResources,
-                DEFAULT_ADMIN_NAME, DEFAULT_GUEST_NAME, mMockCarUserManager);
+        mProfileHelper =
+                new ProfileHelper(
+                        mMockUserManager,
+                        mMockResources,
+                        DEFAULT_ADMIN_NAME,
+                        DEFAULT_GUEST_NAME,
+                        mMockCarUserManager);
 
         when(mMockUserManager.hasUserRestriction(UserManager.DISALLOW_MODIFY_ACCOUNTS))
                 .thenReturn(false);
@@ -120,17 +124,16 @@ public class ProfileHelperTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testGetAllsers() {
         // Add system user
         UserInfo systemUser = createAdminUser(UserHandle.USER_SYSTEM);
 
         // Create two admin, and two non-admin users.
         int fgUserId = ActivityManager.getCurrentUser();
-        UserInfo fgUser = createNonAdminUser(fgUserId);
-        UserInfo user2 = createAdminUser(fgUserId + 1);
-        UserInfo user3 = createNonAdminUser(fgUserId + 2);
-        UserInfo user4 = createAdminUser(fgUserId + 3);
+        UserInfo fgUser = createNonAdminUser(fgUserId + 1);
+        UserInfo user2 = createAdminUser(fgUserId + 2);
+        UserInfo user3 = createNonAdminUser(fgUserId + 3);
+        UserInfo user4 = createAdminUser(fgUserId + 4);
 
         mockGetUsers(systemUser, fgUser, user2, user3, user4);
 
@@ -177,7 +180,6 @@ public class ProfileHelperTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testGetAllSwitchableUsers_notHeadless() {
         ShadowUserManager.setIsHeadlessSystemUserMode(false);
 
@@ -186,30 +188,27 @@ public class ProfileHelperTest {
 
         // Create two non-foreground users.
         int fgUserId = ActivityManager.getCurrentUser();
-        UserInfo fgUser = createAdminUser(fgUserId);
         UserInfo user1 = createAdminUser(fgUserId + 1);
         UserInfo user2 = createAdminUser(fgUserId + 2);
 
-        mockGetUsers(systemUser, fgUser, user1, user2);
+        mockGetUsers(systemUser, user1, user2);
 
         // Should return all non-foreground users.
-        assertThat(mProfileHelper.getAllSwitchableProfiles()).containsExactly(systemUser, user1,
-                user2);
+        assertThat(mProfileHelper.getAllSwitchableProfiles()).containsExactly(user1, user2);
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testGetAllPersistentUsers() {
         // Add system user
         UserInfo systemUser = createAdminUser(UserHandle.USER_SYSTEM);
 
         // Create two non-ephemeral users.
         int fgUserId = ActivityManager.getCurrentUser();
-        UserInfo fgUser = createAdminUser(fgUserId);
-        UserInfo user2 = createAdminUser(fgUserId + 1);
+        UserInfo fgUser = createAdminUser(fgUserId + 1);
+        UserInfo user2 = createAdminUser(fgUserId + 2);
         // Create two ephemeral users.
-        UserInfo user3 = createEphemeralUser(fgUserId + 2);
-        UserInfo user4 = createEphemeralUser(fgUserId + 3);
+        UserInfo user3 = createEphemeralUser(fgUserId + 3);
+        UserInfo user4 = createEphemeralUser(fgUserId + 4);
 
         mockGetUsers(systemUser, fgUser, user2, user3, user4);
 
@@ -235,8 +234,8 @@ public class ProfileHelperTest {
         mockGetUsers(systemUser, fgUser, user2, user3, user4);
 
         // Should return all non-ephemeral users.
-        assertThat(mProfileHelper.getAllPersistentProfiles()).containsExactly(systemUser, fgUser,
-                user2);
+        assertThat(mProfileHelper.getAllPersistentProfiles())
+                .containsExactly(systemUser, fgUser, user2);
     }
 
     @Test
@@ -279,12 +278,13 @@ public class ProfileHelperTest {
 
     @Test
     public void testRemoveUser_isAdminUser_cannotRemoveSystemUser() {
-        UserInfo systemUser = new UserInfo(
-                UserHandle.USER_SYSTEM,
-                "Driver",
-                /* iconPath= */ null,
-                /* flags= */ UserInfo.FLAG_ADMIN | UserInfo.FLAG_SYSTEM,
-                /* userType= */ USER_TYPE_SYSTEM_HEADLESS);
+        UserInfo systemUser =
+                new UserInfo(
+                        UserHandle.USER_SYSTEM,
+                        "Driver",
+                        /* iconPath= */ null,
+                        /* flags= */ UserInfo.FLAG_ADMIN | UserInfo.FLAG_SYSTEM,
+                        /* userType= */ USER_TYPE_SYSTEM_HEADLESS);
 
         assertThat(mProfileHelper.removeProfile(mContext, systemUser))
                 .isEqualTo(ProfileHelper.REMOVE_PROFILE_RESULT_FAILED);
@@ -327,9 +327,7 @@ public class ProfileHelperTest {
         verify(mMockCarUserManager, never()).removeUser(user2.id);
     }
 
-
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testRemoveUser_removesLastAdminUser_createsAndSwitchesToNewAdminUser() {
         // Ensure admin status
         when(mMockUserManager.isAdminUser()).thenReturn(true);
@@ -341,9 +339,14 @@ public class ProfileHelperTest {
         mockGetUsers(adminUser, nonAdminInfo);
         UserInfo newAdminInfo = createAdminUser(baseId + 2);
         mockRemoveUserSuccess();
-        mockCreateUser(DEFAULT_ADMIN_NAME, UserInfo.FLAG_ADMIN,
-                UserCreationResult.STATUS_SUCCESSFUL, newAdminInfo);
+        mockCreateUser(
+                DEFAULT_ADMIN_NAME,
+                UserInfo.FLAG_ADMIN,
+                UserCreationResult.STATUS_SUCCESSFUL,
+                newAdminInfo);
         mockSwitchUserSuccess();
+        when(mMockUserManager.getUserInfo(newAdminInfo.getUserHandle().getIdentifier()))
+                .thenReturn(newAdminInfo);
 
         assertThat(mProfileHelper.removeProfile(mContext, adminUser))
                 .isEqualTo(ProfileHelper.REMOVE_PROFILE_RESULT_SUCCESS);
@@ -375,7 +378,6 @@ public class ProfileHelperTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testRemoveUser_removeForegroundUser_callsSwitchToGuest() {
         // Create foreground user
         int baseId = 10;
@@ -385,15 +387,17 @@ public class ProfileHelperTest {
         mockGetUsers(currentUser);
 
         UserInfo guestUser = createGuestUser(baseId + 1);
+        guestUser.name = DEFAULT_GUEST_NAME;
         mockRemoveUserSuccess();
         mockCreateGuest(DEFAULT_GUEST_NAME, UserCreationResult.STATUS_SUCCESSFUL, guestUser);
         mockSwitchUserSuccess();
+        when(mMockUserManager.getUserInfo(guestUser.getUserHandle().getIdentifier()))
+                .thenReturn(guestUser);
 
         assertUserRemoved(ProfileHelper.REMOVE_PROFILE_RESULT_SUCCESS, guestUser, currentUser);
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testRemoveUser_removeForegroundUser_switchFails_returnsSetEphemeralResult() {
         // Create foreground user
         int baseId = 10;
@@ -403,12 +407,15 @@ public class ProfileHelperTest {
         mockGetUsers(currentUser);
 
         UserInfo guestUser = createGuestUser(baseId + 1);
+        guestUser.name = DEFAULT_GUEST_NAME;
         mockRemoveUserSuccess();
         mockCreateGuest(DEFAULT_GUEST_NAME, UserCreationResult.STATUS_SUCCESSFUL, guestUser);
         mockSwitchUserFailure();
+        when(mMockUserManager.getUserInfo(guestUser.getUserHandle().getIdentifier()))
+                .thenReturn(guestUser);
 
-        assertUserRemoved(ProfileHelper.REMOVE_PROFILE_RESULT_SWITCH_FAILED, guestUser,
-                currentUser);
+        assertUserRemoved(
+                ProfileHelper.REMOVE_PROFILE_RESULT_SWITCH_FAILED, guestUser, currentUser);
     }
 
     private void assertUserRemoved(int expectedResult, UserInfo newUser, UserInfo removedUser) {
@@ -419,10 +426,9 @@ public class ProfileHelperTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testGetMaxSupportedRealUsers_isHeadless() {
         ShadowUserManager.setIsHeadlessSystemUserMode(true);
-        when(mMockUserManager.getMaxSupportedUsers()).thenReturn(7);
+        ShadowUserManager.setMaxSupportedUsersCount(7);
 
         // Create System user, two managed profiles, and two normal users.
         UserInfo user0 = createAdminUser(0);
@@ -438,10 +444,9 @@ public class ProfileHelperTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testGetMaxSupportedRealUsers_isNotHeadless() {
         ShadowUserManager.setIsHeadlessSystemUserMode(false);
-        when(mMockUserManager.getMaxSupportedUsers()).thenReturn(7);
+        ShadowUserManager.setMaxSupportedUsersCount(7);
 
         // Create System user, two managed profiles, and two normal users.
         UserInfo user0 = createAdminUser(0);
@@ -473,7 +478,6 @@ public class ProfileHelperTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testCreateNewOrFindExistingGuest_ifNoGuest_createsNewGuest() {
         // Create two users.
         UserInfo user1 = createAdminUser(10);
@@ -483,8 +487,11 @@ public class ProfileHelperTest {
 
         // Create a user for the "new guest" user.
         UserInfo guestInfo = createGuestUser(21);
+        guestInfo.name = DEFAULT_GUEST_NAME;
 
         mockCreateGuest(DEFAULT_GUEST_NAME, UserCreationResult.STATUS_SUCCESSFUL, guestInfo);
+        when(mMockUserManager.getUserInfo(guestInfo.getUserHandle().getIdentifier()))
+                .thenReturn(guestInfo);
 
         UserInfo guest = mProfileHelper.createNewOrFindExistingGuest(mContext);
         verify(mMockCarUserManager).createGuest(DEFAULT_GUEST_NAME);
@@ -526,8 +533,9 @@ public class ProfileHelperTest {
 
     private void mockCreateUserFail() {
         AndroidFuture<UserCreationResult> future = new AndroidFuture<>();
-        future.complete(new UserCreationResult(UserCreationResult.STATUS_ANDROID_FAILURE,
-                /* user= */ null));
+        future.complete(
+                new UserCreationResult(
+                        UserCreationResult.STATUS_ANDROID_FAILURE, /* user= */ null));
         AndroidAsyncFuture<UserCreationResult> asyncFuture = new AndroidAsyncFuture<>(future);
         when(mMockCarUserManager.createUser(any(), anyInt())).thenReturn(asyncFuture);
         when(mMockCarUserManager.createGuest(any())).thenReturn(asyncFuture);
@@ -549,14 +557,15 @@ public class ProfileHelperTest {
     private void mockSwitchUserSuccess() {
         AndroidFuture<UserSwitchResult> future = new AndroidFuture<>();
         future.complete(
-                new UserSwitchResult(UserSwitchResult.STATUS_SUCCESSFUL, /* errorMessage= */null));
+                new UserSwitchResult(UserSwitchResult.STATUS_SUCCESSFUL, /* errorMessage= */ null));
         when(mMockCarUserManager.switchUser(anyInt())).thenReturn(new AndroidAsyncFuture<>(future));
     }
 
     private void mockSwitchUserFailure() {
         AndroidFuture<UserSwitchResult> future = new AndroidFuture<>();
-        future.complete(new UserSwitchResult(UserSwitchResult.STATUS_ANDROID_FAILURE,
-                /* errorMessage= */null));
+        future.complete(
+                new UserSwitchResult(
+                        UserSwitchResult.STATUS_ANDROID_FAILURE, /* errorMessage= */ null));
         when(mMockCarUserManager.switchUser(anyInt())).thenReturn(new AndroidAsyncFuture<>(future));
     }
 }
