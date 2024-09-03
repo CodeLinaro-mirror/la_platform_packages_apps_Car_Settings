@@ -55,7 +55,7 @@ public class WifiSettingsFragment extends SettingsFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mCarWifiManager = new CarWifiManager(getContext(), getLifecycle());
+        mCarWifiManager = new CarWifiManager(getContext(), getLifecycle(), true);
 
         if (savedInstanceState != null) {
             mConnectedWifiEntryKey = savedInstanceState.getString(
