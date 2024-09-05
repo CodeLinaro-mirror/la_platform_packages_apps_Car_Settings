@@ -29,6 +29,8 @@ import android.net.wifi.SoftApConfiguration;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.Preference;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
 
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
@@ -37,17 +39,14 @@ import com.android.car.settings.testutils.ShadowCarWifiManager;
 import com.android.car.settings.testutils.ShadowLocalBroadcastManager;
 
 import com.google.errorprone.annotations.Keep;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadow.api.Shadow;
 
-@RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowCarWifiManager.class, ShadowLocalBroadcastManager.class})
+@RunWith(AndroidJUnit4.class)
 public class WifiTetherBasePreferenceControllerTest {
 
     private static final String SUMMARY = "SUMMARY";
@@ -98,7 +97,7 @@ public class WifiTetherBasePreferenceControllerTest {
 
     @Before
     public void setup() {
-        mContext = RuntimeEnvironment.application;
+        mContext = InstrumentationRegistry.getInstrumentation().getContext();
         Lifecycle mockLifecycle = mock(Lifecycle.class);
         FragmentController mockFragmentController = mock(FragmentController.class);
         when(mockFragmentController.getSettingsLifecycle()).thenReturn(mockLifecycle);
