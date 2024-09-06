@@ -18,6 +18,7 @@ package com.android.car.settings.common;
 
 import static com.android.settingslib.drawer.CategoryKey.CATEGORY_DEVICE;
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_ICON;
+import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_ICON_URI;
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_SUMMARY;
 import static com.android.settingslib.drawer.TileUtils.META_DATA_PREFERENCE_TITLE;
 
@@ -38,7 +39,6 @@ import com.android.car.settings.testutils.ShadowApplicationPackageManager;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
@@ -52,6 +52,8 @@ public class ExtraSettingsLoaderTest {
     private Context mContext;
     private ExtraSettingsLoader mExtraSettingsLoader;
     private static final String META_DATA_PREFERENCE_CATEGORY = "com.android.settings.category";
+    private static final String TEST_CONTENT_PROVIDER =
+            "content://com.android.car.settings.testutils.TestContentProvider";
     private static final String FAKE_CATEGORY = "fake_category";
     private static final String FAKE_TITLE = "fake_title";
     private static final String FAKE_SUMMARY = "fake_summary";
@@ -70,7 +72,6 @@ public class ExtraSettingsLoaderTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testLoadPreference_stringResources_shouldLoadResources() {
         Intent intent = new Intent();
         intent.putExtra(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
@@ -79,15 +80,7 @@ public class ExtraSettingsLoaderTest {
         bundle.putString(META_DATA_PREFERENCE_SUMMARY, FAKE_SUMMARY);
         bundle.putString(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem = new ResolveInfo();
-        resolveInfoSystem.system = true;
-        resolveInfoSystem.activityInfo = activityInfo;
-
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
                 intent);
@@ -101,7 +94,6 @@ public class ExtraSettingsLoaderTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testLoadPreference_metadataBundleIsValue() {
         Intent intent = new Intent();
         intent.putExtra(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
@@ -110,18 +102,10 @@ public class ExtraSettingsLoaderTest {
         bundle.putString(META_DATA_PREFERENCE_SUMMARY, FAKE_SUMMARY);
         bundle.putString(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem = new ResolveInfo();
-        resolveInfoSystem.system = true;
-        resolveInfoSystem.activityInfo = activityInfo;
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
 
-        ResolveInfo resolveInfoNonSystem = new ResolveInfo();
-        resolveInfoNonSystem.system = false;
+        ResolveInfo resolveInfoNonSystem = createResolveInfo(bundle, /* isSystem= */ false);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoNonSystem);
 
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
@@ -142,7 +126,6 @@ public class ExtraSettingsLoaderTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testLoadPreference_integerResources_shouldLoadResources() {
         Intent intent = new Intent();
         intent.putExtra(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
@@ -151,18 +134,10 @@ public class ExtraSettingsLoaderTest {
         bundle.putInt(META_DATA_PREFERENCE_SUMMARY, R.string.fake_summary);
         bundle.putInt(META_DATA_PREFERENCE_CATEGORY, R.string.fake_category);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem = new ResolveInfo();
-        resolveInfoSystem.system = true;
-        resolveInfoSystem.activityInfo = activityInfo;
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
 
-        ResolveInfo resolveInfoNonSystem = new ResolveInfo();
-        resolveInfoNonSystem.system = false;
+        ResolveInfo resolveInfoNonSystem = createResolveInfo(bundle, /* isSystem= */ false);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoNonSystem);
 
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
@@ -173,8 +148,7 @@ public class ExtraSettingsLoaderTest {
         for (Preference p : preferenceToBundleMap.keySet()) {
             assertThat(p.getTitle()).isEqualTo(FAKE_TITLE);
             assertThat(p.getSummary()).isEqualTo(FAKE_SUMMARY);
-            assertThat(p.getIcon()).isNotNull();
-
+            assertThat(p.getIcon()).isNull();
         }
     }
 
@@ -186,14 +160,7 @@ public class ExtraSettingsLoaderTest {
         bundle.putString(META_DATA_PREFERENCE_TITLE, FAKE_TITLE);
         bundle.putString(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem = new ResolveInfo();
-        resolveInfoSystem.system = true;
-        resolveInfoSystem.activityInfo = activityInfo;
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
 
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
@@ -207,7 +174,6 @@ public class ExtraSettingsLoaderTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testLoadPreference_noCategory_shouldSetToDeviceCategory() {
         Intent intent = new Intent();
         intent.putExtra(META_DATA_PREFERENCE_CATEGORY, CATEGORY_DEVICE);
@@ -215,14 +181,7 @@ public class ExtraSettingsLoaderTest {
         bundle.putString(META_DATA_PREFERENCE_TITLE, FAKE_TITLE);
         bundle.putString(META_DATA_PREFERENCE_SUMMARY, FAKE_SUMMARY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem = new ResolveInfo();
-        resolveInfoSystem.system = true;
-        resolveInfoSystem.activityInfo = activityInfo;
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
 
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
@@ -244,14 +203,7 @@ public class ExtraSettingsLoaderTest {
         bundle.putString(META_DATA_PREFERENCE_TITLE, FAKE_TITLE);
         bundle.putString(META_DATA_PREFERENCE_SUMMARY, FAKE_SUMMARY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem = new ResolveInfo();
-        resolveInfoSystem.system = true;
-        resolveInfoSystem.activityInfo = activityInfo;
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
 
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
@@ -261,8 +213,7 @@ public class ExtraSettingsLoaderTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
-    public void testLoadPreference_shouldLoadDefaultIcon() {
+    public void testLoadPreference_shouldLoadDefaultNullIcon() {
         Intent intent = new Intent();
         intent.putExtra(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
         Bundle bundle = new Bundle();
@@ -270,15 +221,7 @@ public class ExtraSettingsLoaderTest {
         bundle.putString(META_DATA_PREFERENCE_SUMMARY, FAKE_SUMMARY);
         bundle.putString(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem = new ResolveInfo();
-        resolveInfoSystem.system = true;
-        resolveInfoSystem.activityInfo = activityInfo;
-
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
                 intent);
@@ -286,7 +229,29 @@ public class ExtraSettingsLoaderTest {
         for (Preference p : preferenceToBundleMap.keySet()) {
             assertThat(p.getTitle()).isEqualTo(FAKE_TITLE);
             assertThat(p.getSummary()).isEqualTo(FAKE_SUMMARY);
-            assertThat(p.getIcon()).isNotNull();
+            assertThat(p.getIcon()).isNull();
+        }
+    }
+
+    @Test
+    public void testLoadPreference_uriResources_shouldNotLoadStaticResources() {
+        Intent intent = new Intent();
+        intent.putExtra(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
+        Bundle bundle = new Bundle();
+        bundle.putString(META_DATA_PREFERENCE_TITLE, FAKE_TITLE);
+        bundle.putString(META_DATA_PREFERENCE_SUMMARY, FAKE_SUMMARY);
+        bundle.putString(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
+        bundle.putString(META_DATA_PREFERENCE_ICON_URI, TEST_CONTENT_PROVIDER);
+
+        ResolveInfo resolveInfoSystem = createResolveInfo(bundle, /* isSystem= */ true);
+        getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem);
+        Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
+                intent);
+
+        for (Preference p : preferenceToBundleMap.keySet()) {
+            assertThat(p.getTitle()).isEqualTo(FAKE_TITLE);
+            assertThat(p.getSummary()).isEqualTo(FAKE_SUMMARY);
+            assertThat(p.getIcon()).isNull();
         }
     }
 
@@ -297,17 +262,10 @@ public class ExtraSettingsLoaderTest {
         Bundle bundle = new Bundle();
         bundle.putString(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-
-        ResolveInfo resolveInfoNonSystem1 = new ResolveInfo();
-        resolveInfoNonSystem1.system = false;
-        resolveInfoNonSystem1.activityInfo = activityInfo;
+        ResolveInfo resolveInfoNonSystem1 = createResolveInfo(bundle, /* isSystem= */ false);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoNonSystem1);
 
-        ResolveInfo resolveInfoNonSystem2 = new ResolveInfo();
-        resolveInfoNonSystem2.system = false;
-        resolveInfoNonSystem2.activityInfo = activityInfo;
+        ResolveInfo resolveInfoNonSystem2 = createResolveInfo(bundle, /* isSystem= */ false);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoNonSystem2);
 
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
@@ -317,7 +275,6 @@ public class ExtraSettingsLoaderTest {
     }
 
     @Test
-    @Ignore("TODO: b/353761286 - Fix this test. Disabled for now.")
     public void testLoadPreference_systemApp_returnsPreferences() {
         Intent intent = new Intent();
         intent.putExtra(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
@@ -326,24 +283,13 @@ public class ExtraSettingsLoaderTest {
         bundle.putString(META_DATA_PREFERENCE_SUMMARY, FAKE_SUMMARY);
         bundle.putString(META_DATA_PREFERENCE_CATEGORY, FAKE_CATEGORY);
 
-        ActivityInfo activityInfo = new ActivityInfo();
-        activityInfo.metaData = bundle;
-        activityInfo.packageName = "package_name";
-        activityInfo.name = "class_name";
-
-        ResolveInfo resolveInfoSystem1 = new ResolveInfo();
-        resolveInfoSystem1.system = true;
-        resolveInfoSystem1.activityInfo = activityInfo;
+        ResolveInfo resolveInfoSystem1 = createResolveInfo(bundle, /* isSystem= */ true);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem1);
 
-        ResolveInfo resolveInfoNonSystem1 = new ResolveInfo();
-        resolveInfoNonSystem1.system = false;
-        resolveInfoNonSystem1.activityInfo = activityInfo;
+        ResolveInfo resolveInfoNonSystem1 = createResolveInfo(bundle, /* isSystem= */ false);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoNonSystem1);
 
-        ResolveInfo resolveInfoSystem2 = new ResolveInfo();
-        resolveInfoSystem2.system = true;
-        resolveInfoSystem2.activityInfo = activityInfo;
+        ResolveInfo resolveInfoSystem2 = createResolveInfo(bundle, /* isSystem= */ true);
         getShadowPackageManager().addResolveInfoForIntent(intent, resolveInfoSystem2);
 
         Map<Preference, Bundle> preferenceToBundleMap = mExtraSettingsLoader.loadPreferences(
@@ -359,5 +305,18 @@ public class ExtraSettingsLoaderTest {
 
     private ShadowApplicationPackageManager getShadowPackageManager() {
         return Shadow.extract(mContext.getPackageManager());
+    }
+
+    private ResolveInfo createResolveInfo(Bundle bundle, boolean isSystem) {
+        ActivityInfo activityInfo = new ActivityInfo();
+        activityInfo.metaData = bundle;
+        activityInfo.packageName = "package_name";
+        activityInfo.name = "class_name";
+
+        ResolveInfo resolveInfo = new ResolveInfo();
+        resolveInfo.system = isSystem;
+        resolveInfo.activityInfo = activityInfo;
+
+        return resolveInfo;
     }
 }
