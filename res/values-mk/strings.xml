@@ -595,7 +595,7 @@
     <string name="users_list_title" msgid="770764290290240909">"Корисници"</string>
     <string name="profiles_list_title" msgid="1443396686780460221">"Профили"</string>
     <string name="user_details_admin_title" msgid="3530292857178371891">"Дадени се дозволи на %1$s"</string>
-    <string name="storage_settings_title" msgid="8957054192781341797">"Капацитет"</string>
+    <string name="storage_settings_title" msgid="8957054192781341797">"Простор"</string>
     <string name="storage_music_audio" msgid="7827147379976134040">"Музика и аудио"</string>
     <string name="storage_other_apps" msgid="945509804756782640">"Други апликации"</string>
     <string name="storage_files" msgid="6382081694781340364">"Датотеки"</string>

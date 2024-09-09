@@ -24,6 +24,9 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.RemoteException;
 
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
+
 import com.android.car.settings.setupservice.InitialLockSetupService;
 import com.android.car.settings.testutils.ShadowLockPatternUtils;
 import com.android.car.setupwizardlib.IInitialLockSetupService;
@@ -40,10 +43,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
 import org.robolectric.Shadows;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowContextWrapper;
 
 import java.util.ArrayList;
@@ -53,8 +53,7 @@ import java.util.List;
 /**
  * Tests that the {@link InitialLockSetupService} properly handles connections and lock requests.
  */
-@Config(shadows = ShadowLockPatternUtils.class)
-@RunWith(RobolectricTestRunner.class)
+@RunWith(AndroidJUnit4.class)
 public class InitialLockSetupServiceTest {
 
     private static final String LOCK_PERMISSION = "com.android.car.settings.SET_INITIAL_LOCK";
@@ -68,7 +67,7 @@ public class InitialLockSetupServiceTest {
         mInitialLockSetupService = Robolectric.buildService(InitialLockSetupService.class)
                 .create()
                 .get();
-        mContext = RuntimeEnvironment.application;
+        mContext = InstrumentationRegistry.getInstrumentation().getContext();
         ShadowContextWrapper shadowContextWrapper = Shadows.shadowOf((ContextWrapper) mContext);
         shadowContextWrapper.grantPermissions(LOCK_PERMISSION);
     }

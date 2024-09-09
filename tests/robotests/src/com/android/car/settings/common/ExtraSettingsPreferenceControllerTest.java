@@ -28,6 +28,8 @@ import android.os.Bundle;
 import androidx.lifecycle.Lifecycle;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceGroup;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
 
 import com.android.car.settings.testutils.ShadowApplicationPackageManager;
 
@@ -38,16 +40,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /** Unit test for {@link ExtraSettingsPreferenceController}. */
-@RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowApplicationPackageManager.class})
+@RunWith(AndroidJUnit4.class)
 public class ExtraSettingsPreferenceControllerTest {
 
     private static final Intent FAKE_INTENT = new Intent();
@@ -70,7 +68,7 @@ public class ExtraSettingsPreferenceControllerTest {
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        mContext = RuntimeEnvironment.application;
+        mContext = InstrumentationRegistry.getInstrumentation().getContext();
         mPreferenceGroup = new LogicalPreferenceGroup(mContext);
         mPreferenceGroup.setIntent(FAKE_INTENT);
         mPreferenceControllerHelper = new PreferenceControllerTestHelper<>(mContext,

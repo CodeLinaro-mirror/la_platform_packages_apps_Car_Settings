@@ -27,6 +27,8 @@ import android.net.wifi.SoftApConfiguration;
 import android.text.InputType;
 
 import androidx.lifecycle.Lifecycle;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
 
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestHelper;
@@ -38,12 +40,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 
-@RunWith(RobolectricTestRunner.class)
-@Config(shadows = {ShadowCarWifiManager.class, ShadowLocalBroadcastManager.class})
+@RunWith(AndroidJUnit4.class)
 public class WifiTetherPasswordPreferenceControllerTest {
 
     private static final String TEST_PASSWORD = "TEST_PASSWORD";
@@ -57,7 +55,7 @@ public class WifiTetherPasswordPreferenceControllerTest {
 
     @Before
     public void setup() {
-        mContext = RuntimeEnvironment.application;
+        mContext = InstrumentationRegistry.getInstrumentation().getContext();
         Lifecycle mockLifecycle = mock(Lifecycle.class);
         FragmentController mockFragmentController = mock(FragmentController.class);
         when(mockFragmentController.getSettingsLifecycle()).thenReturn(mockLifecycle);

@@ -752,7 +752,7 @@
     <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{Мора да садржи мање од # знака}one{Мора да садржи мање од # знака}few{Мора да садржи мање од # знака}other{Мора да садржи мање од # знакова}}"</string>
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{Мора да садржи мање од # цифре}one{Мора да садржи мање од # цифре}few{Мора да садржи мање од # цифре}other{Мора да садржи мање од # цифара}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"Растући, опадајући или поновљени низ цифара није дозвољен"</string>
-    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Опције закључавања екрана"</string>
+    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Опције откључавања екрана"</string>
     <string name="credentials_reset" msgid="873900550885788639">"Обриши акредитиве"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"Уклoните све сертификате"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"Желите ли да уклоните сав садржај?"</string>
