@@ -23,6 +23,8 @@ import static org.mockito.Mockito.verify;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.UserManager;
 import android.os.storage.VolumeInfo;
 
 import androidx.lifecycle.Lifecycle;
@@ -66,13 +68,18 @@ public class ApplicationListItemManagerTest {
     ApplicationListItemManager.AppListItemListener mAppListItemListener1;
     @Mock
     ApplicationListItemManager.AppListItemListener mAppListItemListener2;
+    @Mock
+    PackageManager mPackageManager;
+    @Mock
+    UserManager mUserManager;
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
         mContext = InstrumentationRegistry.getInstrumentation().getContext();
         mApplicationListItemManager = new ApplicationListItemManager(mVolumeInfo, mLifecycle,
-                mAppState, MILLISECOND_UPDATE_INTERVAL, MILLISECOND_MAX_APP_LOAD_WAIT_INTERVAL);
+                mAppState, MILLISECOND_UPDATE_INTERVAL, MILLISECOND_MAX_APP_LOAD_WAIT_INTERVAL,
+                mPackageManager, mUserManager);
     }
 
     @Test
