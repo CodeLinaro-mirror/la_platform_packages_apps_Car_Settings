@@ -238,6 +238,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="dimen" name="number_picker_text_size"/>
       <item type="dimen" name="opacity_disabled"/>
       <item type="dimen" name="opacity_enabled"/>
+      <item type="dimen" name="password_content_weight_percent"/>
       <item type="dimen" name="pin_pad_key_height"/>
       <item type="dimen" name="pin_pad_key_margin"/>
       <item type="dimen" name="pin_pad_key_width"/>
@@ -502,6 +503,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="id" name="hotspot_qr_code"/>
       <item type="id" name="hotspot_qr_code_instruction"/>
       <item type="id" name="hotspot_qr_code_password"/>
+      <item type="id" name="icon"/>
       <item type="id" name="icon_frame"/>
       <item type="id" name="key0"/>
       <item type="id" name="key1"/>
@@ -565,6 +567,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="id" name="top_level_menu_container"/>
       <item type="id" name="top_level_recycler_view"/>
       <item type="id" name="up_arrow_container"/>
+      <item type="id" name="vertical_guideline"/>
       <item type="id" name="widget_summary"/>
       <item type="integer" name="audio_route_selector_usage"/>
       <item type="integer" name="audio_route_toast_duration"/>
