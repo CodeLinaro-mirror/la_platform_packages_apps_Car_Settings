@@ -73,7 +73,7 @@ public class CarWifiManager implements WifiPickerTracker.WifiPickerTrackerCallba
         void onWifiStateChanged(int state);
     }
 
-    public CarWifiManager(Context context, Lifecycle lifecycle) {
+    public CarWifiManager(Context context, Lifecycle lifecycle, boolean needsTracker) {
         mContext = context;
         mLifecycle = lifecycle;
         mLifecycle.addObserver(this);
@@ -82,9 +82,11 @@ public class CarWifiManager implements WifiPickerTracker.WifiPickerTrackerCallba
                 + "{" + Integer.toHexString(System.identityHashCode(this)) + "}",
                 android.os.Process.THREAD_PRIORITY_BACKGROUND);
         mWorkerThread.start();
-        mWifiTracker = WifiUtil.createWifiPickerTracker(lifecycle, context,
+        if (needsTracker) {
+            mWifiTracker = WifiUtil.createWifiPickerTracker(lifecycle, context,
                 new Handler(Looper.getMainLooper()), mWorkerThread.getThreadHandler(),
                 /* listener= */ this);
+        }
     }
 
     /**
