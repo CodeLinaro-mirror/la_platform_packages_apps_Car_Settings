@@ -201,6 +201,13 @@ public class CarWifiManager implements WifiPickerTracker.WifiPickerTrackerCallba
         return mWifiManager.is5GHzBandSupported();
     }
 
+    /**
+     * Checks if the chipset supports 6GHz frequency band.
+     */
+    public boolean is6GhzBandSupported() {
+        return mWifiManager.is6GHzBandSupported();
+    }
+
     /** Gets the wifi state from {@link WifiManager}. */
     public int getWifiState() {
         return mWifiManager.getWifiState();
