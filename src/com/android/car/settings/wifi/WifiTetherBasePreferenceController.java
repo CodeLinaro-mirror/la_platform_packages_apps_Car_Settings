@@ -56,7 +56,7 @@ public abstract class WifiTetherBasePreferenceController<V extends Preference> e
     @CallSuper
     protected void onCreateInternal() {
         mCarWifiManager = new CarWifiManager(getContext(),
-                getFragmentController().getSettingsLifecycle());
+                getFragmentController().getSettingsLifecycle(), false);
         // ActionDisabledByAdminDialog will be shown if DISALLOW_CONFIG_WIFI
         // is set by a device admin; otherwise, a default Toast will be shown
         setClickableWhileDisabled(getPreference(), /* clickable= */ true, p ->
