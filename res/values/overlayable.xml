@@ -980,6 +980,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="domain_urls_summary_one"/>
       <item type="string" name="domain_urls_summary_some"/>
       <item type="string" name="driver_assistance_label"/>
+      <item type="string" name="driving_mode_title"/>
       <item type="string" name="edit_user_name_title"/>
       <item type="string" name="eight"/>
       <item type="string" name="empty_placeholder"/>
@@ -1393,6 +1394,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="show_dev_already"/>
       <item type="string" name="show_dev_countdown"/>
       <item type="string" name="show_dev_on"/>
+      <item type="string" name="show_force_rtl_title"/>
       <item type="string" name="show_layout_bounds_title"/>
       <item type="string" name="show_password"/>
       <item type="string" name="show_system"/>
