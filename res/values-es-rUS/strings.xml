@@ -343,6 +343,8 @@
     <string name="unused_apps" msgid="648471933781010395">"Apps que no usas"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# app en desuso}other{# apps en desuso}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Quitar permisos y liberar espacio"</string>
+    <!-- no translation found for aspect_ratio_label (7298654990273812425) -->
+    <skip />
     <string name="storage_type_internal" msgid="8918688427078709570">"%s de almacenamiento interno"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Usa los recursos del sistema para priorizar el rendimiento de la app"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Uso de datos"</string>
@@ -482,7 +484,7 @@
     <string name="legal_information" msgid="1838443759229784762">"Información legal"</string>
     <string name="contributors_title" msgid="7698463793409916113">"Colaboradores"</string>
     <string name="manual" msgid="4819839169843240804">"Manual"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"Etiquetas reglamentarias"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"Etiquetas sobre reglamentaciones"</string>
     <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Manual sobre seguridad y reglamentaciones"</string>
     <string name="copyright_title" msgid="4220237202917417876">"Copyright"</string>
     <string name="license_title" msgid="936705938435249965">"Licencia"</string>
