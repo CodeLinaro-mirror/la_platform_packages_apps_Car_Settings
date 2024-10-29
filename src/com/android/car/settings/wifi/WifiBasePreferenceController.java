@@ -44,7 +44,7 @@ public abstract class WifiBasePreferenceController<V extends Preference> extends
     protected void onCreateInternal() {
         super.onCreateInternal();
         mCarWifiManager = new CarWifiManager(getContext(),
-                getFragmentController().getSettingsLifecycle());
+                getFragmentController().getSettingsLifecycle(), true);
 
         setClickableWhileDisabled(getPreference(), /* clickable= */ true, p -> {
             WifiUtil.runClickableWhileDisabled(getContext(), getFragmentController());

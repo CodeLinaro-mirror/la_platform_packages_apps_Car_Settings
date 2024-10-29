@@ -50,7 +50,7 @@ public class WifiTetherEnableMloPreferenceController extends
             boolean enableMlo = (boolean) methodIsMloEnabled.invoke(softApConfiguration);
             preference.setChecked(enableMlo);
         } catch (Exception e) {
-            Log.e(TAG, "Can't find isMultiLinkOperationEnabled function in SoftApConfiguration");
+            Log.e(TAG, "Can't find isMultiLinkOperationEnabled function in SoftApConfiguration, exception is: " + e);
         }
     }
 
@@ -63,10 +63,16 @@ public class WifiTetherEnableMloPreferenceController extends
                         .setIeee80211beEnabled(enableMlo)
                         .build();
         try {
-            Method methodSetMloEnable = softApConfiguration.getClass().getMethod("setMultiLinkOperationEnabled");
-            methodSetMloEnable.invoke(softApConfiguration, enableMlo);
+            Class<?> builderClass = Class.forName("android.net.wifi.SoftApConfiguration$Builder");
+            Object builderInstance = builderClass.getConstructor(SoftApConfiguration.class)
+                                                 .newInstance(newSoftApConfiguration);
+            Method setMultiLinkOperationEnabledMethod =
+                    builderClass.getMethod("setMultiLinkOperationEnabled", boolean.class);
+            setMultiLinkOperationEnabledMethod.invoke(builderInstance, enableMlo);
+
+            newSoftApConfiguration = (SoftApConfiguration) builderClass.getMethod("build").invoke(builderInstance);
         } catch (Exception e) {
-            Log.e(TAG, "Can't find setMultiLinkOperationEnabled function in SoftApConfiguration");
+            Log.e(TAG, "Can't find setMultiLinkOperationEnabled function in SoftApConfiguration, exception is: " + e);
         }
         return mWifiManager.setSoftApConfiguration(newSoftApConfiguration);
     }
