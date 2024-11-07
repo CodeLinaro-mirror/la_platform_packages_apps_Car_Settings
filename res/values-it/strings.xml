@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"App inutilizzate"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# app inutilizzata}other{# app inutilizzate}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Rimuovi autorizzazioni e libera spazio"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"Formato (sperimentale)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s nella memoria interna"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Utilizza le risorse del sistema per dare la priorità alle prestazioni dell\'app"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Utilizzo dei dati"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Per vedere i tuoi dispositivi, attiva il Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Per accoppiare un dispositivo, apri le impostazioni Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Tema"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"Imposta modalità di guida"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"Mostra limiti di layout"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"Forza direzione layout RTL"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Amministratore di sistema di infotainment"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"App attivate"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"App disattivate"</string>

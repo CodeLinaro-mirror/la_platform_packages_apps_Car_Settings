@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"使用されていないアプリ"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# 個の使用していないアプリ}other{# 個の使用していないアプリ}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"権限を削除して空き容量を増やす"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"アスペクト比（試験運用版）"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s（内部ストレージ）"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"アプリのパフォーマンスに優先的にシステム リソースを使用します"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"データ使用量"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"デバイスを表示するには、Bluetooth を ON にしてください"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"デバイスをペア設定するには、Bluetooth の設定を開いてください"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"テーマ"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"運転モードを設定する"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"レイアウト境界を表示"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"RTL レイアウト方向を使用"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"インフォテインメント システム管理"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"有効なアプリ"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"無効なアプリ"</string>

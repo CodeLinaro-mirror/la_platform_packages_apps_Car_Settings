@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"Neuporabljene aplikacije"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# neuporabljena aplikacija}one{# neuporabljena aplikacija}two{# neuporabljeni aplikaciji}few{# neuporabljene aplikacije}other{# neuporabljenih aplikacij}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Odstrani dovoljenja in sprosti prostor"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"Razmerje stranic (preizkusno)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s v notranji shrambi"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Uporablja sistemska sredstva zaradi prednosti učinkovitosti delovanja aplikacije"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Prenes. količina podatkov"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Če si želite ogledati naprave, vklopite Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Če želite seznaniti napravo, odprite nastavitve za Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Tema"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"Nastavitev vožnje"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"Prikaži meje postavitve"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"Vsili od desne proti levi"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Skrbnik informativno-razvedrilnega sistema"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aktivirane aplikacije"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Deaktivirane aplikacije"</string>

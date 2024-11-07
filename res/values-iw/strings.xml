@@ -328,7 +328,7 @@
     <string name="prioritize_app_performance_dialog_action_off" msgid="2813324718753199319">"לא תודה"</string>
     <string name="disable_text" msgid="4358165448648990820">"השבת"</string>
     <string name="enable_text" msgid="1794971777861881238">"הפעלה"</string>
-    <string name="uninstall_text" msgid="277907956072833012">"הסרת התקנה"</string>
+    <string name="uninstall_text" msgid="277907956072833012">"הסרה"</string>
     <string name="app_disable_dialog_text" msgid="7731155411006654025">"אם האפליקציה הזו תושבת, ייתכן ש-Android ואפליקציות אחרות לא יפעלו כצפוי."</string>
     <string name="app_disable_dialog_positive" msgid="4448684722791563349">"השבתת האפליקציה"</string>
     <string name="not_installed" msgid="4163454337822508007">"לא מותקנת בפרופיל הזה"</string>
@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"אפליקציות שמזמן לא השתמשת בהן"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{אפליקציה אחת שמזמן לא השתמשת בה}one{# אפליקציות שמזמן לא השתמשת בהן}two{# אפליקציות שמזמן לא השתמשת בהן}other{# אפליקציות שמזמן לא השתמשת בהן}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"הסרת הרשאות ופינוי נפח אחסון"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"יחס גובה-רוחב (ניסיוני)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s בשטח אחסון פנימי"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"שימוש במשאבי המערכת תוך מתן עדיפות לביצועי אפליקציות"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"שימוש בחבילת הגלישה"</string>
@@ -534,7 +535,7 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"יש להמתין…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"תאריך ושעה"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"הגדרת תאריך, שעה, אזור זמן ופורמטים"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"הגדרת השעה באופן אוטומטי"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"הגדרת הזמן באופן אוטומטי"</string>
     <string name="zone_auto" msgid="4174874778459184605">"הגדרת אזור הזמן באופן אוטומטי"</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"פורמט 24 שעות"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"פורמט 24 שעות"</string>
@@ -691,7 +692,7 @@
     <string name="set_screen_lock" msgid="5239317292691332780">"הגדרת מסך נעילה"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"בחירת קוד גישה"</string>
     <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"בחירת סיסמה"</string>
-    <string name="current_screen_lock" msgid="637651611145979587">"נעילת המסך הנוכחית"</string>
+    <string name="current_screen_lock" msgid="637651611145979587">"השיטה הנוכחית לביטול הנעילה"</string>
     <string name="choose_lock_pattern_message" msgid="6242765203541309524">"מטעמי אבטחה, יש להגדיר קו ביטול נעילה"</string>
     <string name="lockpattern_retry_button_text" msgid="4655398824001857843">"ניקוי"</string>
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"ביטול"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"כדי להציג את המכשירים שלך, צריך להפעיל את Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"כדי להתאים מכשיר, צריך לפתוח את הגדרות Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"עיצוב"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"הגדרת נסיעה"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"הצגת גבולות הפריסה"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"קביעת הפריסה מימין לשמאל"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"המנהל של מערכת המידע והבידור"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"אפליקציות מופעלות"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"אפליקציות מושבתות"</string>

@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"Programu zisizotumika"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{Programu # isiyotumika}other{Programu # zisizotumika}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Ondoa ruhusa na upate nafasi"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"Uwiano (Wa Majaribio)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s katika hifadhi ya mfumo"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Hutumia nyenzo za mfumo kuweka kipaumbele cha utendaji wa programu"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Matumizi ya data"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Ili uone vifaa vyako, washa Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Ili uoanishe kifaa, fungua mipangilio ya Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Mandhari"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"Washa hali ya kuendesha gari"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"Onyesha mipaka ya mpangilio"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"Lazimisha uelekezaji wa muundo wa RTL"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Msimamizi wa mfumo wa burudani na habari"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Programu zilizowashwa"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Programu zilizozimwa"</string>

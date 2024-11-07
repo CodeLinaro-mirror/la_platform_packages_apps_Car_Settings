@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"ഉപയോഗിക്കാത്ത ആപ്പുകൾ"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{ഉപയോഗിക്കാത്ത # ആപ്പ്}other{ഉപയോഗിക്കാത്ത # ആപ്പുകൾ}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"അനുമതികൾ നീക്കം ചെയ്‌ത് ഇടം സൃഷ്‌ടിക്കുക"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"വീക്ഷണ അനുപാതം(പരീക്ഷണാത്മകം)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"ഉള്ളിലെ മെമ്മറിയിൽ %s"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ആപ്പിന്റെ പ്രകടനത്തിന് മുൻഗണന നൽകാൻ സിസ്‌റ്റം വിഭവങ്ങൾ ഉപയോഗിക്കുന്നു"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ഡാറ്റ ഉപയോഗം"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"നിങ്ങളുടെ ഉപകരണങ്ങൾ കാണാൻ Bluetooth ഓണാക്കുക"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"ഒരു ഉപകരണം ജോടിയാക്കാൻ Bluetooth ക്രമീകരണം തുറക്കുക"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"തീം"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"ഡ്രൈവ് മോഡ് സജ്ജീകരിക്കുക"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"ലേഔട്ട് ബൗണ്ടുകൾ കാണിക്കുക"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"RTL ലേഔട്ട് ഡയറക്ഷൻ നിർബന്ധമാക്കുക"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"ഇൻഫോറ്റേയിൻമെന്റ് സിസ്‌റ്റം അഡ്‌മിൻ"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"സജീവമാക്കിയ ആപ്പുകൾ"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"നിഷ്ക്രിയമാക്കിയ ആപ്പുകൾ"</string>

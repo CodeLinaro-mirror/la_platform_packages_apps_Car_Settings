@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"इस्तेमाल न किए जाने वाले ऐप्लिकेशन"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{इस्तेमाल न किया जाने वाला # ऐप्लिकेशन}one{इस्तेमाल न किया जाने वाला # ऐप्लिकेशन}other{इस्तेमाल न किए जाने वाले # ऐप्लिकेशन}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"अनुमतियां हटाएं और स्टोरेज खाली करें"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"आसपेक्ट रेशियो (एक्सपेरिमेंटल)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"डिवाइस की मेमोरी में %s है"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ऐप्लिकेशन की परफ़ॉर्मेंस को प्राथमिकता देने के लिए, सिस्टम के संसाधनों का इस्तेमाल करें"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"डेटा खर्च"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"अपने डिवाइसों को देखने के लिए, ब्लूटूथ चालू करें"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"किसी डिवाइस को दूसरे डिवाइस से जोड़ने के लिए, ब्लूटूथ सेटिंग खोलें"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"थीम"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"ड्राइविंग मोड सेट करें"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"लेआउट बाउंड दिखाएं"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"लेआउट की दिशा दाएं से बाएं रखें"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"सूचना और मनोरंजन की सुविधा देने वाले डिवाइस का एडमिन"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"वे ऐप्लिकेशन जो चालू हैं"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"वे ऐप्लिकेशन जो चालू नहीं हैं"</string>

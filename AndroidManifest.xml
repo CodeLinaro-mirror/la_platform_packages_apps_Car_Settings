@@ -75,6 +75,7 @@
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
     <uses-permission android:name="android.car.permission.CAR_CONTROL_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.car.permission.CAR_CONTROL_AUDIO_VOLUME"/>
+    <uses-permission android:name="android.car.permission.CONTROL_APP_BLOCKING"/>
     <uses-permission android:name="android.car.permission.READ_PERSIST_TETHERING_SETTINGS"/>
 
     <permission android:name="com.android.car.settings.SET_INITIAL_LOCK"
@@ -421,6 +422,10 @@
             android:name=".common.CarSettingActivities$LanguagesAndInputActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.settings.REQUEST_SET_AUTOFILL_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <meta-data android:name="com.android.car.settings.TOP_LEVEL_HEADER_KEY"
                        android:value="@string/hk_LanguagesAndInputActivity" />
             <meta-data android:name="distractionOptimized" android:value="true"/>

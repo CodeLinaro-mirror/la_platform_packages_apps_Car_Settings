@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"غیر مستعمل ایپس"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# غیر مستعمل ایپ}other{# غیر مستعمل ایپس}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"اجازتوں کو ہٹائیں اور جگہ خالی کریں"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"تناسبی شرح (تجرباتی)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"داخلی اسٹوریج میں %s"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ایپ کی کارکردگی کو ترجیح دینے کے لیے سسٹم کے وسائل استعمال کرتا ہے"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ڈیٹا کا استعمال"</string>
@@ -711,7 +712,7 @@
     <string name="remove_screen_lock_message" msgid="6675850371585564965">"اس سے کسی کو بھی آپ کے اکاؤنٹ تک رسائی کی اجازت ہوگی"</string>
     <string name="security_profile_lock_title" msgid="3082523481292617350">"پروفائل قفل"</string>
     <string name="security_unlock_profile_summary" msgid="6742592419759865631">"خود کار غیر مقفل کرنا سیٹ اپ کریں"</string>
-    <string name="lock_settings_enter_pin" msgid="1669172111244633904">"اپنا PIN درج کریں"</string>
+    <string name="lock_settings_enter_pin" msgid="1669172111244633904">"‫اپنا PIN درج کریں"</string>
     <string name="lock_settings_enter_password" msgid="2636669926649496367">"اپنا پاس ورڈ درج کریں"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"سیکیورٹی کیلئے PIN سیٹ کریں"</string>
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"اپنا PIN دوبارہ درج کریں"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"اپنے آلات دیکھنے کے لیے بلوٹوتھ آن کریں"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"آلے کا جوڑا بنانے کے لیے بلوٹوتھ کی ترتیبات کھولیں"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"تھیم"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"ڈرائیونگ سیٹ کریں"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"لے آؤٹ کی حدیں دکھائیں"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"‫RTL لے آؤٹ کی سمت کو زبردستی نافذ کریں"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"معلوماتی انٹرٹینمنٹ سسٹم کا منتظم"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"فعال کردہ ایپس"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"غیر فعال کردہ ایپس"</string>

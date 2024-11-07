@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"ਅਣਵਰਤੀਆਂ ਐਪਾਂ"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# ਅਣਵਰਤੀ ਐਪ}one{# ਅਣਵਰਤੀ ਐਪ}other{# ਅਣਵਰਤੀਆਂ ਐਪਾਂ}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"ਇਜਾਜ਼ਤਾਂ ਹਟਾਓ ਅਤੇ ਜਗ੍ਹਾ ਖਾਲੀ ਕਰੋ"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"ਆਕਾਰ ਅਨੁਪਾਤ(ਪ੍ਰਯੋਗਮਈ)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"ਅੰਦਰੂਨੀ ਸਟੋਰੇਜ ਵਿੱਚ %s"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ਐਪ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ ਨੂੰ ਤਰਜੀਹ ਦੇਣ ਲਈ ਸਿਸਟਮ ਦੇ ਸਰੋਤਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ਡਾਟਾ ਵਰਤੋਂ"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"ਆਪਣੇ ਡੀਵਾਈਸ ਦੇਖਣ ਲਈ, ਬਲੂਟੁੱਥ ਚਾਲੂ ਕਰੋ"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"ਕਿਸੇ ਡੀਵਾਈਸ ਨੂੰ ਜੋੜਾਬੱਧ ਕਰਨ ਲਈ, ਬਲੂਟੁੱਥ ਸੈਟਿੰਗਾਂ ਖੋਲ੍ਹੋ"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"ਥੀਮ"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"ਡਰਾਈਵ ਮੋਡ ਸੈੱਟ ਕਰੋ"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"ਖਾਕਾ ਸੀਮਾਵਾਂ ਦਿਖਾਓ"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"ਸੱਜੇ ਤੋਂ ਖੱਬੇ ਵਾਲਾ ਖਾਕਾ ਲਾਗੂ ਕਰੋ"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"ਇੰਫ਼ੋਟੇਨਮੈਂਟ ਸਿਸਟਮ ਪ੍ਰਸ਼ਾਸਕ"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"ਕਿਰਿਆਸ਼ੀਲ ਕੀਤੀਆਂ ਐਪਾਂ"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"ਅਕਿਰਿਆਸ਼ੀਲ ਕੀਤੀਆਂ ਐਪਾਂ"</string>

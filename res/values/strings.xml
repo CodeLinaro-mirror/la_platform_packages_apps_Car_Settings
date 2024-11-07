@@ -819,6 +819,8 @@
     </string>
     <!-- Label of a switch preference that controls whether the system will remove the permissions and free up space when the app has not been used for months [CHAR LIMIT=40]-->
     <string name="unused_apps_switch">Remove permissions and free up space</string>
+    <!-- Label for changing an application's aspect ratio setting. This is an experimental setting [CHAR LIMIT=40] -->
+    <string name="aspect_ratio_label">Aspect ratio(Experimental)</string>
     <!-- Application's internal storage size preference summary. [CHAR LIMIT=40] -->
     <string name="storage_type_internal">%s in internal storage</string>
     <!-- Application's prioritize app performance setting summary. [CHAR LIMIT=100] -->
@@ -1981,6 +1983,13 @@
     <string name="qc_bluetooth_on_no_devices_info">To pair a device, open Bluetooth settings</string>
     <!-- UI Mode quick control, control name to change display UI mode (auto/day/night) [CHAR LIMIT=40] -->
     <string name="qc_ui_mode_title">Theme</string>
+    <!-- A quick control entry to control whether to turn on the drive mode [CHAR LIMIT=40] -->
+    <string name="driving_mode_title">Set driving</string>
+    <!-- A quick control entry to control whether to show the layout bounds [CHAR LIMIT=40] -->
+    <string name="show_layout_bounds_title">Show layout bounds</string>
+    <!-- A quick control entry to control whether to force show the RTL layout direction [CHAR LIMIT=40] -->
+    <string name="show_force_rtl_title">Force RTL layout direction</string>
+
 
     <!-- Device Policy Management --><skip/>
     <!-- Device admin add activity title -->

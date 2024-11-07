@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"न वापरलेली अ‍ॅप्स"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# न वापरलेले ॲप}other{# न वापरेलेली ॲप्स}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"परवानग्या काढून टाका आणि जागा मोकळी करा"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"आस्पेक्ट रेशो(प्रायोगिक)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s अंतर्गत स्टोरेजमध्ये"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"अ‍ॅपच्या परफॉर्मन्सला प्राधान्य देण्यासाठी सिस्टीमचे स्रोत वापरते"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"डेटा वापर"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"तुमची डिव्हाइस पाहण्यासाठी, ब्लूटूथ सुरू करा"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"डिव्हाइस पेअर करण्यासाठी, ब्लूटूथ सेटिंग्ज उघडा"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"थीम"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"ड्रायव्हिंग सेट करा"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"लेआउट मर्यादा दाखवा"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"RTL लेआउट दिशानिर्देशाची सक्ती करा"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"इंफोटेनमेंट सिस्टीम ॲडमिन"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"ॲक्टिव्हेट केलेली ॲप्स"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"डीॲक्टिव्हेट केलेली ॲप्स"</string>

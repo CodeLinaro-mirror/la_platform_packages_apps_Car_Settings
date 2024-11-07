@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"Apps que no usas"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# app en desuso}other{# apps en desuso}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Quitar permisos y liberar espacio"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"Relación de aspecto (experimental)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s de almacenamiento interno"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Usa los recursos del sistema para priorizar el rendimiento de la app"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Uso de datos"</string>
@@ -482,8 +483,8 @@
     <string name="legal_information" msgid="1838443759229784762">"Información legal"</string>
     <string name="contributors_title" msgid="7698463793409916113">"Colaboradores"</string>
     <string name="manual" msgid="4819839169843240804">"Manual"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"Etiquetas reglamentarias"</string>
-    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Manual sobre reglamentación y seguridad"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"Etiquetas sobre reglamentaciones"</string>
+    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Manual sobre seguridad y reglamentaciones"</string>
     <string name="copyright_title" msgid="4220237202917417876">"Copyright"</string>
     <string name="license_title" msgid="936705938435249965">"Licencia"</string>
     <string name="terms_title" msgid="5201471373602628765">"Términos y condiciones"</string>
@@ -499,7 +500,7 @@
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Cargando…"</string>
     <string name="show_dev_countdown" msgid="7416958516942072383">"{count,plural, =1{Ahora estás a # paso de convertirte en desarrollador.}other{Ahora estás a # pasos de convertirte en desarrollador.}}"</string>
     <string name="show_dev_on" msgid="5339077400040834808">"¡Ya eres desarrollador!"</string>
-    <string name="show_dev_already" msgid="1678087328973865736">"No es necesario, ya eres desarrollador."</string>
+    <string name="show_dev_already" msgid="1678087328973865736">"No es necesario, ya se activaron las opciones para desarrolladores."</string>
     <string name="developer_options_settings" msgid="1530739225109118480">"Opciones para desarrolladores"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"Opciones de restablecimiento"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"Restablecer red, apps o dispositivo"</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Para ver tus dispositivos, activa Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Para vincular un dispositivo, abre la configuración de Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Tema"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"Establecer en automóvil"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"Mostrar límites de diseño"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"Forzar diseño de derecha a izquierda"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administrador del sistema de infoentretenimiento"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Apps activadas"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Apps desactivadas"</string>

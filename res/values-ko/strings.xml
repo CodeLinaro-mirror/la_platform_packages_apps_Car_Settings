@@ -343,6 +343,7 @@
     <string name="unused_apps" msgid="648471933781010395">"사용하지 않는 앱"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{사용하지 않는 앱 #개}other{사용하지 않는 앱 #개}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"권한을 삭제하고 여유 공간 확보"</string>
+    <string name="aspect_ratio_label" msgid="7298654990273812425">"가로세로 비율(실험적 기능)"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"내부 저장소의 %s"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"시스템 리소스를 사용하여 앱 성능 우선순위를 지정합니다."</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"데이터 사용량"</string>
@@ -501,7 +502,7 @@
     <string name="show_dev_on" msgid="5339077400040834808">"개발자가 되셨습니다."</string>
     <string name="show_dev_already" msgid="1678087328973865736">"이미 개발자입니다."</string>
     <string name="developer_options_settings" msgid="1530739225109118480">"개발자 옵션"</string>
-    <string name="reset_options_title" msgid="4388902952861833420">"옵션 재설정"</string>
+    <string name="reset_options_title" msgid="4388902952861833420">"초기화 옵션"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"네트워크, 앱, 기기 재설정"</string>
     <string name="reset_network_title" msgid="3077846909739832734">"Wi‑Fi 및 블루투스 재설정"</string>
     <string name="reset_network_desc" msgid="3332203703135823033">"Wi‑Fi 및 블루투스 설정이 재설정되며 이전에 연결됐던 내역은 삭제됩니다."</string>
@@ -797,6 +798,9 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"기기를 표시하려면 블루투스를 사용 설정하세요."</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"기기를 페어링하려면 블루투스 설정을 여세요."</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"테마"</string>
+    <string name="driving_mode_title" msgid="8103270030335833998">"운전 모드 설정"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"레이아웃 범위 표시"</string>
+    <string name="show_force_rtl_title" msgid="8240732919603115320">"RTL 레이아웃 방향 강제 적용"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"인포테인먼트 시스템 관리자"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"활성화된 앱"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"비활성화된 앱"</string>
