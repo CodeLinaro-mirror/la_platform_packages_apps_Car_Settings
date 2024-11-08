@@ -218,10 +218,10 @@
     <string name="uwb_toggle_summary" msgid="2206513296288659105">"इससे आपकी कार को यूडब्ल्यूबी डिवाइसों की जगह की जानकारी पता लगाने में मदद मिलती है"</string>
     <string name="bluetooth_notif_ticker" msgid="7192577740198156792">"ब्लूटूथ के ज़रिए जोड़ने का अनुरोध किया गया"</string>
     <string name="bluetooth_device_context_pair_connect" msgid="3138105800372470422">"दूसरे डिवाइस से जोड़ें और कनेक्‍ट करें"</string>
-    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ब्‍लूटूथ के ज़रिए जोड़ने वाला कोड"</string>
+    <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"ब्‍लूटूथ के ज़रिए जोड़ने के लिए कोड"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"पिन में अक्षर या चिह्न शामिल होते हैं"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"दूसरे डिवाइस से जोड़ने वाला कोड लिखें और फिर Return या Enter दबाएं"</string>
-    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"क्या आप <xliff:g id="DEVICE_NAME">%1$s</xliff:g> से जोड़ना चाहते हैं?"</string>
+    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"क्या आपको <xliff:g id="DEVICE_NAME">%1$s</xliff:g> से जोड़ना है?"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"<xliff:g id="DEVICE_NAME">%1$s</xliff:g> को अपने संपर्क या कॉल इतिहास का इस्तेमाल करने की मंज़ूरी दें"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"आपको यह पि‍न दूसरे डिवाइस पर भी डालना होगा."</string>
     <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"आपको यह पासवर्ड दूसरे डिवाइस पर भी डालना होगा."</string>
@@ -238,7 +238,7 @@
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"सुझाया गया"</string>
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"सभी भाषाएं"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"कीबोर्ड"</string>
-    <string name="manage_keyboard" msgid="4045394766282200132">"कीबोर्ड प्रबंधित करें"</string>
+    <string name="manage_keyboard" msgid="4045394766282200132">"कीबोर्ड मैनेज करें"</string>
     <string name="text_to_speech_settings" msgid="811985746199507343">"\'लिख को बोली में बदलना\' आउटपुट"</string>
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"पसंदीदा इंजन"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"मौजूदा इंजन"</string>
@@ -369,7 +369,7 @@
     <string name="assist_access_screenshot_title" msgid="2855956879971465044">"स्क्रीनशॉट का इस्तेमाल करना"</string>
     <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"सहायक ऐप्लिकेशन को स्क्रीन की इमेज ऐक्सेस करने दें"</string>
     <string name="voice_input_settings_title" msgid="3238707827815647526">"बोलकर फ़ोन को दिए जाने वाले निर्देश"</string>
-    <string name="autofill_settings_title" msgid="1188754272680049972">"अपने आप भरने की सेवा"</string>
+    <string name="autofill_settings_title" msgid="1188754272680049972">"ऑटोमैटिक भरने की सुविधा"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"कोई नहीं"</string>
     <string name="default_app_selected_app" msgid="5289396663745484773">"चुना हुआ ऐप्लिकेशन"</string>
     <string name="assistant_security_warning" msgid="1844807956967428012">"असिस्टेंट आपके सिस्टम पर इस्तेमाल किए जा रहे ऐप्लिकेशन की जानकारी पढ़ सकेगी. इसमें आपकी स्क्रीन पर दिखाई देने वाली या ऐप्लिकेशन में से ऐक्सेस करने लायक जानकारी शामिल होगी."</string>

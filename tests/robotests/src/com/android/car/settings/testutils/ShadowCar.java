@@ -16,114 +16,27 @@
 
 package com.android.car.settings.testutils;
 
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.mock;
-
+import static org.robolectric.shadow.api.Shadow.newInstanceOf;
 import android.car.Car;
-import android.car.Car.CarServiceLifecycleListener;
-import android.car.CarNotConnectedException;
 import android.content.Context;
-import android.content.ServiceConnection;
 import android.os.Handler;
-
-import org.mockito.stubbing.Answer;
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
-import org.robolectric.annotation.Resetter;
 
-/**
- * Shadow class for {@link Car}. Components in car support library expects
- * this class to be available at run time.
- */
+/** Robolectric shadow class for {@link Car} */
 @Implements(Car.class)
 public class ShadowCar {
-
-    private static Car sMockCar = mock(Car.class);
-    private static boolean sIsConnected;
-    private static String sServiceName;
-    private static Object sCarManager;
-
-    /**
-     * Returns a mocked version of a {@link Car} object.
-     */
     @Implementation
-    protected static Car createCar(Context context, ServiceConnection serviceConnection) {
-        if (serviceConnection != null) {
-            doAnswer((Answer<Void>) invocation -> {
-                serviceConnection.onServiceConnected(null, null);
-                return null;
-            }).when(sMockCar).connect();
-            doAnswer((Answer<Void>) invocation -> {
-                serviceConnection.onServiceDisconnected(null);
-                return null;
-            }).when(sMockCar).disconnect();
-        }
-        doReturn(sIsConnected).when(sMockCar).isConnected();
-        if (sServiceName != null) {
-            try {
-                doReturn(sCarManager).when(sMockCar).getCarManager(sServiceName);
-            } catch (CarNotConnectedException e) {
-                // do nothing, have to do this because compiler doesn't understand mock can't throw
-                // exception.
-            }
-        }
-        return sMockCar;
+    public static Car createCar(Context context) {
+        return newInstanceOf(Car.class);
     }
 
-    /**
-     * Returns a mocked version of a {@link Car} object.
-     */
     @Implementation
-    public static Car createCar(Context context,
-                                Handler handler,
-                                long waitTimeoutMs,
-                                CarServiceLifecycleListener statusChangeListener) {
-        return createCar(context, null);
-    }
-
-    /**
-     * Returns a mocked version of a {@link Car} object.
-     */
-    @Implementation
-    protected static Car createCar(Context context) {
-        doReturn(sIsConnected).when(sMockCar).isConnected();
-        if (sServiceName != null) {
-            try {
-                doReturn(sCarManager).when(sMockCar).getCarManager(sServiceName);
-            } catch (CarNotConnectedException e) {
-                // do nothing, have to do this because compiler doesn't understand mock can't throw
-                // exception.
-            }
-        }
-        return sMockCar;
-    }
-
-    /**
-     * Sets the manager returned by {@link Car#getCarManager(String)}.
-     *
-     * @param serviceName the name for the service request that should return this car manager.
-     * @param carManager  the object returned by a call with this service.
-     */
-    public static void setCarManager(String serviceName, Object carManager) {
-        sServiceName = serviceName;
-        sCarManager = carManager;
-        try {
-            doReturn(carManager).when(sMockCar).getCarManager(serviceName);
-        } catch (CarNotConnectedException e) {
-            // do nothing, have to do this because compiler doesn't understand mock can't throw e.
-        }
-    }
-
-    /**
-     * Resets the shadow state, note this will not remove stubbed behavior on references to older
-     * calls to {@link #createCar(Context, ServiceConnection)}.
-     */
-    @Resetter
-    public static void reset() {
-        sMockCar = mock(Car.class);
-        sServiceName = null;
-        sCarManager = null;
-        sIsConnected = false;
+    public static Car createCar(
+            Context context,
+            Handler handler,
+            long waitTimeoutMs,
+            Car.CarServiceLifecycleListener statusChangeListener) {
+        return newInstanceOf(Car.class);
     }
 }
