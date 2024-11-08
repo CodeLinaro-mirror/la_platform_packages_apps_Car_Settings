@@ -90,6 +90,6 @@ public class DebugForceRTLRow extends SettingsQCItem {
 
     @Override
     Class getBackgroundWorkerClass() {
-        return DebugForceRTLRowWorker.class;
+        return DefaultQCBackgroundWorker.class;
     }
 }

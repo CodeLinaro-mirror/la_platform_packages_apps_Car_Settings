@@ -77,6 +77,6 @@ public class DebugLayoutBoundsRow extends SettingsQCItem {
 
     @Override
     Class getBackgroundWorkerClass() {
-        return DebugLayoutBoundsRowWorker.class;
+        return DefaultQCBackgroundWorker.class;
     }
 }

@@ -1395,6 +1395,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="sharing_remote_bugreport_dialog_message"/>
       <item type="string" name="show_captions_toggle_title"/>
       <item type="string" name="show_dev_already"/>
+      <item type="string" name="show_customization_overlay_title"/>
       <item type="string" name="show_dev_countdown"/>
       <item type="string" name="show_dev_on"/>
       <item type="string" name="show_force_rtl_title"/>
