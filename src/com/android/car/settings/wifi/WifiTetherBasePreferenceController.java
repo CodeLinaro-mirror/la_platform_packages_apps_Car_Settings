@@ -94,9 +94,12 @@ public abstract class WifiTetherBasePreferenceController<V extends Preference> e
         return mCarWifiManager.getSoftApConfig();
     }
 
-    protected void setCarSoftApConfig(SoftApConfiguration configuration) {
-        mCarWifiManager.setSoftApConfig(configuration);
-        requestWifiTetherRestart();
+    protected void setCarSoftApConfig(SoftApConfiguration newConfig) {
+        SoftApConfiguration oldConfig = mCarWifiManager.getSoftApConfig();
+        if (!oldConfig.equals(newConfig)) {
+            mCarWifiManager.setSoftApConfig(newConfig);
+            requestWifiTetherRestart();
+        }
     }
 
     protected CarWifiManager getCarWifiManager() {
