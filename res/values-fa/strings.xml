@@ -208,7 +208,7 @@
     <string name="bluetooth_ask_discovery_no_name" msgid="164397600370102369">"برنامه‌ای می‌خواهد سیستم صوتی شما را برای سایر دستگاه‌های بلوتوث به‌مدت <xliff:g id="TIMEOUT">%1$d</xliff:g> ثانیه قابل‌مشاهده کند."</string>
     <string name="bluetooth_ask_enablement_and_discovery" msgid="5487502083015708674">"<xliff:g id="APP_NAME">%1$s</xliff:g> می‌خواهد بلوتوث را روشن کند و سیستم صوتی شما را برای سایر دستگاه‌ها به‌مدت <xliff:g id="TIMEOUT">%2$d</xliff:g> ثانیه قابل‌مشاهده کند."</string>
     <string name="bluetooth_ask_enablement_and_discovery_no_name" msgid="907153034209916282">"برنامه‌ای می‌خواهد بلوتوث را روشن کند و سیستم صوتی شما را برای سایر دستگاه‌ها به مدت <xliff:g id="TIMEOUT">%1$d</xliff:g> ثانیه قابل‌مشاهده کند."</string>
-    <string name="bluetooth_state_switch_summary" msgid="171929910916432266">"برای دستگاه‌های دیگر به‌صورت %1$s قابل مشاهده است"</string>
+    <string name="bluetooth_state_switch_summary" msgid="171929910916432266">"برای دستگاه‌های دیگر با اسم %1$s قابل مشاهده است"</string>
     <string name="bluetooth_my_devices" msgid="6352010339607939612">"دستگاه‌های من"</string>
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"قبلاً متصل‌شده"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s متصل شد"</string>
@@ -590,7 +590,7 @@
     <string name="current_user_name" msgid="3813671533249316823">"شما (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"نام"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"تنظیم نشده"</string>
-    <string name="edit_user_name_title" msgid="1118500707473139995">"ویرایش محل نمایه"</string>
+    <string name="edit_user_name_title" msgid="1118500707473139995">"ویرایش نام نمایه"</string>
     <string name="name_input_blank_error" msgid="2088850865880984123">"این فیلد نمی‌تواند خالی باشد."</string>
     <string name="name_input_invalid_error" msgid="4355625213535164704">"نام نمایه واردشده نامعتبر است."</string>
     <string name="users_list_title" msgid="770764290290240909">"کاربران"</string>
