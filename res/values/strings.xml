@@ -2266,4 +2266,8 @@
     <string name="connectivity_inactive_action_text">See plans</string>
 
     <string name="audio_route_dialog_neutral_button_text">Done</string>
+
+    <!-- Toast message to let the user know that there is no supported function for this intent. [CHAR LIMIT=80]
+    TODO(b/371591484): to update this string when UX finalizes it.-->
+    <string name="unsupported_intents_toast_text">Your vehicle does not support this feature</string>
 </resources>
