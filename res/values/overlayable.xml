@@ -315,6 +315,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="dimen" name="user_disclaimer_action_button_text_size"/>
       <item type="dimen" name="user_disclaimer_action_button_top_margin"/>
       <item type="dimen" name="user_disclaimer_text_size"/>
+      <item type="dimen" name="wifi_share_page_margin"/>
       <item type="drawable" name="bluetooth_bonded_device_rotary_background"/>
       <item type="drawable" name="brightness_seekbar_background"/>
       <item type="drawable" name="brightness_seekbar_track"/>
@@ -406,6 +407,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="drawable" name="ic_qc_wifi_level_2"/>
       <item type="drawable" name="ic_qc_wifi_level_3"/>
       <item type="drawable" name="ic_qc_wifi_level_4"/>
+      <item type="drawable" name="ic_qr"/>
       <item type="drawable" name="ic_remove_circle"/>
       <item type="drawable" name="ic_restore"/>
       <item type="drawable" name="ic_restricted_wifi_signal_0"/>
@@ -590,6 +592,9 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="id" name="up_arrow_container"/>
       <item type="id" name="vertical_guideline"/>
       <item type="id" name="widget_summary"/>
+      <item type="id" name="wifi_share_instruction"/>
+      <item type="id" name="wifi_share_qr_code"/>
+      <item type="id" name="wifi_share_qr_code_container"/>
       <item type="integer" name="audio_route_selector_usage"/>
       <item type="integer" name="audio_route_toast_duration"/>
       <item type="integer" name="button_max_ems"/>
@@ -661,6 +666,7 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="layout" name="usage_bytes_threshold_picker"/>
       <item type="layout" name="usage_cycle_reset_day_of_month_picker"/>
       <item type="layout" name="usage_indicator_preference"/>
+      <item type="layout" name="wifi_detail_share_fragment"/>
       <item type="layout" name="wifi_tether_qr_code_preference"/>
       <item type="plurals" name="default_camera_app_title"/>
       <item type="plurals" name="default_email_app_title"/>
@@ -1623,6 +1629,9 @@ REGENERATE USING packages/apps/Car/libs/tools/rro/generate-overlayable.py
       <item type="string" name="wifi_connecting"/>
       <item type="string" name="wifi_control_description"/>
       <item type="string" name="wifi_control_title"/>
+      <item type="string" name="wifi_detail_share"/>
+      <item type="string" name="wifi_detail_share_description"/>
+      <item type="string" name="wifi_detail_share_toast"/>
       <item type="string" name="wifi_details_ipv6_address_header"/>
       <item type="string" name="wifi_disabled"/>
       <item type="string" name="wifi_disconnected"/>
