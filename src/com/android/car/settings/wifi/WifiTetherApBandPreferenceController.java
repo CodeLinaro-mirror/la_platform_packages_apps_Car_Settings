@@ -192,22 +192,23 @@ public class WifiTetherApBandPreferenceController extends
     }
 
     private void updateApBand() {
-        SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder(
-                getCarSoftApConfig());
+        SoftApConfiguration config = getCarSoftApConfig();
+        if (config != null) {
+            SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder(config);
+            if (mBand == BAND_5GHZ) {
+                // Only BAND_5GHZ is not supported, must include BAND_2GHZ since some of countries
+                // don't support 5G
+                configBuilder.setBand(BAND_2GHZ_5GHZ);
+            } else if (mBand == BAND_2GHZ_5GHZ) {
+                configBuilder.setBands(DUAL_BANDS);
+            } else if (mBand == BAND_6GHZ) {
+                configBuilder.setBand(BAND_2GHZ_6GHZ);
+            } else {
+                configBuilder.setBand(BAND_2GHZ);
+            }
 
-        if (mBand == BAND_5GHZ) {
-            // Only BAND_5GHZ is not supported, must include BAND_2GHZ since some of countries
-            // don't support 5G
-            configBuilder.setBand(BAND_2GHZ_5GHZ);
-        } else if (mBand == BAND_2GHZ_5GHZ) {
-            configBuilder.setBands(DUAL_BANDS);
-        } else if (mBand == BAND_6GHZ) {
-            configBuilder.setBand(BAND_2GHZ_6GHZ);
-        } else {
-            configBuilder.setBand(BAND_2GHZ);
+            setCarSoftApConfig(configBuilder.build());
         }
-
-        setCarSoftApConfig(configBuilder.build());
         getPreference().setValue(Integer.toString(mBand));
     }
 
