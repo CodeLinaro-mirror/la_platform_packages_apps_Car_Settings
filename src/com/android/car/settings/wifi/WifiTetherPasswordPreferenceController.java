@@ -74,7 +74,10 @@ public class WifiTetherPasswordPreferenceController extends
     protected void onCreateInternal() {
         super.onCreateInternal();
         getPreference().setValidator(PASSWORD_VALIDATOR);
-        mSecurityType = getCarSoftApConfig().getSecurityType();
+        SoftApConfiguration config = getCarSoftApConfig();
+        if (config != null) {
+            mSecurityType = config.getSecurityType();
+        }
         syncPassword();
     }
 
@@ -135,9 +138,12 @@ public class WifiTetherPasswordPreferenceController extends
             return null;
         }
 
-        String passphrase = getCarSoftApConfig().getPassphrase();
-        if (!TextUtils.isEmpty(passphrase)) {
-            return passphrase;
+        SoftApConfiguration config = getCarSoftApConfig();
+        if (config != null) {
+            String passphrase = config.getPassphrase();
+            if (!TextUtils.isEmpty(passphrase)) {
+                return passphrase;
+            }
         }
 
         if (!TextUtils.isEmpty(
@@ -165,14 +171,14 @@ public class WifiTetherPasswordPreferenceController extends
         } else {
             passwordOrNullIfOpen = password;
         }
-        SoftApConfiguration.Builder configBuilder =
-                new SoftApConfiguration.Builder(getCarSoftApConfig())
-                .setPassphrase(passwordOrNullIfOpen, mSecurityType);
-        if (isOpenOweHotspot(mSecurityType)) {
-            configBuilder.setBridgedModeOpportunisticShutdownEnabled(false);
+        SoftApConfiguration config = getCarSoftApConfig();
+        if (config != null) {
+            config = new SoftApConfiguration.Builder(config)
+                    .setPassphrase(passwordOrNullIfOpen, mSecurityType)
+                    .build();
+            setCarSoftApConfig(config);
+            Log.d(TAG, "update Ap Security type to : " + mSecurityType);
         }
-        setCarSoftApConfig(configBuilder.build());
-        Log.d(TAG, "update Ap Security type to : " + mSecurityType);
 
         if (!TextUtils.isEmpty(password)) {
             mSharedPreferences.edit().putString(KEY_SAVED_PASSWORD, password).commit();
