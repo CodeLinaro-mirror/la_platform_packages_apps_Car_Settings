@@ -302,14 +302,17 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivoltio"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milivatio"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Amperio‑hora"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilovatio‑hora"</string>
+    <!-- no translation found for units_unit_name_kilowatt_hour (3686434641263087159) -->
+    <skip />
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Libra por pulgada cuadrada"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Millas por hora"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilómetros por hora"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Grado"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilovatio por 100 millas"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilovatios por 100 kilómetros"</string>
+    <!-- no translation found for units_unit_name_kilowatt_per_hundred_miles (8428052736559260976) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilowatt_per_hundred_kilometers (3717342495287074950) -->
+    <skip />
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Millas por galón (Estados Unidos)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Millas por galón (Reino Unido)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilómetros por litro"</string>
@@ -410,6 +413,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# enlace compatible}other{# enlaces compatibles}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"Añadir enlaces"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# enlace no gestionado}other{# enlaces no gestionados}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Una aplicación puede verificar enlaces para que se abran automáticamente en ella."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Aplicaciones"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Abiertas recientemente"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Ver todas las aplicaciones (%1$d)"</string>

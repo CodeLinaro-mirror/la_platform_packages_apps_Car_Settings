@@ -302,14 +302,17 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Miliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampere jam"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowatt jam"</string>
+    <!-- no translation found for units_unit_name_kilowatt_hour (3686434641263087159) -->
+    <skip />
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Paun per inci persegi"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Batu sejam"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilometer sejam"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Darjah"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt per seratus Batu"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt per seratus Kilometer"</string>
+    <!-- no translation found for units_unit_name_kilowatt_per_hundred_miles (8428052736559260976) -->
+    <skip />
+    <!-- no translation found for units_unit_name_kilowatt_per_hundred_kilometers (3717342495287074950) -->
+    <skip />
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Batu per Gelen (AS)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Batu per Gelen (UK)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilometer per Liter"</string>
@@ -410,6 +413,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# pautan yang disokong}other{# pautan yang disokong}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"Tambahkan pautan"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# pautan tidak dikendalikan}other{# pautan tidak dikendalikan}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Apl dapat mengesahkan pautan agar terbuka secara automatik dalam apl."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Apl"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Dibuka baru-baru ini"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Lihat semua apl %1$d"</string>
