@@ -318,7 +318,7 @@
     <string name="all_applications" msgid="7798210477486822168">"Afficher toutes les applications"</string>
     <string name="default_applications" msgid="1558183275638697087">"Applications par défaut"</string>
     <string name="performance_impacting_apps" msgid="3439260699394720569">"Applications altérant la performance"</string>
-    <string name="app_permissions" msgid="32799922508313948">"Autorisations de l\'application"</string>
+    <string name="app_permissions" msgid="32799922508313948">"Autorisations des applis"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"Gérez l\'accès des applications à vos données"</string>
     <string name="applications_settings" msgid="794261395191035632">"Détails de l\'application"</string>
     <string name="force_stop" msgid="1616958676171167028">"Arrêter l\'application"</string>
@@ -408,6 +408,9 @@
     <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# lien vérifié}one{# lien vérifié}other{# liens vérifiés}}"</string>
     <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Liens compatibles"</string>
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# lien compatible}one{# lien compatible}other{# liens compatibles}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Ajouter des liens"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# lien non géré}one{# lien non géré}other{# liens non gérés}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Une appli peut vérifier les liens pour les ouvrir automatiquement dans l\'appli."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Applications"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Récemment utilisées"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Afficher les %1$d applications"</string>
