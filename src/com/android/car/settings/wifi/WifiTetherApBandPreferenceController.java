@@ -62,6 +62,7 @@ public class WifiTetherApBandPreferenceController extends
                               Context.MODE_PRIVATE);
 
     private static final int BAND_2GHZ_6GHZ = BAND_6GHZ | BAND_2GHZ;
+    private static final int BAND_2GHZ_5GHZ_6GHZ = BAND_6GHZ | BAND_5GHZ | BAND_2GHZ;
 
     private final Map<Integer, String> mHotspotBandMap = new LinkedHashMap<>();
 
@@ -147,7 +148,7 @@ public class WifiTetherApBandPreferenceController extends
     private void updatePreferenceEntries() {
         // key-band: 1-2GHz, 2-5GHz, 3-2GHz|5GHz, 5-6GHz|2GHz
         if (!is6GhzBandSupported()) {
-            mHotspotBandMap.keySet().remove(BAND_2GHZ_6GHZ);
+            mHotspotBandMap.keySet().remove(BAND_6GHZ);
         }
 
         // If 5 GHz is not supported, default to 2 GHz
@@ -180,7 +181,7 @@ public class WifiTetherApBandPreferenceController extends
             // band should be set to BAND_5GHZ to differentiate between dual band which would also
             // be BAND_2GHZ_5GHZ.
             band = BAND_5GHZ;
-        } else if (band == BAND_2GHZ_6GHZ) {
+        } else if (band == BAND_2GHZ_6GHZ || band == BAND_2GHZ_5GHZ_6GHZ) {
             band = BAND_6GHZ;
         }
 
@@ -197,12 +198,14 @@ public class WifiTetherApBandPreferenceController extends
             SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder(config);
             if (mBand == BAND_5GHZ) {
                 // Only BAND_5GHZ is not supported, must include BAND_2GHZ since some of countries
-                // don't support 5G
+                // don't support 5GHz
                 configBuilder.setBand(BAND_2GHZ_5GHZ);
             } else if (mBand == BAND_2GHZ_5GHZ) {
                 configBuilder.setBands(DUAL_BANDS);
             } else if (mBand == BAND_6GHZ) {
-                configBuilder.setBand(BAND_2GHZ_6GHZ);
+                // Only BAND_6GHZ is not supported, must include BAND_2GHZ/BAND_5GHZ since some
+                // of countries/securities don't support 5GHz/6GHz
+                configBuilder.setBand(BAND_2GHZ_5GHZ_6GHZ);
             } else {
                 configBuilder.setBand(BAND_2GHZ);
             }
