@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright (C) 2021 The Android Open Source Project
+  ~ Copyright (C) 2024 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -13,15 +14,6 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
-<resources>
-    <!-- Whether exit button in settings' root action bar should be shown or not -->
-    <bool name="config_show_settings_root_exit_icon">true</bool>
-    <!-- Whether the root fragment should actually be root -->
-    <bool name="config_is_root_fragment_root">true</bool>
-    <!--
-        Maximum number of devices to show for paired bluetooth device quick control.
-        Set to -1 for unlimited.
-     -->
-    <integer name="config_qc_bluetooth_device_limit">3</integer>
-</resources>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="?oemColorBackground"/>
+</selector>
