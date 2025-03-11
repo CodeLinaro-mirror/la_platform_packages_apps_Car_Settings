@@ -302,17 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Millivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampèreheure"</string>
-    <!-- no translation found for units_unit_name_kilowatt_hour (3686434641263087159) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowattheure"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Livres par pouce carré"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Milles à l\'heure"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilomètres à l\'heure"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Degré"</string>
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_miles (8428052736559260976) -->
-    <skip />
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_kilometers (3717342495287074950) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowattheures par 100 milles"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowattheures par 100 kilomètres"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Milles par gallon (É.-U.)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Milles par gallon (R.-U.)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilomètres par litre"</string>
@@ -382,9 +379,9 @@
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"Assistance et entrée vocale"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"Application d\'assistance"</string>
     <string name="assist_access_context_title" msgid="8034851731390785301">"Utiliser le texte affiché à l\'écran"</string>
-    <string name="assist_access_context_summary" msgid="2374281280599443774">"Autoriser l\'application d\'assistance à accéder aux contenus affichés à l\'écran sous forme de texte"</string>
+    <string name="assist_access_context_summary" msgid="2374281280599443774">"Autorisez l\'appli d\'assistance à accéder au contenu affiché à l\'écran sous forme de texte"</string>
     <string name="assist_access_screenshot_title" msgid="2855956879971465044">"Utiliser la capture d\'écran"</string>
-    <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"Autoriser l\'application d\'assistance à accéder à une image affichée à l\'écran"</string>
+    <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"Autorisez l\'appli d\'assistance à accéder au contenu affiché à l\'écran sous forme d\'image"</string>
     <string name="voice_input_settings_title" msgid="3238707827815647526">"Entrée vocale"</string>
     <string name="autofill_settings_title" msgid="1188754272680049972">"Service de remplissage automatique"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"Aucune"</string>
