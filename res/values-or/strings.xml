@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"ମିଲିଭୋଲ୍ଟ"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"ମିଲିୱାଟ୍"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"ଆମ୍ପିୟର୍ ଘଣ୍ଟା"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"କିଲୋୱାଟ୍ ଘଣ୍ଟା"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"କିଲୋୱାଟ-ଘଣ୍ଟା"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"ପାଉଣ୍ଡ ପ୍ରତି ସ୍କୋୟାର୍ ଇଞ୍ଚ"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"ମାଇଲ ପ୍ରତି ଘଣ୍ଟା"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"କିଲୋମିଟର ପ୍ରତି ଘଣ୍ଟା"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"ବାର୍"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"ଡିଗ୍ରୀ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"କିଲୋୱାଟ୍ ପ୍ରତି ଶହେ ମାଇଲ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"କିଲୋୱାଟ୍ ପ୍ରତି ଶହେ କିଲୋମିଟର"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"ପ୍ରତି ଶହେ ମାଇଲରେ କିଲୋୱାଟ-ଘଣ୍ଟା"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"ପ୍ରତି ଶହେ କିଲୋମିଟରରେ କିଲୋୱାଟ-ଘଣ୍ଟା"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"ମାଇଲ ପ୍ରତି ଗ୍ୟାଲନ୍(US)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"ମାଇଲ ପ୍ରତି ଗ୍ୟାଲନ୍ (UK)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"କିଲୋମିଟର ପ୍ରତି ଲିଟର"</string>
@@ -358,6 +358,8 @@
     <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"ଆପଣ ଚଉଡ଼ା ଓ ଉଚ୍ଚତାର ଅନୁପାତ ପରିବର୍ତ୍ତନ କଲେ ଏହି ଆପଟି ରିଷ୍ଟାର୍ଟ ହେବ। ଆପଣ ସେଭ କରାଯାଇନଥିବା ପରିବର୍ତ୍ତନଗୁଡ଼ିକୁ ହରାଇପାରନ୍ତି। ନିର୍ଦ୍ଦିଷ୍ଟ ଚଉଡ଼ା ଓ ଉଚ୍ଚତାର ଅନୁପାତ ପାଇଁ କିଛି ଆପ୍ସ ଅପ୍ଟିମାଇଜ ହୋଇନପାରେ।"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"ଇଣ୍ଟର୍ନଲ୍ ଷ୍ଟୋରେଜ୍‌ରେ %s ଅଛି"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ଆପ ପରଫରମାନ୍ସକୁ ପ୍ରାଥମିକତା ଦେବା ପାଇଁ ସିଷ୍ଟମ ରିସୋର୍ସଗୁଡ଼ିକୁ ବ୍ୟବହାର କରେ"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"ଡିଫଲ୍ଟ ଭାବେ ଖୋଲନ୍ତୁ"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"ସପୋର୍ଟ କରୁଥିବା ଲିଙ୍କ ଖୋଲିବା ପାଇଁ ଆପକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ଡାଟାର ବ୍ୟବହାର"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"ଆପ୍‌ ଦ୍ୱାରା ଡାଟା ବ୍ୟବହାର"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"ବ୍ୟବହାରର ଇତିହାସ"</string>
@@ -402,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"ପ୍ରତ୍ୟେକ ଥର ପଚାରନ୍ତୁ"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"ଏହି ଆପ୍‌ରେ ଖୋଲନ୍ତୁ ନାହିଁ"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"ସମର୍ଥିତ ଲିଙ୍କ୍‌ଗୁଡ଼ିକ"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"# ଯାଞ୍ଚ କରାଯାଇଥିବା ଲିଙ୍କ"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# ଯାଞ୍ଚ କରାଯାଇଥିବା ଲିଙ୍କ}other{# ଯାଞ୍ଚ କରାଯାଇଥିବା ଲିଙ୍କ}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"ସପୋର୍ଟ କରୁଥିବା ଲିଙ୍କ"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# ସପୋର୍ଟ କରୁଥିବା ଲିଙ୍କ}other{# ସପୋର୍ଟ କରୁଥିବା ଲିଙ୍କ}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"ଲିଙ୍କ ଯୋଗ କରନ୍ତୁ"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# ହେଣ୍ଡେଲ କରାଯାଇନଥିବା ଲିଙ୍କ}other{# ହେଣ୍ଡେଲ କରାଯାଇନଥିବା ଲିଙ୍କ}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"ଆପରେ ଲିଙ୍କଗୁଡ଼ିକ ସ୍ୱତଃ ଖୋଲିବା ପାଇଁ ଆପ ସେଗୁଡ଼ିକୁ ଯାଞ୍ଚ କରିପାରିବ।"</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"ଆପଗୁଡ଼ିକ"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"ଏବେ ଖୋଲିଛି"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"ସମସ୍ତ %1$dଟି ଆପ୍ ଦେଖନ୍ତୁ"</string>
@@ -638,7 +647,7 @@
     <string name="data_usage_auto_sync_off_dialog_title" msgid="6683011954002351091">"ସ୍ୱଚାଳିତ ଡାଟା ସିଙ୍କ କରିବାର ଅନୁମତିକୁ ବାତିଲ କରିବେ?"</string>
     <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"ଏହା ମୋବାଇଲ୍ ଡାଟା କମ୍ ବ୍ୟବହାର ହେବ, କିନ୍ତୁ ତାଜା ସୂଚନା ସଂଗ୍ରହ କରିବା ପାଇଁ ପ୍ରତ୍ୟେକ ଆକାଉଣ୍ଟକୁ ମାନୁଆଲୀ ସିଙ୍କ କରିବାକୁ ପଡ଼ିବ ଏବଂ ଆପଣ ଅପ୍‌ଡେଟ୍‌ ହେଲେ ଆପଣ ବିଜ୍ଞପ୍ତି ପ୍ରାପ୍ତ କରିବେ ନାହିଁ।"</string>
     <string name="account_details_title" msgid="7529571432258448573">"ଆକାଉଣ୍ଟ ସୂଚନା"</string>
-    <string name="add_account_title" msgid="5988746086885210040">"ଆକାଉଣ୍ଟ ଯୋଡ଼ନ୍ତୁ"</string>
+    <string name="add_account_title" msgid="5988746086885210040">"ଆକାଉଣ୍ଟ ଯୋଗ କରନ୍ତୁ"</string>
     <string name="add_an_account" msgid="1072285034300995091">"ଗୋଟିଏ ଆକାଉଣ୍ଟ ଯୋଡ଼ନ୍ତୁ"</string>
     <string name="user_cannot_add_accounts_message" msgid="6775605884544906797">"ପ୍ରତିବନ୍ଧିତ ପ୍ରୋଫାଇଲ୍‌ଗୁଡ଼ିକ ଆକାଉଣ୍ଟ ଆଡ୍‌ କରିପାରିବ ନାହିଁ"</string>
     <string name="remove_account_title" msgid="8840386525787836381">"ଆକାଉଣ୍ଟ କାଢ଼ିଦିଅନ୍ତୁ"</string>

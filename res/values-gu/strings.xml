@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"મિલીવોલ્ટ"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"મિલીવૉટ"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"એમ્પિઅર કલાક"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"કિલોવૉટ કલાક"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"કિલોવૉટ-કલાક"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"પાઉન્ડ પ્રતિ ચોરસ ઇંચ"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"માઇલ પ્રતિ કલાક"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"કિલોમીટર પ્રતિ કલાક"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"બાર"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"ડિગ્રી"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"કિલોવૉટ પ્રતિ સો માઇલ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"કિલોવૉટ પ્રતિ સો કિલોમીટર"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"કિલોવૉટ-કલાક પ્રતિ સો માઇલ"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"કિલોવૉટ-કલાક પ્રતિ સો કિલોમીટર"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"માઇલ પ્રતિ ગેલન (યુએસ)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"માઇલ પ્રતિ ગેલન (યુકે)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"કિલોમીટર પ્રતિ લીટર"</string>
@@ -358,6 +358,8 @@
     <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"જ્યારે તમે સાપેક્ષ ગુણોત્તરમાં ફેરફાર કરશો ત્યારે ઍપ ફરી શરૂ થશે. તમે સાચવ્યા ન હોય એવા ફેરફારો ગુમાવો તેવું બની શકે છે. અમુક ચોક્કસ સાપેક્ષ ગુણોત્તર માટે કેટલીક ઍપ ઑપ્ટિમાઇઝ કરવામાં ન આવે તેવું બની શકે છે."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s આંતરિક સ્ટોરેજમાં"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ઍપના પર્ફોર્મન્સને પ્રાધાન્ય આપવા સિસ્ટમના સંસાધનોનો ઉપયોગ કરો"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"ડિફૉલ્ટ તરીકે ખોલો"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"ઍપને સપોર્ટેડ લિંક ખોલવાની મંજૂરી આપો"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ડેટા વપરાશ"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"ઍપ ડેટા વપરાશ"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"વપરાશનો ઇતિહાસ"</string>
@@ -402,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"દર વખતે પૂછો"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"ક્યારેય આ ઍપમાં ખોલશો નહીં"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"સમર્થિત લિંક"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"ચકાસણી કરાયેલી લિંક"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{ચકાસણી કરાયેલી # લિંક}one{ચકાસણી કરાયેલી # લિંક}other{ચકાસણી કરાયેલી # લિંક}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"સપોર્ટેડ લિંક"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# સપોર્ટેડ લિંક}one{# સપોર્ટેડ લિંક}other{# સપોર્ટેડ લિંક}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"લિંક ઉમેરો"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{હૅન્ડલ ન કરાયેલી # લિંક}one{હૅન્ડલ ન કરાયેલી # લિંક}other{હૅન્ડલ ન કરાયેલી # લિંક}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"ઍપમાં લિંકને ઑટોમૅટિક રીતે ખોલવા માટે, ઍપ તેની ચકાસણી કરી શકે છે."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"ઍપ"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"તાજેતરમાં ખોલેલી"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"બધી %1$d ઍપ જુઓ"</string>

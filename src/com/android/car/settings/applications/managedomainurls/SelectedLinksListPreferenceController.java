@@ -27,6 +27,12 @@ import com.android.car.settings.common.Logger;
 import com.android.car.ui.preference.CarUiMultiSelectListPreference;
 import com.android.settingslib.utils.StringUtil;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 /**
  * Controls the SelectedLinksList preference.
  */
@@ -45,15 +51,8 @@ public class SelectedLinksListPreferenceController extends
     }
 
     @Override
-    protected void onCreateInternal() {
-        super.onCreateInternal();
-        // TODO: add entries in part 2 CL.
-        getPreference().setSelectable(false);
-    }
-
-    @Override
     protected int getDefaultAvailabilityStatus() {
-        if (isLinkHandlingEnabled()) {
+        if (isLinkHandlingEnabled() && getLinksNumber(DOMAIN_STATE_SELECTED) > 0) {
             return AVAILABLE;
         }
         return CONDITIONALLY_UNAVAILABLE;
@@ -62,7 +61,39 @@ public class SelectedLinksListPreferenceController extends
     @Override
     protected void updateState(CarUiMultiSelectListPreference preference) {
         super.updateState(preference);
-        preference.setSummary(
+        updatePreferenceOptions();
+    }
+
+    @Override
+    protected boolean handlePreferenceChanged(CarUiMultiSelectListPreference preference,
+            Object newValue) {
+        Set<String> selectedEntries = (Set<String>) newValue;
+        handleRemovedSupportedLinks(selectedEntries);
+        return true;
+    }
+
+    private void handleRemovedSupportedLinks(Set<String> selectedEntries) {
+        List<CharSequence> entryValuesList = Arrays.asList(getPreference().getEntryValues());
+        if (selectedEntries.size() == entryValuesList.size()) {
+            return;
+        }
+        Set<String> entryValuesSet = entryValuesList.stream().map(CharSequence::toString).collect(
+                Collectors.toSet());
+
+        entryValuesSet.removeAll(selectedEntries);
+        getDomainVerificationManager().setDomainVerificationUserSelection(getPackageName(),
+                entryValuesSet, /* isEnabled= */ false);
+        refreshUi();
+    }
+
+    private void updatePreferenceOptions() {
+        List<String> entries = getDomainVerificationManager().getLinksList(getPackageName(),
+                DOMAIN_STATE_SELECTED);
+
+        getPreference().setEntries(entries.toArray(new CharSequence[entries.size()]));
+        getPreference().setEntryValues(entries.toArray(new CharSequence[entries.size()]));
+        getPreference().setValues(new HashSet<>(entries));
+        getPreference().setSummary(
                 StringUtil.getIcuPluralsString(getContext(), getLinksNumber(DOMAIN_STATE_SELECTED),
                         R.string.opening_links_supported_links_summary));
     }
