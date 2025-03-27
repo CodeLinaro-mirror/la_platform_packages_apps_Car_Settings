@@ -44,18 +44,21 @@
     <string-array translatable="false" name="wifi_ap_band_summary_full">
         <item>@string/wifi_ap_choose_2G</item>
         <item>@string/wifi_ap_choose_5G</item>
+        <item>@string/wifi_ap_choose_6G</item>
     </string-array>
 
     <string-array translatable="false" name="wifi_ap_band">
         <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>5</item>
     </string-array>
 
     <string-array translatable="false" name="wifi_ap_band_summary">
         <item>@string/wifi_ap_choose_2G</item>
         <item>@string/wifi_ap_prefer_5G</item>
         <item>@string/wifi_ap_2G_5G</item>
+        <item>@string/wifi_ap_prefer_6G</item>
     </string-array>
 
     <string-array translatable="false" name="wifi_ap_band_config_2G_only">
