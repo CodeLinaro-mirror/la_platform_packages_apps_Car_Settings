@@ -302,17 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivoltio"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milivatio"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Amperio‑hora"</string>
-    <!-- no translation found for units_unit_name_kilowatt_hour (3686434641263087159) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilovatio-hora"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Libra por pulgada cuadrada"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Millas por hora"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilómetros por hora"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Grado"</string>
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_miles (8428052736559260976) -->
-    <skip />
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_kilometers (3717342495287074950) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilovatios-hora por 100 millas"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilovatios-hora por 100 kilómetros"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Millas por galón (Estados Unidos)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Millas por galón (Reino Unido)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilómetros por litro"</string>
@@ -942,7 +939,7 @@
     <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Amarillo sobre azul"</string>
     <string name="accessibility_settings_screen_reader_title" msgid="5113265553157624836">"Lector de pantalla"</string>
     <string name="screen_reader_settings_off" msgid="6081562047935689764">"Desactivado"</string>
-    <string name="screen_reader_settings_on" msgid="2168217218643349459">"Decir los elementos que hay en pantalla"</string>
+    <string name="screen_reader_settings_on" msgid="2168217218643349459">"Enuncia los elementos de la pantalla"</string>
     <string name="enable_screen_reader_toggle_title" msgid="7641307781194619254">"Usar <xliff:g id="ACCESSIBILITY_APP_NAME">%1$s</xliff:g>"</string>
     <string name="screen_reader_options_title" msgid="1073640098442831819">"Opciones"</string>
     <string name="screen_reader_description_title" msgid="8766666406552388012">"Ajustes"</string>

@@ -302,17 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivoltio"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Amperio por hora"</string>
-    <!-- no translation found for units_unit_name_kilowatt_hour (3686434641263087159) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Quilowatts por hora"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Libras por polgada cadrada"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Millas por hora"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Quilómetros por hora"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Grao"</string>
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_miles (8428052736559260976) -->
-    <skip />
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_kilometers (3717342495287074950) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Quilowatts por hora por cada cen millas"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Quilowatts por hora por cada cen quilómetros"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Millas por galón (EUA)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Millas por galón (Reino Unido)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Quilómetros por litro"</string>
@@ -489,7 +486,7 @@
     <string name="restart_infotainment_system_dialog_text" msgid="6395281407323116808">"O sistema de información e entretemento do coche pode tardar uns minutos en reiniciarse. Queres continuar?"</string>
     <string name="continue_confirmation" msgid="1598892163951467191">"Continuar"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Versión de Android"</string>
-    <string name="security_patch" msgid="4794276590178386903">"Nivel de parche de seguranza de Android"</string>
+    <string name="security_patch" msgid="4794276590178386903">"Nivel do parche de seguranza de Android"</string>
     <string name="hardware_info" msgid="3973165746261507658">"Modelo e hardware"</string>
     <string name="hardware_info_summary" msgid="8262576443254075921">"Modelo: <xliff:g id="MODEL">%1$s</xliff:g>"</string>
     <string name="baseband_version" msgid="2370088062235041897">"Versión de banda base"</string>

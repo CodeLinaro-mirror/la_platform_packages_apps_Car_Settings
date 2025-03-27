@@ -302,17 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Миливолт"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Миливат"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ампер час"</string>
-    <!-- no translation found for units_unit_name_kilowatt_hour (3686434641263087159) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Киловат час"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Фунти по квадратен инч"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Милји на час"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Километри на час"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Бар"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Степен"</string>
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_miles (8428052736559260976) -->
-    <skip />
-    <!-- no translation found for units_unit_name_kilowatt_per_hundred_kilometers (3717342495287074950) -->
-    <skip />
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Киловат часови на сто милји"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Киловат часови на сто километри"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Милји по галон (САД)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Милји по галон (ОК)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Километри по литар"</string>
@@ -341,7 +338,7 @@
     <string name="permissions_label" msgid="2701446753515612685">"Дозволи"</string>
     <string name="app_info_all_services_label" msgid="6495363975322723452">"Сите услуги"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Известувања"</string>
-    <string name="storage_application_label" msgid="5911779903670978586">"Капацитет и кеш"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"Простор и кеш"</string>
     <string name="prioritize_app_performance_label" msgid="7264505023347026606">"Приоритет на изведбата на апликацијата"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Верзија %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Не се доделени дозволи"</string>
