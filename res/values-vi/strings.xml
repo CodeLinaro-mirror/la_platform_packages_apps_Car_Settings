@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Mili vôn"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Miliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampe giờ"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowatt giờ"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowatt giờ"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Pao trên inch vuông"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Dặm trên giờ"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilomet trên giờ"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Barơ"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Độ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt trên một trăm dặm"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt trên một trăm kilomet"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowatt giờ trên một trăm dặm"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowatt giờ trên một trăm kilomet"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Dặm trên galông (Mỹ)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Dặm trên galông (Anh)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilomet trên lít"</string>
@@ -358,6 +358,8 @@
     <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Ứng dụng sẽ khởi động lại khi bạn thay đổi tỷ lệ khung hình. Bạn có thể bị mất những thay đổi chưa lưu. Có thể một số ứng dụng chưa được tối ưu hoá cho một số tỷ lệ khung hình nhất định."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s trong bộ nhớ trong"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Dùng tài nguyên của hệ thống để ưu tiên hiệu suất của ứng dụng"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Mở theo mặc định"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Cho phép ứng dụng mở đường liên kết được hỗ trợ"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Mức sử dụng dữ liệu"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Sử dụng dữ liệu ứng dụng"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Mức sử dụng qua thời gian"</string>
@@ -402,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Luôn hỏi"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Không mở trong ứng dụng này"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Các đường liên kết được hỗ trợ"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Các đường liên kết đã xác minh"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# đường liên kết đã xác minh}other{# đường liên kết đã xác minh}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Các đường liên kết được hỗ trợ"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# đường liên kết được hỗ trợ}other{# đường liên kết được hỗ trợ}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Thêm đường liên kết"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# đường liên kết chưa được xử lý}other{# đường liên kết chưa được xử lý}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Một ứng dụng có thể xác minh các đường liên kết để tự động mở trong ứng dụng này."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Ứng dụng"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Mới mở gần đây"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Xem toàn bộ %1$d ứng dụng"</string>
@@ -765,7 +774,7 @@
     <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{Phải có ít hơn # ký tự}other{Phải có ít hơn # ký tự}}"</string>
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{Phải có ít hơn # chữ số}other{Phải có ít hơn # chữ số}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"Không cho phép thứ tự chữ số tăng dần, giảm dần hoặc lặp lại"</string>
-    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Các phương thức khóa màn hình"</string>
+    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Các phương thức khoá màn hình"</string>
     <string name="credentials_reset" msgid="873900550885788639">"Xóa thông tin xác thực"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"Xóa tất cả chứng chỉ"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"Xóa tất cả nội dung?"</string>

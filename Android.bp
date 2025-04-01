@@ -61,12 +61,15 @@ android_library {
         "com_android_car_settings_flags_lib",
         "services.core",
         "car-data-subscription-lib",
-        "car-resource-common",
+        "oem-token-lib",
     ],
 
     libs: [
         "android.car",
+        "token-shared-lib-prebuilt",
     ],
+
+    enforce_uses_libs: false,
 
     manifest: "AndroidManifest.xml",
     resource_dirs: ["res"],
@@ -90,11 +93,15 @@ android_app {
 
     libs: [
         "android.car",
+        "token-shared-lib-prebuilt",
     ],
+
+    enforce_uses_libs: false,
 
     certificate: "platform",
 
     optimize: {
+        keep_runtime_invisible_annotations: true,
         proguard_flags_files: ["proguard.flags"],
     },
 
@@ -126,11 +133,14 @@ android_app {
 
     libs: [
         "android.car",
+        "token-shared-lib-prebuilt",
     ],
 
     static_libs: [
         "CarSettings-core",
     ],
+
+    enforce_uses_libs: false,
 
     // Testing only resources must be applied last so they take precedence.
     resource_dirs: [
@@ -177,7 +187,10 @@ android_app {
 
     libs: [
         "android.car",
+        "token-shared-lib-prebuilt",
     ],
+
+    enforce_uses_libs: false,
 
     static_libs: [
         "CarSettings-core",
@@ -224,6 +237,7 @@ android_library {
 
     libs: [
         "android.car",
+        "token-shared-lib-prebuilt",
     ],
 
     static_libs: [
@@ -243,7 +257,10 @@ android_library {
         "car-qc-lib",
         "com_android_car_settings_flags_lib",
         "car-data-subscription-lib",
+        "oem-token-lib",
     ],
+
+    enforce_uses_libs: false,
 
     // Testing only resources must be applied last so they take precedence.
     resource_dirs: [
