@@ -500,7 +500,7 @@
     <string name="show_dev_countdown" msgid="7416958516942072383">"{count,plural, =1{اکنون # گام تا توسعه‌دهنده شدن فاصله دارید.}one{اکنون # گام تا توسعه‌دهنده شدن فاصله دارید.}other{اکنون # گام تا توسعه‌دهنده شدن فاصله دارید.}}"</string>
     <string name="show_dev_on" msgid="5339077400040834808">"شما اکنون یک برنامه‌نویس هستید!"</string>
     <string name="show_dev_already" msgid="1678087328973865736">"نیازی نیست، شما اکنون برنامه‌نویس هستید."</string>
-    <string name="developer_options_settings" msgid="1530739225109118480">"گزینه‌های تولیدکننده"</string>
+    <string name="developer_options_settings" msgid="1530739225109118480">"گزینه‌های توسعه‌دهندگان"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"بازنشانی گزینه‌ها"</string>
     <string name="reset_options_summary" msgid="5508201367420359293">"شبکه، برنامه‌ها یا بازنشانی دستگاه"</string>
     <string name="reset_network_title" msgid="3077846909739832734">"بازنشانی Wi-Fi و بلوتوث"</string>
@@ -628,7 +628,7 @@
     <string name="add_account_title" msgid="5988746086885210040">"افزودن حساب"</string>
     <string name="add_an_account" msgid="1072285034300995091">"افزودن حساب"</string>
     <string name="user_cannot_add_accounts_message" msgid="6775605884544906797">"نمایه‌های محدود نمی‌توانند حسابی را اضافه کنند"</string>
-    <string name="remove_account_title" msgid="8840386525787836381">"حذف حساب"</string>
+    <string name="remove_account_title" msgid="8840386525787836381">"برداشتن حساب"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"حساب برداشته شود؟"</string>
     <string name="really_remove_account_message" msgid="4296769280849579900">"با پاک کردن این حساب، همه پیام‌ها، مخاطبین و داده‌های دیگر از دستگاه حذف خواهد شد!"</string>
     <string name="remove_account_error_title" msgid="8368044943174826635">"حساب برداشته نشد."</string>
@@ -797,6 +797,7 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"برای دیدن دستگاه‌ها، بلوتوث را روشن کنید"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"برای جفت کردن دستگاه، تنظیمات بلوتوث را باز کنید"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"زمینه"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"نمایش محدوده‌های چیدمان"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"سرپرست سیستم اطلاعات-سرگرمی"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"برنامه‌های فعال"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"برنامه‌های غیرفعال"</string>

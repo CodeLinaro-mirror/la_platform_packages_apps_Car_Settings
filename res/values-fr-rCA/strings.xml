@@ -534,7 +534,7 @@
     <string name="factory_reset_progress_text" msgid="7704636573522634757">"Veuillez patienter…"</string>
     <string name="date_and_time_settings_title" msgid="4058492663544475485">"Date et heure"</string>
     <string name="date_and_time_settings_summary" msgid="7669856855390804666">"Configurer la date, l\'heure, le fuseau horaire et les formats"</string>
-    <string name="date_time_auto" msgid="6018635902717385962">"Régler l\'heure automatiquement"</string>
+    <string name="date_time_auto" msgid="6018635902717385962">"Définir l\'heure automatiquement"</string>
     <string name="zone_auto" msgid="4174874778459184605">"Régler le fuseau horaire auto."</string>
     <string name="date_time_24hour_title" msgid="3025576547136168692">"Format 24 heures"</string>
     <string name="date_time_24hour" msgid="1137618702556486913">"Utiliser le format 24 heures"</string>
@@ -797,6 +797,7 @@
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Pour afficher vos appareils, activez le Bluetooth"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Pour associer un appareil, ouvrez les paramètres Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Thème"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"Afficher les contours de la mise en page"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administrateur du système d\'infodivertissement"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Applications activées"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Applications désactivées"</string>
