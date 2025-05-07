@@ -22,10 +22,17 @@ android_robolectric_test {
     srcs: [
         "src/**/*.kt",
         // Goal is have `src/**/*.java` (i.e. all tests to work w/ Robolectric)
-        // "src/**/AccountDetailsPreferenceControllerTest.java",
+        "src/**/profiles/AddProfilePreferenceControllerTest.java",
+        "src/**/profiles/ChooseNewAdminPreferenceControllerTest.java",
+        "src/**/profiles/DemoProfileDialogHandlerTest.java",
+        "src/**/profiles/ProfileDetailsBasePreferenceControllerTest.java",
+        "src/**/profiles/ProfileDetailsEndSessionPreferenceControllerTest.java",
+        "src/**/profiles/ProfileDetailsHeaderPreferenceControllerTest.java",
+        "src/**/profiles/ProfilesBasePreferenceControllerTest.java",
+        "src/**/AccountDetailsPreferenceControllerTest.java",
         "src/**/AccountGroupPreferenceControllerTest.java",
         "src/**/AddMobileNetworkPreferenceControllerTest.java",
-        // "src/**/AddProfilePreferenceControllerTest.java",
+        "src/**/AddProfilePreferenceControllerTest.java",
         "src/**/AllAppsPreferenceControllerTest.java",
         "src/**/BluetoothStateSwitchPreferenceControllerTest.java",
         "src/**/CellularFallbackTogglePreferenceControllerTest.java",
@@ -53,11 +60,11 @@ android_robolectric_test {
         "src/**/MoreSpecialAccessPreferenceControllerTest.java",
         "src/**/NotificationsPreferenceControllerTest.java",
         "src/**/PreferenceControllerTest.java",
-        // "src/**/ProfileDetailsActionButtonsPreferenceControllerTest.java",
+        "src/**/ProfileDetailsActionButtonsPreferenceControllerTest.java",
         "src/**/RecentAppsViewAllPreferenceControllerTest.java",
         "src/**/ResetNetworkEntryPreferenceControllerTest.java",
         "src/**/SettingsQCRegistryTest.java",
-        // "src/**/StorageApplicationActionButtonsPreferenceControllerTest.java",
+        "src/**/StorageApplicationActionButtonsPreferenceControllerTest.java",
         "src/**/StorageApplicationListPreferenceControllerTest.java",
         "src/**/StorageSettingsManagerTest.java",
         "src/**/SubscriptionsChangeListenerTest.java",
@@ -133,14 +140,15 @@ android_robolectric_test {
         "platform-test-annotations",
         "testng",
         "truth",
+        "token-shared-lib-prebuilt",
     ],
+    enforce_uses_libs: false,
     java_resource_dirs: ["config"],
     instrumentation_for: "CarSettingsAppForMultivalentTesting",
     test_options: {
         timeout: 36000,
     },
     strict_mode: false,
-    test_config: "CarSettingsMultivalentRoboTests-AndroidTest.xml",
 }
 
 android_test {
@@ -155,7 +163,9 @@ android_test {
         "android.test.runner.stubs.system",
         "android.test.base.stubs.system",
         "android.test.mock.stubs.system",
+        "token-shared-lib-prebuilt",
     ],
+    enforce_uses_libs: false,
     static_libs: [
         "CarSettingsLibForDeviceTesting",
         "android.car",
@@ -172,6 +182,7 @@ android_test {
         "testng",
         "car-helper-lib",
         "collector-device-lib-platform",
+        "oem-token-lib",
     ],
     jni_libs: [
         "libdexmakerjvmtiagent",

@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"മില്ലിവോൾട്ട്"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"മില്ലീവാട്ട്"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"ആംപിയർ മണിക്കൂർ"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"കിലോവാട്ട് മണിക്കൂർ"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"കിലോവാട്ട് മണിക്കൂർ"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"പൗണ്ട്/ചതുരശ്ര ഇഞ്ച്"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"മൈൽ/മണിക്കൂർ"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"കിലോമീറ്റർ/മണിക്കൂർ"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"ബാർ"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"ഡിഗ്രി"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"കിലോവാട്ട്/100 മൈൽ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"കിലോവാട്ട്/100 കിലോമീറ്റർ"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"കിലോവാട്ട് മണിക്കൂർ/100 മൈൽ"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"കിലോവാട്ട് മണിക്കൂർ/100 കിലോമീറ്റർ"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"മൈൽ/ഗാലൺ (US)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"മൈൽ/ഗാലൺ (UK)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"കിലോമീറ്റർ/ലിറ്റർ"</string>
@@ -410,6 +410,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{പിന്തുണയ്‌ക്കുന്ന # ലിങ്ക്}other{പിന്തുണയ്‌ക്കുന്ന # ലിങ്കുകൾ}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"ലിങ്കുകൾ ചേർക്കുക"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{കൈകാര്യം ചെയ്യാത്ത # ലിങ്ക്}other{കൈകാര്യം ചെയ്യാത്ത # ലിങ്കുകൾ}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"ആപ്പിൽ സ്വയമേവ തുറക്കാൻ ആപ്പിന് ലിങ്കുകൾ പരിശോധിച്ചുറപ്പിക്കാനാകും."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"ആപ്പുകൾ"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"അടുത്തിടെ തുറന്നത്"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"എല്ലാ %1$d ആപ്പുകളും കാണുക"</string>

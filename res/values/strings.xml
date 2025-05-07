@@ -630,7 +630,7 @@
     <!-- Ampere hour Unit as it is pronounced [CHAR LIMIT=50]-->
     <string name="units_unit_name_ampere_hour">Ampere hour</string>
     <!-- Kilowatt hour Unit as it is pronounced [CHAR LIMIT=50]-->
-    <string name="units_unit_name_kilowatt_hour">Kilowatt hour</string>
+    <string name="units_unit_name_kilowatt_hour">Kilowatt-hour</string>
     <!-- Pounds per square inch Unit as it is pronounced [CHAR LIMIT=50]-->
     <string name="units_unit_name_psi">Pounds per square inch</string>
     <!-- Miles per hour Unit as it is pronounced [CHAR LIMIT = 50]-->
@@ -642,9 +642,9 @@
     <!-- Degree Unit as it is pronounced [CHAR LIMIT=50]-->
     <string name="units_unit_name_degrees">Degree</string>
     <!-- Miles per Kilowatt Unit as it is pronounced [CHAR LIMIT=80]-->
-    <string name="units_unit_name_kilowatt_per_hundred_miles">Kilowatt per hundred Miles</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles">Kilowatt-hours per hundred Miles</string>
     <!-- Kilometers per Kilowatt Unit as it is pronounced [CHAR LIMIT=80]-->
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers">Kilowatt per hundred Kilometers</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers">Kilowatt-hours per hundred Kilometers</string>
     <!--Miles per gallon Unit as it is pronounced [CHAR LIMIT=50]-->
     <string name="units_unit_name_miles_per_gallon_us">Miles per Gallon (US)</string>
     <!--Miles per gallon Unit as it is pronounced [CHAR LIMIT=50]-->
@@ -917,6 +917,8 @@
         other {# unhandled links}
         }
     </string>
+    <!-- Footer for Open by default. [CHAR LIMIT=NONE] -->
+    <string name="app_launch_footer">An app can verify links to automatically open in the app.</string>
     <!-- Main Settings screen setting option name to go into the apps settings [CHAR LIMIT=40] -->
     <string name="apps_settings_title">Apps</string>
     <!-- Title of recently opened apps category [CHAR LIMIT=60] -->
@@ -960,7 +962,7 @@
     <!-- Summary for a warning message about security implications of enabling a notification listener, displayed as a dialog message. [CHAR_LIMIT=NONE] -->
     <string name="notification_listener_security_warning_summary"><xliff:g id="notification_listener_name">%1$s</xliff:g> will be able to read all notifications, including personal information such as contact names and the text of messages you receive. It will also be able to dismiss notifications or trigger action buttons they contain.\n\nThis will also give the app the ability to turn Do Not Disturb on or off and change related settings.</string>
     <!-- Summary for a warning message about revoking notification listener access, displayed as a dialog message. [CHAR_LIMIT=NONE] -->
-    <string name="notification_listener_revoke_warning_summary">If you turn off notification access for <xliff:g id="notification_listener_name">%1$s</xliff:g>, Do Not Disturb access may also be turned off.</string>
+    <string name="notification_listener_revoke_warning_summary">If you turn off notification access for <xliff:g id="notification_listener_name">%1$s</xliff:g>, Do Not Disturb control may also be turned off.</string>
     <!-- Positive button for a dialog warning message about revoking notification listener access. [CHAR_LIMIT=30] -->
     <string name="notification_listener_revoke_warning_confirm">Turn off</string>
     <!-- Negative button for a dialog warning message about revoking notification listener access. [CHAR_LIMIT=30] -->
@@ -973,10 +975,10 @@
     <string name="premium_sms_access_title">Premium SMS</string>
     <!-- Message shown for option to enable Premium SMS for an app. [CHAR_LIMIT=NONE] -->
     <string name="premium_sms_access_description">Premium SMS may cost you money and will add up to your carrier bills. If you enable permission for an app, you will be able to send premium SMS using that app.</string>
-    <!-- Title for managing apps which can query usage data. [CHAR_LIMIT=30] -->
-    <string name="usage_access_title">Usage access</string>
-    <!-- Description of the usage access permission. [CHAR_LIMIT=NONE] -->
-    <string name="usage_access_description">Usage access allows an app to track what other apps you\u2019re using and how often, as well as your carrier, language settings, and other details.</string>
+    <!-- Title for managing apps which can query usage data. [CHAR_LIMIT=40] -->
+    <string name="usage_access_title">App usage data</string>
+    <!-- Description of the app usage data permission. [CHAR_LIMIT=NONE] -->
+    <string name="usage_access_description">Access to all app usage data allows an app to track what other apps you\u2019re using and how often, as well as your carrier, language settings, and other details.</string>
     <!-- Title for managing apps which can change Wi-Fi state. [CHAR_LIMIT=30] -->
     <string name="wifi_control_title">Wi-Fi control</string>
     <!-- Description of the change wifi state permission. [CHAR_LIMIT=NONE] -->

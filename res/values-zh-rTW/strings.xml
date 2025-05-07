@@ -30,8 +30,8 @@
     <string name="mobile_network_summary_count" msgid="760865625847664029">"{count,plural, =1{# 張 SIM 卡}other{# 張 SIM 卡}}"</string>
     <string name="mobile_network_active_sim" msgid="1901674954229832811">"已啟用/SIM 卡"</string>
     <string name="mobile_network_inactive_sim" msgid="3644984830926224318">"未啟用/SIM 卡"</string>
-    <string name="mobile_network_active_esim" msgid="5175362818078597096">"已啟用/eSIM 卡"</string>
-    <string name="mobile_network_inactive_esim" msgid="7273712403773327964">"未啟用/eSIM 卡"</string>
+    <string name="mobile_network_active_esim" msgid="5175362818078597096">"已啟用/eSIM"</string>
+    <string name="mobile_network_inactive_esim" msgid="7273712403773327964">"未啟用/eSIM"</string>
     <string name="mobile_network_list_add_more" msgid="6174294462747070655">"新增更多"</string>
     <string name="mobile_network_toggle_title" msgid="3515647310810280063">"行動數據"</string>
     <string name="mobile_network_toggle_summary" msgid="8698267487987697148">"使用行動網路存取數據"</string>
@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"毫伏特"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"毫瓦"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"安培小時"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"千瓦小時"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"千瓦小時"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"每平方英寸磅"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"每小時英里"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"每小時公里"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"巴"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"度"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"每百英里千瓦"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"每百公里千瓦"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"每百英里千瓦小時"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"每百公里千瓦小時"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"每加侖英里 (美國)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"每加侖英里 (英國)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"每公升公里"</string>
@@ -410,6 +410,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# 個支援的連結}other{# 個支援的連結}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"新增連結"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# 個未處理的連結}other{# 個未處理的連結}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"應用程式可驗證連結，通過驗證的連結就能自動在應用程式中開啟。"</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"應用程式"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"最近開啟的應用程式"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"查看全部 %1$d 個應用程式"</string>
@@ -529,9 +530,9 @@
     <string name="reset_network_item_wifi" msgid="2876370861806060314"><li>"Wi‑Fi 網路和密碼"</li></string>
     <string name="reset_network_item_mobile" msgid="5747282716664480997"><li>"行動數據"</li></string>
     <string name="reset_network_item_bluetooth" msgid="7475279871421815601"><li>"手機和其他藍牙裝置"</li></string>
-    <string name="reset_esim_title" msgid="8132107637911831211">"清除所有車輛的 eSIM 卡"</string>
+    <string name="reset_esim_title" msgid="8132107637911831211">"清除所有車輛的 eSIM"</string>
     <string name="reset_esim_desc" msgid="1437276625485586740">"這項操作不會取消你的服務方案。"</string>
-    <string name="reset_esim_error_title" msgid="7245109418130525492">"無法重設 eSIM 卡"</string>
+    <string name="reset_esim_error_title" msgid="7245109418130525492">"無法重設 eSIM"</string>
     <string name="reset_network_select" msgid="2433825874868038739">"選取網路"</string>
     <string name="reset_network_button_text" msgid="8374174455632765033">"重設設定"</string>
     <string name="reset_network_confirm_title" msgid="5255502723840197663">"要重設嗎？"</string>

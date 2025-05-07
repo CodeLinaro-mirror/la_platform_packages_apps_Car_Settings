@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Милливольт"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Милливатт"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ампер цаг"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Киловатт цаг"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Киловатт цаг"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Квадрат инч тутмын фунт"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Цаг тутмын миль"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Цаг тутмын километр"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Бар"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Хэм"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Зуун миль тутмын киловатт"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Зуун километр тутмын киловатт"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Зуун миль тутмын киловатт цаг"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Зуун километр тутмын киловатт цаг"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Галлон тутмын миль (АНУ)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Галлон тутмын миль (Нэгдсэн Вант Улс)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Литр тутмын километр"</string>
@@ -410,6 +410,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{Дэмжсэн # холбоос}other{Дэмжсэн # холбоос}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"Холбоос нэмэх"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{Зохицуулахаа больсон # холбоос}other{Зохицуулахаа больсон # холбоос}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Апп холбоосыг тухайн аппад автоматаар нээгдэхийг баталгаажуулах боломжтой."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Аппууд"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Саяхан нээсэн"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Бүх %1$d аппыг харах"</string>

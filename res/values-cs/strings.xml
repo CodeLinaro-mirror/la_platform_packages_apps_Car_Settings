@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Miliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampérhodina"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowatthodina"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowatthodina"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Libry na palec čtvereční"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Míle za hodinu"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilometry za hodinu"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Stupeň"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt na sto mil"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt na to kilometrů"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowatthodiny na sto mil"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowatthodiny na sto kilometrů"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Míle na galon (USA)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Míle na galon (Spojené království)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilometry na litr"</string>
@@ -386,7 +386,7 @@
     <string name="autofill_settings_title" msgid="1188754272680049972">"Služba autom. vyplňování"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"Žádné"</string>
     <string name="default_app_selected_app" msgid="5289396663745484773">"Vybráno"</string>
-    <string name="assistant_security_warning" msgid="1844807956967428012">"Asistent bude moci číst informace o aplikacích používaných v systému, včetně údajů viditelných na obrazovce a přístupných v rámci aplikací."</string>
+    <string name="assistant_security_warning" msgid="1844807956967428012">"Asistent bude moct číst informace o aplikacích používaných v systému, včetně údajů viditelných na obrazovce a přístupných v rámci aplikací."</string>
     <string name="autofill_confirmation_message" msgid="1832984461556991378">"&lt;b&gt;Zkontrolujte, zda se jedná o důvěryhodnou aplikaci&lt;/b&gt; &lt;br/&gt; &lt;br/&gt; &lt;xliff:g id=app_name example=Automatické doplňování Google&gt;%1$s&lt;/xliff:g&gt; určuje na základě obsahu obrazovky, co lze automaticky vyplnit."</string>
     <string name="autofill_add_service" msgid="6413893366443609951">"Přidat službu"</string>
     <string name="app_launch_domain_links_title" msgid="774480184927726651">"Otevírání odkazů"</string>
@@ -410,6 +410,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# podporovaný odkaz}few{# podporované odkazy}many{# podporovaného odkazu}other{# podporovaných odkazů}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"Přidání odkazů"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# nezpracovaný odkaz}few{# nezpracované odkazy}many{# nezpracovaného odkazu}other{# nezpracovaných odkazů}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Aplikace může ověřovat odkazy, aby se v ní mohly automaticky otevírat."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Aplikace"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Nedávno spuštěné"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Zobrazit všechny aplikace (%1$d)"</string>

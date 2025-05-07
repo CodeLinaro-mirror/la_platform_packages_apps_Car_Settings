@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"మిల్లీవోల్ట్"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"మిల్లీవాట్"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"ఆంపియర్ అవర్"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"కిలోవాట్ అవర్"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"కిలోవాట్-అవర్"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"చదరపు అంగుళానికి పౌండ్లు"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"గంటకు మైళ్లు"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"గంటకు కిలోమీటర్‌లు"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"బార్"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"డిగ్రీ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"వంద మైళ్ళకు కిలోవాట్"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"వంద కిలోమీటర్‌లకు కిలోవాట్"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"వంద మైళ్లకు కిలోవాట్-అవర్స్"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"వంద కిలోమీటర్‌లకు కిలోవాట్-అవర్స్"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"గ్యాలన్‌కు మైళ్ళు (US)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"గ్యాలన్‌కు మైళ్ళు (UK)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"లీటర్‌కు కిలోమీటర్‌లు"</string>
@@ -410,6 +410,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# సపోర్ట్ ఉన్న లింక్}other{# సపోర్ట్ ఉన్న లింక్‌లు}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"లింక్‌లను జోడించండి"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# హ్యాండిల్ చేయని లింక్}other{# హ్యాండిల్ చేయని లింక్‌లు}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"యాప్‌లో ఆటోమేటిక్‌గా తెరవబడే లింక్‌లను ఆ యాప్ వెరిఫై చేయగలదు."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"యాప్‌లు"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"ఇటీవల తెరిచినవి"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"అన్ని %1$d యాప్‌లను చూడండి"</string>
@@ -817,7 +818,7 @@
     <string name="qc_display_brightness" msgid="2939655289816201170">"డిస్‌ప్లే బ్రైట్‌నెస్"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"మీ పరికరాలను చూడటానికి, బ్లూటూత్‌ను ఆన్ చేయండి"</string>
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"పరికరాన్ని పెయిర్ చేయడానికి, బ్లూటూత్ సెట్టింగ్‌లను తెరవండి"</string>
-    <string name="qc_ui_mode_title" msgid="2425571805732530923">"రూపం"</string>
+    <string name="qc_ui_mode_title" msgid="2425571805732530923">"థీమ్"</string>
     <string name="driving_mode_title" msgid="8103270030335833998">"డ్రైవింగ్‌ను సెట్ చేయండి"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"లేఅవుట్ హద్దులను చూపండి"</string>
     <string name="show_force_rtl_title" msgid="8240732919603115320">"RTL లేఅవుట్ దిశను అమలు చేయండి"</string>

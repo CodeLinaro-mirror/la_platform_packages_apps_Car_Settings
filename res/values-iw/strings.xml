@@ -302,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"מיליוולט"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"מיליוואט"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"אמפר שעה"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"קילוואט שעה"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"קילוואט-שעה"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"פאונדים לאינץ\' מרובע"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"מיילים לשעה"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"קילומטרים לשעה"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"בר"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"מעלות"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"קילוואט ל-100 מיילים"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"קילוואט ל-100 קילומטרים"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"קילוואט-שעה ל-100 מיילים"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"קילוואט-שעה ל-100 קילומטרים"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"מיילים לגלון (ארה\"ב)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"מיילים לגלון (הממלכה המאוחדת)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"קילומטרים לליטר"</string>
@@ -410,6 +410,7 @@
     <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{יש קישור נתמך אחד}one{יש # קישורים נתמכים}two{יש # קישורים נתמכים}other{יש # קישורים נתמכים}}"</string>
     <string name="opening_links_add_links_title" msgid="7560149353866939877">"הוספת קישורים"</string>
     <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{קישור אחד שלא טופל}one{‫# קישורים שלא טופלו}two{‫# קישורים שלא טופלו}other{‫# קישורים שלא טופלו}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"אפליקציות יכולות לאמת קישורים כדי שייפתחו בהן אוטומטית."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"אפליקציות"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"נפתחו לאחרונה"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"לעיון בכל %1$d האפליקציות"</string>
@@ -719,7 +720,7 @@
     <string name="lockpattern_pattern_confirmed" msgid="5984306638250515385">"קו ביטול הנעילה החדש שלך"</string>
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"מהו קו ביטול הנעילה שלך?"</string>
     <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"לסיום הפעולה פשוט צריך להרים את האצבע"</string>
-    <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"קו ביטול הנעילה נרשם"</string>
+    <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"קו ביטול הנעילה נשמר"</string>
     <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"יש לצייר שוב את קו ביטול הנעילה כדי לאשר"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"יש לחבר 4 נקודות לפחות. עליך לנסות שוב."</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"קו ביטול נעילה שגוי"</string>
