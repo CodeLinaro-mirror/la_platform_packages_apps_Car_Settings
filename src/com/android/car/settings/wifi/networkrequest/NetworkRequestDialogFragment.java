@@ -12,6 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
 package com.android.car.settings.wifi.networkrequest;
@@ -235,7 +239,8 @@ public class NetworkRequestDialogFragment extends ObservableDialogFragment imple
             WifiConfiguration wifiConfig = selectedWifiEntry.getWifiConfiguration();
             if (wifiConfig == null) {
                 if (selectedWifiEntry != null) {
-                    wifiConfig = WifiUtil.getWifiConfig(selectedWifiEntry, /* password= */ null);
+                    wifiConfig = WifiUtil.getWifiConfig(selectedWifiEntry, /* password= */ null,
+                        WifiEntry.METERED_CHOICE_AUTO, WifiEntry.PRIVACY_RANDOMIZED_MAC);
                 }
             }
 

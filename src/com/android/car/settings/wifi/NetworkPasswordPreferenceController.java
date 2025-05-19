@@ -12,6 +12,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 
 package com.android.car.settings.wifi;
@@ -35,12 +39,25 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.common.PreferenceController;
 import com.android.wifitrackerlib.WifiEntry;
+import android.content.SharedPreferences;
 
 /** Business logic relating to the security type and associated password. */
 public class NetworkPasswordPreferenceController extends
         PreferenceController<NetworkNameRestrictedPasswordEditTextPreference> {
 
     private static final Logger LOG = new Logger(NetworkPasswordPreferenceController.class);
+    private static final int SHARED_SECURITY_TYPE_UNSET = -1;
+
+    /** Action used in the {@link Intent} sent by the {@link LocalBroadcastManager}. */
+    public static final String ACTION_EAP_PASSWORD_CHANGED =
+        "com.android.car.settings.wifi.EapPasswordChanged";
+
+    /** Key used to store the metered choice of the network. */
+    public static final String KEY_EAP_PASSWORD_CHANGED = "eap_password_changed";
+
+    protected static final String SHARED_PREFERENCE_PATH =
+             "com.android.car.settings.wifi.NetworkPasswordPreferenceController";
+    private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(SHARED_PREFERENCE_PATH, Context.MODE_PRIVATE);
 
     @VisibleForTesting
     final BroadcastReceiver mNameChangeReceiver = new BroadcastReceiver() {
@@ -63,6 +80,37 @@ public class NetworkPasswordPreferenceController extends
         }
     };
 
+    @VisibleForTesting
+    final BroadcastReceiver mMeteredChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mMeteredChoice = intent.getIntExtra(
+                    NetworkMeteredPreferenceController.KEY_NETWORK_METERED,
+                    WifiEntry.METERED_CHOICE_AUTO);
+            refreshUi();
+        }
+    };
+
+    @VisibleForTesting
+    final BroadcastReceiver mPrivacyChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mPrivacyChoice = intent.getIntExtra(
+                    NetworkPrivacyPreferenceController.KEY_NETWORK_PRIVACY,
+                    WifiEntry.PRIVACY_RANDOMIZED_MAC);
+            refreshUi();
+        }
+    };
+    @VisibleForTesting
+    final BroadcastReceiver mEapMethodChangeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            mEapMethod = intent.getIntExtra(
+                    NetworkEapMethodPreferenceController.KEY_EAP_METHOD_CHANGED,
+                    NetworkEapMethodPreferenceController.WIFI_EAP_METHOD_TTLS);
+            refreshUi();
+        }
+    };
     private final Handler mUiHandler = new Handler(Looper.getMainLooper());
     private final WifiManager.ActionListener mConnectionListener =
             new WifiManager.ActionListener() {
@@ -82,6 +130,9 @@ public class NetworkPasswordPreferenceController extends
 
     private String mNetworkName;
     private int mSecurityType = WifiEntry.SECURITY_NONE;
+    private int mMeteredChoice = WifiEntry.METERED_CHOICE_AUTO;
+    private int mPrivacyChoice = WifiEntry.PRIVACY_RANDOMIZED_MAC;
+    private int mEapMethod = NetworkEapMethodPreferenceController.WIFI_EAP_METHOD_TTLS;
 
     public NetworkPasswordPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
@@ -99,12 +150,21 @@ public class NetworkPasswordPreferenceController extends
                 new IntentFilter(NetworkNamePreferenceController.ACTION_NAME_CHANGE));
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(mSecurityChangeReceiver,
                 new IntentFilter(NetworkSecurityPreferenceController.ACTION_SECURITY_CHANGE));
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mMeteredChangeReceiver,
+                new IntentFilter(NetworkMeteredPreferenceController.ACTION_METERED_CHANGE));
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mPrivacyChangeReceiver,
+                new IntentFilter(NetworkPrivacyPreferenceController.ACTION_PRIVACY_CHANGE));
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(mEapMethodChangeReceiver,
+                new IntentFilter(NetworkEapMethodPreferenceController.ACTION_EAPMETHOD_CHANGED));
     }
 
     @Override
     protected void onDestroyInternal() {
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mNameChangeReceiver);
         LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mSecurityChangeReceiver);
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mMeteredChangeReceiver);
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mPrivacyChangeReceiver);
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(mEapMethodChangeReceiver);
     }
 
     @Override
@@ -114,15 +174,42 @@ public class NetworkPasswordPreferenceController extends
         } else {
             getPreference().setDialogTitle(mNetworkName);
         }
-        preference.setVisible(!WifiUtil.isOpenNetwork(mSecurityType));
+
+        if (mSecurityType != WifiEntry.SECURITY_NONE &&
+            mSecurityType != WifiEntry.SECURITY_EAP_SUITE_B) {
+            if (mSecurityType == WifiEntry.SECURITY_EAP || mSecurityType == WifiEntry.SECURITY_EAP_WPA3_ENTERPRISE) {
+                if (mEapMethod == NetworkEapMethodPreferenceController.WIFI_EAP_METHOD_TTLS) {
+                    preference.setVisible(true);
+                } else {
+                    preference.setVisible(false);
+                }
+            } else if (mSecurityType == WifiEntry.SECURITY_PSK ||
+                       mSecurityType == WifiEntry.SECURITY_SAE) {
+                preference.setVisible(true);
+            }
+        } else {
+            preference.setVisible(false);
+        }
     }
 
     @Override
     protected boolean handlePreferenceChanged(
             NetworkNameRestrictedPasswordEditTextPreference preference, Object newValue) {
         String password = newValue.toString();
+        if (mSecurityType == WifiEntry.SECURITY_PSK ||
+            mSecurityType == WifiEntry.SECURITY_SAE) {
         WifiUtil.connectToWifiEntry(getContext(), mNetworkName, mSecurityType,
-                password, /* hidden= */ true, mConnectionListener);
+                password, /* hidden= */ true, mMeteredChoice, mPrivacyChoice, mConnectionListener);
+        } else if ((mSecurityType == WifiEntry.SECURITY_EAP || mSecurityType == WifiEntry.SECURITY_EAP_WPA3_ENTERPRISE) &&
+            mEapMethod == NetworkEapMethodPreferenceController.WIFI_EAP_METHOD_TTLS) {
+            notifyEapPasswordChange(password);
+        }
         return true;
+    }
+
+    private void notifyEapPasswordChange(String eapPassword) {
+        Intent intent = new Intent(ACTION_EAP_PASSWORD_CHANGED);
+        intent.putExtra(KEY_EAP_PASSWORD_CHANGED, eapPassword);
+        LocalBroadcastManager.getInstance(getContext()).sendBroadcastSync(intent);
     }
 }
