@@ -59,7 +59,7 @@ public class WifiTetherPreferenceController extends
     public WifiTetherPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         this(context, preferenceKey, fragmentController, uxRestrictions,
-                new CarWifiManager(context, fragmentController.getSettingsLifecycle()),
+                new CarWifiManager(context, fragmentController.getSettingsLifecycle(), false),
                 context.getSystemService(TetheringManager.class));
     }
 
