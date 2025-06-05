@@ -49,7 +49,7 @@ public class WifiTetherApBandPreferenceController extends
                     WifiTetherPasswordPreferenceController.SHARED_PREFERENCE_PATH,
                     Context.MODE_PRIVATE);
 
-    private static final int BAND_6GHZ = SoftApConfiguration.BAND_6GHZ | SoftApConfiguration.BAND_2GHZ;
+    private static final int BAND_6GHZ = SoftApConfiguration.BAND_6GHZ | SoftApConfiguration.BAND_5GHZ | SoftApConfiguration.BAND_2GHZ;
 
     private String[] mBandEntries;
     private String[] mBandSummaries;
