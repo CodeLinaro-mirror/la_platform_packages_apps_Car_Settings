@@ -132,7 +132,7 @@
     <string name="wifi_dns" msgid="1841448353154932801">"DNS"</string>
     <string name="wifi_details_ipv6_address_header" msgid="4707181386646531890">"IPv6-adresser"</string>
     <string name="wifi_gateway" msgid="4975799192860431013">"Gateway"</string>
-    <string name="wifi_preferences_title" msgid="772788844257225510">"Wi‑Fi-innstillinger"</string>
+    <string name="wifi_preferences_title" msgid="772788844257225510">"Wifiinnstillinger"</string>
     <string name="wifi_wakeup" msgid="7451825226044542000">"Slå på wifi automatisk"</string>
     <string name="wifi_wakeup_summary" msgid="7237521683331291414">"Wifi slås på igjen i nærheten av lagrede nettverk av høy kvalitet, for eksempel hjemmenettverket ditt"</string>
     <string name="wifi_wakeup_summary_no_location" msgid="2821576525488435259">"Utilgjengelig fordi Posisjon er slått av. Slå på "<annotation id="link">"Posisjon"</annotation>"."</string>
@@ -141,7 +141,7 @@
     <string name="wifi_settings_scanning_required_enabled" msgid="5457372118991438313">"Wifi-skanning er slått på"</string>
     <string name="wifi_cellular_fallback_title" msgid="8322675436784870862">"Bytt til mobildata automatisk"</string>
     <string name="wifi_cellular_fallback_summary" msgid="2433848528924203758">"Bruk mobildata når Wifi ikke har internettilgang. Avgifter for databruk kan påløpe."</string>
-    <string name="wifi_network_state_switch_subtitle" msgid="7462322882046013762">"Finn og koble til Wifi-nettverk"</string>
+    <string name="wifi_network_state_switch_subtitle" msgid="7462322882046013762">"Finn og koble til wifinettverk"</string>
     <string name="learn_more" msgid="8214605928933358604">"Finn ut mer"</string>
     <string name="wifi_hotspot_name_title" msgid="8844779338692535356">"Navn på wifi-sone"</string>
     <string name="wifi_hotspot_name_summary_connecting" msgid="5262510450498600038">"Slår på <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g> …"</string>
@@ -170,7 +170,7 @@
     <string name="wifi_hotspot_keep_on_summary" msgid="7701814310702163462">"Gjør wifi-sonen tilgjengelig så lenge bilen er i gang"</string>
     <string name="wifi_hotspot_qr_code_text" msgid="6074599244483100567">"Skann denne QR-koden for å koble til «%s»"</string>
     <string name="wifi_hotspot_qr_code_password_text" msgid="400288180113940870">"Passordet for wifi-sonen: %s"</string>
-    <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> ønsker å slå på Wifi"</string>
+    <string name="wifi_ask_enable" msgid="4452418245680754578">"<xliff:g id="REQUESTER">%s</xliff:g> ønsker å slå på wifi"</string>
     <string name="wifi_ask_disable" msgid="2949290055916181553">"<xliff:g id="REQUESTER">%s</xliff:g> ønsker å slå av Wifi"</string>
     <string name="wifi_error" msgid="3105105447117289410">"Feil"</string>
     <string name="network_connection_request_dialog_title" msgid="8449606155059098762">"Enhet som skal brukes med <xliff:g id="APPNAME">%1$s</xliff:g>"</string>
@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Tilkoblingen var vellykket"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Vis alle"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Søker"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Del"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Skann denne QR-koden for å koble til wifi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Wifi-deling er ikke tilgjengelig for dette wifi-nettverket."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Tilkoblede enheter"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Bruk Bluetooth"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Millivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Amperetime"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowattime"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowattime"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Psi"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Engelske mil per time"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilometer per time"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Grad"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt per hundre engelske mil"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt per hundre kilometer"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowattimer per hundre engelske mil"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowattimer per hundre kilometer"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Miles per gallon (USA)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Miles per gallon (Storbritannia)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilometer per liter"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Ubrukte apper"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# ubrukt app}other{# ubrukte apper}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Fjern tillatelser og frigjør plass"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Høyde/bredde-forhold (på forsøksstadiet)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Åpne"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Appstandard"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Fullskjerm"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Halv skjerm"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Høyde/bredde-forhold for enheten"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3 : 2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Appen starter på nytt når du endrer høyde/bredde-forholdet. Du kan miste endringer som ikke er lagret. Enkelte apper er kanskje ikke optimalisert for visse høyde/bredde-forhold."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s i internminne"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Bruker systemressurser til å prioritere appytelse"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Åpne som standard"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Tillat at appen åpner linker som støttes"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Databruk"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Appens databruk"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Brukslogg"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Spør hver gang"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Ikke åpne med denne appen"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Støttede linker"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Bekreftede linker"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# bekreftet link}other{# bekreftede linker}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Støttede linker"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# støttet link}other{# støttede linker}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Legg til linker"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# ikke-håndtert link}other{# ikke-håndterte linker}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"En app kan bekrefte linker som skal åpnes automatisk i appen."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Apper"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Nylig åpnet"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Se alle %1$d apper"</string>
@@ -727,7 +749,7 @@
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"Fjern"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"Avbryt"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"Bekreft"</string>
-    <string name="choose_lock_password_hints" msgid="3903696950202491593">"Må bestå av minst fire tegn"</string>
+    <string name="choose_lock_password_hints" msgid="3903696950202491593">"Må ha minst 4 tegn"</string>
     <string name="locktype_unavailable" msgid="2678317466336249126">"Denne låsetypen er utilgjengelig."</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"Kan bare inneholde tall fra 0 til 9."</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"Enhetsadministratoren forbyr nylig brukte PIN-koder"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Internettabonnementene dine er utløpt"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Se abonnementer"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Ferdig"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Kjøretøyet ditt støtter ikke denne funksjonen"</string>
 </resources>

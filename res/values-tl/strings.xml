@@ -132,7 +132,7 @@
     <string name="wifi_dns" msgid="1841448353154932801">"DNS"</string>
     <string name="wifi_details_ipv6_address_header" msgid="4707181386646531890">"Mga IPv6 address"</string>
     <string name="wifi_gateway" msgid="4975799192860431013">"Gateway"</string>
-    <string name="wifi_preferences_title" msgid="772788844257225510">"Mga kagustuhan sa Wi‑Fi"</string>
+    <string name="wifi_preferences_title" msgid="772788844257225510">"Mga preference sa Wi‑Fi"</string>
     <string name="wifi_wakeup" msgid="7451825226044542000">"Awtomatikong i-on ang Wi‑Fi"</string>
     <string name="wifi_wakeup_summary" msgid="7237521683331291414">"Mag-o-on ang Wi‑Fi malapit sa saved high-quality network, gaya ng home network"</string>
     <string name="wifi_wakeup_summary_no_location" msgid="2821576525488435259">"Hindi available, naka-off ang lokasyon. I-on ang "<annotation id="link">"lokasyon"</annotation>"."</string>
@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Naikonekta"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Ipakita lahat"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Naghahanap"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"I-share"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"I-scan ang QR code na ito para kumonekta sa Wi‑Fi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Hindi available ang pag-share ng Wi‑Fi para sa Wi‑Fi na ito."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Mga nakakonektang device"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Gumamit ng Bluetooth"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Millivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampere hour"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowatt hour"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowatt-hour"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Pound kada square inch"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Milya kada oras"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilometro kada oras"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Degree"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt kada isandaang Milya"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt kada isandaang Kilometro"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowatt-hour kada isandaang Milya"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowatt-hour kada isandaang Kilometro"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Milya kada Galon (US)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Milya kada Galon (UK)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilometro kada Litro"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Mga hindi ginagamit na app"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# hindi ginagamit na app}one{# hindi ginagamit na app}other{# na hindi ginagamit na app}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Alisin ang pahintulot, i-clear ang space"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Aspect ratio (Pang-eksperimento)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Buksan"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Default ng app"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Full screen"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Kalahating screen"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Aspect ratio ng device"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Magre-restart ang app kapag binago mo ang aspect ratio. Posibleng mawala ang mga hindi na-save na pagbabago. Posibleng hindi naka-optimize ang ilang app para sa ilang partikular na aspect ratio."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s sa internal storage"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Ginagamit ang mga resource ng system para gawing priyoridad ang performance ng app"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Buksan bilang default"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Payagan ang app na buksan ang mga sinusuportahang link"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Paggamit ng data"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Paggamit ng data ng app"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"History ng paggamit"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Itanong palagi"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Huwag buksan sa app na ito"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Mga sinusuportahang link"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Mga na-verify na link"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# na-verify na link}one{# na-verify na link}other{# na na-verify na link}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Mga sinusuportahang link"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# sinusuportahang link}one{# sinusuportahang link}other{# na sinusuportahang link}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Magdagdag ng mga link"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# hindi pinapangasiwaang link}one{# hindi pinapangasiwaang link}other{# na hindi pinapangasiwaang link}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Puwedeng ma-verify ng isang app ang mga link para awtomatikong buksan ang mga ito sa app."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Mga App"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Binuksan kamakailan"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Tingnan ang lahat ng %1$d (na) app"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Nag-expire na ang iyong internet plan"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Tingnan ang mga plan"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Tapos na"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Hindi sinusuportahan ng iyong device ang feature na ito"</string>
 </resources>

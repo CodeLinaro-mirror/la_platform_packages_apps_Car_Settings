@@ -36,7 +36,7 @@
     <string name="mobile_network_toggle_title" msgid="3515647310810280063">"Mobilní data"</string>
     <string name="mobile_network_toggle_summary" msgid="8698267487987697148">"Používat datové připojení přes mobilní síť"</string>
     <string name="mobile_network_mobile_network_toggle_title" msgid="3087288149339116597">"Mobilní síť"</string>
-    <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"Použít mobilní data"</string>
+    <string name="mobile_network_mobile_network_toggle_summary" msgid="1679917666306941420">"Používat mobilní data"</string>
     <string name="mobile_network_state_off" msgid="471795861420831748">"Vypnuto"</string>
     <string name="confirm_mobile_data_disable" msgid="826493998804496639">"Vypnout mobilní data?"</string>
     <string name="sim_selection_required_pref" msgid="6599562910262785784">"Je vyžadován výběr"</string>
@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Připojení úspěšně navázáno"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Zobrazit vše"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Hledání"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Sdílet"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Naskenujte tenhle QR kód a připojte se k Wi‑Fi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Sdílení není u téhle sítě Wi‑Fi k dispozici."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Připojená zařízení"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Používat Bluetooth"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Miliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampérhodina"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowatthodina"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowatthodina"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Libry na palec čtvereční"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Míle za hodinu"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilometry za hodinu"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Stupeň"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt na sto mil"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt na to kilometrů"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowatthodiny na sto mil"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowatthodiny na sto kilometrů"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Míle na galon (USA)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Míle na galon (Spojené království)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilometry na litr"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Nepoužívané aplikace"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# nepoužívaná aplikace}few{# nepoužívané aplikace}many{# nepoužívané aplikace}other{# nepoužívaných aplikací}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Odebrat oprávnění a uvolnit místo"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Poměr stran (experimentální)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Otevřít"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Výchozí nastavení aplikace"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Celá obrazovka"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Polovina obrazovky"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Poměr stran zařízení"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16 : 9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3 : 2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4 : 3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Když změníte poměr stran, aplikace se restartuje. Můžete přijít o neuložené změny. Některé aplikace nemusí být optimalizované pro určité poměry stran."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s v interním úložišti"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Používá systémové zdroje k upřednostnění výkonu aplikace"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Otevírat ve výchozím nastavení"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Povolit aplikaci otevírat podporované odkazy"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Využití dat"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Využití dat aplikací"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Historie využití"</string>
@@ -371,7 +386,7 @@
     <string name="autofill_settings_title" msgid="1188754272680049972">"Služba autom. vyplňování"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"Žádné"</string>
     <string name="default_app_selected_app" msgid="5289396663745484773">"Vybráno"</string>
-    <string name="assistant_security_warning" msgid="1844807956967428012">"Asistent bude moci číst informace o aplikacích používaných v systému, včetně údajů viditelných na obrazovce a přístupných v rámci aplikací."</string>
+    <string name="assistant_security_warning" msgid="1844807956967428012">"Asistent bude moct číst informace o aplikacích používaných v systému, včetně údajů viditelných na obrazovce a přístupných v rámci aplikací."</string>
     <string name="autofill_confirmation_message" msgid="1832984461556991378">"&lt;b&gt;Zkontrolujte, zda se jedná o důvěryhodnou aplikaci&lt;/b&gt; &lt;br/&gt; &lt;br/&gt; &lt;xliff:g id=app_name example=Automatické doplňování Google&gt;%1$s&lt;/xliff:g&gt; určuje na základě obsahu obrazovky, co lze automaticky vyplnit."</string>
     <string name="autofill_add_service" msgid="6413893366443609951">"Přidat službu"</string>
     <string name="app_launch_domain_links_title" msgid="774480184927726651">"Otevírání odkazů"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Pokaždé se zeptat"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Neotevírat v této aplikaci"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Podporované odkazy"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Ověřené odkazy"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# ověřený odkaz}few{# ověřené odkazy}many{# ověřeného odkazu}other{# ověřených odkazů}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Podporované odkazy"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# podporovaný odkaz}few{# podporované odkazy}many{# podporovaného odkazu}other{# podporovaných odkazů}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Přidání odkazů"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# nezpracovaný odkaz}few{# nezpracované odkazy}many{# nezpracovaného odkazu}other{# nezpracovaných odkazů}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Aplikace může ověřovat odkazy, aby se v ní mohly automaticky otevírat."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Aplikace"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Nedávno spuštěné"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Zobrazit všechny aplikace (%1$d)"</string>
@@ -397,7 +419,7 @@
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Pro Asistenta a další aplikace"</string>
     <string name="performance_impacting_apps_summary" msgid="7762122057244111162">"{count,plural, =1{# aplikace ovlivňuje výkon}few{# aplikace ovlivňují výkon}many{# aplikace ovlivňuje výkon}other{# aplikací ovlivňuje výkon}}"</string>
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"K systému a dalším nastavením"</string>
-    <string name="special_access" msgid="5730278220917123811">"Zvláštní přístup aplikací"</string>
+    <string name="special_access" msgid="5730278220917123811">"Speciální přístup aplikací"</string>
     <string name="show_system" msgid="4401355756969485287">"Zobrazit systémové aplikace"</string>
     <string name="hide_system" msgid="8845453295584638040">"Skrýt systémové aplikace"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Skrýt systémové aplikace"</string>
@@ -589,7 +611,7 @@
     <string name="current_user_name" msgid="3813671533249316823">"Vy (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Jméno"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Není nastaveno"</string>
-    <string name="edit_user_name_title" msgid="1118500707473139995">"Upravit profilové jméno"</string>
+    <string name="edit_user_name_title" msgid="1118500707473139995">"Upravit název profilu"</string>
     <string name="name_input_blank_error" msgid="2088850865880984123">"Pole nesmí být prázdné."</string>
     <string name="name_input_invalid_error" msgid="4355625213535164704">"Zadané profilové jméno je neplatné."</string>
     <string name="users_list_title" msgid="770764290290240909">"Uživatelé"</string>
@@ -699,7 +721,7 @@
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"Proveďte odemykací gesto"</string>
     <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"Na závěr zvedněte prst z obrazovky"</string>
     <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"Gesto bylo zaznamenáno"</string>
-    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Proveďte gesto znovu pro potvrzení"</string>
+    <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Gesto znovu zadejte a tím ho potvrďte"</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"Spojte alespoň čtyři tečky. Zkuste to znovu."</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"Nesprávné gesto"</string>
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Zadání bezpečnostního gesta"</string>
@@ -795,9 +817,9 @@
     <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Tento profil je aktuálně přihlášen jako řidič. Zkuste to znovu, až se tento profil používat nebude."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Jas displeje"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Pokud chcete zobrazit svá zařízení, zapněte Bluetooth"</string>
-    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Pokud spárovat zařízení, zapněte nastavení Bluetooth"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Zařízení spárujete v nastavení Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Motiv"</string>
-    <string name="show_layout_bounds_title" msgid="8590148405645027755">"Zobrazit ohraničení"</string>
+    <string name="show_layout_bounds_title" msgid="8590148405645027755">"Zobrazovat ohraničení"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administrátor informačního a zábavního systému"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aktivované aplikace"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Deaktivované aplikace"</string>
@@ -856,9 +878,9 @@
     <string name="enterprise_privacy_security_logs" msgid="7375479062062113231">"Nejnovější protokol zabezpečení"</string>
     <string name="enterprise_privacy_none" msgid="2566653655908700748">"Žádné"</string>
     <string name="enterprise_privacy_enterprise_installed_packages" msgid="7798942534994638670">"Nainstalované aplikace"</string>
-    <string name="enterprise_privacy_location_access" msgid="3132799413005627076">"Oprávnění přístupu k poloze"</string>
-    <string name="enterprise_privacy_microphone_access" msgid="4094467062253345379">"Oprávnění přístupu k mikrofonu"</string>
-    <string name="enterprise_privacy_camera_access" msgid="8895281017339143744">"Oprávnění přístupu k fotoaparátu"</string>
+    <string name="enterprise_privacy_location_access" msgid="3132799413005627076">"Oprávnění pro přístup k poloze"</string>
+    <string name="enterprise_privacy_microphone_access" msgid="4094467062253345379">"Oprávnění pro přístup k mikrofonu"</string>
+    <string name="enterprise_privacy_camera_access" msgid="8895281017339143744">"Oprávnění pro přístup k fotoaparátu"</string>
     <string name="enterprise_privacy_enterprise_set_default_apps" msgid="3386806357685549519">"Výchozí aplikace"</string>
     <string name="enterprise_privacy_input_method" msgid="5062395693747004531">"Výchozí klávesnice"</string>
     <string name="enterprise_privacy_input_method_name" msgid="2027313786295077607">"Nastavit na <xliff:g id="APP_LABEL">%s</xliff:g>"</string>
@@ -920,7 +942,7 @@
     <string name="captions_settings_text_size_very_large" msgid="949511539689307969">"Velmi velké"</string>
     <string name="captions_text_style_title" msgid="8547777957403577760">"Styl titulků"</string>
     <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"Nastaveno aplikací"</string>
-    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Bílé na černém"</string>
+    <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"Bílá na černém"</string>
     <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"Černé na bílém"</string>
     <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"Žluté na černém"</string>
     <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Žluté na modrém"</string>
@@ -945,4 +967,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Vašim internetovým tarifům vypršela platnost"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Zobrazit tarify"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Hotovo"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Vaše vozidlo tuhle funkci nepodporuje"</string>
 </resources>

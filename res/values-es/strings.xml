@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Se ha conectado correctamente"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Mostrar todo"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Buscando"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Compartir"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Escanea este código QR para conectarte al Wi-Fi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Compartir Wi-Fi no está disponible en esta red Wi-Fi."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Dispositivos conectados"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Usar Bluetooth"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivoltio"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milivatio"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Amperio‑hora"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilovatio‑hora"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilovatio-hora"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Libra por pulgada cuadrada"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Millas por hora"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilómetros por hora"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Grado"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilovatio por 100 millas"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilovatios por 100 kilómetros"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilovatios-hora por 100 millas"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilovatios-hora por 100 kilómetros"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Millas por galón (Estados Unidos)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Millas por galón (Reino Unido)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilómetros por litro"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Aplicaciones no usadas"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# aplicación no usada}other{# aplicaciones no usadas}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Quitar permisos y liberar espacio"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Relación de aspecto (experimental)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Abrir"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Predeterminada de la aplicación"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Pantalla completa"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Media pantalla"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Relación de aspecto del dispositivo"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"La aplicación se reiniciará cuando cambies la relación de aspecto. Puede que pierdas los cambios sin guardar. Puede que algunas aplicaciones no estén optimizadas para determinadas relaciones de aspecto."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s en el almacenamiento interno"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Usa recursos del sistema para priorizar el rendimiento de la aplicación"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Abrir de forma predeterminada"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Permite que la aplicación abra enlaces compatibles"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Uso de datos"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Uso de datos de la app"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Historial de uso"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Preguntar siempre"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"No abrir en esta aplicación"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Enlaces compatibles"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Enlaces verificados"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# enlace verificado}other{# enlaces verificados}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Enlaces compatibles"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# enlace compatible}other{# enlaces compatibles}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Añadir enlaces"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# enlace no gestionado}other{# enlaces no gestionados}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Una aplicación puede verificar enlaces para que se abran automáticamente en ella."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Aplicaciones"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Abiertas recientemente"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Ver todas las aplicaciones (%1$d)"</string>
@@ -914,7 +936,7 @@
     <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"Amarillo sobre azul"</string>
     <string name="accessibility_settings_screen_reader_title" msgid="5113265553157624836">"Lector de pantalla"</string>
     <string name="screen_reader_settings_off" msgid="6081562047935689764">"Desactivado"</string>
-    <string name="screen_reader_settings_on" msgid="2168217218643349459">"Decir los elementos que hay en pantalla"</string>
+    <string name="screen_reader_settings_on" msgid="2168217218643349459">"Enuncia los elementos de la pantalla"</string>
     <string name="enable_screen_reader_toggle_title" msgid="7641307781194619254">"Usar <xliff:g id="ACCESSIBILITY_APP_NAME">%1$s</xliff:g>"</string>
     <string name="screen_reader_options_title" msgid="1073640098442831819">"Opciones"</string>
     <string name="screen_reader_description_title" msgid="8766666406552388012">"Ajustes"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Tus planes de Internet han caducado"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Ver planes"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Hecho"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Tu vehículo no admite esta función"</string>
 </resources>

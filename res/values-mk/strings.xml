@@ -44,7 +44,7 @@
     <string name="sim_change_data_message" msgid="4669775284395549069">"Користите <xliff:g id="CARRIER2_0">%2$s</xliff:g> за мобилен интернет. Ако се префрлите на <xliff:g id="CARRIER1">%1$s</xliff:g>, <xliff:g id="CARRIER2_1">%2$s</xliff:g> веќе нема да се користи за мобилен интернет."</string>
     <string name="sim_change_data_ok" msgid="2348804996223271081">"Користи <xliff:g id="CARRIER">%1$s</xliff:g>"</string>
     <string name="roaming_title" msgid="6218635014519017734">"Роаминг"</string>
-    <string name="roaming_summary" msgid="7476127740259728901">"Поврзувај се со интернет-услуги во роаминг"</string>
+    <string name="roaming_summary" msgid="7476127740259728901">"Поврзувај се на мобилен интернет во роаминг"</string>
     <string name="roaming_alert_title" msgid="4433901635766775763">"Да се дозволи ли интернет-роаминг?"</string>
     <string name="roaming_warning" msgid="4908184914868720704">"Може да ви се наплати за роаминг."</string>
     <string name="data_usage_settings" msgid="7877132994777987848">"Потрошен интернет"</string>
@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Поврзувањето е успешно"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Прикажи ги сите"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Пребарување"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Споделете"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Скенирајте го QR-кодов за да се поврзете на Wi‑Fi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Споделувањето Wi‑Fi не е достапно за оваа Wi‑Fi мрежа."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Поврзани уреди"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Користи Bluetooth"</string>
@@ -194,7 +197,7 @@
     <string name="bluetooth_name" msgid="2609869978821094114">"Име на возилото"</string>
     <string name="bluetooth_rename_vehicle" msgid="5769424875066563154">"Преименувајте го возилово"</string>
     <string name="bluetooth_rename_device" msgid="8406868875363878712">"Преименувајте го уредот"</string>
-    <string name="bluetooth_rename_button" msgid="2397892174725986383">"Преименувај"</string>
+    <string name="bluetooth_rename_button" msgid="2397892174725986383">"Преименувајте"</string>
     <string name="bluetooth_available_devices" msgid="1854446368146061448">"Достапни уреди"</string>
     <string name="bluetooth_profiles" msgid="5580372290862835951">"Профили"</string>
     <string name="bluetooth_error_title" msgid="2341600997536511742"></string>
@@ -221,7 +224,7 @@
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Код за спарување преку Bluetooth"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"PIN-от содржи букви или симболи"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"Внесете го кодот за спарување, а потоа притиснете Врати или Внеси"</string>
-    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Дали да се спари со <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
+    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Да се спари со <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"Дозволете <xliff:g id="DEVICE_NAME">%1$s</xliff:g> да пристапува до контактите и историјата на повици."</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"Можеби ќе треба да го внесе овој PIN и на другиот уред."</string>
     <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"Може ќе треба да ја внесете лозинката и на другиот уред."</string>
@@ -238,7 +241,7 @@
     <string name="language_picker_list_suggested_header" msgid="7593893806003415948">"Предложен"</string>
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"Сите јазици"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"Тастатура"</string>
-    <string name="manage_keyboard" msgid="4045394766282200132">"Управување со тастатури"</string>
+    <string name="manage_keyboard" msgid="4045394766282200132">"Управувајте со тастатурите"</string>
     <string name="text_to_speech_settings" msgid="811985746199507343">"Претворање текст во говор"</string>
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"Претпочитан софтвер"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"Тековен софтвер"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Миливолт"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Миливат"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ампер час"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Киловат час"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Киловат час"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Фунти по квадратен инч"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Милји на час"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Километри на час"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Бар"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Степен"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Киловат на сто милји"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Киловат на сто километри"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Киловат часови на сто милји"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Киловат часови на сто километри"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Милји по галон (САД)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Милји по галон (ОК)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Километри по литар"</string>
@@ -335,7 +338,7 @@
     <string name="permissions_label" msgid="2701446753515612685">"Дозволи"</string>
     <string name="app_info_all_services_label" msgid="6495363975322723452">"Сите услуги"</string>
     <string name="notifications_label" msgid="6586089149665170731">"Известувања"</string>
-    <string name="storage_application_label" msgid="5911779903670978586">"Капацитет и кеш"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"Простор и кеш"</string>
     <string name="prioritize_app_performance_label" msgid="7264505023347026606">"Приоритет на изведбата на апликацијата"</string>
     <string name="application_version_label" msgid="8556889839783311649">"Верзија %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"Не се доделени дозволи"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Некористени апликации"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# некористена апликација}one{# некористена апликација}other{# некористени апликации}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Отстранувај дозволи за повеќе простор"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Сооднос (експериментално)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Отвори"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Стандардно за апликацијата"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Цел екран"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Половина екран"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Сооднос на уредот"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Апликацијата ќе се рестартира кога ќе го промените соодносот. Може да ги изгубите незачуваните промени. Некои апликации може да не се оптимизирани за одредени соодноси."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s во внатрешен капацитет"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Се користат ресурси на системот за да се стави приоритет на изведбата на апликацијата"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Отворај стандардно"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Дозволете ѝ на апликацијата да отвора поддржани линкови"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Потрошен интернет"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Потрошен интернет од апл."</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Историја на сообраќај"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Прашувај секогаш"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Не отворај во апликацијава"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Поддржани линкови"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Потврдени линкови"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# потврден линк}one{# потврден линк}other{# потврдени линка}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Поддржани линкови"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# поддржан линк}one{# поддржан линк}other{# поддржани линка}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Додајте линкови"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# неуправуван линк}one{# неуправуван линк}other{# неуправувани линкови}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Дадена апликација може да потврдува линкови за да ги отвора автоматски во апликацијата"</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Апликации"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Неодамна отворени"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Прикажи ги сите %1$d апликации"</string>
@@ -476,7 +498,7 @@
     <string name="device_status" msgid="267298179806290920">"Статус"</string>
     <string name="device_status_summary" product="tablet" msgid="600543254608862075">"Статус на батерија, мрежа и други информации"</string>
     <string name="device_status_summary" product="default" msgid="9130360324418117815">"Телефонски број, сигнал итн."</string>
-    <string name="about_settings" msgid="4329457966672592345">"За"</string>
+    <string name="about_settings" msgid="4329457966672592345">"Информации"</string>
     <string name="about_summary" msgid="5374623866267691206">"Android <xliff:g id="VERSION">%1$s</xliff:g>"</string>
     <string name="about_settings_summary" msgid="7975072809083281401">"Прикажи правни информации, статус, верзија на софтвер"</string>
     <string name="legal_information" msgid="1838443759229784762">"Правни информации"</string>
@@ -568,8 +590,8 @@
     <string name="user_add_user_menu" msgid="4125869008006021799">"Додај профил"</string>
     <string name="user_new_user_name" msgid="906698527658609819">"Нов профил"</string>
     <string name="user_add_user_title" msgid="6296827596015729982">"Да се додаде нов профил?"</string>
-    <string name="user_add_user_message_setup" msgid="812616230454605159">"Откако ќе создадете нов профил за некое лице, тоа ќе треба да си го приспособи за себе."</string>
-    <string name="user_add_user_message_update" msgid="3836353291078729240">"Апликациите може да се ажурират од кој било профил, а може да ги користат сите други профили."</string>
+    <string name="user_add_user_message_setup" msgid="812616230454605159">"Откако ќе создадете нов профил за некого, тоа лице ќе треба да си го приспособи профилот."</string>
+    <string name="user_add_user_message_update" msgid="3836353291078729240">"Апликациите може да се ажурираат од кој било профил и ќе се ажурираат за сите други профили."</string>
     <string name="user_limit_reached_title" msgid="5677729355746623293">"Достигнат е максимален број профили"</string>
     <string name="user_limit_reached_message" msgid="2773441357248819721">"{count,plural, =1{Може да се создаде само еден профил.}one{Може да создадете најмногу # профил.}other{Може да создадете најмногу # профили.}}"</string>
     <string name="add_user_error_title" msgid="7589792057846396341">"Не можеше да се создаде нов профил"</string>
@@ -617,9 +639,9 @@
     <string name="accounts_settings_title" msgid="436190037084293471">"Сметки"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"Додајте сметка"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"Нема додадени сметки"</string>
-    <string name="account_list_title" msgid="7631588514613843065">"Сметки за <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
+    <string name="account_list_title" msgid="7631588514613843065">"Сметки за: <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Автоматска синхронизација на податоци"</string>
-    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Дозволи апликациите автоматски да ги освежуваат податоците"</string>
+    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Дозволи им на апликациите автоматски да ги освежуваат податоците"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="8068513213445588532">"Да се дозволи автоматско синхронизирање податоци?"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="8683935973719807821">"Сите промени што ќе ги извршите на вашите сметки во прелистувачот ќе се ископираат автоматски и во возилото.\n\nКај некои сметки, сите извршени промени преку возилото може да се ископираат автоматски и во прелистувачот."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="6683011954002351091">"Да се забрани автоматско синхронизирање податоци?"</string>
@@ -754,7 +776,7 @@
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"Не е дозволена нагорна, надолна или повторлива секвенца на цифри"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Опции за заклучување на екранот"</string>
     <string name="credentials_reset" msgid="873900550885788639">"Бришење акредитиви"</string>
-    <string name="credentials_reset_summary" msgid="6067911547500459637">"Отстрани ги сите сертификати"</string>
+    <string name="credentials_reset_summary" msgid="6067911547500459637">"Отстранете ги сите сертификати"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"Дали да се отстранат сите содржини?"</string>
     <string name="credentials_erased" msgid="2515915439705550379">"Меморијата на акредитиви е избришана."</string>
     <string name="credentials_not_erased" msgid="6118567459076742720">"Меморијата на акредитиви не може да се избрише."</string>
@@ -789,7 +811,7 @@
     <string name="notifications_all_apps" msgid="3557079551048958846">"Сите апликации"</string>
     <string name="profiles_and_accounts_settings_title" msgid="2672643892127659812">"Профили и сметки"</string>
     <string name="manage_other_profiles_button_text" msgid="2262188413455510828">"Управувајте со други профили"</string>
-    <string name="add_a_profile_button_text" msgid="8027395095117925114">"Додај профил"</string>
+    <string name="add_a_profile_button_text" msgid="8027395095117925114">"Додајте профил"</string>
     <string name="delete_this_profile_text" msgid="6035404714526922665">"Избриши го профилов"</string>
     <string name="add_profile_text" msgid="9118410102199116969">"Додај профил"</string>
     <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Во моментов, профилов е најавен како возач. Обидете се пак кога профилот нема да се користи како возач."</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Вашите интернет-пакети се истечени"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Погледнете ги пакетите"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Готово"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Вашето возило не ја поддржува функцијава"</string>
 </resources>
