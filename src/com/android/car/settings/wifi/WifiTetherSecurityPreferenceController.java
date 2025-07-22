@@ -32,6 +32,7 @@ import com.android.car.settings.common.Logger;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import android.util.Log;
 
 /**
  * Controls WiFi Hotspot Security Type configuration.
@@ -46,7 +47,7 @@ public class WifiTetherSecurityPreferenceController extends
 
     private static final int SHARED_AP_BAND_UNSET = -1;
 
-    private static final int BAND_6GHZ = SoftApConfiguration.BAND_6GHZ | SoftApConfiguration.BAND_2GHZ;
+    private static final int BAND_6GHZ = SoftApConfiguration.BAND_6GHZ | SoftApConfiguration.BAND_5GHZ | SoftApConfiguration.BAND_2GHZ;
 
     private int mSecurityType;
 
@@ -96,8 +97,7 @@ public class WifiTetherSecurityPreferenceController extends
         }
     }
 
-    private void updatePreferenceOptions() {
-
+    private void update6GhzSecurityOptions() {
         final SoftApConfiguration config = getCarSoftApConfig();
 
         String[] securityNames = getContext().getResources().getStringArray(
@@ -121,11 +121,16 @@ public class WifiTetherSecurityPreferenceController extends
              //SECURITY_TYPE_WPA2_PSK: 1
              //SECURITY_TYPE_OPEN: 0
              mSecurityMap.keySet().remove(SoftApConfiguration.SECURITY_TYPE_WPA3_OWE_TRANSITION);
-             getPreference().setEntries(mSecurityMap.values().stream().toArray(CharSequence[]::new));
-             getPreference().setEntryValues(mSecurityMap.keySet().stream().map(i -> Integer.toString(i))
-                     .toArray(CharSequence[]::new));
              mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE;
         }
+
+        getPreference().setEntries(mSecurityMap.values().stream().toArray(CharSequence[]::new));
+        getPreference().setEntryValues(mSecurityMap.keySet().stream().map(i -> Integer.toString(i))
+                .toArray(CharSequence[]::new));
+    }
+
+    private void updatePreferenceOptions() {
+        update6GhzSecurityOptions();
 
         if (!mOweSapSupported) {
             mSecurityMap.keySet()
@@ -171,6 +176,7 @@ public class WifiTetherSecurityPreferenceController extends
     @Override
     protected void updateState(ListPreference preference) {
         super.updateState(preference);
+        update6GhzSecurityOptions();
         preference.setValue(Integer.toString(mSecurityType));
     }
 
