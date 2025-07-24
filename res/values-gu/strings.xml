@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"કનેક્શન સફળ થયું"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"બધા બતાવો"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"શોધી રહ્યું છે"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"શેર કરો"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"વાઇ-ફાઇ સાથે કનેક્ટ કરવા માટે આ QR કોડ સ્કૅન કરો"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"આ વાઇ-ફાઇ માટે વાઇ-ફાઇ શેર કરવાની સુવિધા ઉપલબ્ધ નથી."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"કનેક્ટ કરેલા ડિવાઇસ"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"બ્લૂટૂથ"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"બ્લૂટૂથનો ઉપયોગ કરો"</string>
@@ -208,7 +211,7 @@
     <string name="bluetooth_ask_discovery_no_name" msgid="164397600370102369">"ઍપ, તમારા હેડયૂનિટને અન્ય બ્લૂટૂથ ડિવાઇસ પર <xliff:g id="TIMEOUT">%1$d</xliff:g> સેકન્ડ સુધી દૃશ્યક્ષમ બનાવવા માગે છે."</string>
     <string name="bluetooth_ask_enablement_and_discovery" msgid="5487502083015708674">"<xliff:g id="APP_NAME">%1$s</xliff:g>, બ્લૂટૂથ ચાલુ કરવા અને તમારા હેડયૂનિટને અન્ય ડિવાઇસ પર <xliff:g id="TIMEOUT">%2$d</xliff:g> સેકન્ડ સુધી દૃશ્યક્ષમ બનાવવા માગે છે."</string>
     <string name="bluetooth_ask_enablement_and_discovery_no_name" msgid="907153034209916282">"ઍપ, બ્લૂટૂથ ચાલુ કરવા અને તમારા હેડયૂનિટને અન્ય ડિવાઇસ પર <xliff:g id="TIMEOUT">%1$d</xliff:g> સેકન્ડ સુધી દૃશ્યક્ષમ બનાવવા માગે છે."</string>
-    <string name="bluetooth_state_switch_summary" msgid="171929910916432266">"અન્ય ડિવાઇસ પર %1$s તરીકે દેખાય"</string>
+    <string name="bluetooth_state_switch_summary" msgid="171929910916432266">"અન્ય ડિવાઇસ પર %1$s તરીકે દેખાય છે"</string>
     <string name="bluetooth_my_devices" msgid="6352010339607939612">"મારાં ડિવાઇસ"</string>
     <string name="bluetooth_previously_connected" msgid="5206229557831180323">"પહેલાં કનેક્ટ કરેલાં"</string>
     <string name="bluetooth_device_connected_toast" msgid="4614765282582494488">"%1$s કનેક્ટ કરેલું છે"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"મિલીવોલ્ટ"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"મિલીવૉટ"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"એમ્પિઅર કલાક"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"કિલોવૉટ કલાક"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"કિલોવૉટ-કલાક"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"પાઉન્ડ પ્રતિ ચોરસ ઇંચ"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"માઇલ પ્રતિ કલાક"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"કિલોમીટર પ્રતિ કલાક"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"બાર"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"ડિગ્રી"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"કિલોવૉટ પ્રતિ સો માઇલ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"કિલોવૉટ પ્રતિ સો કિલોમીટર"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"કિલોવૉટ-કલાક પ્રતિ સો માઇલ"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"કિલોવૉટ-કલાક પ્રતિ સો કિલોમીટર"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"માઇલ પ્રતિ ગેલન (યુએસ)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"માઇલ પ્રતિ ગેલન (યુકે)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"કિલોમીટર પ્રતિ લીટર"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"બિનવપરાયેલી ઍપ"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{બિનવપરાયેલી # ઍપ}one{બિનવપરાયેલી # ઍપ}other{બિનવપરાયેલી # ઍપ}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"પરવાનગીઓ કાઢી નાખો અને જગ્યા ખાલી કરો"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"સાપેક્ષ ગુણોત્તર (પ્રાયોગિક)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"ખોલો"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"ઍપ ડિફૉલ્ટ"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"પૂર્ણ સ્ક્રીન"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"અડધી સ્ક્રીન"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"ડિવાઇસનો સાપેક્ષ ગુણોત્તર"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"જ્યારે તમે સાપેક્ષ ગુણોત્તરમાં ફેરફાર કરશો ત્યારે ઍપ ફરી શરૂ થશે. તમે સાચવ્યા ન હોય એવા ફેરફારો ગુમાવો તેવું બની શકે છે. અમુક ચોક્કસ સાપેક્ષ ગુણોત્તર માટે કેટલીક ઍપ ઑપ્ટિમાઇઝ કરવામાં ન આવે તેવું બની શકે છે."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s આંતરિક સ્ટોરેજમાં"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ઍપના પર્ફોર્મન્સને પ્રાધાન્ય આપવા સિસ્ટમના સંસાધનોનો ઉપયોગ કરો"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"ડિફૉલ્ટ તરીકે ખોલો"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"ઍપને સપોર્ટેડ લિંક ખોલવાની મંજૂરી આપો"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ડેટા વપરાશ"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"ઍપ ડેટા વપરાશ"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"વપરાશનો ઇતિહાસ"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"દર વખતે પૂછો"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"ક્યારેય આ ઍપમાં ખોલશો નહીં"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"સમર્થિત લિંક"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"ચકાસણી કરાયેલી લિંક"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{ચકાસણી કરાયેલી # લિંક}one{ચકાસણી કરાયેલી # લિંક}other{ચકાસણી કરાયેલી # લિંક}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"સપોર્ટેડ લિંક"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# સપોર્ટેડ લિંક}one{# સપોર્ટેડ લિંક}other{# સપોર્ટેડ લિંક}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"લિંક ઉમેરો"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{હૅન્ડલ ન કરાયેલી # લિંક}one{હૅન્ડલ ન કરાયેલી # લિંક}other{હૅન્ડલ ન કરાયેલી # લિંક}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"ઍપમાં લિંકને ઑટોમૅટિક રીતે ખોલવા માટે, ઍપ તેની ચકાસણી કરી શકે છે."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"ઍપ"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"તાજેતરમાં ખોલેલી"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"બધી %1$d ઍપ જુઓ"</string>
@@ -419,7 +441,7 @@
     <string name="wifi_control_title" msgid="5660436566907731929">"વાઇ-ફાઇ નિયંત્રણ"</string>
     <string name="wifi_control_description" msgid="6021926850423169261">"વાઇ-ફાઇ નિયંત્રણ ઍપને વાઇ-ફાઇ ચાલુ અથવા બંધ કરવાની, વાઇ-ફાઇ નેટવર્કને સ્કૅન કરીને કનેક્ટ કરવાની, નેટવર્ક ઉમેરવાની કે કાઢી નાખવાની અથવા માત્ર-સ્થાનિક હૉટસ્પૉટ શરૂ કરવાની મંજૂરી આપે છે."</string>
     <string name="more_special_access_title" msgid="166115485446645971">"વધુ"</string>
-    <string name="location_settings_title" msgid="901334356682423679">"સ્થાન"</string>
+    <string name="location_settings_title" msgid="901334356682423679">"લોકેશન"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"સ્થાનનો ઉપયોગ કરો"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"તમે ઉલ્લેખિત કરેલી કોઈપણ ઍપ સાથે તમારી કારના લોકેશનનો ઉપયોગ કરો."</string>
     <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"ઇન્ફોટેનમેન્ટ ઍપ"</string>
@@ -489,7 +511,7 @@
     <string name="terms_title" msgid="5201471373602628765">"નિયમો અને શરતો"</string>
     <string name="webview_license_title" msgid="6442372337052056463">"સિસ્ટમ WebView લાઇસન્સ"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"વૉલપેપર"</string>
-    <string name="wallpaper_attributions_values" msgid="4292446851583307603">"ઉપગ્રહ છબી પ્રદાતાઓ:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
+    <string name="wallpaper_attributions_values" msgid="4292446851583307603">"સૅટલાઇટથી લીધેલી છબીઓના પ્રદાતાઓ:\n©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="model_info" msgid="4966408071657934452">"મૉડલ"</string>
     <string name="status_serial_number" msgid="9158889113131907656">"અનુક્રમ નંબર"</string>
     <string name="hardware_revision" msgid="5713759927934872874">"હાર્ડવેરનું વર્ઝન"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"તમારો ઇન્ટરનેટ પ્લાન સમાપ્ત થઈ ગયો છે"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"પ્લાન જુઓ"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"થઈ ગયું"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"તમારું વાહન આ સુવિધાને સપોર્ટ કરતું નથી"</string>
 </resources>

@@ -142,7 +142,7 @@
     <string name="wifi_cellular_fallback_title" msgid="8322675436784870862">"မိုဘိုင်းဒေတာစနစ်သို့ အလိုအလျောက် ပြောင်းပါ"</string>
     <string name="wifi_cellular_fallback_summary" msgid="2433848528924203758">"Wi-Fi တွင် အင်တာနက် ချိတ်ဆက်မှု မရှိသည့်အခါ မိုဘိုင်းဒေတာကို အသုံးပြုပါ။ ဒေတာသုံးစွဲခများ ကျသင့်နိုင်ပါသည်။"</string>
     <string name="wifi_network_state_switch_subtitle" msgid="7462322882046013762">"Wi-Fi ကွန်ရက်များကို ရှာဖွေချိတ်ဆက်ရန်"</string>
-    <string name="learn_more" msgid="8214605928933358604">"ပိုမိုလေ့လာရန်"</string>
+    <string name="learn_more" msgid="8214605928933358604">"ပိုလေ့လာရန်"</string>
     <string name="wifi_hotspot_name_title" msgid="8844779338692535356">"ဟော့စပေါ့အမည်"</string>
     <string name="wifi_hotspot_name_summary_connecting" msgid="5262510450498600038">"<xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g> ဖွင့်နေသည်..."</string>
     <string name="wifi_hotspot_name_summary_connected" msgid="7421325340822195506">"အခြားစက်ပစ္စည်းများက <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g> နှင့် ချိတ်ဆက်နိုင်သည်"</string>
@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"ချိတ်ဆက်ပြီးပါပြီ"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"အားလုံးပြရန်"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"ရှာဖွေနေသည်…"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"မျှဝေရန်"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Wi‑Fi ချိတ်ဆက်ရန် ဤ QR ကုဒ်ကို စကင်ဖတ်ပါ"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Wi‑Fi မျှဝေမှုကို ဤ Wi‑Fi အတွက် မရနိုင်ပါ။"</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"ချိတ်ဆက်ကိရိယာများ"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"ဘလူးတုသ်"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"ဘလူးတုသ် သုံးခြင်း"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"မီလီဗို့တ်"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"မီလီဝပ်"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"အမ်ပီရာနာရီ"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"ကီလိုဝပ် နာရီ"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"ကီလိုဝပ်နာရီ"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"ပေါင်/ တစ်စတုရန်းလက်မ"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"မိုင်/ တစ်နာရီ"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"ကီလိုမီတာ/ တစ်နာရီ"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"ဘား"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"ဒီဂရီ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"ကီလိုဝပ်/ မိုင်တစ်ရာ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"ကီလိုဝပ်/ ကီလိုမီတာ တစ်ရာ"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"မိုင်တစ်ရာလျှင် ကီလိုဝပ်နာရီ"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"ကီလိုမီတာတစ်ရာလျှင် ကီလိုဝပ်နာရီ"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"မိုင်/ တစ်ဂါလံ (ယူအက်စ်)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"မိုင်/ တစ်ဂါလံ (ယူကေ)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"ကီလိုမီတာ/ တစ်လီတာ"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"အသုံးမပြုသော အက်ပ်များ"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{အသုံးမပြုသောအက်ပ် # ခု}other{အသုံးမပြုသောအက်ပ် # ခု}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"ခွင့်ပြုချက်ဖယ်ရှားပြီး နေရာလွတ်လုပ်ရန်"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"အချိုးအစား (စမ်းသပ်ဆဲ)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"ဖွင့်ရန်"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"အက်ပ် မူရင်း"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"ဖန်သားပြင်အပြည့်"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"ဖန်သားပြင်တစ်ဝက်"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"စက်၏အချိုးအစား"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"၁၆ x ၉"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"၃ x ၂"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"၄ x ၃"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"အချိုးအစား ပြောင်းလိုက်သောအခါ အက်ပ်ပြန်စပါမည်။ သိမ်းမထားသော အပြောင်းအလဲများ ဆုံးရှုံးနိုင်သည်။ အချို့အက်ပ်များသည် အချို့သောအချိုးအစားတွင် ကောင်းစွာအလုပ်မလုပ်ပါ။"</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"စက်တွင်းသိုလှောင်ခန်းတွင် %s"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"အက်ပ်စွမ်းဆောင်ရည်ကို ဦးစားပေးရန် စနစ်ရင်းမြစ်များကို သုံးနိုင်သည်"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"မူရင်းသတ်မှတ်ချက်အနေဖြင့် ဖွင့်ရန်"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"ပံ့ပိုးထားသည့်လင့်ခ်များ ဖွင့်ရန်အတွက် အက်ပ်ကို ခွင့်ပြုသည်"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"ဒေတာသုံးစွဲမှု"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"အက်ပ်ဒေတာ သုံးစွဲမှု"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"သုံးစွဲမှုမှတ်တမ်း"</string>
@@ -390,6 +405,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"အမြဲမေးရန်"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"ဤအက်ပ်တွင် မဖွင့်ပါနှင့်"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"ပံ့ပိုးထားသော လင့်ခ်များ"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"စိစစ်ထားသောလင့်ခ်များ"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{စိစစ်ထားသောလင့်ခ် # ခု}other{စိစစ်ထားသောလင့်ခ် # ခု}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"ပံ့ပိုးထားသည့်လင့်ခ်များ"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{ပံ့ပိုးထားသည့်လင့်ခ် # ခု}other{ပံ့ပိုးထားသည့်လင့်ခ် # ခု}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"လင့်ခ်များထည့်ရန်"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{စီမံမထားသော လင့်ခ် # ခု}other{စီမံမထားသော လင့်ခ် # ခု}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"အက်ပ်တစ်ခုသည် လင့်ခ်များကို စိစစ်ပြီးသည့်နောက် ၎င်းတို့ကို အက်ပ်တွင် အလိုအလျောက်ဖွင့်နိုင်သည်။"</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"အက်ပ်များ"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"လတ်တလော ဖွင့်ထားသည်များ"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"အက်ပ် %1$d ခုလုံး ကြည့်ရန်"</string>
@@ -467,7 +489,7 @@
     <string name="firmware_version" msgid="8491753744549309333">"Android ဗားရှင်း"</string>
     <string name="security_patch" msgid="4794276590178386903">"Android လုံခြုံရေးပက်ချ်အဆင့်"</string>
     <string name="hardware_info" msgid="3973165746261507658">"မော်ဒယ်နှင့် စက်ပစ္စည်းဆိုင်ရာ"</string>
-    <string name="hardware_info_summary" msgid="8262576443254075921">"မော်ဒယ်- <xliff:g id="MODEL">%1$s</xliff:g>"</string>
+    <string name="hardware_info_summary" msgid="8262576443254075921">"မိုဒယ်- <xliff:g id="MODEL">%1$s</xliff:g>"</string>
     <string name="baseband_version" msgid="2370088062235041897">"baseband ဗားရှင်း"</string>
     <string name="kernel_version" msgid="7327212934187011508">"Kernel ဗားရှင်း"</string>
     <string name="build_number" msgid="3997326631001009102">"တည်ဆောက်မှုနံပါတ်"</string>
@@ -491,7 +513,7 @@
     <string name="webview_license_title" msgid="6442372337052056463">"စနစ်၏ ဝဘ်မြင်ကွင်း လိုင်စင်များ"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"နောက်ခံပုံများ"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"ဂြိုဟ်တုဓာတ်ပုံ ဝန်ဆောင်မှုပေးသူများ−\n©2014 CNES / Astrium၊ DigitalGlobe၊ Bluesky"</string>
-    <string name="model_info" msgid="4966408071657934452">"မော်ဒယ်"</string>
+    <string name="model_info" msgid="4966408071657934452">"မိုဒယ်"</string>
     <string name="status_serial_number" msgid="9158889113131907656">"အမှတ်စဉ်"</string>
     <string name="hardware_revision" msgid="5713759927934872874">"ဟာ့ဒ်ဝဲ ဗားရှင်း"</string>
     <string name="regulatory_info_text" msgid="8890339124198005428"></string>
@@ -796,7 +818,7 @@
     <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"ဤပရိုဖိုင်သည် မောင်းသူအဖြစ် လက်ရှိ လက်မှတ်ထိုးဝင်ထားသည်။ မောင်းသူအဖြစ် ပရိုဖိုင် မသုံးချိန်၌ ပြန်စမ်းပါ။"</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"မျက်နှာပြင် တောက်ပမှု"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"သင့်စက်များကို တွေ့နိုင်ရန် ဘလူးတုသ်ဖွင့်ပါ"</string>
-    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"စက်နှင့်တွဲချိတ်ရန် ဘလူးတုသ် ဆက်တင်များကို ဖွင့်ပါ"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"စက်နှင့်ချိတ်ရန် ဘလူးတုသ် ဆက်တင်ကို ဖွင့်ပါ"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"အပြင်အဆင်"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"အပြင်အဆင်ဘောင်များ ပြပါ"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"သတင်းနှင့်ဖျော်ဖြေရေး စနစ် စီမံခန့်ခွဲသူ"</string>
@@ -934,4 +956,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"သင့်အင်တာနက်အစီအစဉ်များ သက်တမ်းကုန်သွားပါပြီ"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"အစီအစဉ်များ ကြည့်ရန်"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"ပြီးပြီ"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"ဤလုပ်ဆောင်ချက်ကို သင့်ယာဉ်တွင် မရနိုင်ပါ"</string>
 </resources>

@@ -86,7 +86,7 @@
     <string name="network_and_internet_oem_network_dialog_confirm_label" msgid="2630033932472996255">"Aj tak vypnúť"</string>
     <string name="network_and_internet_oem_network_disabled_footer" msgid="3529208167627034245">"Internet vo vozidle je vypnutý. Môže to spôsobiť, že niektoré funkcie alebo aplikácie vozidla prestanú fungovať. Kľúčové údaje, ktoré vyžaduje prevádzka vozidla, sa budú ďalej zdieľať s výrobcom vozidla."</string>
     <string name="network_and_internet_data_usage_time_range_summary" msgid="1792995626433410056">"%1$s využité %2$s – %3$s"</string>
-    <string name="network_and_internet_join_other_network_title" msgid="7126831320010062712">"Pripojenie k inej sieti"</string>
+    <string name="network_and_internet_join_other_network_title" msgid="7126831320010062712">"Pripojiť k inej sieti"</string>
     <string name="network_and_internet_network_preferences_title" msgid="2983548049081168876">"Nastavenia siete"</string>
     <string name="wifi_settings" msgid="7701477685273103841">"Wi‑Fi"</string>
     <string name="wifi_starting" msgid="473253087503153167">"Zapína sa Wi‑Fi…"</string>
@@ -141,7 +141,7 @@
     <string name="wifi_settings_scanning_required_enabled" msgid="5457372118991438313">"Vyhľadávanie sietí Wi‑Fi je zapnuté"</string>
     <string name="wifi_cellular_fallback_title" msgid="8322675436784870862">"Automaticky prepnúť na mobilné dáta"</string>
     <string name="wifi_cellular_fallback_summary" msgid="2433848528924203758">"Používať mobilné dáta, keď Wi‑Fi nemá prístup k internetu. Za využité dáta vám môžu byť účtované poplatky."</string>
-    <string name="wifi_network_state_switch_subtitle" msgid="7462322882046013762">"Vyhľadať a pripojiť sa k sieťam Wi-Fi"</string>
+    <string name="wifi_network_state_switch_subtitle" msgid="7462322882046013762">"Vyhľadávať siete Wi-Fi a pripájať sa k nim"</string>
     <string name="learn_more" msgid="8214605928933358604">"Ďalšie informácie"</string>
     <string name="wifi_hotspot_name_title" msgid="8844779338692535356">"Názov hotspotu"</string>
     <string name="wifi_hotspot_name_summary_connecting" msgid="5262510450498600038">"Zapína sa <xliff:g id="WIFI_HOTSPOT_NAME">%1$s</xliff:g>..."</string>
@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Pripojenie je úspešné"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Zobraziť všetko"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Vyhľadávanie"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Zdieľať"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Naskenujte tento QR kód a pripojte sa k sieti Wi‑Fi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Zdieľanie Wi‑Fi nie je pre túto sieť k dispozícii."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Pripojené zariadenia"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Používať Bluetooth"</string>
@@ -221,7 +224,7 @@
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Párovací kód Bluetooth"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"PIN obsahuje písmená či symboly"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"Zadajte párovací kód a potom stlačte tlačidlo Return alebo Enter"</string>
-    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Spárovať so zariadením <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
+    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Chcete spárovať so zariadením <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"Povoliť zariadeniu <xliff:g id="DEVICE_NAME">%1$s</xliff:g> prístup k vašim kontaktom a histórii hovorov"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"Tento kód PIN bude možno treba zadať aj v druhom zariadení."</string>
     <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"Tento prístupový kľúč možno bude potrebné zadať aj v druhom zariadení."</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Miliwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampérhodina"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowatthodina"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowatthodina"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Libry na štvorcový palec"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Míle za hodinu"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilometre za hodinu"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Stupeň"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt na sto míľ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt na sto kilometrov"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowatthodiny na sto míľ"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowatthodiny na sto kilometrov"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Míle na galón (USA)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Míle na galón (UK)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilometre na liter"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Nepoužívané aplikácie"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# nepoužívaná aplikácia}few{# nepoužívané aplikácie}many{# unused apps}other{# nepoužívaných aplikácií}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Odstraňovať povol. a uvoľňovať priestor"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Pomer strán (experimentálne)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Otvoriť"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Predvolené nastavenie aplikácie"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Celá obrazovka"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Polovica obrazovky"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Pomer strán zariadenia"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Keď zmeníte pomer strán, aplikácia sa reštartuje. Môžete prísť o neuložené zmeny. Niektoré aplikácie sa nemusia dať optimalizovať na určité pomery strán."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s v internom úložisku"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Priorizuje výkon aplikácie pomocou systémových zdrojov"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Predvolené otváranie"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Povoliť aplikácii otvárať podporované odkazy"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Spotreba dát"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Spotreba dát aplikácie"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"História spotreby"</string>
@@ -389,10 +404,17 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Vždy sa opýtať"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Neotvárať v tejto aplikácii"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Podporované odkazy"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Overené odkazy"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# overený odkaz}few{# overené odkazy}many{# verified links}other{# overených odkazov}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Podporované odkazy"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# podporovaný odkaz}few{# podporované odkazy}many{# supported links}other{# podporovaných odkazov}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Pridať odkazy"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# nespracovaný odkaz}few{# nespracované odkazy}many{# unhandled links}other{# nespracovaných odkazov}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Aplikácia môže overiť odkazy, aby sa v nej automaticky otvárali."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Aplikácie"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Nedávno otvorené"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Zobraziť všetky aplikácie (%1$d)"</string>
-    <string name="apps_permission_manager_title" msgid="8776335943862484131">"Správca povolení"</string>
+    <string name="apps_permission_manager_title" msgid="8776335943862484131">"Správa povolení"</string>
     <string name="apps_permission_manager_summary" msgid="4180424218228141274">"Ovládajte prístup aplikácií k vašim údajom"</string>
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Pre Asistenta a ďalšie aplikácie"</string>
     <string name="performance_impacting_apps_summary" msgid="7762122057244111162">"{count,plural, =1{# aplikácia ovplyvňujúca výkon}few{# aplikácie ovplyvňujúce výkon}many{# apps impacting performance}other{# aplikácií ovplyvňujúcich výkon}}"</string>
@@ -714,7 +736,7 @@
     <string name="lock_settings_enter_pin" msgid="1669172111244633904">"Zadajte PIN"</string>
     <string name="lock_settings_enter_password" msgid="2636669926649496367">"Zadajte svoje heslo"</string>
     <string name="choose_lock_pin_message" msgid="2963792070267774417">"Z bezpečnostných dôvodov nastavte PIN"</string>
-    <string name="confirm_your_pin_header" msgid="9096581288537156102">"Znova zadajte kód PIN"</string>
+    <string name="confirm_your_pin_header" msgid="9096581288537156102">"Znova zadajte PIN"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PIN musí mať aspoň 4 číslice"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"Kód PIN je neplatný, musí mať najmenej 4 číslice."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"Kódy PIN sa nezhodujú"</string>
@@ -945,4 +967,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Vaše internetové tarify vypršali"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Zobraziť tarify"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Hotovo"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Vaše vozidlo túto funkciu nepodporuje"</string>
 </resources>

@@ -228,6 +228,43 @@
     <string name="pk_application_details_version" translatable="false">
         application_details_version
     </string>
+    <string name="pk_application_aspect_ratio" translatable="false">
+        application_aspect_ratio
+    </string>
+    <string name="pk_app_aspect_ratio_details" translatable="false">
+        application_aspect_ratio_details
+    </string>
+    <string name="pk_app_aspect_ratio_details_action_buttons" translatable="false">
+        application_aspect_ratio_details_action_buttons
+    </string>
+    <string name="pk_app_aspect_ratio_details_group" translatable="false">
+        application_aspect_ratio_details_group
+    </string>
+    <string name="pk_app_aspect_ratio_app_default_pref" translatable="false">
+        app_default_pref
+    </string>
+    <string name="pk_app_aspect_ratio_fullscreen_pref" translatable="false">
+        fullscreen_pref
+    </string>
+    <string name="pk_app_aspect_ratio_half_screen_pref" translatable="false">
+        half_screen_pref
+    </string>
+    <string name="pk_app_aspect_ratio_display_size_pref" translatable="false">
+        display_size_pref
+    </string>
+    <string name="pk_app_aspect_ratio_16_9_pref" translatable="false">
+        16_9_pref
+    </string>
+    <string name="pk_app_aspect_ratio_4_3_pref" translatable="false">
+        4_3_pref
+    </string>
+    <string name="pk_app_aspect_ratio_3_2_pref" translatable="false">
+        3_2_pref
+    </string>
+
+    <string name="pk_app_open_by_default" translatable="false">
+        app_open_by_default
+    </string>
 
     <!-- Default apps Settings -->
     <string name="pk_default_assist_and_voice" translatable="false">default_assist_and_voice
@@ -250,11 +287,29 @@
     <string name="pk_opening_links_app_details_state" translatable="false">
         opening_links_app_details_state
     </string>
+    <string name="pk_opening_links_app_toggle" translatable="false">
+        opening_links_app_toggle
+    </string>
+    <string name="pk_opening_links_verified_links" translatable="false">
+        opening_links_verified_links
+    </string>
+    <string name="pk_opening_links_verified_links_list" translatable="false">
+        opening_links_verified_links_list
+    </string>
+    <string name="pk_opening_links_supported_links" translatable="false">
+        opening_links_supported_links
+    </string>
+    <string name="pk_opening_links_add_links" translatable="false">
+        opening_links_add_links
+    </string>
     <string name="pk_opening_links_app_details_urls" translatable="false">
         opening_links_app_details_urls
     </string>
     <string name="pk_opening_links_app_details_reset" translatable="false">
         opening_links_app_details_reset
+    </string>
+    <string name="pk_opening_links_footer_info" translatable="false">
+        opening_links_footer_info
     </string>
 
     <!-- Performance-impacting App Settings -->

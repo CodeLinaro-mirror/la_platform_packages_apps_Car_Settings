@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Подключено"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Показать все"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Поиск"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Поделиться"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Чтобы подключиться к Wi-Fi, отсканируйте этот QR-код"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Этой сетью Wi‑Fi поделиться невозможно."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Подключенные устройства"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Использовать Bluetooth"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Милливольт"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Милливатт"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ампер-час"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Киловатт-час"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Киловатт-час"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Фунты на квадратный дюйм"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Мили в час"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Километры в час"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Бар"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Градус"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Киловатт на сто миль"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Киловатт на сто километров"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Киловатт-часы на сто миль"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Киловатт-часы на сто километров"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Мили на галлон (США)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Мили на галлон (Великобритания)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Километры на литр"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Неиспользуемые приложения"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# неиспользуемое приложение}one{# неиспользуемое приложение}few{# неиспользуемых приложения}many{# неиспользуемых приложений}other{# неиспользуемого приложения}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Удалять разрешения и освобождать место"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Соотношение сторон, эксперимент. функция"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Открыть"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Стандартное значение в приложении"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Полноэкранный режим"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Половина экрана"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Соотношение сторон устройства"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Когда вы обновите соотношение сторон, приложение перезапустится. Несохраненные изменения могут быть потеряны. Некоторые приложения оптимизированы не для всех соотношений сторон."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s: внутренняя память"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Чтобы приоритизировать производительность приложения, используются системные ресурсы"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Открывать по умолчанию"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Разрешить приложению открывать поддерживаемые ссылки"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Передача данных"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Трафик приложения"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"История использ. трафика"</string>
@@ -364,7 +379,7 @@
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"Помощник и голосовой ввод"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"Помощник"</string>
     <string name="assist_access_context_title" msgid="8034851731390785301">"Использовать текст с экрана"</string>
-    <string name="assist_access_context_summary" msgid="2374281280599443774">"Разрешить просматривать содержимое экрана в виде текста"</string>
+    <string name="assist_access_context_summary" msgid="2374281280599443774">"Разрешить приложению-помощнику доступ к содержимому экрана в виде текста"</string>
     <string name="assist_access_screenshot_title" msgid="2855956879971465044">"Использовать скриншот"</string>
     <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"Разрешить приложению-помощнику доступ к изображению экрана"</string>
     <string name="voice_input_settings_title" msgid="3238707827815647526">"Голосовой ввод"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Всегда спрашивать"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Не открывать в этом приложении"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Поддерживаемые ссылки"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Подтвержденные ссылки"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# подтвержденная ссылка}one{# подтвержденная ссылка}few{# подтвержденные ссылки}many{# подтвержденных ссылок}other{# подтвержденной ссылки}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Поддерживаемые ссылки"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# поддерживаемая ссылка}one{# поддерживаемая ссылка}few{# поддерживаемые ссылки}many{# поддерживаемых ссылок}other{# поддерживаемой ссылки}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Добавить ссылки"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# ненастроенная ссылка}one{# ненастроенная ссылка}few{# ненастроенные ссылки}many{# ненастроенных ссылок}other{# ненастроенной ссылки}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Приложение может проверять ссылки, чтобы автоматически открывать их."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Приложения"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Недавно открытые приложения"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Посмотреть все приложения (%1$d)"</string>
@@ -408,7 +430,7 @@
     <string name="notification_listener_security_warning_title" msgid="2893273335175140895">"Предоставить приложению \"<xliff:g id="SERVICE">%1$s</xliff:g>\" доступ к уведомлениям?"</string>
     <string name="notification_listener_security_warning_summary" msgid="7280197998063498125">"Приложение <xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g> сможет читать все уведомления, в том числе содержащие личную информацию (например, имена контактов и сообщения). Оно также получит право закрывать уведомления и нажимать кнопки в них.\n\nПриложение сможет включать и отключать режим \"Не беспокоить\", а также менять его настройки."</string>
     <string name="notification_listener_revoke_warning_summary" msgid="4904973394539125407">"Если вы отключите доступ к уведомлениям для приложения \"<xliff:g id="NOTIFICATION_LISTENER_NAME">%1$s</xliff:g>\", также может быть отключен доступ к настройкам режима \"Не беспокоить\"."</string>
-    <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Отключить"</string>
+    <string name="notification_listener_revoke_warning_confirm" msgid="2759583507454984812">"Отозвать"</string>
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Отмена"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Эти приложения снижают производительность системы. Им запрещено работать в фоновом режиме.\nПриоритизируйте приложение, чтобы разрешить ему работать в фоновом режиме и удалить из этого списка."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Приоритизировать"</string>
@@ -945,4 +967,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Ваши тарифные планы на интернет больше не действуют"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Посмотреть тарифы"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Готово"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Автомобиль не поддерживает эту функцию."</string>
 </resources>

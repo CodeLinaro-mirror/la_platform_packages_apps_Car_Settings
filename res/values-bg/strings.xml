@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Връзката е успешна"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Показване на всички"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Търси се"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Споделяне"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Сканирайте този QR код, за да се свържете с Wi‑Fi мрежа"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Споделянето на Wi‑Fi не е налице за тази Wi‑Fi мрежа."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Свързани устройства"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Използване на Bluetooth"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Миливолт"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Миливат"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ампер-час"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Киловатчас"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Киловатчас"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Паунда на квадратен инч"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Мили в час"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Километри в час"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Бар"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Градус"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Киловат на сто мили"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Киловат на сто километра"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Киловатчасове на сто мили"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Киловатчасове на сто километра"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Мили на галон (САЩ)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Мили на галон (Обединено кралство)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Километри на литър"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Неизползвани приложения"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# неизползвано приложение}other{# неизползвани приложения}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Премахване на разреш. и освоб. на място"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Съотношение (експериментално)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Отваряне"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Стандартно за приложението"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Цял екран"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Половин екран"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Съотношение за устройството"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Когато промените съотношението, приложението ще се рестартира. Възможно е да изгубите незапазените промени. Някои приложения може да не са оптимизирани за определени съотношения."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s във вътрешното хранилище"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Използва системните ресурси с цел приоритизиране на ефективността на приложението"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Отваряне по подразбиране"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Разрешаване на приложението да отваря поддържаните връзки"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Пренос на данни"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Прилож.: Пренос на данни"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"История на преноса"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Извеждане на запитване всеки път"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Без отваряне в това приложение"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Поддържани връзки"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Потвърдени връзки"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# потвърдена връзка}other{# потвърдени връзки}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Поддържани връзки"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# поддържана връзка}other{# поддържани връзки}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Добавете връзки"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# необработена връзка}other{# необработени връзки}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Съответното приложение може да потвърждава връзките, така че да се отварят автоматично в него."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Приложения"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Наскоро отваряни"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Преглед на всичките %1$d приложения"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Плановете ви за интернет са изтекли"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Вижте плановете"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Готово"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Превозното ви средство не поддържа тази функция"</string>
 </resources>

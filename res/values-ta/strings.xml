@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"இணைப்பு வெற்றியடைந்தது"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"அனைத்தையும் காட்டு"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"தேடுகிறது"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"பகிர்"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"வைஃபையுடன் இணைக்க இந்த QR குறியீட்டை ஸ்கேன் செய்யுங்கள்"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"இந்த வைஃபை மூலம் வைஃபை பகிர்வு செய்ய முடியாது."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"இணைக்கப்பட்டுள்ள சாதனங்கள்"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"புளூடூத்"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"புளூடூத்தைப் பயன்படுத்துதல்"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"மில்லிவோல்ட்"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"மில்லிவாட்"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"ஆம்பியர் மணிநேரம்"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"கிலோவாட் மணிநேரம்"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"கிலோவாட் மணிநேரம்"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"ஒரு சதுர அங்குலத்திற்கான பவுண்டுகள்"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"ஒரு மணிநேரத்திற்கு மைல்கள்"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"ஒரு மணிநேரத்திற்கு கிலோமீட்டர்"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"பார்"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"டிகிரீ"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"நூறு மைல்களுக்கான கிலோவாட்"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"நூறு கிலோமீட்டர்களுக்கான கிலோவாட்"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"நூறு மைலுக்கான கிலோவாட் மணிநேரம்"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"நூறு கிலோமீட்டருக்கான கிலோவாட் மணிநேரம்"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"ஒரு கேலனுக்கான மைல்கள் (அமெரிக்கா)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"ஒரு கேலனுக்கு மைல்கள் (இங்கிலாந்து)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"ஒரு லிட்டருக்கு கிலோமீட்டர்கள்"</string>
@@ -335,7 +338,7 @@
     <string name="permissions_label" msgid="2701446753515612685">"அனுமதிகள்"</string>
     <string name="app_info_all_services_label" msgid="6495363975322723452">"அனைத்துச் சேவைகளும்"</string>
     <string name="notifications_label" msgid="6586089149665170731">"அறிவிப்புகள்"</string>
-    <string name="storage_application_label" msgid="5911779903670978586">"சேமிப்பகமும் தற்காலிக சேமிப்பும்"</string>
+    <string name="storage_application_label" msgid="5911779903670978586">"சேமிப்பகமும் தற்காலிகச் சேமிப்பும்"</string>
     <string name="prioritize_app_performance_label" msgid="7264505023347026606">"ஆப்ஸ் செயல்திறனுக்கு முன்னுரிமை அளித்தல்"</string>
     <string name="application_version_label" msgid="8556889839783311649">"பதிப்பு: %1$s"</string>
     <string name="runtime_permissions_summary_no_permissions_granted" msgid="6001439205270250021">"அனுமதிகள் எதுவும் வழங்கப்படவில்லை"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"பயன்படுத்தாத ஆப்ஸ்"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# பயன்படுத்தாத ஆப்ஸ்}other{# பயன்படுத்தாத ஆப்ஸ்}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"அனுமதிகளை அகற்றி இடத்தைக் காலியாக்குதல்"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"தோற்ற விகிதம் (பரிசோதனை நிலை)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"திற"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"ஆப்ஸ் இயல்பு"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"முழுத்திரை"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"பாதித்திரை"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"சாதனத்தின் தோற்ற விகிதம்"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"தோற்ற விகிதத்தை மாற்றும்போது ஆப்ஸ் மீண்டும் தொடங்கும். சேமிக்கப்படாத மாற்றங்களை நீங்கள் இழக்கலாம். குறிப்பிட்ட தோற்ற விகிதங்களில் சில ஆப்ஸைப் பயன்படுத்த முடியாமல் போகலாம்."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"அகச் சேமிப்பகத்தில் %s"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"ஆப்ஸின் செயல்திறனுக்கு முன்னுரிமையளிக்க சிஸ்டம் ஆதாரங்களைப் பயன்படுத்தும்"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"இயல்பாகத் திறத்தல்"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"ஆதரிக்கப்படும் இணைப்புகளைத் திறப்பதற்கு ஆப்ஸை அனுமதிக்கும்"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"டேட்டா உபயோகம்"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"ஆப்ஸ் டேட்டா உபயோகம்"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"இதுவரை உபயோகித்த டேட்டா"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"ஒவ்வொரு முறையும் கேள்"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"இந்த ஆப்ஸில் திறக்காதே"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"ஆதரிக்கப்படும் இணைப்புகள்"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"சரிபார்க்கப்பட்ட இணைப்புகள்"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# சரிபார்க்கப்பட்ட இணைப்பு}other{# சரிபார்க்கப்பட்ட இணைப்புகள்}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"ஆதரிக்கப்படும் இணைப்புகள்"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# ஆதரிக்கப்படும் இணைப்பு}other{# ஆதரிக்கப்படும் இணைப்புகள்}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"இணைப்புகளைச் சேருங்கள்"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# நிர்வகிக்கப்படாத இணைப்பு}other{# நிர்வகிக்கப்படாத இணைப்புகள்}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"ஆப்ஸில் இணைப்புகளைத் தானாகத் திறக்க ஆப்ஸால் அவற்றைச் சரிபார்க்க முடியும்."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"ஆப்ஸ்"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"சமீபத்தில் திறந்தவை"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"எல்லா %1$d ஆப்ஸையும் காட்டு"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"உங்கள் இணையத் திட்டங்கள் காலாவதியாகிவிட்டன"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"திட்டங்களைக் காட்டு"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"முடிந்தது"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"உங்கள் வாகனம் இந்த அம்சத்தை ஆதரிக்கவில்லை"</string>
 </resources>

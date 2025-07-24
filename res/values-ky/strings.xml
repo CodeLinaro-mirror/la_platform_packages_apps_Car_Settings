@@ -180,11 +180,14 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Ийгиликтүү туташты"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Баарын көрсөтүү"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Изделүүдө"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Бөлүшүү"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Wi‑Fi\'га туташуу үчүн ушул QR кодун скандаңыз"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Бул Wi‑Fi үчүн Wi‑Fi аркылуу бөлүшүү жеткиликсиз."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Туташкан түзмөктөр"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Bluetooth\'ду иштетүү"</string>
     <string name="bluetooth_device" msgid="3178478829314083240">"Аты жок түзмөк"</string>
-    <string name="bluetooth_paired_devices" msgid="6463199569164652410">"Жупташтырылган түзмөктөр"</string>
+    <string name="bluetooth_paired_devices" msgid="6463199569164652410">"Байланышкан түзмөктөр"</string>
     <string name="bluetooth_pair_new_device" msgid="6948753485443263095">"Жаңы түзмөктү байланыштыруу"</string>
     <string name="bluetooth_pair_new_device_summary" msgid="2497221247690369031">"Bluetooth күйгүзүлөт"</string>
     <string name="bluetooth_disconnect_title" msgid="7675271355910637528">"Түзмөк ажыратылсынбы?"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Милливольт"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Милливатт"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ампер саат"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Киловатт саат"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Киловатт-саат"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"1 квадраттык дюймга фунт"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Саатына миля"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Саатына километр"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Бар"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Градус"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Жүз миляга киловатт"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Жүз километрге киловатт"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Жүз миляга киловатт-саат"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Жүз километрге киловатт-саат"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"1 галлонго миля (АКШ)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"1 галлонго миля (УБ)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"1 литрге километр"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Колдонулбаган колдонмолор"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# иштетилбеген колдонмо}other{# иштетилбеген колдонмо}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Уруксаттарды өчүрүп, орун бошотуу"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Тараптардын катнашы (сынамык)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Ачуу"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Колдонмодогу демейки маани"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Толук экран"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Жарым экран"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Түзмөктүн тараптарынын катнашы"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Тараптардын катнашын өзгөрткөндө бул колдонмо өчүп күйөт. Сакталбаган өзгөртүүлөрүңүз өчүп калышы мүмкүн. Белгилүү бир тараптардын катнаштары айрым колдонмолорго чак келбей калышы мүмкүн."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"Ички сактагычтын %s ээлеп турат"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Колдонмонун иштешине артыкчылык берүү үчүн системанын ресурстарын колдонот"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Демейки шартта ачуу"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Колдонмого колдоого алынган шилтемелерди ачууга уруксат бересиз"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Маалымат алмашуу"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Колдонмолордун трафиги"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Колдонуу таржымалы"</string>
@@ -379,7 +394,7 @@
     <string name="domain_urls_summary_none" msgid="3077803215088293183">"Колдоого алынган шилтемелер ачылбайт"</string>
     <string name="domain_urls_summary_one" msgid="5072257421806034237">"<xliff:g id="DOMAIN">%s</xliff:g> колдонмосун ачуу"</string>
     <string name="domain_urls_summary_some" msgid="5523153458016701725">"<xliff:g id="DOMAIN">%s</xliff:g> жана башка URL\'дер ачылат"</string>
-    <string name="app_launch_title" msgid="3442601467010363057">"Демейки шарт боюнча ачуу"</string>
+    <string name="app_launch_title" msgid="3442601467010363057">"Демейки шартта ачуу"</string>
     <string name="app_launch_other_defaults_title" msgid="5734827759507953180">"Башка демейкилер"</string>
     <string name="auto_launch_disable_text" msgid="3595315315092716391">"Демейки маанилер коюлган жок."</string>
     <string name="auto_launch_enable_text" msgid="7230832269574106901">"Бул колдонмо айрым аракеттер үчүн абалкы болуп орнотулган"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Ар дайым суралсын"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Бул колдонмодо ачылбасын"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Колдоого алынган шилтемелер"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Текшерилген шилтемелер"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# текшерилген шилтеме}other{# текшерилген шилтеме}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Колдоого алынган шилтемелер"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# колдоого алынган шилтеме}other{# колдоого алынган шилтеме}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Шилтемелерди кошуу"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# иштетилбеген шилтеме}other{# иштетилбеген шилтеме}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Колдонмо автоматтык түрдө ачыла турган шилтемелерди текшере алат."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Колдонмолор"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Жакында ачылган колдонмолор"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Бардык %1$d колдонмону көрүү"</string>
@@ -569,7 +591,7 @@
     <string name="user_new_user_name" msgid="906698527658609819">"Жаңы профиль"</string>
     <string name="user_add_user_title" msgid="6296827596015729982">"Жаңы профиль кошулсунбу?"</string>
     <string name="user_add_user_message_setup" msgid="812616230454605159">"Жаңы профиль түзүлгөндөн кийин, ал аны өзүнө ыңгайлаштырып алышы керек."</string>
-    <string name="user_add_user_message_update" msgid="3836353291078729240">"Колдонуучулардын баары колдонмолорду бардык профилдер үчүн жаңырта алат."</string>
+    <string name="user_add_user_message_update" msgid="3836353291078729240">"Башка профилдер үчүн колдонмолорду каалаган колдонуучу жаңырта алат."</string>
     <string name="user_limit_reached_title" msgid="5677729355746623293">"Профилдердин саны чекке жетти"</string>
     <string name="user_limit_reached_message" msgid="2773441357248819721">"{count,plural, =1{Бир профилди гана түзүүгө болот.}other{# профилге чейин гана түзүүгө болот.}}"</string>
     <string name="add_user_error_title" msgid="7589792057846396341">"Жаңы профиль түзүлбөй койду"</string>
@@ -589,7 +611,7 @@
     <string name="current_user_name" msgid="3813671533249316823">"Сиз (%1$s)"</string>
     <string name="user_name_label" msgid="3210832645046206845">"Колдонуучунун аты"</string>
     <string name="user_summary_not_set_up" msgid="1473688119241224145">"Түзүлгөн жок"</string>
-    <string name="edit_user_name_title" msgid="1118500707473139995">"Профилдин аталышын түзөтүү"</string>
+    <string name="edit_user_name_title" msgid="1118500707473139995">"Профилдин аталышын өзгөртүү"</string>
     <string name="name_input_blank_error" msgid="2088850865880984123">"Талаа бош болбошу керек."</string>
     <string name="name_input_invalid_error" msgid="4355625213535164704">"Киргизилген профилдин аталышы туура эмес."</string>
     <string name="users_list_title" msgid="770764290290240909">"Колдонуучулар"</string>
@@ -795,7 +817,7 @@
     <string name="cannot_remove_driver_profile" msgid="4109363161608717969">"Бул профилди учурда айдоочу колдонуп жатат. Ал чыккандан кийин кайталап көрүңүз."</string>
     <string name="qc_display_brightness" msgid="2939655289816201170">"Экрандын жарыктыгы"</string>
     <string name="qc_bluetooth_off_devices_info" msgid="8420985279976892700">"Түзмөктөрдү көрүү үчүн Bluetooth\'ду күйгүзүңүз"</string>
-    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Түзмөктү жупташтыруу үчүн Bluetooth\'дун параметрлерин ачыңыз"</string>
+    <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Түзмөктү байланыштыруу үчүн Bluetooth\'дун параметрлерин ачыңыз"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Тема"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"Калыптын чектерин көрсөтүү"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Инфозоок тутумунун администратору"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Интернет үчүн тарифтик пландарыңыздын мөөнөтү бүттү"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Тарифтик пландарды көрүү"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Бүттү"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Унааңызда бул функция иштебейт"</string>
 </resources>

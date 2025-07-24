@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"Lidhja ishte e suksesshme"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Shfaq të gjitha"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"Po kërkon"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Ndaj"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Skano këtë kod QR për t\'u lidhur me Wi‑Fi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"Ndarja e Wi‑Fi nuk ofrohet për këtë Wi‑Fi."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Pajisjet e lidhura"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Përdor Bluetooth-in"</string>
@@ -230,7 +233,7 @@
     <string name="bluetooth_notif_title" msgid="8374602799367803335">"Kërkesa e çiftimit"</string>
     <string name="bluetooth_notif_message" msgid="1060821000510108726">"Trokit për ta çiftuar me <xliff:g id="DEVICE_NAME">%1$s</xliff:g>."</string>
     <string name="bluetooth_device_picker" msgid="673238198452345475">"Zgjidh pajisjen me Bluetooth"</string>
-    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth"</string>
+    <string name="bluetooth_bonded_bluetooth_toggle_content_description" msgid="6800772154405846597">"Bluetooth-i"</string>
     <string name="bluetooth_bonded_phone_toggle_content_description" msgid="8152794643249938377">"Telefoni"</string>
     <string name="bluetooth_bonded_media_toggle_content_description" msgid="7803420585378155404">"Media"</string>
     <string name="language_settings" msgid="2079258598337245546">"Gjuhët"</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Milivolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Milivat"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Amper orë"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilovat orë"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilovat-orë"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Paund për inç katror"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Milje në orë"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Kilometra në orë"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Gradë"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilovat për njëqind milje"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilovat për njëqind kilometra"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilovat-orë për njëqind milje"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilovat-orë për njëqind kilometra"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Milje për galon (SHBA)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Milje për galon (MB)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilometra për litër"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Aplikacionet e papërdorura"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# aplikacion i papërdorur}other{# aplikacione të papërdorura}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Hiq lejet dhe liro hapësirën"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Raporti i pamjes (eksperimental)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Hap"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Parazgjedhja e aplikacionit"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Ekran i plotë"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Gjysmë ekrani"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Raporti i pamjes i pajisjes"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"Aplikacioni do të riniset kur të ndryshosh raportin e pamjes. Mund t\'i humbasësh ndryshimet e paruajtura. Disa aplikacione mund të mos jenë të optimizuara për raporte të caktuara të pamjes."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s në hapësirën e brendshme të ruajtjes"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Përdor burimet e sistemit për t\'i dhënë përparësi performancës së aplikacionit"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Hap si parazgjedhje"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Lejo që aplikacioni të hapë lidhjet e mbështetura"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Përdorimi i të dhënave"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Përdorimi i të dhënave"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Historiku i përdorimit"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Pyet çdo herë"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"Mos e hap në këtë aplikacion"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Lidhjet e mbështetura"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Lidhjet e verifikuara"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# lidhje e verifikuar}other{# lidhje të verifikuara}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Lidhjet e mbështetura"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# lidhje e mbështetur}other{# lidhje të mbështetura}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Shto lidhje"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# lidhje e pamenaxhuar}other{# lidhje të pamenaxhuara}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Një aplikacion mund t\'i verifikojë lidhjet që të hapen automatikisht në aplikacion."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Aplikacionet"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Hapur së fundi"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Shiko të gjitha aplikacionet (%1$d)"</string>
@@ -617,7 +639,7 @@
     <string name="accounts_settings_title" msgid="436190037084293471">"Llogaritë"</string>
     <string name="user_add_account_menu" msgid="6625351983590713721">"Shto llogari"</string>
     <string name="no_accounts_added" msgid="5148163140691096055">"Nuk është shtuar asnjë llogari"</string>
-    <string name="account_list_title" msgid="7631588514613843065">"Llogaritë për <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
+    <string name="account_list_title" msgid="7631588514613843065">"Llogaritë për: <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Sinkronizo automatikisht të dhënat"</string>
     <string name="account_auto_sync_summary" msgid="6963837893148304128">"Lejo që aplikacionet t\'i rifreskojnë automatikisht të dhënat"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="8068513213445588532">"Të lejohet sinkronizimi automatik i të dhënave?"</string>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Planet e tua të internetit kanë skaduar"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Shiko planet"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"U krye"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Automjeti yt nuk e mbështet këtë veçori"</string>
 </resources>

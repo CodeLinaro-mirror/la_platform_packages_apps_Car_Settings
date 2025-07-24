@@ -134,7 +134,7 @@
     <string name="wifi_gateway" msgid="4975799192860431013">"Passarel·la"</string>
     <string name="wifi_preferences_title" msgid="772788844257225510">"Preferències de Wi‑Fi"</string>
     <string name="wifi_wakeup" msgid="7451825226044542000">"Activa la Wi‑Fi automàticament"</string>
-    <string name="wifi_wakeup_summary" msgid="7237521683331291414">"La Wi-Fi es tornarà a activar automàticament prop de xarxes d\'alta qualitat desades, com la de casa teva"</string>
+    <string name="wifi_wakeup_summary" msgid="7237521683331291414">"La Wi-Fi es tornarà a activar prop de xarxes d\'alta qualitat desades, com la de casa teva"</string>
     <string name="wifi_wakeup_summary_no_location" msgid="2821576525488435259">"No disponible perquè la ubicació està desactivada. Activa la "<annotation id="link">"ubicació"</annotation>"."</string>
     <string name="wifi_settings_scanning_required_title" msgid="2726782203331704928">"Vols activar la cerca de xarxes Wi‑Fi?"</string>
     <string name="wifi_settings_scanning_required_turn_on" msgid="4464931023377210050">"Activa"</string>
@@ -180,6 +180,9 @@
     <string name="network_connection_connect_successful" msgid="7893957133113302365">"S\'ha connectat correctament"</string>
     <string name="network_connection_request_dialog_showall" msgid="776613149566461487">"Mostra-ho tot"</string>
     <string name="progress_scanning" msgid="7191583064717479795">"S\'està cercant"</string>
+    <string name="wifi_detail_share" msgid="3765487472190563802">"Comparteix"</string>
+    <string name="wifi_detail_share_description" msgid="1417559695973326762">"Escaneja aquest codi QR per connectar-te a la Wi‑Fi"</string>
+    <string name="wifi_detail_share_toast" msgid="9106513465439393280">"La compartició de Wi‑Fi no està disponible per a aquesta Wi‑Fi."</string>
     <string name="connected_settings_title" msgid="8868738903280658151">"Dispositius connectats"</string>
     <string name="bluetooth_settings_title" msgid="3794688574569688649">"Bluetooth"</string>
     <string name="bluetooth_toggle_title" msgid="1431803611346881088">"Utilitza el Bluetooth"</string>
@@ -221,7 +224,7 @@
     <string name="bluetooth_pairing_key_msg" msgid="5066825929751599037">"Codi de vinculació per Bluetooth"</string>
     <string name="bluetooth_enable_alphanumeric_pin" msgid="1636575922217263060">"El PIN conté lletres o símbols"</string>
     <string name="bluetooth_enter_passkey_msg" msgid="5955236916732265593">"Escriu el codi de vinculació i prem Retorn"</string>
-    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Vols vincular el dispositiu amb <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
+    <string name="bluetooth_pairing_request" msgid="4769675459526556801">"Vols vincular <xliff:g id="DEVICE_NAME">%1$s</xliff:g>?"</string>
     <string name="bluetooth_pairing_shares_phonebook" msgid="2015966932886300630">"Permet que <xliff:g id="DEVICE_NAME">%1$s</xliff:g> accedeixi als contactes i a l\'historial de trucades"</string>
     <string name="bluetooth_enter_pin_other_device" msgid="7825091249522704764">"Pot ser que també hagis d\'introduir aquest PIN a l\'altre dispositiu."</string>
     <string name="bluetooth_enter_passkey_other_device" msgid="7147248221018865922">"Pot ser que també hagis d\'introduir aquesta clau d\'accés a l\'altre dispositiu."</string>
@@ -299,14 +302,14 @@
     <string name="units_unit_name_millivolt" msgid="4730384331465782188">"Mil·livolt"</string>
     <string name="units_unit_name_milliwatts" msgid="6689028603486588098">"Mil·liwatt"</string>
     <string name="units_unit_name_ampere_hour" msgid="6139925422033142476">"Ampere hora"</string>
-    <string name="units_unit_name_kilowatt_hour" msgid="4282251431283475831">"Kilowatt hora"</string>
+    <string name="units_unit_name_kilowatt_hour" msgid="3686434641263087159">"Kilowatt hora"</string>
     <string name="units_unit_name_psi" msgid="9199487304284041266">"Lliura per polzada quadrada"</string>
     <string name="units_unit_name_miles_per_hour" msgid="3988395919988136895">"Milles per hora"</string>
     <string name="units_unit_name_kilometers_per_hour" msgid="8243061370606677881">"Quilòmetres per hora"</string>
     <string name="units_unit_name_bar" msgid="4051903414466411804">"Bar"</string>
     <string name="units_unit_name_degrees" msgid="47944625323398947">"Grau"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="715836273168653604">"Kilowatt per cada 100 milles"</string>
-    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="2761254652642587883">"Kilowatt per cada 100 quilòmetres"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_miles" msgid="8428052736559260976">"Kilowatt hores per cada cent milles"</string>
+    <string name="units_unit_name_kilowatt_per_hundred_kilometers" msgid="3717342495287074950">"Kilowatt hores per cada cent quilòmetres"</string>
     <string name="units_unit_name_miles_per_gallon_us" msgid="3911349970584135950">"Milles per galons (EUA)"</string>
     <string name="units_unit_name_miles_per_gallon_uk" msgid="7700318800709988481">"Milles per galó (Regne Unit)"</string>
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Quilòmetres per litre"</string>
@@ -343,8 +346,20 @@
     <string name="unused_apps" msgid="648471933781010395">"Aplicacions no utilitzades"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# aplicació no utilitzada}other{# aplicacions no utilitzades}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"Suprimeix els permisos i allibera espai"</string>
+    <string name="aspect_ratio_label" msgid="5484863076085548807">"Relació d\'aspecte (experimental)"</string>
+    <string name="aspect_ratio_action_button" msgid="5581373962239508271">"Obre"</string>
+    <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"Predeterminada de l\'aplicació"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"Pantalla completa"</string>
+    <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"Mitja pantalla"</string>
+    <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"Relació d\'aspecte del dispositiu"</string>
+    <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"16:9"</string>
+    <string name="user_aspect_ratio_3_2" msgid="5245528023878893826">"3:2"</string>
+    <string name="user_aspect_ratio_4_3" msgid="6639743021314111820">"4:3"</string>
+    <string name="app_aspect_ratio_footer" msgid="7814071704357140611">"L\'aplicació es reiniciarà quan canviïs la relació d\'aspecte. És possible que es perdin els canvis sense desar. Pot ser que algunes aplicacions no s\'optimitzin per a determinades relacions d\'aspecte."</string>
     <string name="storage_type_internal" msgid="8918688427078709570">"%s a l\'emmagatzematge intern"</string>
     <string name="prioritize_app_performance_summary" msgid="1081874788185691418">"Utilitza recursos del sistema per prioritzar el rendiment de l\'aplicació"</string>
+    <string name="app_open_by_default_title" msgid="7275063779631935446">"Obre de manera predeterminada"</string>
+    <string name="app_open_by_default_summary" msgid="3261520150951464121">"Permet que l\'aplicació obri els enllaços admesos"</string>
     <string name="data_usage_summary_title" msgid="4368024763485916986">"Ús de dades"</string>
     <string name="data_usage_app_summary_title" msgid="5012851696585421420">"Ús de dades de l\'aplicació"</string>
     <string name="data_usage_usage_history_title" msgid="2386346082501471648">"Historial d\'ús"</string>
@@ -389,6 +404,13 @@
     <string name="app_link_open_ask" msgid="7242075065136237456">"Pregunta sempre"</string>
     <string name="app_link_open_never" msgid="2173174327831792316">"No obris en aquesta aplicació"</string>
     <string name="app_launch_supported_domain_urls_title" msgid="7345116365785981158">"Enllaços admesos"</string>
+    <string name="opening_links_verified_links_title" msgid="6781351697264180708">"Enllaços verificats"</string>
+    <string name="opening_links_verified_links_summary" msgid="4578067248862197847">"{count,plural, =1{# enllaç verificat}other{# enllaços verificats}}"</string>
+    <string name="opening_links_supported_links_title" msgid="7151392813491148977">"Enllaços admesos"</string>
+    <string name="opening_links_supported_links_summary" msgid="3020072581729951074">"{count,plural, =1{# enllaç admès}other{# enllaços admesos}}"</string>
+    <string name="opening_links_add_links_title" msgid="7560149353866939877">"Afegeix enllaços"</string>
+    <string name="opening_links_add_links_summary" msgid="7374297489426317237">"{count,plural, =1{# enllaç no gestionat}other{# enllaços no gestionats}}"</string>
+    <string name="app_launch_footer" msgid="5685538708339270743">"Una aplicació pot verificar els enllaços perquè s\'obrin automàticament a l\'aplicació."</string>
     <string name="apps_settings_title" msgid="3982535942394315336">"Aplicacions"</string>
     <string name="apps_recently_opened" msgid="5320377037971195984">"Obertes fa poc"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Mostra les %1$d aplicacions"</string>
@@ -422,7 +444,7 @@
     <string name="location_settings_title" msgid="901334356682423679">"Ubicació"</string>
     <string name="location_toggle_title" msgid="836779750812064601">"Utilitza la ubicació"</string>
     <string name="location_toggle_summary" msgid="5651728747635881194">"Utilitza la ubicació del cotxe amb qualsevol aplicació que hagis especificat."</string>
-    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Aplicacions d\'informació i entreteniment"</string>
+    <string name="location_infotainment_apps_toggle_title" msgid="2083924249183557387">"Aplicacions d\'infoentreteniment"</string>
     <string name="location_infotainment_apps_toggle_summary" msgid="6657657826985915806">"Permet que les aplicacions tinguin accés a la teva ubicació"</string>
     <string name="location_toggle_off_warning" msgid="5959449346865136081">"Si desactives aquesta opció, se suprimirà l\'accés a la ubicació per a totes les aplicacions excepte les que es necessitin per a l\'assistència al conductor"</string>
     <string name="adas_location_toggle_off_warning" msgid="2269555998731648820">"Si desactives aquesta opció, les aplicacions d\'assistència al conductor que depenen de la informació d\'ubicació es desactivaran"</string>
@@ -431,7 +453,7 @@
     <string name="adas_location_toggle_title" msgid="6131739109988811006">"Funcions que t\'ajuden a conduir"</string>
     <string name="adas_location_toggle_summary" msgid="7055141074159770928">"Permet que les funcions integrades, aprovades pel fabricant del cotxe, accedeixin a la ubicació del cotxe."</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"S\'hi ha accedit fa poc"</string>
-    <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"S\'hi ha accedit fa poc"</string>
+    <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"Accedits recentment / Accessos recents"</string>
     <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"Mostra-ho tot"</string>
     <string name="location_no_recent_access" msgid="2859914321242257931">"No hi ha aplicacions recents"</string>
     <string name="driver_assistance_label" msgid="5330316311913399041">"<xliff:g id="TIME">%1$s</xliff:g> • Assistència al conductor • Requereix accés"</string>
@@ -460,8 +482,8 @@
     <string name="system_update_settings_title" msgid="8448588267784138855">"Actualitzacions del sistema"</string>
     <string name="system_advanced_title" msgid="6303355131691523362">"Configuració avançada"</string>
     <string name="system_advanced_summary" msgid="5833643795981791953">"Informació sobre el dispositiu, informació legal, restabliment de les dades de fàbrica i més"</string>
-    <string name="restart_infotainment_system_title" msgid="5174129167446756511">"Reinicia el sistema d\'informació i entreteniment"</string>
-    <string name="restart_infotainment_system_dialog_text" msgid="6395281407323116808">"Reiniciar el sistema d\'informació i entreteniment del cotxe pot tardar uns quants minuts. Vols continuar?"</string>
+    <string name="restart_infotainment_system_title" msgid="5174129167446756511">"Reinicia el sistema d\'infoentreteniment"</string>
+    <string name="restart_infotainment_system_dialog_text" msgid="6395281407323116808">"Reiniciar el sistema d\'infoentreteniment del cotxe pot tardar uns quants minuts. Vols continuar?"</string>
     <string name="continue_confirmation" msgid="1598892163951467191">"Continua"</string>
     <string name="firmware_version" msgid="8491753744549309333">"Versió d\'Android"</string>
     <string name="security_patch" msgid="4794276590178386903">"Nivell de pedaç de seguretat d\'Android"</string>
@@ -495,7 +517,7 @@
     <string name="hardware_revision" msgid="5713759927934872874">"Versió del maquinari"</string>
     <string name="regulatory_info_text" msgid="8890339124198005428"></string>
     <string name="settings_license_activity_title" msgid="8499293744313077709">"Llicències de tercers"</string>
-    <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"S\'ha produït un problema en carregar les llicències."</string>
+    <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"Hi ha hagut un problema en carregar les llicències."</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"S\'està carregant…"</string>
     <string name="show_dev_countdown" msgid="7416958516942072383">"{count,plural, =1{Ara ja només et queda # pas per convertir-te en desenvolupador.}other{Ara ja només et queden # passos per convertir-te en desenvolupador.}}"</string>
     <string name="show_dev_on" msgid="5339077400040834808">"Ara ja ets desenvolupador!"</string>
@@ -523,7 +545,7 @@
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"S\'han restablert les preferències d\'aplicacions"</string>
     <string name="factory_reset_title" msgid="4019066569214122052">"Esborra totes les dades (restabliment de les dades de fàbrica)"</string>
     <string name="factory_reset_summary" msgid="854815182943504327">"Esborra tots els perfils i les dades del sistema d\'informació i entreteniment"</string>
-    <string name="factory_reset_desc" msgid="2774024747279286354">"Aquesta acció esborrarà totes les dades del sistema d\'informació i entreteniment del vehicle, com ara:\n\n"<li>"Els teus comptes i perfils"</li>\n<li>"Les dades i la configuració del sistema i de les aplicacions"</li>\n<li>"Les aplicacions baixades"</li></string>
+    <string name="factory_reset_desc" msgid="2774024747279286354">"Aquesta acció esborrarà totes les dades del sistema d\'infoentreteniment del vehicle, com ara:\n\n"<li>"Els teus comptes i perfils"</li>\n<li>"Les dades i la configuració del sistema i de les aplicacions"</li>\n<li>"Les aplicacions baixades"</li></string>
     <string name="factory_reset_accounts" msgid="5523956654938834209">"Actualment tens la sessió iniciada als comptes següents:"</string>
     <string name="factory_reset_other_users_present" msgid="3852324375352090570">"S\'han configurat altres perfils per a aquest vehicle."</string>
     <string name="factory_reset_button_text" msgid="2626666247051368256">"Esborra totes les dades"</string>
@@ -659,16 +681,16 @@
     <string name="action_unavailable" msgid="7087119418684417249">"Aquesta acció no està disponible per al teu perfil"</string>
     <string name="microphone_access_settings_title" msgid="6748613084403267254">"Accés al micròfon"</string>
     <string name="microphone_access_settings_summary" msgid="3531690421673836538">"Tria si les aplicacions poden accedir als micròfons del cotxe"</string>
-    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Aplicacions d\'informació i entreteniment"</string>
-    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Permet que les aplicacions d\'informació i entreteniment gravin àudio"</string>
+    <string name="microphone_infotainment_apps_toggle_title" msgid="6625559365680936672">"Aplicacions d\'infoentreteniment"</string>
+    <string name="microphone_infotainment_apps_toggle_summary" msgid="5967713909533492475">"Permet que les aplicacions d\'infoentreteniment gravin àudio"</string>
     <string name="camera_access_settings_title" msgid="1841809323727456945">"Accés a la càmera"</string>
     <string name="camera_access_settings_summary" msgid="8820488359585532496">"Tria si les aplicacions poden accedir a les càmeres del cotxe"</string>
     <string name="required_apps_group_title" msgid="8607608579973985786">"Aplicacions requerides"</string>
     <string name="required_apps_group_summary" msgid="5026442309718220831">"Aplicacions requerides pel fabricant del cotxe per ajudar-te a conduir"</string>
     <string name="required_apps_privacy_policy_button_text" msgid="960364076891996263">"Política"</string>
     <string name="camera_access_disclaimer_summary" msgid="442467418242962647">"És possible que el fabricant del cotxe encara tingui accés a la càmera del cotxe"</string>
-    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplicacions d\'informació i entreteniment"</string>
-    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Permet que les aplicacions d\'informació i entreteniment facin fotos i gravin vídeos"</string>
+    <string name="camera_infotainment_apps_toggle_title" msgid="6628966732265022536">"Aplicacions d\'infoentreteniment"</string>
+    <string name="camera_infotainment_apps_toggle_summary" msgid="2422476957183039039">"Permet que les aplicacions d\'infoentreteniment facin fotos i gravin vídeos"</string>
     <string name="permission_grant_allowed" msgid="4844649705788049638">"Amb permís"</string>
     <string name="permission_grant_always" msgid="8851460274973784076">"En tot moment"</string>
     <string name="permission_grant_never" msgid="1357441946890127898">"Sense permís"</string>
@@ -703,7 +725,7 @@
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"Connecta 4 punts com a mínim. Torna-ho a provar."</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"El patró no és correcte"</string>
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"Com es dibuixa un patró de desbloqueig"</string>
-    <string name="error_saving_lockpattern" msgid="2933512812768570130">"S\'ha produït un error en desar el patró"</string>
+    <string name="error_saving_lockpattern" msgid="2933512812768570130">"Hi ha hagut un error en desar el patró"</string>
     <string name="lockpattern_too_many_failed_confirmation_attempts" msgid="4636307830951251013">"Has superat el nombre d\'intents incorrectes permesos. Torna-ho a provar d\'aquí a <xliff:g id="NUMBER">%d</xliff:g> segons."</string>
     <string name="lockpattern_does_not_support_rotary" msgid="7356367113555659428">"Patró de rotació no admès; utilitza un tàctil"</string>
     <string name="okay" msgid="4589873324439764349">"D\'acord"</string>
@@ -718,7 +740,7 @@
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"El PIN ha de tenir 4 dígits com a mínim"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"El PIN no és vàlid. Ha de tenir com a mínim 4 dígits."</string>
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"Els PIN no coincideixen"</string>
-    <string name="error_saving_lockpin" msgid="9011960139736000393">"S\'ha produït un error en desar el PIN"</string>
+    <string name="error_saving_lockpin" msgid="9011960139736000393">"Hi ha hagut un error en desar el PIN"</string>
     <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"El PIN no és correcte"</string>
     <string name="lockscreen_wrong_password" msgid="5757087577162231825">"La contrasenya no és correcta"</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"Per seguretat, defineix una contrasenya"</string>
@@ -798,21 +820,21 @@
     <string name="qc_bluetooth_on_no_devices_info" msgid="7573736950041887300">"Per vincular un dispositiu, obre la configuració del Bluetooth"</string>
     <string name="qc_ui_mode_title" msgid="2425571805732530923">"Tema"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"Mostra els límits de la disposició"</string>
-    <string name="device_admin_add_title" msgid="1294399588284546811">"Administrador del sistema d\'informació i entreteniment"</string>
+    <string name="device_admin_add_title" msgid="1294399588284546811">"Administrador del sistema d\'infoentreteniment"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aplicacions activades"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Aplicacions desactivades"</string>
     <string name="device_admin_apps_description" msgid="1371935499168453457">"Les aplicacions amb aquest permís tenen accés a les dades d\'aquest vehicle"</string>
     <string name="device_admin_apps_list_empty" msgid="7634804595645191123">"No hi ha cap aplicació d\'administració de vehicles"</string>
-    <string name="device_admin_status" msgid="4041772636856135168">"Aquesta aplicació d\'administració del sistema d\'informació i entreteniment està activa i permet a l\'aplicació <xliff:g id="APP_NAME">%1$s</xliff:g> dur a terme les operacions següents:"</string>
-    <string name="device_admin_warning" msgid="8997805999333600901">"L\'activació d\'aquesta aplicació del sistema d\'informació i entreteniment permetrà que l\'aplicació <xliff:g id="APP_NAME">%1$s</xliff:g> faci les operacions següents:"</string>
-    <string name="add_device_admin_msg" msgid="8188888666879499482">"Vols activar aquesta aplicació?"</string>
-    <string name="add_device_admin" msgid="7674707256074840333">"Activa aquesta aplicació del sistema d\'informació i entreteniment"</string>
+    <string name="device_admin_status" msgid="4041772636856135168">"Aquesta aplicació d\'administració del sistema d\'infoentreteniment està activa i permet a l\'aplicació <xliff:g id="APP_NAME">%1$s</xliff:g> dur a terme les operacions següents:"</string>
+    <string name="device_admin_warning" msgid="8997805999333600901">"L\'activació d\'aquesta aplicació del sistema d\'infoentreteniment permetrà que l\'aplicació <xliff:g id="APP_NAME">%1$s</xliff:g> faci les operacions següents:"</string>
+    <string name="add_device_admin_msg" msgid="8188888666879499482">"Vols activar aquesta aplicacióde sistema d\'infoentreteniment?"</string>
+    <string name="add_device_admin" msgid="7674707256074840333">"Activa aquesta aplicació del sistema d\'infoentreteniment"</string>
     <string name="deactivate_and_uninstall_device_admin" msgid="596399938769951696">"Desactiva i desinstal·la"</string>
-    <string name="remove_device_admin" msgid="3595343390502030723">"Desactiva aquesta aplicació del sistema d\'informació i entreteniment"</string>
+    <string name="remove_device_admin" msgid="3595343390502030723">"Desactiva aquesta aplicació del sistema d\'infoentreteniment"</string>
     <string name="admin_profile_owner_message" msgid="8361351256802954556">"El gestor de l\'organització pot supervisar i gestionar les aplicacions i les dades associades a aquest perfil, inclosos els permisos, la configuració, l\'accés corporatiu, l\'activitat de xarxa i la informació d\'ubicació del vehicle."</string>
     <string name="admin_profile_owner_user_message" msgid="366072696508275753">"El gestor de l\'organització pot supervisar i gestionar les aplicacions i les dades associades a aquest perfil, inclosos els permisos, la configuració, l\'accés corporatiu, l\'activitat de xarxa i la informació d\'ubicació del dispositiu."</string>
-    <string name="admin_device_owner_message" msgid="896530502350904835">"El gestor de l\'organització pot supervisar i gestionar les aplicacions i les dades associades a aquest sistema d\'informació i entreteniment, inclosos els permisos, la configuració, l\'accés corporatiu, l\'activitat de xarxa i la informació d\'ubicació del vehicle."</string>
-    <string name="admin_financed_message" msgid="7357397436233684082">"És possible que el gestor de l\'organització pugui accedir a les dades associades a aquest sistema d\'informació i entreteniment, gestionar les aplicacions i canviar la configuració d\'aquest vehicle."</string>
+    <string name="admin_device_owner_message" msgid="896530502350904835">"El gestor de l\'organització pot supervisar i gestionar les aplicacions i les dades associades a aquest sistema d\'infoentreteniment, inclosos els permisos, la configuració, l\'accés corporatiu, l\'activitat de xarxa i la informació d\'ubicació del vehicle."</string>
+    <string name="admin_financed_message" msgid="7357397436233684082">"És possible que el gestor de l\'organització pugui accedir a les dades associades a aquest sistema d\'infoentreteniment, gestionar les aplicacions i canviar la configuració d\'aquest vehicle."</string>
     <string name="disabled_by_policy_title" msgid="1121694702115232518">"No està disponible"</string>
     <string name="disabled_by_policy_title_adjust_volume" msgid="7002865820552702232">"No es pot canviar el volum d\'aquest vehicle gestionat"</string>
     <string name="disabled_by_policy_title_outgoing_calls" msgid="158752542663419500">"No es poden fer trucades en aquest vehicle gestionat"</string>
@@ -832,11 +854,11 @@
     <string name="footer_learn_more_content_description" msgid="7749452309729272078">"Més informació sobre <xliff:g id="SERVICE">%1$s</xliff:g>"</string>
     <string name="enterprise_privacy_settings" msgid="6496900796150572727">"Informació del vehicle gestionat"</string>
     <string name="enterprise_privacy_settings_summary_generic" msgid="5850991363779957797">"Configuració gestionada per l\'administrador de la flota"</string>
-    <string name="enterprise_privacy_header" msgid="4652489109303330306">"Per donar accés a les dades d\'aquest vehicle gestionat, l\'administrador de la flota pot canviar la configuració del sistema d\'informació i entreteniment i també instal·lar-hi programari.\n\nPer obtenir més informació, contacta amb l\'administrador de la flota."</string>
+    <string name="enterprise_privacy_header" msgid="4652489109303330306">"Per donar accés a les dades d\'aquest vehicle gestionat, l\'administrador de la flota pot canviar la configuració del sistema d\'infoentreteniment i també instal·lar-hi programari.\n\nPer obtenir més informació, contacta amb l\'administrador de la flota."</string>
     <string name="enterprise_privacy_exposure_category" msgid="4870494030035008520">"Informació que l\'administrador de la flota pot veure"</string>
     <string name="enterprise_privacy_exposure_changes_category" msgid="8837106430193547177">"Canvis fets per l\'administrador de la flota"</string>
     <string name="enterprise_privacy_exposure_desc" msgid="7962571201715956427">" "<li>"Dades associades al compte del vehicle gestionat"</li>\n" "<li>"Llista d\'aplicacions del vehicle gestionat"</li>\n" "<li>"Temps dedicat i dades utilitzades en cada aplicació"</li></string>
-    <string name="enterprise_privacy_device_access_category" msgid="5820180227429886857">"El teu accés al sistema d\'informació i entreteniment"</string>
+    <string name="enterprise_privacy_device_access_category" msgid="5820180227429886857">"El teu accés al sistema d\'infoentreteniment"</string>
     <string name="enterprise_privacy_installed_packages" msgid="1069862734971848156">"Llista de les aplicacions que hi ha al vehicle"</string>
     <string name="enterprise_privacy_apps_count_estimation_info" msgid="2684195229249659340">"El nombre d\'aplicacions és aproximat. És possible que no inclogui les aplicacions instal·lades que no provenen de Play Store."</string>
     <plurals name="enterprise_privacy_number_packages_lower_bound" formatted="false" msgid="1628398874478431488">
@@ -860,8 +882,8 @@
     <string name="enterprise_privacy_input_method_name" msgid="2027313786295077607">"Mètode definit: <xliff:g id="APP_LABEL">%s</xliff:g>"</string>
     <string name="enterprise_privacy_global_http_proxy" msgid="1366593928008294049">"S\'ha definit el servidor intermediari HTTP global"</string>
     <string name="enterprise_privacy_ca_certs_personal" msgid="5677098981429650665">"Certificats de confiança al teu perfil personal"</string>
-    <string name="enterprise_privacy_device_access_desc" msgid="3442555102576036038">" "<li>"L\'administrador pot bloquejar el sistema d\'informació i entreteniment i també restablir la contrasenya"</li>\n" "<li>"L\'administrador pot suprimir dades del sistema d\'informació i entreteniment"</li></string>
-    <string name="enterprise_privacy_failed_password_wipe_device" msgid="4768743631260876559">"Intents fallits d\'introduir la contrasenya abans que se suprimeixin totes les dades del sistema d\'informació i entreteniment"</string>
+    <string name="enterprise_privacy_device_access_desc" msgid="3442555102576036038">" "<li>"L\'administrador pot bloquejar el sistema d\'infoentreteniment i també restablir la contrasenya"</li>\n" "<li>"L\'administrador pot suprimir dades del sistema d\'informació i entreteniment"</li></string>
+    <string name="enterprise_privacy_failed_password_wipe_device" msgid="4768743631260876559">"Intents fallits d\'introduir la contrasenya abans que se suprimeixin totes les dades del sistema d\'infoentreteniment"</string>
     <string name="enterprise_privacy_failed_password_wipe_current_user" msgid="786246192213446835">"Intents fallits d\'introduir la contrasenya abans que se suprimeixin les dades del perfil"</string>
     <plurals name="enterprise_privacy_number_failed_password_wipe" formatted="false" msgid="445847844239023816">
       <item quantity="other"><xliff:g id="COUNT_1">%d</xliff:g> intents</item>
@@ -933,4 +955,5 @@
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"Els teus plans d\'Internet han caducat"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"Mostra els plans"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"Fet"</string>
+    <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"El vehicle no admet aquesta funció"</string>
 </resources>
