@@ -12,6 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear.
  */
 package com.android.car.settings.bluetooth;
 
@@ -59,7 +64,7 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
     private String mPasskeyFormatted;
     private int mPasskey;
     private String mDeviceName;
-    private LocalBluetoothProfile mPbapClientProfile;
+    private LocalBluetoothProfile mPbapProfile;
 
     /**
      * Creates an instance of a BluetoothPairingController.
@@ -82,7 +87,7 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
         mType = intent.getIntExtra(BluetoothDevice.EXTRA_PAIRING_VARIANT, BluetoothDevice.ERROR);
         mPasskey = intent.getIntExtra(BluetoothDevice.EXTRA_PAIRING_KEY, BluetoothDevice.ERROR);
         mDeviceName = mBluetoothManager.getCachedDeviceManager().getName(mDevice);
-        mPbapClientProfile = mBluetoothManager.getProfileManager().getPbapClientProfile();
+        mPbapProfile = mBluetoothManager.getProfileManager().getPbapProfile();
         mPasskeyFormatted = formatKey(mPasskey);
 
     }
@@ -150,7 +155,7 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
      * device.
      */
     public boolean isProfileReady() {
-        return mPbapClientProfile != null && mPbapClientProfile.isProfileReady();
+        return mPbapProfile != null && mPbapProfile.isProfileReady();
     }
 
     /**
@@ -166,7 +171,8 @@ public class BluetoothPairingController implements OnCheckedChangeListener,
             case BluetoothDevice.ACCESS_REJECTED:
                 return false;
             default:
-                if (mDevice.getBluetoothClass().getDeviceClass()
+                if (mBluetoothManager.getCachedDeviceManager()
+                        .getBluetoothClass(mDevice).getDeviceClass()
                         == BluetoothClass.Device.AUDIO_VIDEO_HANDSFREE) {
                     return true;
                 }
