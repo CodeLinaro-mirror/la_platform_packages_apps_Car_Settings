@@ -77,7 +77,7 @@
     <string name="data_usage_limit_dialog_mobile" msgid="3633960011913085089">"ระบบเครื่องเสียงของรถยนต์จะปิดอินเทอร์เน็ตมือถือเมื่อมีการใช้งานถึงขีดจำกัดที่คุณกำหนดไว้\n\nเนื่องจากนี่เป็นปริมาณการใช้อินเทอร์เน็ตที่วัดโดยระบบเครื่องเสียง ปริมาณการใช้งานที่ผู้ให้บริการวัดได้จึงอาจไม่เท่ากัน โปรดกำหนดขีดจำกัดอย่างระมัดระวัง"</string>
     <string name="data_usage_warning_editor_title" msgid="2041517150169038813">"ตั้งค่าคำเตือนปริมาณการใช้อินเทอร์เน็ต"</string>
     <string name="data_usage_limit_editor_title" msgid="133468242379286689">"ตั้งค่าขีดจำกัดปริมาณการใช้อินเทอร์เน็ต"</string>
-    <string name="data_usage_settings_footer" msgid="681881387909678237">"ปริมาณการใช้อินเทอร์เน็ตจะวัดโดยอุปกรณ์ ซึ่งอาจแตกต่างจากปริมาณอินเทอร์เน็ตของผู้ให้บริการเครือข่ายมือถือ"</string>
+    <string name="data_usage_settings_footer" msgid="681881387909678237">"ปริมาณการใช้อินเทอร์เน็ตจะวัดโดยอุปกรณ์ ซึ่งอาจแตกต่างจากปริมาณอินเทอร์เน็ตของผู้ให้บริการมือถือ"</string>
     <string name="usage_bytes_threshold_picker_positive_button" msgid="4625479840977965519">"ตั้งค่า"</string>
     <string name="data_usage_warning_save_title" msgid="2900544287239037695">"บันทึก"</string>
     <string name="network_and_internet_oem_network_title" msgid="6436902713696212250">"เครือข่าย OEM"</string>
@@ -511,7 +511,7 @@
     <string name="terms_title" msgid="5201471373602628765">"ข้อกำหนดในการให้บริการ"</string>
     <string name="webview_license_title" msgid="6442372337052056463">"ใบอนุญาต WebView ของระบบ"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"วอลเปเปอร์"</string>
-    <string name="wallpaper_attributions_values" msgid="4292446851583307603">"ผู้ให้บริการภาพถ่ายดาวเทียม:\n©2014 CNES/Astrium, DigitalGlobe, Bluesky"</string>
+    <string name="wallpaper_attributions_values" msgid="4292446851583307603">"ผู้ให้บริการภาพถ่ายจากดาวเทียม:\n©2014 CNES/Astrium, DigitalGlobe, Bluesky"</string>
     <string name="model_info" msgid="4966408071657934452">"รุ่น"</string>
     <string name="status_serial_number" msgid="9158889113131907656">"หมายเลขซีเรียล"</string>
     <string name="hardware_revision" msgid="5713759927934872874">"เวอร์ชันฮาร์ดแวร์"</string>
