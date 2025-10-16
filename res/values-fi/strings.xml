@@ -242,7 +242,7 @@
     <string name="language_picker_list_all_header" msgid="1577387973934368428">"Kaikki kielet"</string>
     <string name="keyboard_settings" msgid="1959697870618278081">"Näppäimistö"</string>
     <string name="manage_keyboard" msgid="4045394766282200132">"Ylläpidä näppäimistöjä"</string>
-    <string name="text_to_speech_settings" msgid="811985746199507343">"Tekstistä puheeksi ‑toisto"</string>
+    <string name="text_to_speech_settings" msgid="811985746199507343">"Tekstistä puheeksi ‑tuotos"</string>
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"Ensisijainen moottori"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"Nykyinen moottori"</string>
     <string name="tts_speech_rate" msgid="4512944877291943133">"Puheen nopeus"</string>
@@ -504,7 +504,7 @@
     <string name="legal_information" msgid="1838443759229784762">"Lakitiedot"</string>
     <string name="contributors_title" msgid="7698463793409916113">"Tekijät"</string>
     <string name="manual" msgid="4819839169843240804">"Manuaalinen"</string>
-    <string name="regulatory_labels" msgid="3165587388499646779">"Viranomaismerkinnät"</string>
+    <string name="regulatory_labels" msgid="3165587388499646779">"Viranomaistietoa sisältävät tunnisteet"</string>
     <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Turvallisuus- ja säädöstenmukaisuusopas"</string>
     <string name="copyright_title" msgid="4220237202917417876">"Tekijänoikeudet"</string>
     <string name="license_title" msgid="936705938435249965">"Käyttölupa"</string>

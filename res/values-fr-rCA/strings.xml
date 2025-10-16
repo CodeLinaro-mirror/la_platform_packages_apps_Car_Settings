@@ -419,7 +419,7 @@
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Pour l\'assistant et plus"</string>
     <string name="performance_impacting_apps_summary" msgid="7762122057244111162">"{count,plural, =1{# application altérant la performance}one{# application altérant la performance}other{# applications altérant la performance}}"</string>
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"Au système et aux autres paramètres"</string>
-    <string name="special_access" msgid="5730278220917123811">"Accès spécial des applications"</string>
+    <string name="special_access" msgid="5730278220917123811">"Accès spécial des applis"</string>
     <string name="show_system" msgid="4401355756969485287">"Afficher le système"</string>
     <string name="hide_system" msgid="8845453295584638040">"Masquer les processus système"</string>
     <string name="hide_system_apps" msgid="6583947381056154020">"Masquer les applications systèmes"</string>
@@ -434,7 +434,7 @@
     <string name="notification_listener_revoke_warning_cancel" msgid="4399941651358241154">"Annuler"</string>
     <string name="performance_impacting_apps_description" msgid="7361464904617808444">"Ces applications altèrent la performance du système, et leur exécution en arrière-plan a été bloquée.\nPriorisez l\'application pour permettre l\'utilisation en arrière-plan et retirez-là de cette liste."</string>
     <string name="performance_impacting_apps_button_label" msgid="8277507326717608783">"Prioriser l\'appli"</string>
-    <string name="premium_sms_access_title" msgid="4290463862145052004">"Message texte payant"</string>
+    <string name="premium_sms_access_title" msgid="4290463862145052004">"Messages texte payants"</string>
     <string name="premium_sms_access_description" msgid="7119026067677052169">"Les messages texte de cette catégorie peuvent être payants et s\'ajouter aux factures mensuelles de votre fournisseur de services. Si vous activez l\'autorisation pour une application, vous serez en mesure d\'envoyer des messages texte payants à l\'aide de cette dernière."</string>
     <string name="usage_access_title" msgid="7153427122072303254">"Accès aux données utilisation"</string>
     <string name="usage_access_description" msgid="2413168719257435422">"L\'accès aux données d\'utilisation permet à une application d\'effectuer le suivi des applications que vous utilisez, de la fréquence d\'utilisation, du fournisseur de services, des paramètres de langue et d\'autres détails."</string>
@@ -541,7 +541,7 @@
     <string name="reset_network_complete_toast" msgid="3804108209431416865">"Les paramètres réseau ont été réinitialisés"</string>
     <string name="reset_app_pref_title" msgid="5855420038951743992">"Réinitial. préférences des applis"</string>
     <string name="reset_app_pref_desc" msgid="579392665146962149">"Cette opération réinitialise toutes les préférences relatives aux éléments suivants :\n\n"<li>"Applications désactivées"</li>\n<li>"Notifications associées aux applications désactivées"</li>\n<li>"Applications par défaut pour les actions"</li>\n<li>"Restrictions de données en arrière-plan pour les applications"</li>\n<li>"Toutes les restrictions d\'autorisations"</li>\n\n"Vous ne perdrez aucune donnée liée aux applications."</string>
-    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Réinitialiser les applications"</string>
+    <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Réinitialiser"</string>
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Les préférences des applications ont été réinitialisées"</string>
     <string name="factory_reset_title" msgid="4019066569214122052">"Effacer les données (réinitialisation)"</string>
     <string name="factory_reset_summary" msgid="854815182943504327">"Effacer toutes les données et tous les profils du système d\'infodivertissement"</string>
