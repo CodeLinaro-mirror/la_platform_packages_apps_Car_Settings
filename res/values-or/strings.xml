@@ -98,7 +98,7 @@
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"ନେଟ୍‌ୱର୍କ ଯୋଗ କରନ୍ତୁ"</string>
     <string name="wifi_setup_connect" msgid="3512399573397979101">"ସଂଯୋଗ"</string>
     <string name="wifi_connecting" msgid="1930665730621677960">"ସଂଯୋଗ କରାଯାଉଛି…"</string>
-    <string name="wifi_disconnected" msgid="4485699234859368137">"ସଂଯୋଗ ହୋଇନାହିଁ"</string>
+    <string name="wifi_disconnected" msgid="4485699234859368137">"କନେକ୍ଟ ହୋଇନାହିଁ"</string>
     <string name="wifi_not_in_range_message" msgid="2617126307140203787">"ନେଟୱାର୍କ ରେଞ୍ଜ ମଧ୍ୟରେ ନାହିଁ"</string>
     <string name="wifi_password" msgid="5565632142720292397">"ପାସୱର୍ଡ"</string>
     <string name="wifi_show_password" msgid="8423293211933521097">"ପାସୱାର୍ଡ ଦେଖାନ୍ତୁ"</string>
@@ -972,4 +972,11 @@
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"ପ୍ଲାନଗୁଡ଼ିକ ଦେଖନ୍ତୁ"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"ହୋଇଗଲା"</string>
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"ଆପଣଙ୍କ ଗାଡ଼ି ଏହି ଫିଚରକୁ ସମର୍ଥନ କରେ ନାହିଁ"</string>
+    <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"ଚଉଡ଼ା ଓ ଉଚ୍ଚତାର ଅନୁପାତ ସେଟିଂସ"</string>
+    <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"ଆପଣ ଚଉଡ଼ା ଓ ଉଚ୍ଚତାର ଅନୁପାତ ପରିବର୍ତ୍ତନ କଲେ ଏହି ଆପଟି ରିଷ୍ଟାର୍ଟ ହେବ। ଆପଣ ସେଭ କରାଯାଇନଥିବା ପରିବର୍ତ୍ତନଗୁଡ଼ିକୁ ହରାଇପାରନ୍ତି। ନିର୍ଦ୍ଦିଷ୍ଟ ଚଉଡ଼ା ଓ ଉଚ୍ଚତାର ଅନୁପାତ ପାଇଁ କିଛି ଆପ୍ସ ଅପ୍ଟିମାଇଜ ହୋଇନପାରେ।"</string>
+    <string name="aspect_ratio_dialog_close_button_text" msgid="106373988244349134">"ବନ୍ଦ କରନ୍ତୁ"</string>
+    <string name="aspect_ratio_dialog_apply_button_text" msgid="6640581762487796778">"ଲାଗୁ କରନ୍ତୁ"</string>
+    <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"ଆପ ଡିଫଲ୍ଟ"</string>
+    <string name="aspect_ratio_dialog_full_screen_text" msgid="888165107964490897">"ପୂର୍ଣ୍ଣ ସ୍କ୍ରିନ"</string>
+    <string name="aspect_ratio_dialog_half_screen_text" msgid="3832684591279367444">"ଅଧା ସ୍କ୍ରିନ"</string>
 </resources>
