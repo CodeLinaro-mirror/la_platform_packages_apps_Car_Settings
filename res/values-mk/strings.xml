@@ -641,7 +641,7 @@
     <string name="no_accounts_added" msgid="5148163140691096055">"Нема додадени сметки"</string>
     <string name="account_list_title" msgid="7631588514613843065">"Сметки за: <xliff:g id="CURRENT_USER_NAME">%1$s</xliff:g>"</string>
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Автоматска синхронизација на податоци"</string>
-    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Дозволи им на апликациите автоматски да ги освежуваат податоците"</string>
+    <string name="account_auto_sync_summary" msgid="6963837893148304128">"Им дозволува на апликациите автоматски да ги освежуваат податоците"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="8068513213445588532">"Да се дозволи автоматско синхронизирање податоци?"</string>
     <string name="data_usage_auto_sync_on_dialog" msgid="8683935973719807821">"Сите промени што ќе ги извршите на вашите сметки во прелистувачот ќе се ископираат автоматски и во возилото.\n\nКај некои сметки, сите извршени промени преку возилото може да се ископираат автоматски и во прелистувачот."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="6683011954002351091">"Да се забрани автоматско синхронизирање податоци?"</string>
@@ -706,7 +706,7 @@
     <string name="screen_lock_options" msgid="8531177937577168185">"Опции за заклучување"</string>
     <string name="lock_settings_enter_pattern" msgid="4826034565853171624">"Внесете ја шемата"</string>
     <string name="lockpattern_confirm_button_text" msgid="7784925958324484965">"Потврди"</string>
-    <string name="lockpattern_restart_button_text" msgid="9355771277617537">"Измени"</string>
+    <string name="lockpattern_restart_button_text" msgid="9355771277617537">"Изменете"</string>
     <string name="continue_button_text" msgid="5129979170426836641">"Продолжи"</string>
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Повторно"</string>
     <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Прескокни"</string>

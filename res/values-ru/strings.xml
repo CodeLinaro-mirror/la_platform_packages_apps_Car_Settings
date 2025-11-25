@@ -63,7 +63,7 @@
     <string name="launch_manage_plan_text" msgid="906657488611815787">"Посмотреть тарифный план"</string>
     <string name="app_data_usage" msgid="3878609885080232877">"Передача данных приложений"</string>
     <string name="data_usage_app_restricted" msgid="4570970078120010951">"ограничение"</string>
-    <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"Сброс статистики"</string>
+    <string name="cycle_reset_day_of_month_picker_title" msgid="1374568502823735361">"Дата начала периода"</string>
     <string name="cycle_reset_day_of_month_picker_subtitle" msgid="5361061448258189846">"День месяца:"</string>
     <string name="cycle_reset_day_of_month_picker_positive_button" msgid="6919858010423269305">"Сохранить"</string>
     <string name="data_warning_limit_title" msgid="4950868241810828601">"Предупреждения и лимит"</string>
@@ -511,7 +511,7 @@
     <string name="terms_title" msgid="5201471373602628765">"Условия использования"</string>
     <string name="webview_license_title" msgid="6442372337052056463">"Лицензии System WebView"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"Обои"</string>
-    <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Спутниковые фотографии:\n© 2014 CNES/Astrium, DigitalGlobe, Bluesky"</string>
+    <string name="wallpaper_attributions_values" msgid="4292446851583307603">"Спутниковые фотографии:\n© CNES/Astrium, DigitalGlobe, Bluesky, 2014 г."</string>
     <string name="model_info" msgid="4966408071657934452">"Модель"</string>
     <string name="status_serial_number" msgid="9158889113131907656">"Серийный номер"</string>
     <string name="hardware_revision" msgid="5713759927934872874">"Версия аппаратного обеспечения"</string>
@@ -543,7 +543,7 @@
     <string name="reset_app_pref_desc" msgid="579392665146962149">"Будут сброшены следующие настройки:\n\n"<li>"Отключенные приложения."</li>\n<li>"Отключенные уведомления приложений."</li>\n<li>"Приложения по умолчанию."</li>\n<li>"Ограничения на передачу данных в фоновом режиме."</li>\n<li>"Все ограничения разрешений."</li>\n\n"Данные приложений удалены не будут."</string>
     <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Сбросить настройки"</string>
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Настройки приложений сброшены."</string>
-    <string name="factory_reset_title" msgid="4019066569214122052">"Стереть все данные (заводские настройки)"</string>
+    <string name="factory_reset_title" msgid="4019066569214122052">"Удалить все данные (сброс настроек)"</string>
     <string name="factory_reset_summary" msgid="854815182943504327">"Удалить все данные и профили из информационно-развлекательной системы"</string>
     <string name="factory_reset_desc" msgid="2774024747279286354">"Будут удалены все данные из информационно-развлекательной системы автомобиля, в том числе:\n\n"<li>"ваши аккаунты и профили;"</li>\n<li>"данные и настройки системы и приложений;"</li>\n<li>"скачанные приложения."</li></string>
     <string name="factory_reset_accounts" msgid="5523956654938834209">"Вы вошли в следующие аккаунты:"</string>
@@ -657,7 +657,7 @@
     <string name="account_sync_title" msgid="6541844336300236915">"Синхронизация аккаунта"</string>
     <string name="account_sync_summary_some_on" msgid="4525960296068027182">"Синхронизация включена для некоторых элементов (<xliff:g id="ID_1">%1$d</xliff:g> из <xliff:g id="ID_2">%2$d</xliff:g>)"</string>
     <string name="account_sync_summary_all_on" msgid="3652264471870312725">"Синхронизация включена для всех элементов"</string>
-    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"Синхронизация отключена для всех элементов"</string>
+    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"Синхронизация отключена для всех типов данных"</string>
     <string name="sync_disabled" msgid="393531064334628258">"Синхронизация отключена"</string>
     <string name="sync_error" msgid="6698021343089247914">"Ошибка синхронизации"</string>
     <string name="last_synced" msgid="4745124489150101529">"Последняя синхронизация: <xliff:g id="LAST_SYNC_TIME">%1$s</xliff:g>"</string>

@@ -367,7 +367,7 @@
     <string name="app_data_usage_title" msgid="6991057296054761322">"የውሂብ እና የWi-Fi አጠቃቀም"</string>
     <string name="app_data_usage_usage_history_title" msgid="5861801915345874959">"የአጠቃቀም ታሪክ"</string>
     <string name="app_data_usage_total_usage" msgid="6166480544992906281">"ጠቅላላ አጠቃቀም"</string>
-    <string name="app_data_usage_foreground" msgid="76513424438149709">"ቅድመ ገፅ"</string>
+    <string name="app_data_usage_foreground" msgid="76513424438149709">"ቅድመ ገጽ"</string>
     <string name="app_data_usage_background" msgid="6972054078770685280">"ዳራ"</string>
     <string name="app_data_usage_allow_data_title" msgid="2713343973040466293">"ውሂብ ይፍቀዱ"</string>
     <string name="app_data_usage_allow_data_summary" msgid="7431118326573403774">"ይህ መተግበሪያ የተንቀሳቃሽ ስልክ ውሂብን እንዲጠቀም ይፍቀዱ"</string>
@@ -916,7 +916,7 @@
     <string name="power_component_disabled" msgid="7084144472096800457">"ይህ ቅንብር አሁን መቀየር አይችልም"</string>
     <string name="accessibility_settings_title" msgid="2615042088419230347">"ተደራሽነት"</string>
     <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"መግለጫ ፅሁፎች"</string>
-    <string name="captions_settings_title" msgid="5738067618097295831">"የመግለጫ ጽሁፍ ምርጫዎች"</string>
+    <string name="captions_settings_title" msgid="5738067618097295831">"የመግለጫ ጽሑፍ ምርጫዎች"</string>
     <string name="captions_settings_off" msgid="7568096968016015626">"አጥፋ"</string>
     <string name="captions_settings_on" msgid="5374984113566914978">"አብራ"</string>
     <string name="screen_reader_settings_title" msgid="4012734340987826872">"ማያ ገፅ አንባቢ"</string>

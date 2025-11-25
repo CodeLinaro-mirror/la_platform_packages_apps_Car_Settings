@@ -320,7 +320,7 @@
     <string name="performance_impacting_apps" msgid="3439260699394720569">"Aplicaciones que afectan al rendimiento"</string>
     <string name="app_permissions" msgid="32799922508313948">"Permisos de aplicaciones"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"Controla el acceso de las aplicaciones a tus datos"</string>
-    <string name="applications_settings" msgid="794261395191035632">"Información de las aplicaciones"</string>
+    <string name="applications_settings" msgid="794261395191035632">"Información de las apps"</string>
     <string name="force_stop" msgid="1616958676171167028">"Detener aplicación"</string>
     <string name="force_stop_dialog_title" msgid="4481858344628934971">"¿Detener la aplicación?"</string>
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"Si se fuerza la detención de una aplicación, es posible que no funcione correctamente."</string>
@@ -543,7 +543,7 @@
     <string name="reset_app_pref_desc" msgid="579392665146962149">"Se restablecerán todas las preferencias de:\n\n"<li>"Aplicaciones desactivadas"</li>\n<li>"Notificaciones de aplicaciones desactivadas"</li>\n<li>"Aplicaciones para acciones predeterminadas"</li>\n<li>"Restricciones de datos en segundo plano de aplicaciones"</li>\n<li>"Restricciones de permisos"</li>\n\n"No se perderán los datos de las aplicaciones."</string>
     <string name="reset_app_pref_button_text" msgid="6270820447321231609">"Restablecer"</string>
     <string name="reset_app_pref_complete_toast" msgid="8709072932243594166">"Se han restablecido las preferencias de las aplicaciones"</string>
-    <string name="factory_reset_title" msgid="4019066569214122052">"Borrar todo (volver al estado de fábrica)"</string>
+    <string name="factory_reset_title" msgid="4019066569214122052">"Volver al estado de fábrica (borrar todo)"</string>
     <string name="factory_reset_summary" msgid="854815182943504327">"Borrar todos los datos y perfiles del sistema de infoentretenimiento"</string>
     <string name="factory_reset_desc" msgid="2774024747279286354">"Se borrarán todos los datos del sistema de infoentretenimiento de tu vehículo, incluidos los siguientes:\n\n"<li>"Tus cuentas y perfiles"</li>\n<li>"Los ajustes y los datos de aplicaciones y del sistema"</li>\n<li>"Las aplicaciones descargadas"</li></string>
     <string name="factory_reset_accounts" msgid="5523956654938834209">"Has iniciado sesión en estas cuentas:"</string>
@@ -643,7 +643,7 @@
     <string name="account_auto_sync_title" msgid="3238816995364191432">"Sincronizar datos automáticamente"</string>
     <string name="account_auto_sync_summary" msgid="6963837893148304128">"Permite que las aplicaciones actualicen los datos automáticamente"</string>
     <string name="data_usage_auto_sync_on_dialog_title" msgid="8068513213445588532">"¿Permitir sincronización de datos automática?"</string>
-    <string name="data_usage_auto_sync_on_dialog" msgid="8683935973719807821">"Los cambios que hagas en tus cuentas en la Web se reflejarán automáticamente en tu vehículo.\n\nAlgunas cuentas también reflejarán en la Web automáticamente los cambios que hagas en el vehículo."</string>
+    <string name="data_usage_auto_sync_on_dialog" msgid="8683935973719807821">"Los cambios que hagas en tus cuentas en la web se reflejarán automáticamente en tu vehículo.\n\nAlgunas cuentas también reflejarán en la web automáticamente los cambios que hagas en el vehículo."</string>
     <string name="data_usage_auto_sync_off_dialog_title" msgid="6683011954002351091">"¿Impedir la sincronización de datos automática?"</string>
     <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"Esto te permitirá ahorrar datos, pero tendrás que sincronizar cada cuenta de forma manual para obtener información reciente y no recibirás notificaciones cuando haya actualizaciones."</string>
     <string name="account_details_title" msgid="7529571432258448573">"Información de la cuenta"</string>
