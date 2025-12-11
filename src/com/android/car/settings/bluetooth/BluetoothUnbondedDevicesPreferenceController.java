@@ -12,6 +12,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear.
  */
 
 package com.android.car.settings.bluetooth;
@@ -90,7 +95,7 @@ public class BluetoothUnbondedDevicesPreferenceController extends
                     .getResources()
                     .getIntArray(R.array.config_unbonded_device_filter_allowlist);
             //TODO(b/198339129): change to use device bond status
-            Set<BluetoothDevice> bondedDevices = mBluetoothAdapter.getBondedDevices();
+            Set<BluetoothDevice> bondedDevices = mLocalBluetoothAdapter.getBondedDevices();
             boolean matches = bondedDevices == null || !bondedDevices.contains(device);
             if (matches && unbondedMajorClassFilter.length > 0) {
                 matches = device.getBluetoothClass() != null
