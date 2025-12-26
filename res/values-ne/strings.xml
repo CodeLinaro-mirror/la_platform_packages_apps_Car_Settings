@@ -273,6 +273,11 @@
     <string name="sound_alert_sounds" msgid="6838044721739163867">"अलर्टका ध्वनि"</string>
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"रिङटोन, सूचनाहरू, अलार्म"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"निम्नमा मिडिया प्ले गर्नुहोस्"</string>
+    <string name="audio_route_preference_listening" msgid="2187464983808020936">"सुनिँदै छ"</string>
+    <string name="audio_route_preference_available_to_join" msgid="5063798317104044676">"सामेल हुन उपलब्ध"</string>
+    <string name="audio_route_preference_connecting_device" msgid="6468937956684629305">"डिभाइससँग कनेक्ट गरिँदै छ"</string>
+    <string name="audio_route_preference_connecting_broadcast" msgid="6803306398476638059">"अडियो सेयर गर्ने सुविधामा कनेक्ट गरिँदै छ"</string>
+    <string name="audio_route_preference_disconnecting_broadcast" msgid="5152769561912051962">"अडियो सेयर गर्ने सुविधाबाट डिस्कनेक्ट गरिँदै छ"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"मिडिया %1$s मार्फत प्ले गर्न लागिँदै छ"</string>
     <string name="display_brightness" msgid="5718970880488110840">"ब्राइटनेस"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"कम प्रकाशमा उपयुक्त हुने गरी स्क्रिनको चमक समायोजन गर्नुहोस्"</string>
@@ -974,7 +979,7 @@
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"योजनाहरू हेर्नुहोस्"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"तपाईंको इन्टरनेट योजनाको म्याद सकिएको छ"</string>
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"योजनाहरू हेर्नुहोस्"</string>
-    <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"पूरा भयो"</string>
+    <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"भयो"</string>
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"तपाईंको कारमा यो सुविधा प्रयोग गर्न मिल्दैन"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"एस्पेक्ट रेसियोसम्बन्धी सेटिङ"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"तपाईंले एस्पेक्ट रेसियो बदल्नुभयो भने एप रिस्टार्ट हुने छ। तपाईंले सेभ नगरिएका परिवर्तनहरू गुमाउन सक्नुहुन्छ। केही एपहरू निश्चित एस्पेक्ट रेसियोका लागि अप्टिमाइज नगरिन सक्छन्।"</string>
