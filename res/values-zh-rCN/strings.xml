@@ -363,7 +363,7 @@
     <string name="unused_apps" msgid="648471933781010395">"闲置应用"</string>
     <string name="unused_apps_summary" msgid="8257304516038923072">"{count,plural, =1{# 个未使用的应用}other{# 个未使用的应用}}"</string>
     <string name="unused_apps_switch" msgid="4433958286200341563">"撤消权限并释放空间"</string>
-    <string name="aspect_ratio_label" msgid="5484863076085548807">"宽高比（实验性设置）"</string>
+    <string name="aspect_ratio_label" msgid="1852048794381949724">"宽高比"</string>
     <string name="aspect_ratio_action_button" msgid="5581373962239508271">"打开"</string>
     <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"应用默认设置"</string>
     <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"全屏"</string>
@@ -908,7 +908,7 @@
     <string name="enterprise_privacy_input_method" msgid="5062395693747004531">"默认键盘"</string>
     <string name="enterprise_privacy_input_method_name" msgid="2027313786295077607">"已设为<xliff:g id="APP_LABEL">%s</xliff:g>"</string>
     <string name="enterprise_privacy_global_http_proxy" msgid="1366593928008294049">"已设置全局 HTTP 代理"</string>
-    <string name="enterprise_privacy_ca_certs_personal" msgid="5677098981429650665">"您个人资料中的可信凭据"</string>
+    <string name="enterprise_privacy_ca_certs_personal" msgid="5677098981429650665">"您个人资料中的可信凭证"</string>
     <string name="enterprise_privacy_device_access_desc" msgid="3442555102576036038">" "<li>"管理员可以锁定信息娱乐系统并重置密码"</li>\n" "<li>"管理员可以删除信息娱乐系统中的数据"</li></string>
     <string name="enterprise_privacy_failed_password_wipe_device" msgid="4768743631260876559">"输入错误密码的尝试次数上限（如果超过此上限，系统将删除信息娱乐系统中的所有数据）"</string>
     <string name="enterprise_privacy_failed_password_wipe_current_user" msgid="786246192213446835">"输入错误密码的尝试次数上限（如果超过此上限，系统将删除个人资料数据）"</string>
@@ -983,11 +983,19 @@
     <string name="connectivity_inactive_action_text" msgid="1200295991890069311">"查看套餐"</string>
     <string name="audio_route_dialog_neutral_button_text" msgid="3303313405283478327">"完成"</string>
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"您的车辆不支持此功能"</string>
+    <string name="dialog_close_button_text" msgid="5969322308259876044">"关闭"</string>
+    <string name="dialog_apply_button_text" msgid="1103069196934735553">"应用"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"宽高比设置"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"更改宽高比后，应用将重启。未保存的更改可能会丢失。某些应用可能无法针对特定宽高比进行优化。"</string>
-    <string name="aspect_ratio_dialog_close_button_text" msgid="106373988244349134">"关闭"</string>
-    <string name="aspect_ratio_dialog_apply_button_text" msgid="6640581762487796778">"应用"</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"应用默认设置"</string>
     <string name="aspect_ratio_dialog_full_screen_text" msgid="888165107964490897">"全屏"</string>
     <string name="aspect_ratio_dialog_half_screen_text" msgid="3832684591279367444">"半屏"</string>
+    <string name="aspect_ratio_set_error" msgid="591159290370230132">"未能更新宽高比设置。"</string>
+    <string name="display_density_dialog_title" msgid="3782055592374414189">"显示大小和文字"</string>
+    <string name="display_density_dialog_message" msgid="1114355604684446232">"放大或缩小屏幕上的所有内容。更改宽高比后，应用将重启。未保存的更改可能会丢失。某些应用可能无法针对特定尺寸进行优化。"</string>
+    <string name="display_density_dialog_smaller_text" msgid="3700434974750324075">"0.85 倍"</string>
+    <string name="display_density_dialog_default_text" msgid="1694704017691017287">"1 倍（默认）"</string>
+    <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1.25 倍"</string>
+    <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1.5 倍"</string>
+    <string name="display_density_set_error" msgid="1044767285363807884">"未能更新显示大小和文字。"</string>
 </resources>
