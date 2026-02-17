@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Begin tans uitsending …"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Koppel tans …"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Kon nie aan %1$s koppel nie"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Kon nie oudiodeling begin nie"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Verlaat tans …"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Kon nie by uitsending vanaf %1$s aansluit nie"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Kon nie uitsending vanaf %1$s verlaat nie"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"Skakel media oor na %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Helderheid"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Pas skerm aan by swak lig"</string>
@@ -537,7 +540,7 @@
     <string name="settings_license_activity_unavailable" msgid="6104592821991010350">"Kon nie die lisensies laai nie."</string>
     <string name="settings_license_activity_loading" msgid="6163263123009681841">"Laai tans …"</string>
     <string name="show_dev_countdown" msgid="7416958516942072383">"{count,plural, =1{Jy het nou # stap oor voordat jy \'n ontwikkelaar is.}other{Jy het nou # stappe oor voordat jy \'n ontwikkelaar is.}}"</string>
-    <string name="show_dev_on" msgid="5339077400040834808">"Jy is nou \'n ontwikkelaar!"</string>
+    <string name="show_dev_on" msgid="5339077400040834808">"Jy is nou ’n ontwikkelaar!"</string>
     <string name="show_dev_already" msgid="1678087328973865736">"Dis nie nodig nie – jy is reeds \'n ontwikkelaar."</string>
     <string name="developer_options_settings" msgid="1530739225109118480">"Ontwikkelaaropsies"</string>
     <string name="reset_options_title" msgid="4388902952861833420">"Terugstellingopsies"</string>
@@ -763,7 +766,7 @@
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"Voer jou PIN weer in"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"PIN moet minstens 4 syfers hê"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"PIN is ongeldig; moet minstens 4 syfers bevat."</string>
-    <string name="confirm_pins_dont_match" msgid="4607110139373520720">"PIN\'e stem nie ooreen nie"</string>
+    <string name="confirm_pins_dont_match" msgid="4607110139373520720">"PIN’e stem nie ooreen nie"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"Kon nie PIN stoor nie"</string>
     <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"Verkeerde PIN"</string>
     <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Verkeerde wagwoord"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Jou voertuig steun nie hierdie kenmerk nie"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Maak toe"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Pas toe"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Skep"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Aspekverhoudinginstellings"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"Die app sal herbegin as jy die aspekverhouding verander. Jy kan ongestoorde veranderinge verloor. Sommige apps sal dalk nie vir sekere aspekverhoudings geoptimeer wees nie."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"Appverstek"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25x"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5x"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Kon nie die vertoongrootte en teks opdateer nie."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Skep legstuk en laat toegang toe?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"Nadat jy die <xliff:g id="WIDGET_LABEL">%2$s</xliff:g>-legstuk geskep het, kan <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> toegang kry tot alles wat vertoon word."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"Laat <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> altyd toe om legstukke te skep en toegang tot hul data te kry"</string>
 </resources>

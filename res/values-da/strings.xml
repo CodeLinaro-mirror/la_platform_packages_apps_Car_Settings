@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Starter broadcast…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Opretter forbindelse…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Kunne ikke oprette forbindelse til %1$s"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Lyddeling kunne ikke startes"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Forlader…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Kunne ikke deltage i broadcasten fra %1$s"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Kunne ikke forlade broadcasten fra %1$s"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"Skifter medie til %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Lysstyrke"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Tilpas skærmen til svag belysning"</string>
@@ -349,7 +352,7 @@
     <string name="disable_text" msgid="4358165448648990820">"Deaktiver"</string>
     <string name="enable_text" msgid="1794971777861881238">"Aktivér"</string>
     <string name="uninstall_text" msgid="277907956072833012">"Afinstaller"</string>
-    <string name="app_disable_dialog_text" msgid="7731155411006654025">"Hvis du deaktiverer denne app, kan det medføre, at Android-apps og andre apps ikke fungerer korrekt."</string>
+    <string name="app_disable_dialog_text" msgid="7731155411006654025">"Hvis du deaktiverer denne app, kan Android og andre apps forhindres i at fungere korrekt."</string>
     <string name="app_disable_dialog_positive" msgid="4448684722791563349">"Deaktiver appen"</string>
     <string name="not_installed" msgid="4163454337822508007">"Ikke installeret for denne profil"</string>
     <string name="permissions_label" msgid="2701446753515612685">"Tilladelser"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Dit køretøj understøtter ikke denne funktion"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Luk"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Anvend"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Opret"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Indstillinger for billedformat"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"Denne app genstartes, når du ændrer billedformatet. Du mister muligvis ændringer, der ikke er gemt. Visse apps er muligvis ikke optimeret til bestemte billedformater."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"Standardindstilling for appen"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25x"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5x"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Skærmstørrelsen og teksten kunne ikke opdateres."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Vil du oprette en widget og tillade adgang?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"Når du har oprettet widgetten <xliff:g id="WIDGET_LABEL">%2$s</xliff:g>, kan <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> tilgå alt, hvad der vises."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"Tillad altid, at <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> opretter widgets og får adgang til deres data"</string>
 </resources>

@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"กำลังเริ่มประกาศ..."</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"กำลังเชื่อมต่อ..."</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"เชื่อมต่อกับ %1$s ไม่สำเร็จ"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"เริ่มการแชร์เสียงไม่สำเร็จ"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"กำลังออก..."</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"เข้าร่วมการบรอดแคสต์จาก %1$s ไม่สำเร็จ"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"ออกจากการบรอดแคสต์จาก %1$s ไม่สำเร็จ"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"กำลังเปลี่ยนเส้นทางสื่อไปยัง %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"ความสว่าง"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"ปรับหน้าจอสำหรับสภาวะแสงน้อย"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"รถของคุณไม่รองรับฟีเจอร์นี้"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"ปิด"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"ใช้"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"สร้าง"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"การตั้งค่าสัดส่วนการแสดงผล"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"แอปจะรีสตาร์ทเมื่อคุณเปลี่ยนสัดส่วนการแสดงผล การเปลี่ยนแปลงที่ไม่ได้บันทึกไว้อาจหายไป บางแอปอาจยังไม่ได้รับการปรับให้เหมาะกับทุกสัดส่วนการแสดงผล"</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"ค่าเริ่มต้นของแอป"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1.25x"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1.5x"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"อัปเดตขนาดการแสดงผลและข้อความไม่สำเร็จ"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"สร้างวิดเจ็ตและอนุญาตให้เข้าถึงไหม"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"หลังจากสร้างวิดเจ็ต <xliff:g id="WIDGET_LABEL">%2$s</xliff:g> แล้ว <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> จะเข้าถึงทุกอย่างที่แสดงได้"</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"อนุญาตให้ <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> สร้างวิดเจ็ตและเข้าถึงข้อมูลวิดเจ็ตได้เสมอ"</string>
 </resources>

@@ -224,7 +224,7 @@
     <string name="share_audio_switch_summary" msgid="5123598607194828495">"聆聽者需要使用自己的 LE Audio 耳機"</string>
     <string name="share_audio_test_sound_title" msgid="7570329148373530884">"播放測試音效"</string>
     <string name="share_audio_test_sound_summary" msgid="7071332264787908147">"所有聆聽者應該都聽得到"</string>
-    <string name="audio_sharing_active_media_devices" msgid="3845107517790253262">"有效的媒體裝置"</string>
+    <string name="audio_sharing_active_media_devices" msgid="3845107517790253262">"使用中的媒體裝置"</string>
     <string name="audio_stream_settings_category_title" msgid="4274632745953092854">"音訊串流設定"</string>
     <string name="audio_streaming_title" msgid="174897810502966132">"音訊串流 QR code"</string>
     <string name="scan_qr_code_to_connect" msgid="734470733189688139">"掃描 QR code 即可連線"</string>
@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"即將開始廣播…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"連線中..."</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"無法連線至「%1$s」"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"無法開始分享音訊"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"退出中..."</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"無法加入「%1$s」的廣播"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"無法離開「%1$s」的廣播"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"正在將媒體切換到「%1$s」"</string>
     <string name="display_brightness" msgid="5718970880488110840">"亮度"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"將螢幕調整為適合在低光源環境中查看的亮度"</string>
@@ -336,7 +339,7 @@
     <string name="default_applications" msgid="1558183275638697087">"預設應用程式"</string>
     <string name="performance_impacting_apps" msgid="3439260699394720569">"影響效能的應用程式"</string>
     <string name="app_permissions" msgid="32799922508313948">"應用程式權限"</string>
-    <string name="app_permissions_summary" msgid="5402214755935368418">"控管可存取資料的應用程式"</string>
+    <string name="app_permissions_summary" msgid="5402214755935368418">"控管應用程式的資料存取權"</string>
     <string name="applications_settings" msgid="794261395191035632">"應用程式資訊"</string>
     <string name="force_stop" msgid="1616958676171167028">"停止應用程式"</string>
     <string name="force_stop_dialog_title" msgid="4481858344628934971">"要停止應用程式嗎？"</string>
@@ -432,7 +435,7 @@
     <string name="apps_recently_opened" msgid="5320377037971195984">"最近開啟的應用程式"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"查看全部 %1$d 個應用程式"</string>
     <string name="apps_permission_manager_title" msgid="8776335943862484131">"權限管理員"</string>
-    <string name="apps_permission_manager_summary" msgid="4180424218228141274">"控管可存取資料的應用程式"</string>
+    <string name="apps_permission_manager_summary" msgid="4180424218228141274">"控管應用程式的資料存取權"</string>
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Google 助理和其他應用程式"</string>
     <string name="performance_impacting_apps_summary" msgid="7762122057244111162">"{count,plural, =1{# 個應用程式會影響效能}other{# 個應用程式會影響效能}}"</string>
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"系統和其他設定"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"本車輛不支援這項功能"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"關閉"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"套用"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"建立"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"顯示比例設定"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"變更顯示比例後，應用程式會重新啟動。你可能會失去未儲存的變更內容。部分應用程式可能未針對某些顯示比例完成最佳化調整。"</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"應用程式預設"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1.25 倍"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1.5 倍"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"無法更新顯示大小和文字。"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"要建立小工具並允許存取？"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"建立「<xliff:g id="WIDGET_LABEL">%2$s</xliff:g>」小工具後，「<xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g>」即可存取所有顯示的內容。"</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"一律允許「<xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g>」建立小工具並存取其資料"</string>
 </resources>

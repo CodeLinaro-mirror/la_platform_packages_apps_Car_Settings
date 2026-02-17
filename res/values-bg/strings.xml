@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Предаването стартира..."</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Установява се връзка..."</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Свързването с(ъс) %1$s не бе успешно"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Неуспешен старт на споделянето на аудио"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Напуска се..."</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Присъединяването към предаването от %1$s не бе успешно"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Напускането на предаването от %1$s не бе успешно"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"Мултимедията се превключва към %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Яркост"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Коригиране на яркостта на екрана при слаба светлина"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Превозното ви средство не поддържа тази функция"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Затваряне"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Прилагане"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Създаване"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Настройки за съотношението"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"Когато промените съотношението, приложението ще се рестартира. Възможно е да изгубите незапазените промени. Някои приложения може да не са оптимизирани за определени съотношения."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"Стандартно за приложението"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25x"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5x"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Размерът на текста и елементите на екрана не бе актуализиран."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Да се създаде ли приспособлението и да се разреши ли достъп?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"След като създадете приспособлението за <xliff:g id="WIDGET_LABEL">%2$s</xliff:g>, <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> може да осъществява достъп до всичко, което е показано."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"Да се разреши на <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> винаги да създава приспособления и да осъществява достъп до данните им"</string>
 </resources>

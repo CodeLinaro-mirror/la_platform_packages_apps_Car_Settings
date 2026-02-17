@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"A iniciar a transmissão…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"A ligar…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Falha ao ligar a %1$s"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Falha ao iniciar a partilha de áudio"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"A sair…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Falha ao participar no anúncio de %1$s"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Falha ao sair do anúncio de %1$s"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"A mudar multimédia para %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Brilho"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Ajuste o ecrã para pouca luz"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"O seu veículo não suporta esta funcionalidade"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Fechar"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Aplicar"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Criar"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Definições de formato"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"A app vai reiniciar quando alterar o formato. Pode perder alterações não guardadas. Algumas apps podem não estar otimizadas para determinados formatos."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"Predefinição da app"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25x"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5x"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Falha ao atualizar o tamanho da visualização e o texto."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Criar widget e permitir o acesso?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"Depois de criar o widget <xliff:g id="WIDGET_LABEL">%2$s</xliff:g>, a app <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> pode aceder a tudo o que é apresentado."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"Permitir sempre que <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> crie widgets e aceda aos seus dados"</string>
 </resources>

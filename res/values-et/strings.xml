@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Ülekande alustamine…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Ühendamine…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Seadmega %1$s ühendamine ebaõnnestus."</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Heli jagamise alustamine ebaõnnestus."</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Lahkumine…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Üksuse %1$s ülekandega liitumine ebaõnnestus."</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Üksuse %1$s ülekandest lahkumine ebaõnnestus."</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"Meedia vahetamine meediale %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Eredus"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Ekraanikuva kohandamine vähese valguse jaoks"</string>
@@ -336,7 +339,7 @@
     <string name="default_applications" msgid="1558183275638697087">"Vaikerakendused"</string>
     <string name="performance_impacting_apps" msgid="3439260699394720569">"Toimivust mõjutavad rakendused"</string>
     <string name="app_permissions" msgid="32799922508313948">"Rakenduste load"</string>
-    <string name="app_permissions_summary" msgid="5402214755935368418">"Rakenduste puhul andmetele juurdepääsu haldamine"</string>
+    <string name="app_permissions_summary" msgid="5402214755935368418">"Hallake rakenduste juurdepääsu oma andmetele"</string>
     <string name="applications_settings" msgid="794261395191035632">"Rakenduste teave"</string>
     <string name="force_stop" msgid="1616958676171167028">"Peata rakendus"</string>
     <string name="force_stop_dialog_title" msgid="4481858344628934971">"Kas peatada rakendus?"</string>
@@ -432,7 +435,7 @@
     <string name="apps_recently_opened" msgid="5320377037971195984">"Hiljuti avatud"</string>
     <string name="apps_view_all_apps_title" msgid="2322120325505230530">"Kuva kõik %1$d rakendust"</string>
     <string name="apps_permission_manager_title" msgid="8776335943862484131">"Lubade haldur"</string>
-    <string name="apps_permission_manager_summary" msgid="4180424218228141274">"Rakenduste puhul andmetele juurdepääsu haldamine"</string>
+    <string name="apps_permission_manager_summary" msgid="4180424218228141274">"Hallake rakenduste juurdepääsu oma andmetele"</string>
     <string name="apps_default_apps_summary" msgid="2017792579839972926">"Assistendi ja muu jaoks"</string>
     <string name="performance_impacting_apps_summary" msgid="7762122057244111162">"{count,plural, =1{# toimivust mõjutav rakendus}other{# toimivust mõjutavat rakendust}}"</string>
     <string name="apps_special_app_access_summary" msgid="6464767436309742163">"Süsteemile ja muudele seadetele"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Teie sõiduk ei toeta seda funktsiooni"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Sule"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Rakenda"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Loo"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Kuvasuhte seaded"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"Kui muudate kuvasuhet, siis rakendus taaskäivitatakse. Salvestamata muudatused võivad minna kaotsi. Teatud kuvasuhete korral ei pruugita mõnda rakendust optimeerida."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"Rakenduse vaikeseade"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25×"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5-×"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Kuvamissuuruse ja teksti värskendamine ebaõnnestus."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Kas luua vidin ja lubada juurdepääs?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"Pärast vidina <xliff:g id="WIDGET_LABEL">%2$s</xliff:g> loomist pääseb<xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> juurde kõigele kuvatavale."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"Luba rakendusel <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> alati vidinaid luua ja nende andmetele juurde pääseda"</string>
 </resources>

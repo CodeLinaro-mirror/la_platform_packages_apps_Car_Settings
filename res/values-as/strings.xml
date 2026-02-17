@@ -256,7 +256,7 @@
     <string name="text_to_speech_preferred_engine_settings" msgid="2766782925699132256">"অগ্ৰাধিকাৰপ্ৰাপ্ত ইঞ্জিন"</string>
     <string name="text_to_speech_current_engine" msgid="8133107484909612597">"বৰ্তমানৰ ইঞ্জিন"</string>
     <string name="tts_speech_rate" msgid="4512944877291943133">"কথা কোৱাৰ হাৰ"</string>
-    <string name="tts_pitch" msgid="2389171233852604923">"পিচ্চ"</string>
+    <string name="tts_pitch" msgid="2389171233852604923">"পিটচ্‌"</string>
     <string name="tts_reset" msgid="6289481549801844709">"ৰিছেট কৰক"</string>
     <string name="sound_settings" msgid="3072423952331872246">"ধ্বনি"</string>
     <string name="ring_volume_title" msgid="3135241004980719442">"ৰিঙৰ ভলিউম"</string>
@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"সম্প্ৰচাৰ আৰম্ভ কৰি থকা হৈছে..."</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"সংযোগ কৰি থকা হৈছে..."</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"%1$sৰ সৈতে সংযোগ কৰিব পৰা নগ’ল"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"অডিঅ’ শ্বেয়াৰিং আৰম্ভ কৰিব পৰা নগ’ল"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"বাহিৰ ওলাই থকা হৈছে…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"%1$sৰ সম্প্ৰচাৰত যোগদান কৰিব পৰা নগ’ল"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"%1$sৰ সম্প্ৰচাৰৰ পৰা বাহিৰ হ’ব পৰা নগ’ল"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"মিডিয়া %1$sলৈ সলনি কৰি থকা হৈছে"</string>
     <string name="display_brightness" msgid="5718970880488110840">"উজ্জ্বলতা"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"কম পোহৰৰ বাবে স্ক্ৰীন মিলাওক"</string>
@@ -744,9 +747,9 @@
     <string name="lockpattern_pattern_confirmed" msgid="5984306638250515385">"আপোনাৰ নতুন আনলক আৰ্হি"</string>
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"লক খোলাৰ আৰ্হি আঁকক"</string>
     <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"আৰ্হি অঁকা কাৰ্য হ\'লে আঙুলিটো উঠাওক"</string>
-    <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"আৰ্হি ৰেক\'ৰ্ড কৰা হ’ল"</string>
+    <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"আৰ্হি ৰেকৰ্ড কৰা হ’ল"</string>
     <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"নিশ্চিত কৰিবলৈ আৰ্হিটো আকৌ আঁকক"</string>
-    <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"কমেও ৪টা বিন্দু লগ লগাই আকৌ চেষ্টা কৰক।"</string>
+    <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"অতি কমেও ৪ টা বিন্দু লগ লগাব লাগিব। পুনৰ চেষ্টা কৰক।"</string>
     <string name="lockpattern_pattern_wrong" msgid="929223969555399363">"ভুল আৰ্হি"</string>
     <string name="lockpattern_settings_help_how_to_record" msgid="4436556875843192284">"লক খোলাৰ আৰ্হি অঁকা উপায়"</string>
     <string name="error_saving_lockpattern" msgid="2933512812768570130">"আৰ্হি ছেভ কৰোঁতে আঁসোৱাহ"</string>
@@ -773,7 +776,7 @@
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"মচক"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"বাতিল কৰক"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"নিশ্চিত কৰক"</string>
-    <string name="choose_lock_password_hints" msgid="3903696950202491593">"অতি কমেও ৪ টা বৰ্ণসংখ্যা থাকিবই লাগিব।"</string>
+    <string name="choose_lock_password_hints" msgid="3903696950202491593">"অতি কমেও ৪ টা বৰ্ণসংখ্যা থাকিবই লাগিব"</string>
     <string name="locktype_unavailable" msgid="2678317466336249126">"এই ধৰণৰ লক উপলব্ধ নহয়।"</string>
     <string name="lockpassword_pin_contains_non_digits" msgid="3044526271686839923">"কেৱল ০-৯ৰ ভিতৰৰ অংকহে থাকিব লাগিব।"</string>
     <string name="lockpassword_pin_recently_used" msgid="7901918311213276207">"ডিভাইচৰ প্ৰশাসকে শেহতীয়া পিন ব্যৱহাৰ কৰিব নিদিয়ে"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"আপোনাৰ বাহনখনে এই সুবিধাটো সমৰ্থন নকৰে"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"বন্ধ কৰক"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"প্ৰয়োগ কৰক"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"সৃষ্টি কৰক"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"আকাৰৰ আনুপাতৰ ছেটিং"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"আপুনি আকাৰৰ অনুপাত সলনি কৰিলে এপ্‌টো পুনৰ আৰম্ভ হ’ব। আপুনি ছেভ নকৰা সালসলনিসমূহ হেৰুৱাব পাৰে। কিছুমান বিশেষ আকাৰৰ অনুপাতৰ বাবে কিছুমান এপ্‌ অপ্টিমাইজ কৰা নহ’বও পাৰে।"</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"এপৰ ডিফ’ল্ট"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"১.২৫ গুণ"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"১.৫ গুণ"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"স্ক্ৰীনৰ আকাৰ আৰু পাঠ আপডে’ট কৰিব পৰা নগ’ল।"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"ৱিজেট সৃষ্টি কৰি এক্সেছৰ অনুমতি দিবনে?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"আপুনি <xliff:g id="WIDGET_LABEL">%2$s</xliff:g> ৱিজেট সৃষ্টি কৰাৰ পাছত, <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g>এ প্ৰদৰ্শিত হোৱা আটাইবোৰ এক্সেছ কৰিব পাৰে।"</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"সদায় <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g>ক ৱিজেট সৃষ্টি কৰিবলৈ আৰু সেইবিলাকৰ ডেটা পঢ়িবলৈ অনুমতি দিয়ক"</string>
 </resources>

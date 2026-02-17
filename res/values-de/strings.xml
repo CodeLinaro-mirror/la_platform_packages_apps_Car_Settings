@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Übertragung wird gestartet…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Verbindung wird hergestellt…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Verbindung zu %s fehlgeschlagen"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Starten der Audiofreigabe nicht möglich"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Wird verlassen…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Beitritt zur Audioübertragung von %1$s fehlgeschlagen"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Verlassen der Audioübertragung von %1$s fehlgeschlagen"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"Wechsel des Mediums zu %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Helligkeit"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Bildschirm für geringe Helligkeit anpassen"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Dein Fahrzeug unterstützt diese Funktion nicht"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Schließen"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Anwenden"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Erstellen"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Einstellungen für das Seitenverhältnis"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"Wenn du das Seitenverhältnis änderst, wird die App neu gestartet. Dadurch können nicht gespeicherte Änderungen verloren gehen. Einige Apps sind möglicherweise nicht für bestimmte Seitenverhältnisse optimiert."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"App-Standard"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25‑fach"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5‑fach"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Die Einstellungen für Anzeigegröße und Text konnten nicht aktualisiert werden."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Widget erstellen und Zugriff erlauben?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"Nach der Erstellung des Widgets „<xliff:g id="WIDGET_LABEL">%2$s</xliff:g>“ hat <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> Zugriff auf alle angezeigten Daten."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"<xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> immer das Erstellen von Widgets und den Zugriff auf ihre Daten erlauben"</string>
 </resources>

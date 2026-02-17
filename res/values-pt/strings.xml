@@ -24,7 +24,7 @@
     <string name="auto_brightness_title" msgid="9124647862844666581">"Brilho adaptável"</string>
     <string name="auto_brightness_summary" msgid="2002570577219479702">"Ajustar o brilho da tela para o ambiente"</string>
     <string name="theme_toggle_title" msgid="7091393596274709558">"Tema"</string>
-    <string name="condition_night_display_title" msgid="3777509730126972675">"O Modo noturno está ativado"</string>
+    <string name="condition_night_display_title" msgid="3777509730126972675">"O modo noturno está ativado"</string>
     <string name="network_and_internet" msgid="4229023630498537530">"Rede e internet"</string>
     <string name="mobile_network_settings" msgid="1708621113321368597">"Rede móvel"</string>
     <string name="mobile_network_summary_count" msgid="760865625847664029">"{count,plural, =1{# chip}one{# chip}other{# chips}}"</string>
@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Iniciando transmissão…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Conectando…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Falha ao conectar com %1$s"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Compartilhamento de áudio não iniciou"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Saindo…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Falha ao participar da transmissão de %1$s"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Falha ao sair da transmissão de %1$s"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"A mídia foi alterada para %1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Brilho"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Ajustar a tela para locais com pouca luz"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Seu veículo não é compatível com este recurso"</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Fechar"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Aplicar"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Criar"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Configurações de proporção"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"O app será reiniciado quando você mudar a proporção. É possível que você perca mudanças que não foram salvas. Talvez alguns apps não estejam otimizados para algumas proporções."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"Padrão do app"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25x"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5x"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Falha ao atualizar o tamanho de exibição e do texto."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Criar widget e permitir acesso?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"Após a criação do widget <xliff:g id="WIDGET_LABEL">%2$s</xliff:g>, o app <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> vai ter acesso a tudo o que for exibido."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"Sempre permitir que <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> crie widgets e acesse os dados"</string>
 </resources>

@@ -222,7 +222,7 @@
     <string name="bluetooth_audio_sharing" msgid="5886869395645761760">"Аудио бөлісу"</string>
     <string name="share_audio_switch_title" msgid="8798673733841544186">"Аудионы бөлісу"</string>
     <string name="share_audio_switch_summary" msgid="5123598607194828495">"Тыңдаушыларға өз LE Audio құлақаспаптарын пайдалану қажет."</string>
-    <string name="share_audio_test_sound_title" msgid="7570329148373530884">"Дыбысты тексеріп көріңіз"</string>
+    <string name="share_audio_test_sound_title" msgid="7570329148373530884">"Дыбысты тексеріп көру"</string>
     <string name="share_audio_test_sound_summary" msgid="7071332264787908147">"Барлық тыңдаушы оны естуі керек."</string>
     <string name="audio_sharing_active_media_devices" msgid="3845107517790253262">"Белсенді медиа құрылғылар"</string>
     <string name="audio_stream_settings_category_title" msgid="4274632745953092854">"Аудио трансляция параметрлері"</string>
@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Аудио тарату басталып жатыр…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Қосылып жатыр…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"%s құрылғысына қосылу мүмкін болмады"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Аудио бөлісу басталмады."</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Шығып жатырсыз…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"%1$s тарату сеансына қосылу мүмкін болмады."</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"%1$s тарату сеансынан шығу мүмкін болмады."</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"Медиафайл %1$s аудио шығысына ауысып жатыр."</string>
     <string name="display_brightness" msgid="5718970880488110840">"Жарықтық"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Экранды көмескі жарыққа реттеу"</string>
@@ -798,7 +801,7 @@
     <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{Ең көбі # таңба болуы керек.}other{Ең көбі # таңба болуы керек.}}"</string>
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{Ең көбі # цифр болуы керек.}other{Ең көбі # цифр болуы керек.}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"Сандардың артатын, кемитін немесе қайталанатын ретіне рұқсат берілмейді"</string>
-    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Экранды құлыптау опциялары"</string>
+    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"Экран құлпын ашу жолдары"</string>
     <string name="credentials_reset" msgid="873900550885788639">"Тіркелу деректерін өшіру"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"Барлық сертификаттарды өшіру"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"Контент толығымен өшірілсін бе?"</string>
@@ -985,6 +988,7 @@
     <string name="unsupported_intents_toast_text" msgid="3112314947877145848">"Көлігіңіз бұл функцияға қолдау көрсетпейді."</string>
     <string name="dialog_close_button_text" msgid="5969322308259876044">"Жабу"</string>
     <string name="dialog_apply_button_text" msgid="1103069196934735553">"Қолдану"</string>
+    <string name="dialog_create_button_text" msgid="706194032067632007">"Жасау"</string>
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"Арақатынас параметрлері"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"Арақатынасты өзгерткенде, қолданба өшіп қосылады. Сақталмаған өзгерістерді жоғалтып алуыңыз мүмкін. Кейбір қолданбалар белгілі бір арақатынастар үшін оңтайландырылмаған болуы мүмкін."</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"Қолданбаның әдепкі арақатынасы"</string>
@@ -998,4 +1002,7 @@
     <string name="display_density_dialog_large_text" msgid="3321980326255623059">"1,25x"</string>
     <string name="display_density_dialog_larger_text" msgid="4123744946718483040">"1,5x"</string>
     <string name="display_density_set_error" msgid="1044767285363807884">"Экрандағы элементтердің өлшемі мен мәтін өзгертілмеді."</string>
+    <string name="allow_bind_app_widget_activity_allow_bind_title" msgid="4395478700621003438">"Виджет жасалып, оған кіруге рұқсат берілсін бе?"</string>
+    <string name="allow_bind_app_widget_activity_allow_bind" msgid="9186583202360968858">"<xliff:g id="WIDGET_LABEL">%2$s</xliff:g> виджетін жасағаннан кейін, <xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> көрсетілген барлық дерекке кіре алады."</string>
+    <string name="allow_bind_app_widget_activity_always_allow_bind" msgid="5068031593959518141">"<xliff:g id="WIDGET_HOST_NAME">%1$s</xliff:g> қолданбасына виджетті жасауға және оның дерекқорына кіруге әрқашан рұқсат беру"</string>
 </resources>
