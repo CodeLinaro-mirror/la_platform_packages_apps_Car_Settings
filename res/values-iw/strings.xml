@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"השידור מתחיל…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"בתהליך התחברות…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"ההתחברות אל %1$s נכשלה"</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"שיתוף האודיו לא התחיל"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"בתהליך יציאה..."</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"ההצטרפות לשידור של %1$s נכשלה"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"היציאה מהשידור של %1$s נכשלה"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"החלפת המדיה ל-%1$s"</string>
     <string name="display_brightness" msgid="5718970880488110840">"בהירות"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"התאמת המסך לתאורה חלשה"</string>
@@ -526,7 +529,7 @@
     <string name="copyright_title" msgid="4220237202917417876">"זכויות יוצרים"</string>
     <string name="license_title" msgid="936705938435249965">"רישיון"</string>
     <string name="terms_title" msgid="5201471373602628765">"תנאים והגבלות"</string>
-    <string name="webview_license_title" msgid="6442372337052056463">"רישיונות WebView של המערכת"</string>
+    <string name="webview_license_title" msgid="6442372337052056463">"רישיונות System WebView"</string>
     <string name="wallpaper_attributions" msgid="9201272150014500697">"טפטים"</string>
     <string name="wallpaper_attributions_values" msgid="4292446851583307603">"ספקים של צילומי לוויין:\n‎©2014 CNES / Astrium, DigitalGlobe, Bluesky"</string>
     <string name="model_info" msgid="4966408071657934452">"דגם"</string>

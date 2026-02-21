@@ -279,7 +279,10 @@
     <string name="audio_route_preference_starting_broadcast" msgid="5796200319860568291">"Подождите…"</string>
     <string name="audio_route_preference_connecting_broadcast" msgid="3958657387720690648">"Подключение…"</string>
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"Не удалось подключиться к \"%1$s\"."</string>
+    <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"Не удалось начать передачу аудио"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"Подождите…"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"Не удалось присоединиться к трансляции (%1$s)."</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"Не удалось покинуть трансляцию (%1$s)."</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"Переключение на устройство \"%1$s\" для воспроизведения…"</string>
     <string name="display_brightness" msgid="5718970880488110840">"Яркость"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"Настроить яркость экрана для использования при слабом освещении"</string>
@@ -674,7 +677,7 @@
     <string name="remove_account_error_title" msgid="8368044943174826635">"Не удалось удалить аккаунт"</string>
     <string name="account_sync_title" msgid="6541844336300236915">"Синхронизация аккаунта"</string>
     <string name="account_sync_summary_some_on" msgid="4525960296068027182">"Синхронизация включена для некоторых элементов (<xliff:g id="ID_1">%1$d</xliff:g> из <xliff:g id="ID_2">%2$d</xliff:g>)"</string>
-    <string name="account_sync_summary_all_on" msgid="3652264471870312725">"Синхронизация включена для всех элементов"</string>
+    <string name="account_sync_summary_all_on" msgid="3652264471870312725">"Синхронизация включена для всех типов данных"</string>
     <string name="account_sync_summary_all_off" msgid="6550959714035312414">"Синхронизация отключена для всех типов данных"</string>
     <string name="sync_disabled" msgid="393531064334628258">"Синхронизация отключена"</string>
     <string name="sync_error" msgid="6698021343089247914">"Ошибка синхронизации"</string>

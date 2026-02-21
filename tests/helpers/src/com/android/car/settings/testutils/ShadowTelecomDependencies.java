@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 The Android Open Source Project
+ * Copyright (C) 2026 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,28 +17,21 @@
 package com.android.car.settings.testutils;
 
 import android.content.Context;
-import android.telecom.DefaultDialerManager;
+import android.telecom.TelecomManager;
 
 import org.robolectric.annotation.Implementation;
 import org.robolectric.annotation.Implements;
-import org.robolectric.annotation.Resetter;
+import org.robolectric.util.ReflectionHelpers;
+import org.robolectric.util.ReflectionHelpers.ClassParameter;
 
-@Implements(DefaultDialerManager.class)
-public class ShadowDefaultDialerManager {
-
-    private static String sDefaultDialerPackage;
-
-    @Resetter
-    public static void reset() {
-        sDefaultDialerPackage = null;
-    }
-
+/**
+ * Shadow for {@link com.android.internal.telecom.TelecomDependencies}.
+ */
+@Implements(className = "com.android.internal.telecom.TelecomDependencies")
+public class ShadowTelecomDependencies {
     @Implementation
-    protected static String getDefaultDialerApplication(Context context) {
-        return sDefaultDialerPackage;
-    }
-
-    public static void setDefaultDialerApplication(String defaultDialerPackage) {
-        sDefaultDialerPackage = defaultDialerPackage;
+    public static TelecomManager createTelecomManager(Context context) {
+        return ReflectionHelpers.callConstructor(TelecomManager.class,
+                ClassParameter.from(Context.class, context));
     }
 }
