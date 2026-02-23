@@ -97,7 +97,7 @@ public class WifiTetherSecurityPreferenceController extends
         }
     }
 
-    private void update6GhzSecurityOptions() {
+    private void updateSecurityOptions() {
         final SoftApConfiguration config = getCarSoftApConfig();
 
         String[] securityNames = getContext().getResources().getStringArray(
@@ -124,13 +124,16 @@ public class WifiTetherSecurityPreferenceController extends
              mSecurityType = SoftApConfiguration.SECURITY_TYPE_WPA3_SAE;
         }
 
+        if (config.getChannels().size() > 1) {
+            mSecurityMap.keySet().remove(SoftApConfiguration.SECURITY_TYPE_WPA3_OWE_TRANSITION);
+        }
         getPreference().setEntries(mSecurityMap.values().stream().toArray(CharSequence[]::new));
         getPreference().setEntryValues(mSecurityMap.keySet().stream().map(i -> Integer.toString(i))
                 .toArray(CharSequence[]::new));
     }
 
     private void updatePreferenceOptions() {
-        update6GhzSecurityOptions();
+        updateSecurityOptions();
 
         if (!mOweSapSupported) {
             mSecurityMap.keySet()
@@ -176,7 +179,7 @@ public class WifiTetherSecurityPreferenceController extends
     @Override
     protected void updateState(ListPreference preference) {
         super.updateState(preference);
-        update6GhzSecurityOptions();
+        updateSecurityOptions();
         preference.setValue(Integer.toString(mSecurityType));
     }
 

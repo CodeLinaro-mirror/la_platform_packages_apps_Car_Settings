@@ -116,6 +116,14 @@ public class WifiTetherApBandPreferenceController extends
         return securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_OWE;
     }
 
+    private boolean isOweTransitionSelected() {
+        int securityType = mSharedPreferences.getInt(
+            WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
+            SoftApConfiguration.SECURITY_TYPE_WPA2_PSK);
+
+        return securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_OWE_TRANSITION;
+    }
+
     @Override
     public void updateState(ListPreference preference) {
         super.updateState(preference);
@@ -130,22 +138,26 @@ public class WifiTetherApBandPreferenceController extends
                     .build();
             setCarSoftApConfig(newConfig);
             mBand = BAND_2GHZ;
-        } else if (!isWpa3SaeSelected() && !isWpa3OweSelected()) {
+        }
+
+        String[] bandNames = getContext().getResources().getStringArray(
+                R.array.wifi_ap_band_summary);
+        String[] bandValues = getContext().getResources().getStringArray(
+                R.array.wifi_ap_band);
+        for (int i = 0; i < bandNames.length; i++) {
+            mHotspotBandMap.put(Integer.parseInt(bandValues[i]), bandNames[i]);
+        }
+
+        if (!isWpa3SaeSelected() && !isWpa3OweSelected()) {
             // 6GHz AP only allows WPA3_SAE or WPA3_SAE
             mHotspotBandMap.keySet().remove(BAND_6GHZ);
-            mBand = validateSelection(configBand);
-        } else {
-            // 6G should be added here because it may have been removed.
-            String[] bandNames = getContext().getResources().getStringArray(
-                    R.array.wifi_ap_band_summary);
-            String[] bandValues = getContext().getResources().getStringArray(
-                    R.array.wifi_ap_band);
-            for (int i = 0; i < bandNames.length; i++) {
-                mHotspotBandMap.put(Integer.parseInt(bandValues[i]), bandNames[i]);
-            }
-
-            mBand = validateSelection(configBand);
         }
+
+        if (isOweTransitionSelected()) {
+            mHotspotBandMap.keySet().remove(BAND_2GHZ_5GHZ);
+        }
+
+        mBand = validateSelection(configBand);
 
         getPreference().setEntries(mHotspotBandMap.values().toArray(CharSequence[]::new));
         getPreference().setEntryValues(
