@@ -14,6 +14,10 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
+
+  Changes from Qualcomm Technologies, Inc. are provided under the following license:
+  Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+  SPDX-License-Identifier: BSD-3-Clause-Clear
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,6 +29,7 @@
 
     <uses-permission android:name="android.permission.READ_LOCATION_BYPASS_ALLOWLIST"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="com.android.certinstaller.INSTALL_AS_USER"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.BACKUP"/>
     <!-- Request legacy Bluetooth permissions on older devices. -->
