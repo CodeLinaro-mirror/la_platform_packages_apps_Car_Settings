@@ -18,11 +18,14 @@ package com.android.car.settings.wifi;
 
 import static android.net.wifi.SoftApConfiguration.BAND_2GHZ;
 import static android.net.wifi.SoftApConfiguration.BAND_5GHZ;
+import static android.net.wifi.SoftApConfiguration.BAND_6GHZ;
 
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.net.wifi.SoftApConfiguration;
 import android.util.SparseIntArray;
+import android.util.Log;
+import android.content.SharedPreferences;
 
 import androidx.preference.ListPreference;
 
@@ -50,6 +53,16 @@ public class WifiTetherApBandPreferenceController extends
     static final int[] DUAL_BANDS = new int[] {
             BAND_2GHZ,
             BAND_2GHZ_5GHZ };
+
+    protected static final String KEY_AP_BAND =
+                                  "com.android.car.settings.wifi.AP_BAND";
+
+    private final SharedPreferences mSharedPreferences = getContext().getSharedPreferences(
+                              WifiTetherPasswordPreferenceController.SHARED_PREFERENCE_PATH,
+                              Context.MODE_PRIVATE);
+
+    private static final int BAND_2GHZ_6GHZ = BAND_6GHZ | BAND_2GHZ;
+    private static final int BAND_2GHZ_5GHZ_6GHZ = BAND_6GHZ | BAND_5GHZ | BAND_2GHZ;
 
     private final Map<Integer, String> mHotspotBandMap = new LinkedHashMap<>();
 
@@ -87,6 +100,30 @@ public class WifiTetherApBandPreferenceController extends
         updatePreferenceEntries();
     }
 
+    private boolean isWpa3SaeSelected() {
+        int securityType = mSharedPreferences.getInt(
+            WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
+            SoftApConfiguration.SECURITY_TYPE_WPA2_PSK);
+
+        return securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_SAE;
+    }
+
+    private boolean isWpa3OweSelected() {
+        int securityType = mSharedPreferences.getInt(
+            WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
+            SoftApConfiguration.SECURITY_TYPE_WPA2_PSK);
+
+        return securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_OWE;
+    }
+
+    private boolean isOweTransitionSelected() {
+        int securityType = mSharedPreferences.getInt(
+            WifiTetherSecurityPreferenceController.KEY_SECURITY_TYPE,
+            SoftApConfiguration.SECURITY_TYPE_WPA2_PSK);
+
+        return securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_OWE_TRANSITION;
+    }
+
     @Override
     public void updateState(ListPreference preference) {
         super.updateState(preference);
@@ -95,17 +132,39 @@ public class WifiTetherApBandPreferenceController extends
         int configBand = getBandFromConfig();
         if (config == null) {
             mBand = BAND_2GHZ;
-        } else if (!is5GhzBandSupported() && configBand > BAND_2GHZ) {
+        } else if (!is5GhzBandSupported() && !is6GhzBandSupported() && configBand > BAND_2GHZ) {
             SoftApConfiguration newConfig = new SoftApConfiguration.Builder(config)
                     .setBand(BAND_2GHZ)
                     .build();
             setCarSoftApConfig(newConfig);
             mBand = BAND_2GHZ;
-        } else {
-            mBand = validateSelection(configBand);
         }
 
-        if (!is5GhzBandSupported()) {
+        String[] bandNames = getContext().getResources().getStringArray(
+                R.array.wifi_ap_band_summary);
+        String[] bandValues = getContext().getResources().getStringArray(
+                R.array.wifi_ap_band);
+        for (int i = 0; i < bandNames.length; i++) {
+            mHotspotBandMap.put(Integer.parseInt(bandValues[i]), bandNames[i]);
+        }
+
+        if (!isWpa3SaeSelected() && !isWpa3OweSelected()) {
+            // 6GHz AP only allows WPA3_SAE or WPA3_SAE
+            mHotspotBandMap.keySet().remove(BAND_6GHZ);
+        }
+
+        if (isOweTransitionSelected()) {
+            mHotspotBandMap.keySet().remove(BAND_2GHZ_5GHZ);
+        }
+
+        mBand = validateSelection(configBand);
+
+        getPreference().setEntries(mHotspotBandMap.values().toArray(CharSequence[]::new));
+        getPreference().setEntryValues(
+                mHotspotBandMap.keySet().stream().map(Object::toString).toArray(
+                        CharSequence[]::new));
+
+        if (!is5GhzBandSupported() && !is6GhzBandSupported()) {
             preference.setEnabled(false);
             preference.setSummary(R.string.wifi_ap_choose_2G);
         } else {
@@ -134,19 +193,18 @@ public class WifiTetherApBandPreferenceController extends
     }
 
     private void updatePreferenceEntries() {
+        // key-band: 1-2GHz, 2-5GHz, 3-2GHz|5GHz, 5-6GHz|2GHz
+        if (!is6GhzBandSupported()) {
+            mHotspotBandMap.keySet().remove(BAND_6GHZ);
+        }
+
         // If 5 GHz is not supported, default to 2 GHz
         if (!is5GhzBandSupported()) {
             mHotspotBandMap.keySet().removeIf(key -> key > BAND_2GHZ);
         }
 
         if (!isDualBandSupported()) {
-            mHotspotBandMap.keySet().removeIf(key -> key == BAND_2GHZ_5GHZ);
-        }
-
-        // If dual band is supported then there is no need to allow users to select
-        // between 2.4 GHz and 5 GHz since both bands will be available to connect to.
-        if (isDualBandSupported()) {
-            mHotspotBandMap.keySet().removeIf(key -> key < BAND_2GHZ_5GHZ);
+            mHotspotBandMap.keySet().remove(BAND_2GHZ_5GHZ);
         }
 
         getPreference().setEntries(mHotspotBandMap.values().toArray(CharSequence[]::new));
@@ -170,6 +228,8 @@ public class WifiTetherApBandPreferenceController extends
             // band should be set to BAND_5GHZ to differentiate between dual band which would also
             // be BAND_2GHZ_5GHZ.
             band = BAND_5GHZ;
+        } else if (band == BAND_2GHZ_6GHZ || band == BAND_2GHZ_5GHZ_6GHZ) {
+            band = BAND_6GHZ;
         }
 
         return band;
@@ -180,22 +240,23 @@ public class WifiTetherApBandPreferenceController extends
     }
 
     private void updateApBand() {
-        SoftApConfiguration config = getCarSoftApConfig();
-        if (config != null) {
-            SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder(config);
+        SoftApConfiguration.Builder configBuilder = new SoftApConfiguration.Builder(
+                getCarSoftApConfig());
 
-            if (mBand == BAND_5GHZ) {
-                // Only BAND_5GHZ is not supported, must include BAND_2GHZ since some of countries
-                // don't support 5G
-                configBuilder.setBand(BAND_2GHZ_5GHZ);
-            } else if (Flags.hotspotUiSpeedUpdate() && mBand == BAND_2GHZ_5GHZ) {
-                configBuilder.setBands(DUAL_BANDS);
-            } else {
-                configBuilder.setBand(BAND_2GHZ);
-            }
-
-            setCarSoftApConfig(configBuilder.build());
+        if (mBand == BAND_5GHZ) {
+            // Only BAND_5GHZ is not supported, must include BAND_2GHZ since some of countries
+            // don't support 5GHz
+            configBuilder.setBand(BAND_2GHZ_5GHZ);
+        } else if (mBand == BAND_2GHZ_5GHZ) {
+            configBuilder.setBands(DUAL_BANDS);
+        } else if (mBand == BAND_6GHZ) {
+            // Only BAND_6GHZ is not supported, must include BAND_2GHZ/BAND_5GHZ since some
+            // of countries/securities don't support 5GHz/6GHz
+            configBuilder.setBand(BAND_2GHZ_5GHZ_6GHZ);
+        } else {
+            configBuilder.setBand(BAND_2GHZ);
         }
+        setCarSoftApConfig(configBuilder.build());
         getPreference().setValue(Integer.toString(mBand));
     }
 
@@ -204,7 +265,12 @@ public class WifiTetherApBandPreferenceController extends
         return getCarWifiManager().is5GhzBandSupported() && countryCode != null;
     }
 
+    private boolean is6GhzBandSupported() {
+        String countryCode = getCarWifiManager().getCountryCode();
+        return getCarWifiManager().is6GhzBandSupported() && countryCode != null;
+    }
+
     private boolean isDualBandSupported() {
-        return Flags.hotspotUiSpeedUpdate() && getCarWifiManager().isDualBandSupported();
+        return getCarWifiManager().isDualBandSupported();
     }
 }

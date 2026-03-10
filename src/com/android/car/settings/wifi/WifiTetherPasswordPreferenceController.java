@@ -179,6 +179,7 @@ public class WifiTetherPasswordPreferenceController extends
             configBuilder.setBridgedModeOpportunisticShutdownEnabled(false);
         }
         setCarSoftApConfig(configBuilder.build());
+        Log.d(TAG, "update Ap Security type to : " + mSecurityType);
 
         if (!TextUtils.isEmpty(password)) {
             mSharedPreferences.edit().putString(KEY_SAVED_PASSWORD, password).commit();
