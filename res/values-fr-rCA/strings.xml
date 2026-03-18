@@ -76,7 +76,7 @@
     <string name="data_usage_limit_dialog_title" msgid="1864716658371721883">"Limitation de l\'util. de données mobiles"</string>
     <string name="data_usage_limit_dialog_mobile" msgid="3633960011913085089">"L\'unité principale de votre véhicule désactivera les données mobiles lorsque la limite que vous définissez sera atteinte.\n\nComme c\'est l\'unité principale qui mesure l\'utilisation de données, et que votre fournisseur de services peut utiliser un système de mesure différent, nous vous conseillons de faire preuve de prudence en définissant votre limite."</string>
     <string name="data_usage_warning_editor_title" msgid="2041517150169038813">"Définir avertissement d\'utilisation des données"</string>
-    <string name="data_usage_limit_editor_title" msgid="133468242379286689">"Définir la limite de consommation des données"</string>
+    <string name="data_usage_limit_editor_title" msgid="133468242379286689">"Définir la limite d\'utilisation des données"</string>
     <string name="data_usage_settings_footer" msgid="681881387909678237">"L\'utilisation de données est mesurée par votre appareil. Cette mesure peut être différente de celle de votre fournisseur de services cellulaires."</string>
     <string name="usage_bytes_threshold_picker_positive_button" msgid="4625479840977965519">"Définir"</string>
     <string name="data_usage_warning_save_title" msgid="2900544287239037695">"Enregistrer"</string>
@@ -315,12 +315,12 @@
     <string name="units_unit_name_kilometers_per_liter" msgid="8769902235588571155">"Kilomètres par litre"</string>
     <string name="units_unit_name_liter_per_hundred_kilometers" msgid="4867647387452453552">"Litres aux cent kilomètres"</string>
     <string name="apps_and_notifications_settings" msgid="8704585874333781975">"Applis et notifications"</string>
-    <string name="all_applications" msgid="7798210477486822168">"Afficher toutes les applications"</string>
+    <string name="all_applications" msgid="7798210477486822168">"Afficher toutes les applis"</string>
     <string name="default_applications" msgid="1558183275638697087">"Applis par défaut"</string>
     <string name="performance_impacting_apps" msgid="3439260699394720569">"Applications altérant la performance"</string>
     <string name="app_permissions" msgid="32799922508313948">"Autorisations des applis"</string>
     <string name="app_permissions_summary" msgid="5402214755935368418">"Gérez l\'accès des applications à vos données"</string>
-    <string name="applications_settings" msgid="794261395191035632">"Détails de l\'application"</string>
+    <string name="applications_settings" msgid="794261395191035632">"Détails de l\'appli"</string>
     <string name="force_stop" msgid="1616958676171167028">"Arrêter l\'application"</string>
     <string name="force_stop_dialog_title" msgid="4481858344628934971">"Arrêter l\'application?"</string>
     <string name="force_stop_dialog_text" msgid="4354954014318432599">"L\'arrêt forcé d\'une application peut provoquer un fonctionnement instable."</string>

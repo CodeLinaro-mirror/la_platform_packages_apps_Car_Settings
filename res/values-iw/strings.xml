@@ -657,7 +657,7 @@
     <string name="account_sync_title" msgid="6541844336300236915">"סנכרון חשבון"</string>
     <string name="account_sync_summary_some_on" msgid="4525960296068027182">"הסנכרון פועל עבור <xliff:g id="ID_1">%1$d</xliff:g> מתוך <xliff:g id="ID_2">%2$d</xliff:g> פריטים"</string>
     <string name="account_sync_summary_all_on" msgid="3652264471870312725">"הסנכרון פועל לכל הפריטים"</string>
-    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"הסנכרון כבוי לכל הפריטים"</string>
+    <string name="account_sync_summary_all_off" msgid="6550959714035312414">"הסנכרון של כל הפריטים כבוי"</string>
     <string name="sync_disabled" msgid="393531064334628258">"הסנכרון כבוי"</string>
     <string name="sync_error" msgid="6698021343089247914">"שגיאת סנכרון"</string>
     <string name="last_synced" msgid="4745124489150101529">"סונכרן לאחרונה ב-<xliff:g id="LAST_SYNC_TIME">%1$s</xliff:g>"</string>
@@ -745,7 +745,7 @@
     <string name="lockscreen_wrong_password" msgid="5757087577162231825">"סיסמה שגויה"</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"לשיפור האבטחה, מומלץ להגדיר סיסמה"</string>
     <string name="confirm_your_password_header" msgid="7052891840366724938">"יש להזין את הסיסמה שוב"</string>
-    <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"הסיסמאות לא תואמות"</string>
+    <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"הסיסמאות לא זהות"</string>
     <string name="lockpassword_clear_label" msgid="6363680971025188064">"ניקוי"</string>
     <string name="lockpassword_cancel_label" msgid="5791237697404166450">"ביטול"</string>
     <string name="lockpassword_confirm_label" msgid="5918463281546146953">"אישור"</string>
