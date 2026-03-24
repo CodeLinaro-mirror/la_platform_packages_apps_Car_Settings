@@ -849,7 +849,6 @@
     <string name="driving_mode_title" msgid="8103270030335833998">"ड्राइभिङ मोड सेट गर्नुहोस्"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"लेआउटका सीमाहरू देखाउनुहोस्"</string>
     <string name="show_force_rtl_title" msgid="8240732919603115320">"RTL लेआउट बलपूर्वक प्रयोग गर्नुहोस्"</string>
-    <string name="show_customization_overlay_title" msgid="2543804846629965883">"कस्टमाइजेसन ओभरले"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"इन्फोटेनमेन्ट प्रणालीका एड्मिन"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"एक्टिभेट गरिएका एपहरू"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"डिएक्टिभेट गरिएका एपहरू"</string>
@@ -861,9 +860,9 @@
     <string name="add_device_admin" msgid="7674707256074840333">"इन्फोटेनमेन्ट प्रणालीको यो एप एक्टिभेट गर्नुहोस्"</string>
     <string name="deactivate_and_uninstall_device_admin" msgid="596399938769951696">"डिएक्टिभेट गर्नुहोस् र अनइन्स्टल गर्नुहोस्"</string>
     <string name="remove_device_admin" msgid="3595343390502030723">"इन्फोटेनमेन्ट प्रणालीको यो एप डिएक्टिभेट गर्नुहोस्"</string>
-    <string name="admin_profile_owner_message" msgid="8361351256802954556">"सङ्गठनका प्रबन्धक सम्बन्धित सेटिङ, अनुमति, संस्थागत पहुँच, नेटवर्कसम्बन्धी क्रियाकलाप र सवारी साधनको लोकेसनसम्बन्धी जानकारीसहित यो प्रोफाइलसँग सम्बन्धित एप र डेटाको निरीक्षण तथा व्यवस्थापन गर्न सक्छन्।"</string>
-    <string name="admin_profile_owner_user_message" msgid="366072696508275753">"सङ्गठनका प्रबन्धक सम्बन्धित सेटिङ, अनुमति, संस्थागत पहुँच, नेटवर्कसम्बन्धी क्रियाकलाप र यो डिभाइसको लोकेसनसम्बन्धी जानकारीसहित यो प्रोफाइलसँग सम्बन्धित एप र डेटाको निरीक्षण तथा व्यवस्थापन गर्न सक्छन्।"</string>
-    <string name="admin_device_owner_message" msgid="896530502350904835">"सङ्गठनका प्रबन्धक सम्बन्धित सेटिङ, अनुमति, संस्थागत पहुँच, नेटवर्कसम्बन्धी क्रियाकलाप र सवारी साधनको लोकेसनसम्बन्धी जानकारीसहित यो इन्फोटेनमेन्ट प्रणालीसँग सम्बन्धित एप र डेटाको निरीक्षण तथा व्यवस्थापन गर्न सक्छन्।"</string>
+    <string name="admin_profile_owner_message" msgid="8361351256802954556">"सङ्गठनका प्रबन्धक सम्बन्धित सेटिङ, अनुमति, संस्थागत एस्सेस, नेटवर्कसम्बन्धी क्रियाकलाप र सवारी साधनको लोकेसनसम्बन्धी जानकारीसहित यो प्रोफाइलसँग सम्बन्धित एप र डेटाको निरीक्षण तथा व्यवस्थापन गर्न सक्छन्।"</string>
+    <string name="admin_profile_owner_user_message" msgid="366072696508275753">"सङ्गठनका प्रबन्धक सम्बन्धित सेटिङ, अनुमति, संस्थागत एस्सेस, नेटवर्कसम्बन्धी क्रियाकलाप र यो डिभाइसको लोकेसनसम्बन्धी जानकारीसहित यो प्रोफाइलसँग सम्बन्धित एप र डेटाको निरीक्षण तथा व्यवस्थापन गर्न सक्छन्।"</string>
+    <string name="admin_device_owner_message" msgid="896530502350904835">"सङ्गठनका प्रबन्धक सम्बन्धित सेटिङ, अनुमति, संस्थागत एस्सेस, नेटवर्कसम्बन्धी क्रियाकलाप र सवारी साधनको लोकेसनसम्बन्धी जानकारीसहित यो इन्फोटेनमेन्ट प्रणालीसँग सम्बन्धित एप र डेटाको निरीक्षण तथा व्यवस्थापन गर्न सक्छन्।"</string>
     <string name="admin_financed_message" msgid="7357397436233684082">"सङ्गठनका प्रबन्धक यो इन्फोटेनमेन्ट प्रणालीसँग सम्बन्धित डेटा एक्सेस गर्न, एपहरू व्यवस्थापन गर्न र यो सवारी साधनका सेटिङ परिवर्तन गर्न सक्छन्।"</string>
     <string name="disabled_by_policy_title" msgid="1121694702115232518">"तपाईं यो सेटिङ खोल्न सक्नुहुन्न"</string>
     <string name="disabled_by_policy_title_adjust_volume" msgid="7002865820552702232">"व्यवस्थापन गरिएको यो सवारी साधनमा भोल्युम घटबढ गर्न सकिँदैन"</string>
@@ -944,7 +943,7 @@
     <string name="factory_reset_later_text" msgid="6371031843489938419">"अर्को पटक कार स्टार्ट हुँदा इन्फोटेनमेन्ट प्रणाली रिसेट हुने छ।"</string>
     <string name="factory_reset_driving_text" msgid="6833832382688900191">"रिसेट गर्न कार पार्क गरिएको अवस्थामा हुनु पर्छ।"</string>
     <string name="power_component_disabled" msgid="7084144472096800457">"यो सेटिङ अहिले नै परिवर्तन गर्न मिल्दैन"</string>
-    <string name="accessibility_settings_title" msgid="2615042088419230347">"सर्वसुलभता"</string>
+    <string name="accessibility_settings_title" msgid="2615042088419230347">"एक्सेसिबिलिटी"</string>
     <string name="accessibility_settings_captions_title" msgid="4635141293524800795">"क्याप्सनहरू"</string>
     <string name="captions_settings_title" msgid="5738067618097295831">"क्याप्सनसम्बन्धी प्राथमिकताहरू"</string>
     <string name="captions_settings_off" msgid="7568096968016015626">"अफ छ"</string>

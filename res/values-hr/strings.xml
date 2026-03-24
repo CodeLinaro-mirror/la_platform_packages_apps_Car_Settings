@@ -525,7 +525,7 @@
     <string name="contributors_title" msgid="7698463793409916113">"Suradnici"</string>
     <string name="manual" msgid="4819839169843240804">"Ručno"</string>
     <string name="regulatory_labels" msgid="3165587388499646779">"Regulatorne oznake"</string>
-    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Priručnik o sigurnosti i zakonskim propisima"</string>
+    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"Priručnik o sigurnosti i propisima"</string>
     <string name="copyright_title" msgid="4220237202917417876">"Autorska prava"</string>
     <string name="license_title" msgid="936705938435249965">"Licenca"</string>
     <string name="terms_title" msgid="5201471373602628765">"Uvjeti i odredbe"</string>
@@ -849,7 +849,6 @@
     <string name="driving_mode_title" msgid="8103270030335833998">"Postavi način za vožnju"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"Prikaži okvir izgleda"</string>
     <string name="show_force_rtl_title" msgid="8240732919603115320">"Prisilna upotreba izgleda zdesna ulijevo"</string>
-    <string name="show_customization_overlay_title" msgid="2543804846629965883">"Preklapanje prilagodbe"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administrator sustava za informiranje i zabavu"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aktivirane aplikacije"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Deaktivirane aplikacije"</string>

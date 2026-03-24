@@ -369,7 +369,7 @@
     <string name="aspect_ratio_label" msgid="1852048794381949724">"အချိုးအစား"</string>
     <string name="aspect_ratio_action_button" msgid="5581373962239508271">"ဖွင့်ရန်"</string>
     <string name="user_aspect_ratio_app_default" msgid="283669241296845522">"အက်ပ် မူရင်း"</string>
-    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"ဖန်သားပြင်အပြည့်"</string>
+    <string name="user_aspect_ratio_fullscreen" msgid="7558176135316113">"စခရင်အပြည့်"</string>
     <string name="user_aspect_ratio_half_screen" msgid="6294133158286722632">"ဖန်သားပြင်တစ်ဝက်"</string>
     <string name="user_aspect_ratio_device_size" msgid="960231007272059744">"စက်၏အချိုးအစား"</string>
     <string name="user_aspect_ratio_16_9" msgid="2419220677608547650">"၁၆ x ၉"</string>
@@ -407,8 +407,7 @@
     <string name="app_list_preference_none" msgid="7753357799926715901">"မရှိ"</string>
     <string name="default_app_selected_app" msgid="5289396663745484773">"ရွေးထားသည်"</string>
     <string name="assistant_security_warning" msgid="1844807956967428012">"ကူညီပေးသူသည် သင်၏ မျက်နှာပြင်ပေါ်တွင် မြင်ရသည့် သို့မဟုတ် အက်ပ်များအထဲတွင် ရယူသုံးနိုင်သည့် အချက်အလက်များအပါအဝင် သင်၏ စနစ်ထဲတွင် သုံးနေသည့် အက်ပ်များအကြောင်း အချက်အလက်များကို ဖတ်ရှုနိုင်မည်။"</string>
-    <!-- syntax error in translation for autofill_confirmation_message (1832984461556991378) org.xmlpull.v1.XmlPullParserException: expected: /string read: xliff:g (position:END_TAG </xliff:g>@1:230 in     <string name="autofill_confirmation_message" msgid="1832984461556991378">"&lt;b&gt;သင်သည် ဤအက်ပ်ကို ယုံကြည်ခြင်း ရှိမရှိ စစ်ဆေးပါ&lt;/b&gt; &lt;br/&gt; &lt;br/&gt; &lt;xliff:g id=app_name example=Google Autofill>%1$s</xliff:g> သည် သင်၏မျက်နှာပြင်ပေါ်ရှိ အရာများကို အသုံးပြု၍ မည်သည့်အရာများကို အော်တိုဖြည့်နိုင်ကြောင်း သတ်မှတ်သည်။"</string>
-)  -->
+    <string name="autofill_confirmation_message" msgid="1832984461556991378">"&lt;b&gt;သင်သည် ဤအက်ပ်ကို ယုံကြည်ခြင်း ရှိမရှိ စစ်ဆေးပါ&lt;/b&gt; &lt;br/&gt; &lt;br/&gt; &lt;xliff:g id=app_name example=Google Autofill&gt;%1$s&lt;/xliff:g&gt; သည် သင်၏စခရင်ပေါ်ရှိ အရာများကို အသုံးပြု၍ မည်သည့်အရာများကို အော်တိုဖြည့်နိုင်ကြောင်း သတ်မှတ်သည်။"</string>
     <string name="autofill_add_service" msgid="6413893366443609951">"ဝန်ဆောင်မှုထည့်ပါ"</string>
     <string name="app_launch_domain_links_title" msgid="774480184927726651">"လင့်ခ်များ ဖွင့်နေသည်"</string>
     <string name="domain_url_section_title" msgid="9070403140947787214">"ထည့်ထားသည့် အက်ပ်များ"</string>
@@ -526,7 +525,7 @@
     <string name="contributors_title" msgid="7698463793409916113">"ပံ့ပိုးသူများ"</string>
     <string name="manual" msgid="4819839169843240804">"ကိုယ်တိုင်ထည့်သွင်းရန်"</string>
     <string name="regulatory_labels" msgid="3165587388499646779">"စည်းမျဉ်း အညွှန်းများ"</string>
-    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"လုံခြုံရေးနှင့် ထိန်းသိမ်းမှုလမ်းညွှန်"</string>
+    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"လုံခြုံမှုနှင့်စည်းမျဉ်း လမ်းညွှန်"</string>
     <string name="copyright_title" msgid="4220237202917417876">"မူပိုင်ခွင့်"</string>
     <string name="license_title" msgid="936705938435249965">"လိုင်စင်"</string>
     <string name="terms_title" msgid="5201471373602628765">"ဝန်ဆောင်မှုစည်းမျဉ်းများ"</string>
@@ -806,8 +805,8 @@
     <string name="credentials_reset" msgid="873900550885788639">"အထောက်အထားများကို ရှင်းလင်းခြင်း"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"အသိအမှတ်ပြုလက်မှတ်အားလုံးကို ဖယ်ရှားသည်"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"အကြောင်းအရာအားလုံးကို ဖယ်ရှားမလား။"</string>
-    <string name="credentials_erased" msgid="2515915439705550379">"ယုံကြည်စိတ်ချရသောသိုလှောင်ရာနေရာအား ဖျက်လိုက်ပါပြီ။"</string>
-    <string name="credentials_not_erased" msgid="6118567459076742720">"သိုလှောင်ရာနေရာအား ဖျက်၍မရပါ။"</string>
+    <string name="credentials_erased" msgid="2515915439705550379">"သိုလှောင်ခန်းကို ဖျက်လိုက်သည်။"</string>
+    <string name="credentials_not_erased" msgid="6118567459076742720">"သိုလှောင်ခန်းကို ဖျက်၍မရပါ။"</string>
     <string name="forget" msgid="3971143908183848527">"မေ့ပစ်ရန်"</string>
     <string name="connect" msgid="5861699594602380150">"ချိတ်ရန်"</string>
     <string name="disconnect" msgid="6140789953324820336">"ချိတ်ဆက်မှု ဖြုတ်ရန်"</string>
@@ -850,7 +849,6 @@
     <string name="driving_mode_title" msgid="8103270030335833998">"မောင်းနှင်မှု သတ်မှတ်ခြင်း"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"အပြင်အဆင်ဘောင်များ ပြပါ"</string>
     <string name="show_force_rtl_title" msgid="8240732919603115320">"RTL အပြင်အဆင်အတိုင်း ဖြစ်စေရန်"</string>
-    <string name="show_customization_overlay_title" msgid="2543804846629965883">"စိတ်ကြိုက်ပြင်ဆင်ခြင်း ထပ်ပိုးလွှာ"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"သတင်းနှင့်ဖျော်ဖြေရေး စနစ် စီမံခန့်ခွဲသူ"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"ဖွင့်ထားသောအက်ပ်များ"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"ပိတ်ထားသောအက်ပ်များ"</string>
@@ -993,7 +991,7 @@
     <string name="aspect_ratio_dialog_title" msgid="5037908726234453003">"အချိုးအစား ဆက်တင်များ"</string>
     <string name="aspect_ratio_dialog_message" msgid="4199444972791605946">"အချိုးအစား ပြောင်းလိုက်သောအခါ အက်ပ်ပြန်စပါမည်။ သိမ်းမထားသော အပြောင်းအလဲများ ဆုံးရှုံးနိုင်သည်။ အချို့အက်ပ်များသည် အချို့သောအချိုးအစားတွင် ကောင်းစွာအလုပ်မလုပ်ပါ။"</string>
     <string name="aspect_ratio_dialog_app_default_text" msgid="5086218873843168173">"အက်ပ် မူရင်း"</string>
-    <string name="aspect_ratio_dialog_full_screen_text" msgid="888165107964490897">"ဖန်သားပြင်အပြည့်"</string>
+    <string name="aspect_ratio_dialog_full_screen_text" msgid="888165107964490897">"စခရင်အပြည့်"</string>
     <string name="aspect_ratio_dialog_half_screen_text" msgid="3832684591279367444">"ဖန်သားပြင်တစ်ဝက်"</string>
     <string name="aspect_ratio_set_error" msgid="591159290370230132">"အချိုးအစားဆက်တင်များကို အပ်ဒိတ်လုပ်၍မရလိုက်ပါ။"</string>
     <string name="display_density_dialog_title" msgid="3782055592374414189">"ပြကွက်အရွယ်အစားနှင့် စာသား"</string>
