@@ -23,9 +23,15 @@ import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.net.Uri;
+import android.net.wifi.EasyConnectStatusCallback;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.android.car.settings.Flags;
 import com.android.car.settings.R;
 import com.android.car.settings.common.ActionButtonsPreference;
 import com.android.car.settings.common.FragmentController;
@@ -41,6 +47,8 @@ public class WifiDetailsActionButtonsPreferenceController
         implements WifiEntry.ConnectCallback {
     private static final Logger LOG = new Logger(
             WifiDetailsActionButtonsPreferenceController.class);
+    private String mUri;
+    private boolean mSupportEasyConnect;
 
     public WifiDetailsActionButtonsPreferenceController(Context context,
             String preferenceKey, FragmentController fragmentController,
@@ -51,6 +59,16 @@ public class WifiDetailsActionButtonsPreferenceController
     @Override
     protected Class<ActionButtonsPreference> getPreferenceType() {
         return ActionButtonsPreference.class;
+    }
+
+    @Override
+    protected void onCreateInternal() {
+        super.onCreateInternal();
+        mSupportEasyConnect = getCarWifiManager() != null
+                && getCarWifiManager().isEasyConnectSupported();
+        if (mSupportEasyConnect) {
+            setUpSharePageInfo();
+        }
     }
 
     @Override
@@ -77,8 +95,8 @@ public class WifiDetailsActionButtonsPreferenceController
                 .setOnClickListener(v -> connectOrDisconnect());
 
         preference.getButton(ActionButtons.BUTTON3)
-                .setVisible(getWifiEntry().canShare())
-                .setEnabled(true)
+                .setVisible(mSupportEasyConnect && Flags.newFragmentForIntents())
+                .setEnabled(mUri != null)
                 .setText(R.string.wifi_detail_share)
                 .setIcon(R.drawable.ic_qr)
                 .setOnClickListener(v -> openSharePage());
@@ -151,11 +169,55 @@ public class WifiDetailsActionButtonsPreferenceController
 
     @SuppressLint("MissingPermission")
     private void openSharePage() {
-        WifiManager wifiManager = getCarWifiManager().getWifiManager();
-        String uri = WifiUtil.getWifiShareQrCode(wifiManager, getWifiEntry());
-        if (uri != null) {
+        if (mUri != null) {
             getFragmentController().launchFragment(
-                    WifiDetailsShareFragment.getInstance(uri));
+                    WifiDetailsShareFragment.getInstance(mUri));
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private void setUpSharePageInfo() {
+        getCarWifiManager().getWifiManager().startEasyConnectAsEnrolleeResponder(
+                Build.DEVICE,
+                WifiManager.EASY_CONNECT_CRYPTOGRAPHY_CURVE_PRIME256V1,
+                getContext().getMainExecutor(),
+                new SettingsEasyConnectStatusCallback());
+    }
+
+    private class SettingsEasyConnectStatusCallback extends EasyConnectStatusCallback {
+
+        @Override
+        public void onBootstrapUriGenerated(@NonNull Uri dppUri) {
+            super.onBootstrapUriGenerated(dppUri);
+            if (!dppUri.toString().equals(mUri)) {
+                mUri = dppUri.toString();
+                refreshUi();
+            }
+        }
+
+        @Override
+        public void onFailure(int code) {
+            super.onFailure(code);
+            LOG.w("Unable to generate Easy Connect Wifi QR code : " + code);
+            if (mUri != null) {
+                mUri = null;
+                refreshUi();
+            }
+        }
+
+        @Override
+        public void onEnrolleeSuccess(int newNetworkId) {
+            // Do nothing.
+        }
+
+        @Override
+        public void onConfiguratorSuccess(int code) {
+            // Do nothing.
+        }
+
+        @Override
+        public void onProgress(int code) {
+            // Do nothing.
         }
     }
 }

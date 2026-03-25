@@ -26,6 +26,7 @@ import android.util.SparseIntArray;
 
 import androidx.preference.ListPreference;
 
+import com.android.car.settings.Flags;
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 import com.android.internal.annotations.VisibleForTesting;
@@ -187,7 +188,7 @@ public class WifiTetherApBandPreferenceController extends
                 // Only BAND_5GHZ is not supported, must include BAND_2GHZ since some of countries
                 // don't support 5G
                 configBuilder.setBand(BAND_2GHZ_5GHZ);
-            } else if (mBand == BAND_2GHZ_5GHZ) {
+            } else if (Flags.hotspotUiSpeedUpdate() && mBand == BAND_2GHZ_5GHZ) {
                 configBuilder.setBands(DUAL_BANDS);
             } else {
                 configBuilder.setBand(BAND_2GHZ);
@@ -204,6 +205,6 @@ public class WifiTetherApBandPreferenceController extends
     }
 
     private boolean isDualBandSupported() {
-        return getCarWifiManager().isDualBandSupported();
+        return Flags.hotspotUiSpeedUpdate() && getCarWifiManager().isDualBandSupported();
     }
 }

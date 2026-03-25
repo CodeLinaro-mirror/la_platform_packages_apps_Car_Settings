@@ -30,6 +30,7 @@ import static org.mockito.Mockito.when;
 import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.net.wifi.SoftApConfiguration;
+import android.platform.test.annotations.EnableFlags;
 import android.platform.test.flag.junit.SetFlagsRule;
 import android.util.SparseIntArray;
 
@@ -39,6 +40,7 @@ import androidx.preference.ListPreference;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import com.android.car.settings.Flags;
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.PreferenceControllerTestUtil;
@@ -100,6 +102,7 @@ public class WifiTetherApBandPreferenceControllerTest {
     }
 
     @Test
+    @EnableFlags(Flags.FLAG_HOTSPOT_UI_SPEED_UPDATE)
     public void onStart_dualBandNotSupported_defaultTo2Ghz() {
         when(mCarWifiManager.is5GhzBandSupported()).thenReturn(true);
         when(mCarWifiManager.isDualBandSupported()).thenReturn(false);
@@ -133,6 +136,7 @@ public class WifiTetherApBandPreferenceControllerTest {
     }
 
     @Test
+    @EnableFlags(Flags.FLAG_HOTSPOT_UI_SPEED_UPDATE)
     public void onStart_wifiConfigDualApBand_valueIsSetToDualBand() {
         when(mCarWifiManager.is5GhzBandSupported()).thenReturn(true);
         when(mCarWifiManager.isDualBandSupported()).thenReturn(true);
@@ -194,6 +198,7 @@ public class WifiTetherApBandPreferenceControllerTest {
     }
 
     @Test
+    @EnableFlags(Flags.FLAG_HOTSPOT_UI_SPEED_UPDATE)
     public void onPreferenceChangedToDualBand_updatesApBandConfigToDualBand() {
         when(mCarWifiManager.is5GhzBandSupported()).thenReturn(true);
         when(mCarWifiManager.isDualBandSupported()).thenReturn(true);

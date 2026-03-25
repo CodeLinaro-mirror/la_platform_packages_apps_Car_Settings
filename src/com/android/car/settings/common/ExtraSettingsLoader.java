@@ -149,19 +149,19 @@ public class ExtraSettingsLoader {
                 if (!metaData.containsKey(META_DATA_PREFERENCE_TITLE_URI)) {
                     title = extractMetaDataString(metaData, META_DATA_PREFERENCE_TITLE, res);
                     if (TextUtils.isEmpty(title)) {
-                        LOG.v("no title.");
+                        LOG.d("no title.");
                         title = activityInfo.loadLabel(mPm).toString();
                     }
                 }
                 if (!metaData.containsKey(META_DATA_PREFERENCE_SUMMARY_URI)) {
                     summary = extractMetaDataString(metaData, META_DATA_PREFERENCE_SUMMARY, res);
                     if (TextUtils.isEmpty(summary)) {
-                        LOG.v("no description.");
+                        LOG.d("no description.");
                     }
                 }
                 category = extractMetaDataString(metaData, META_DATA_PREFERENCE_CATEGORY, res);
                 if (TextUtils.isEmpty(category)) {
-                    LOG.v("no category.");
+                    LOG.d("no category.");
                 }
             } catch (PackageManager.NameNotFoundException | Resources.NotFoundException e) {
                 LOG.d("Couldn't find info", e);
