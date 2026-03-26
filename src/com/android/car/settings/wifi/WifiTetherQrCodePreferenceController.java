@@ -115,7 +115,9 @@ public class WifiTetherQrCodePreferenceController extends
             String password = getCarSoftApConfig().getPassphrase();
             int securityType = getCarSoftApConfig().getSecurityType();
             String content;
-            if (securityType == SoftApConfiguration.SECURITY_TYPE_OPEN) {
+            if (securityType == SoftApConfiguration.SECURITY_TYPE_OPEN ||
+                securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_OWE ||
+                securityType == SoftApConfiguration.SECURITY_TYPE_WPA3_OWE_TRANSITION) {
                 content = String.format(QR_CODE_FORMAT_NOPASS, name);
             } else {
                 content = String.format(QR_CODE_FORMAT, name, password);
