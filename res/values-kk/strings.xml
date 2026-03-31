@@ -746,7 +746,7 @@
     <string name="lockpattern_cancel_button_text" msgid="4068764595622381766">"Бас тарту"</string>
     <string name="lockpattern_pattern_confirmed" msgid="5984306638250515385">"Құлыпты ашатын жаңа өрнек"</string>
     <string name="lockpattern_recording_intro_header" msgid="7864149726033694408">"Құлыпты ашу өрнегін сызыңыз"</string>
-    <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"Салып болғанда саусағыңызды жіберіңіз"</string>
+    <string name="lockpattern_recording_inprogress" msgid="1575019990484725964">"Салып болғанда, саусағыңызды жіберіңіз."</string>
     <string name="lockpattern_pattern_entered" msgid="6103071005285320575">"Өрнек сақталды"</string>
     <string name="lockpattern_need_to_confirm" msgid="4648070076022940382">"Растау үшін өрнекті қайта сызыңыз."</string>
     <string name="lockpattern_recording_incorrect_too_short" msgid="2417932185815083082">"Кемі 4 нүктені қосу қажет. Қайта салып көріңіз."</string>
@@ -769,7 +769,7 @@
     <string name="confirm_pins_dont_match" msgid="4607110139373520720">"PIN кодтары сәйкес емес"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"PIN кодын сақтау кезінде қате кетті"</string>
     <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"PIN коды қате"</string>
-    <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Құпия сөз қате"</string>
+    <string name="lockscreen_wrong_password" msgid="5757087577162231825">"Құпия сөз қате."</string>
     <string name="choose_lock_password_message" msgid="6124341145027370784">"Қауіпсіздік үшін құпия сөз орнатыңыз"</string>
     <string name="confirm_your_password_header" msgid="7052891840366724938">"Құпия сөзді қайта енгізіңіз"</string>
     <string name="confirm_passwords_dont_match" msgid="7300229965206501753">"Құпия сөздер сәйкес емес"</string>
