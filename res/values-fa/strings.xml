@@ -96,12 +96,12 @@
     <string name="wifi_failed_forget_message" msgid="121732682699377206">"شبکه فراموش نشد"</string>
     <string name="wifi_failed_connect_message" msgid="4447498225022147324">"به شبکه متصل نشد"</string>
     <string name="wifi_setup_add_network" msgid="3660498520389954620">"افزودن شبکه"</string>
-    <string name="wifi_setup_connect" msgid="3512399573397979101">"اتصال"</string>
+    <string name="wifi_setup_connect" msgid="3512399573397979101">"متصل کردن"</string>
     <string name="wifi_connecting" msgid="1930665730621677960">"درحال اتصال…"</string>
     <string name="wifi_disconnected" msgid="4485699234859368137">"متصل نیست"</string>
     <string name="wifi_not_in_range_message" msgid="2617126307140203787">"شبکه در محدوده نیست"</string>
     <string name="wifi_password" msgid="5565632142720292397">"گذرواژه"</string>
-    <string name="wifi_show_password" msgid="8423293211933521097">"نمایش گذرواژه"</string>
+    <string name="wifi_show_password" msgid="8423293211933521097">"نشان دادن گذرواژه"</string>
     <string name="wifi_no_network_name" msgid="6819604337231313594">"لطفاً نام شبکه وارد کنید"</string>
     <string name="wifi_ssid" msgid="488604828159458741">"نام شبکه"</string>
     <string name="wifi_ssid_hint" msgid="3170608752313710099">"SSID را وارد کنید"</string>
@@ -111,7 +111,7 @@
     <string name="wifi_speed" msgid="1650692446731850781">"سرعت پیوند"</string>
     <string name="wifi_frequency" msgid="8951455949682864922">"فرکانس"</string>
     <string name="wifi_ip_address" msgid="3128140627890954061">"نشانی IP"</string>
-    <string name="show_password" msgid="2074628020371139240">"نمایش گذرواژه"</string>
+    <string name="show_password" msgid="2074628020371139240">"نشان دادن گذرواژه"</string>
     <string name="default_network_name_summary" msgid="8148402439232464276">"نام شبکه را وارد کنید"</string>
     <string name="default_password_summary" msgid="8789594645836902982">"گذرواژه را وارد کنید"</string>
     <string name="access_point_tag_key" msgid="1517143378973053337">"access_point_tag_key"</string>
@@ -374,7 +374,7 @@
     <string name="app_data_usage_restrict_data_title" msgid="7080736007645963633">"محدود کردن داده"</string>
     <string name="app_data_usage_background_data_summary" msgid="4445472217737386826">"فقط در پیش‌نما می‌تواند از داده همراه استفاده کند"</string>
     <string name="computing_size" msgid="5791407621793083965">"درحال محاسبه..."</string>
-    <string name="runtime_permissions_additional_count" msgid="3920383880473283764">"{count,plural, =1{# مجوز اضافی}one{# مجوز اضافی}other{# مجوز اضافی}}"</string>
+    <string name="runtime_permissions_additional_count" msgid="3920383880473283764">"{count,plural, =1{‫# اجازه اضافی}one{‫# اجازه اضافی}other{‫# اجازه اضافی}}"</string>
     <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"توجه: پس از راه‌اندازی مجدد، تا قفل وسیله‌تان را باز نکنید، این برنامه نمی‌تواند شروع به کار کند."</string>
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"همیار و ورودی گفتاری"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"برنامه همیار"</string>
@@ -454,7 +454,7 @@
     <string name="adas_location_toggle_summary" msgid="7055141074159770928">"به ویژگی‌های داخلی که توسط سازنده خودرو تأیید شده است اجازه می‌دهد به مکان خودروتان دسترسی داشته باشد."</string>
     <string name="location_recently_accessed" msgid="522888989582110975">"برنامه‌هایی که اخیراً دسترسی داشته‌اند"</string>
     <string name="location_settings_recently_accessed_title" msgid="6016264778609426382">"برنامه‌هایی که اخیراً دسترسی داشته‌اند"</string>
-    <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"مشاهده همه برنامه‌ها"</string>
+    <string name="location_settings_recently_accessed_view_all_title" msgid="6344830628885781448">"مشاهده همه"</string>
     <string name="location_no_recent_access" msgid="2859914321242257931">"برنامه اخیری وجود ندارد"</string>
     <string name="driver_assistance_label" msgid="5330316311913399041">"<xliff:g id="TIME">%1$s</xliff:g> • دستیار راننده • به دسترسی نیاز دارد"</string>
     <string name="location_adas_apps_list_title" msgid="482882078448695177">"ویژگی‌هایی که در رانندگی به شما کمک می‌کند"</string>
@@ -476,7 +476,7 @@
     <string name="microphone_app_permission_summary_microphone_off" msgid="6139321726246115550">"هیچ برنامه‌ای دسترسی ندارد"</string>
     <string name="microphone_app_permission_summary_microphone_on" msgid="7870834777359783838">"{count,plural, =1{# برنامه از {total_count} برنامه دسترسی دارد}one{# برنامه از {total_count} برنامه دسترسی دارد}other{# برنامه از {total_count} برنامه دسترسی دارد}}"</string>
     <string name="microphone_settings_recent_requests_title" msgid="8154796551134761329">"برنامه‌هایی که اخیراً دسترسی داشته‌اند"</string>
-    <string name="microphone_settings_recent_requests_view_all_title" msgid="4339820818072842872">"نمایش همه"</string>
+    <string name="microphone_settings_recent_requests_view_all_title" msgid="4339820818072842872">"مشاهده همه"</string>
     <string name="microphone_settings_loading_app_permission_stats" msgid="4357161201098081615">"درحال بارگیری…"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"سیستم"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"به‌روزرسانی‌های سیستم"</string>
@@ -739,7 +739,7 @@
     <string name="confirm_your_pin_header" msgid="9096581288537156102">"پین را دوباره وارد کنید"</string>
     <string name="choose_lock_pin_hints" msgid="7362906249992020844">"پین باید حداقل ۴ رقمی باشد"</string>
     <string name="lockpin_invalid_pin" msgid="2149191577096327424">"پین نامعتبر است، پین باید حداقل ۴ رقم داشته باشد."</string>
-    <string name="confirm_pins_dont_match" msgid="4607110139373520720">"پین‌ها با یکدیگر مطابقت ندارند"</string>
+    <string name="confirm_pins_dont_match" msgid="4607110139373520720">"پین‌ها مطابقت ندارند"</string>
     <string name="error_saving_lockpin" msgid="9011960139736000393">"خطای ذخیره پین"</string>
     <string name="lockscreen_wrong_pin" msgid="4922465731473805306">"پین اشتباه است"</string>
     <string name="lockscreen_wrong_password" msgid="5757087577162231825">"گذرواژه اشتباه است"</string>
@@ -781,7 +781,7 @@
     <string name="credentials_erased" msgid="2515915439705550379">"فضای ذخیره‌سازی اطلاعات اعتباری پاک شد."</string>
     <string name="credentials_not_erased" msgid="6118567459076742720">"فضای ذخیره‌سازی اطلاعات اعتباری پاک نمی‌شود."</string>
     <string name="forget" msgid="3971143908183848527">"فراموش کردن"</string>
-    <string name="connect" msgid="5861699594602380150">"اتصال"</string>
+    <string name="connect" msgid="5861699594602380150">"متصل کردن"</string>
     <string name="disconnect" msgid="6140789953324820336">"قطع اتصال"</string>
     <string name="delete_button" msgid="5840500432614610850">"حذف"</string>
     <string name="remove_button" msgid="6664656962868194178">"برداشتن"</string>
@@ -931,8 +931,8 @@
     <string name="captions_text_style_title" msgid="8547777957403577760">"زیرنویس ناشنوایان"</string>
     <string name="captions_settings_text_style_by_app" msgid="7014882290456996444">"تنظیم‌شده توسط برنامه"</string>
     <string name="captions_settings_text_style_white_on_black" msgid="5758084000323596070">"سفید روی سیاه"</string>
-    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"سیاه در سفید"</string>
-    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"زرد در سیاه"</string>
+    <string name="captions_settings_text_style_black_on_white" msgid="3906140601916221220">"سیاه روی سفید"</string>
+    <string name="captions_settings_text_style_yellow_on_black" msgid="4681565950104511943">"زرد روی سیاه"</string>
     <string name="captions_settings_text_style_yellow_on_blue" msgid="5072521958156112239">"زرد در آبی"</string>
     <string name="accessibility_settings_screen_reader_title" msgid="5113265553157624836">"صفحه‌خوان"</string>
     <string name="screen_reader_settings_off" msgid="6081562047935689764">"خاموش"</string>
@@ -949,7 +949,7 @@
     <string name="camera_app_permission_summary_camera_off" msgid="1437200903113016549">"هیچ برنامه‌ای دسترسی ندارد"</string>
     <string name="camera_app_permission_summary_camera_on" msgid="7260565911222013361">"{count,plural, =1{# برنامه از {total_count} برنامه دسترسی دارد}one{# برنامه از {total_count} برنامه دسترسی دارد}other{# برنامه از {total_count} برنامه دسترسی دارد}}"</string>
     <string name="camera_settings_recent_requests_title" msgid="2433698239374365206">"برنامه‌هایی که اخیراً دسترسی داشته‌اند"</string>
-    <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"مشاهده همه موارد"</string>
+    <string name="camera_settings_recent_requests_view_all_title" msgid="8590811106414244795">"مشاهده همه"</string>
     <string name="camera_settings_loading_app_permission_stats" msgid="1402676190705491418">"درحال بارگیری…"</string>
     <string name="data_subscription_explore_options" msgid="4089747156447849054">"دیدن طرح‌ها"</string>
     <string name="connectivity_inactive_prompt" msgid="2325831357510029165">"طرح‌های اینترنت شما منقضی شده است"</string>

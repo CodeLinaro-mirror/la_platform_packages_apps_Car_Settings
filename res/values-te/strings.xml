@@ -264,7 +264,7 @@
     <string name="sound_alert_sounds_summary" msgid="816501423095651281">"రింగ్‌టోన్, నోటిఫికేషన్, అలారం"</string>
     <string name="audio_route_selector_title" msgid="9137648859313120159">"ఇందులో మీడియా ప్లే చేయండి"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"మీడియా %1$sకు మారుతోంది"</string>
-    <string name="display_brightness" msgid="5718970880488110840">"ప్రకాశం"</string>
+    <string name="display_brightness" msgid="5718970880488110840">"బ్రైట్‌నెస్"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"స్క్రీన్‌ను తక్కువ కాంతికి సర్దుబాటు చేయండి"</string>
     <string name="units_settings" msgid="402325305096925886">"యూనిట్‌లు"</string>
     <string name="units_speed_title" msgid="7115143916747108160">"వేగం"</string>
@@ -480,7 +480,7 @@
     <string name="microphone_settings_loading_app_permission_stats" msgid="4357161201098081615">"లోడ్ చేస్తోంది…"</string>
     <string name="system_setting_title" msgid="6864599341809463440">"సిస్టమ్"</string>
     <string name="system_update_settings_title" msgid="8448588267784138855">"సిస్టమ్ అప్‌డేట్‌లు"</string>
-    <string name="system_advanced_title" msgid="6303355131691523362">"అధునాతనం"</string>
+    <string name="system_advanced_title" msgid="6303355131691523362">"అడ్వాన్స్‌డ్"</string>
     <string name="system_advanced_summary" msgid="5833643795981791953">"పరిచయం, చట్టపరమైన సమాచారం, రీసెట్, మరిన్ని"</string>
     <string name="restart_infotainment_system_title" msgid="5174129167446756511">"సమాచారంతో కూడిన వినోదం సిస్టమ్‌ను రీస్టార్ట్ చేయండి"</string>
     <string name="restart_infotainment_system_dialog_text" msgid="6395281407323116808">"మీ కారు తాలూకు సమాచారంతో కూడిన వినోదం సిస్టమ్‌ను రీస్టార్ట్ చేయడానికి కొన్ని నిమిషాలు పట్టవచ్చు. మీరు కొనసాగాలనుకుంటున్నారా?"</string>
