@@ -281,8 +281,8 @@
     <string name="audio_route_preference_connecting_failed" msgid="4567689748332788205">"ከ%s ጋር መገናኘት አልተሳካም"</string>
     <string name="audio_route_preference_starting_broadcast_failed" msgid="2135487623811781977">"የድምፅ ማጋራትን መጀመር አልተሳካም"</string>
     <string name="audio_route_preference_leaving_broadcast" msgid="7222467734305708905">"በመውጣት ላይ..."</string>
-    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"ከ %1$s ስርጭትን መቀላቀል አልተሳካም"</string>
-    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"ከ %1$s ስርጭት መውጣት አልተሳካም"</string>
+    <string name="audio_route_preference_joining_broadcast_failed" msgid="7861917958337684395">"ከ %1$s ሥርጭትን መቀላቀል አልተሳካም"</string>
+    <string name="audio_route_preference_leaving_broadcast_failed" msgid="4374851662577429042">"ከ %1$s ሥርጭት መውጣት አልተሳካም"</string>
     <string name="audio_route_selector_toast" msgid="338103814096108292">"ሚዲያን ወደ %1$s በመቀየር ላይ"</string>
     <string name="display_brightness" msgid="5718970880488110840">"ብሩህነት"</string>
     <string name="display_night_mode_summary" msgid="4939425286027546230">"ለዝቅተኛ ብርሃን ማያ ገጹን ያስተካክሉ"</string>
@@ -525,7 +525,7 @@
     <string name="contributors_title" msgid="7698463793409916113">"አስተዋጽዖ አበርካቾች"</string>
     <string name="manual" msgid="4819839169843240804">"በራስ"</string>
     <string name="regulatory_labels" msgid="3165587388499646779">"የመከታተያ መሰየሚያዎች"</string>
-    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"የደህንነት እና የቁጥጥር መመሪያ ጽሁፍ"</string>
+    <string name="safety_and_regulatory_info" msgid="1204127697132067734">"የደህንነት እና የቁጥጥር መመሪያ ጽሑፍ"</string>
     <string name="copyright_title" msgid="4220237202917417876">"የቅጂ መብት"</string>
     <string name="license_title" msgid="936705938435249965">"ፈቃድ"</string>
     <string name="terms_title" msgid="5201471373602628765">"ደንቦች እና ሁኔታዎች"</string>
@@ -801,7 +801,7 @@
     <string name="lockpassword_password_too_long" msgid="1709616257350671045">"{count,plural, =1{ከ# ቁምፊ ያነሰ መሆን አለበት}one{ከ# ቁምፊዎች ያነሰ መሆን አለበት}other{ከ# ቁምፊዎች ያነሰ መሆን አለበት}}"</string>
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{ከ# አሃዝ ያነሰ መሆን አለበት}one{ከ# አሃዞች ያነሰ መሆን አለበት}other{ከ# አሃዞች ያነሰ መሆን አለበት}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"እየጨመሩ የሚሄዱ፣ እየቀነሱ የሚሄዱ ወይም ተደጋጋሚ የአኃዞች ተከታታይ አይፈቀድም"</string>
-    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"የማያ ገፅ መቆለፊያ አማራጮች"</string>
+    <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"የማያ ገጽ መቆለፊያ አማራጮች"</string>
     <string name="credentials_reset" msgid="873900550885788639">"መረጃዎችን አጽዳ"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"ሁሉንም ምስክሮች አስወግድ"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"ሁሉም ይዘቶች ይወገድ?"</string>
@@ -849,7 +849,6 @@
     <string name="driving_mode_title" msgid="8103270030335833998">"መንዳትን ያቀናብሩ"</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"የአቀማመጥ ገደቦችን አሳይ"</string>
     <string name="show_force_rtl_title" msgid="8240732919603115320">"የቀኝ-ወደ-ግራ አቀማመጥ አቅጣጫን አስገድድ"</string>
-    <string name="show_customization_overlay_title" msgid="2543804846629965883">"የማበጀት ተደራቢ"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"የኢንፎቴይንመንት ስርዓት አስተዳዳሪ"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"የገበሩ መተግበሪያዎች"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"የተቦዘኑ መተግበሪያዎች"</string>

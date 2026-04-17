@@ -736,7 +736,7 @@
     <string name="lockpattern_restart_button_text" msgid="9355771277617537">"Tërhiq sërish"</string>
     <string name="continue_button_text" msgid="5129979170426836641">"Vazhdo"</string>
     <string name="lockscreen_retry_button_text" msgid="5314212350698701242">"Riprovo"</string>
-    <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Kapërce"</string>
+    <string name="lockscreen_skip_button_text" msgid="3755748786396198091">"Anashkalo"</string>
     <string name="set_screen_lock" msgid="5239317292691332780">"Cakto një kyçje të ekranit"</string>
     <string name="lockscreen_choose_your_pin" msgid="1645229555410061526">"Zgjidh kodin PIN"</string>
     <string name="lockscreen_choose_your_password" msgid="4487577710136014069">"Zgjidh fjalëkalimin"</string>
@@ -849,7 +849,6 @@
     <string name="driving_mode_title" msgid="8103270030335833998">"Cakto modalitetin \"me makinë\""</string>
     <string name="show_layout_bounds_title" msgid="8590148405645027755">"Shfaq konturet e kuadrit"</string>
     <string name="show_force_rtl_title" msgid="8240732919603115320">"Detyro drejtimin e shkrimit nga e djathta në të majtë"</string>
-    <string name="show_customization_overlay_title" msgid="2543804846629965883">"Mbivendosja e personalizimit"</string>
     <string name="device_admin_add_title" msgid="1294399588284546811">"Administratori i sistemit info-argëtues"</string>
     <string name="device_admin_activated_apps" msgid="568075063362271751">"Aplikacionet e aktivizuara"</string>
     <string name="device_admin_deactivated_apps" msgid="3797263682500122872">"Aplikacionet e çaktivizuara"</string>
