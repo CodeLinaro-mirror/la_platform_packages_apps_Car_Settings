@@ -416,6 +416,13 @@ public class ApplicationActionButtonsPreferenceController extends
             return true;
         }
 
+        String packageInstaller = getContext().getString(
+                R.string.config_package_installer_package_name);
+        if (mPackageName.equals(packageInstaller)) {
+            LOG.d("Uninstall disabled for package installer");
+            return true;
+        }
+
         if (isAppEnabled() && isKeepEnabledPackage(getContext(), mPackageName)) {
             LOG.d("Disable button disabled for keep enabled package");
             return true;
