@@ -37,6 +37,7 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.wifi.WifiUtil;
 import com.android.wifitrackerlib.WifiEntry;
+import android.net.wifi.WifiConfiguration;
 
 /**
  * Shows Wifi details action buttons (forget and connect).
@@ -47,7 +48,8 @@ public class WifiDetailsActionButtonsPreferenceController
     private static final Logger LOG = new Logger(
             WifiDetailsActionButtonsPreferenceController.class);
     private String mUri;
-    private boolean mSupportEasyConnect;
+    private static final String QR_CODE_FORMAT = "WIFI:T:%s;S:%s;P:%s;H:%s;";
+    private static final String QR_CODE_FORMAT_OPEN = "WIFI:S:%s;H:%s;";
 
     public WifiDetailsActionButtonsPreferenceController(Context context,
             String preferenceKey, FragmentController fragmentController,
@@ -63,11 +65,7 @@ public class WifiDetailsActionButtonsPreferenceController
     @Override
     protected void onCreateInternal() {
         super.onCreateInternal();
-        mSupportEasyConnect = getCarWifiManager() != null
-                && getCarWifiManager().isEasyConnectSupported();
-        if (mSupportEasyConnect) {
-            setUpSharePageInfo();
-        }
+        setUpUri();
     }
 
     @Override
@@ -94,7 +92,7 @@ public class WifiDetailsActionButtonsPreferenceController
                 .setOnClickListener(v -> connectOrDisconnect());
 
         preference.getButton(ActionButtons.BUTTON3)
-                .setVisible(mSupportEasyConnect)
+                .setVisible(true)
                 .setEnabled(mUri != null)
                 .setText(R.string.wifi_detail_share)
                 .setIcon(R.drawable.ic_qr)
@@ -175,48 +173,35 @@ public class WifiDetailsActionButtonsPreferenceController
     }
 
     @SuppressLint("MissingPermission")
-    private void setUpSharePageInfo() {
-        getCarWifiManager().getWifiManager().startEasyConnectAsEnrolleeResponder(
-                Build.DEVICE,
-                WifiManager.EASY_CONNECT_CRYPTOGRAPHY_CURVE_PRIME256V1,
-                getContext().getMainExecutor(),
-                new SettingsEasyConnectStatusCallback());
+    private void setUpUri() {
+        WifiConfiguration mWifiConfig = getCarWifiManager()
+            .getWifiManager()
+            .getPrivilegedConnectedNetwork();
+
+        if (mWifiConfig == null) {
+            mUri = null;
+            return;
+        }
+
+        int mAuthType = mWifiConfig.getAuthType();
+        String mAuth, mKey;
+        String mSsid = mWifiConfig.getPrintableSsid();
+        String mHidden = mWifiConfig.hiddenSSID ? "true" : "false";
+        switch (mAuthType) {
+            case WifiConfiguration.KeyMgmt.NONE :
+            case WifiConfiguration.KeyMgmt.OWE :
+                 mAuth = "";
+                 mKey = "";
+                 break;
+            default:
+                 mAuth = "WPA";
+                 mKey = mWifiConfig.preSharedKey.replaceAll("^\"|\"$", "");
+        }
+
+        if (mAuth.isEmpty())
+            mUri = String.format(QR_CODE_FORMAT_OPEN, mSsid, mHidden);
+        else
+            mUri = String.format(QR_CODE_FORMAT, mAuth, mSsid, mKey, mHidden);
     }
 
-    private class SettingsEasyConnectStatusCallback extends EasyConnectStatusCallback {
-
-        @Override
-        public void onBootstrapUriGenerated(@NonNull Uri dppUri) {
-            super.onBootstrapUriGenerated(dppUri);
-            if (!dppUri.toString().equals(mUri)) {
-                mUri = dppUri.toString();
-                refreshUi();
-            }
-        }
-
-        @Override
-        public void onFailure(int code) {
-            super.onFailure(code);
-            LOG.w("Unable to generate Easy Connect Wifi QR code : " + code);
-            if (mUri != null) {
-                mUri = null;
-                refreshUi();
-            }
-        }
-
-        @Override
-        public void onEnrolleeSuccess(int newNetworkId) {
-            // Do nothing.
-        }
-
-        @Override
-        public void onConfiguratorSuccess(int code) {
-            // Do nothing.
-        }
-
-        @Override
-        public void onProgress(int code) {
-            // Do nothing.
-        }
-    }
 }
