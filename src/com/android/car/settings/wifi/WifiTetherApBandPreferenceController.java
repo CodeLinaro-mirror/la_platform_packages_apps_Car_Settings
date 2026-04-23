@@ -29,7 +29,6 @@ import android.content.SharedPreferences;
 
 import androidx.preference.ListPreference;
 
-import com.android.car.settings.Flags;
 import com.android.car.settings.R;
 import com.android.car.settings.common.FragmentController;
 import com.android.internal.annotations.VisibleForTesting;
