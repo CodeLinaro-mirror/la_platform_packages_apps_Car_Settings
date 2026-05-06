@@ -69,8 +69,11 @@ public abstract class DeviceAdminAppsPreferenceController
                 PackageManager.GET_META_DATA | PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS);
         for (ResolveInfo resolveInfo : receivers) {
             DeviceAdminInfo deviceAdminInfo = createDeviceAdminInfo(resolveInfo.activityInfo);
-            // Add only visible ones (note: active admins are added regardless of visibility)
-            if (deviceAdminInfo != null && deviceAdminInfo.isVisible()) {
+            // Add only active admins or visible ones (note: active admins are added
+            // regardless of visibility)
+            if (deviceAdminInfo != null
+                    && (isActivated(deviceAdminInfo.getComponent())
+                    || deviceAdminInfo.isVisible())) {
                 if (!isIncluded(deviceAdminInfo.getComponent())
                         || !deviceAdminInfo.getActivityInfo().applicationInfo.isInternal()) {
                     continue;
@@ -127,7 +130,7 @@ public abstract class DeviceAdminAppsPreferenceController
         return true;
     }
 
-    private @Nullable DeviceAdminInfo createDeviceAdminInfo(ActivityInfo ai) {
+    protected @Nullable DeviceAdminInfo createDeviceAdminInfo(ActivityInfo ai) {
         try {
             return new DeviceAdminInfo(getContext(), ai);
         } catch (XmlPullParserException | IOException e) {
