@@ -74,7 +74,7 @@ public class WifiDetailsShareFragment extends BaseFragment {
             Bitmap bmp = QrCodeGenerator.encodeQrCode(uri, size, margin);
             qr_image.setImageBitmap(bmp);
         } catch (Exception e) {
-            LOG.w("Failed to load wifi share qr code: " + e);
+            LOG.w("Failed to load wifi easy share qr code: " + e);
         }
     }
 }

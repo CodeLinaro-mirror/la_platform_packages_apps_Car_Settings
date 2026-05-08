@@ -23,13 +23,8 @@ import android.car.drivingstate.CarUxRestrictions;
 import android.content.Context;
 import android.net.Network;
 import android.net.NetworkCapabilities;
-import android.net.Uri;
-import android.net.wifi.EasyConnectStatusCallback;
 import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 
 import com.android.car.settings.R;
 import com.android.car.settings.common.ActionButtonsPreference;
@@ -37,7 +32,6 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.car.settings.wifi.WifiUtil;
 import com.android.wifitrackerlib.WifiEntry;
-import android.net.wifi.WifiConfiguration;
 
 /**
  * Shows Wifi details action buttons (forget and connect).
@@ -47,9 +41,6 @@ public class WifiDetailsActionButtonsPreferenceController
         implements WifiEntry.ConnectCallback {
     private static final Logger LOG = new Logger(
             WifiDetailsActionButtonsPreferenceController.class);
-    private String mUri;
-    private static final String QR_CODE_FORMAT = "WIFI:T:%s;S:%s;P:%s;H:%s;";
-    private static final String QR_CODE_FORMAT_OPEN = "WIFI:S:%s;H:%s;";
 
     public WifiDetailsActionButtonsPreferenceController(Context context,
             String preferenceKey, FragmentController fragmentController,
@@ -60,12 +51,6 @@ public class WifiDetailsActionButtonsPreferenceController
     @Override
     protected Class<ActionButtonsPreference> getPreferenceType() {
         return ActionButtonsPreference.class;
-    }
-
-    @Override
-    protected void onCreateInternal() {
-        super.onCreateInternal();
-        setUpUri();
     }
 
     @Override
@@ -92,8 +77,8 @@ public class WifiDetailsActionButtonsPreferenceController
                 .setOnClickListener(v -> connectOrDisconnect());
 
         preference.getButton(ActionButtons.BUTTON3)
-                .setVisible(true)
-                .setEnabled(mUri != null)
+                .setVisible(getWifiEntry().canShare())
+                .setEnabled(true)
                 .setText(R.string.wifi_detail_share)
                 .setIcon(R.drawable.ic_qr)
                 .setOnClickListener(v -> openSharePage());
@@ -166,42 +151,11 @@ public class WifiDetailsActionButtonsPreferenceController
 
     @SuppressLint("MissingPermission")
     private void openSharePage() {
-        if (mUri != null) {
+        WifiManager wifiManager = getCarWifiManager().getWifiManager();
+        String uri = WifiUtil.getWifiShareQrCode(wifiManager, getWifiEntry());
+        if (uri != null) {
             getFragmentController().launchFragment(
-                    WifiDetailsShareFragment.getInstance(mUri));
+                    WifiDetailsShareFragment.getInstance(uri));
         }
     }
-
-    @SuppressLint("MissingPermission")
-    private void setUpUri() {
-        WifiConfiguration mWifiConfig = getCarWifiManager()
-            .getWifiManager()
-            .getPrivilegedConnectedNetwork();
-
-        if (mWifiConfig == null) {
-            mUri = null;
-            return;
-        }
-
-        int mAuthType = mWifiConfig.getAuthType();
-        String mAuth, mKey;
-        String mSsid = mWifiConfig.getPrintableSsid();
-        String mHidden = mWifiConfig.hiddenSSID ? "true" : "false";
-        switch (mAuthType) {
-            case WifiConfiguration.KeyMgmt.NONE :
-            case WifiConfiguration.KeyMgmt.OWE :
-                 mAuth = "";
-                 mKey = "";
-                 break;
-            default:
-                 mAuth = "WPA";
-                 mKey = mWifiConfig.preSharedKey.replaceAll("^\"|\"$", "");
-        }
-
-        if (mAuth.isEmpty())
-            mUri = String.format(QR_CODE_FORMAT_OPEN, mSsid, mHidden);
-        else
-            mUri = String.format(QR_CODE_FORMAT, mAuth, mSsid, mKey, mHidden);
-    }
-
 }
