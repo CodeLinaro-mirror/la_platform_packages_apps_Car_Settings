@@ -398,10 +398,8 @@
     <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"ଟିପ୍ପଣୀ: ରିବୁଟ୍ କରିବା ପରେ, ଯେପର୍ଯ୍ୟନ୍ତ ଆପଣ ଆପଣଙ୍କର ବାହାନକୁ ଅନଲକ୍ ନକରିଛନ୍ତି, ସେପର୍ଯ୍ୟନ୍ତ ଏହି ଆପ୍‌ ଆରମ୍ଭ ହୋଇପାରିବ ନାହିଁ।"</string>
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"ଆସିଷ୍ଟାଣ୍ଟ ଓ ଭଏସ୍‌ ଇନପୁଟ୍‌"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"ସହାୟକ ଆପ୍‌"</string>
-    <string name="assist_access_context_title" msgid="8034851731390785301">"ସ୍କ୍ରିନ୍‌ରୁ ଟେକ୍ସଟ୍‌ ବ୍ୟବହାର କରନ୍ତୁ"</string>
-    <string name="assist_access_context_summary" msgid="2374281280599443774">"ସ୍କ୍ରିନ୍‌ ବିଷୟବସ୍ତୁଗୁଡ଼ିକୁ ଟେକ୍ସଟ୍‌ ଭଳି ଆକ୍ସେସ୍‌ କରିବା ପାଇଁ ସହାୟକ ଆପ୍‌କୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
-    <string name="assist_access_screenshot_title" msgid="2855956879971465044">"ସ୍କ୍ରିନସଟ୍ ବ୍ୟବହାର କରନ୍ତୁ"</string>
-    <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"ସ୍କ୍ରିନ୍‌ର ଇମେଜକୁ ଆକ୍ସେସ୍‌ କରିବାକୁ ସହାୟକ ଆପ୍‌କୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
+    <string name="assist_access_screen_context_title" msgid="532741345297191473">"ସ୍କ୍ରିନ ଏବଂ ଆପ ଡାଟା ବ୍ୟବହାର କରନ୍ତୁ"</string>
+    <string name="assist_access_screen_context_summary" msgid="6213684270429102575">"ଆପଣଙ୍କ ସ୍କ୍ରିନରେ ଖୋଲା ଥିବା ଆପରୁ ସୂଚନା ଏବଂ ବିଷୟବସ୍ତୁକୁ ଆକ୍ସେସ କରିବା ପାଇଁ ଏହି ଆସିଷ୍ଟାଣ୍ଟକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="voice_input_settings_title" msgid="3238707827815647526">"ଭଏସ୍‌ ଇନ୍‌ପୁଟ୍"</string>
     <string name="autofill_settings_title" msgid="1188754272680049972">"ଅଟୋଫିଲ ସେବା"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"କୌଣସିଟି ନୁହେଁ"</string>
@@ -669,7 +667,7 @@
     <string name="data_usage_auto_sync_off_dialog" msgid="5040873073016183315">"ଏହା ମୋବାଇଲ୍ ଡାଟା କମ୍ ବ୍ୟବହାର ହେବ, କିନ୍ତୁ ତାଜା ସୂଚନା ସଂଗ୍ରହ କରିବା ପାଇଁ ପ୍ରତ୍ୟେକ ଆକାଉଣ୍ଟକୁ ମାନୁଆଲୀ ସିଙ୍କ କରିବାକୁ ପଡ଼ିବ ଏବଂ ଆପଣ ଅପ୍‌ଡେଟ୍‌ ହେଲେ ଆପଣ ବିଜ୍ଞପ୍ତି ପ୍ରାପ୍ତ କରିବେ ନାହିଁ।"</string>
     <string name="account_details_title" msgid="7529571432258448573">"ଆକାଉଣ୍ଟ ସୂଚନା"</string>
     <string name="add_account_title" msgid="5988746086885210040">"ଆକାଉଣ୍ଟ ଯୋଗ କରନ୍ତୁ"</string>
-    <string name="add_an_account" msgid="1072285034300995091">"ଗୋଟିଏ ଆକାଉଣ୍ଟ ଯୋଡ଼ନ୍ତୁ"</string>
+    <string name="add_an_account" msgid="1072285034300995091">"ଗୋଟିଏ ଆକାଉଣ୍ଟ ଯୋଗ କରନ୍ତୁ"</string>
     <string name="user_cannot_add_accounts_message" msgid="6775605884544906797">"ପ୍ରତିବନ୍ଧିତ ପ୍ରୋଫାଇଲ୍‌ଗୁଡ଼ିକ ଆକାଉଣ୍ଟ ଆଡ୍‌ କରିପାରିବ ନାହିଁ"</string>
     <string name="remove_account_title" msgid="8840386525787836381">"ଆକାଉଣ୍ଟ କାଢ଼ିଦିଅନ୍ତୁ"</string>
     <string name="really_remove_account_title" msgid="3555164432587924900">"ଆକାଉଣ୍ଟ କାଢ଼ିଦେବେ?"</string>

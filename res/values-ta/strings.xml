@@ -398,10 +398,8 @@
     <string name="direct_boot_unaware_dialog_message_car" msgid="2857599310518724080">"கவனத்திற்கு: மறுபடி தொடங்கிய பிறகு நீங்கள் வாகனத்தை அன்லாக் செய்யும் வரை இந்த ஆப்ஸால் செயல்பட இயலாது."</string>
     <string name="assist_and_voice_input_settings" msgid="8813195157136637132">"அசிஸ்டண்ட் &amp; குரல் உள்ளீடு"</string>
     <string name="assist_app_settings" msgid="9085261410166776497">"அசிஸ்ட் ஆப்ஸ்"</string>
-    <string name="assist_access_context_title" msgid="8034851731390785301">"திரையில் உள்ள உரையைப் பயன்படுத்துதல்"</string>
-    <string name="assist_access_context_summary" msgid="2374281280599443774">"திரையில் உள்ள உள்ளடக்கத்தை உரையாக அணுகுவதற்கு அசிஸ்ட் ஆப்ஸை அனுமதிக்கும்"</string>
-    <string name="assist_access_screenshot_title" msgid="2855956879971465044">"ஸ்கிரீன்ஷாட்டைப் பயன்படுத்துதல்"</string>
-    <string name="assist_access_screenshot_summary" msgid="6246496926635145782">"திரையில் உள்ள படத்தை அணுகுவதற்கு அசிஸ்ட் ஆப்ஸை அனுமதிக்கும்"</string>
+    <string name="assist_access_screen_context_title" msgid="532741345297191473">"திரை மற்றும் ஆப்ஸ் தரவைப் பயன்படுத்துதல்"</string>
+    <string name="assist_access_screen_context_summary" msgid="6213684270429102575">"உங்கள் திரையில் திறந்துள்ள ஆப்ஸில் இருக்கும் தகவல்களையும் உள்ளடக்கத்தையும் அணுக இந்த அசிஸ்டண்ட்டை அனுமதிக்கும்"</string>
     <string name="voice_input_settings_title" msgid="3238707827815647526">"குரல் உள்ளீடு"</string>
     <string name="autofill_settings_title" msgid="1188754272680049972">"தன்னிரப்பிச் சேவை"</string>
     <string name="app_list_preference_none" msgid="7753357799926715901">"ஏதுமில்லை"</string>
@@ -802,7 +800,7 @@
     <string name="lockpassword_pin_too_long" msgid="8315542764465856288">"{count,plural, =1{# இலக்கத்தை விடக் குறைவாக இருக்க வேண்டும்}other{# இலக்கங்களை விடக் குறைவாக இருக்க வேண்டும்}}"</string>
     <string name="lockpassword_pin_no_sequential_digits" msgid="6511579896796310956">"இலக்கங்கள் ஏறுவரிசையில், இறங்குவரிசையில் அல்லது ஒரே இலக்கத்தைப் பயன்படுத்துவது அனுமதிக்கப்படவில்லை"</string>
     <string name="setup_lock_settings_options_button_label" msgid="3337845811029780896">"திரைப் பூட்டு விருப்பங்கள்"</string>
-    <string name="credentials_reset" msgid="873900550885788639">"அனுமதிச் சான்றுகளை அழி"</string>
+    <string name="credentials_reset" msgid="873900550885788639">"அனுமதிச் சான்றுகளை அழித்தல்"</string>
     <string name="credentials_reset_summary" msgid="6067911547500459637">"அனைத்து சான்றிதழ்களையும் அகற்றும்"</string>
     <string name="credentials_reset_hint" msgid="3459271621754137661">"அனைத்து உள்ளடக்கத்தையும் அகற்ற வேண்டுமா?"</string>
     <string name="credentials_erased" msgid="2515915439705550379">"அனுமதிச் சான்று சேமிப்பகம் அழிக்கப்பட்டது."</string>
