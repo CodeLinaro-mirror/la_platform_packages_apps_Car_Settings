@@ -381,6 +381,8 @@
     <string name="wifi_hotspot_wpa3_sae">WPA3-Personal</string>
     <!-- Label for Wifi security type WPA2/WPA3 Transition [CHAR LIMIT=25]-->
     <string name="wifi_security_psk_sae">WPA2/WPA3-Personal</string>
+    <!-- Override SettingsLib: show WPA/WPA2/WPA3-Personal for PSK security type -->
+    <string name="wifi_security_psk_generic">WPA/WPA2/WPA3-Personal</string>
     <!-- Label for Wifi security type WPA2-Personal [CHAR LIMIT=25]-->
     <string name="wifi_hotspot_wpa2_personal">WPA2-Personal</string>
     <!-- Label for Wifi security type None [CHAR LIMIT=25]-->
