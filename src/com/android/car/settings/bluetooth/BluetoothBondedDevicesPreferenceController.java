@@ -239,10 +239,6 @@ public class BluetoothBondedDevicesPreferenceController extends
                     toggleBluetoothConnectivity(isChecked, cachedDevice);
                 });
 
-        if (isA2dpDevice(cachedDevice) && !sDualBluetooth) {
-            return;
-        }
-
         if (phoneProfile == null || !isConnected || mHasUxRestriction) {
             // Disable phone button
             updatePhoneActionItemAvailability(preference, /* isAvailable= */ false);
