@@ -16,6 +16,8 @@
 
 package com.android.car.settings.bluetooth;
 
+import android.Manifest;
+
 import android.annotation.Nullable;
 import android.app.ActivityManager;
 import android.bluetooth.BluetoothDevice;
@@ -34,6 +36,8 @@ import com.android.car.settings.common.FragmentController;
 import com.android.car.settings.common.Logger;
 import com.android.settingslib.bluetooth.BluetoothDeviceFilter;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
+
+import static android.Manifest.permission.BLUETOOTH_CONNECT;
 
 /**
  * Displays a list of Bluetooth devices for the user to select. When a device is selected, a
@@ -152,9 +156,26 @@ public class BluetoothDevicePickerPreferenceController extends
         if (mLaunchPackage != null && mLaunchClass != null) {
             if (TextUtils.equals(mCallingAppPackageName, mLaunchPackage)) {
                 intent.setClassName(mLaunchPackage, mLaunchClass);
+                LOG.d("explicit component: " + intent.getComponent());
+            } else {
+                intent.setClassName("com.android.bluetooth",
+                                    "com.android.bluetooth.opp.BluetoothOppReceiver");
+                LOG.w("fallback explicit to OppReceiver: " + intent.getComponent());
             }
         }
-        getContext().sendBroadcast(intent);
+
+        int granted = getContext().checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT);
+        LOG.d("BLUETOOTH_CONNECT grantState=" + granted);
+
+        try {
+            intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
+            getContext().sendBroadcast(intent);
+            LOG.d("sendBroadcast invoked OK");
+        } catch (SecurityException se) {
+            LOG.e("sendBroadcast SecurityException: " + se.getMessage(), se);
+        } catch (Throwable t) {
+            LOG.e("sendBroadcast unexpected error", t);
+        }
     }
 
     /**

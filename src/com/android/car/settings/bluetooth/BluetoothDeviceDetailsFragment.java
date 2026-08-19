@@ -12,11 +12,17 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Changes from Qualcomm Technologies, Inc. are provided under the following license:
+ *
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * SPDX-License-Identifier: BSD-3-Clause-Clear.
  */
 
 package com.android.car.settings.bluetooth;
 
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothAdapterUtil;
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.os.Bundle;
@@ -35,6 +41,7 @@ import com.android.settingslib.bluetooth.LocalBluetoothManager;
 public class BluetoothDeviceDetailsFragment extends SettingsFragment {
 
     private static final String KEY_DEVICE_ADDRESS = "device_address";
+    private static final String KEY_ADAPTER_INDEX = "adapter_index";
 
     private CachedBluetoothDevice mCachedDevice;
 
@@ -43,7 +50,8 @@ public class BluetoothDeviceDetailsFragment extends SettingsFragment {
      */
     public static BluetoothDeviceDetailsFragment newInstance(CachedBluetoothDevice device) {
         Bundle args = new Bundle();
-        args.putString(BluetoothDeviceDetailsFragment.KEY_DEVICE_ADDRESS, device.getAddress());
+        args.putString(KEY_DEVICE_ADDRESS, device.getAddress());
+        args.putInt(KEY_ADAPTER_INDEX, device.getDevice().getAdapterIndex());
         BluetoothDeviceDetailsFragment fragment = new BluetoothDeviceDetailsFragment();
         fragment.setArguments(args);
         return fragment;
@@ -64,8 +72,11 @@ public class BluetoothDeviceDetailsFragment extends SettingsFragment {
             return;
         }
         String deviceAddress = getArguments().getString(KEY_DEVICE_ADDRESS);
-        BluetoothDevice remoteDevice = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(
-                deviceAddress);
+        int adapterIndex = getArguments().getInt(KEY_ADAPTER_INDEX, 0);
+        BluetoothAdapter adapter = adapterIndex == 0
+                ? BluetoothAdapter.getDefaultAdapter()
+                : BluetoothAdapterUtil.getNewAdapter();
+        BluetoothDevice remoteDevice = adapter.getRemoteDevice(deviceAddress);
         mCachedDevice = manager.getCachedDeviceManager().findDevice(remoteDevice);
         if (mCachedDevice == null) {
             goBack();
