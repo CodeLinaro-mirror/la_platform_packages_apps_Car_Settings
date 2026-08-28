@@ -51,7 +51,7 @@ public abstract class WifiTetherBasePreferenceController<V extends Preference> e
     public WifiTetherBasePreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
         this(context, preferenceKey, fragmentController, uxRestrictions, new CarWifiManager(context,
-                fragmentController.getSettingsLifecycle()));
+                fragmentController.getSettingsLifecycle(), false));
     }
 
     @VisibleForTesting
