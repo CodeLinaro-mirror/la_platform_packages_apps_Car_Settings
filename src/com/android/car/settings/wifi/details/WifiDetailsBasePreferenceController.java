@@ -61,7 +61,7 @@ public abstract class WifiDetailsBasePreferenceController<V extends Preference> 
         mWifiEntry = wifiEntry;
         mWifiInfoProvider = wifiInfoProvider;
         mCarWifiManager = new CarWifiManager(getContext(),
-                getFragmentController().getSettingsLifecycle());
+                getFragmentController().getSettingsLifecycle(), false);
         return this;
     }
 
