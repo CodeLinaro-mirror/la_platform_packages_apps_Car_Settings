@@ -54,6 +54,8 @@ public class WifiTetherApBandPreferenceController extends
             BAND_2GHZ,
             BAND_2GHZ_5GHZ };
 
+    private static final int SHARED_AP_BAND_UNSET = -1;
+
     protected static final String KEY_AP_BAND =
                                   "com.android.car.settings.wifi.AP_BAND";
 
@@ -98,6 +100,16 @@ public class WifiTetherApBandPreferenceController extends
     protected void onCreateInternal() {
         super.onCreateInternal();
         updatePreferenceEntries();
+    }
+
+    @Override
+    protected void onStartInternal() {
+        super.onStartInternal();
+        int newBand = mSharedPreferences.getInt(KEY_AP_BAND, SHARED_AP_BAND_UNSET);
+        if (newBand != SHARED_AP_BAND_UNSET && newBand != mBand) {
+            mBand = newBand;
+            updateApBand();
+        }
     }
 
     private boolean isWpa3SaeSelected() {
@@ -187,7 +199,11 @@ public class WifiTetherApBandPreferenceController extends
     @Override
     public boolean handlePreferenceChanged(ListPreference preference, Object newValue) {
         mBand = validateSelection(Integer.parseInt((String) newValue));
-        updateApBand(); // updating AP band because mBandIndex may have been assigned a new value.
+        //new AP band take effect in this.onStartInternal()
+        //since WifiTetherStateSwitchPreferenceController.onStartInternal()
+        //register the broadcast receiver 'mRestartReceiver' to handle intent
+        //ACTION_RESTART_WIFI_TETHERING
+        mSharedPreferences.edit().putInt(KEY_AP_BAND, mBand).commit();
         refreshUi();
         return true;
     }
