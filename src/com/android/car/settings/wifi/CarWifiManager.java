@@ -49,7 +49,7 @@ public class CarWifiManager implements WifiPickerTracker.WifiPickerTrackerCallba
     private final Lifecycle mLifecycle;
     private final List<Listener> mListeners = new ArrayList<>();
 
-    private HandlerThread mWorkerThread;
+    @Nullable private HandlerThread mWorkerThread;
     @Nullable private WifiPickerTracker mWifiTracker;
     @Nullable private WifiManager mWifiManager;
 
@@ -76,15 +76,19 @@ public class CarWifiManager implements WifiPickerTracker.WifiPickerTrackerCallba
     }
 
     public CarWifiManager(Context context, Lifecycle lifecycle) {
+        this(context, lifecycle, true);
+    }
+
+    public CarWifiManager(Context context, Lifecycle lifecycle, boolean isNeedWifiTracker) {
         mContext = context;
         mLifecycle = lifecycle;
         mLifecycle.addObserver(this);
         mWifiManager = mContext.getSystemService(WifiManager.class);
-        mWorkerThread = new HandlerThread(TAG
-                + "{" + Integer.toHexString(System.identityHashCode(this)) + "}",
-                android.os.Process.THREAD_PRIORITY_BACKGROUND);
-        mWorkerThread.start();
-        if (mWifiManager != null) {
+        if (mWifiManager != null && isNeedWifiTracker) {
+            mWorkerThread = new HandlerThread(TAG
+                    + "{" + Integer.toHexString(System.identityHashCode(this)) + "}",
+                    android.os.Process.THREAD_PRIORITY_BACKGROUND);
+            mWorkerThread.start();
             mWifiTracker = WifiUtil.createWifiPickerTracker(lifecycle, context,
                     new Handler(Looper.getMainLooper()), mWorkerThread.getThreadHandler(),
                     /* listener= */ this);
