@@ -35,6 +35,7 @@ public final class DeviceAdminAddHeaderPreferenceController
         extends BaseDeviceAdminAddPreferenceController<TwoStatePreference> {
 
     private @Nullable ActivationListener mActivationListener;
+    private boolean mRefreshing;
 
     public DeviceAdminAddHeaderPreferenceController(Context context, String preferenceKey,
             FragmentController fragmentController, CarUxRestrictions uxRestrictions) {
@@ -43,6 +44,11 @@ public final class DeviceAdminAddHeaderPreferenceController
 
     DeviceAdminAddHeaderPreferenceController setActivationListener(ActivationListener listener) {
         mActivationListener = listener;
+        return this;
+    }
+
+    DeviceAdminAddHeaderPreferenceController setRefreshing(boolean refreshing) {
+        mRefreshing = refreshing;
         return this;
     }
 
@@ -100,8 +106,7 @@ public final class DeviceAdminAddHeaderPreferenceController
         ComponentName admin = mDeviceAdminInfo.getComponent();
         if (activated) {
             mLogger.i("Activating " + ComponentName.flattenToShortString(admin));
-            // TODO(b/192372143): support refreshing
-            mDpm.setActiveAdmin(admin, /* refreshing= */ false);
+            mDpm.setActiveAdmin(admin, mRefreshing);
         } else {
             mLogger.i("Deactivating " + ComponentName.flattenToShortString(admin));
             mDpm.removeActiveAdmin(admin);
