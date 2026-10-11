@@ -151,8 +151,8 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
         // This admin already exists, and we have two options at this point:
         // 1. If new policy bits are set, show the user the new list.
         // 2. If nothing has changed, simply return "OK" immediately.
+        boolean refreshing = false;
         if (isActionAddDeviceAdminActivity(activity)) {
-            boolean refreshing = false;
             if (mDpm.isAdminActive(admin)) {
                 if (mDpm.isRemovingAdmin(admin, myUserHandle().getIdentifier())) {
                     LOG.w("Requested admin is already being removed: " + admin);
@@ -174,8 +174,6 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
                     activity.finish();
                     return;
                 }
-                // Update the active admin with the refreshed policies.
-                mDpm.setActiveAdmin(admin, refreshing);
             }
         }
 
@@ -188,7 +186,8 @@ public final class DeviceAdminAddFragment extends SettingsFragment {
         ((DeviceAdminAddHeaderPreferenceController) use(
                 DeviceAdminAddHeaderPreferenceController.class,
                 R.string.pk_device_admin_add_header).setDeviceAdmin(deviceAdminInfo))
-                        .setActivationListener((value) -> onActivation(value));
+                        .setActivationListener((value) -> onActivation(value))
+                        .setRefreshing(refreshing);
         ((DeviceAdminAddExplanationPreferenceController) use(
                 DeviceAdminAddExplanationPreferenceController.class,
                 R.string.pk_device_admin_add_explanation).setDeviceAdmin(deviceAdminInfo))
